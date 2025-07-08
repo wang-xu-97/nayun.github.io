@@ -3,12 +3,12 @@
   font-family: 'HarmonyOS_Sans_SC_Medium';
   font-style: normal;
   font-display: swap;
-  src: url(https://cdn.jsdelivr.net/gh/irithys/cdn/src/fonts/HarmonyOS_Sans_SC_Medium.woff2) format('woff2');
+  src: url(https://github.com/wang-xu-97/nayun.github.io/tree/4718eae436be78c0943c829e7a73516675d1b9c8/fonts/HarmonyOS_Sans_SC_Medium.woff2) format('woff2');
 }
 
 @font-face {
   font-family: 'JetBrainsMono Regular';
   font-style: normal;
   font-display: swap;
-  src: url(https://cdn.jsdelivr.net/gh/irithys/cdn/src/fonts/JetBrainsMono-Regular.woff2) format('woff2');
+  src: url(https://github.com/wang-xu-97/nayun.github.io/tree/4718eae436be78c0943c829e7a73516675d1b9c8/fonts/JetBrainsMono-Regular.woff2) format('woff2');
 }
