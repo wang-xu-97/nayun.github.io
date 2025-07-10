@@ -11,7 +11,7 @@ jobs:
       # 1. 检出代码（包括子模块，如主题）
       - uses: actions/checkout@v4
         with:
-          submodules: recursive
+          submodules: false
           path: "hugo-site-producer"  # 将代码检出到子目录
 
       # 2. 安装 Hugo
