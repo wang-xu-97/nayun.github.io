@@ -6,12 +6,13 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: checkout site
+        uses: actions/checkout@v4  # 无需 path 参数
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
 
       - name: Build
-        uses: actions/checkout@v4  # 无需 path 参数
         run: |
           ls -R hugo-site-producer && \
           cd hugo-site-producer/blogsite1 && \
