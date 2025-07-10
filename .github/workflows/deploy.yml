@@ -30,7 +30,7 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.WORKFLOW_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./hugo-site-producer/blogsite1/public  # 指定 public 目录的路径
           publish_branch: gh-page
           force_orphan: true  # 清空 gh-pages 分支历史
