@@ -1,0 +1,31 @@
+/* 目录容器样式 */
+#TOCView {
+    max-width: 280px; /* 调整宽度 */
+    background: rgba(245, 245, 245, 0.9); /* 半透明白色背景 */
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  /* 活动项高亮样式 */
+  .toc a.active {
+    color: #e53e3e !important; /* 红色高亮 */
+    font-weight: 700;
+    border-left: 3px solid #e53e3e;
+    padding-left: 8px;
+    margin-left: -11px;
+  }
+  
+  /* 目录标题样式 */
+  .toc summary {
+    font-size: 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px dashed #ddd;
+  }
+  
+  /* 多级缩进优化 */
+  #TableOfContents ul ul {
+    margin-left: 1.2rem;
+    border-left: 1px solid #eee;
+    padding-left: 0.8rem;
+  }

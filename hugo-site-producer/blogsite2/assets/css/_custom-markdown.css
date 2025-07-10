@@ -1,0 +1,66 @@
+
+.article-content .highlight{
+    position: relative;  /* 让子元素绝对定位 */
+    
+    width: 95rem;
+    margin-left: 3rem;
+    border: 1px solid #633939;
+    border-radius: 1.5rem;
+    padding: 0.2rem;
+    overflow-x: auto; /* 如果内容溢出，则添加水平滚动条 */
+    white-space: pre-wrap; /* 允许自动换行 */
+    word-wrap: break-word; /* 允许在单词内换行 */
+}
+
+/* 语言标签 */
+.article-content .highlight:before {
+    content: "</> " + attr(data-lang);  /* 从 Hugo 获取语言类型 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.2em 0.8em;
+    font-size: 0.8em;
+    color: #aaa;
+    background: rgba(255, 255, 255, 0.1);
+    border-bottom-right-radius: 4px;
+}
+/* 复制按钮 */
+.article-content .highlight .copy-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.3em 0.6em;
+    font-size: 0.8em;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 0 6px 0 4px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* 鼠标悬停时显示按钮 */
+.article-content .highlight:hover .copy-btn {
+    opacity: 1;
+}
+
+/* 点击按钮后的反馈 */
+.article-content .highlight .copy-btn.copied {
+    background: #4CAF50;
+    color: white;
+}
+
+pre {
+    background-color: #f8f8f8 !important;
+}
+
+.chroma, pre code {
+    margin: 39rem;
+    background-color: #f8f8f8 !important; /* 浅灰色背景 */
+    color: #333 !important;               /* 深色文字 */
+    line-height: 1.4;                     /* 减小行间距 */
+    font-size: 0.9em;
+    white-space: pre-wrap; /* 允许自动换行 */
+    word-wrap: break-word; /* 允许在单词内换行 */
+}

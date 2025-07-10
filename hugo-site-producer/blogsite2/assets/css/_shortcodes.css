@@ -1,0 +1,25 @@
+/* 多级列表样式 */
+ol.multi-level {
+    counter-reset: level1;
+    list-style-type: none;
+    padding-left: 1em;
+}
+ol.multi-level > li::before {
+    counter-increment: level1;
+    content: counter(level1) ". ";
+    font-weight: bold;
+}
+ol.multi-level ol {
+    counter-reset: level2;
+}
+ol.multi-level ol > li::before {
+    counter-increment: level2;
+    content: counter(level1) "." counter(level2) ". ";
+}
+ol.multi-level ol ol {
+    counter-reset: level3;
+}
+ol.multi-level ol ol > li::before {
+    counter-increment: level3;
+    content: counter(level1) "." counter(level2) "." counter(level3) ". ";
+}

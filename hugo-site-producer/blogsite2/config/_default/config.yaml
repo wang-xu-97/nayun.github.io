@@ -1,0 +1,20 @@
+baseURL: "https://wang-xu-97.github.io/nayun.github.io/"
+title: "nayun blog"
+languageCode: "zh-cn"
+defaultContentLanguage: "zh-cn"
+theme: "blowfish"
+
+# publishDir: "../nayun.github.io"
+
+markup:
+  goldmark:
+    renderer:
+      hardWraps: True
+
+  highlight:
+    codeFences: true
+    guessSyntax: true  # 自动检测语言
+    lineNos: true       # 启用行号
+    lineNumbersInTable: false  # 重要！使用 span 而非表格
+    # style: "monokai"    # 可选，选择喜欢的配色方案
+    noClasses: false # 必须关闭，否则丢失语言类名 

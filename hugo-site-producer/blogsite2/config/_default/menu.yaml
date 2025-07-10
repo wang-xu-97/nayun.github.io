@@ -1,0 +1,29 @@
+main:
+  - identifier: "tech"
+    name: "技"
+    url: "/tech/"
+    weight: 2
+    params:
+      icon: "archives"
+
+  - identifier: "art"
+    name: "艺"
+    url: "/art/"
+    weight: 3
+    params:
+      icon: "categories"
+
+  - identifier: "life"
+    name: "生活"
+    url: "/life/"
+    weight: 4
+    params:
+      icon: "home"
+    
+    
+  - identifier: "about"
+    name: "关于"
+    url: "/about/"
+    weight: 5
+    params:
+      icon: "rss"

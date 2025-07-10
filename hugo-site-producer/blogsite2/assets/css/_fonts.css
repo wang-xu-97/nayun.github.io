@@ -1,0 +1,27 @@
+
+@font-face {
+    font-family: 'HarmonyOS_Sans_SC_Medium';
+    font-style: normal;
+    font-display: swap;
+    src: url('{{ (resources.Get "fonts/HarmonyOS_Sans_SC_Medium.woff2").RelPermalink }}') format('woff2');
+}
+@font-face {
+  font-family: 'JetBrainsMono Regular';
+  font-style: normal;
+  font-display: swap;
+  src: url('{{ (resources.Get "fonts/JetBrainsMono-Regular.woff2").RelPermalink }}') format('woff2');
+}
+
+:root {
+  --font-sans: 'HarmonyOS_Sans_SC_Medium', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrainsMono Regular', monospace;
+}
+body {
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  color: #333;
+}
+
+code, pre {
+  font-family: var(--font-mono);
+}
