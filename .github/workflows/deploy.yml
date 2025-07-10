@@ -14,6 +14,9 @@ jobs:
       - name: Debug
         run: ls -R .  # 验证路径
 
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        
       - name: Build
         run: |
           cd hugo-site-producer/blogsite2
