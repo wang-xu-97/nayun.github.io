@@ -9,11 +9,11 @@ jobs:
       - name: checkout site
         uses: actions/checkout@v4  # 无需 path 参数
         with:
-          path: "."  # 匹配实际嵌套结构
+          path: "code"  # 匹配实际嵌套结构
           submodules: false
 
       - name: Debug
-        run: ls -R hugo-site-producer  # 验证检出内容
+        run: ls -R code  # 验证检出内容
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
