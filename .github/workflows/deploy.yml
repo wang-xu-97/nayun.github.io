@@ -16,7 +16,7 @@ jobs:
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
-        
+
       - name: Build
         run: |
           cd hugo-site-producer/blogsite2
@@ -26,5 +26,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./hugo-site-producer/hugo-site-producer/blogsite2/public
+          publish_dir: ./hugo-site-producer/blogsite2/public
           publish_branch: gh-page
