@@ -1,37 +1,29 @@
-name: Deploy Hugo Site to gh-pages
+name: Deploy Hugo
 
-on:
-  push:
-    branches: [ "main" ]  # 推送至 main 分支时触发
+on: [push]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      # 1. 检出代码（包括子模块，如主题）
       - uses: actions/checkout@v4
         with:
-          submodules: false
-          path: "hugo-site-producer"  # 将代码检出到子目录
+          path: "hugo-site-producer"  # 与仓库结构匹配
 
-      # 2. 安装 Hugo
+      - name: Debug
+        run: ls -R hugo-site-producer  # 验证检出内容
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
-        with:
-          hugo-version: "latest"
 
-      # 3. 进入 Hugo 项目目录并构建
       - name: Build
         run: |
-          cd hugo-site-producer/blogsite1
+          cd hugo-site-producer/blogsite1 && \
           hugo --minify
 
-      # 4. 部署到 gh-pages 分支
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./hugo-site-producer/blogsite1/public  # 指定 public 目录的路径
+          publish_dir: ./hugo-site-producer/blogsite1/public
           publish_branch: gh-page
-          force_orphan: true  # 清空 gh-pages 分支历史
-
