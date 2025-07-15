@@ -1,0 +1,57 @@
+# 搜索配置
+search:
+  enable: true
+  type: "json"
+
+chineseWordCount: true
+# 主页头部背景
+# homepageParams:
+#   background: "images/header.jpg"
+  
+custom_css: ["css/custom.css"]
+assets:
+  customCSS: ["css/custom.css"]
+customJS: true
+
+homepage:
+  # 在首页显示标签云
+  showTags: true
+  # 标签云标题
+  tagsTitle: "文章分类"
+
+# 文章显示设置
+homeFullContent: false
+summaryLength: 150
+
+# 目录
+defaultToc: true
+
+# start: blowfish toc参数
+smartTOC: true # 启用智能目录功能
+smartTOCHideUnfocusedChildren: true # 可选：自动折叠非活动目录项
+# end 
+
+toc:
+  enabled: true
+  position: left # 或 left
+
+# 页脚设置
+footer:
+  since: 2025
+  powered: true
+  customText: "记录成长点滴"
+
+
+
+## bluefish参数
+author:
+  name: "nayun"
+  image: "images/avatar.jpg"
+  bio: "不执着于结果才能让心活起来"
+
+article:
+  showAuthor: false
+
+style:
+  containerMaxWidth: "1200px"  # 最大宽度
+  contentMaxWidth: "800px"     # 内容区域宽度

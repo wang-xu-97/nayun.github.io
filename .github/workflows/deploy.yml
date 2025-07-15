@@ -19,12 +19,12 @@ jobs:
 
       - name: Build
         run: |
-          cd hugo-site-producer/blogsite2
+          cd hugo-site-producer/site
           hugo --minify
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./hugo-site-producer/blogsite2/public
+          publish_dir: ./hugo-site-producer/site/public
           publish_branch: gh-page

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><script src="/nayun.github.io/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=nayun.github.io/livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>前端 | nayun blog</title>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --text-color: #333;
+            --light-gray: #f5f7fa;
+            --border-color: #e1e4e8;
+            --card-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f8f9fa;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+        
+        header {
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .page-description {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+            color: #666;
+        }
+        
+        .breadcrumb a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        .breadcrumb span {
+            margin: 0 0.5rem;
+            color: #999;
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin: 2rem 0 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+        
+        .section-header h2 {
+            font-size: 1.8rem;
+            color: var(--text-color);
+        }
+        
+        .section-icon {
+            margin-right: 0.8rem;
+            color: var(--primary-color);
+        }
+        
+         
+        .sections-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.8rem;
+            margin-bottom: 3rem;
+        }
+        
+        .section-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            border-color: var(--primary-color);
+        }
+        
+        .section-card-header {
+            padding: 1.5rem;
+            background: var(--light-gray);
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .section-card-header h3 {
+            font-size: 1.3rem;
+            margin: 0 0 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section-card-header h3 a {
+            color: var(--text-color);
+            text-decoration: none;
+        }
+        
+        .folder-icon {
+            margin-right: 0.7rem;
+            color: var(--primary-color);
+        }
+        
+        .section-description {
+            color: #555;
+            font-size: 0.95rem;
+            margin: 0.5rem 0 0;
+            line-height: 1.5;
+        }
+        
+        .section-card-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+        }
+        
+        .section-preview {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .section-preview li {
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px dashed #eee;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .section-preview li:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .file-icon {
+            margin-right: 0.7rem;
+            color: var(--secondary-color);
+            flex-shrink: 0;
+            margin-top: 0.2rem;
+        }
+        
+        .preview-title {
+            font-size: 0.95rem;
+            color: var(--text-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .preview-title:hover {
+            color: var(--primary-color);
+        }
+        
+        .view-all-link {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: var(--light-gray);
+            border-radius: 4px;
+            text-decoration: none;
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        
+        .view-all-link:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+         
+        .articles-container {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border-color);
+        }
+        
+        .article-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .article-item {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+        
+        .article-item:hover {
+            background-color: #f8fafd;
+        }
+        
+        .article-item:last-child {
+            border-bottom: none;
+        }
+        
+        .article-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .article-title a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .article-title a:hover {
+            color: var(--primary-color);
+        }
+        
+        .article-meta {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.8rem;
+        }
+        
+        .article-date {
+            display: flex;
+            align-items: center;
+            margin-right: 1.5rem;
+        }
+        
+        .article-categories {
+            display: flex;
+            align-items: center;
+        }
+        
+        .meta-icon {
+            margin-right: 0.5rem;
+            opacity: 0.7;
+        }
+        
+        .article-excerpt {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+         
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            color: #777;
+        }
+        
+        .empty-state-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0.3;
+        }
+        
+         
+        @media (max-width: 768px) {
+            .sections-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 1.5rem 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>前端</h1>
+            
+            
+            
+            <nav class="breadcrumb">
+                <a href="/nayun.github.io/">首页</a>
+                
+                <span>/</span>
+                <a href="/nayun.github.io/">nayun blog</a>
+                
+                <span>/</span>
+                <a href="/nayun.github.io/tech/">Teches</a>
+                
+                <span>/</span>
+                <a href="/nayun.github.io/tech/frontend/" class="active">前端</a>
+            </nav>
+        </header>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <div class="section-header">
+            <svg class="section-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+            <h2>内容文章</h2>
+        </div>
+        
+        <div class="articles-container">
+            <ul class="article-list">
+                
+                <li class="article-item">
+                    <div class="article-title">
+                        <a href="/nayun.github.io/tech/frontend/hugo%E7%90%86%E8%A7%A3/">Hugo理解</a>
+                    </div>
+                    
+                    <div class="article-meta">
+                        
+                        <div class="article-date">
+                            <svg class="meta-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                            <span>2025年7月9日</span>
+                        </div>
+                        
+                        
+                        
+                        <div class="article-categories">
+                            <svg class="meta-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                                <line x1="7" y1="7" x2="7" y2="7"></line>
+                            </svg>
+                            <span>tech</span>
+                        </div>
+                        
+                    </div>
+                    
+                    
+                    <p class="article-excerpt">hugo工作流程 # 导入主题后，完成自定义配置和资源 &lt;/> markdown 折叠 复制 1- config yaml/toml/json 2- assets 3 - css 4 - js 5 - images 6- layouts 7 - 404.html : 404错误页面模板 8 - …</p>
+                    
+                </li>
+                
+                <li class="article-item">
+                    <div class="article-title">
+                        <a href="/nayun.github.io/tech/frontend/hugo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/">Hugo博客搭建记录</a>
+                    </div>
+                    
+                    <div class="article-meta">
+                        
+                        <div class="article-date">
+                            <svg class="meta-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                            <span>2025年7月8日</span>
+                        </div>
+                        
+                        
+                        
+                        <div class="article-categories">
+                            <svg class="meta-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                                <line x1="7" y1="7" x2="7" y2="7"></line>
+                            </svg>
+                            <span>tech</span>
+                        </div>
+                        
+                    </div>
+                    
+                    
+                    <p class="article-excerpt">环境准备 # 设备：ubuntu github地址：https://github.com/gohugoio/hugo 安装： &lt;/> shell 折叠 复制 1wget …</p>
+                    
+                </li>
+                
+            </ul>
+        </div>
+        
+    </div>
+</body>
+</html>

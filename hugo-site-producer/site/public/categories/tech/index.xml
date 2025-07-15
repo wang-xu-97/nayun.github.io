@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tech on nayun blog</title>
+    <link>http://localhost:1313/nayun.github.io/categories/tech/</link>
+    <description>Recent content in Tech on nayun blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>© 2025 nayun</copyright>
+    <lastBuildDate>Mon, 14 Jul 2025 15:39:03 +0800</lastBuildDate><atom:link href="http://localhost:1313/nayun.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>用户态、内核态内存空间</title>
+      <link>http://localhost:1313/nayun.github.io/tech/backend/linux/%E7%94%A8%E6%88%B7%E6%80%81%E5%86%85%E6%A0%B8%E6%80%81%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4/</link>
+      <pubDate>Mon, 14 Jul 2025 15:39:03 +0800</pubDate>
+      
+      <guid>http://localhost:1313/nayun.github.io/tech/backend/linux/%E7%94%A8%E6%88%B7%E6%80%81%E5%86%85%E6%A0%B8%E6%80%81%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4/</guid>
+      <description>&lt;p&gt;用户态、内核态指内存空间，CPU的各寄存器则是CPU硬件，不属于内存部分，仅在需要存档备份数据时保存至（用户态/内核态）内存&lt;br&gt;
+1、 进程内核栈&lt;br&gt;
+每个进程都有自己独立的位于内核空间的内核栈，保存进程在内核态执行的函数调用栈、局部变量、寄存器状态等数据&lt;/p&gt;
+&lt;p&gt;linux系统切换进程时会切换&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;内核栈&lt;br&gt;
+将 CPU 的栈指针寄存器 (SP/ESP/RSP, x86架构) 从指向进程 A 的内核栈顶部，修改为指向进程 B 的内核栈顶部&lt;/li&gt;
+&lt;li&gt;页目录&lt;br&gt;
+系统切换进程时找到进程的页目录的物理基地址（mm-&amp;gt;pgd指针），写入CR3(x86)/TTBR0(ARM)寄存&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;2、进程页目录&lt;br&gt;
+存储在物理内存中，进程在创建时，系统创建mm_struct结构，用mm-&amp;gt;pgd指针保存页目录物理基地址（用来在系统切换进程时找到进程的页目录的物理基地址，写入CR3(x86)/TTBR0(ARM)寄存器，完成进程上下文切换）&lt;br&gt;
+页目录包含进程使用的全部内存的虚拟内存地址-&amp;gt;物理内存地址的映射关系&lt;br&gt;
+3、进程硬件上下文&lt;br&gt;
+运行时各寄存器的中间结果、比如PC程序计数器（下一条指令地址）、SP栈指针寄存器（当前调用栈顶）&lt;br&gt;
+切换时，这些数据被保存到进程内核栈中&lt;/p&gt;
+&lt;p&gt;4、线程切换总是发生在同一个进程（同一个虚拟地址空间）内的线程之间。不同进程的线程之间的切换，本质上是通过上层的进程切换完成的&lt;br&gt;
+5、切换线程时只切换线程内核栈，同样CPU栈指针寄存器从指向线程A的内核栈顶-&amp;gt;B的内核栈顶。因为同属一个进程，所以不切换页目录，也即使用同一虚拟内存空间&lt;/p&gt;
+&lt;p&gt;6、进程、线程切换都依赖内核调度器，抢占式调度（时间片、中断）&lt;br&gt;
+7、协程切换只在用户态通过程序本身调度切换，主动让出，显式让出控制权&lt;br&gt;
+8、&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;进程&lt;/th&gt;
+          &lt;th&gt;线程&lt;/th&gt;
+          &lt;th&gt;协程&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;切换内核栈、页目录&lt;/td&gt;
+          &lt;td&gt;切换内核栈&lt;/td&gt;
+          &lt;td&gt;仅切换寄存器状态&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;9、用户态进程与内核态进程 全双工通信 -&amp;gt; Netlink Socket&lt;/p&gt;
+&lt;p&gt;相比传统 IPC (syscall, ioctl, procfs)，Netlink 具有显著优势：易于扩展、异步通信、完美支持内核模块、强大的组播能力、真正的全双工通信、开发者友好的标准 Socket API。&lt;/p&gt;
+&lt;p&gt;单播回显:         用户请求-&amp;gt;内核处理-&amp;gt;内核响应的双向通信模式&lt;br&gt;
+内核主动组播:  内核主动向多个订阅进程广播事件的能力&lt;/p&gt;
+&lt;p&gt;netlink属于无连接协议（无连接协议是一种通信协议，其中每个数据包的处理都是独立的，不需要在发送数据之前建立连接）&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>闭包</title>
+      <link>http://localhost:1313/nayun.github.io/tech/general/%E9%97%AD%E5%8C%85/</link>
+      <pubDate>Mon, 14 Jul 2025 11:35:25 +0800</pubDate>
+      
+      <guid>http://localhost:1313/nayun.github.io/tech/general/%E9%97%AD%E5%8C%85/</guid>
+      <description>&lt;p&gt;在创建时封装当时状态，并使当时的状态生存周期延长至与闭包生存周期一致&lt;br&gt;
+闭包思想产物：&lt;br&gt;
+1. python装饰器&lt;br&gt;
+2. 回调函数&lt;br&gt;
+3. 函数工厂&lt;br&gt;
+4. 惰性求值&lt;br&gt;
+&amp;hellip;&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Outline</title>
+      <link>http://localhost:1313/nayun.github.io/tech/outline/</link>
+      <pubDate>Mon, 14 Jul 2025 11:20:25 +0800</pubDate>
+      
+      <guid>http://localhost:1313/nayun.github.io/tech/outline/</guid>
+      <description>&lt;h2 class=&#34;relative group&#34;&gt;通用编程思想 
+    &lt;div id=&#34;通用编程思想&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#%e9%80%9a%e7%94%a8%e7%bc%96%e7%a8%8b%e6%80%9d%e6%83%b3&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;        
+    
+&lt;/h2&gt;
+&lt;p&gt;1&lt;/p&gt;
+
+&lt;h3 class=&#34;relative group&#34;&gt;闭包 
+    &lt;div id=&#34;闭包&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#%e9%97%ad%e5%8c%85&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;        
+    
+&lt;/h3&gt;
+&lt;p&gt;1&lt;/p&gt;
+
+&lt;h3 class=&#34;relative group&#34;&gt;多态 
+    &lt;div id=&#34;多态&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#%e5%a4%9a%e6%80%81&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;        
+    
+&lt;/h3&gt;
+&lt;p&gt;1&lt;br&gt;
+1&lt;br&gt;
+1&lt;br&gt;
+1&lt;br&gt;
+1&lt;br&gt;
+1&lt;br&gt;
+1&lt;br&gt;
+1&lt;/p&gt;
+
+&lt;h2 class=&#34;relative group&#34;&gt;前端 
+    &lt;div id=&#34;前端&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#%e5%89%8d%e7%ab%af&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;        
+    
+&lt;/h2&gt;
+
+&lt;h3 class=&#34;relative group&#34;&gt;hugo 
+    &lt;div id=&#34;hugo&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#hugo&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;        
+    
+&lt;/h3&gt;
+
+&lt;h2 class=&#34;relative group&#34;&gt;后端 
+    &lt;div id=&#34;后端&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#%e5%90%8e%e7%ab%af&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;        
+    
+&lt;/h2&gt;
+
+&lt;h3 class=&#34;relative group&#34;&gt;Linux理解 
+    &lt;div id=&#34;linux理解&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#linux%e7%90%86%e8%a7%a3&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;        
+    
+&lt;/h3&gt;
+
+&lt;h4 class=&#34;relative group&#34;&gt;用户态、内核态内存空间 
+    &lt;div id=&#34;用户态内核态内存空间&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#%e7%94%a8%e6%88%b7%e6%80%81%e5%86%85%e6%a0%b8%e6%80%81%e5%86%85%e5%ad%98%e7%a9%ba%e9%97%b4&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;        
+    
+&lt;/h4&gt;
+&lt;p&gt;1&lt;br&gt;
+1&lt;br&gt;
+1&lt;br&gt;
+1&lt;br&gt;
+1&lt;br&gt;
+1&lt;br&gt;
+1&lt;br&gt;
+1&lt;br&gt;
+1&lt;br&gt;
+1&lt;br&gt;
+1&lt;br&gt;
+1&lt;br&gt;
+1&lt;br&gt;
+1&lt;br&gt;
+1&lt;br&gt;
+1&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Hugo理解</title>
+      <link>http://localhost:1313/nayun.github.io/tech/frontend/hugo%E7%90%86%E8%A7%A3/</link>
+      <pubDate>Wed, 09 Jul 2025 14:07:34 +0800</pubDate>
+      
+      <guid>http://localhost:1313/nayun.github.io/tech/frontend/hugo%E7%90%86%E8%A7%A3/</guid>
+      <description>&lt;h2 class=&#34;relative group&#34;&gt;hugo工作流程 
+    &lt;div id=&#34;hugo工作流程&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#hugo%e5%b7%a5%e4%bd%9c%e6%b5%81%e7%a8%8b&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;        
+    
+&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;导入主题后，完成&lt;a
+  href=&#34;#%e8%87%aa%e5%ae%9a%e4%b9%89%e9%85%8d%e7%bd%ae%e5%92%8c%e8%b5%84%e6%ba%90&#34;&gt;自定义配置和资源&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&#34;code-block-wrapper&#34;&gt;
+  &lt;div class=&#34;code-header&#34;&gt;
+    &lt;span class=&#34;language-label&#34;&gt;
+      &lt;span class=&#34;language-brackets&#34;&gt;&amp;lt;/&gt;&lt;/span&gt;  
+      &lt;span class=&#34;language-name&#34;&gt;markdown&lt;/span&gt;  
+    &lt;/span&gt;
+
+    &lt;div class=&#34;code-buttons&#34;&gt;
+      &lt;button class=&#34;fold-button&#34; title=&#34;Toggle fold&#34;&gt;
+        &lt;i class=&#34;fas fa-chevron-up&#34;&gt;&lt;/i&gt;
+        &lt;span&gt;折叠&lt;/span&gt;
+      &lt;/button&gt;
+      &lt;button class=&#34;copy-button&#34; title=&#34;Copy code&#34;&gt;
+        &lt;i class=&#34;fas fa-copy&#34;&gt;&lt;/i&gt;
+        &lt;span&gt;复制&lt;/span&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;-&lt;/span&gt; config yaml/toml/json
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;-&lt;/span&gt; assets
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;-&lt;/span&gt; css
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;-&lt;/span&gt; js
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;-&lt;/span&gt; images
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;-&lt;/span&gt; layouts
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;k&#34;&gt;-&lt;/span&gt; 404.html : 404错误页面模板
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;k&#34;&gt;-&lt;/span&gt; _default/ : 默认模板
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;-&lt;/span&gt; baseof.html : 基础模板框架
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;-&lt;/span&gt; list.html : 列表页模板（如分类、标签页）
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;-&lt;/span&gt; single.html : 单内容页模板（如文章页）
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;-&lt;/span&gt; terms.html : 分类列表模板（如所有标签的列表）
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;k&#34;&gt;-&lt;/span&gt; partials/ : 可重用部分模板
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;14&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;-&lt;/span&gt; header.html : 页头部分
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;15&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;-&lt;/span&gt; footer.html : 页脚部分
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;16&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;-&lt;/span&gt; head.html : &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;head&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;部分
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;17&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;-&lt;/span&gt; ... : 其他部分模板
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;18&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;k&#34;&gt;-&lt;/span&gt; shortcodes/ : 短代码模板
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;19&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;-&lt;/span&gt; figure.html : 图片短代码
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;20&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;-&lt;/span&gt; ... : 其他短代码
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;21&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;k&#34;&gt;-&lt;/span&gt; index.html : 首页模板
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;22&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;k&#34;&gt;-&lt;/span&gt; section/ : 分区模板（如博客、文档等）
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;23&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;-&lt;/span&gt; blog.html : 博客分区模板
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;24&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;-&lt;/span&gt; ... : 其他分区模板
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;25&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;k&#34;&gt;-&lt;/span&gt; taxonomy/ : 分类法模板
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;26&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;-&lt;/span&gt; category.html : 分类页面模板
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;27&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;-&lt;/span&gt; tag.html : 标签页面模板
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;28&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;  - ... : 其他自定义模板&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;所有layouts模板均可&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Hugo博客搭建记录</title>
+      <link>http://localhost:1313/nayun.github.io/tech/frontend/hugo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Tue, 08 Jul 2025 10:18:41 +0800</pubDate>
+      
+      <guid>http://localhost:1313/nayun.github.io/tech/frontend/hugo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/</guid>
+      <description>&lt;h2 class=&#34;relative group&#34;&gt;环境准备 
+    &lt;div id=&#34;环境准备&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#%e7%8e%af%e5%a2%83%e5%87%86%e5%a4%87&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;        
+    
+&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;设备：ubuntu&lt;/li&gt;
+&lt;li&gt;github地址：&lt;a
+  href=&#34;https://github.com/gohugoio/hugo&#34;
+    target=&#34;_blank&#34;
+  &gt;https://github.com/gohugoio/hugo&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;安装：&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&#34;code-block-wrapper&#34;&gt;
+  &lt;div class=&#34;code-header&#34;&gt;
+    &lt;span class=&#34;language-label&#34;&gt;
+      &lt;span class=&#34;language-brackets&#34;&gt;&amp;lt;/&gt;&lt;/span&gt;  
+      &lt;span class=&#34;language-name&#34;&gt;shell&lt;/span&gt;  
+    &lt;/span&gt;
+
+    &lt;div class=&#34;code-buttons&#34;&gt;
+      &lt;button class=&#34;fold-button&#34; title=&#34;Toggle fold&#34;&gt;
+        &lt;i class=&#34;fas fa-chevron-up&#34;&gt;&lt;/i&gt;
+        &lt;span&gt;折叠&lt;/span&gt;
+      &lt;/button&gt;
+      &lt;button class=&#34;copy-button&#34; title=&#34;Copy code&#34;&gt;
+        &lt;i class=&#34;fas fa-copy&#34;&gt;&lt;/i&gt;
+        &lt;span&gt;复制&lt;/span&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;wget https://github.com/gohugoio/hugo/releases/download/v0.147.9/hugo_extended_0.147.9_Linux-64bit.tar.gz
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;tar -xvzf hugo_extended_0.147.9_Linux-64bit.tar.gz
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;sudo su
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;mv hugo /usr/bin&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2 class=&#34;relative group&#34;&gt;Start! 
+    &lt;div id=&#34;start&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#start&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;        
+    
+&lt;/h2&gt;
+
+&lt;h3 class=&#34;relative group&#34;&gt;1. 基础 
+    &lt;div id=&#34;1-基础&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#1-%e5%9f%ba%e7%a1%80&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;        
+    
+&lt;/h3&gt;
+
+&lt;h4 class=&#34;relative group&#34;&gt;1. 创建新博客 
+    &lt;div id=&#34;1-创建新博客&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#1-%e5%88%9b%e5%bb%ba%e6%96%b0%e5%8d%9a%e5%ae%a2&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;        
+    
+&lt;/h4&gt;
+
+&lt;div class=&#34;code-block-wrapper&#34;&gt;
+  &lt;div class=&#34;code-header&#34;&gt;
+    &lt;span class=&#34;language-label&#34;&gt;
+      &lt;span class=&#34;language-brackets&#34;&gt;&amp;lt;/&gt;&lt;/span&gt;  
+      &lt;span class=&#34;language-name&#34;&gt;shell&lt;/span&gt;  
+    &lt;/span&gt;
+
+    &lt;div class=&#34;code-buttons&#34;&gt;
+      &lt;button class=&#34;fold-button&#34; title=&#34;Toggle fold&#34;&gt;
+        &lt;i class=&#34;fas fa-chevron-up&#34;&gt;&lt;/i&gt;
+        &lt;span&gt;折叠&lt;/span&gt;
+      &lt;/button&gt;
+      &lt;button class=&#34;copy-button&#34; title=&#34;Copy code&#34;&gt;
+        &lt;i class=&#34;fas fa-copy&#34;&gt;&lt;/i&gt;
+        &lt;span&gt;复制&lt;/span&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;hugo new site siteproducer&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h4 class=&#34;relative group&#34;&gt;2. 重要配置&amp;amp;配置逻辑链 
+    &lt;div id=&#34;2-重要配置配置逻辑链&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#2-%e9%87%8d%e8%a6%81%e9%85%8d%e7%bd%ae%e9%85%8d%e7%bd%ae%e9%80%bb%e8%be%91%e9%93%be&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;        
+    
+&lt;/h4&gt;
+
+&lt;h3 class=&#34;relative group&#34;&gt;2. 使用stack主题 
+    &lt;div id=&#34;2-使用stack主题&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#2-%e4%bd%bf%e7%94%a8stack%e4%b8%bb%e9%a2%98&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;        
+    
+&lt;/h3&gt;
+
+&lt;div class=&#34;code-block-wrapper&#34;&gt;
+  &lt;div class=&#34;code-header&#34;&gt;
+    &lt;span class=&#34;language-label&#34;&gt;
+      &lt;span class=&#34;language-brackets&#34;&gt;&amp;lt;/&gt;&lt;/span&gt;  
+      &lt;span class=&#34;language-name&#34;&gt;shell&lt;/span&gt;  
+    &lt;/span&gt;
+
+    &lt;div class=&#34;code-buttons&#34;&gt;
+      &lt;button class=&#34;fold-button&#34; title=&#34;Toggle fold&#34;&gt;
+        &lt;i class=&#34;fas fa-chevron-up&#34;&gt;&lt;/i&gt;
+        &lt;span&gt;折叠&lt;/span&gt;
+      &lt;/button&gt;
+      &lt;button class=&#34;copy-button&#34; title=&#34;Copy code&#34;&gt;
+        &lt;i class=&#34;fas fa-copy&#34;&gt;&lt;/i&gt;
+        &lt;span&gt;复制&lt;/span&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;git submodule add https://github.com/CaiJimmy/hugo-theme-stack themes/hugo-theme-stack&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2 class=&#34;relative group&#34;&gt;Hugo Tricks 
+    &lt;div id=&#34;hugo-tricks&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#hugo-tricks&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;        
+    
+&lt;/h2&gt;
+
+&lt;h3 class=&#34;relative group&#34;&gt;1. 自定义样式 
+    &lt;div id=&#34;1-自定义样式&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#1-%e8%87%aa%e5%ae%9a%e4%b9%89%e6%a0%b7%e5%bc%8f&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;        
+    
+&lt;/h3&gt;
+
+&lt;h4 class=&#34;relative group&#34;&gt;1. 样式覆盖规则：后引入覆盖前引入 
+    &lt;div id=&#34;1-样式覆盖规则后引入覆盖前引入&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#1-%e6%a0%b7%e5%bc%8f%e8%a6%86%e7%9b%96%e8%a7%84%e5%88%99%e5%90%8e%e5%bc%95%e5%85%a5%e8%a6%86%e7%9b%96%e5%89%8d%e5%bc%95%e5%85%a5&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;        
+    
+&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;params.yaml配置中指定自定义custom_css&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&#34;code-block-wrapper&#34;&gt;
+  &lt;div class=&#34;code-header&#34;&gt;
+    &lt;span class=&#34;language-label&#34;&gt;
+      &lt;span class=&#34;language-brackets&#34;&gt;&amp;lt;/&gt;&lt;/span&gt;  
+      &lt;span class=&#34;language-name&#34;&gt;yaml&lt;/span&gt;  
+    &lt;/span&gt;
+
+    &lt;div class=&#34;code-buttons&#34;&gt;
+      &lt;button class=&#34;fold-button&#34; title=&#34;Toggle fold&#34;&gt;
+        &lt;i class=&#34;fas fa-chevron-up&#34;&gt;&lt;/i&gt;
+        &lt;span&gt;折叠&lt;/span&gt;
+      &lt;/button&gt;
+      &lt;button class=&#34;copy-button&#34; title=&#34;Copy code&#34;&gt;
+        &lt;i class=&#34;fas fa-copy&#34;&gt;&lt;/i&gt;
+        &lt;span&gt;复制&lt;/span&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;custom_css&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;scss/custom.scss&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;assets/custom.scss中&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&#34;code-block-wrapper&#34;&gt;
+  &lt;div class=&#34;code-header&#34;&gt;
+    &lt;span class=&#34;language-label&#34;&gt;
+      &lt;span class=&#34;language-brackets&#34;&gt;&amp;lt;/&gt;&lt;/span&gt;  
+      &lt;span class=&#34;language-name&#34;&gt;scss&lt;/span&gt;  
+    &lt;/span&gt;
+
+    &lt;div class=&#34;code-buttons&#34;&gt;
+      &lt;button class=&#34;fold-button&#34; title=&#34;Toggle fold&#34;&gt;
+        &lt;i class=&#34;fas fa-chevron-up&#34;&gt;&lt;/i&gt;
+        &lt;span&gt;折叠&lt;/span&gt;
+      &lt;/button&gt;
+      &lt;button class=&#34;copy-button&#34; title=&#34;Copy code&#34;&gt;
+        &lt;i class=&#34;fas fa-copy&#34;&gt;&lt;/i&gt;
+        &lt;span&gt;复制&lt;/span&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-scss&#34; data-lang=&#34;scss&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// 引入主题样式
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;@import&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;general&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// 引入你的自定义覆盖
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;@import&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;custom-markdown&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;//&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;无下划线&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;无扩展名&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h4 class=&#34;relative group&#34;&gt;2. 自定义鸿蒙字体 
+    &lt;div id=&#34;2-自定义鸿蒙字体&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#2-%e8%87%aa%e5%ae%9a%e4%b9%89%e9%b8%bf%e8%92%99%e5%ad%97%e4%bd%93&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;        
+    
+&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;下载&lt;a
+  href=&#34;https://github.com/Irithys/cdn/tree/master/src/fonts?ref=irithys.com&#34;
+    target=&#34;_blank&#34;
+  &gt;鸿蒙字体&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;解压到siteproducer/assets/fonts目录&lt;/li&gt;
+&lt;li&gt;在assets/scss/中创建_fonts.scss，并在scss/custom.scss中引用&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;font.scss&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>
