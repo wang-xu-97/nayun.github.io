@@ -1,6 +1,10 @@
 <footer id="site-footer" class="py-10 print:hidden">
+  <script src="https://unpkg.com/panzoom@9.4.0/dist/panzoom.min.js"></script> 
+  <!-- <script src="https://unpkg.com/@panzoom/panzoom@4.6.0/dist/panzoom.min.js " > </script> -->
 
-  {{ $copyScript := resources.Get "js/custom.js" | minify | fingerprint }}
+  {{ $copyScript := resources.Get "js/custom_mermaid.js" | minify | fingerprint }}
+  <script src="{{ $copyScript.Permalink }}"></script>
+  {{ $copyScript := resources.Get "js/custom_code-header.js" | minify | fingerprint }}
   <script src="{{ $copyScript.Permalink }}"></script>
   {{/* Footer menu */}}
   {{ if .Site.Params.footer.showMenu | default true }}

@@ -1,0 +1,20 @@
+<div class="mermaid-zoom" id="{{ .Name | urlize }}">
+    <div class="mermaid">
+        {{ .Inner }}
+    </div>
+    
+    <div class="zoom-controls">
+        <button class="zoom-btn" 
+                onclick="zoomOut(this, event)">
+            －
+        </button>
+        <button class="zoom-btn" 
+                onclick="zoomIn(this, event)">
+            ＋
+        </button>
+        <button class="zoom-btn" 
+                onclick="resetZoom(this, event)">
+            ↺
+        </button>
+    </div>
+</div>

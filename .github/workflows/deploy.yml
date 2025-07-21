@@ -20,6 +20,7 @@ jobs:
       - name: Build
         run: |
           cd hugo-site-producer/site
+          hugo --gc
           hugo --minify
 
       - name: Deploy

@@ -34,8 +34,8 @@
     
     
     
-    <link type="text/css" rel="stylesheet" href="/nayun.github.io/css/main.bundle.min.ada1d83686dbe72340a89f2ee41de993ebdc3f2c3bf57b009b9b76cdf75938678a6f0170a720e320f64bf8cdb073570f5b219d25c13065044b31f7b09217fb89.css"
-      integrity="sha512-raHYNobb5yNAqJ8u5B3pk&#43;vcPyw79XsAm5t2zfdZOGeKbwFwpyDjIPZL&#43;M2wc1cPWyGdJcEwZQRLMfewkhf7iQ==" />
+    <link type="text/css" rel="stylesheet" href="/nayun.github.io/css/main.bundle.min.5a3fdd45efc3090245d71c453d1f127bcc742b01bf3b3e5870a2092e1608e6d18c8ca6b58cf91406c6723051884898cbed3ed0481e67faabc4e1d07f555e07ee.css"
+      integrity="sha512-Wj/dRe/DCQJF1xxFPR8Se8x0KwG/Oz5YcKIJLhYI5tGMjKa1jPkUBsZyMFGISJjL7T7QSB5n&#43;qvE4dB/VV4H7g==" />
     
     
     <script type="text/javascript" src="/nayun.github.io/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
@@ -115,7 +115,7 @@
     "keywords": ["技"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "318"
+    "wordCount": "313"
   }]
   </script>
 
@@ -130,6 +130,16 @@
 <script src="/nayun.github.io/lib/jquery/jquery.slim.min.b0dca576e87d7eaa5850ae4e61759c065786cdb6489d68fcc82240539eebd5da522bdb4fda085ffd245808c8fe2acb2516408eb774ef26b5f6015fc6737c0ea8.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj&#43;KsslFkCOt3TvJrX2AV/Gc3wOqA=="></script>
 
 
+
+  
+  
+  
+  
+  <script
+    defer
+    type="text/javascript"
+    src="/nayun.github.io/js/mermaid.bundle.9258d4044c1e2c33ffe95c12c42818a81812d9b20f0c8e283e65b8d2745854c8ca14953622c5c489499c47e5762aa352432c64c2d160ffd39056d9be5241571e.js"
+    integrity="sha512-kljUBEweLDP/6VwSxCgYqBgS2bIPDI4oPmW40nRYVMjKFJU2IsXEiUmcR&#43;V2KqNSQyxkwtFg/9OQVtm&#43;UkFXHg=="></script>
 
 
 
@@ -529,7 +539,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-07-09T14:07:34&#43;08:00">July 9, 2025</time><span class="px-2 text-primary-500">&middot;</span><span>318 字</span>
+      <time datetime="2025-07-09T14:07:34&#43;08:00">July 9, 2025</time><span class="px-2 text-primary-500">&middot;</span><span>313 字</span>
     
 
     
@@ -935,49 +945,50 @@ config配置一般是hugo原生预定义参数</li>
     </span>        
     
 </h2>
+<div class="mermaid-zoom" id="mermaid">
+    <div class="mermaid">
+        
+graph LR
+A[baseof.html] --> B[head.html]
+A --> C[header.html]
+A --> D[main content]
+A --> E[footer.html]
 
-<div class="code-block-wrapper">
-  <div class="code-header">
-    <span class="language-label">
-      <span class="language-brackets">&lt;/></span>  
-      <span class="language-name">mermaid</span>  
-    </span>
+B --> F[CSS 资源]
+B --> G[预加载资源]
+C --> H[导航栏部分]
+E --> I[JS 资源]
 
-    <div class="code-buttons">
-      <button class="fold-button" title="Toggle fold">
-        <i class="fas fa-chevron-up"></i>
-        <span>折叠</span>
-      </button>
-      <button class="copy-button" title="Copy code">
-        <i class="fas fa-copy"></i>
-        <span>复制</span>
-      </button>
+F --> F1[main.min.css]
+F --> F2[syntax.min.css]
+F --> F3[第三方字体]
+
+G --> G1[preload 字体]
+G --> G2[preload 图标]
+
+I --> I1[theme.min.js]
+I --> I2[第三方 JS]
+I1 --> I1a[暗黑模式切换]
+I1 --> I1b[移动端菜单]
+I2 --> I2a[Alpine.js]
+I2 --> I2b[HTMX]
+
     </div>
-  </div>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="n">graph</span> <span class="n">LR</span>
-</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="n">A</span><span class="p">[</span><span class="n">baseof</span><span class="o">.</span><span class="n">html</span><span class="p">]</span> <span class="o">--&gt;</span> <span class="n">B</span><span class="p">[</span><span class="n">head</span><span class="o">.</span><span class="n">html</span><span class="p">]</span>
-</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="n">A</span> <span class="o">--&gt;</span> <span class="n">C</span><span class="p">[</span><span class="n">header</span><span class="o">.</span><span class="n">html</span><span class="p">]</span>
-</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="n">A</span> <span class="o">--&gt;</span> <span class="n">D</span><span class="p">[</span><span class="n">main</span> <span class="n">content</span><span class="p">]</span>
-</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="n">A</span> <span class="o">--&gt;</span> <span class="n">E</span><span class="p">[</span><span class="n">footer</span><span class="o">.</span><span class="n">html</span><span class="p">]</span>
-</span></span><span class="line"><span class="ln"> 6</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="n">B</span> <span class="o">--&gt;</span> <span class="n">F</span><span class="p">[</span><span class="n">CSS</span> <span class="err">资源</span><span class="p">]</span>
-</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="n">B</span> <span class="o">--&gt;</span> <span class="n">G</span><span class="p">[</span><span class="err">预加载资源</span><span class="p">]</span>
-</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="n">C</span> <span class="o">--&gt;</span> <span class="n">H</span><span class="p">[</span><span class="err">导航栏部分</span><span class="p">]</span>
-</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="n">E</span> <span class="o">--&gt;</span> <span class="n">I</span><span class="p">[</span><span class="n">JS</span> <span class="err">资源</span><span class="p">]</span>
-</span></span><span class="line"><span class="ln">11</span><span class="cl">
-</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="n">F</span> <span class="o">--&gt;</span> <span class="n">F1</span><span class="p">[</span><span class="n">main</span><span class="o">.</span><span class="n">min</span><span class="o">.</span><span class="n">css</span><span class="p">]</span>
-</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="n">F</span> <span class="o">--&gt;</span> <span class="n">F2</span><span class="p">[</span><span class="n">syntax</span><span class="o">.</span><span class="n">min</span><span class="o">.</span><span class="n">css</span><span class="p">]</span>
-</span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="n">F</span> <span class="o">--&gt;</span> <span class="n">F3</span><span class="p">[</span><span class="err">第三方字体</span><span class="p">]</span>
-</span></span><span class="line"><span class="ln">15</span><span class="cl">
-</span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="n">G</span> <span class="o">--&gt;</span> <span class="n">G1</span><span class="p">[</span><span class="nb">preload</span> <span class="err">字体</span><span class="p">]</span>
-</span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="n">G</span> <span class="o">--&gt;</span> <span class="n">G2</span><span class="p">[</span><span class="nb">preload</span> <span class="err">图标</span><span class="p">]</span>
-</span></span><span class="line"><span class="ln">18</span><span class="cl">
-</span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="n">I</span> <span class="o">--&gt;</span> <span class="n">I1</span><span class="p">[</span><span class="n">theme</span><span class="o">.</span><span class="n">min</span><span class="o">.</span><span class="n">js</span><span class="p">]</span>
-</span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="n">I</span> <span class="o">--&gt;</span> <span class="n">I2</span><span class="p">[</span><span class="err">第三方</span> <span class="n">JS</span><span class="p">]</span>
-</span></span><span class="line"><span class="ln">21</span><span class="cl"><span class="n">I1</span> <span class="o">--&gt;</span> <span class="n">I1a</span><span class="p">[</span><span class="err">暗黑模式切换</span><span class="p">]</span>
-</span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="n">I1</span> <span class="o">--&gt;</span> <span class="n">I1b</span><span class="p">[</span><span class="err">移动端菜单</span><span class="p">]</span>
-</span></span><span class="line"><span class="ln">23</span><span class="cl"><span class="n">I2</span> <span class="o">--&gt;</span> <span class="n">I2a</span><span class="p">[</span><span class="n">Alpine</span><span class="o">.</span><span class="n">js</span><span class="p">]</span>
-</span></span><span class="line"><span class="ln">24</span><span class="cl"><span class="n">I2</span> <span class="o">--&gt;</span> <span class="n">I2b</span><span class="p">[</span><span class="n">HTMX</span><span class="p">]</span></span></span></code></pre></div>
+    
+    <div class="zoom-controls">
+        <button class="zoom-btn" 
+                onclick="zoomOut(this, event)">
+            －
+        </button>
+        <button class="zoom-btn" 
+                onclick="zoomIn(this, event)">
+            ＋
+        </button>
+        <button class="zoom-btn" 
+                onclick="resetZoom(this, event)">
+            ↺
+        </button>
+    </div>
 </div>
 
           
@@ -1069,9 +1080,13 @@ config配置一般是hugo原生预定义参数</li>
 </div>
 
       </main><footer id="site-footer" class="py-10 print:hidden">
+  <script src="https://unpkg.com/panzoom@9.4.0/dist/panzoom.min.js"></script> 
+  
 
   
-  <script src="http://localhost:1313/nayun.github.io/js/custom.min.9217b0aa7e71da48d0a21723ad836505bc5214329932fad0e5dff1125ee4da5b.js"></script>
+  <script src="http://localhost:1313/nayun.github.io/js/custom_mermaid.min.1da0269623e4f164ced2e3b711f6e7a5753c14239113eb8f1d5ceace3238fdd8.js"></script>
+  
+  <script src="http://localhost:1313/nayun.github.io/js/custom_code-header.min.9217b0aa7e71da48d0a21723ad836505bc5214329932fad0e5dff1125ee4da5b.js"></script>
   
   
     

@@ -1,4 +1,5 @@
 
+
 body {
   background-color: var(--bg-color) !important;
 } */
@@ -154,3 +155,6 @@ pre {
 .copy-button.hide-original > :not(.copy-tooltip) {
   opacity: 0;
 }
+
+
+@import "_custom-mermaid.css";

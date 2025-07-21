@@ -98,7 +98,7 @@ main:
 完全由主题预定义参数构成
 
 ## Blowfish调用链
-```mermaid
+{{< mermaid title="系统架构" >}}
 graph LR
 A[baseof.html] --> B[head.html]
 A --> C[header.html]
@@ -123,4 +123,4 @@ I1 --> I1a[暗黑模式切换]
 I1 --> I1b[移动端菜单]
 I2 --> I2a[Alpine.js]
 I2 --> I2b[HTMX]
-```
+{{< /mermaid >}}
