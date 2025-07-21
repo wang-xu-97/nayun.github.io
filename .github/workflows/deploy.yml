@@ -21,6 +21,7 @@ jobs:
         run: |
           cd hugo-site-producer/site
           hugo --gc
+          rm -rf public resources
           hugo --minify
 
       - name: Deploy
