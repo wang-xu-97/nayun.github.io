@@ -5,5 +5,6 @@ draft: false
 tags: ["{{ .Section }}"]
 categories: ["{{ .Section }}"]
 toc: true
+showTableOfContents: true
 ---
 

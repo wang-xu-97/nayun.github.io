@@ -5,6 +5,7 @@ draft: false
 tags: ["技"]
 categories: ["{{ .Section }}"]
 toc: true
+showTableOfContents: true
 ---
 
 {{ .Section }}
