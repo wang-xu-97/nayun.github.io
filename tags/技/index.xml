@@ -1,4 +1,123 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>技 on nayun blog</title><link>https://wang-xu-97.github.io/nayun.github.io/tags/%E6%8A%80/</link><description>Recent content in 技 on nayun blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>© 2025 nayun</copyright><lastBuildDate>Wed, 23 Jul 2025 15:01:34 +0800</lastBuildDate><atom:link href="https://wang-xu-97.github.io/nayun.github.io/tags/%E6%8A%80/index.xml" rel="self" type="application/rss+xml"/><item><title>hugo学习250723</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo%E5%AD%A6%E4%B9%A0250723/</link><pubDate>Wed, 23 Jul 2025 15:01:34 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo%E5%AD%A6%E4%B9%A0250723/</guid><description>&lt;h2 class="relative group">hugo工作流程
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>技 on nayun blog</title><link>https://wang-xu-97.github.io/nayun.github.io/tags/%E6%8A%80/</link><description>Recent content in 技 on nayun blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>© 2025 nayun</copyright><lastBuildDate>Thu, 24 Jul 2025 17:15:11 +0800</lastBuildDate><atom:link href="https://wang-xu-97.github.io/nayun.github.io/tags/%E6%8A%80/index.xml" rel="self" type="application/rss+xml"/><item><title>词云实践流程</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/%E8%AF%8D%E4%BA%91%E5%AE%9E%E8%B7%B5%E6%B5%81%E7%A8%8B/</link><pubDate>Thu, 24 Jul 2025 17:15:11 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/%E8%AF%8D%E4%BA%91%E5%AE%9E%E8%B7%B5%E6%B5%81%E7%A8%8B/</guid><description>&lt;h4 class="relative group">1. 通过deepseek生成词云&lt;code>html、js、css&lt;/code>代码
+&lt;div id="1-通过deepseek生成词云htmljscss代码" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e9%80%9a%e8%bf%87deepseek%e7%94%9f%e6%88%90%e8%af%8d%e4%ba%91htmljscss%e4%bb%a3%e7%a0%81" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h4>
+&lt;div class="code-block-wrapper">
+&lt;div class="code-header">
+&lt;span class="language-label">
+&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
+&lt;span class="language-name">prompt参考&lt;/span>
+&lt;/span>
+&lt;div class="code-buttons">
+&lt;button class="fold-button" title="Toggle fold">
+&lt;i class="fas fa-chevron-up">&lt;/i>
+&lt;span>折叠&lt;/span>
+&lt;/button>
+&lt;button class="copy-button" title="Copy code">
+&lt;i class="fas fa-copy">&lt;/i>
+&lt;span>复制&lt;/span>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">我在做hugo页面，帮我生成标签词云的代码，我会在首页index.html中导入，词云内容为tag，点击跳转对应url，每个tag样式为圆形，大小只和tag字符关联，无旋转，排序权值使用tag文章数量，权值越高越靠中间，分成html css js三个文件实现，tag在html中使用.Site.Taxonomies.tags生成
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">让词云标签贴合，至少行对齐（居中、等分对齐），有一定的对齐的美感&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;div class="code-block-wrapper">
+&lt;div class="code-header">
+&lt;span class="language-label">
+&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
+&lt;span class="language-name">生成&lt;/span>
+&lt;/span>
+&lt;div class="code-buttons">
+&lt;button class="fold-button" title="Toggle fold">
+&lt;i class="fas fa-chevron-up">&lt;/i>
+&lt;span>折叠&lt;/span>
+&lt;/button>
+&lt;button class="copy-button" title="Copy code">
+&lt;i class="fas fa-copy">&lt;/i>
+&lt;span>复制&lt;/span>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">tag-cloud.html
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">tag-cloud.css
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">tag-cloud.js&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;h4 class="relative group">2. tag-cloud绑定在baseURL/tags/url上
+&lt;div id="2-tag-cloud绑定在baseurltagsurl上" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-tag-cloud%e7%bb%91%e5%ae%9a%e5%9c%a8baseurltagsurl%e4%b8%8a" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h4>
+&lt;p>原理：&lt;/p>
+&lt;div class="code-block-wrapper">
+&lt;div class="code-header">
+&lt;span class="language-label">
+&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
+&lt;span class="language-name">路由机制&lt;/span>
+&lt;/span>
+&lt;div class="code-buttons">
+&lt;button class="fold-button" title="Toggle fold">
+&lt;i class="fas fa-chevron-up">&lt;/i>
+&lt;span>折叠&lt;/span>
+&lt;/button>
+&lt;button class="copy-button" title="Copy code">
+&lt;i class="fas fa-copy">&lt;/i>
+&lt;span>复制&lt;/span>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">Hugo 会自动将 layouts/taxonomy/tag.terms.html 映射到 /tags/ URL
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">这是 Hugo 分类系统（Taxonomy）的标准行为&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>流程：&lt;/p>
+&lt;h5 class="relative group">- 1. 创建layouts/taxonomy/tag.terms.html
+&lt;div id="--1-创建layoutstaxonomytagtermshtml" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#--1-%e5%88%9b%e5%bb%balayoutstaxonomytagtermshtml" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h5>
+&lt;h5 class="relative group">- 2. 在tag.terms.html中直接调用tag-cloud.html
+&lt;div id="--2-在tagtermshtml中直接调用tag-cloudhtml" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#--2-%e5%9c%a8tagtermshtml%e4%b8%ad%e7%9b%b4%e6%8e%a5%e8%b0%83%e7%94%a8tag-cloudhtml" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h5>
+&lt;div class="code-block-wrapper">
+&lt;div class="code-header">
+&lt;span class="language-label">
+&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
+&lt;span class="language-name">tag.terms.html&lt;/span>
+&lt;/span>
+&lt;div class="code-buttons">
+&lt;button class="fold-button" title="Toggle fold">
+&lt;i class="fas fa-chevron-up">&lt;/i>
+&lt;span>折叠&lt;/span>
+&lt;/button>
+&lt;button class="copy-button" title="Copy code">
+&lt;i class="fas fa-copy">&lt;/i>
+&lt;span>复制&lt;/span>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-tag.terms.html" data-lang="tag.terms.html">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">{{ define &amp;#34;main&amp;#34; }}
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">{{ partial &amp;#34;tag-cloud.html&amp;#34; . }}
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">{{ end }}&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;h5 class="relative group">- 3. 导入css、js文件
+&lt;div id="--3-导入cssjs文件" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#--3-%e5%af%bc%e5%85%a5cssjs%e6%96%87%e4%bb%b6" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h5>
+&lt;p>为了方便，直接在tag-cloud.html中嵌入了css、js的导入（缺点，页面会动态加载js）&lt;/p></description></item><item><title>hugo学习250723</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo%E5%AD%A6%E4%B9%A0250723/</link><pubDate>Wed, 23 Jul 2025 15:01:34 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo%E5%AD%A6%E4%B9%A0250723/</guid><description>&lt;h2 class="relative group">hugo工作流程
 &lt;div id="hugo工作流程" class="anchor">&lt;/div>
 &lt;span
 class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
