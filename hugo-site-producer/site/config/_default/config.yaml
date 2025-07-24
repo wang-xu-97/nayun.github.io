@@ -17,3 +17,7 @@ markup:
     lineNumbersInTable: false  # 重要！使用 span 而非表格
     # style: "monokai"    # 可选，选择喜欢的配色方案
     noClasses: false # 必须关闭，否则丢失语言类名 
+
+  tableOfContents:
+    startLevel: 1
+    endLevel: 6

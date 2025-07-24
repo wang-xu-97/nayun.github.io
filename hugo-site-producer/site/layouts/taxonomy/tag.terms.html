@@ -1,0 +1,24 @@
+{{ define "main" }}
+<div class="tag-cloud-page">
+  <header class="page-header">
+    <h1 class="page-title">
+      <i class="icon-cloud"></i> 标签云
+    </h1>
+  </header>
+ 
+  <!-- 引入标签云组件 -->
+  {{ partial "tag-cloud.html"  . }}
+  
+  <!-- 补充内容 -->
+  <div class="related-content">
+    <div class="buttons">
+      <a href="{{ "tech" | relURL }}" class="btn">
+        <i class="icon-list"></i> 文章列表 
+      </a>
+      <a href="{{ "categories" | relURL }}" class="btn">
+        <i class="icon-folder"></i> 分类目录
+      </a>
+    </div>
+  </div>
+</div>
+{{ end }}

@@ -43,6 +43,13 @@
     </div>
   {{ end }}
   
+  {{ $css1 := resources.Get "css/TagCloudbtn.css" }}
+  <link type="text/css" rel="stylesheet" href="{{ $css1.RelPermalink }}">
+  {{ with .Site.GetPage "tags/" }}
+  <a href="{{ .RelPermalink }}" class="go-tag-cloud-button">Tag Cloud</a>
+  {{ end }}
+
+
   <section class="prose dark:prose-invert">{{ .Content }}</section>
 </article>
 <section>
