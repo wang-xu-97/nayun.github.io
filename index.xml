@@ -1,4 +1,59 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>nayun blog</title><link>https://wang-xu-97.github.io/nayun.github.io/</link><description>Recent content on nayun blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>© 2025 nayun</copyright><lastBuildDate>Mon, 14 Jul 2025 15:39:03 +0800</lastBuildDate><atom:link href="https://wang-xu-97.github.io/nayun.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>用户态、内核态内存空间</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/backend/linux/%E7%94%A8%E6%88%B7%E6%80%81%E5%86%85%E6%A0%B8%E6%80%81%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4/</link><pubDate>Mon, 14 Jul 2025 15:39:03 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/backend/linux/%E7%94%A8%E6%88%B7%E6%80%81%E5%86%85%E6%A0%B8%E6%80%81%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4/</guid><description>&lt;p>用户态、内核态指内存空间，CPU的各寄存器则是CPU硬件，不属于内存部分，仅在需要存档备份数据时保存至（用户态/内核态）内存&lt;br>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>nayun blog</title><link>https://wang-xu-97.github.io/nayun.github.io/</link><description>Recent content on nayun blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>© 2025 nayun</copyright><lastBuildDate>Wed, 23 Jul 2025 15:01:34 +0800</lastBuildDate><atom:link href="https://wang-xu-97.github.io/nayun.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>hugo学习250723</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo%E5%AD%A6%E4%B9%A0250723/</link><pubDate>Wed, 23 Jul 2025 15:01:34 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo%E5%AD%A6%E4%B9%A0250723/</guid><description>&lt;h2 class="relative group">hugo工作流程
+&lt;div id="hugo工作流程" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#hugo%e5%b7%a5%e4%bd%9c%e6%b5%81%e7%a8%8b" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h2>
+&lt;ol>
+&lt;li>url route -&amp;gt; 确定页面类型&lt;/li>
+&lt;/ol>
+&lt;h3 class="relative group">hugo页面类型推断
+&lt;div id="hugo页面类型推断" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#hugo%e9%a1%b5%e9%9d%a2%e7%b1%bb%e5%9e%8b%e6%8e%a8%e6%96%ad" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h3>
+&lt;h4 class="relative group">(1) 文件系统结构
+&lt;div id="1-文件系统结构" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e6%96%87%e4%bb%b6%e7%b3%bb%e7%bb%9f%e7%bb%93%e6%9e%84" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h4>
+&lt;p>Hugo 会扫描 content/ 目录下的内容文件（如 .md 或 .html），根据文件的位置和命名规则自动推断页面类型：&lt;/p>
+&lt;div class="code-block-wrapper">
+&lt;div class="code-header">
+&lt;span class="language-label">
+&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
+&lt;span class="language-name">text&lt;/span>
+&lt;/span>
+&lt;div class="code-buttons">
+&lt;button class="fold-button" title="Toggle fold">
+&lt;i class="fas fa-chevron-up">&lt;/i>
+&lt;span>折叠&lt;/span>
+&lt;/button>
+&lt;button class="copy-button" title="Copy code">
+&lt;i class="fas fa-copy">&lt;/i>
+&lt;span>复制&lt;/span>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">_index.md → 列表页（kind: &amp;#34;section&amp;#34; 或 kind: &amp;#34;home&amp;#34;）
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">普通内容文件（如 post.md） → 单页（kind: &amp;#34;page&amp;#34; 或 kind: &amp;#34;single&amp;#34;）
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl">分类/标签页 → 分类列表（kind: &amp;#34;taxonomy&amp;#34; 或 kind: &amp;#34;term&amp;#34;）&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;h4 class="relative group">(2) 页面 Front Matter
+&lt;div id="2-页面-front-matter" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e9%a1%b5%e9%9d%a2-front-matter" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h4>
+&lt;p>通过 Front Matter 中的 type 或 layout 字段可手动指定类型（覆盖自动推断）：&lt;/p></description></item><item><title>用户态、内核态内存空间</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/backend/linux/%E7%94%A8%E6%88%B7%E6%80%81%E5%86%85%E6%A0%B8%E6%80%81%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4/</link><pubDate>Mon, 14 Jul 2025 15:39:03 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/backend/linux/%E7%94%A8%E6%88%B7%E6%80%81%E5%86%85%E6%A0%B8%E6%80%81%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4/</guid><description>&lt;p>用户态、内核态指内存空间，CPU的各寄存器则是CPU硬件，不属于内存部分，仅在需要存档备份数据时保存至（用户态/内核态）内存&lt;br>
 1、 进程内核栈&lt;br>
 每个进程都有自己独立的位于内核空间的内核栈，保存进程在内核态执行的函数调用栈、局部变量、寄存器状态等数据&lt;/p>
 &lt;p>linux系统切换进程时会切换&lt;/p>
