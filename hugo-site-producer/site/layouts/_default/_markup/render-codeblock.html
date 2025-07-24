@@ -1,4 +1,4 @@
-{{ $lang := .Type | lower }}
+{{ $lang := .Type | default "text" | lower }}
 <div class="code-block-wrapper">
   <div class="code-header">
     <span class="language-label">

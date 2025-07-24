@@ -3,42 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>http://localhost:1313/nayun.github.io/en/</loc>
+    <loc>http://localhost:43997/nayun.github.io/en/</loc>
     <xhtml:link
       rel="alternate"
       hreflang="zh-cn"
-      href="http://localhost:1313/nayun.github.io/"
+      href="http://localhost:43997/nayun.github.io/"
     />
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="http://localhost:1313/nayun.github.io/en/"
+      href="http://localhost:43997/nayun.github.io/en/"
     />
   </url>
   <url>
-    <loc>http://localhost:1313/nayun.github.io/en/categories/</loc>
+    <loc>http://localhost:43997/nayun.github.io/en/categories/</loc>
     <xhtml:link
       rel="alternate"
       hreflang="zh-cn"
-      href="http://localhost:1313/nayun.github.io/categories/"
+      href="http://localhost:43997/nayun.github.io/categories/"
     />
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="http://localhost:1313/nayun.github.io/en/categories/"
+      href="http://localhost:43997/nayun.github.io/en/categories/"
     />
   </url>
   <url>
-    <loc>http://localhost:1313/nayun.github.io/en/tags/</loc>
+    <loc>http://localhost:43997/nayun.github.io/en/tags/</loc>
     <xhtml:link
       rel="alternate"
       hreflang="zh-cn"
-      href="http://localhost:1313/nayun.github.io/tags/"
+      href="http://localhost:43997/nayun.github.io/tags/"
     />
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="http://localhost:1313/nayun.github.io/en/tags/"
+      href="http://localhost:43997/nayun.github.io/en/tags/"
     />
   </url>
 </urlset>

@@ -1,3 +1,3 @@
 hugo --gc
 rm -rf public resources
-hugo server
+hugo server -p 43997

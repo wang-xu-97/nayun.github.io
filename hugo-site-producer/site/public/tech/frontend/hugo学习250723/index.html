@@ -14,14 +14,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     
-    <title>Outline &middot; nayun blog</title>
-    <meta name="title" content="Outline &middot; nayun blog" />
+    <title>hugo学习250723 &middot; nayun blog</title>
+    <meta name="title" content="hugo学习250723 &middot; nayun blog" />
     
     
-    <meta name="keywords" content="技, 大纲, " />
+    <meta name="keywords" content="技, " />
     
     
-    <link rel="canonical" href="http://localhost:43997/nayun.github.io/tech/outline/" />
+    <link rel="canonical" href="http://localhost:43997/nayun.github.io/tech/frontend/hugo%E5%AD%A6%E4%B9%A0250723/" />
     
     
     
@@ -72,72 +72,23 @@
     
     
     
-    <meta property="og:url" content="http://localhost:43997/nayun.github.io/tech/outline/">
+    <meta property="og:url" content="http://localhost:43997/nayun.github.io/tech/frontend/hugo%E5%AD%A6%E4%B9%A0250723/">
   <meta property="og:site_name" content="nayun blog">
-  <meta property="og:title" content="Outline">
-  <meta property="og:description" content="通用编程思想 # 1
-闭包 # 1
-多态 # 1
-1
-1
-1
-1
-1
-1
-1
-前端 # hugo # 后端 # Linux理解 # 用户态、内核态内存空间 # 1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1">
+  <meta property="og:title" content="hugo学习250723">
+  <meta property="og:description" content="hugo工作流程 # url route -&gt; 确定页面类型 hugo页面类型推断 # (1) 文件系统结构 # Hugo 会扫描 content/ 目录下的内容文件（如 .md 或 .html），根据文件的位置和命名规则自动推断页面类型：
+&lt;/&gt; text 折叠 复制 1_index.md → 列表页（kind: &#34;section&#34; 或 kind: &#34;home&#34;） 2 3普通内容文件（如 post.md） → 单页（kind: &#34;page&#34; 或 kind: &#34;single&#34;） 4 5分类/标签页 → 分类列表（kind: &#34;taxonomy&#34; 或 kind: &#34;term&#34;） (2) 页面 Front Matter # 通过 Front Matter 中的 type 或 layout 字段可手动指定类型（覆盖自动推断）：">
   <meta property="og:locale" content="zh_cn">
   <meta property="og:type" content="article">
     <meta property="article:section" content="tech">
-    <meta property="article:published_time" content="2025-07-14T11:20:25+08:00">
-    <meta property="article:modified_time" content="2025-07-14T11:20:25+08:00">
+    <meta property="article:published_time" content="2025-07-23T15:01:34+08:00">
+    <meta property="article:modified_time" content="2025-07-23T15:01:34+08:00">
     <meta property="article:tag" content="技">
-    <meta property="article:tag" content="大纲">
 
     
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Outline">
-  <meta name="twitter:description" content="通用编程思想 # 1
-闭包 # 1
-多态 # 1
-1
-1
-1
-1
-1
-1
-1
-前端 # hugo # 后端 # Linux理解 # 用户态、内核态内存空间 # 1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1">
+  <meta name="twitter:title" content="hugo学习250723">
+  <meta name="twitter:description" content="hugo工作流程 # url route -&gt; 确定页面类型 hugo页面类型推断 # (1) 文件系统结构 # Hugo 会扫描 content/ 目录下的内容文件（如 .md 或 .html），根据文件的位置和命名规则自动推断页面类型：
+&lt;/&gt; text 折叠 复制 1_index.md → 列表页（kind: &#34;section&#34; 或 kind: &#34;home&#34;） 2 3普通内容文件（如 post.md） → 单页（kind: &#34;page&#34; 或 kind: &#34;single&#34;） 4 5分类/标签页 → 分类列表（kind: &#34;taxonomy&#34; 或 kind: &#34;term&#34;） (2) 页面 Front Matter # 通过 Front Matter 中的 type 或 layout 字段可手动指定类型（覆盖自动推断）：">
 
       
     
@@ -147,26 +98,26 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Teches",
-    "name": "Outline",
-    "headline": "Outline",
+    "name": "hugo学习250723",
+    "headline": "hugo学习250723",
     
-    "abstract": "\u003ch2 class=\u0022relative group\u0022\u003e通用编程思想 \n    \u003cdiv id=\u0022通用编程思想\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e9%80%9a%e7%94%a8%e7%bc%96%e7%a8%8b%e6%80%9d%e6%83%b3\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\u003cp\u003e1\u003c\/p\u003e\n\n\u003ch3 class=\u0022relative group\u0022\u003e闭包 \n    \u003cdiv id=\u0022闭包\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e9%97%ad%e5%8c%85\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h3\u003e\n\u003cp\u003e1\u003c\/p\u003e\n\n\u003ch3 class=\u0022relative group\u0022\u003e多态 \n    \u003cdiv id=\u0022多态\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e5%a4%9a%e6%80%81\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h3\u003e\n\u003cp\u003e1\u003cbr\u003e\n1\u003cbr\u003e\n1\u003cbr\u003e\n1\u003cbr\u003e\n1\u003cbr\u003e\n1\u003cbr\u003e\n1\u003cbr\u003e\n1\u003c\/p\u003e\n\n\u003ch2 class=\u0022relative group\u0022\u003e前端 \n    \u003cdiv id=\u0022前端\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e5%89%8d%e7%ab%af\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\n\u003ch3 class=\u0022relative group\u0022\u003ehugo \n    \u003cdiv id=\u0022hugo\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#hugo\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h3\u003e\n\n\u003ch2 class=\u0022relative group\u0022\u003e后端 \n    \u003cdiv id=\u0022后端\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e5%90%8e%e7%ab%af\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\n\u003ch3 class=\u0022relative group\u0022\u003eLinux理解 \n    \u003cdiv id=\u0022linux理解\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#linux%e7%90%86%e8%a7%a3\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h3\u003e\n\n\u003ch4 class=\u0022relative group\u0022\u003e用户态、内核态内存空间 \n    \u003cdiv id=\u0022用户态内核态内存空间\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e7%94%a8%e6%88%b7%e6%80%81%e5%86%85%e6%a0%b8%e6%80%81%e5%86%85%e5%ad%98%e7%a9%ba%e9%97%b4\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h4\u003e\n\u003cp\u003e1\u003cbr\u003e\n1\u003cbr\u003e\n1\u003cbr\u003e\n1\u003cbr\u003e\n1\u003cbr\u003e\n1\u003cbr\u003e\n1\u003cbr\u003e\n1\u003cbr\u003e\n1\u003cbr\u003e\n1\u003cbr\u003e\n1\u003cbr\u003e\n1\u003cbr\u003e\n1\u003cbr\u003e\n1\u003cbr\u003e\n1\u003cbr\u003e\n1\u003c\/p\u003e",
+    "abstract": "\u003ch2 class=\u0022relative group\u0022\u003ehugo工作流程 \n    \u003cdiv id=\u0022hugo工作流程\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#hugo%e5%b7%a5%e4%bd%9c%e6%b5%81%e7%a8%8b\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\u003col\u003e\n\u003cli\u003eurl route -\u0026gt; 确定页面类型\u003c\/li\u003e\n\u003c\/ol\u003e\n\n\u003ch3 class=\u0022relative group\u0022\u003ehugo页面类型推断 \n    \u003cdiv id=\u0022hugo页面类型推断\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#hugo%e9%a1%b5%e9%9d%a2%e7%b1%bb%e5%9e%8b%e6%8e%a8%e6%96%ad\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h3\u003e\n\n\u003ch4 class=\u0022relative group\u0022\u003e(1) 文件系统结构 \n    \u003cdiv id=\u00221-文件系统结构\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#1-%e6%96%87%e4%bb%b6%e7%b3%bb%e7%bb%9f%e7%bb%93%e6%9e%84\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h4\u003e\n\u003cp\u003eHugo 会扫描 content\/ 目录下的内容文件（如 .md 或 .html），根据文件的位置和命名规则自动推断页面类型：\u003c\/p\u003e\n\n\u003cdiv class=\u0022code-block-wrapper\u0022\u003e\n  \u003cdiv class=\u0022code-header\u0022\u003e\n    \u003cspan class=\u0022language-label\u0022\u003e\n      \u003cspan class=\u0022language-brackets\u0022\u003e\u0026lt;\/\u003e\u003c\/span\u003e  \n      \u003cspan class=\u0022language-name\u0022\u003etext\u003c\/span\u003e  \n    \u003c\/span\u003e\n\n    \u003cdiv class=\u0022code-buttons\u0022\u003e\n      \u003cbutton class=\u0022fold-button\u0022 title=\u0022Toggle fold\u0022\u003e\n        \u003ci class=\u0022fas fa-chevron-up\u0022\u003e\u003c\/i\u003e\n        \u003cspan\u003e折叠\u003c\/span\u003e\n      \u003c\/button\u003e\n      \u003cbutton class=\u0022copy-button\u0022 title=\u0022Copy code\u0022\u003e\n        \u003ci class=\u0022fas fa-copy\u0022\u003e\u003c\/i\u003e\n        \u003cspan\u003e复制\u003c\/span\u003e\n      \u003c\/button\u003e\n    \u003c\/div\u003e\n  \u003c\/div\u003e\n  \u003cdiv class=\u0022highlight\u0022\u003e\u003cpre tabindex=\u00220\u0022 class=\u0022chroma\u0022\u003e\u003ccode class=\u0022language-text\u0022 data-lang=\u0022text\u0022\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e1\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e_index.md → 列表页（kind: \u0026#34;section\u0026#34; 或 kind: \u0026#34;home\u0026#34;）\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e2\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e3\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e普通内容文件（如 post.md） → 单页（kind: \u0026#34;page\u0026#34; 或 kind: \u0026#34;single\u0026#34;）\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e4\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e5\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e分类\/标签页 → 分类列表（kind: \u0026#34;taxonomy\u0026#34; 或 kind: \u0026#34;term\u0026#34;）\u003c\/span\u003e\u003c\/span\u003e\u003c\/code\u003e\u003c\/pre\u003e\u003c\/div\u003e\n\u003c\/div\u003e\n\n\u003ch4 class=\u0022relative group\u0022\u003e(2) 页面 Front Matter \n    \u003cdiv id=\u00222-页面-front-matter\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#2-%e9%a1%b5%e9%9d%a2-front-matter\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h4\u003e\n\u003cp\u003e通过 Front Matter 中的 type 或 layout 字段可手动指定类型（覆盖自动推断）：\u003c\/p\u003e",
     "inLanguage": "zh-cn",
-    "url" : "http:\/\/localhost:43997\/nayun.github.io\/tech\/outline\/",
+    "url" : "http:\/\/localhost:43997\/nayun.github.io\/tech\/frontend\/hugo%E5%AD%A6%E4%B9%A0250723\/",
     "author" : {
       "@type": "Person",
       "name": "nayun"
     },
     "copyrightYear": "2025",
-    "dateCreated": "2025-07-14T11:20:25\u002b08:00",
-    "datePublished": "2025-07-14T11:20:25\u002b08:00",
+    "dateCreated": "2025-07-23T15:01:34\u002b08:00",
+    "datePublished": "2025-07-23T15:01:34\u002b08:00",
     
-    "dateModified": "2025-07-14T11:20:25\u002b08:00",
+    "dateModified": "2025-07-23T15:01:34\u002b08:00",
     
-    "keywords": ["技","大纲"],
+    "keywords": ["技"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "76"
+    "wordCount": "73"
   }]
   </script>
 
@@ -529,7 +480,7 @@
     <header id="single_header" class="mt-5 max-w-prose">
       
       <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-        Outline
+        hugo学习250723
       </h1>
       <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
         
@@ -565,8 +516,6 @@
   
 
   
-    
-  
 
   
 
@@ -582,7 +531,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-07-14T11:20:25&#43;08:00">July 14, 2025</time><span class="px-2 text-primary-500">&middot;</span><span>76 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">1 分钟</span>
+      <time datetime="2025-07-23T15:01:34&#43;08:00">July 23, 2025</time><span class="px-2 text-primary-500">&middot;</span><span>73 字</span>
     
 
     
@@ -595,6 +544,20 @@
   
 
   
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        <span class="mr-2 margin-top-[0.5rem]" onclick="window.open(&#34;/nayun.github.io/categories/tech/&#34;,'_self');return false;">
+          <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Tech
+  </span>
+</span>
+
+        </span>
+      
+    </div>
   
 
 
@@ -642,27 +605,9 @@
     class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#通用编程思想">通用编程思想</a>
+    <li><a href="#hugo工作流程">hugo工作流程</a>
       <ul>
-        <li><a href="#闭包">闭包</a></li>
-        <li><a href="#多态">多态</a></li>
-      </ul>
-    </li>
-    <li><a href="#前端">前端</a>
-      <ul>
-        <li><a href="#hugo">hugo</a></li>
-      </ul>
-    </li>
-    <li><a href="#后端">后端</a>
-      <ul>
-        <li><a href="#linux理解">Linux理解</a></li>
-      </ul>
-    </li>
-    <li><a href="#程序语言">程序语言</a>
-      <ul>
-        <li><a href="#主要">主要</a></li>
-        <li><a href="#次要">次要</a></li>
-        <li><a href="#配置">配置</a></li>
+        <li><a href="#hugo页面类型推断">hugo页面类型推断</a></li>
       </ul>
     </li>
   </ul>
@@ -678,27 +623,9 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#通用编程思想">通用编程思想</a>
+    <li><a href="#hugo工作流程">hugo工作流程</a>
       <ul>
-        <li><a href="#闭包">闭包</a></li>
-        <li><a href="#多态">多态</a></li>
-      </ul>
-    </li>
-    <li><a href="#前端">前端</a>
-      <ul>
-        <li><a href="#hugo">hugo</a></li>
-      </ul>
-    </li>
-    <li><a href="#后端">后端</a>
-      <ul>
-        <li><a href="#linux理解">Linux理解</a></li>
-      </ul>
-    </li>
-    <li><a href="#程序语言">程序语言</a>
-      <ul>
-        <li><a href="#主要">主要</a></li>
-        <li><a href="#次要">次要</a></li>
-        <li><a href="#配置">配置</a></li>
+        <li><a href="#hugo页面类型推断">hugo页面类型推断</a></li>
       </ul>
     </li>
   </ul>
@@ -804,225 +731,97 @@
 
         <div class="article-content max-w-prose mb-20">
           
-<h2 class="relative group">通用编程思想 
-    <div id="通用编程思想" class="anchor"></div>
+<h2 class="relative group">hugo工作流程 
+    <div id="hugo工作流程" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e9%80%9a%e7%94%a8%e7%bc%96%e7%a8%8b%e6%80%9d%e6%83%b3" aria-label="锚点">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#hugo%e5%b7%a5%e4%bd%9c%e6%b5%81%e7%a8%8b" aria-label="锚点">#</a>
     </span>        
     
 </h2>
-<p>1</p>
+<ol>
+<li>url route -&gt; 确定页面类型</li>
+</ol>
 
-<h3 class="relative group">闭包 
-    <div id="闭包" class="anchor"></div>
+<h3 class="relative group">hugo页面类型推断 
+    <div id="hugo页面类型推断" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e9%97%ad%e5%8c%85" aria-label="锚点">#</a>
-    </span>        
-    
-</h3>
-<p>1</p>
-
-<h3 class="relative group">多态 
-    <div id="多态" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%a4%9a%e6%80%81" aria-label="锚点">#</a>
-    </span>        
-    
-</h3>
-<p>1<br>
-1<br>
-1<br>
-1<br>
-1<br>
-1<br>
-1<br>
-1</p>
-
-<h2 class="relative group">前端 
-    <div id="前端" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%89%8d%e7%ab%af" aria-label="锚点">#</a>
-    </span>        
-    
-</h2>
-
-<h3 class="relative group">hugo 
-    <div id="hugo" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#hugo" aria-label="锚点">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#hugo%e9%a1%b5%e9%9d%a2%e7%b1%bb%e5%9e%8b%e6%8e%a8%e6%96%ad" aria-label="锚点">#</a>
     </span>        
     
 </h3>
 
-<h2 class="relative group">后端 
-    <div id="后端" class="anchor"></div>
+<h4 class="relative group">(1) 文件系统结构 
+    <div id="1-文件系统结构" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%90%8e%e7%ab%af" aria-label="锚点">#</a>
-    </span>        
-    
-</h2>
-
-<h3 class="relative group">Linux理解 
-    <div id="linux理解" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#linux%e7%90%86%e8%a7%a3" aria-label="锚点">#</a>
-    </span>        
-    
-</h3>
-
-<h4 class="relative group">用户态、内核态内存空间 
-    <div id="用户态内核态内存空间" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%94%a8%e6%88%b7%e6%80%81%e5%86%85%e6%a0%b8%e6%80%81%e5%86%85%e5%ad%98%e7%a9%ba%e9%97%b4" aria-label="锚点">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e6%96%87%e4%bb%b6%e7%b3%bb%e7%bb%9f%e7%bb%93%e6%9e%84" aria-label="锚点">#</a>
     </span>        
     
 </h4>
-<p>1<br>
-1<br>
-1<br>
-1<br>
-1<br>
-1<br>
-1<br>
-1<br>
-1<br>
-1<br>
-1<br>
-1<br>
-1<br>
-1<br>
-1<br>
-1</p>
+<p>Hugo 会扫描 content/ 目录下的内容文件（如 .md 或 .html），根据文件的位置和命名规则自动推断页面类型：</p>
 
-<h2 class="relative group">程序语言 
-    <div id="程序语言" class="anchor"></div>
+<div class="code-block-wrapper">
+  <div class="code-header">
+    <span class="language-label">
+      <span class="language-brackets">&lt;/></span>  
+      <span class="language-name">text</span>  
+    </span>
+
+    <div class="code-buttons">
+      <button class="fold-button" title="Toggle fold">
+        <i class="fas fa-chevron-up"></i>
+        <span>折叠</span>
+      </button>
+      <button class="copy-button" title="Copy code">
+        <i class="fas fa-copy"></i>
+        <span>复制</span>
+      </button>
+    </div>
+  </div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="ln">1</span><span class="cl">_index.md → 列表页（kind: &#34;section&#34; 或 kind: &#34;home&#34;）
+</span></span><span class="line"><span class="ln">2</span><span class="cl">
+</span></span><span class="line"><span class="ln">3</span><span class="cl">普通内容文件（如 post.md） → 单页（kind: &#34;page&#34; 或 kind: &#34;single&#34;）
+</span></span><span class="line"><span class="ln">4</span><span class="cl">
+</span></span><span class="line"><span class="ln">5</span><span class="cl">分类/标签页 → 分类列表（kind: &#34;taxonomy&#34; 或 kind: &#34;term&#34;）</span></span></code></pre></div>
+</div>
+
+<h4 class="relative group">(2) 页面 Front Matter 
+    <div id="2-页面-front-matter" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%a8%8b%e5%ba%8f%e8%af%ad%e8%a8%80" aria-label="锚点">#</a>
-    </span>        
-    
-</h2>
-<p>1<br>
-1<br>
-1<br>
-1</p>
-
-<h3 class="relative group">主要 
-    <div id="主要" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e4%b8%bb%e8%a6%81" aria-label="锚点">#</a>
-    </span>        
-    
-</h3>
-
-<h4 class="relative group">python 
-    <div id="python" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#python" aria-label="锚点">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e9%a1%b5%e9%9d%a2-front-matter" aria-label="锚点">#</a>
     </span>        
     
 </h4>
+<p>通过 Front Matter 中的 type 或 layout 字段可手动指定类型（覆盖自动推断）：</p>
 
-<h4 class="relative group">C++ 
-    <div id="c" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#c" aria-label="锚点">#</a>
-    </span>        
-    
-</h4>
+<div class="code-block-wrapper">
+  <div class="code-header">
+    <span class="language-label">
+      <span class="language-brackets">&lt;/></span>  
+      <span class="language-name">yaml</span>  
+    </span>
 
-<h4 class="relative group">golang 
-    <div id="golang" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#golang" aria-label="锚点">#</a>
-    </span>        
-    
-</h4>
-<p>1<br>
-1<br>
-1<br>
-1</p>
-
-<h3 class="relative group">次要 
-    <div id="次要" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%ac%a1%e8%a6%81" aria-label="锚点">#</a>
-    </span>        
-    
-</h3>
-
-<h4 class="relative group">shell 
-    <div id="shell" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#shell" aria-label="锚点">#</a>
-    </span>        
-    
-</h4>
-
-<h4 class="relative group">html/js/css 
-    <div id="htmljscss" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#htmljscss" aria-label="锚点">#</a>
-    </span>        
-    
-</h4>
-<p>1<br>
-1<br>
-1<br>
-1<br>
-1<br>
-1</p>
-
-<h3 class="relative group">配置 
-    <div id="配置" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e9%85%8d%e7%bd%ae" aria-label="锚点">#</a>
-    </span>        
-    
-</h3>
-
-<h4 class="relative group">yaml/toml/xml/ini 
-    <div id="yamltomlxmlini" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#yamltomlxmlini" aria-label="锚点">#</a>
-    </span>        
-    
-</h4>
+    <div class="code-buttons">
+      <button class="fold-button" title="Toggle fold">
+        <i class="fas fa-chevron-up"></i>
+        <span>折叠</span>
+      </button>
+      <button class="copy-button" title="Copy code">
+        <i class="fas fa-copy"></i>
+        <span>复制</span>
+      </button>
+    </div>
+  </div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="ln">1</span><span class="cl"><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;posts&#34;</span><span class="w">  </span><span class="c"># 强制指定为 posts 类型的单页</span><span class="w">
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="w"></span><span class="nt">layout</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;custom-list&#34;</span><span class="w">  </span><span class="c"># 使用自定义模板</span></span></span></code></pre></div>
+</div>
 
           
           
@@ -1052,13 +851,49 @@
           type="text/javascript"
           src="/nayun.github.io/js/page.min.407e5b2727c1f241c95d53db24c776bea71bfc18e09511b815d669ad8caca6e9e18a53864ad364b1ccccfa2f2956768d33cfe193bfb64d3406f3b5ece354ba57.js"
           integrity="sha512-QH5bJyfB8kHJXVPbJMd2vqcb/BjglRG4FdZprYyspunhilOGStNksczM&#43;i8pVnaNM8/hk7&#43;2TTQG87Xs41S6Vw=="
-          data-oid="views_tech/outline.md"
-          data-oid-likes="likes_tech/outline.md"></script>
+          data-oid="views_tech/FrontEnd/hugo学习250723.md"
+          data-oid-likes="likes_tech/FrontEnd/hugo学习250723.md"></script>
       
 
     </section>
     <footer class="pt-8 max-w-prose print:hidden">
       
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600">
+      <div class="flex justify-between pt-3">
+        <span>
+          
+            <a class="flex group mr-3" href="/nayun.github.io/tech/frontend/hugo%E7%90%86%E8%A7%A3/">
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span class="flex flex-col">
+                <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >Hugo理解</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2025-07-09T14:07:34&#43;08:00">July 9, 2025</time>
+                  
+                </span>
+              </span>
+            </a>
+          
+        </span>
+        <span>
+          
+        </span>
+      </div>
+    </div>
   
 
 

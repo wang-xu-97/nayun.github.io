@@ -4,7 +4,7 @@
   dir="ltr"
   class="scroll-smooth"
   data-default-appearance="light"
-  data-auto-appearance="true"><head><script src="/nayun.github.io/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=nayun.github.io/livereload" data-no-instant defer></script>
+  data-auto-appearance="true"><head><script src="/nayun.github.io/livereload.js?mindelay=10&amp;v=2&amp;port=43997&amp;path=nayun.github.io/livereload" data-no-instant defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <meta charset="utf-8" />
@@ -21,7 +21,7 @@
     <meta name="keywords" content="技, " />
     
     
-    <link rel="canonical" href="http://localhost:1313/nayun.github.io/tech/backend/linux/%E7%94%A8%E6%88%B7%E6%80%81%E5%86%85%E6%A0%B8%E6%80%81%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4/" />
+    <link rel="canonical" href="http://localhost:43997/nayun.github.io/tech/backend/linux/%E7%94%A8%E6%88%B7%E6%80%81%E5%86%85%E6%A0%B8%E6%80%81%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4/" />
     
     
     
@@ -72,7 +72,7 @@
     
     
     
-    <meta property="og:url" content="http://localhost:1313/nayun.github.io/tech/backend/linux/%E7%94%A8%E6%88%B7%E6%80%81%E5%86%85%E6%A0%B8%E6%80%81%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4/">
+    <meta property="og:url" content="http://localhost:43997/nayun.github.io/tech/backend/linux/%E7%94%A8%E6%88%B7%E6%80%81%E5%86%85%E6%A0%B8%E6%80%81%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4/">
   <meta property="og:site_name" content="nayun blog">
   <meta property="og:title" content="用户态、内核态内存空间">
   <meta property="og:description" content="用户态、内核态指内存空间，CPU的各寄存器则是CPU硬件，不属于内存部分，仅在需要存档备份数据时保存至（用户态/内核态）内存
@@ -143,7 +143,7 @@ netlink属于无连接协议（无连接协议是一种通信协议，其中每�
     
     "abstract": "\u003cp\u003e用户态、内核态指内存空间，CPU的各寄存器则是CPU硬件，不属于内存部分，仅在需要存档备份数据时保存至（用户态\/内核态）内存\u003cbr\u003e\n1、 进程内核栈\u003cbr\u003e\n每个进程都有自己独立的位于内核空间的内核栈，保存进程在内核态执行的函数调用栈、局部变量、寄存器状态等数据\u003c\/p\u003e\n\u003cp\u003elinux系统切换进程时会切换\u003c\/p\u003e\n\u003cul\u003e\n\u003cli\u003e内核栈\u003cbr\u003e\n将 CPU 的栈指针寄存器 (SP\/ESP\/RSP, x86架构) 从指向进程 A 的内核栈顶部，修改为指向进程 B 的内核栈顶部\u003c\/li\u003e\n\u003cli\u003e页目录\u003cbr\u003e\n系统切换进程时找到进程的页目录的物理基地址（mm-\u0026gt;pgd指针），写入CR3(x86)\/TTBR0(ARM)寄存\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003cp\u003e2、进程页目录\u003cbr\u003e\n存储在物理内存中，进程在创建时，系统创建mm_struct结构，用mm-\u0026gt;pgd指针保存页目录物理基地址（用来在系统切换进程时找到进程的页目录的物理基地址，写入CR3(x86)\/TTBR0(ARM)寄存器，完成进程上下文切换）\u003cbr\u003e\n页目录包含进程使用的全部内存的虚拟内存地址-\u0026gt;物理内存地址的映射关系\u003cbr\u003e\n3、进程硬件上下文\u003cbr\u003e\n运行时各寄存器的中间结果、比如PC程序计数器（下一条指令地址）、SP栈指针寄存器（当前调用栈顶）\u003cbr\u003e\n切换时，这些数据被保存到进程内核栈中\u003c\/p\u003e\n\u003cp\u003e4、线程切换总是发生在同一个进程（同一个虚拟地址空间）内的线程之间。不同进程的线程之间的切换，本质上是通过上层的进程切换完成的\u003cbr\u003e\n5、切换线程时只切换线程内核栈，同样CPU栈指针寄存器从指向线程A的内核栈顶-\u0026gt;B的内核栈顶。因为同属一个进程，所以不切换页目录，也即使用同一虚拟内存空间\u003c\/p\u003e\n\u003cp\u003e6、进程、线程切换都依赖内核调度器，抢占式调度（时间片、中断）\u003cbr\u003e\n7、协程切换只在用户态通过程序本身调度切换，主动让出，显式让出控制权\u003cbr\u003e\n8、\u003c\/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n      \u003ctr\u003e\n          \u003cth\u003e进程\u003c\/th\u003e\n          \u003cth\u003e线程\u003c\/th\u003e\n          \u003cth\u003e协程\u003c\/th\u003e\n      \u003c\/tr\u003e\n  \u003c\/thead\u003e\n  \u003ctbody\u003e\n      \u003ctr\u003e\n          \u003ctd\u003e切换内核栈、页目录\u003c\/td\u003e\n          \u003ctd\u003e切换内核栈\u003c\/td\u003e\n          \u003ctd\u003e仅切换寄存器状态\u003c\/td\u003e\n      \u003c\/tr\u003e\n  \u003c\/tbody\u003e\n\u003c\/table\u003e\n\u003cp\u003e9、用户态进程与内核态进程 全双工通信 -\u0026gt; Netlink Socket\u003c\/p\u003e\n\u003cp\u003e相比传统 IPC (syscall, ioctl, procfs)，Netlink 具有显著优势：易于扩展、异步通信、完美支持内核模块、强大的组播能力、真正的全双工通信、开发者友好的标准 Socket API。\u003c\/p\u003e\n\u003cp\u003e单播回显:         用户请求-\u0026gt;内核处理-\u0026gt;内核响应的双向通信模式\u003cbr\u003e\n内核主动组播:  内核主动向多个订阅进程广播事件的能力\u003c\/p\u003e\n\u003cp\u003enetlink属于无连接协议（无连接协议是一种通信协议，其中每个数据包的处理都是独立的，不需要在发送数据之前建立连接）\u003c\/p\u003e",
     "inLanguage": "zh-cn",
-    "url" : "http:\/\/localhost:1313\/nayun.github.io\/tech\/backend\/linux\/%E7%94%A8%E6%88%B7%E6%80%81%E5%86%85%E6%A0%B8%E6%80%81%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4\/",
+    "url" : "http:\/\/localhost:43997\/nayun.github.io\/tech\/backend\/linux\/%E7%94%A8%E6%88%B7%E6%80%81%E5%86%85%E6%A0%B8%E6%80%81%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4\/",
     "author" : {
       "@type": "Person",
       "name": "nayun"
@@ -722,9 +722,9 @@ netlink属于无连接协议（无连接协议是一种通信协议，其中每�
   
 
   
-  <script src="http://localhost:1313/nayun.github.io/js/custom_mermaid.min.1da0269623e4f164ced2e3b711f6e7a5753c14239113eb8f1d5ceace3238fdd8.js"></script>
+  <script src="http://localhost:43997/nayun.github.io/js/custom_mermaid.min.1da0269623e4f164ced2e3b711f6e7a5753c14239113eb8f1d5ceace3238fdd8.js"></script>
   
-  <script src="http://localhost:1313/nayun.github.io/js/custom_code-header.min.9217b0aa7e71da48d0a21723ad836505bc5214329932fad0e5dff1125ee4da5b.js"></script>
+  <script src="http://localhost:43997/nayun.github.io/js/custom_code-header.min.9217b0aa7e71da48d0a21723ad836505bc5214329932fad0e5dff1125ee4da5b.js"></script>
   
   
     
@@ -771,7 +771,7 @@ netlink属于无连接协议（无连接协议是一种通信协议，其中每�
 <div
   id="search-wrapper"
   class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-index-500"
-  data-url="http://localhost:1313/nayun.github.io/">
+  data-url="http://localhost:43997/nayun.github.io/">
   <div
     id="search-modal"
     class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">

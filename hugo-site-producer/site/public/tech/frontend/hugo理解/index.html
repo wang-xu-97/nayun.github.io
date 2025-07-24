@@ -4,7 +4,7 @@
   dir="ltr"
   class="scroll-smooth"
   data-default-appearance="light"
-  data-auto-appearance="true"><head><script src="/nayun.github.io/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=nayun.github.io/livereload" data-no-instant defer></script>
+  data-auto-appearance="true"><head><script src="/nayun.github.io/livereload.js?mindelay=10&amp;v=2&amp;port=43997&amp;path=nayun.github.io/livereload" data-no-instant defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <meta charset="utf-8" />
@@ -21,7 +21,7 @@
     <meta name="keywords" content="技, " />
     
     
-    <link rel="canonical" href="http://localhost:1313/nayun.github.io/tech/frontend/hugo%E7%90%86%E8%A7%A3/" />
+    <link rel="canonical" href="http://localhost:43997/nayun.github.io/tech/frontend/hugo%E7%90%86%E8%A7%A3/" />
     
     
     
@@ -72,7 +72,7 @@
     
     
     
-    <meta property="og:url" content="http://localhost:1313/nayun.github.io/tech/frontend/hugo%E7%90%86%E8%A7%A3/">
+    <meta property="og:url" content="http://localhost:43997/nayun.github.io/tech/frontend/hugo%E7%90%86%E8%A7%A3/">
   <meta property="og:site_name" content="nayun blog">
   <meta property="og:title" content="Hugo理解">
   <meta property="og:description" content="hugo工作流程 # 导入主题后，完成自定义配置和资源 &lt;/&gt; markdown 折叠 复制 1- config yaml/toml/json 2- assets 3 - css 4 - js 5 - images 6- layouts 7 - 404.html : 404错误页面模板 8 - _default/ : 默认模板 9 - baseof.html : 基础模板框架 10 - list.html : 列表页模板（如分类、标签页） 11 - single.html : 单内容页模板（如文章页） 12 - terms.html : 分类列表模板（如所有标签的列表） 13 - partials/ : 可重用部分模板 14 - header.html : 页头部分 15 - footer.html : 页脚部分 16 - head.html : &lt;head&gt;部分 17 - ... : 其他部分模板 18 - shortcodes/ : 短代码模板 19 - figure.html : 图片短代码 20 - ... : 其他短代码 21 - index.html : 首页模板 22 - section/ : 分区模板（如博客、文档等） 23 - blog.html : 博客分区模板 24 - ... : 其他分区模板 25 - taxonomy/ : 分类法模板 26 - category.html : 分类页面模板 27 - tag.html : 标签页面模板 28 - ... : 其他自定义模板 所有layouts模板均可">
@@ -101,7 +101,7 @@
     
     "abstract": "\u003ch2 class=\u0022relative group\u0022\u003ehugo工作流程 \n    \u003cdiv id=\u0022hugo工作流程\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#hugo%e5%b7%a5%e4%bd%9c%e6%b5%81%e7%a8%8b\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\u003col\u003e\n\u003cli\u003e导入主题后，完成\u003ca\n  href=\u0022#%e8%87%aa%e5%ae%9a%e4%b9%89%e9%85%8d%e7%bd%ae%e5%92%8c%e8%b5%84%e6%ba%90\u0022\u003e自定义配置和资源\u003c\/a\u003e\n\u003c\/li\u003e\n\u003c\/ol\u003e\n\n\u003cdiv class=\u0022code-block-wrapper\u0022\u003e\n  \u003cdiv class=\u0022code-header\u0022\u003e\n    \u003cspan class=\u0022language-label\u0022\u003e\n      \u003cspan class=\u0022language-brackets\u0022\u003e\u0026lt;\/\u003e\u003c\/span\u003e  \n      \u003cspan class=\u0022language-name\u0022\u003emarkdown\u003c\/span\u003e  \n    \u003c\/span\u003e\n\n    \u003cdiv class=\u0022code-buttons\u0022\u003e\n      \u003cbutton class=\u0022fold-button\u0022 title=\u0022Toggle fold\u0022\u003e\n        \u003ci class=\u0022fas fa-chevron-up\u0022\u003e\u003c\/i\u003e\n        \u003cspan\u003e折叠\u003c\/span\u003e\n      \u003c\/button\u003e\n      \u003cbutton class=\u0022copy-button\u0022 title=\u0022Copy code\u0022\u003e\n        \u003ci class=\u0022fas fa-copy\u0022\u003e\u003c\/i\u003e\n        \u003cspan\u003e复制\u003c\/span\u003e\n      \u003c\/button\u003e\n    \u003c\/div\u003e\n  \u003c\/div\u003e\n  \u003cdiv class=\u0022highlight\u0022\u003e\u003cpre tabindex=\u00220\u0022 class=\u0022chroma\u0022\u003e\u003ccode class=\u0022language-markdown\u0022 data-lang=\u0022markdown\u0022\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 1\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022k\u0022\u003e-\u003c\/span\u003e config yaml\/toml\/json\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 2\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022k\u0022\u003e-\u003c\/span\u003e assets\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 3\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022k\u0022\u003e-\u003c\/span\u003e css\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 4\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022k\u0022\u003e-\u003c\/span\u003e js\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 5\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022k\u0022\u003e-\u003c\/span\u003e images\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 6\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022k\u0022\u003e-\u003c\/span\u003e layouts\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 7\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e  \u003cspan class=\u0022k\u0022\u003e-\u003c\/span\u003e 404.html : 404错误页面模板\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 8\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e  \u003cspan class=\u0022k\u0022\u003e-\u003c\/span\u003e _default\/ : 默认模板\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 9\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022k\u0022\u003e-\u003c\/span\u003e baseof.html : 基础模板框架\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e10\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022k\u0022\u003e-\u003c\/span\u003e list.html : 列表页模板（如分类、标签页）\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e11\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022k\u0022\u003e-\u003c\/span\u003e single.html : 单内容页模板（如文章页）\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e12\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022k\u0022\u003e-\u003c\/span\u003e terms.html : 分类列表模板（如所有标签的列表）\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e13\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e  \u003cspan class=\u0022k\u0022\u003e-\u003c\/span\u003e partials\/ : 可重用部分模板\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e14\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022k\u0022\u003e-\u003c\/span\u003e header.html : 页头部分\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e15\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022k\u0022\u003e-\u003c\/span\u003e footer.html : 页脚部分\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e16\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022k\u0022\u003e-\u003c\/span\u003e head.html : \u003cspan class=\u0022p\u0022\u003e\u0026lt;\u003c\/span\u003e\u003cspan class=\u0022nt\u0022\u003ehead\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e\u0026gt;\u003c\/span\u003e部分\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e17\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022k\u0022\u003e-\u003c\/span\u003e ... : 其他部分模板\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e18\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e  \u003cspan class=\u0022k\u0022\u003e-\u003c\/span\u003e shortcodes\/ : 短代码模板\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e19\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022k\u0022\u003e-\u003c\/span\u003e figure.html : 图片短代码\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e20\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022k\u0022\u003e-\u003c\/span\u003e ... : 其他短代码\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e21\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e  \u003cspan class=\u0022k\u0022\u003e-\u003c\/span\u003e index.html : 首页模板\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e22\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e  \u003cspan class=\u0022k\u0022\u003e-\u003c\/span\u003e section\/ : 分区模板（如博客、文档等）\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e23\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022k\u0022\u003e-\u003c\/span\u003e blog.html : 博客分区模板\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e24\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022k\u0022\u003e-\u003c\/span\u003e ... : 其他分区模板\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e25\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e  \u003cspan class=\u0022k\u0022\u003e-\u003c\/span\u003e taxonomy\/ : 分类法模板\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e26\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022k\u0022\u003e-\u003c\/span\u003e category.html : 分类页面模板\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e27\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022k\u0022\u003e-\u003c\/span\u003e tag.html : 标签页面模板\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e28\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e  - ... : 其他自定义模板\u003c\/span\u003e\u003c\/span\u003e\u003c\/code\u003e\u003c\/pre\u003e\u003c\/div\u003e\n\u003c\/div\u003e\n\u003cp\u003e所有layouts模板均可\u003c\/p\u003e",
     "inLanguage": "zh-cn",
-    "url" : "http:\/\/localhost:1313\/nayun.github.io\/tech\/frontend\/hugo%E7%90%86%E8%A7%A3\/",
+    "url" : "http:\/\/localhost:43997\/nayun.github.io\/tech\/frontend\/hugo%E7%90%86%E8%A7%A3\/",
     "author" : {
       "@type": "Person",
       "name": "nayun"
@@ -1059,6 +1059,27 @@ I2 --> I2b[HTMX]
         </span>
         <span>
           
+            <a class="flex text-right group ml-3" href="/nayun.github.io/tech/frontend/hugo%E5%AD%A6%E4%B9%A0250723/">
+              <span class="flex flex-col">
+                <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >hugo学习250723</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2025-07-23T15:01:34&#43;08:00">July 23, 2025</time>
+                  
+                </span>
+              </span>
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+            </a>
+          
         </span>
       </div>
     </div>
@@ -1084,9 +1105,9 @@ I2 --> I2b[HTMX]
   
 
   
-  <script src="http://localhost:1313/nayun.github.io/js/custom_mermaid.min.1da0269623e4f164ced2e3b711f6e7a5753c14239113eb8f1d5ceace3238fdd8.js"></script>
+  <script src="http://localhost:43997/nayun.github.io/js/custom_mermaid.min.1da0269623e4f164ced2e3b711f6e7a5753c14239113eb8f1d5ceace3238fdd8.js"></script>
   
-  <script src="http://localhost:1313/nayun.github.io/js/custom_code-header.min.9217b0aa7e71da48d0a21723ad836505bc5214329932fad0e5dff1125ee4da5b.js"></script>
+  <script src="http://localhost:43997/nayun.github.io/js/custom_code-header.min.9217b0aa7e71da48d0a21723ad836505bc5214329932fad0e5dff1125ee4da5b.js"></script>
   
   
     
@@ -1133,7 +1154,7 @@ I2 --> I2b[HTMX]
 <div
   id="search-wrapper"
   class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-index-500"
-  data-url="http://localhost:1313/nayun.github.io/">
+  data-url="http://localhost:43997/nayun.github.io/">
   <div
     id="search-modal"
     class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">

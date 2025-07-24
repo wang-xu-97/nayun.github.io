@@ -14,7 +14,6 @@
 
 /* 语言标签 */
 .article-content .highlight:before {
-    content: "</> " + attr(data-lang);  /* 从 Hugo 获取语言类型 */
     position: absolute;
     top: 0;
     left: 0;

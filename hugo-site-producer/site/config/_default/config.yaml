@@ -4,8 +4,6 @@ languageCode: "zh-cn"
 defaultContentLanguage: "zh-cn"
 theme: "blowfish"
 
-# publishDir: "../nayun.github.io"
-
 markup:
   goldmark:
     renderer:
