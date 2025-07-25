@@ -2,8 +2,7 @@
 title: "Hugo理解"
 date: 2025-07-09T14:07:34+08:00
 draft: false
-tags: ["技", 'hugo']
-categories: ["tech"]
+tags: ["技", 'hugo', '前端']
 toc: true
 showTableOfContents: true
 showAuthor: false

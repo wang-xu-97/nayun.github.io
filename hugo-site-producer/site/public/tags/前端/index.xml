@@ -1,47 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>技 on nayun blog</title>
-    <link>http://localhost:43997/nayun.github.io/tags/%E6%8A%80/</link>
-    <description>Recent content in 技 on nayun blog</description>
+    <title>前端 on nayun blog</title>
+    <link>http://localhost:43997/nayun.github.io/tags/%E5%89%8D%E7%AB%AF/</link>
+    <description>Recent content in 前端 on nayun blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>© 2025 nayun</copyright>
-    <lastBuildDate>Fri, 25 Jul 2025 16:08:19 +0800</lastBuildDate><atom:link href="http://localhost:43997/nayun.github.io/tags/%E6%8A%80/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>元类MetaClass</title>
-      <link>http://localhost:43997/nayun.github.io/tech/coding/python/%E5%85%83%E7%B1%BBmetaclass/</link>
-      <pubDate>Fri, 25 Jul 2025 16:08:19 +0800</pubDate>
-      
-      <guid>http://localhost:43997/nayun.github.io/tech/coding/python/%E5%85%83%E7%B1%BBmetaclass/</guid>
-      <description>&lt;div class=&#34;code-block-wrapper&#34;&gt;
-  &lt;div class=&#34;code-header&#34;&gt;
-    &lt;span class=&#34;language-label&#34;&gt;
-      &lt;span class=&#34;language-brackets&#34;&gt;&amp;lt;/&gt;&lt;/span&gt;  
-      &lt;span class=&#34;language-name&#34;&gt;python&lt;/span&gt;  
-    &lt;/span&gt;
-
-    &lt;div class=&#34;code-buttons&#34;&gt;
-      &lt;button class=&#34;fold-button&#34; title=&#34;Toggle fold&#34;&gt;
-        &lt;i class=&#34;fas fa-chevron-up&#34;&gt;&lt;/i&gt;
-        &lt;span&gt;折叠&lt;/span&gt;
-      &lt;/button&gt;
-      &lt;button class=&#34;copy-button&#34; title=&#34;Copy code&#34;&gt;
-        &lt;i class=&#34;fas fa-copy&#34;&gt;&lt;/i&gt;
-        &lt;span&gt;复制&lt;/span&gt;
-      &lt;/button&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;StaticMethodMeta&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;fm&#34;&gt;__new__&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;cls&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;bases&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;namespace&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;attr_name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;attr_value&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;namespace&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;items&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;():&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;callable&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;attr_value&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;and&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;not&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;attr_name&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;startswith&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;__&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;n&#34;&gt;namespace&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;attr_name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;staticmethod&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;attr_value&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;super&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;fm&#34;&gt;__new__&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;cls&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;bases&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;namespace&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;</description>
-      
-    </item>
+    <lastBuildDate>Thu, 24 Jul 2025 17:15:11 +0800</lastBuildDate><atom:link href="http://localhost:43997/nayun.github.io/tags/%E5%89%8D%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>词云实践流程</title>
@@ -269,73 +235,6 @@
     
 &lt;/h4&gt;
 &lt;p&gt;通过 Front Matter 中的 type 或 layout 字段可手动指定类型（覆盖自动推断）：&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>用户态、内核态内存空间</title>
-      <link>http://localhost:43997/nayun.github.io/tech/backend/linux/%E7%94%A8%E6%88%B7%E6%80%81%E5%86%85%E6%A0%B8%E6%80%81%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4/</link>
-      <pubDate>Mon, 14 Jul 2025 15:39:03 +0800</pubDate>
-      
-      <guid>http://localhost:43997/nayun.github.io/tech/backend/linux/%E7%94%A8%E6%88%B7%E6%80%81%E5%86%85%E6%A0%B8%E6%80%81%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4/</guid>
-      <description>&lt;p&gt;用户态、内核态指内存空间，CPU的各寄存器则是CPU硬件，不属于内存部分，仅在需要存档备份数据时保存至（用户态/内核态）内存&lt;br&gt;
-1、 进程内核栈&lt;br&gt;
-每个进程都有自己独立的位于内核空间的内核栈，保存进程在内核态执行的函数调用栈、局部变量、寄存器状态等数据&lt;/p&gt;
-&lt;p&gt;linux系统切换进程时会切换&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;内核栈&lt;br&gt;
-将 CPU 的栈指针寄存器 (SP/ESP/RSP, x86架构) 从指向进程 A 的内核栈顶部，修改为指向进程 B 的内核栈顶部&lt;/li&gt;
-&lt;li&gt;页目录&lt;br&gt;
-系统切换进程时找到进程的页目录的物理基地址（mm-&amp;gt;pgd指针），写入CR3(x86)/TTBR0(ARM)寄存&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;2、进程页目录&lt;br&gt;
-存储在物理内存中，进程在创建时，系统创建mm_struct结构，用mm-&amp;gt;pgd指针保存页目录物理基地址（用来在系统切换进程时找到进程的页目录的物理基地址，写入CR3(x86)/TTBR0(ARM)寄存器，完成进程上下文切换）&lt;br&gt;
-页目录包含进程使用的全部内存的虚拟内存地址-&amp;gt;物理内存地址的映射关系&lt;br&gt;
-3、进程硬件上下文&lt;br&gt;
-运行时各寄存器的中间结果、比如PC程序计数器（下一条指令地址）、SP栈指针寄存器（当前调用栈顶）&lt;br&gt;
-切换时，这些数据被保存到进程内核栈中&lt;/p&gt;
-&lt;p&gt;4、线程切换总是发生在同一个进程（同一个虚拟地址空间）内的线程之间。不同进程的线程之间的切换，本质上是通过上层的进程切换完成的&lt;br&gt;
-5、切换线程时只切换线程内核栈，同样CPU栈指针寄存器从指向线程A的内核栈顶-&amp;gt;B的内核栈顶。因为同属一个进程，所以不切换页目录，也即使用同一虚拟内存空间&lt;/p&gt;
-&lt;p&gt;6、进程、线程切换都依赖内核调度器，抢占式调度（时间片、中断）&lt;br&gt;
-7、协程切换只在用户态通过程序本身调度切换，主动让出，显式让出控制权&lt;br&gt;
-8、&lt;/p&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;进程&lt;/th&gt;
-          &lt;th&gt;线程&lt;/th&gt;
-          &lt;th&gt;协程&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;切换内核栈、页目录&lt;/td&gt;
-          &lt;td&gt;切换内核栈&lt;/td&gt;
-          &lt;td&gt;仅切换寄存器状态&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;9、用户态进程与内核态进程 全双工通信 -&amp;gt; Netlink Socket&lt;/p&gt;
-&lt;p&gt;相比传统 IPC (syscall, ioctl, procfs)，Netlink 具有显著优势：易于扩展、异步通信、完美支持内核模块、强大的组播能力、真正的全双工通信、开发者友好的标准 Socket API。&lt;/p&gt;
-&lt;p&gt;单播回显:         用户请求-&amp;gt;内核处理-&amp;gt;内核响应的双向通信模式&lt;br&gt;
-内核主动组播:  内核主动向多个订阅进程广播事件的能力&lt;/p&gt;
-&lt;p&gt;netlink属于无连接协议（无连接协议是一种通信协议，其中每个数据包的处理都是独立的，不需要在发送数据之前建立连接）&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>闭包</title>
-      <link>http://localhost:43997/nayun.github.io/tech/general/%E9%97%AD%E5%8C%85/</link>
-      <pubDate>Mon, 14 Jul 2025 11:35:25 +0800</pubDate>
-      
-      <guid>http://localhost:43997/nayun.github.io/tech/general/%E9%97%AD%E5%8C%85/</guid>
-      <description>&lt;p&gt;在创建时封装当时状态，并使当时的状态生存周期延长至与闭包生存周期一致&lt;br&gt;
-闭包思想产物：&lt;br&gt;
-1. python装饰器&lt;br&gt;
-2. 回调函数&lt;br&gt;
-3. 函数工厂&lt;br&gt;
-4. 惰性求值&lt;br&gt;
-&amp;hellip;&lt;/p&gt;</description>
       
     </item>
     
