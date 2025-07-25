@@ -55,3 +55,11 @@ article:
 style:
   containerMaxWidth: "1200px"  # 最大宽度
   contentMaxWidth: "800px"     # 内容区域宽度
+
+
+## 自定义重定向url
+redirect:
+  url: https://wang-xu-97.github.io/life.github.io/
+  description: |
+    Personal blog
+    mostly complaining. Read with caution.

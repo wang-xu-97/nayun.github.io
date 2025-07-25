@@ -2,7 +2,7 @@
 title: "Hugo博客搭建记录"
 date: 2025-07-08T10:18:41+08:00
 draft: false
-tags: ["技"]
+tags: ["技", 'hugo']
 categories: ["tech"]
 showTableOfContents: true
 toc: true

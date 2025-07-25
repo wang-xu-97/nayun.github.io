@@ -2,7 +2,7 @@
 title: "Outline"
 date: 2025-07-14T11:20:25+08:00
 draft: false
-tags: ["技", "大纲"]
+tags: ["体系大纲"]
 categories: ["tech", "outline"]
 toc: true
 showTableOfContents: true
