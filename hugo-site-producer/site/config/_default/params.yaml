@@ -50,7 +50,9 @@ author:
   bio: "律动痕清"
 
 article:
-  showAuthor: false
+  showAuthor: true
+  showAuthorBottom: true
+  showBreadcrumbs: true
 
 style:
   containerMaxWidth: "1200px"  # 最大宽度

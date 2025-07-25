@@ -3,6 +3,13 @@
     {{ $css1 := resources.Get "css/custom_list_page.css" }}
     <link type="text/css" rel="stylesheet" href="{{ $css1.RelPermalink }}">
     
+    <nav class="breadcrumb">
+        {{ range .Ancestors.Reverse }}
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        <span>/</span>
+        {{ end }}
+        <a href="{{ .RelPermalink }}" class="active">{{ .Title }}</a>
+    </nav>
     <div class="container">
         
         <!-- 显示当前部分的内容 -->
