@@ -269,3 +269,26 @@ h1 {
         font-size: 2rem;
     }
 }
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    margin: 1.5rem 0;
+    font-size: 0.95rem;
+    color: #666;
+}
+
+.breadcrumb a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb span {
+    margin: 0 0.5rem;
+    color: #999;
+}
