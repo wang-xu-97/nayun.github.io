@@ -1,35 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>nayun blog</title><link>https://wang-xu-97.github.io/nayun.github.io/</link><description>Recent content on nayun blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>© 2025 nayun</copyright><lastBuildDate>Fri, 25 Jul 2025 16:08:19 +0800</lastBuildDate><atom:link href="https://wang-xu-97.github.io/nayun.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>元类MetaClass</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E5%85%83%E7%B1%BBmetaclass/</link><pubDate>Fri, 25 Jul 2025 16:08:19 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E5%85%83%E7%B1%BBmetaclass/</guid><description>&lt;p>元类作用时机&lt;br>
-当使用此元类定义新类时（如 class MyClass(metaclass=StaticMethodMeta)），元类的 &lt;code>__new__&lt;/code> 方法会在类创建时被调用。&lt;/p>
-&lt;p>利用元类改变类特性 -&amp;gt; 创建一个成员函数自动转换为静态成员函数的类&lt;/p>
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">python&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="fold-button" title="Toggle fold">
-&lt;i class="fas fa-chevron-up">&lt;/i>
-&lt;span>折叠&lt;/span>
-&lt;/button>
-&lt;button class="copy-button" title="Copy code">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="ln"> 1&lt;/span>&lt;span class="cl">&lt;span class="k">class&lt;/span> &lt;span class="nc">StaticMethodMeta&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nb">type&lt;/span>&lt;span class="p">):&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 2&lt;/span>&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="fm">__new__&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">cls&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">name&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">bases&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">namespace&lt;/span>&lt;span class="p">):&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 3&lt;/span>&lt;span class="cl"> &lt;span class="k">for&lt;/span> &lt;span class="n">attr_name&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">attr_value&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">namespace&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">items&lt;/span>&lt;span class="p">():&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 4&lt;/span>&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="n">callable&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">attr_value&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="ow">and&lt;/span> &lt;span class="ow">not&lt;/span> &lt;span class="n">attr_name&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">startswith&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;__&amp;#39;&lt;/span>&lt;span class="p">):&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 5&lt;/span>&lt;span class="cl"> &lt;span class="n">namespace&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">attr_name&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">staticmethod&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">attr_value&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 6&lt;/span>&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nb">super&lt;/span>&lt;span class="p">()&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="fm">__new__&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">cls&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">name&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">bases&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">namespace&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 7&lt;/span>&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 8&lt;/span>&lt;span class="cl">&lt;span class="k">class&lt;/span> &lt;span class="nc">tool&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">metaclass&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">StaticMethodMeta&lt;/span>&lt;span class="p">):&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 9&lt;/span>&lt;span class="cl"> &lt;span class="c1"># 静态成员没有self参数&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">10&lt;/span>&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="nf">tool1&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">p1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">p2&lt;/span>&lt;span class="p">):&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">11&lt;/span>&lt;span class="cl"> &lt;span class="k">pass&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div></description></item><item><title>词云实践流程</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/%E8%AF%8D%E4%BA%91%E5%AE%9E%E8%B7%B5%E6%B5%81%E7%A8%8B/</link><pubDate>Thu, 24 Jul 2025 17:15:11 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/%E8%AF%8D%E4%BA%91%E5%AE%9E%E8%B7%B5%E6%B5%81%E7%A8%8B/</guid><description>&lt;h4 class="relative group">1. 通过deepseek生成词云&lt;code>html、js、css&lt;/code>代码
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>前端 on nayun blog</title><link>https://wang-xu-97.github.io/nayun.github.io/tags/%E5%89%8D%E7%AB%AF/</link><description>Recent content in 前端 on nayun blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>© 2025 nayun</copyright><lastBuildDate>Thu, 24 Jul 2025 17:15:11 +0800</lastBuildDate><atom:link href="https://wang-xu-97.github.io/nayun.github.io/tags/%E5%89%8D%E7%AB%AF/index.xml" rel="self" type="application/rss+xml"/><item><title>词云实践流程</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/%E8%AF%8D%E4%BA%91%E5%AE%9E%E8%B7%B5%E6%B5%81%E7%A8%8B/</link><pubDate>Thu, 24 Jul 2025 17:15:11 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/%E8%AF%8D%E4%BA%91%E5%AE%9E%E8%B7%B5%E6%B5%81%E7%A8%8B/</guid><description>&lt;h4 class="relative group">1. 通过deepseek生成词云&lt;code>html、js、css&lt;/code>代码
 &lt;div id="1-通过deepseek生成词云htmljscss代码" class="anchor">&lt;/div>
 &lt;span
 class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
@@ -203,135 +172,7 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e9%a1%b5%e9%9d%a2-front-matter" aria-label="锚点">#&lt;/a>
 &lt;/span>
 &lt;/h4>
-&lt;p>通过 Front Matter 中的 type 或 layout 字段可手动指定类型（覆盖自动推断）：&lt;/p></description></item><item><title>用户态、内核态内存空间</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/backend/linux/%E7%94%A8%E6%88%B7%E6%80%81%E5%86%85%E6%A0%B8%E6%80%81%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4/</link><pubDate>Mon, 14 Jul 2025 15:39:03 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/backend/linux/%E7%94%A8%E6%88%B7%E6%80%81%E5%86%85%E6%A0%B8%E6%80%81%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4/</guid><description>&lt;p>用户态、内核态指内存空间，CPU的各寄存器则是CPU硬件，不属于内存部分，仅在需要存档备份数据时保存至（用户态/内核态）内存&lt;br>
-1、 进程内核栈&lt;br>
-每个进程都有自己独立的位于内核空间的内核栈，保存进程在内核态执行的函数调用栈、局部变量、寄存器状态等数据&lt;/p>
-&lt;p>linux系统切换进程时会切换&lt;/p>
-&lt;ul>
-&lt;li>内核栈&lt;br>
-将 CPU 的栈指针寄存器 (SP/ESP/RSP, x86架构) 从指向进程 A 的内核栈顶部，修改为指向进程 B 的内核栈顶部&lt;/li>
-&lt;li>页目录&lt;br>
-系统切换进程时找到进程的页目录的物理基地址（mm-&amp;gt;pgd指针），写入CR3(x86)/TTBR0(ARM)寄存&lt;/li>
-&lt;/ul>
-&lt;p>2、进程页目录&lt;br>
-存储在物理内存中，进程在创建时，系统创建mm_struct结构，用mm-&amp;gt;pgd指针保存页目录物理基地址（用来在系统切换进程时找到进程的页目录的物理基地址，写入CR3(x86)/TTBR0(ARM)寄存器，完成进程上下文切换）&lt;br>
-页目录包含进程使用的全部内存的虚拟内存地址-&amp;gt;物理内存地址的映射关系&lt;br>
-3、进程硬件上下文&lt;br>
-运行时各寄存器的中间结果、比如PC程序计数器（下一条指令地址）、SP栈指针寄存器（当前调用栈顶）&lt;br>
-切换时，这些数据被保存到进程内核栈中&lt;/p>
-&lt;p>4、线程切换总是发生在同一个进程（同一个虚拟地址空间）内的线程之间。不同进程的线程之间的切换，本质上是通过上层的进程切换完成的&lt;br>
-5、切换线程时只切换线程内核栈，同样CPU栈指针寄存器从指向线程A的内核栈顶-&amp;gt;B的内核栈顶。因为同属一个进程，所以不切换页目录，也即使用同一虚拟内存空间&lt;/p>
-&lt;p>6、进程、线程切换都依赖内核调度器，抢占式调度（时间片、中断）&lt;br>
-7、协程切换只在用户态通过程序本身调度切换，主动让出，显式让出控制权&lt;br>
-8、&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>进程&lt;/th>
-&lt;th>线程&lt;/th>
-&lt;th>协程&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>切换内核栈、页目录&lt;/td>
-&lt;td>切换内核栈&lt;/td>
-&lt;td>仅切换寄存器状态&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>9、用户态进程与内核态进程 全双工通信 -&amp;gt; Netlink Socket&lt;/p>
-&lt;p>相比传统 IPC (syscall, ioctl, procfs)，Netlink 具有显著优势：易于扩展、异步通信、完美支持内核模块、强大的组播能力、真正的全双工通信、开发者友好的标准 Socket API。&lt;/p>
-&lt;p>单播回显: 用户请求-&amp;gt;内核处理-&amp;gt;内核响应的双向通信模式&lt;br>
-内核主动组播: 内核主动向多个订阅进程广播事件的能力&lt;/p>
-&lt;p>netlink属于无连接协议（无连接协议是一种通信协议，其中每个数据包的处理都是独立的，不需要在发送数据之前建立连接）&lt;/p></description></item><item><title>闭包</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/general/%E9%97%AD%E5%8C%85/</link><pubDate>Mon, 14 Jul 2025 11:35:25 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/general/%E9%97%AD%E5%8C%85/</guid><description>&lt;p>在创建时封装当时状态，并使当时的状态生存周期延长至与闭包生存周期一致&lt;br>
-闭包思想产物：&lt;br>
-1. python装饰器&lt;br>
-2. 回调函数&lt;br>
-3. 函数工厂&lt;br>
-4. 惰性求值&lt;br>
-&amp;hellip;&lt;/p></description></item><item><title>Outline</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/outline/</link><pubDate>Mon, 14 Jul 2025 11:20:25 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/outline/</guid><description>&lt;h2 class="relative group">通用编程思想
-&lt;div id="通用编程思想" class="anchor">&lt;/div>
-&lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e9%80%9a%e7%94%a8%e7%bc%96%e7%a8%8b%e6%80%9d%e6%83%b3" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h2>
-&lt;p>1&lt;/p>
-&lt;h3 class="relative group">闭包
-&lt;div id="闭包" class="anchor">&lt;/div>
-&lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e9%97%ad%e5%8c%85" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h3>
-&lt;p>1&lt;/p>
-&lt;h3 class="relative group">多态
-&lt;div id="多态" class="anchor">&lt;/div>
-&lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%a4%9a%e6%80%81" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h3>
-&lt;p>1&lt;br>
-1&lt;br>
-1&lt;br>
-1&lt;br>
-1&lt;br>
-1&lt;br>
-1&lt;br>
-1&lt;/p>
-&lt;h2 class="relative group">前端
-&lt;div id="前端" class="anchor">&lt;/div>
-&lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%89%8d%e7%ab%af" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h2>
-&lt;h3 class="relative group">hugo
-&lt;div id="hugo" class="anchor">&lt;/div>
-&lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#hugo" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h3>
-&lt;h2 class="relative group">后端
-&lt;div id="后端" class="anchor">&lt;/div>
-&lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%90%8e%e7%ab%af" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h2>
-&lt;h3 class="relative group">Linux理解
-&lt;div id="linux理解" class="anchor">&lt;/div>
-&lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#linux%e7%90%86%e8%a7%a3" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h3>
-&lt;h4 class="relative group">用户态、内核态内存空间
-&lt;div id="用户态内核态内存空间" class="anchor">&lt;/div>
-&lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%94%a8%e6%88%b7%e6%80%81%e5%86%85%e6%a0%b8%e6%80%81%e5%86%85%e5%ad%98%e7%a9%ba%e9%97%b4" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h4>
-&lt;p>1&lt;br>
-1&lt;br>
-1&lt;br>
-1&lt;br>
-1&lt;br>
-1&lt;br>
-1&lt;br>
-1&lt;br>
-1&lt;br>
-1&lt;br>
-1&lt;br>
-1&lt;br>
-1&lt;br>
-1&lt;br>
-1&lt;br>
-1&lt;/p></description></item><item><title>Hugo理解</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E7%90%86%E8%A7%A3/</link><pubDate>Wed, 09 Jul 2025 14:07:34 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E7%90%86%E8%A7%A3/</guid><description>&lt;h2 class="relative group">hugo工作流程
+&lt;p>通过 Front Matter 中的 type 或 layout 字段可手动指定类型（覆盖自动推断）：&lt;/p></description></item><item><title>Hugo理解</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E7%90%86%E8%A7%A3/</link><pubDate>Wed, 09 Jul 2025 14:07:34 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E7%90%86%E8%A7%A3/</guid><description>&lt;h2 class="relative group">hugo工作流程
 &lt;div id="hugo工作流程" class="anchor">&lt;/div>
 &lt;span
 class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
@@ -584,4 +425,4 @@ target="_blank"
 &lt;li>解压到siteproducer/assets/fonts目录&lt;/li>
 &lt;li>在assets/scss/中创建_fonts.scss，并在scss/custom.scss中引用&lt;/li>
 &lt;/ol>
-&lt;p>font.scss&lt;/p></description></item><item><title>关于我</title><link>https://wang-xu-97.github.io/nayun.github.io/about/</link><pubDate>Sun, 07 Jul 2024 00:00:00 +0000</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/about/</guid><description>&lt;p>这是我的个人介绍页面&amp;hellip;&lt;/p></description></item></channel></rss>
+&lt;p>font.scss&lt;/p></description></item></channel></rss>
