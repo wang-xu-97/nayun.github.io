@@ -16,14 +16,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     
-    <title>词云实践流程 &middot; nayun blog</title>
-    <meta name="title" content="词云实践流程 &middot; nayun blog" />
+    <title>Hugo学习250728 &middot; nayun blog</title>
+    <meta name="title" content="Hugo学习250728 &middot; nayun blog" />
     
     
     <meta name="keywords" content="技, hugo, 前端, " />
     
     
-    <link rel="canonical" href="http://localhost:43997/nayun.github.io/tech/frontend/hugo/%E8%AF%8D%E4%BA%91%E5%AE%9E%E8%B7%B5%E6%B5%81%E7%A8%8B/" />
+    <link rel="canonical" href="http://localhost:43997/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250728/" />
     
     
     
@@ -74,27 +74,25 @@
     
     
     
-    <meta property="og:url" content="http://localhost:43997/nayun.github.io/tech/frontend/hugo/%E8%AF%8D%E4%BA%91%E5%AE%9E%E8%B7%B5%E6%B5%81%E7%A8%8B/">
+    <meta property="og:url" content="http://localhost:43997/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250728/">
   <meta property="og:site_name" content="nayun blog">
-  <meta property="og:title" content="词云实践流程">
-  <meta property="og:description" content="1. 通过deepseek生成词云html、js、css代码 # &lt;/&gt; prompt参考 折叠 复制 1我在做hugo页面，帮我生成标签词云的代码，我会在首页index.html中导入，词云内容为tag，点击跳转对应url，每个tag样式为圆形，大小只和tag字符关联，无旋转，排序权值使用tag文章数量，权值越高越靠中间，分成html css js三个文件实现，tag在html中使用.Site.Taxonomies.tags生成 2让词云标签贴合，至少行对齐（居中、等分对齐），有一定的对齐的美感 &lt;/&gt; 生成 折叠 复制 1tag-cloud.html 2tag-cloud.css 3tag-cloud.js 2. tag-cloud绑定在baseURL/tags/url上 # 原理：
-&lt;/&gt; 路由机制 折叠 复制 1Hugo 会自动将 layouts/taxonomy/tag.terms.html 映射到 /tags/ URL 2这是 Hugo 分类系统（Taxonomy）的标准行为 流程：
-- 1. 创建layouts/taxonomy/tag.terms.html # - 2. 在tag.terms.html中直接调用tag-cloud.html # &lt;/&gt; tag.terms.html 折叠 复制 1{{ define &#34;main&#34; }} 2{{ partial &#34;tag-cloud.html&#34; . }} 3{{ end }} - 3. 导入css、js文件 # 为了方便，直接在tag-cloud.html中嵌入了css、js的导入（缺点，页面会动态加载js）">
+  <meta property="og:title" content="Hugo学习250728">
+  <meta property="og:description" content="1. 可折叠列表 HTML5 标签，折叠内容无法支持原生markdown语法 # config.yaml中配置，允许渲染 HTML 标签 &lt;/&gt; yaml 折叠 复制 1markup: 2 goldmark: 3 renderer: 4 unsafe: true 使用原生html5 details标签 &lt;/&gt; html 折叠 复制 1&lt;details&gt; 2 &lt;summary&gt;点击展开查看详情&lt;/summary&gt; 3 4 这里是隐藏的内容，支持 **Markdown** 格式： 5 6 - 列表项1 7 - 列表项2 8 - [链接](https://example.com) 9&lt;/details&gt; 效果： 这里是隐藏的内容，支持 Markdown 格式：
+列表项1 列表项2 链接 本质是隐藏细节 嵌套 一级折叠标题 这是一级内容…">
   <meta property="og:locale" content="zh_cn">
   <meta property="og:type" content="article">
     <meta property="article:section" content="tech">
-    <meta property="article:published_time" content="2025-07-24T17:15:11+08:00">
-    <meta property="article:modified_time" content="2025-07-24T17:15:11+08:00">
+    <meta property="article:published_time" content="2025-07-28T15:33:17+08:00">
+    <meta property="article:modified_time" content="2025-07-28T15:33:17+08:00">
     <meta property="article:tag" content="技">
     <meta property="article:tag" content="Hugo">
     <meta property="article:tag" content="前端">
 
     
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="词云实践流程">
-  <meta name="twitter:description" content="1. 通过deepseek生成词云html、js、css代码 # &lt;/&gt; prompt参考 折叠 复制 1我在做hugo页面，帮我生成标签词云的代码，我会在首页index.html中导入，词云内容为tag，点击跳转对应url，每个tag样式为圆形，大小只和tag字符关联，无旋转，排序权值使用tag文章数量，权值越高越靠中间，分成html css js三个文件实现，tag在html中使用.Site.Taxonomies.tags生成 2让词云标签贴合，至少行对齐（居中、等分对齐），有一定的对齐的美感 &lt;/&gt; 生成 折叠 复制 1tag-cloud.html 2tag-cloud.css 3tag-cloud.js 2. tag-cloud绑定在baseURL/tags/url上 # 原理：
-&lt;/&gt; 路由机制 折叠 复制 1Hugo 会自动将 layouts/taxonomy/tag.terms.html 映射到 /tags/ URL 2这是 Hugo 分类系统（Taxonomy）的标准行为 流程：
-- 1. 创建layouts/taxonomy/tag.terms.html # - 2. 在tag.terms.html中直接调用tag-cloud.html # &lt;/&gt; tag.terms.html 折叠 复制 1{{ define &#34;main&#34; }} 2{{ partial &#34;tag-cloud.html&#34; . }} 3{{ end }} - 3. 导入css、js文件 # 为了方便，直接在tag-cloud.html中嵌入了css、js的导入（缺点，页面会动态加载js）">
+  <meta name="twitter:title" content="Hugo学习250728">
+  <meta name="twitter:description" content="1. 可折叠列表 HTML5 标签，折叠内容无法支持原生markdown语法 # config.yaml中配置，允许渲染 HTML 标签 &lt;/&gt; yaml 折叠 复制 1markup: 2 goldmark: 3 renderer: 4 unsafe: true 使用原生html5 details标签 &lt;/&gt; html 折叠 复制 1&lt;details&gt; 2 &lt;summary&gt;点击展开查看详情&lt;/summary&gt; 3 4 这里是隐藏的内容，支持 **Markdown** 格式： 5 6 - 列表项1 7 - 列表项2 8 - [链接](https://example.com) 9&lt;/details&gt; 效果： 这里是隐藏的内容，支持 Markdown 格式：
+列表项1 列表项2 链接 本质是隐藏细节 嵌套 一级折叠标题 这是一级内容…">
 
       
     
@@ -104,26 +102,26 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Teches",
-    "name": "词云实践流程",
-    "headline": "词云实践流程",
+    "name": "Hugo学习250728",
+    "headline": "Hugo学习250728",
     
-    "abstract": "\u003ch4 class=\u0022relative group\u0022\u003e1. 通过deepseek生成词云\u003ccode\u003ehtml、js、css\u003c\/code\u003e代码 \n    \u003cdiv id=\u00221-通过deepseek生成词云htmljscss代码\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#1-%e9%80%9a%e8%bf%87deepseek%e7%94%9f%e6%88%90%e8%af%8d%e4%ba%91htmljscss%e4%bb%a3%e7%a0%81\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h4\u003e\n\n\u003cdiv class=\u0022code-block-wrapper\u0022\u003e\n  \u003cdiv class=\u0022code-header\u0022\u003e\n    \u003cspan class=\u0022language-label\u0022\u003e\n      \u003cspan class=\u0022language-brackets\u0022\u003e\u0026lt;\/\u003e\u003c\/span\u003e  \n      \u003cspan class=\u0022language-name\u0022\u003eprompt参考\u003c\/span\u003e  \n    \u003c\/span\u003e\n\n    \u003cdiv class=\u0022code-buttons\u0022\u003e\n      \u003cbutton class=\u0022fold-button\u0022 title=\u0022Toggle fold\u0022\u003e\n        \u003ci class=\u0022fas fa-chevron-up\u0022\u003e\u003c\/i\u003e\n        \u003cspan\u003e折叠\u003c\/span\u003e\n      \u003c\/button\u003e\n      \u003cbutton class=\u0022copy-button\u0022 title=\u0022Copy code\u0022\u003e\n        \u003ci class=\u0022fas fa-copy\u0022\u003e\u003c\/i\u003e\n        \u003cspan\u003e复制\u003c\/span\u003e\n      \u003c\/button\u003e\n    \u003c\/div\u003e\n  \u003c\/div\u003e\n  \u003cdiv class=\u0022highlight\u0022\u003e\u003cpre tabindex=\u00220\u0022 class=\u0022chroma\u0022\u003e\u003ccode class=\u0022language-fallback\u0022 data-lang=\u0022fallback\u0022\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e1\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e我在做hugo页面，帮我生成标签词云的代码，我会在首页index.html中导入，词云内容为tag，点击跳转对应url，每个tag样式为圆形，大小只和tag字符关联，无旋转，排序权值使用tag文章数量，权值越高越靠中间，分成html css js三个文件实现，tag在html中使用.Site.Taxonomies.tags生成\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e2\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e让词云标签贴合，至少行对齐（居中、等分对齐），有一定的对齐的美感\u003c\/span\u003e\u003c\/span\u003e\u003c\/code\u003e\u003c\/pre\u003e\u003c\/div\u003e\n\u003c\/div\u003e\n\n\u003cdiv class=\u0022code-block-wrapper\u0022\u003e\n  \u003cdiv class=\u0022code-header\u0022\u003e\n    \u003cspan class=\u0022language-label\u0022\u003e\n      \u003cspan class=\u0022language-brackets\u0022\u003e\u0026lt;\/\u003e\u003c\/span\u003e  \n      \u003cspan class=\u0022language-name\u0022\u003e生成\u003c\/span\u003e  \n    \u003c\/span\u003e\n\n    \u003cdiv class=\u0022code-buttons\u0022\u003e\n      \u003cbutton class=\u0022fold-button\u0022 title=\u0022Toggle fold\u0022\u003e\n        \u003ci class=\u0022fas fa-chevron-up\u0022\u003e\u003c\/i\u003e\n        \u003cspan\u003e折叠\u003c\/span\u003e\n      \u003c\/button\u003e\n      \u003cbutton class=\u0022copy-button\u0022 title=\u0022Copy code\u0022\u003e\n        \u003ci class=\u0022fas fa-copy\u0022\u003e\u003c\/i\u003e\n        \u003cspan\u003e复制\u003c\/span\u003e\n      \u003c\/button\u003e\n    \u003c\/div\u003e\n  \u003c\/div\u003e\n  \u003cdiv class=\u0022highlight\u0022\u003e\u003cpre tabindex=\u00220\u0022 class=\u0022chroma\u0022\u003e\u003ccode class=\u0022language-fallback\u0022 data-lang=\u0022fallback\u0022\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e1\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003etag-cloud.html\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e2\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003etag-cloud.css\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e3\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003etag-cloud.js\u003c\/span\u003e\u003c\/span\u003e\u003c\/code\u003e\u003c\/pre\u003e\u003c\/div\u003e\n\u003c\/div\u003e\n\n\u003ch4 class=\u0022relative group\u0022\u003e2. tag-cloud绑定在baseURL\/tags\/url上 \n    \u003cdiv id=\u00222-tag-cloud绑定在baseurltagsurl上\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#2-tag-cloud%e7%bb%91%e5%ae%9a%e5%9c%a8baseurltagsurl%e4%b8%8a\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h4\u003e\n\u003cp\u003e原理：\u003c\/p\u003e\n\n\u003cdiv class=\u0022code-block-wrapper\u0022\u003e\n  \u003cdiv class=\u0022code-header\u0022\u003e\n    \u003cspan class=\u0022language-label\u0022\u003e\n      \u003cspan class=\u0022language-brackets\u0022\u003e\u0026lt;\/\u003e\u003c\/span\u003e  \n      \u003cspan class=\u0022language-name\u0022\u003e路由机制\u003c\/span\u003e  \n    \u003c\/span\u003e\n\n    \u003cdiv class=\u0022code-buttons\u0022\u003e\n      \u003cbutton class=\u0022fold-button\u0022 title=\u0022Toggle fold\u0022\u003e\n        \u003ci class=\u0022fas fa-chevron-up\u0022\u003e\u003c\/i\u003e\n        \u003cspan\u003e折叠\u003c\/span\u003e\n      \u003c\/button\u003e\n      \u003cbutton class=\u0022copy-button\u0022 title=\u0022Copy code\u0022\u003e\n        \u003ci class=\u0022fas fa-copy\u0022\u003e\u003c\/i\u003e\n        \u003cspan\u003e复制\u003c\/span\u003e\n      \u003c\/button\u003e\n    \u003c\/div\u003e\n  \u003c\/div\u003e\n  \u003cdiv class=\u0022highlight\u0022\u003e\u003cpre tabindex=\u00220\u0022 class=\u0022chroma\u0022\u003e\u003ccode class=\u0022language-fallback\u0022 data-lang=\u0022fallback\u0022\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e1\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003eHugo 会自动将 layouts\/taxonomy\/tag.terms.html 映射到 \/tags\/ URL\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e2\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e这是 Hugo 分类系统（Taxonomy）的标准行为\u003c\/span\u003e\u003c\/span\u003e\u003c\/code\u003e\u003c\/pre\u003e\u003c\/div\u003e\n\u003c\/div\u003e\n\u003cp\u003e流程：\u003c\/p\u003e\n\n\u003ch5 class=\u0022relative group\u0022\u003e- 1. 创建layouts\/taxonomy\/tag.terms.html \n    \u003cdiv id=\u0022--1-创建layoutstaxonomytagtermshtml\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#--1-%e5%88%9b%e5%bb%balayoutstaxonomytagtermshtml\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h5\u003e\n\n\u003ch5 class=\u0022relative group\u0022\u003e- 2. 在tag.terms.html中直接调用tag-cloud.html \n    \u003cdiv id=\u0022--2-在tagtermshtml中直接调用tag-cloudhtml\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#--2-%e5%9c%a8tagtermshtml%e4%b8%ad%e7%9b%b4%e6%8e%a5%e8%b0%83%e7%94%a8tag-cloudhtml\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h5\u003e\n\n\u003cdiv class=\u0022code-block-wrapper\u0022\u003e\n  \u003cdiv class=\u0022code-header\u0022\u003e\n    \u003cspan class=\u0022language-label\u0022\u003e\n      \u003cspan class=\u0022language-brackets\u0022\u003e\u0026lt;\/\u003e\u003c\/span\u003e  \n      \u003cspan class=\u0022language-name\u0022\u003etag.terms.html\u003c\/span\u003e  \n    \u003c\/span\u003e\n\n    \u003cdiv class=\u0022code-buttons\u0022\u003e\n      \u003cbutton class=\u0022fold-button\u0022 title=\u0022Toggle fold\u0022\u003e\n        \u003ci class=\u0022fas fa-chevron-up\u0022\u003e\u003c\/i\u003e\n        \u003cspan\u003e折叠\u003c\/span\u003e\n      \u003c\/button\u003e\n      \u003cbutton class=\u0022copy-button\u0022 title=\u0022Copy code\u0022\u003e\n        \u003ci class=\u0022fas fa-copy\u0022\u003e\u003c\/i\u003e\n        \u003cspan\u003e复制\u003c\/span\u003e\n      \u003c\/button\u003e\n    \u003c\/div\u003e\n  \u003c\/div\u003e\n  \u003cdiv class=\u0022highlight\u0022\u003e\u003cpre tabindex=\u00220\u0022 class=\u0022chroma\u0022\u003e\u003ccode class=\u0022language-tag.terms.html\u0022 data-lang=\u0022tag.terms.html\u0022\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e1\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e{{ define \u0026#34;main\u0026#34; }}\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e2\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e{{ partial \u0026#34;tag-cloud.html\u0026#34;  . }}\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e3\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e{{ end }}\u003c\/span\u003e\u003c\/span\u003e\u003c\/code\u003e\u003c\/pre\u003e\u003c\/div\u003e\n\u003c\/div\u003e\n\n\u003ch5 class=\u0022relative group\u0022\u003e- 3. 导入css、js文件 \n    \u003cdiv id=\u0022--3-导入cssjs文件\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#--3-%e5%af%bc%e5%85%a5cssjs%e6%96%87%e4%bb%b6\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h5\u003e\n\u003cp\u003e为了方便，直接在tag-cloud.html中嵌入了css、js的导入（缺点，页面会动态加载js）\u003c\/p\u003e",
+    "abstract": "\u003ch4 class=\u0022relative group\u0022\u003e1. 可折叠列表 HTML5 标签，折叠内容无法支持原生markdown语法 \n    \u003cdiv id=\u00221-可折叠列表-html5-标签折叠内容无法支持原生markdown语法\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#1-%e5%8f%af%e6%8a%98%e5%8f%a0%e5%88%97%e8%a1%a8-html5-%e6%a0%87%e7%ad%be%e6%8a%98%e5%8f%a0%e5%86%85%e5%ae%b9%e6%97%a0%e6%b3%95%e6%94%af%e6%8c%81%e5%8e%9f%e7%94%9fmarkdown%e8%af%ad%e6%b3%95\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h4\u003e\n\u003col\u003e\n\u003cli\u003econfig.yaml中配置，允许渲染 HTML 标签\u003c\/li\u003e\n\u003c\/ol\u003e\n\n\u003cdiv class=\u0022code-block-wrapper\u0022\u003e\n  \u003cdiv class=\u0022code-header\u0022\u003e\n    \u003cspan class=\u0022language-label\u0022\u003e\n      \u003cspan class=\u0022language-brackets\u0022\u003e\u0026lt;\/\u003e\u003c\/span\u003e  \n      \u003cspan class=\u0022language-name\u0022\u003eyaml\u003c\/span\u003e  \n    \u003c\/span\u003e\n\n    \u003cdiv class=\u0022code-buttons\u0022\u003e\n      \u003cbutton class=\u0022fold-button\u0022 title=\u0022Toggle fold\u0022\u003e\n        \u003ci class=\u0022fas fa-chevron-up\u0022\u003e\u003c\/i\u003e\n        \u003cspan\u003e折叠\u003c\/span\u003e\n      \u003c\/button\u003e\n      \u003cbutton class=\u0022copy-button\u0022 title=\u0022Copy code\u0022\u003e\n        \u003ci class=\u0022fas fa-copy\u0022\u003e\u003c\/i\u003e\n        \u003cspan\u003e复制\u003c\/span\u003e\n      \u003c\/button\u003e\n    \u003c\/div\u003e\n  \u003c\/div\u003e\n  \u003cdiv class=\u0022highlight\u0022\u003e\u003cpre tabindex=\u00220\u0022 class=\u0022chroma\u0022\u003e\u003ccode class=\u0022language-yaml\u0022 data-lang=\u0022yaml\u0022\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e1\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022nt\u0022\u003emarkup\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e:\u003c\/span\u003e\u003cspan class=\u0022w\u0022\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e2\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022w\u0022\u003e  \u003c\/span\u003e\u003cspan class=\u0022nt\u0022\u003egoldmark\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e:\u003c\/span\u003e\u003cspan class=\u0022w\u0022\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e3\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022w\u0022\u003e    \u003c\/span\u003e\u003cspan class=\u0022nt\u0022\u003erenderer\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e:\u003c\/span\u003e\u003cspan class=\u0022w\u0022\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e4\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022w\u0022\u003e      \u003c\/span\u003e\u003cspan class=\u0022nt\u0022\u003eunsafe\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e:\u003c\/span\u003e\u003cspan class=\u0022w\u0022\u003e \u003c\/span\u003e\u003cspan class=\u0022kc\u0022\u003etrue\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003c\/code\u003e\u003c\/pre\u003e\u003c\/div\u003e\n\u003c\/div\u003e\n\u003col start=\u00222\u0022\u003e\n\u003cli\u003e使用原生html5 details标签\u003c\/li\u003e\n\u003c\/ol\u003e\n\n\u003cdiv class=\u0022code-block-wrapper\u0022\u003e\n  \u003cdiv class=\u0022code-header\u0022\u003e\n    \u003cspan class=\u0022language-label\u0022\u003e\n      \u003cspan class=\u0022language-brackets\u0022\u003e\u0026lt;\/\u003e\u003c\/span\u003e  \n      \u003cspan class=\u0022language-name\u0022\u003ehtml\u003c\/span\u003e  \n    \u003c\/span\u003e\n\n    \u003cdiv class=\u0022code-buttons\u0022\u003e\n      \u003cbutton class=\u0022fold-button\u0022 title=\u0022Toggle fold\u0022\u003e\n        \u003ci class=\u0022fas fa-chevron-up\u0022\u003e\u003c\/i\u003e\n        \u003cspan\u003e折叠\u003c\/span\u003e\n      \u003c\/button\u003e\n      \u003cbutton class=\u0022copy-button\u0022 title=\u0022Copy code\u0022\u003e\n        \u003ci class=\u0022fas fa-copy\u0022\u003e\u003c\/i\u003e\n        \u003cspan\u003e复制\u003c\/span\u003e\n      \u003c\/button\u003e\n    \u003c\/div\u003e\n  \u003c\/div\u003e\n  \u003cdiv class=\u0022highlight\u0022\u003e\u003cpre tabindex=\u00220\u0022 class=\u0022chroma\u0022\u003e\u003ccode class=\u0022language-html\u0022 data-lang=\u0022html\u0022\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e1\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022p\u0022\u003e\u0026lt;\u003c\/span\u003e\u003cspan class=\u0022nt\u0022\u003edetails\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e\u0026gt;\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e2\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e  \u003cspan class=\u0022p\u0022\u003e\u0026lt;\u003c\/span\u003e\u003cspan class=\u0022nt\u0022\u003esummary\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e\u0026gt;\u003c\/span\u003e点击展开查看详情\u003cspan class=\u0022p\u0022\u003e\u0026lt;\/\u003c\/span\u003e\u003cspan class=\u0022nt\u0022\u003esummary\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e\u0026gt;\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e3\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e  \n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e4\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e  这里是隐藏的内容，支持 **Markdown** 格式：\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e5\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e  \n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e6\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e  - 列表项1\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e7\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e  - 列表项2\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e8\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e  - [链接](https:\/\/example.com)\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e9\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022p\u0022\u003e\u0026lt;\/\u003c\/span\u003e\u003cspan class=\u0022nt\u0022\u003edetails\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e\u0026gt;\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003c\/code\u003e\u003c\/pre\u003e\u003c\/div\u003e\n\u003c\/div\u003e\n\u003cdetails\u003e\n  \u003csummary\u003e效果：\u003c\/summary\u003e\n\u003cp\u003e这里是隐藏的内容，支持 \u003cstrong\u003eMarkdown\u003c\/strong\u003e 格式：\u003c\/p\u003e\n\u003cul\u003e\n\u003cli\u003e列表项1\u003c\/li\u003e\n\u003cli\u003e列表项2\u003c\/li\u003e\n\u003cli\u003e\u003ca\n  href=\u0022https:\/\/example.com\u0022\n    target=\u0022_blank\u0022\n  \u003e链接\u003c\/a\u003e\n\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003c\/details\u003e\n本质是隐藏细节\n\u003col start=\u00223\u0022\u003e\n\u003cli\u003e嵌套\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003cdetails\u003e\n  \u003csummary\u003e一级折叠标题\u003c\/summary\u003e\n\u003cp\u003e这是一级内容\u0026hellip;\u003c\/p\u003e",
     "inLanguage": "zh-cn",
-    "url" : "http:\/\/localhost:43997\/nayun.github.io\/tech\/frontend\/hugo\/%E8%AF%8D%E4%BA%91%E5%AE%9E%E8%B7%B5%E6%B5%81%E7%A8%8B\/",
+    "url" : "http:\/\/localhost:43997\/nayun.github.io\/tech\/frontend\/hugo\/hugo%E5%AD%A6%E4%B9%A0250728\/",
     "author" : {
       "@type": "Person",
       "name": "nayun"
     },
     "copyrightYear": "2025",
-    "dateCreated": "2025-07-24T17:15:11\u002b08:00",
-    "datePublished": "2025-07-24T17:15:11\u002b08:00",
+    "dateCreated": "2025-07-28T15:33:17\u002b08:00",
+    "datePublished": "2025-07-28T15:33:17\u002b08:00",
     
-    "dateModified": "2025-07-24T17:15:11\u002b08:00",
+    "dateModified": "2025-07-28T15:33:17\u002b08:00",
     
     "keywords": ["技","hugo","前端"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "136"
+    "wordCount": "114"
   }]
   </script>
 
@@ -534,8 +532,8 @@
 
   
   <li class="hidden">
-    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="/nayun.github.io/tech/frontend/hugo/%E8%AF%8D%E4%BA%91%E5%AE%9E%E8%B7%B5%E6%B5%81%E7%A8%8B/"
-      >词云实践流程</a
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250728/"
+      >Hugo学习250728</a
     ><span class="px-1 text-primary-500">/</span>
   </li>
 
@@ -544,7 +542,7 @@
 
       
       <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-        词云实践流程
+        Hugo学习250728
       </h1>
       <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
         
@@ -597,7 +595,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-07-24T17:15:11&#43;08:00">July 24, 2025</time><span class="px-2 text-primary-500">&middot;</span><span>136 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">1 分钟</span>
+      <time datetime="2025-07-28T15:33:17&#43;08:00">July 28, 2025</time><span class="px-2 text-primary-500">&middot;</span><span>114 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">1 分钟</span>
     
 
     
@@ -655,15 +653,8 @@
           <ul>
             <li>
               <ul>
-                <li><a href="#1-通过deepseek生成词云htmljscss代码">1. 通过deepseek生成词云<code>html、js、css</code>代码</a></li>
-                <li><a href="#2-tag-cloud绑定在baseurltagsurl上">2. tag-cloud绑定在baseURL/tags/url上</a>
-                  <ul>
-                    <li><a href="#--1-创建layoutstaxonomytagtermshtml">- 1. 创建layouts/taxonomy/tag.terms.html</a></li>
-                    <li><a href="#--2-在tagtermshtml中直接调用tag-cloudhtml">- 2. 在tag.terms.html中直接调用tag-cloud.html</a></li>
-                    <li><a href="#--3-导入cssjs文件">- 3. 导入css、js文件</a></li>
-                  </ul>
-                </li>
-                <li><a href="#3-在首页indexhtml中加入url链接按钮">3. 在首页index.html中加入url链接按钮</a></li>
+                <li><a href="#1-可折叠列表-html5-标签折叠内容无法支持原生markdown语法">1. 可折叠列表 HTML5 标签，折叠内容无法支持原生markdown语法</a></li>
+                <li><a href="#2-可折叠列表-blowfish短代码折叠内容可以支持部分markdown语法">2. 可折叠列表 Blowfish短代码，折叠内容可以支持部分markdown语法</a></li>
               </ul>
             </li>
           </ul>
@@ -689,15 +680,8 @@
           <ul>
             <li>
               <ul>
-                <li><a href="#1-通过deepseek生成词云htmljscss代码">1. 通过deepseek生成词云<code>html、js、css</code>代码</a></li>
-                <li><a href="#2-tag-cloud绑定在baseurltagsurl上">2. tag-cloud绑定在baseURL/tags/url上</a>
-                  <ul>
-                    <li><a href="#--1-创建layoutstaxonomytagtermshtml">- 1. 创建layouts/taxonomy/tag.terms.html</a></li>
-                    <li><a href="#--2-在tagtermshtml中直接调用tag-cloudhtml">- 2. 在tag.terms.html中直接调用tag-cloud.html</a></li>
-                    <li><a href="#--3-导入cssjs文件">- 3. 导入css、js文件</a></li>
-                  </ul>
-                </li>
-                <li><a href="#3-在首页indexhtml中加入url链接按钮">3. 在首页index.html中加入url链接按钮</a></li>
+                <li><a href="#1-可折叠列表-html5-标签折叠内容无法支持原生markdown语法">1. 可折叠列表 HTML5 标签，折叠内容无法支持原生markdown语法</a></li>
+                <li><a href="#2-可折叠列表-blowfish短代码折叠内容可以支持部分markdown语法">2. 可折叠列表 Blowfish短代码，折叠内容可以支持部分markdown语法</a></li>
               </ul>
             </li>
           </ul>
@@ -807,21 +791,24 @@
 
         <div class="article-content max-w-prose mb-20">
           
-<h4 class="relative group">1. 通过deepseek生成词云<code>html、js、css</code>代码 
-    <div id="1-通过deepseek生成词云htmljscss代码" class="anchor"></div>
+<h4 class="relative group">1. 可折叠列表 HTML5 标签，折叠内容无法支持原生markdown语法 
+    <div id="1-可折叠列表-html5-标签折叠内容无法支持原生markdown语法" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e9%80%9a%e8%bf%87deepseek%e7%94%9f%e6%88%90%e8%af%8d%e4%ba%91htmljscss%e4%bb%a3%e7%a0%81" aria-label="锚点">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e5%8f%af%e6%8a%98%e5%8f%a0%e5%88%97%e8%a1%a8-html5-%e6%a0%87%e7%ad%be%e6%8a%98%e5%8f%a0%e5%86%85%e5%ae%b9%e6%97%a0%e6%b3%95%e6%94%af%e6%8c%81%e5%8e%9f%e7%94%9fmarkdown%e8%af%ad%e6%b3%95" aria-label="锚点">#</a>
     </span>        
     
 </h4>
+<ol>
+<li>config.yaml中配置，允许渲染 HTML 标签</li>
+</ol>
 
 <div class="code-block-wrapper">
   <div class="code-header">
     <span class="language-label">
       <span class="language-brackets">&lt;/></span>  
-      <span class="language-name">prompt参考</span>  
+      <span class="language-name">yaml</span>  
     </span>
 
     <div class="code-buttons">
@@ -835,159 +822,14 @@
       </button>
     </div>
   </div>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">我在做hugo页面，帮我生成标签词云的代码，我会在首页index.html中导入，词云内容为tag，点击跳转对应url，每个tag样式为圆形，大小只和tag字符关联，无旋转，排序权值使用tag文章数量，权值越高越靠中间，分成html css js三个文件实现，tag在html中使用.Site.Taxonomies.tags生成
-</span></span><span class="line"><span class="ln">2</span><span class="cl">让词云标签贴合，至少行对齐（居中、等分对齐），有一定的对齐的美感</span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="ln">1</span><span class="cl"><span class="nt">markup</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="w">  </span><span class="nt">goldmark</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="w">    </span><span class="nt">renderer</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="w">      </span><span class="nt">unsafe</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span></span></span></code></pre></div>
 </div>
-
-<div class="code-block-wrapper">
-  <div class="code-header">
-    <span class="language-label">
-      <span class="language-brackets">&lt;/></span>  
-      <span class="language-name">生成</span>  
-    </span>
-
-    <div class="code-buttons">
-      <button class="fold-button" title="Toggle fold">
-        <i class="fas fa-chevron-up"></i>
-        <span>折叠</span>
-      </button>
-      <button class="copy-button" title="Copy code">
-        <i class="fas fa-copy"></i>
-        <span>复制</span>
-      </button>
-    </div>
-  </div>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">tag-cloud.html
-</span></span><span class="line"><span class="ln">2</span><span class="cl">tag-cloud.css
-</span></span><span class="line"><span class="ln">3</span><span class="cl">tag-cloud.js</span></span></code></pre></div>
-</div>
-
-<h4 class="relative group">2. tag-cloud绑定在baseURL/tags/url上 
-    <div id="2-tag-cloud绑定在baseurltagsurl上" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-tag-cloud%e7%bb%91%e5%ae%9a%e5%9c%a8baseurltagsurl%e4%b8%8a" aria-label="锚点">#</a>
-    </span>        
-    
-</h4>
-<p>原理：</p>
-
-<div class="code-block-wrapper">
-  <div class="code-header">
-    <span class="language-label">
-      <span class="language-brackets">&lt;/></span>  
-      <span class="language-name">路由机制</span>  
-    </span>
-
-    <div class="code-buttons">
-      <button class="fold-button" title="Toggle fold">
-        <i class="fas fa-chevron-up"></i>
-        <span>折叠</span>
-      </button>
-      <button class="copy-button" title="Copy code">
-        <i class="fas fa-copy"></i>
-        <span>复制</span>
-      </button>
-    </div>
-  </div>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">Hugo 会自动将 layouts/taxonomy/tag.terms.html 映射到 /tags/ URL
-</span></span><span class="line"><span class="ln">2</span><span class="cl">这是 Hugo 分类系统（Taxonomy）的标准行为</span></span></code></pre></div>
-</div>
-<p>流程：</p>
-
-<h5 class="relative group">- 1. 创建layouts/taxonomy/tag.terms.html 
-    <div id="--1-创建layoutstaxonomytagtermshtml" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#--1-%e5%88%9b%e5%bb%balayoutstaxonomytagtermshtml" aria-label="锚点">#</a>
-    </span>        
-    
-</h5>
-
-<h5 class="relative group">- 2. 在tag.terms.html中直接调用tag-cloud.html 
-    <div id="--2-在tagtermshtml中直接调用tag-cloudhtml" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#--2-%e5%9c%a8tagtermshtml%e4%b8%ad%e7%9b%b4%e6%8e%a5%e8%b0%83%e7%94%a8tag-cloudhtml" aria-label="锚点">#</a>
-    </span>        
-    
-</h5>
-
-<div class="code-block-wrapper">
-  <div class="code-header">
-    <span class="language-label">
-      <span class="language-brackets">&lt;/></span>  
-      <span class="language-name">tag.terms.html</span>  
-    </span>
-
-    <div class="code-buttons">
-      <button class="fold-button" title="Toggle fold">
-        <i class="fas fa-chevron-up"></i>
-        <span>折叠</span>
-      </button>
-      <button class="copy-button" title="Copy code">
-        <i class="fas fa-copy"></i>
-        <span>复制</span>
-      </button>
-    </div>
-  </div>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-tag.terms.html" data-lang="tag.terms.html"><span class="line"><span class="ln">1</span><span class="cl">{{ define &#34;main&#34; }}
-</span></span><span class="line"><span class="ln">2</span><span class="cl">{{ partial &#34;tag-cloud.html&#34;  . }}
-</span></span><span class="line"><span class="ln">3</span><span class="cl">{{ end }}</span></span></code></pre></div>
-</div>
-
-<h5 class="relative group">- 3. 导入css、js文件 
-    <div id="--3-导入cssjs文件" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#--3-%e5%af%bc%e5%85%a5cssjs%e6%96%87%e4%bb%b6" aria-label="锚点">#</a>
-    </span>        
-    
-</h5>
-<p>为了方便，直接在tag-cloud.html中嵌入了css、js的导入（缺点，页面会动态加载js）</p>
-
-<div class="code-block-wrapper">
-  <div class="code-header">
-    <span class="language-label">
-      <span class="language-brackets">&lt;/></span>  
-      <span class="language-name">tag-cloud.html</span>  
-    </span>
-
-    <div class="code-buttons">
-      <button class="fold-button" title="Toggle fold">
-        <i class="fas fa-chevron-up"></i>
-        <span>折叠</span>
-      </button>
-      <button class="copy-button" title="Copy code">
-        <i class="fas fa-copy"></i>
-        <span>复制</span>
-      </button>
-    </div>
-  </div>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-tag-cloud.html" data-lang="tag-cloud.html"><span class="line"><span class="ln">1</span><span class="cl">{{ $tagscss := resources.Get &#34;css/tag-cloud.css&#34; }} 
-</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{ $tagscss.RelPermalink }}&#34;</span><span class="p">&gt;</span> 
-</span></span><span class="line"><span class="ln">3</span><span class="cl">
-</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="c">&lt;!-- 原tag-cloud.html代码 --&gt;</span>
-</span></span><span class="line"><span class="ln">5</span><span class="cl">
-</span></span><span class="line"><span class="ln">6</span><span class="cl">{{ $jsProcess := resources.Get &#34;js/tag-cloud.js&#34; }} 
-</span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/javascript&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;{{ $jsProcess.RelPermalink }}&#34;</span> <span class="na">integrity</span><span class="o">=</span><span class="s">&#34;{{ $jsProcess.Data.Integrity }}&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span></span></span></code></pre></div>
-</div>
-
-<h4 class="relative group">3. 在首页index.html中加入url链接按钮 
-    <div id="3-在首页indexhtml中加入url链接按钮" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#3-%e5%9c%a8%e9%a6%96%e9%a1%b5indexhtml%e4%b8%ad%e5%8a%a0%e5%85%a5url%e9%93%be%e6%8e%a5%e6%8c%89%e9%92%ae" aria-label="锚点">#</a>
-    </span>        
-    
-</h4>
-<p>由于Blowfish主页使用了partials/home/profile.html等代码嵌套，所以把主题代码拷贝到自定义layouts下，做自定义修改<br>
-在profile.html中的合适位置插入按钮代码</p>
+<ol start="2">
+<li>使用原生html5 details标签</li>
+</ol>
 
 <div class="code-block-wrapper">
   <div class="code-header">
@@ -1007,14 +849,99 @@
       </button>
     </div>
   </div>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="ln">1</span><span class="cl">{{ $css1 := resources.Get &#34;css/TagCloudbtn.css&#34; }}
-</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="p">&lt;</span><span class="nt">link</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/css&#34;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{ $css1.RelPermalink }}&#34;</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="ln">3</span><span class="cl">{{ with .Site.GetPage &#34;tags/&#34; }}
-</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{ .RelPermalink }}&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;go-tag-cloud-button&#34;</span><span class="p">&gt;</span>Tag Cloud<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="ln">5</span><span class="cl">{{ end }}</span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="ln">1</span><span class="cl"><span class="p">&lt;</span><span class="nt">details</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">  <span class="p">&lt;</span><span class="nt">summary</span><span class="p">&gt;</span>点击展开查看详情<span class="p">&lt;/</span><span class="nt">summary</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">  
+</span></span><span class="line"><span class="ln">4</span><span class="cl">  这里是隐藏的内容，支持 **Markdown** 格式：
+</span></span><span class="line"><span class="ln">5</span><span class="cl">  
+</span></span><span class="line"><span class="ln">6</span><span class="cl">  - 列表项1
+</span></span><span class="line"><span class="ln">7</span><span class="cl">  - 列表项2
+</span></span><span class="line"><span class="ln">8</span><span class="cl">  - [链接](https://example.com)
+</span></span><span class="line"><span class="ln">9</span><span class="cl"><span class="p">&lt;/</span><span class="nt">details</span><span class="p">&gt;</span></span></span></code></pre></div>
 </div>
-<p>同样为了方便，直接在html中嵌入了<code>css/TagCloudbtn.css</code>导入<br>
-<code>css/TagCloudbtn.css</code>定义了按钮<code>go-tag-cloud-button</code>样式</p>
+<details>
+  <summary>效果：</summary>
+<p>这里是隐藏的内容，支持 <strong>Markdown</strong> 格式：</p>
+<ul>
+<li>列表项1</li>
+<li>列表项2</li>
+<li><a
+  href="https://example.com"
+    target="_blank"
+  >链接</a>
+</li>
+</ul>
+</details>
+本质是隐藏细节
+<ol start="3">
+<li>嵌套</li>
+</ol>
+<details>
+  <summary>一级折叠标题</summary>
+<p>这是一级内容&hellip;</p>
+  <details>
+    <summary>二级折叠标题</summary>
+<pre><code>&lt;details&gt;
+  &lt;summary&gt;三级折叠标题&lt;/summary&gt;
+  
+  - 这是三级列表
+  - 支持 Markdown
+  - 可以无限嵌套（但建议不超过3-4层）
+&lt;/details&gt;
+</code></pre>
+  </details>
+<ul>
+<li>一级内容中的普通列表</li>
+<li>也可以混合使用</li>
+</ul>
+</details>
+<p>似乎只能嵌套两层</p>
+
+<h4 class="relative group">2. 可折叠列表 Blowfish短代码，折叠内容可以支持部分markdown语法 
+    <div id="2-可折叠列表-blowfish短代码折叠内容可以支持部分markdown语法" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e5%8f%af%e6%8a%98%e5%8f%a0%e5%88%97%e8%a1%a8-blowfish%e7%9f%ad%e4%bb%a3%e7%a0%81%e6%8a%98%e5%8f%a0%e5%86%85%e5%ae%b9%e5%8f%af%e4%bb%a5%e6%94%af%e6%8c%81%e9%83%a8%e5%88%86markdown%e8%af%ad%e6%b3%95" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li>
+
+<details>
+  <summary>Details</summary>
+  <pre><code>1. 感受
+    1. [环境秩序感有利于塑造良好音乐体验](http://localhost:43997/nayun.github.io/tech/frontend/hugo/hugo%E7%90%86%E8%A7%A3/)
+        控制感提升审美敏感度：```当环境有序时，人会产生掌控感，降低焦虑，使大脑更开放地接收音乐中的情感信息（如悲伤旋律更易引发共情）。```
+1. 目标（电子琴曲谱练习+人声演唱练习）
+    1. 当前阶段电子琴最终目标
+        1. 《lemon》
+        1. 《勿听》
+        1. 《不由己》
+        1. 《问》
+        1. 《新写的旧歌》
+        1. 《晚婚》
+        1. 《打上花火》
+        1. 良好环境秩序感
+    1. ```阶段性目标```
+        1. 《lemon》 --&gt; 《勿听》 --&gt; 《不由己》
+        1. 改善环境秩序感
+</code></pre>
+</details>
+
+</li>
+<li>
+
+<details>
+  <summary>Details</summary>
+  <pre><code>1. [环境秩序感有利于塑造良好音乐体验](http://localhost:43997/nayun.github.io/tech/frontend/hugo/hugo%E7%90%86%E8%A7%A3/)
+</code></pre>
+</details>
+
+</li>
+</ul>
+<p>似乎会自动转换为高亮块，不好用</p>
 
           
           
@@ -1052,8 +979,8 @@
           type="text/javascript"
           src="/nayun.github.io/js/page.min.407e5b2727c1f241c95d53db24c776bea71bfc18e09511b815d669ad8caca6e9e18a53864ad364b1ccccfa2f2956768d33cfe193bfb64d3406f3b5ece354ba57.js"
           integrity="sha512-QH5bJyfB8kHJXVPbJMd2vqcb/BjglRG4FdZprYyspunhilOGStNksczM&#43;i8pVnaNM8/hk7&#43;2TTQG87Xs41S6Vw=="
-          data-oid="views_tech/FrontEnd/Hugo/词云实践流程.md"
-          data-oid-likes="likes_tech/FrontEnd/Hugo/词云实践流程.md"></script>
+          data-oid="views_tech/FrontEnd/Hugo/hugo学习250728.md"
+          data-oid-likes="likes_tech/FrontEnd/Hugo/hugo学习250728.md"></script>
       
 
     </section>
@@ -1068,7 +995,7 @@
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="flex group mr-3" href="/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250723/">
+            <a class="flex group mr-3" href="/nayun.github.io/tech/frontend/hugo/%E8%AF%8D%E4%BA%91%E5%AE%9E%E8%B7%B5%E6%B5%81%E7%A8%8B/">
               <span
                 class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
                 >&larr;</span
@@ -1079,11 +1006,11 @@
               >
               <span class="flex flex-col">
                 <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >hugo学习250723</span
+                  >词云实践流程</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2025-07-23T15:01:34&#43;08:00">July 23, 2025</time>
+                    <time datetime="2025-07-24T17:15:11&#43;08:00">July 24, 2025</time>
                   
                 </span>
               </span>
@@ -1091,27 +1018,6 @@
           
         </span>
         <span>
-          
-            <a class="flex text-right group ml-3" href="/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250728/">
-              <span class="flex flex-col">
-                <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >Hugo学习250728</span
-                >
-                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
-                  
-                    <time datetime="2025-07-28T15:33:17&#43;08:00">July 28, 2025</time>
-                  
-                </span>
-              </span>
-              <span
-                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
-                >&rarr;</span
-              >
-              <span
-                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
-                >&larr;</span
-              >
-            </a>
           
         </span>
       </div>

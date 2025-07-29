@@ -8,6 +8,7 @@ markup:
   goldmark:
     renderer:
       hardWraps: True
+      unsafe: true
 
   highlight:
     copy: true  # 启用复制按钮

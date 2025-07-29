@@ -7,7 +7,104 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>© 2025 nayun</copyright>
-    <lastBuildDate>Fri, 25 Jul 2025 16:08:19 +0800</lastBuildDate><atom:link href="http://localhost:43997/nayun.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Jul 2025 15:33:17 +0800</lastBuildDate><atom:link href="http://localhost:43997/nayun.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Hugo学习250728</title>
+      <link>http://localhost:43997/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250728/</link>
+      <pubDate>Mon, 28 Jul 2025 15:33:17 +0800</pubDate>
+      
+      <guid>http://localhost:43997/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250728/</guid>
+      <description>&lt;h4 class=&#34;relative group&#34;&gt;1. 可折叠列表 HTML5 标签 
+    &lt;div id=&#34;1-可折叠列表-html5-标签&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#1-%e5%8f%af%e6%8a%98%e5%8f%a0%e5%88%97%e8%a1%a8-html5-%e6%a0%87%e7%ad%be&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;        
+    
+&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;config.yaml中配置，允许渲染 HTML 标签&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&#34;code-block-wrapper&#34;&gt;
+  &lt;div class=&#34;code-header&#34;&gt;
+    &lt;span class=&#34;language-label&#34;&gt;
+      &lt;span class=&#34;language-brackets&#34;&gt;&amp;lt;/&gt;&lt;/span&gt;  
+      &lt;span class=&#34;language-name&#34;&gt;yaml&lt;/span&gt;  
+    &lt;/span&gt;
+
+    &lt;div class=&#34;code-buttons&#34;&gt;
+      &lt;button class=&#34;fold-button&#34; title=&#34;Toggle fold&#34;&gt;
+        &lt;i class=&#34;fas fa-chevron-up&#34;&gt;&lt;/i&gt;
+        &lt;span&gt;折叠&lt;/span&gt;
+      &lt;/button&gt;
+      &lt;button class=&#34;copy-button&#34; title=&#34;Copy code&#34;&gt;
+        &lt;i class=&#34;fas fa-copy&#34;&gt;&lt;/i&gt;
+        &lt;span&gt;复制&lt;/span&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;markup&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;goldmark&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;renderer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;unsafe&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;使用原生html5 details标签&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&#34;code-block-wrapper&#34;&gt;
+  &lt;div class=&#34;code-header&#34;&gt;
+    &lt;span class=&#34;language-label&#34;&gt;
+      &lt;span class=&#34;language-brackets&#34;&gt;&amp;lt;/&gt;&lt;/span&gt;  
+      &lt;span class=&#34;language-name&#34;&gt;html&lt;/span&gt;  
+    &lt;/span&gt;
+
+    &lt;div class=&#34;code-buttons&#34;&gt;
+      &lt;button class=&#34;fold-button&#34; title=&#34;Toggle fold&#34;&gt;
+        &lt;i class=&#34;fas fa-chevron-up&#34;&gt;&lt;/i&gt;
+        &lt;span&gt;折叠&lt;/span&gt;
+      &lt;/button&gt;
+      &lt;button class=&#34;copy-button&#34; title=&#34;Copy code&#34;&gt;
+        &lt;i class=&#34;fas fa-copy&#34;&gt;&lt;/i&gt;
+        &lt;span&gt;复制&lt;/span&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;details&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;summary&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;点击展开查看详情&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;summary&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;  这里是隐藏的内容，支持 **Markdown** 格式：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;  - 列表项1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;  - 列表项2
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;  - [链接](https://example.com)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;details&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;details&gt;
+  &lt;summary&gt;效果：&lt;/summary&gt;
+&lt;p&gt;这里是隐藏的内容，支持 &lt;strong&gt;Markdown&lt;/strong&gt; 格式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;列表项1&lt;/li&gt;
+&lt;li&gt;列表项2&lt;/li&gt;
+&lt;li&gt;&lt;a
+  href=&#34;https://example.com&#34;
+    target=&#34;_blank&#34;
+  &gt;链接&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/details&gt;
+本质是隐藏细节
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;嵌套&lt;/li&gt;
+&lt;/ol&gt;
+&lt;details&gt;
+  &lt;summary&gt;一级折叠标题&lt;/summary&gt;
+&lt;p&gt;这是一级内容&amp;hellip;&lt;/p&gt;</description>
+      
+    </item>
     
     <item>
       <title>元类MetaClass</title>
@@ -784,7 +881,8 @@
       <pubDate>Sun, 07 Jul 2024 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:43997/nayun.github.io/about/</guid>
-      <description>&lt;p&gt;这是我的个人介绍页面&amp;hellip;&lt;/p&gt;</description>
+      <description>&lt;p&gt;这是我的个人介绍页面&amp;hellip;&lt;/p&gt;
+&lt;!-- 在此添加你的个人介绍内容 --&gt;</description>
       
     </item>
     
