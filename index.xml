@@ -1,4 +1,85 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>nayun blog</title><link>https://wang-xu-97.github.io/nayun.github.io/</link><description>Recent content on nayun blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>© 2025 nayun</copyright><lastBuildDate>Fri, 25 Jul 2025 16:08:19 +0800</lastBuildDate><atom:link href="https://wang-xu-97.github.io/nayun.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>元类MetaClass</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E5%85%83%E7%B1%BBmetaclass/</link><pubDate>Fri, 25 Jul 2025 16:08:19 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E5%85%83%E7%B1%BBmetaclass/</guid><description>&lt;p>元类作用时机&lt;br>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>nayun blog</title><link>https://wang-xu-97.github.io/nayun.github.io/</link><description>Recent content on nayun blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>© 2025 nayun</copyright><lastBuildDate>Mon, 28 Jul 2025 15:33:17 +0800</lastBuildDate><atom:link href="https://wang-xu-97.github.io/nayun.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugo学习250728</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250728/</link><pubDate>Mon, 28 Jul 2025 15:33:17 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250728/</guid><description>&lt;h4 class="relative group">1. 可折叠列表 HTML5 标签，折叠内容无法支持原生markdown语法
+&lt;div id="1-可折叠列表-html5-标签折叠内容无法支持原生markdown语法" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e5%8f%af%e6%8a%98%e5%8f%a0%e5%88%97%e8%a1%a8-html5-%e6%a0%87%e7%ad%be%e6%8a%98%e5%8f%a0%e5%86%85%e5%ae%b9%e6%97%a0%e6%b3%95%e6%94%af%e6%8c%81%e5%8e%9f%e7%94%9fmarkdown%e8%af%ad%e6%b3%95" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h4>
+&lt;ol>
+&lt;li>config.yaml中配置，允许渲染 HTML 标签&lt;/li>
+&lt;/ol>
+&lt;div class="code-block-wrapper">
+&lt;div class="code-header">
+&lt;span class="language-label">
+&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
+&lt;span class="language-name">yaml&lt;/span>
+&lt;/span>
+&lt;div class="code-buttons">
+&lt;button class="fold-button" title="Toggle fold">
+&lt;i class="fas fa-chevron-up">&lt;/i>
+&lt;span>折叠&lt;/span>
+&lt;/button>
+&lt;button class="copy-button" title="Copy code">
+&lt;i class="fas fa-copy">&lt;/i>
+&lt;span>复制&lt;/span>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="nt">markup&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">goldmark&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">renderer&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">unsafe&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">true&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;ol start="2">
+&lt;li>使用原生html5 details标签&lt;/li>
+&lt;/ol>
+&lt;div class="code-block-wrapper">
+&lt;div class="code-header">
+&lt;span class="language-label">
+&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
+&lt;span class="language-name">html&lt;/span>
+&lt;/span>
+&lt;div class="code-buttons">
+&lt;button class="fold-button" title="Toggle fold">
+&lt;i class="fas fa-chevron-up">&lt;/i>
+&lt;span>折叠&lt;/span>
+&lt;/button>
+&lt;button class="copy-button" title="Copy code">
+&lt;i class="fas fa-copy">&lt;/i>
+&lt;span>复制&lt;/span>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">details&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">summary&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>点击展开查看详情&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">summary&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl"> 这里是隐藏的内容，支持 **Markdown** 格式：
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">6&lt;/span>&lt;span class="cl"> - 列表项1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">7&lt;/span>&lt;span class="cl"> - 列表项2
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">8&lt;/span>&lt;span class="cl"> - [链接](https://example.com)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">9&lt;/span>&lt;span class="cl">&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">details&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;details>
+&lt;summary>效果：&lt;/summary>
+&lt;p>这里是隐藏的内容，支持 &lt;strong>Markdown&lt;/strong> 格式：&lt;/p>
+&lt;ul>
+&lt;li>列表项1&lt;/li>
+&lt;li>列表项2&lt;/li>
+&lt;li>&lt;a
+href="https://example.com"
+target="_blank"
+>链接&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;/details>
+本质是隐藏细节
+&lt;ol start="3">
+&lt;li>嵌套&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>一级折叠标题&lt;/summary>
+&lt;p>这是一级内容&amp;hellip;&lt;/p></description></item><item><title>元类MetaClass</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E5%85%83%E7%B1%BBmetaclass/</link><pubDate>Fri, 25 Jul 2025 16:08:19 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E5%85%83%E7%B1%BBmetaclass/</guid><description>&lt;p>元类作用时机&lt;br>
 当使用此元类定义新类时（如 class MyClass(metaclass=StaticMethodMeta)），元类的 &lt;code>__new__&lt;/code> 方法会在类创建时被调用。&lt;/p>
 &lt;p>利用元类改变类特性 -&amp;gt; 创建一个成员函数自动转换为静态成员函数的类&lt;/p>
 &lt;div class="code-block-wrapper">
@@ -584,4 +665,5 @@ target="_blank"
 &lt;li>解压到siteproducer/assets/fonts目录&lt;/li>
 &lt;li>在assets/scss/中创建_fonts.scss，并在scss/custom.scss中引用&lt;/li>
 &lt;/ol>
-&lt;p>font.scss&lt;/p></description></item><item><title>关于我</title><link>https://wang-xu-97.github.io/nayun.github.io/about/</link><pubDate>Sun, 07 Jul 2024 00:00:00 +0000</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/about/</guid><description>&lt;p>这是我的个人介绍页面&amp;hellip;&lt;/p></description></item></channel></rss>
+&lt;p>font.scss&lt;/p></description></item><item><title>关于我</title><link>https://wang-xu-97.github.io/nayun.github.io/about/</link><pubDate>Sun, 07 Jul 2024 00:00:00 +0000</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/about/</guid><description>&lt;p>这是我的个人介绍页面&amp;hellip;&lt;/p>
+&lt;!-- 在此添加你的个人介绍内容 --></description></item></channel></rss>
