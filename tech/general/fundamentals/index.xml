@@ -1,4 +1,36 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on nayun blog</title><link>https://wang-xu-97.github.io/nayun.github.io/tags/linux/</link><description>Recent content in Linux on nayun blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>© 2025 nayun</copyright><lastBuildDate>Tue, 29 Jul 2025 15:19:16 +0800</lastBuildDate><atom:link href="https://wang-xu-97.github.io/nayun.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Linux文件读写</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/general/fundamentals/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99/</link><pubDate>Tue, 29 Jul 2025 15:19:16 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/general/fundamentals/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99/</guid><description>&lt;h2 class="relative group">核心思想
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>项目基础功能 on nayun blog</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/general/fundamentals/</link><description>Recent content in 项目基础功能 on nayun blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>© 2025 nayun</copyright><lastBuildDate>Tue, 29 Jul 2025 15:24:57 +0800</lastBuildDate><atom:link href="https://wang-xu-97.github.io/nayun.github.io/tech/general/fundamentals/index.xml" rel="self" type="application/rss+xml"/><item><title>异常处理</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/general/fundamentals/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</link><pubDate>Tue, 29 Jul 2025 15:24:57 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/general/fundamentals/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</guid><description>&lt;h1 class="relative group">核心思想：按需捕获
+&lt;div id="核心思想按需捕获" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%a0%b8%e5%bf%83%e6%80%9d%e6%83%b3%e6%8c%89%e9%9c%80%e6%8d%95%e8%8e%b7" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h1>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>场景&lt;/th>
+&lt;th>处理方式&lt;/th>
+&lt;th>示例&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>不接受异常，基本不可能异常&lt;/td>
+&lt;td>抛出&lt;/td>
+&lt;td>不做处理，自然抛出&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>不接受异常，但有可能异常&lt;/td>
+&lt;td>抛出&lt;/td>
+&lt;td>1. assert condition, reason&lt;br>2. catch后自定义raise&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>接受异常&lt;/td>
+&lt;td>捕获&lt;/td>
+&lt;td>正常捕获&lt;br>选择日志输出&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>Linux文件读写</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/general/fundamentals/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99/</link><pubDate>Tue, 29 Jul 2025 15:19:16 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/general/fundamentals/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99/</guid><description>&lt;h2 class="relative group">核心思想
 &lt;div id="核心思想" class="anchor">&lt;/div>
 &lt;span
 class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
@@ -640,45 +672,4 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">18&lt;/span>&lt;span class="cl"> &lt;span class="nx">sockData&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">_&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">io&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">ReadAll&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">conn&lt;/span>&lt;span class="p">)&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">19&lt;/span>&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;Socket read:&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nb">string&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">sockData&lt;/span>&lt;span class="p">))&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">20&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div></description></item><item><title>用户态、内核态内存空间</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/backend/linux/%E7%94%A8%E6%88%B7%E6%80%81%E5%86%85%E6%A0%B8%E6%80%81%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4/</link><pubDate>Mon, 14 Jul 2025 15:39:03 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/backend/linux/%E7%94%A8%E6%88%B7%E6%80%81%E5%86%85%E6%A0%B8%E6%80%81%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4/</guid><description>&lt;p>用户态、内核态指内存空间，CPU的各寄存器则是CPU硬件，不属于内存部分，仅在需要存档备份数据时保存至（用户态/内核态）内存&lt;br>
-1、 进程内核栈&lt;br>
-每个进程都有自己独立的位于内核空间的内核栈，保存进程在内核态执行的函数调用栈、局部变量、寄存器状态等数据&lt;/p>
-&lt;p>linux系统切换进程时会切换&lt;/p>
-&lt;ul>
-&lt;li>内核栈&lt;br>
-将 CPU 的栈指针寄存器 (SP/ESP/RSP, x86架构) 从指向进程 A 的内核栈顶部，修改为指向进程 B 的内核栈顶部&lt;/li>
-&lt;li>页目录&lt;br>
-系统切换进程时找到进程的页目录的物理基地址（mm-&amp;gt;pgd指针），写入CR3(x86)/TTBR0(ARM)寄存&lt;/li>
-&lt;/ul>
-&lt;p>2、进程页目录&lt;br>
-存储在物理内存中，进程在创建时，系统创建mm_struct结构，用mm-&amp;gt;pgd指针保存页目录物理基地址（用来在系统切换进程时找到进程的页目录的物理基地址，写入CR3(x86)/TTBR0(ARM)寄存器，完成进程上下文切换）&lt;br>
-页目录包含进程使用的全部内存的虚拟内存地址-&amp;gt;物理内存地址的映射关系&lt;br>
-3、进程硬件上下文&lt;br>
-运行时各寄存器的中间结果、比如PC程序计数器（下一条指令地址）、SP栈指针寄存器（当前调用栈顶）&lt;br>
-切换时，这些数据被保存到进程内核栈中&lt;/p>
-&lt;p>4、线程切换总是发生在同一个进程（同一个虚拟地址空间）内的线程之间。不同进程的线程之间的切换，本质上是通过上层的进程切换完成的&lt;br>
-5、切换线程时只切换线程内核栈，同样CPU栈指针寄存器从指向线程A的内核栈顶-&amp;gt;B的内核栈顶。因为同属一个进程，所以不切换页目录，也即使用同一虚拟内存空间&lt;/p>
-&lt;p>6、进程、线程切换都依赖内核调度器，抢占式调度（时间片、中断）&lt;br>
-7、协程切换只在用户态通过程序本身调度切换，主动让出，显式让出控制权&lt;br>
-8、&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>进程&lt;/th>
-&lt;th>线程&lt;/th>
-&lt;th>协程&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>切换内核栈、页目录&lt;/td>
-&lt;td>切换内核栈&lt;/td>
-&lt;td>仅切换寄存器状态&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>9、用户态进程与内核态进程 全双工通信 -&amp;gt; Netlink Socket&lt;/p>
-&lt;p>相比传统 IPC (syscall, ioctl, procfs)，Netlink 具有显著优势：易于扩展、异步通信、完美支持内核模块、强大的组播能力、真正的全双工通信、开发者友好的标准 Socket API。&lt;/p>
-&lt;p>单播回显: 用户请求-&amp;gt;内核处理-&amp;gt;内核响应的双向通信模式&lt;br>
-内核主动组播: 内核主动向多个订阅进程广播事件的能力&lt;/p>
-&lt;p>netlink属于无连接协议（无连接协议是一种通信协议，其中每个数据包的处理都是独立的，不需要在发送数据之前建立连接）&lt;/p></description></item></channel></rss>
+&lt;/div></description></item></channel></rss>

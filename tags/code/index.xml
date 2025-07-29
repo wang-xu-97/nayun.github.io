@@ -1,4 +1,45 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Code on nayun blog</title><link>https://wang-xu-97.github.io/nayun.github.io/tags/code/</link><description>Recent content in Code on nayun blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>© 2025 nayun</copyright><lastBuildDate>Fri, 25 Jul 2025 16:08:19 +0800</lastBuildDate><atom:link href="https://wang-xu-97.github.io/nayun.github.io/tags/code/index.xml" rel="self" type="application/rss+xml"/><item><title>元类MetaClass</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E5%85%83%E7%B1%BBmetaclass/</link><pubDate>Fri, 25 Jul 2025 16:08:19 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E5%85%83%E7%B1%BBmetaclass/</guid><description>&lt;p>元类作用时机&lt;br>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Code on nayun blog</title><link>https://wang-xu-97.github.io/nayun.github.io/tags/code/</link><description>Recent content in Code on nayun blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>© 2025 nayun</copyright><lastBuildDate>Tue, 29 Jul 2025 17:43:19 +0800</lastBuildDate><atom:link href="https://wang-xu-97.github.io/nayun.github.io/tags/code/index.xml" rel="self" type="application/rss+xml"/><item><title>Bufio</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/coding/golang/bufio/</link><pubDate>Tue, 29 Jul 2025 17:43:19 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/coding/golang/bufio/</guid><description>&lt;h1 class="relative group">bufio 包详解
+&lt;div id="bufio-包详解" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#bufio-%e5%8c%85%e8%af%a6%e8%a7%a3" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h1>
+&lt;p>&lt;code>bufio&lt;/code> 是 Go 标准库中的一个包，提供了带缓冲的 I/O 操作功能。它可以包装现有的 &lt;code>io.Reader&lt;/code> 和 &lt;code>io.Writer&lt;/code> 对象，创建具有缓冲功能的对象，从而提高 I/O 操作的效率。&lt;/p>
+&lt;h2 class="relative group">核心概念
+&lt;div id="核心概念" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%a0%b8%e5%bf%83%e6%a6%82%e5%bf%b5" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h2>
+&lt;h3 class="relative group">缓冲 I/O 的优势
+&lt;div id="缓冲-io-的优势" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%bc%93%e5%86%b2-io-%e7%9a%84%e4%bc%98%e5%8a%bf" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h3>
+&lt;ol>
+&lt;li>&lt;strong>减少系统调用&lt;/strong>：通过缓冲数据，减少实际的 I/O 操作次数&lt;/li>
+&lt;li>&lt;strong>提高性能&lt;/strong>：特别是对于小数据量的频繁读写操作&lt;/li>
+&lt;li>&lt;strong>提供更方便的接口&lt;/strong>：如按行读取等功能&lt;/li>
+&lt;/ol>
+&lt;h2 class="relative group">主要类型和方法
+&lt;div id="主要类型和方法" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e4%b8%bb%e8%a6%81%e7%b1%bb%e5%9e%8b%e5%92%8c%e6%96%b9%e6%b3%95" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h2>
+&lt;h3 class="relative group">1. Reader
+&lt;div id="1-reader" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-reader" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h3>
+&lt;p>&lt;code>bufio.Reader&lt;/code> 为读取操作提供缓冲。&lt;/p></description></item><item><title>元类MetaClass</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E5%85%83%E7%B1%BBmetaclass/</link><pubDate>Fri, 25 Jul 2025 16:08:19 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E5%85%83%E7%B1%BBmetaclass/</guid><description>&lt;p>元类作用时机&lt;br>
 当使用此元类定义新类时（如 class MyClass(metaclass=StaticMethodMeta)），元类的 &lt;code>__new__&lt;/code> 方法会在类创建时被调用。&lt;/p>
 &lt;p>利用元类改变类特性 -&amp;gt; 创建一个成员函数自动转换为静态成员函数的类&lt;/p>
 &lt;div class="code-block-wrapper">

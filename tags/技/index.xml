@@ -1,4 +1,719 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>技 on nayun blog</title><link>https://wang-xu-97.github.io/nayun.github.io/tags/%E6%8A%80/</link><description>Recent content in 技 on nayun blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>© 2025 nayun</copyright><lastBuildDate>Mon, 28 Jul 2025 15:33:17 +0800</lastBuildDate><atom:link href="https://wang-xu-97.github.io/nayun.github.io/tags/%E6%8A%80/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugo学习250728</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250728/</link><pubDate>Mon, 28 Jul 2025 15:33:17 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250728/</guid><description>&lt;h4 class="relative group">1. 可折叠列表 HTML5 标签，折叠内容无法支持原生markdown语法
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>技 on nayun blog</title><link>https://wang-xu-97.github.io/nayun.github.io/tags/%E6%8A%80/</link><description>Recent content in 技 on nayun blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>© 2025 nayun</copyright><lastBuildDate>Tue, 29 Jul 2025 17:43:19 +0800</lastBuildDate><atom:link href="https://wang-xu-97.github.io/nayun.github.io/tags/%E6%8A%80/index.xml" rel="self" type="application/rss+xml"/><item><title>Bufio</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/coding/golang/bufio/</link><pubDate>Tue, 29 Jul 2025 17:43:19 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/coding/golang/bufio/</guid><description>&lt;h1 class="relative group">bufio 包详解
+&lt;div id="bufio-包详解" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#bufio-%e5%8c%85%e8%af%a6%e8%a7%a3" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h1>
+&lt;p>&lt;code>bufio&lt;/code> 是 Go 标准库中的一个包，提供了带缓冲的 I/O 操作功能。它可以包装现有的 &lt;code>io.Reader&lt;/code> 和 &lt;code>io.Writer&lt;/code> 对象，创建具有缓冲功能的对象，从而提高 I/O 操作的效率。&lt;/p>
+&lt;h2 class="relative group">核心概念
+&lt;div id="核心概念" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%a0%b8%e5%bf%83%e6%a6%82%e5%bf%b5" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h2>
+&lt;h3 class="relative group">缓冲 I/O 的优势
+&lt;div id="缓冲-io-的优势" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%bc%93%e5%86%b2-io-%e7%9a%84%e4%bc%98%e5%8a%bf" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h3>
+&lt;ol>
+&lt;li>&lt;strong>减少系统调用&lt;/strong>：通过缓冲数据，减少实际的 I/O 操作次数&lt;/li>
+&lt;li>&lt;strong>提高性能&lt;/strong>：特别是对于小数据量的频繁读写操作&lt;/li>
+&lt;li>&lt;strong>提供更方便的接口&lt;/strong>：如按行读取等功能&lt;/li>
+&lt;/ol>
+&lt;h2 class="relative group">主要类型和方法
+&lt;div id="主要类型和方法" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e4%b8%bb%e8%a6%81%e7%b1%bb%e5%9e%8b%e5%92%8c%e6%96%b9%e6%b3%95" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h2>
+&lt;h3 class="relative group">1. Reader
+&lt;div id="1-reader" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-reader" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h3>
+&lt;p>&lt;code>bufio.Reader&lt;/code> 为读取操作提供缓冲。&lt;/p></description></item><item><title>异常处理</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/general/fundamentals/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</link><pubDate>Tue, 29 Jul 2025 15:24:57 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/general/fundamentals/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</guid><description>&lt;h1 class="relative group">核心思想：按需捕获
+&lt;div id="核心思想按需捕获" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%a0%b8%e5%bf%83%e6%80%9d%e6%83%b3%e6%8c%89%e9%9c%80%e6%8d%95%e8%8e%b7" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h1>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>场景&lt;/th>
+&lt;th>处理方式&lt;/th>
+&lt;th>示例&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>不接受异常，基本不可能异常&lt;/td>
+&lt;td>抛出&lt;/td>
+&lt;td>不做处理，自然抛出&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>不接受异常，但有可能异常&lt;/td>
+&lt;td>抛出&lt;/td>
+&lt;td>1. assert condition, reason&lt;br>2. catch后自定义raise&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>接受异常&lt;/td>
+&lt;td>捕获&lt;/td>
+&lt;td>正常捕获&lt;br>选择日志输出&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>Linux文件读写</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/general/fundamentals/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99/</link><pubDate>Tue, 29 Jul 2025 15:19:16 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/general/fundamentals/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99/</guid><description>&lt;h2 class="relative group">核心思想
+&lt;div id="核心思想" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%a0%b8%e5%bf%83%e6%80%9d%e6%83%b3" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h2>
+&lt;p>一切皆文件（Everything is a File），提供了一套统一的接口 (open(), read(), write(), close(), ioctl() 等系统调用) 来操作各种资源，极大地简化了程序设计。&lt;/p>
+&lt;p>不仅指普通的文本文件、二进制可执行文件、图片、视频等，还包括：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>硬件设备&lt;/strong>： 硬盘 (/dev/sda1)、键盘 (/dev/input)、显示器 (/dev/fb0)、声卡 (/dev/snd)、甚至内存 (/dev/mem) 都被表示为文件。对这些“设备文件”的读写操作实际上是与硬件交互。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>进程信息&lt;/strong>： 正在运行的程序（进程）的信息和控制接口可以通过 /proc 文件系统访问（如 /proc/1234 对应 PID 为 1234 的进程）。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>系统信息和配置&lt;/strong>： /sys 文件系统暴露内核参数、硬件信息和配置选项。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>网络套接字&lt;/strong>： 网络通信的端点。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>管道&lt;/strong>： 进程间通信的通道。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>特性&lt;/th>
+&lt;th>普通文件&lt;/th>
+&lt;th>管道(Pipe)&lt;/th>
+&lt;th>Socket(TCP)&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>打开方式&lt;/td>
+&lt;td>路径直接打开&lt;/td>
+&lt;td>pipe()系统调用&lt;/td>
+&lt;td>socket()+bind/connect&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>数据存储&lt;/td>
+&lt;td>持久化存储&lt;/td>
+&lt;td>内存缓冲区&lt;/td>
+&lt;td>网络传输&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>访问模式&lt;/td>
+&lt;td>随机访问&lt;/td>
+&lt;td>顺序访问&lt;/td>
+&lt;td>顺序访问&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>生命周期&lt;/td>
+&lt;td>显式创建/删除&lt;/td>
+&lt;td>进程结束自动销毁&lt;/td>
+&lt;td>连接关闭即失效&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>进程通信&lt;/td>
+&lt;td>不支持进程间通信&lt;/td>
+&lt;td>支持相关进程通信&lt;/td>
+&lt;td>支持跨网络通信&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>阻塞行为&lt;/td>
+&lt;td>通常非阻塞&lt;/td>
+&lt;td>读空阻塞/写满阻塞&lt;/td>
+&lt;td>默认阻塞&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 class="relative group">1. 普通文件
+&lt;div id="1-普通文件" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e6%99%ae%e9%80%9a%e6%96%87%e4%bb%b6" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h2>
+&lt;h3 class="relative group">代码实现
+&lt;div id="代码实现" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e4%bb%a3%e7%a0%81%e5%ae%9e%e7%8e%b0" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h3>
+&lt;h4 class="relative group">1. python
+&lt;div id="1-python" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-python" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h4>
+&lt;ol>
+&lt;li>基本方法：&lt;code>with open(fp, mode) &lt;/code>&lt;br>
+示例&lt;/li>
+&lt;/ol>
+&lt;div class="code-block-wrapper">
+&lt;div class="code-header">
+&lt;span class="language-label">
+&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
+&lt;span class="language-name">python&lt;/span>
+&lt;/span>
+&lt;div class="code-buttons">
+&lt;button class="fold-button" title="Toggle fold">
+&lt;i class="fas fa-chevron-up">&lt;/i>
+&lt;span>折叠&lt;/span>
+&lt;/button>
+&lt;button class="copy-button" title="Copy code">
+&lt;i class="fas fa-copy">&lt;/i>
+&lt;span>复制&lt;/span>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="ln"> 1&lt;/span>&lt;span class="cl">&lt;span class="k">with&lt;/span> &lt;span class="nb">open&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;text.txt&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;w&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">encoding&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s1">&amp;#39;utf-8&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="k">as&lt;/span> &lt;span class="n">f&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="c1"># &amp;#39;w&amp;#39; 覆盖写&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 2&lt;/span>&lt;span class="cl"> &lt;span class="n">f&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">write&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;Hello Python!&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 3&lt;/span>&lt;span class="cl"> &lt;span class="n">f&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">writelines&lt;/span>&lt;span class="p">([&lt;/span>&lt;span class="s2">&amp;#34;Line 1&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;Line 2&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="p">])&lt;/span> &lt;span class="c1"># 写入多行&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 4&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 5&lt;/span>&lt;span class="cl">&lt;span class="k">with&lt;/span> &lt;span class="nb">open&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;text.txt&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;r&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">encoding&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s1">&amp;#39;utf-8&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="k">as&lt;/span> &lt;span class="n">f&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 6&lt;/span>&lt;span class="cl"> &lt;span class="n">content&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">f&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">read&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="c1"># 一次性读取&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 7&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 8&lt;/span>&lt;span class="cl">&lt;span class="k">with&lt;/span> &lt;span class="nb">open&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;text.txt&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;r&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="k">as&lt;/span> &lt;span class="n">f&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 9&lt;/span>&lt;span class="cl"> &lt;span class="n">lines&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">f&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">readlines&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="c1"># 返回列表&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">10&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">11&lt;/span>&lt;span class="cl">&lt;span class="c1"># ========== 二进制文件读写 ==========&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">12&lt;/span>&lt;span class="cl">&lt;span class="n">data&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="sa">b&lt;/span>&lt;span class="s1">&amp;#39;&lt;/span>&lt;span class="se">\x48\x65\x6C\x6C\x6F\x21&lt;/span>&lt;span class="s1">&amp;#39;&lt;/span> &lt;span class="c1"># &amp;#34;Hello!&amp;#34; 的二进制&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">13&lt;/span>&lt;span class="cl">&lt;span class="k">with&lt;/span> &lt;span class="nb">open&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;binary.bin&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;wb&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="k">as&lt;/span> &lt;span class="n">f&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="c1"># &amp;#39;wb&amp;#39; 二进制写&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">14&lt;/span>&lt;span class="cl"> &lt;span class="n">f&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">write&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">data&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">15&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">16&lt;/span>&lt;span class="cl">&lt;span class="k">with&lt;/span> &lt;span class="nb">open&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;binary.bin&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;rb&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="k">as&lt;/span> &lt;span class="n">f&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">17&lt;/span>&lt;span class="cl"> &lt;span class="n">binary_content&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">f&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">read&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">18&lt;/span>&lt;span class="cl"> &lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;二进制内容:&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">binary_content&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1"># b&amp;#39;Hello!&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">19&lt;/span>&lt;span class="cl"> &lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;解码为字符串:&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">binary_content&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">decode&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;utf-8&amp;#39;&lt;/span>&lt;span class="p">))&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;h4 class="relative group">2. c++
+&lt;div id="2-c" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-c" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h4>
+&lt;ol>
+&lt;li>基本方法：&lt;code>fstream&lt;/code>
+&lt;ol>
+&lt;li>读：&lt;code>std::ifstream&lt;/code>&lt;/li>
+&lt;li>写：&lt;code>std::ofstream&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>注：创建流对象后需要手动关闭&lt;/li>
+&lt;li>示例&lt;/li>
+&lt;/ol>
+&lt;div class="code-block-wrapper">
+&lt;div class="code-header">
+&lt;span class="language-label">
+&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
+&lt;span class="language-name">c++&lt;/span>
+&lt;/span>
+&lt;div class="code-buttons">
+&lt;button class="fold-button" title="Toggle fold">
+&lt;i class="fas fa-chevron-up">&lt;/i>
+&lt;span>折叠&lt;/span>
+&lt;/button>
+&lt;button class="copy-button" title="Copy code">
+&lt;i class="fas fa-copy">&lt;/i>
+&lt;span>复制&lt;/span>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-c++" data-lang="c++">&lt;span class="line">&lt;span class="ln"> 1&lt;/span>&lt;span class="cl">&lt;span class="cp">#include&lt;/span> &lt;span class="cpf">&amp;lt;iostream&amp;gt;&lt;/span>&lt;span class="cp">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 2&lt;/span>&lt;span class="cl">&lt;span class="cp">#include&lt;/span> &lt;span class="cpf">&amp;lt;fstream&amp;gt;&lt;/span>&lt;span class="cp">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 3&lt;/span>&lt;span class="cl">&lt;span class="cp">#include&lt;/span> &lt;span class="cpf">&amp;lt;vector&amp;gt;&lt;/span>&lt;span class="cp">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 4&lt;/span>&lt;span class="cl">&lt;span class="cp">#include&lt;/span> &lt;span class="cpf">&amp;lt;string&amp;gt;&lt;/span>&lt;span class="cp">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 5&lt;/span>&lt;span class="cl">&lt;span class="cp">&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 6&lt;/span>&lt;span class="cl">&lt;span class="kt">int&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 7&lt;/span>&lt;span class="cl"> &lt;span class="c1">// ========== 文本文件读写 ==========
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 8&lt;/span>&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="c1">// 写入文本文件
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 9&lt;/span>&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="n">std&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="n">ofstream&lt;/span> &lt;span class="n">textOut&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;text.txt&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">10&lt;/span>&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">textOut&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">is_open&lt;/span>&lt;span class="p">())&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">11&lt;/span>&lt;span class="cl"> &lt;span class="n">textOut&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="s">&amp;#34;Hello C++!&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s">&amp;#34;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">12&lt;/span>&lt;span class="cl"> &lt;span class="n">textOut&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="s">&amp;#34;Line 1&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s">Line 2&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s">&amp;#34;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">13&lt;/span>&lt;span class="cl"> &lt;span class="n">textOut&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">close&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">14&lt;/span>&lt;span class="cl"> &lt;span class="n">std&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="n">cout&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="s">&amp;#34;文本写入成功&amp;#34;&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="n">std&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="n">endl&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">15&lt;/span>&lt;span class="cl"> &lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">16&lt;/span>&lt;span class="cl"> &lt;span class="n">std&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="n">cerr&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="s">&amp;#34;文本文件打开失败&amp;#34;&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="n">std&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="n">endl&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">17&lt;/span>&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">18&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">19&lt;/span>&lt;span class="cl"> &lt;span class="c1">// 读取文本文件
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">20&lt;/span>&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="n">std&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="n">ifstream&lt;/span> &lt;span class="n">textIn&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;text.txt&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">21&lt;/span>&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">textIn&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">is_open&lt;/span>&lt;span class="p">())&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">22&lt;/span>&lt;span class="cl"> &lt;span class="n">std&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="n">string&lt;/span> &lt;span class="n">line&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">23&lt;/span>&lt;span class="cl"> &lt;span class="n">std&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="n">cout&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="s">&amp;#34;文本内容:&amp;#34;&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="n">std&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="n">endl&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">24&lt;/span>&lt;span class="cl"> &lt;span class="k">while&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">std&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="n">getline&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">textIn&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">line&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="c1">// 逐行读取
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">25&lt;/span>&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="n">std&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="n">cout&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="n">line&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="n">std&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="n">endl&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">26&lt;/span>&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">27&lt;/span>&lt;span class="cl"> &lt;span class="n">textIn&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">close&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">28&lt;/span>&lt;span class="cl"> &lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">29&lt;/span>&lt;span class="cl"> &lt;span class="n">std&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="n">cerr&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="s">&amp;#34;文本文件打开失败&amp;#34;&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="n">std&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="n">endl&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">30&lt;/span>&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">31&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">32&lt;/span>&lt;span class="cl"> &lt;span class="c1">// ========== 二进制文件读写 ==========
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">33&lt;/span>&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="c1">// 写入二进制文件
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">34&lt;/span>&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="n">std&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="n">ofstream&lt;/span> &lt;span class="n">binOut&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;binary.bin&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">std&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="n">ios&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="n">binary&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">35&lt;/span>&lt;span class="cl"> &lt;span class="kt">char&lt;/span> &lt;span class="n">data&lt;/span>&lt;span class="p">[]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">{&lt;/span>&lt;span class="mh">0x48&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mh">0x65&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mh">0x6C&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mh">0x6C&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mh">0x6F&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mh">0x21&lt;/span>&lt;span class="p">};&lt;/span> &lt;span class="c1">// &amp;#34;Hello!&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">36&lt;/span>&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">binOut&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">is_open&lt;/span>&lt;span class="p">())&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">37&lt;/span>&lt;span class="cl"> &lt;span class="n">binOut&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">write&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">data&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="k">sizeof&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">data&lt;/span>&lt;span class="p">));&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">38&lt;/span>&lt;span class="cl"> &lt;span class="n">binOut&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">close&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">39&lt;/span>&lt;span class="cl"> &lt;span class="n">std&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="n">cout&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="s">&amp;#34;二进制写入成功&amp;#34;&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="n">std&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="n">endl&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">40&lt;/span>&lt;span class="cl"> &lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">41&lt;/span>&lt;span class="cl"> &lt;span class="n">std&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="n">cerr&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="s">&amp;#34;二进制文件打开失败&amp;#34;&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="n">std&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="n">endl&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">42&lt;/span>&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">43&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">44&lt;/span>&lt;span class="cl"> &lt;span class="c1">// 读取二进制文件
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">45&lt;/span>&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="n">std&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="n">ifstream&lt;/span> &lt;span class="n">binIn&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;binary.bin&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">std&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="n">ios&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="n">binary&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">46&lt;/span>&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">binIn&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">is_open&lt;/span>&lt;span class="p">())&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">47&lt;/span>&lt;span class="cl"> &lt;span class="c1">// 获取文件大小
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">48&lt;/span>&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="n">binIn&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">seekg&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">std&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="n">ios&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="n">end&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">49&lt;/span>&lt;span class="cl"> &lt;span class="n">size_t&lt;/span> &lt;span class="n">size&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">binIn&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">tellg&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">50&lt;/span>&lt;span class="cl"> &lt;span class="n">binIn&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">seekg&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">std&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="n">ios&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="n">beg&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">51&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">52&lt;/span>&lt;span class="cl"> &lt;span class="c1">// 读取到vector
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">53&lt;/span>&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="n">std&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="n">vector&lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="kt">char&lt;/span>&lt;span class="o">&amp;gt;&lt;/span> &lt;span class="n">buffer&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">size&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">54&lt;/span>&lt;span class="cl"> &lt;span class="n">binIn&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">read&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">buffer&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">data&lt;/span>&lt;span class="p">(),&lt;/span> &lt;span class="n">size&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">55&lt;/span>&lt;span class="cl"> &lt;span class="n">binIn&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">close&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">56&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">57&lt;/span>&lt;span class="cl"> &lt;span class="n">std&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="n">cout&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="s">&amp;#34;二进制内容: &amp;#34;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">58&lt;/span>&lt;span class="cl"> &lt;span class="k">for&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="kt">char&lt;/span> &lt;span class="nl">c&lt;/span> &lt;span class="p">:&lt;/span> &lt;span class="n">buffer&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="n">std&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="n">cout&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="n">c&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c1">// 输出 &amp;#34;Hello!&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">59&lt;/span>&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="n">std&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="n">cout&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="n">std&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="n">endl&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">60&lt;/span>&lt;span class="cl"> &lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">61&lt;/span>&lt;span class="cl"> &lt;span class="n">std&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="n">cerr&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="s">&amp;#34;二进制文件打开失败&amp;#34;&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="n">std&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="n">endl&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">62&lt;/span>&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">63&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">64&lt;/span>&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">65&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;h4 class="relative group">3. golang
+&lt;div id="3-golang" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#3-golang" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h4>
+&lt;ol>
+&lt;li>基本方法：&lt;code>os&lt;/code>
+&lt;ol>
+&lt;li>读：
+&lt;ol>
+&lt;li>整体读取：&lt;code>os.ReadFile&lt;/code>&lt;/li>
+&lt;li>逐行读取：
+&lt;ol>
+&lt;li>&lt;code>os.Open&lt;/code>&lt;/li>
+&lt;li>&lt;code>bufio.NewScanner&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>写：&lt;code>os.WriteFile&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;div class="code-block-wrapper">
+&lt;div class="code-header">
+&lt;span class="language-label">
+&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
+&lt;span class="language-name">golang&lt;/span>
+&lt;/span>
+&lt;div class="code-buttons">
+&lt;button class="fold-button" title="Toggle fold">
+&lt;i class="fas fa-chevron-up">&lt;/i>
+&lt;span>折叠&lt;/span>
+&lt;/button>
+&lt;button class="copy-button" title="Copy code">
+&lt;i class="fas fa-copy">&lt;/i>
+&lt;span>复制&lt;/span>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-golang" data-lang="golang">&lt;span class="line">&lt;span class="ln"> 1&lt;/span>&lt;span class="cl">&lt;span class="kn">package&lt;/span> &lt;span class="nx">main&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 2&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 3&lt;/span>&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 4&lt;/span>&lt;span class="cl"> &lt;span class="s">&amp;#34;fmt&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 5&lt;/span>&lt;span class="cl"> &lt;span class="s">&amp;#34;io&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 6&lt;/span>&lt;span class="cl"> &lt;span class="s">&amp;#34;os&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 7&lt;/span>&lt;span class="cl"> &lt;span class="s">&amp;#34;bufio&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 8&lt;/span>&lt;span class="cl">&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 9&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">10&lt;/span>&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">11&lt;/span>&lt;span class="cl"> &lt;span class="nx">textContent&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="s">&amp;#34;Hello Go!\nLine 1\nLine 2\n&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">12&lt;/span>&lt;span class="cl"> &lt;span class="nx">err&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">os&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">WriteFile&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;text.txt&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">[]&lt;/span>&lt;span class="nb">byte&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">textContent&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="mo">0644&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1">// 覆盖写入&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">13&lt;/span>&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="kc">nil&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">14&lt;/span>&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;文本写入失败:&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">15&lt;/span>&lt;span class="cl"> &lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">16&lt;/span>&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;文本写入成功&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">17&lt;/span>&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">18&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">19&lt;/span>&lt;span class="cl"> &lt;span class="nx">data&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">os&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">ReadFile&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;text.txt&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1">// 一次性读取&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">20&lt;/span>&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="kc">nil&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">21&lt;/span>&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;文本读取失败:&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">22&lt;/span>&lt;span class="cl"> &lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">23&lt;/span>&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;文本内容:\n&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nb">string&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">data&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">24&lt;/span>&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">25&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">26&lt;/span>&lt;span class="cl"> &lt;span class="c1">// 逐行读取（使用 bufio）&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">27&lt;/span>&lt;span class="cl"> &lt;span class="nx">file&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">os&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Open&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;text.txt&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">28&lt;/span>&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="kc">nil&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">29&lt;/span>&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;文件打开失败:&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">30&lt;/span>&lt;span class="cl"> &lt;span class="k">return&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">31&lt;/span>&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">32&lt;/span>&lt;span class="cl"> &lt;span class="k">defer&lt;/span> &lt;span class="nx">file&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Close&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">33&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">34&lt;/span>&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;逐行读取:&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">35&lt;/span>&lt;span class="cl"> &lt;span class="nx">scanner&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">bufio&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">NewScanner&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">file&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">36&lt;/span>&lt;span class="cl"> &lt;span class="k">for&lt;/span> &lt;span class="nx">scanner&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Scan&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">37&lt;/span>&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">scanner&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Text&lt;/span>&lt;span class="p">())&lt;/span> &lt;span class="c1">// 输出每一行&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">38&lt;/span>&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">39&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">40&lt;/span>&lt;span class="cl"> &lt;span class="c1">// ========== 二进制文件读写 ==========&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">41&lt;/span>&lt;span class="cl"> &lt;span class="nx">binaryData&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="p">[]&lt;/span>&lt;span class="kt">byte&lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="mh">0x48&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mh">0x65&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mh">0x6C&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mh">0x6C&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mh">0x6F&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mh">0x21&lt;/span>&lt;span class="p">}&lt;/span> &lt;span class="c1">// &amp;#34;Hello!&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">42&lt;/span>&lt;span class="cl"> &lt;span class="nx">err&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nx">os&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">WriteFile&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;binary.bin&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">binaryData&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mo">0644&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">43&lt;/span>&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="kc">nil&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">44&lt;/span>&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;二进制写入失败:&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">45&lt;/span>&lt;span class="cl"> &lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">46&lt;/span>&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;二进制写入成功&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">47&lt;/span>&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">48&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">49&lt;/span>&lt;span class="cl"> &lt;span class="nx">binContent&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">os&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">ReadFile&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;binary.bin&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">50&lt;/span>&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="kc">nil&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">51&lt;/span>&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;二进制读取失败:&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">52&lt;/span>&lt;span class="cl"> &lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">53&lt;/span>&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;二进制内容:&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">binContent&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1">// [72 101 108 108 111 33]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">54&lt;/span>&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;解码为字符串:&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nb">string&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">binContent&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="c1">// &amp;#34;Hello!&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">55&lt;/span>&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">56&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">57&lt;/span>&lt;span class="cl"> &lt;span class="c1">// 大文件分块读取&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">58&lt;/span>&lt;span class="cl"> &lt;span class="nx">largeFile&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">os&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Open&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;largefile.bin&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">59&lt;/span>&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="kc">nil&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">60&lt;/span>&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;大文件打开失败:&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">61&lt;/span>&lt;span class="cl"> &lt;span class="k">return&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">62&lt;/span>&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">63&lt;/span>&lt;span class="cl"> &lt;span class="k">defer&lt;/span> &lt;span class="nx">largeFile&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Close&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">64&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">65&lt;/span>&lt;span class="cl"> &lt;span class="nx">buffer&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nb">make&lt;/span>&lt;span class="p">([]&lt;/span>&lt;span class="kt">byte&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">1024&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1">// 1KB缓冲区&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">66&lt;/span>&lt;span class="cl"> &lt;span class="k">for&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">67&lt;/span>&lt;span class="cl"> &lt;span class="nx">n&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">largeFile&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Read&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">buffer&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">68&lt;/span>&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="nx">io&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">EOF&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">69&lt;/span>&lt;span class="cl"> &lt;span class="k">break&lt;/span> &lt;span class="c1">// 文件结束&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">70&lt;/span>&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">71&lt;/span>&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="kc">nil&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">72&lt;/span>&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;读取错误:&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">73&lt;/span>&lt;span class="cl"> &lt;span class="k">break&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">74&lt;/span>&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">75&lt;/span>&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Printf&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;读取 %d 字节\n&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">n&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">76&lt;/span>&lt;span class="cl"> &lt;span class="c1">// 处理 buffer[:n]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">77&lt;/span>&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">78&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;h2 class="relative group">2. 管道
+&lt;div id="2-管道" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e7%ae%a1%e9%81%93" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h2>
+&lt;h3 class="relative group">代码实现
+&lt;div id="代码实现-1" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e4%bb%a3%e7%a0%81%e5%ae%9e%e7%8e%b0-1" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h3>
+&lt;h4 class="relative group">1. python
+&lt;div id="1-python-1" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-python-1" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h4>
+&lt;div class="code-block-wrapper">
+&lt;div class="code-header">
+&lt;span class="language-label">
+&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
+&lt;span class="language-name">python&lt;/span>
+&lt;/span>
+&lt;div class="code-buttons">
+&lt;button class="fold-button" title="Toggle fold">
+&lt;i class="fas fa-chevron-up">&lt;/i>
+&lt;span>折叠&lt;/span>
+&lt;/button>
+&lt;button class="copy-button" title="Copy code">
+&lt;i class="fas fa-copy">&lt;/i>
+&lt;span>复制&lt;/span>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="ln"> 1&lt;/span>&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">os&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 2&lt;/span>&lt;span class="cl">&lt;span class="n">r&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">w&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">os&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">pipe&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 3&lt;/span>&lt;span class="cl">&lt;span class="n">pid&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">os&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">fork&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 4&lt;/span>&lt;span class="cl">&lt;span class="k">if&lt;/span> &lt;span class="n">pid&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="c1"># Child&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 5&lt;/span>&lt;span class="cl"> &lt;span class="n">os&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">close&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">w&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 6&lt;/span>&lt;span class="cl"> &lt;span class="n">data&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">os&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">read&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">r&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">100&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 7&lt;/span>&lt;span class="cl"> &lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;Pipe read:&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">data&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">decode&lt;/span>&lt;span class="p">())&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 8&lt;/span>&lt;span class="cl"> &lt;span class="n">os&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">_exit&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 9&lt;/span>&lt;span class="cl">&lt;span class="k">else&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="c1"># Parent&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">10&lt;/span>&lt;span class="cl"> &lt;span class="n">os&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">close&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">r&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">11&lt;/span>&lt;span class="cl"> &lt;span class="n">os&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">write&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">w&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="sa">b&lt;/span>&lt;span class="s2">&amp;#34;Pipe message&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">12&lt;/span>&lt;span class="cl"> &lt;span class="n">os&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">wait&lt;/span>&lt;span class="p">()&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;h4 class="relative group">2. c++
+&lt;div id="2-c-1" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-c-1" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h4>
+&lt;div class="code-block-wrapper">
+&lt;div class="code-header">
+&lt;span class="language-label">
+&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
+&lt;span class="language-name">c++&lt;/span>
+&lt;/span>
+&lt;div class="code-buttons">
+&lt;button class="fold-button" title="Toggle fold">
+&lt;i class="fas fa-chevron-up">&lt;/i>
+&lt;span>折叠&lt;/span>
+&lt;/button>
+&lt;button class="copy-button" title="Copy code">
+&lt;i class="fas fa-copy">&lt;/i>
+&lt;span>复制&lt;/span>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-c++" data-lang="c++">&lt;span class="line">&lt;span class="ln"> 1&lt;/span>&lt;span class="cl">&lt;span class="cp">#include&lt;/span> &lt;span class="cpf">&amp;lt;iostream&amp;gt;&lt;/span>&lt;span class="cp">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 2&lt;/span>&lt;span class="cl">&lt;span class="cp">#include&lt;/span> &lt;span class="cpf">&amp;lt;fstream&amp;gt;&lt;/span>&lt;span class="cp">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 3&lt;/span>&lt;span class="cl">&lt;span class="cp">#include&lt;/span> &lt;span class="cpf">&amp;lt;unistd.h&amp;gt;&lt;/span>&lt;span class="cp">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 4&lt;/span>&lt;span class="cl">&lt;span class="cp">#include&lt;/span> &lt;span class="cpf">&amp;lt;sys/wait.h&amp;gt;&lt;/span>&lt;span class="cp">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 5&lt;/span>&lt;span class="cl">&lt;span class="cp">#include&lt;/span> &lt;span class="cpf">&amp;lt;sys/socket.h&amp;gt;&lt;/span>&lt;span class="cp">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 6&lt;/span>&lt;span class="cl">&lt;span class="cp">#include&lt;/span> &lt;span class="cpf">&amp;lt;netinet/in.h&amp;gt;&lt;/span>&lt;span class="cp">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 7&lt;/span>&lt;span class="cl">&lt;span class="cp">&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 8&lt;/span>&lt;span class="cl">&lt;span class="kt">int&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 9&lt;/span>&lt;span class="cl"> &lt;span class="kt">int&lt;/span> &lt;span class="n">fd&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">];&lt;/span> &lt;span class="n">pipe&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">fd&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">10&lt;/span>&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">fork&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="c1">// Child
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">11&lt;/span>&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="n">close&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">fd&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">]);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">12&lt;/span>&lt;span class="cl"> &lt;span class="kt">char&lt;/span> &lt;span class="n">buf&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">100&lt;/span>&lt;span class="p">];&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">13&lt;/span>&lt;span class="cl"> &lt;span class="n">read&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">fd&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="n">buf&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="k">sizeof&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">buf&lt;/span>&lt;span class="p">));&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">14&lt;/span>&lt;span class="cl"> &lt;span class="n">std&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="n">cout&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="s">&amp;#34;Pipe read: &amp;#34;&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="n">buf&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="n">std&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="n">endl&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">15&lt;/span>&lt;span class="cl"> &lt;span class="n">exit&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">16&lt;/span>&lt;span class="cl"> &lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="c1">// Parent
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">17&lt;/span>&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="n">close&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">fd&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">]);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">18&lt;/span>&lt;span class="cl"> &lt;span class="n">write&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">fd&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="s">&amp;#34;Pipe message&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">13&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">19&lt;/span>&lt;span class="cl"> &lt;span class="n">wait&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">nullptr&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">20&lt;/span>&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">21&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;h4 class="relative group">3. golang
+&lt;div id="3-golang-1" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#3-golang-1" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h4>
+&lt;div class="code-block-wrapper">
+&lt;div class="code-header">
+&lt;span class="language-label">
+&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
+&lt;span class="language-name">golang&lt;/span>
+&lt;/span>
+&lt;div class="code-buttons">
+&lt;button class="fold-button" title="Toggle fold">
+&lt;i class="fas fa-chevron-up">&lt;/i>
+&lt;span>折叠&lt;/span>
+&lt;/button>
+&lt;button class="copy-button" title="Copy code">
+&lt;i class="fas fa-copy">&lt;/i>
+&lt;span>复制&lt;/span>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-golang" data-lang="golang">&lt;span class="line">&lt;span class="ln"> 1&lt;/span>&lt;span class="cl">&lt;span class="kn">package&lt;/span> &lt;span class="nx">main&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 2&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 3&lt;/span>&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 4&lt;/span>&lt;span class="cl"> &lt;span class="s">&amp;#34;fmt&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 5&lt;/span>&lt;span class="cl"> &lt;span class="s">&amp;#34;io&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 6&lt;/span>&lt;span class="cl"> &lt;span class="s">&amp;#34;net&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 7&lt;/span>&lt;span class="cl">&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 8&lt;/span>&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 9&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">10&lt;/span>&lt;span class="cl"> &lt;span class="nx">r&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">w&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">_&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">os&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Pipe&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">11&lt;/span>&lt;span class="cl"> &lt;span class="k">go&lt;/span> &lt;span class="kd">func&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">12&lt;/span>&lt;span class="cl"> &lt;span class="nx">w&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Write&lt;/span>&lt;span class="p">([]&lt;/span>&lt;span class="nb">byte&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;Pipe message&amp;#34;&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">13&lt;/span>&lt;span class="cl"> &lt;span class="nx">w&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Close&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">14&lt;/span>&lt;span class="cl"> &lt;span class="p">}()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">15&lt;/span>&lt;span class="cl"> &lt;span class="nx">pipeData&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">_&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">io&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">ReadAll&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">r&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">16&lt;/span>&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;Pipe read:&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nb">string&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">pipeData&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">17&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;h2 class="relative group">3. 网络套接字socket
+&lt;div id="3-网络套接字socket" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#3-%e7%bd%91%e7%bb%9c%e5%a5%97%e6%8e%a5%e5%ad%97socket" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h2>
+&lt;h3 class="relative group">代码实现
+&lt;div id="代码实现-2" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e4%bb%a3%e7%a0%81%e5%ae%9e%e7%8e%b0-2" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h3>
+&lt;h4 class="relative group">1.python
+&lt;div id="1python" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1python" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h4>
+&lt;div class="code-block-wrapper">
+&lt;div class="code-header">
+&lt;span class="language-label">
+&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
+&lt;span class="language-name">python&lt;/span>
+&lt;/span>
+&lt;div class="code-buttons">
+&lt;button class="fold-button" title="Toggle fold">
+&lt;i class="fas fa-chevron-up">&lt;/i>
+&lt;span>折叠&lt;/span>
+&lt;/button>
+&lt;button class="copy-button" title="Copy code">
+&lt;i class="fas fa-copy">&lt;/i>
+&lt;span>复制&lt;/span>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="ln"> 1&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 2&lt;/span>&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">socket&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 3&lt;/span>&lt;span class="cl">&lt;span class="c1"># Server&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 4&lt;/span>&lt;span class="cl">&lt;span class="n">srv&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">socket&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">socket&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">socket&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">AF_INET&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">socket&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">SOCK_STREAM&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 5&lt;/span>&lt;span class="cl">&lt;span class="n">srv&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">bind&lt;/span>&lt;span class="p">((&lt;/span>&lt;span class="s1">&amp;#39;127.0.0.1&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">12345&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 6&lt;/span>&lt;span class="cl">&lt;span class="n">srv&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">listen&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 7&lt;/span>&lt;span class="cl">&lt;span class="c1"># Client&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 8&lt;/span>&lt;span class="cl">&lt;span class="n">cli&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">socket&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">socket&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">socket&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">AF_INET&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">socket&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">SOCK_STREAM&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 9&lt;/span>&lt;span class="cl">&lt;span class="n">cli&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">connect&lt;/span>&lt;span class="p">((&lt;/span>&lt;span class="s1">&amp;#39;127.0.0.1&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">12345&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">10&lt;/span>&lt;span class="cl">&lt;span class="c1"># Accept and send&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">11&lt;/span>&lt;span class="cl">&lt;span class="n">conn&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">_&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">srv&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">accept&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">12&lt;/span>&lt;span class="cl">&lt;span class="n">conn&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">send&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sa">b&lt;/span>&lt;span class="s2">&amp;#34;Socket data&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">13&lt;/span>&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;Socket read:&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">cli&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">recv&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">100&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">decode&lt;/span>&lt;span class="p">())&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">14&lt;/span>&lt;span class="cl">&lt;span class="n">cli&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">close&lt;/span>&lt;span class="p">();&lt;/span> &lt;span class="n">srv&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">close&lt;/span>&lt;span class="p">()&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;h4 class="relative group">2. c++
+&lt;div id="2-c-2" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-c-2" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h4>
+&lt;div class="code-block-wrapper">
+&lt;div class="code-header">
+&lt;span class="language-label">
+&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
+&lt;span class="language-name">c++&lt;/span>
+&lt;/span>
+&lt;div class="code-buttons">
+&lt;button class="fold-button" title="Toggle fold">
+&lt;i class="fas fa-chevron-up">&lt;/i>
+&lt;span>折叠&lt;/span>
+&lt;/button>
+&lt;button class="copy-button" title="Copy code">
+&lt;i class="fas fa-copy">&lt;/i>
+&lt;span>复制&lt;/span>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-c++" data-lang="c++">&lt;span class="line">&lt;span class="ln"> 1&lt;/span>&lt;span class="cl">&lt;span class="cp">#include&lt;/span> &lt;span class="cpf">&amp;lt;iostream&amp;gt;&lt;/span>&lt;span class="cp">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 2&lt;/span>&lt;span class="cl">&lt;span class="cp">#include&lt;/span> &lt;span class="cpf">&amp;lt;fstream&amp;gt;&lt;/span>&lt;span class="cp">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 3&lt;/span>&lt;span class="cl">&lt;span class="cp">#include&lt;/span> &lt;span class="cpf">&amp;lt;unistd.h&amp;gt;&lt;/span>&lt;span class="cp">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 4&lt;/span>&lt;span class="cl">&lt;span class="cp">#include&lt;/span> &lt;span class="cpf">&amp;lt;sys/wait.h&amp;gt;&lt;/span>&lt;span class="cp">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 5&lt;/span>&lt;span class="cl">&lt;span class="cp">#include&lt;/span> &lt;span class="cpf">&amp;lt;sys/socket.h&amp;gt;&lt;/span>&lt;span class="cp">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 6&lt;/span>&lt;span class="cl">&lt;span class="cp">#include&lt;/span> &lt;span class="cpf">&amp;lt;netinet/in.h&amp;gt;&lt;/span>&lt;span class="cp">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 7&lt;/span>&lt;span class="cl">&lt;span class="cp">&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 8&lt;/span>&lt;span class="cl">&lt;span class="kt">int&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 9&lt;/span>&lt;span class="cl"> &lt;span class="c1">// Server setup
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">10&lt;/span>&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="kt">int&lt;/span> &lt;span class="n">srv_fd&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">socket&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">AF_INET&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">SOCK_STREAM&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">11&lt;/span>&lt;span class="cl"> &lt;span class="n">sockaddr_in&lt;/span> &lt;span class="n">addr&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">{&lt;/span>&lt;span class="n">AF_INET&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">htons&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">12345&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="n">INADDR_ANY&lt;/span>&lt;span class="p">};&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">12&lt;/span>&lt;span class="cl"> &lt;span class="n">bind&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">srv_fd&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">sockaddr&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">&amp;amp;&lt;/span>&lt;span class="n">addr&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="k">sizeof&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">addr&lt;/span>&lt;span class="p">));&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">13&lt;/span>&lt;span class="cl"> &lt;span class="n">listen&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">srv_fd&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">14&lt;/span>&lt;span class="cl"> &lt;span class="c1">// Client connect
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">15&lt;/span>&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="kt">int&lt;/span> &lt;span class="n">cli_fd&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">socket&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">AF_INET&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">SOCK_STREAM&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">16&lt;/span>&lt;span class="cl"> &lt;span class="n">connect&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">cli_fd&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">sockaddr&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">&amp;amp;&lt;/span>&lt;span class="n">addr&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="k">sizeof&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">addr&lt;/span>&lt;span class="p">));&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">17&lt;/span>&lt;span class="cl"> &lt;span class="c1">// Communication
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">18&lt;/span>&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="kt">int&lt;/span> &lt;span class="n">conn_fd&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">accept&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">srv_fd&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="k">nullptr&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="k">nullptr&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">19&lt;/span>&lt;span class="cl"> &lt;span class="n">send&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">conn_fd&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;Socket data&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">12&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">20&lt;/span>&lt;span class="cl"> &lt;span class="kt">char&lt;/span> &lt;span class="n">buffer&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">100&lt;/span>&lt;span class="p">];&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">21&lt;/span>&lt;span class="cl"> &lt;span class="n">recv&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">cli_fd&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">buffer&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="k">sizeof&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">buffer&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">22&lt;/span>&lt;span class="cl"> &lt;span class="n">std&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="n">cout&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="s">&amp;#34;Socket read: &amp;#34;&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="n">buffer&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="n">std&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="n">endl&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">23&lt;/span>&lt;span class="cl"> &lt;span class="n">close&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">cli_fd&lt;/span>&lt;span class="p">);&lt;/span> &lt;span class="n">close&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">srv_fd&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">24&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;h4 class="relative group">3. golang
+&lt;div id="3-golang-2" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#3-golang-2" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h4>
+&lt;div class="code-block-wrapper">
+&lt;div class="code-header">
+&lt;span class="language-label">
+&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
+&lt;span class="language-name">golang&lt;/span>
+&lt;/span>
+&lt;div class="code-buttons">
+&lt;button class="fold-button" title="Toggle fold">
+&lt;i class="fas fa-chevron-up">&lt;/i>
+&lt;span>折叠&lt;/span>
+&lt;/button>
+&lt;button class="copy-button" title="Copy code">
+&lt;i class="fas fa-copy">&lt;/i>
+&lt;span>复制&lt;/span>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-golang" data-lang="golang">&lt;span class="line">&lt;span class="ln"> 1&lt;/span>&lt;span class="cl">&lt;span class="kn">package&lt;/span> &lt;span class="nx">main&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 2&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 3&lt;/span>&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 4&lt;/span>&lt;span class="cl"> &lt;span class="s">&amp;#34;fmt&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 5&lt;/span>&lt;span class="cl"> &lt;span class="s">&amp;#34;io&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 6&lt;/span>&lt;span class="cl"> &lt;span class="s">&amp;#34;net&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 7&lt;/span>&lt;span class="cl">&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 8&lt;/span>&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 9&lt;/span>&lt;span class="cl"> &lt;span class="c1">// Server&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">10&lt;/span>&lt;span class="cl"> &lt;span class="nx">listener&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">_&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">net&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Listen&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;tcp&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;127.0.0.1:12345&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">11&lt;/span>&lt;span class="cl"> &lt;span class="k">go&lt;/span> &lt;span class="kd">func&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">12&lt;/span>&lt;span class="cl"> &lt;span class="nx">conn&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">_&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">listener&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Accept&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">13&lt;/span>&lt;span class="cl"> &lt;span class="nx">conn&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Write&lt;/span>&lt;span class="p">([]&lt;/span>&lt;span class="nb">byte&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;Socket data&amp;#34;&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">14&lt;/span>&lt;span class="cl"> &lt;span class="nx">conn&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Close&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">15&lt;/span>&lt;span class="cl"> &lt;span class="p">}()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">16&lt;/span>&lt;span class="cl"> &lt;span class="c1">// Client&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">17&lt;/span>&lt;span class="cl"> &lt;span class="nx">conn&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">_&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">net&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Dial&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;tcp&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;127.0.0.1:12345&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">18&lt;/span>&lt;span class="cl"> &lt;span class="nx">sockData&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">_&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">io&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">ReadAll&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">conn&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">19&lt;/span>&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;Socket read:&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nb">string&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">sockData&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">20&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div></description></item><item><title>Hugo学习250728</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250728/</link><pubDate>Mon, 28 Jul 2025 15:33:17 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250728/</guid><description>&lt;h4 class="relative group">1. 可折叠列表 HTML5 标签，折叠内容无法支持原生markdown语法
 &lt;div id="1-可折叠列表-html5-标签折叠内容无法支持原生markdown语法" class="anchor">&lt;/div>
 &lt;span
 class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
