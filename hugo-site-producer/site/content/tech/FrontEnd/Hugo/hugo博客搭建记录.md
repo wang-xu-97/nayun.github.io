@@ -122,3 +122,4 @@ description: "desc"
         - 增加悬浮伸缩动画效果
     1. 代码语言（hint）中文独立样式，支持markdown渲染
     1. 自动换行按钮
+1. tag筛选搜索器

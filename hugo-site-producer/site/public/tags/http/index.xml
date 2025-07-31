@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Http on nayun blog</title>
+    <link>http://localhost:43997/nayun.github.io/tags/http/</link>
+    <description>Recent content in Http on nayun blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>© 2025 nayun</copyright>
+    <lastBuildDate>Thu, 31 Jul 2025 15:29:43 +0800</lastBuildDate><atom:link href="http://localhost:43997/nayun.github.io/tags/http/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Requests</title>
+      <link>http://localhost:43997/nayun.github.io/tech/coding/python/%E8%87%AA%E5%AE%9A%E6%A8%A1%E5%9D%97/requests/</link>
+      <pubDate>Thu, 31 Jul 2025 15:29:43 +0800</pubDate>
+      
+      <guid>http://localhost:43997/nayun.github.io/tech/coding/python/%E8%87%AA%E5%AE%9A%E6%A8%A1%E5%9D%97/requests/</guid>
+      <description>&lt;h2 class=&#34;relative group&#34;&gt;requests.request方法 
+    &lt;div id=&#34;requestsrequest方法&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#requestsrequest%e6%96%b9%e6%b3%95&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;        
+    
+&lt;/h2&gt;
+&lt;p&gt;基础用法：&lt;/p&gt;
+
+&lt;div class=&#34;code-block-wrapper&#34;&gt;
+  &lt;div class=&#34;code-header&#34;&gt;
+    &lt;span class=&#34;language-label&#34;&gt;
+      &lt;span class=&#34;language-brackets&#34;&gt;&amp;lt;/&gt;&lt;/span&gt;  
+      &lt;span class=&#34;language-name&#34;&gt;python&lt;/span&gt;  
+    &lt;/span&gt;
+
+    &lt;div class=&#34;code-buttons&#34;&gt;
+      &lt;button class=&#34;fold-button&#34; title=&#34;Toggle fold&#34;&gt;
+        &lt;i class=&#34;fas fa-chevron-up&#34;&gt;&lt;/i&gt;
+        &lt;span&gt;折叠&lt;/span&gt;
+      &lt;/button&gt;
+      &lt;button class=&#34;copy-button&#34; title=&#34;Copy code&#34;&gt;
+        &lt;i class=&#34;fas fa-copy&#34;&gt;&lt;/i&gt;
+        &lt;span&gt;复制&lt;/span&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;requests&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;request&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;method&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;url&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;headers&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;json&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;requests&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;request&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;method&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;url&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;headers&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;参数json和data的区别：&lt;br&gt;
+json为字典对象&lt;br&gt;
+data为字典字符串，需要使用&lt;code&gt;json.dumps(payload)&lt;/code&gt;转换为字符串&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>
