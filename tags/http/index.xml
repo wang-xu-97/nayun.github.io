@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Http on nayun blog</title><link>https://wang-xu-97.github.io/nayun.github.io/tags/http/</link><description>Recent content in Http on nayun blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>© 2025 nayun</copyright><lastBuildDate>Thu, 31 Jul 2025 15:29:43 +0800</lastBuildDate><atom:link href="https://wang-xu-97.github.io/nayun.github.io/tags/http/index.xml" rel="self" type="application/rss+xml"/><item><title>Requests</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E8%87%AA%E5%AE%9A%E6%A8%A1%E5%9D%97/requests/</link><pubDate>Thu, 31 Jul 2025 15:29:43 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E8%87%AA%E5%AE%9A%E6%A8%A1%E5%9D%97/requests/</guid><description>&lt;h2 class="relative group">requests.request方法
+&lt;div id="requestsrequest方法" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#requestsrequest%e6%96%b9%e6%b3%95" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h2>
+&lt;p>基础用法：&lt;/p>
+&lt;div class="code-block-wrapper">
+&lt;div class="code-header">
+&lt;span class="language-label">
+&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
+&lt;span class="language-name">python&lt;/span>
+&lt;/span>
+&lt;div class="code-buttons">
+&lt;button class="fold-button" title="Toggle fold">
+&lt;i class="fas fa-chevron-up">&lt;/i>
+&lt;span>折叠&lt;/span>
+&lt;/button>
+&lt;button class="copy-button" title="Copy code">
+&lt;i class="fas fa-copy">&lt;/i>
+&lt;span>复制&lt;/span>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="n">requests&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">request&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">method&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">url&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">headers&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">json&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">&lt;span class="n">requests&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">request&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">method&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">url&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">headers&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">data&lt;/span>&lt;span class="p">)&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>参数json和data的区别：&lt;br>
+json为字典对象&lt;br>
+data为字典字符串，需要使用&lt;code>json.dumps(payload)&lt;/code>转换为字符串&lt;/p></description></item></channel></rss>
