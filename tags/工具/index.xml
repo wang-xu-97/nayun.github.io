@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>工具 on nayun blog</title><link>https://wang-xu-97.github.io/nayun.github.io/tags/%E5%B7%A5%E5%85%B7/</link><description>Recent content in 工具 on nayun blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>© 2025 nayun</copyright><lastBuildDate>Wed, 30 Jul 2025 16:18:18 +0800</lastBuildDate><atom:link href="https://wang-xu-97.github.io/nayun.github.io/tags/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml"/><item><title>Vscode</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/general/%E5%B7%A5%E5%85%B7/vscode/</link><pubDate>Wed, 30 Jul 2025 16:18:18 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/general/%E5%B7%A5%E5%85%B7/vscode/</guid><description>&lt;h2 class="relative group">vscode 设置制表符转换空格
+&lt;div id="vscode-设置制表符转换空格" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#vscode-%e8%ae%be%e7%bd%ae%e5%88%b6%e8%a1%a8%e7%ac%a6%e8%bd%ac%e6%8d%a2%e7%a9%ba%e6%a0%bc" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h2>
+&lt;ol>
+&lt;li>打开设置，搜索indent&lt;/li>
+&lt;li>Editor: DetectIndentation勾选&lt;/li>
+&lt;li>Editor: tab size 设置为4&lt;/li>
+&lt;/ol>
+&lt;h2 class="relative group">强制转换文档的table &amp;ndash;&amp;gt; 4 spaces
+&lt;div id="强制转换文档的table--4-spaces" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%bc%ba%e5%88%b6%e8%bd%ac%e6%8d%a2%e6%96%87%e6%a1%a3%e7%9a%84table--4-spaces" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h2>
+&lt;ol>
+&lt;li>在vscode界面使用&lt;code>ctrl+shift+p&lt;/code>，搜索convert&lt;/li>
+&lt;li>点选convert indentation to spaces&lt;/li>
+&lt;/ol></description></item></channel></rss>

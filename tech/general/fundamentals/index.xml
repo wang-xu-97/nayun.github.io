@@ -310,11 +310,11 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e6%99%ae%e9%80%9a%e6%96%87%e4%bb%b6" aria-label="锚点">#&lt;/a>
 &lt;/span>
 &lt;/h2>
-&lt;h3 class="relative group">代码实现
-&lt;div id="代码实现" class="anchor">&lt;/div>
+&lt;h3 class="relative group">代码通用实现
+&lt;div id="代码通用实现" class="anchor">&lt;/div>
 &lt;span
 class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e4%bb%a3%e7%a0%81%e5%ae%9e%e7%8e%b0" aria-label="锚点">#&lt;/a>
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e4%bb%a3%e7%a0%81%e9%80%9a%e7%94%a8%e5%ae%9e%e7%8e%b0" aria-label="锚点">#&lt;/a>
 &lt;/span>
 &lt;/h3>
 &lt;h4 class="relative group">1. python
@@ -594,10 +594,10 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;/span>
 &lt;/h2>
 &lt;h3 class="relative group">代码实现
-&lt;div id="代码实现-1" class="anchor">&lt;/div>
+&lt;div id="代码实现" class="anchor">&lt;/div>
 &lt;span
 class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e4%bb%a3%e7%a0%81%e5%ae%9e%e7%8e%b0-1" aria-label="锚点">#&lt;/a>
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e4%bb%a3%e7%a0%81%e5%ae%9e%e7%8e%b0" aria-label="锚点">#&lt;/a>
 &lt;/span>
 &lt;/h3>
 &lt;h4 class="relative group">1. python
@@ -733,10 +733,10 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;/span>
 &lt;/h2>
 &lt;h3 class="relative group">代码实现
-&lt;div id="代码实现-2" class="anchor">&lt;/div>
+&lt;div id="代码实现-1" class="anchor">&lt;/div>
 &lt;span
 class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e4%bb%a3%e7%a0%81%e5%ae%9e%e7%8e%b0-2" aria-label="锚点">#&lt;/a>
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e4%bb%a3%e7%a0%81%e5%ae%9e%e7%8e%b0-1" aria-label="锚点">#&lt;/a>
 &lt;/span>
 &lt;/h3>
 &lt;h4 class="relative group">1.python

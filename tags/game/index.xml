@@ -120,6 +120,35 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 概率滑倒、减移速&lt;/li>
 &lt;/ol>
 &lt;/li>
+&lt;li>水电工
+&lt;ol>
+&lt;li>build：
+&lt;ol>
+&lt;li>核心：副手手弩 &amp;ndash;&amp;gt; 附动射水瓶造濡湿&lt;/li>
+&lt;li>3术点出超魔、2牧出引导神力&lt;/li>
+&lt;li>蝌蚪异界强运&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>手法
+&lt;ol>
+&lt;li>通用：附动造濡湿（闪电冰冻易伤）&lt;/li>
+&lt;li>超魔成双冷冻射线：
+&lt;ol>
+&lt;li>法术环位全转为术法点&lt;/li>
+&lt;li>成双冷冻射线&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>异界强运+引导神力
+&lt;ol>
+&lt;li>打单：巫术箭&lt;/li>
+&lt;li>群伤：闪点束&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>吃嗜血灵药+速度油打召雷术&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;/li>
 &lt;/ol>
 &lt;h2 class="relative group">附伤方法
 &lt;div id="附伤方法" class="anchor">&lt;/div>
@@ -132,109 +161,4 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 星界银剑：心灵附伤1d6&lt;br>
 蘸火：1d4火焰伤害&lt;br>
 元素战刃：1d6指定元素伤害&lt;br>
-法术火花：法术/戏法命中增加闪电充能&lt;/p>
-&lt;h1 class="relative group">机制
-&lt;div id="机制" class="anchor">&lt;/div>
-&lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%9c%ba%e5%88%b6" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h1>
-&lt;h2 class="relative group">攻击优势（造优）
-&lt;div id="攻击优势造优" class="anchor">&lt;/div>
-&lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%94%bb%e5%87%bb%e4%bc%98%e5%8a%bf%e9%80%a0%e4%bc%98" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h2>
-&lt;ol>
-&lt;li>高地&lt;/li>
-&lt;li>妖火&lt;/li>
-&lt;li>敌人受惊&lt;br>
-在敌人视野外攻击、并被发现&lt;/li>
-&lt;li>敌人倒地
-&lt;ol>
-&lt;li>命令术：匍匐&lt;/li>
-&lt;/ol>
-&lt;/li>
-&lt;li>buff
-&lt;ol>
-&lt;li>曳光弹&lt;/li>
-&lt;li>碎魂者&lt;/li>
-&lt;/ol>
-&lt;/li>
-&lt;/ol>
-&lt;h2 class="relative group">状态
-&lt;div id="状态" class="anchor">&lt;/div>
-&lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%8a%b6%e6%80%81" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h2>
-&lt;ol>
-&lt;li>濡湿&lt;/li>
-&lt;li>冰冻&lt;br>
-濡湿状态的生物在被施加冻僵状态时会转变为冰冻状态，冰冻状态下失能一回合并对三种伤害有个一次性的易伤，但寒霜易伤和闪电易伤会被覆盖。&lt;/li>
-&lt;/ol>
-&lt;h2 class="relative group">环境反应
-&lt;div id="环境反应" class="anchor">&lt;/div>
-&lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%8e%af%e5%a2%83%e5%8f%8d%e5%ba%94" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h2>
-&lt;h3 class="relative group">1. 水
-&lt;div id="1-水" class="anchor">&lt;/div>
-&lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e6%b0%b4" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h3>
-&lt;ol>
-&lt;li>冰面
-&lt;ol>
-&lt;li>水/血液都可以结冰，在冰面上移动会被视为劣势地形有移速惩罚，而且有概率滑倒跳过一回合&lt;/li>
-&lt;li>生成：
-&lt;ol>
-&lt;li>雪花迸射戒指&lt;/li>
-&lt;li>结冰的条件只需要对水面造成任何寒冰伤害即可，被链接的所有水面都会被结为冰块，结冰时不会造成任何影响只有在开始移动时才会有影响，冰面会再两回合后融化&lt;/li>
-&lt;/ol>
-&lt;/li>
-&lt;/ol>
-&lt;/li>
-&lt;li>带电的水&lt;br>
-当水面被闪电法术影响时还会转变为带电的水，每回合对上面的所有生物造成1d4的伤害。&lt;/li>
-&lt;li>蒸汽云&lt;br>
-水与火焰接触后会形成蒸汽云，只要处于蒸汽云内就会被无限施加濡湿状态，并且免疫燃烧以及处于遮蔽状态，不会对内外的攻击施加劣势与优势。&lt;br>
-蒸汽云不会被任何新地表覆盖与驱散，只有那几个专门写了驱逐云雾的法术才能将其驱散，并且与水类似的是在被闪电法术影响之后也会不断造成1d4的闪电伤害，但永续的易伤实际上是2d8&lt;/li>
-&lt;/ol>
-&lt;h3 class="relative group">2. 火
-&lt;div id="2-火" class="anchor">&lt;/div>
-&lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e7%81%ab" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h3>
-&lt;ol>
-&lt;li>创造火焰地表最简单的是直接扔炼金火焰，或油脂术+火焰法术&lt;/li>
-&lt;/ol>
-&lt;h2 class="relative group">伤害类型
-&lt;div id="伤害类型" class="anchor">&lt;/div>
-&lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e4%bc%a4%e5%ae%b3%e7%b1%bb%e5%9e%8b" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h2>
-&lt;h3 class="relative group">伤害理论
-&lt;div id="伤害理论" class="anchor">&lt;/div>
-&lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e4%bc%a4%e5%ae%b3%e7%90%86%e8%ae%ba" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h3>
-&lt;p>伤害段ABC附伤理论、DRS12理论&lt;br>
-&lt;a
-href="https://jcn7dphgr6k2.feishu.cn/wiki/RdKJwwooei7acNkQYPTc6N8anDd"
-target="_blank"
->附伤代码详解&lt;/a>
-&lt;/p></description></item></channel></rss>
+法术火花：法术/戏法命中增加闪电充能&lt;/p></description></item></channel></rss>
