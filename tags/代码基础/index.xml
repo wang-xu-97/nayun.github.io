@@ -81,21 +81,7 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">14&lt;/span>&lt;span class="cl"> &lt;span class="k">raise&lt;/span> &lt;span class="ne">Exception&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nb">str&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">e&lt;/span>&lt;span class="p">))&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">15&lt;/span>&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">res&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
-&lt;h2 class="relative group">通用场景
-&lt;div id="通用场景" class="anchor">&lt;/div>
-&lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e9%80%9a%e7%94%a8%e5%9c%ba%e6%99%af" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h2>
-&lt;h3 class="relative group">python
-&lt;div id="python" class="anchor">&lt;/div>
-&lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#python" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h3>
-&lt;p>处理其他非Exception类的异常时（如键盘中断）可以使用&lt;code>traceback&lt;/code>模块输出调用栈&lt;/p></description></item><item><title>Linux文件读写</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/general/fundamentals/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99/</link><pubDate>Tue, 29 Jul 2025 15:19:16 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/general/fundamentals/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99/</guid><description>&lt;h2 class="relative group">核心思想
+&lt;p>todo：python可写成装饰器&lt;/p></description></item><item><title>Linux文件读写</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/general/fundamentals/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99/</link><pubDate>Tue, 29 Jul 2025 15:19:16 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/general/fundamentals/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99/</guid><description>&lt;h2 class="relative group">核心思想
 &lt;div id="核心思想" class="anchor">&lt;/div>
 &lt;span
 class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
