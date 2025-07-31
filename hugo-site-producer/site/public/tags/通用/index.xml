@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>通用 on nayun blog</title>
+    <link>http://localhost:43997/nayun.github.io/tags/%E9%80%9A%E7%94%A8/</link>
+    <description>Recent content in 通用 on nayun blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>© 2025 nayun</copyright>
+    <lastBuildDate>Wed, 30 Jul 2025 16:18:18 +0800</lastBuildDate><atom:link href="http://localhost:43997/nayun.github.io/tags/%E9%80%9A%E7%94%A8/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Vscode</title>
+      <link>http://localhost:43997/nayun.github.io/tech/general/%E5%B7%A5%E5%85%B7/vscode/</link>
+      <pubDate>Wed, 30 Jul 2025 16:18:18 +0800</pubDate>
+      
+      <guid>http://localhost:43997/nayun.github.io/tech/general/%E5%B7%A5%E5%85%B7/vscode/</guid>
+      <description>&lt;p&gt;tech&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>
