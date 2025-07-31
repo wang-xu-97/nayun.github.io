@@ -405,13 +405,13 @@ data为字典字符串，需要使用&lt;code&gt;json.dumps(payload)&lt;/code&gt
 &lt;li&gt;1次遍历，O(n)&lt;/li&gt;
 &lt;li&gt;多关键字&lt;/li&gt;
 &lt;li&gt;关键字一对一自定义处理方法解耦&lt;/li&gt;
-&lt;li&gt;处理结果统计，每个关键字的成功/失败处理量+处理总量&lt;br&gt;
-例子：&lt;br&gt;
+&lt;li&gt;处理结果统计，每个关键字的成功/失败处理量+处理总量&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;例子：&lt;br&gt;
 找到日志中包含kwA的日志，执行dealA(line) -&amp;gt; pass/fail处理方法&lt;br&gt;
 找到日志中包含kwB的日志，执行dealB(line) -&amp;gt; pass/fail处理方法&lt;br&gt;
-&amp;hellip;&lt;br&gt;
-思路：&lt;/li&gt;
-&lt;/ol&gt;
+&amp;hellip;&lt;/p&gt;
+&lt;p&gt;思路：&lt;/p&gt;
 
 &lt;h2 class=&#34;relative group&#34;&gt;数据分析 
     &lt;div id=&#34;数据分析&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
