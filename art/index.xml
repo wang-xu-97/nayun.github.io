@@ -166,6 +166,10 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 法术火花：法术/戏法命中增加闪电充能&lt;/li>
 &lt;li>命中&lt;br>
 轻声承诺：1d4命中+1d4豁免 2R&lt;/li>
+&lt;li>npc检定&lt;br>
+交友术：魅力属性检定优势骰（2次d20取高）&lt;br>
+结束时，npc好感降低、可能敌对，处理方法：结束前离开npc视野范围&lt;br>
+神导术：1d4任意属性检定掷骰&lt;/li>
 &lt;/ol>
 &lt;h1 class="relative group">技巧
 &lt;div id="技巧" class="anchor">&lt;/div>
@@ -206,6 +210,11 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;li>使用炼金火焰/油脂瓶+火焰箭制造火焰地表 2R&lt;/li>
 &lt;li>水面+火 形成蒸汽云（只能被驱散云雾法术驱散），无限濡湿、免疫燃烧、轻度遮蔽&lt;br>
 闪电命中形成带电蒸汽云1d4闪电伤害，2d8闪电易伤&lt;/li>
+&lt;li>造水术+冰（冰刃/守卫刻文冰冻）造大范围冰面
+&lt;ol>
+&lt;li>使用守卫刻文可以节省冰面回合数，因为敌人踩上来才生成，并且可能滑倒无法动作&lt;/li>
+&lt;/ol>
+&lt;/li>
 &lt;/ol>
 &lt;/li>
 &lt;/ol>
@@ -327,7 +336,12 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;/span>
 &lt;/h3>
 &lt;ol>
-&lt;li>创造火焰地表最简单的是直接扔炼金火焰，或油脂术+火焰法术&lt;/li>
+&lt;li>火焰地表:
+&lt;ol>
+&lt;li>扔炼金火焰&lt;/li>
+&lt;li>油脂地面(油脂瓶/油脂术/油桶)、酒精地面(酒桶)+火焰法术&lt;/li>
+&lt;/ol>
+&lt;/li>
 &lt;/ol>
 &lt;h2 class="relative group">伤害类型
 &lt;div id="伤害类型" class="anchor">&lt;/div>
