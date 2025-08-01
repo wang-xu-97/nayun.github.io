@@ -1448,7 +1448,7 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;/h2>
 &lt;ol>
 &lt;li>火（引爆）&lt;br>
-油桶、酒桶、烟粉桶、烟粉挎包、烟粉炸弹&lt;/li>
+油脂瓶/油腻术、油桶、酒桶、烟粉桶、烟粉挎包、烟粉炸弹&lt;/li>
 &lt;li>水（濡湿）
 &lt;ol>
 &lt;li>生成：&lt;br>
@@ -1482,7 +1482,7 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;li>异界强运+引导神力
 &lt;ol>
 &lt;li>打单：巫术箭&lt;/li>
-&lt;li>群伤：闪点束&lt;/li>
+&lt;li>群伤：闪电束&lt;/li>
 &lt;/ol>
 &lt;/li>
 &lt;li>吃嗜血灵药+速度油打召雷术&lt;/li>
@@ -1491,18 +1491,205 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;/ol>
 &lt;/li>
 &lt;/ol>
-&lt;h2 class="relative group">附伤方法
-&lt;div id="附伤方法" class="anchor">&lt;/div>
+&lt;h2 class="relative group">经典buff
+&lt;div id="经典buff" class="anchor">&lt;/div>
 &lt;span
 class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e9%99%84%e4%bc%a4%e6%96%b9%e6%b3%95" aria-label="锚点">#&lt;/a>
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%bb%8f%e5%85%b8buff" aria-label="锚点">#&lt;/a>
 &lt;/span>
 &lt;/h2>
-&lt;p>投掷之戒：投掷1d4&lt;br>
+&lt;ol>
+&lt;li>伤害&lt;br>
+投掷之戒：投掷1d4&lt;br>
 星界银剑：心灵附伤1d6&lt;br>
 蘸火：1d4火焰伤害&lt;br>
 元素战刃：1d6指定元素伤害&lt;br>
-法术火花：法术/戏法命中增加闪电充能&lt;/p></description></item><item><title>Hugo学习250728</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250728/</link><pubDate>Mon, 28 Jul 2025 15:33:17 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250728/</guid><description>&lt;h4 class="relative group">1. 可折叠列表 HTML5 标签，折叠内容无法支持原生markdown语法
+法术火花：法术/戏法命中增加闪电充能&lt;/li>
+&lt;li>命中&lt;br>
+轻声承诺：1d4命中+1d4豁免 2R&lt;/li>
+&lt;/ol>
+&lt;h1 class="relative group">技巧
+&lt;div id="技巧" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%8a%80%e5%b7%a7" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h1>
+&lt;h2 class="relative group">1. 战斗前准备
+&lt;div id="1-战斗前准备" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e6%88%98%e6%96%97%e5%89%8d%e5%87%86%e5%a4%87" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h2>
+&lt;ol>
+&lt;li>开buff
+&lt;ol>
+&lt;li>生死离别 5R&lt;/li>
+&lt;li>祝福术 10R&lt;/li>
+&lt;li>加速术 10R，加速药 3R&lt;/li>
+&lt;li>喝药+轻声承诺 2R&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>布置场地
+&lt;ol>
+&lt;li>投掷药水，持续6s，约1回合
+&lt;ol>
+&lt;li>把药水投掷到预定位置，任何人踩上去直接生效
+&lt;ol>
+&lt;li>踩回复药水 + 轻声承诺 命中buff&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>摆放水瓶/油脂瓶，预判敌人位置，（aoe/附动攻击/环境）打破上濡湿(3R)/油脂(10R)&lt;/li>
+&lt;li>投掷油脂瓶/油腻术 油脂地面 10R，投掷水瓶/造水术 水面 3R&lt;/li>
+&lt;li>使用炼金火焰/油脂瓶+火焰箭制造火焰地表 2R&lt;/li>
+&lt;li>水面+火 形成蒸汽云（只能被驱散云雾法术驱散），无限濡湿、免疫燃烧、轻度遮蔽&lt;br>
+闪电命中形成带电蒸汽云1d4闪电伤害，2d8闪电易伤&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;h2 class="relative group">2. 战斗中无消耗动作
+&lt;div id="2-战斗中无消耗动作" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e6%88%98%e6%96%97%e4%b8%ad%e6%97%a0%e6%b6%88%e8%80%97%e5%8a%a8%e4%bd%9c" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h2>
+&lt;ol>
+&lt;li>物品分割、世界位置移动
+&lt;ol>
+&lt;li>手法：
+&lt;ol>
+&lt;li>近距离，通过人物自己的范围移动物品&lt;/li>
+&lt;li>远距离，通过处在行动回合的其他队友/法师之手的范围移动物品&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>技巧收益思路：
+&lt;ol>
+&lt;li>利用环境伤害破坏物品&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>应用场景
+&lt;ol>
+&lt;li>虚空球茎被移动到火焰地表炸裂
+&lt;ol>
+&lt;li>可以打破水瓶无消耗制造濡湿&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;h1 class="relative group">机制
+&lt;div id="机制" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%9c%ba%e5%88%b6" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h1>
+&lt;h2 class="relative group">攻击优势（造优）
+&lt;div id="攻击优势造优" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%94%bb%e5%87%bb%e4%bc%98%e5%8a%bf%e9%80%a0%e4%bc%98" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h2>
+&lt;ol>
+&lt;li>高地&lt;/li>
+&lt;li>敌人受惊&lt;br>
+在敌人视野外攻击、并被发现&lt;/li>
+&lt;li>敌人倒地
+&lt;ol>
+&lt;li>命令术：匍匐&lt;/li>
+&lt;li>冰面、油脂地面&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>buff
+&lt;ol>
+&lt;li>（人类/怪物）定身术&lt;/li>
+&lt;li>妖火&lt;/li>
+&lt;li>曳光弹&lt;/li>
+&lt;li>碎魂者&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;h2 class="relative group">状态
+&lt;div id="状态" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%8a%b6%e6%80%81" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h2>
+&lt;ol>
+&lt;li>濡湿&lt;/li>
+&lt;li>冰冻&lt;br>
+濡湿状态的生物在被施加冻僵状态时会转变为冰冻状态，冰冻状态下失能一回合并对钝击、雷鸣、力场三种伤害有一次性易伤，但寒霜易伤和闪电易伤会被覆盖。&lt;/li>
+&lt;/ol>
+&lt;h2 class="relative group">环境反应
+&lt;div id="环境反应" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%8e%af%e5%a2%83%e5%8f%8d%e5%ba%94" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h2>
+&lt;h3 class="relative group">1. 水
+&lt;div id="1-水" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e6%b0%b4" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h3>
+&lt;ol>
+&lt;li>冰面
+&lt;ol>
+&lt;li>水/血液都可以结冰，在冰面上移动会被视为劣势地形有移速惩罚，而且有概率滑倒跳过一回合&lt;/li>
+&lt;li>生成：
+&lt;ol>
+&lt;li>雪花迸射戒指&lt;/li>
+&lt;li>结冰的条件只需要对水面造成任何寒冰伤害即可，被链接的所有水面都会被结为冰块，结冰时不会造成任何影响只有在开始移动时才会有影响，冰面会再两回合后融化&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>带电的水&lt;br>
+当水面被闪电法术影响时还会转变为带电的水，每回合对上面的所有生物造成1d4的伤害。&lt;/li>
+&lt;li>蒸汽云&lt;br>
+水与火焰接触后会形成蒸汽云，只要处于蒸汽云内就会被无限施加濡湿状态，并且免疫燃烧以及处于遮蔽状态，不会对内外的攻击施加劣势与优势。&lt;br>
+蒸汽云不会被任何新地表覆盖与驱散，只有那几个专门写了驱逐云雾的法术才能将其驱散，并且与水类似的是在被闪电法术影响之后也会不断造成1d4的闪电伤害，但永续的易伤实际上是2d8&lt;/li>
+&lt;/ol>
+&lt;h3 class="relative group">2. 火
+&lt;div id="2-火" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e7%81%ab" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h3>
+&lt;ol>
+&lt;li>创造火焰地表最简单的是直接扔炼金火焰，或油脂术+火焰法术&lt;/li>
+&lt;/ol>
+&lt;h2 class="relative group">伤害类型
+&lt;div id="伤害类型" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e4%bc%a4%e5%ae%b3%e7%b1%bb%e5%9e%8b" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h2>
+&lt;h3 class="relative group">伤害理论
+&lt;div id="伤害理论" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e4%bc%a4%e5%ae%b3%e7%90%86%e8%ae%ba" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h3>
+&lt;p>伤害段ABC附伤理论、DRS12理论&lt;br>
+&lt;a
+href="https://jcn7dphgr6k2.feishu.cn/wiki/RdKJwwooei7acNkQYPTc6N8anDd"
+target="_blank"
+>附伤代码详解&lt;/a>
+&lt;/p></description></item><item><title>Hugo学习250728</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250728/</link><pubDate>Mon, 28 Jul 2025 15:33:17 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250728/</guid><description>&lt;h4 class="relative group">1. 可折叠列表 HTML5 标签，折叠内容无法支持原生markdown语法
 &lt;div id="1-可折叠列表-html5-标签折叠内容无法支持原生markdown语法" class="anchor">&lt;/div>
 &lt;span
 class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
