@@ -14,7 +14,7 @@
     position: relative; /* 为绝对定位按钮提供参考 */
     max-height: var(--tw-leading,var(--text-sm--line-height));
     justify-content: space-between;
-    align-items:flex-start;
+    align-items:flex-end;
 }
 .language-label {
     color: #333333;
@@ -24,7 +24,6 @@
     margin-left: 0.5rem;
     display: flex;
     height: auto;
-    align-items: center;
     gap: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -35,7 +34,6 @@
     border-radius: 0 !important;
     background: oklch(0.93 0.02 90.24);
 }
-
 .language-brackets {
     color: oklch(0.61 0.01 97.42); /* 白色文字 */
     margin-right: 4px;
