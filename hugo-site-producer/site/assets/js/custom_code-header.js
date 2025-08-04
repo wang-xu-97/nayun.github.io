@@ -11,24 +11,16 @@ document.addEventListener('DOMContentLoaded', () => {
       button.addEventListener('click', () => {
         const wrapper = button.closest('.code-block-wrapper');
         const codeBlock = wrapper.querySelector('pre code');
-        const lines = Array.from(codeBlock.querySelectorAll('span:not(.ln)')); 
-        const codeText = lines.map(line  => line.innerText).join('\n'); 
-        const codeText1 = codeBlock.innerText;
-
         const codeLines = codeBlock.querySelectorAll('span.cl');
-  
-        // 提取每行的文本内容并拼接
-        const codeText2 = Array.from(codeLines).map(line => {
-            // 移除行号span及其后的空白（如果有）
+        const codeText = Array.from(codeLines).map(line => {
             const lineClone = line.cloneNode(true);
             const lineNumber = lineClone.querySelector('span.ln');
             if (lineNumber) {
               lineNumber.remove();
             }
-            // 获取纯文本并去除首尾空白
-            return lineClone.textContent.replace(/\n+$/g,  '');
+            return lineClone.textContent;
           })
-          .join('\n'); // 用换行符连接各行
+          .join('');
 
         const tooltip = button.querySelector('.copy-tooltip');
         
@@ -36,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const originalHTML = button.innerHTML;
         
         const textarea = document.createElement('textarea');
-        textarea.value = codeText2;
+        textarea.value = codeText;
         document.body.appendChild(textarea);
         textarea.select();
         button.classList.add('hide-original');
