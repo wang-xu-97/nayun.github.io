@@ -82,11 +82,7 @@
     &lt;/span&gt;
 
     &lt;div class=&#34;code-buttons&#34;&gt;
-      &lt;button class=&#34;fold-button&#34; title=&#34;Toggle fold&#34;&gt;
-        &lt;i class=&#34;fas fa-chevron-up&#34;&gt;&lt;/i&gt;
-        &lt;span&gt;折叠&lt;/span&gt;
-      &lt;/button&gt;
-      &lt;button class=&#34;copy-button&#34; title=&#34;Copy code&#34;&gt;
+      &lt;button class=&#34;copy-button&#34;&gt;
         &lt;i class=&#34;fas fa-copy&#34;&gt;&lt;/i&gt;
         &lt;span&gt;复制&lt;/span&gt;
       &lt;/button&gt;
@@ -108,6 +104,8 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;14&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;raise&lt;/span&gt; &lt;span class=&#34;ne&#34;&gt;Exception&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;str&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;15&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;res&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
+
+
 &lt;p&gt;todo：python可写成装饰器&lt;/p&gt;</description>
       
     </item>
@@ -237,11 +235,7 @@
     &lt;/span&gt;
 
     &lt;div class=&#34;code-buttons&#34;&gt;
-      &lt;button class=&#34;fold-button&#34; title=&#34;Toggle fold&#34;&gt;
-        &lt;i class=&#34;fas fa-chevron-up&#34;&gt;&lt;/i&gt;
-        &lt;span&gt;折叠&lt;/span&gt;
-      &lt;/button&gt;
-      &lt;button class=&#34;copy-button&#34; title=&#34;Copy code&#34;&gt;
+      &lt;button class=&#34;copy-button&#34;&gt;
         &lt;i class=&#34;fas fa-copy&#34;&gt;&lt;/i&gt;
         &lt;span&gt;复制&lt;/span&gt;
       &lt;/button&gt;
@@ -267,6 +261,8 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;18&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;二进制内容:&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;binary_content&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# b&amp;#39;Hello!&amp;#39;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;19&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;解码为字符串:&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;binary_content&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;decode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;utf-8&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
+
+
 
 &lt;h4 class=&#34;relative group&#34;&gt;2. c++ 
     &lt;div id=&#34;2-c&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
@@ -296,11 +292,7 @@
     &lt;/span&gt;
 
     &lt;div class=&#34;code-buttons&#34;&gt;
-      &lt;button class=&#34;fold-button&#34; title=&#34;Toggle fold&#34;&gt;
-        &lt;i class=&#34;fas fa-chevron-up&#34;&gt;&lt;/i&gt;
-        &lt;span&gt;折叠&lt;/span&gt;
-      &lt;/button&gt;
-      &lt;button class=&#34;copy-button&#34; title=&#34;Copy code&#34;&gt;
+      &lt;button class=&#34;copy-button&#34;&gt;
         &lt;i class=&#34;fas fa-copy&#34;&gt;&lt;/i&gt;
         &lt;span&gt;复制&lt;/span&gt;
       &lt;/button&gt;
@@ -373,6 +365,8 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;65&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
+
+
 &lt;h4 class=&#34;relative group&#34;&gt;3. golang 
     &lt;div id=&#34;3-golang&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -409,11 +403,7 @@
     &lt;/span&gt;
 
     &lt;div class=&#34;code-buttons&#34;&gt;
-      &lt;button class=&#34;fold-button&#34; title=&#34;Toggle fold&#34;&gt;
-        &lt;i class=&#34;fas fa-chevron-up&#34;&gt;&lt;/i&gt;
-        &lt;span&gt;折叠&lt;/span&gt;
-      &lt;/button&gt;
-      &lt;button class=&#34;copy-button&#34; title=&#34;Copy code&#34;&gt;
+      &lt;button class=&#34;copy-button&#34;&gt;
         &lt;i class=&#34;fas fa-copy&#34;&gt;&lt;/i&gt;
         &lt;span&gt;复制&lt;/span&gt;
       &lt;/button&gt;
@@ -499,6 +489,8 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;78&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
+
+
 &lt;h2 class=&#34;relative group&#34;&gt;2. 管道 
     &lt;div id=&#34;2-管道&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -537,11 +529,7 @@
     &lt;/span&gt;
 
     &lt;div class=&#34;code-buttons&#34;&gt;
-      &lt;button class=&#34;fold-button&#34; title=&#34;Toggle fold&#34;&gt;
-        &lt;i class=&#34;fas fa-chevron-up&#34;&gt;&lt;/i&gt;
-        &lt;span&gt;折叠&lt;/span&gt;
-      &lt;/button&gt;
-      &lt;button class=&#34;copy-button&#34; title=&#34;Copy code&#34;&gt;
+      &lt;button class=&#34;copy-button&#34;&gt;
         &lt;i class=&#34;fas fa-copy&#34;&gt;&lt;/i&gt;
         &lt;span&gt;复制&lt;/span&gt;
       &lt;/button&gt;
@@ -561,6 +549,8 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;os&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;wait&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
+
+
 &lt;h4 class=&#34;relative group&#34;&gt;2. c++ 
     &lt;div id=&#34;2-c-1&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -579,11 +569,7 @@
     &lt;/span&gt;
 
     &lt;div class=&#34;code-buttons&#34;&gt;
-      &lt;button class=&#34;fold-button&#34; title=&#34;Toggle fold&#34;&gt;
-        &lt;i class=&#34;fas fa-chevron-up&#34;&gt;&lt;/i&gt;
-        &lt;span&gt;折叠&lt;/span&gt;
-      &lt;/button&gt;
-      &lt;button class=&#34;copy-button&#34; title=&#34;Copy code&#34;&gt;
+      &lt;button class=&#34;copy-button&#34;&gt;
         &lt;i class=&#34;fas fa-copy&#34;&gt;&lt;/i&gt;
         &lt;span&gt;复制&lt;/span&gt;
       &lt;/button&gt;
@@ -612,6 +598,8 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;21&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
+
+
 &lt;h4 class=&#34;relative group&#34;&gt;3. golang 
     &lt;div id=&#34;3-golang-1&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -630,11 +618,7 @@
     &lt;/span&gt;
 
     &lt;div class=&#34;code-buttons&#34;&gt;
-      &lt;button class=&#34;fold-button&#34; title=&#34;Toggle fold&#34;&gt;
-        &lt;i class=&#34;fas fa-chevron-up&#34;&gt;&lt;/i&gt;
-        &lt;span&gt;折叠&lt;/span&gt;
-      &lt;/button&gt;
-      &lt;button class=&#34;copy-button&#34; title=&#34;Copy code&#34;&gt;
+      &lt;button class=&#34;copy-button&#34;&gt;
         &lt;i class=&#34;fas fa-copy&#34;&gt;&lt;/i&gt;
         &lt;span&gt;复制&lt;/span&gt;
       &lt;/button&gt;
@@ -658,6 +642,8 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;16&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;nx&#34;&gt;fmt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Println&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Pipe read:&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;string&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;pipeData&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;17&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
+
+
 
 &lt;h2 class=&#34;relative group&#34;&gt;3. 网络套接字socket 
     &lt;div id=&#34;3-网络套接字socket&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
@@ -697,11 +683,7 @@
     &lt;/span&gt;
 
     &lt;div class=&#34;code-buttons&#34;&gt;
-      &lt;button class=&#34;fold-button&#34; title=&#34;Toggle fold&#34;&gt;
-        &lt;i class=&#34;fas fa-chevron-up&#34;&gt;&lt;/i&gt;
-        &lt;span&gt;折叠&lt;/span&gt;
-      &lt;/button&gt;
-      &lt;button class=&#34;copy-button&#34; title=&#34;Copy code&#34;&gt;
+      &lt;button class=&#34;copy-button&#34;&gt;
         &lt;i class=&#34;fas fa-copy&#34;&gt;&lt;/i&gt;
         &lt;span&gt;复制&lt;/span&gt;
       &lt;/button&gt;
@@ -723,6 +705,8 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;14&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;cli&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;close&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;srv&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;close&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
+
+
 &lt;h4 class=&#34;relative group&#34;&gt;2. c++ 
     &lt;div id=&#34;2-c-2&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -741,11 +725,7 @@
     &lt;/span&gt;
 
     &lt;div class=&#34;code-buttons&#34;&gt;
-      &lt;button class=&#34;fold-button&#34; title=&#34;Toggle fold&#34;&gt;
-        &lt;i class=&#34;fas fa-chevron-up&#34;&gt;&lt;/i&gt;
-        &lt;span&gt;折叠&lt;/span&gt;
-      &lt;/button&gt;
-      &lt;button class=&#34;copy-button&#34; title=&#34;Copy code&#34;&gt;
+      &lt;button class=&#34;copy-button&#34;&gt;
         &lt;i class=&#34;fas fa-copy&#34;&gt;&lt;/i&gt;
         &lt;span&gt;复制&lt;/span&gt;
       &lt;/button&gt;
@@ -777,6 +757,8 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;24&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
+
+
 &lt;h4 class=&#34;relative group&#34;&gt;3. golang 
     &lt;div id=&#34;3-golang-2&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -795,11 +777,7 @@
     &lt;/span&gt;
 
     &lt;div class=&#34;code-buttons&#34;&gt;
-      &lt;button class=&#34;fold-button&#34; title=&#34;Toggle fold&#34;&gt;
-        &lt;i class=&#34;fas fa-chevron-up&#34;&gt;&lt;/i&gt;
-        &lt;span&gt;折叠&lt;/span&gt;
-      &lt;/button&gt;
-      &lt;button class=&#34;copy-button&#34; title=&#34;Copy code&#34;&gt;
+      &lt;button class=&#34;copy-button&#34;&gt;
         &lt;i class=&#34;fas fa-copy&#34;&gt;&lt;/i&gt;
         &lt;span&gt;复制&lt;/span&gt;
       &lt;/button&gt;

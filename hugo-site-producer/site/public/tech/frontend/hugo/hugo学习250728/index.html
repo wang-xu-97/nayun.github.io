@@ -7,6 +7,8 @@
   data-auto-appearance="true"><head><script src="/nayun.github.io/livereload.js?mindelay=10&amp;v=2&amp;port=43997&amp;path=nayun.github.io/livereload" data-no-instant defer></script>
     
     <link type="text/css" rel="stylesheet" href="/nayun.github.io/css/TagCloudbtn.css">
+    
+    <link type="text/css" rel="stylesheet" href="/nayun.github.io/css/_custom-markdown.css">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <meta charset="utf-8" />
@@ -36,8 +38,8 @@
     
     
     
-    <link type="text/css" rel="stylesheet" href="/nayun.github.io/css/main.bundle.min.42b971461f3c5b158dc5da9b85e454b906273fe27e27b3afe7996ef4f24ad730e37a07766f7e164fde38acdfb73c5ac4b13381f9dc7fe7a3a5bfe85fa3e0f215.css"
-      integrity="sha512-QrlxRh88WxWNxdqbheRUuQYnP&#43;J&#43;J7Ov55lu9PJK1zDjegd2b34WT944rN&#43;3PFrEsTOB&#43;dx/56Olv&#43;hfo&#43;DyFQ==" />
+    <link type="text/css" rel="stylesheet" href="/nayun.github.io/css/main.bundle.min.5306100b0898e1c4003add325267d6ad8d7c05a842a2f2157686e8691c02283bf0bdb4d2c6456adc0b49ea5537ed92c43367d155470013f03b0f7e13662bf60f.css"
+      integrity="sha512-UwYQCwiY4cQAOt0yUmfWrY18BahCovIVdoboaRwCKDvwvbTSxkVq3AtJ6lU37ZLEM2fRVUcAE/A7D34TZiv2Dw==" />
     
     
     <script type="text/javascript" src="/nayun.github.io/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
@@ -77,8 +79,9 @@
     <meta property="og:url" content="http://localhost:43997/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250728/">
   <meta property="og:site_name" content="nayun blog">
   <meta property="og:title" content="Hugo学习250728">
-  <meta property="og:description" content="1. 可折叠列表 HTML5 标签，折叠内容无法支持原生markdown语法 # config.yaml中配置，允许渲染 HTML 标签 &lt;/&gt; yaml 折叠 复制 1markup: 2 goldmark: 3 renderer: 4 unsafe: true 使用原生html5 details标签 &lt;/&gt; html 折叠 复制 1&lt;details&gt; 2 &lt;summary&gt;点击展开查看详情&lt;/summary&gt; 3 4 这里是隐藏的内容，支持 **Markdown** 格式： 5 6 - 列表项1 7 - 列表项2 8 - [链接](https://example.com) 9&lt;/details&gt; 效果： 这里是隐藏的内容，支持 Markdown 格式：
-列表项1 列表项2 链接 本质是隐藏细节 嵌套 一级折叠标题 这是一级内容…">
+  <meta property="og:description" content="1. 可折叠列表 HTML5 标签，折叠内容无法支持原生markdown语法 # config.yaml中配置，允许渲染 HTML 标签 &lt;/&gt; yaml 复制 1markup: 2 goldmark: 3 renderer: 4 unsafe: true 使用原生html5 details标签 &lt;/&gt; html 复制 1&lt;details&gt; 2 &lt;summary&gt;点击展开查看详情&lt;/summary&gt; 3 4 这里是隐藏的内容，支持 **Markdown** 格式： 5 6 - 列表项1 7 - 列表项2 8 - [链接](https://example.com) 9&lt;/details&gt; 效果： 这里是隐藏的内容，支持 Markdown 格式：
+列表项1 列表项2 链接 本质是隐藏细节 嵌套 一级折叠标题 这是一级内容…
+二级折叠标题 &lt;details&gt; &lt;summary&gt;三级折叠标题&lt;/summary&gt; - 这是三级列表 - 支持 Markdown - 可以无限嵌套（但建议不超过3-4层） &lt;/details&gt; 一级内容中的普通列表 也可以混合使用 似乎只能嵌套两层">
   <meta property="og:locale" content="zh_cn">
   <meta property="og:type" content="article">
     <meta property="article:section" content="tech">
@@ -91,8 +94,9 @@
     
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Hugo学习250728">
-  <meta name="twitter:description" content="1. 可折叠列表 HTML5 标签，折叠内容无法支持原生markdown语法 # config.yaml中配置，允许渲染 HTML 标签 &lt;/&gt; yaml 折叠 复制 1markup: 2 goldmark: 3 renderer: 4 unsafe: true 使用原生html5 details标签 &lt;/&gt; html 折叠 复制 1&lt;details&gt; 2 &lt;summary&gt;点击展开查看详情&lt;/summary&gt; 3 4 这里是隐藏的内容，支持 **Markdown** 格式： 5 6 - 列表项1 7 - 列表项2 8 - [链接](https://example.com) 9&lt;/details&gt; 效果： 这里是隐藏的内容，支持 Markdown 格式：
-列表项1 列表项2 链接 本质是隐藏细节 嵌套 一级折叠标题 这是一级内容…">
+  <meta name="twitter:description" content="1. 可折叠列表 HTML5 标签，折叠内容无法支持原生markdown语法 # config.yaml中配置，允许渲染 HTML 标签 &lt;/&gt; yaml 复制 1markup: 2 goldmark: 3 renderer: 4 unsafe: true 使用原生html5 details标签 &lt;/&gt; html 复制 1&lt;details&gt; 2 &lt;summary&gt;点击展开查看详情&lt;/summary&gt; 3 4 这里是隐藏的内容，支持 **Markdown** 格式： 5 6 - 列表项1 7 - 列表项2 8 - [链接](https://example.com) 9&lt;/details&gt; 效果： 这里是隐藏的内容，支持 Markdown 格式：
+列表项1 列表项2 链接 本质是隐藏细节 嵌套 一级折叠标题 这是一级内容…
+二级折叠标题 &lt;details&gt; &lt;summary&gt;三级折叠标题&lt;/summary&gt; - 这是三级列表 - 支持 Markdown - 可以无限嵌套（但建议不超过3-4层） &lt;/details&gt; 一级内容中的普通列表 也可以混合使用 似乎只能嵌套两层">
 
       
     
@@ -105,7 +109,7 @@
     "name": "Hugo学习250728",
     "headline": "Hugo学习250728",
     
-    "abstract": "\u003ch4 class=\u0022relative group\u0022\u003e1. 可折叠列表 HTML5 标签，折叠内容无法支持原生markdown语法 \n    \u003cdiv id=\u00221-可折叠列表-html5-标签折叠内容无法支持原生markdown语法\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#1-%e5%8f%af%e6%8a%98%e5%8f%a0%e5%88%97%e8%a1%a8-html5-%e6%a0%87%e7%ad%be%e6%8a%98%e5%8f%a0%e5%86%85%e5%ae%b9%e6%97%a0%e6%b3%95%e6%94%af%e6%8c%81%e5%8e%9f%e7%94%9fmarkdown%e8%af%ad%e6%b3%95\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h4\u003e\n\u003col\u003e\n\u003cli\u003econfig.yaml中配置，允许渲染 HTML 标签\u003c\/li\u003e\n\u003c\/ol\u003e\n\n\u003cdiv class=\u0022code-block-wrapper\u0022\u003e\n  \u003cdiv class=\u0022code-header\u0022\u003e\n    \u003cspan class=\u0022language-label\u0022\u003e\n      \u003cspan class=\u0022language-brackets\u0022\u003e\u0026lt;\/\u003e\u003c\/span\u003e  \n      \u003cspan class=\u0022language-name\u0022\u003eyaml\u003c\/span\u003e  \n    \u003c\/span\u003e\n\n    \u003cdiv class=\u0022code-buttons\u0022\u003e\n      \u003cbutton class=\u0022fold-button\u0022 title=\u0022Toggle fold\u0022\u003e\n        \u003ci class=\u0022fas fa-chevron-up\u0022\u003e\u003c\/i\u003e\n        \u003cspan\u003e折叠\u003c\/span\u003e\n      \u003c\/button\u003e\n      \u003cbutton class=\u0022copy-button\u0022 title=\u0022Copy code\u0022\u003e\n        \u003ci class=\u0022fas fa-copy\u0022\u003e\u003c\/i\u003e\n        \u003cspan\u003e复制\u003c\/span\u003e\n      \u003c\/button\u003e\n    \u003c\/div\u003e\n  \u003c\/div\u003e\n  \u003cdiv class=\u0022highlight\u0022\u003e\u003cpre tabindex=\u00220\u0022 class=\u0022chroma\u0022\u003e\u003ccode class=\u0022language-yaml\u0022 data-lang=\u0022yaml\u0022\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e1\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022nt\u0022\u003emarkup\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e:\u003c\/span\u003e\u003cspan class=\u0022w\u0022\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e2\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022w\u0022\u003e  \u003c\/span\u003e\u003cspan class=\u0022nt\u0022\u003egoldmark\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e:\u003c\/span\u003e\u003cspan class=\u0022w\u0022\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e3\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022w\u0022\u003e    \u003c\/span\u003e\u003cspan class=\u0022nt\u0022\u003erenderer\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e:\u003c\/span\u003e\u003cspan class=\u0022w\u0022\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e4\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022w\u0022\u003e      \u003c\/span\u003e\u003cspan class=\u0022nt\u0022\u003eunsafe\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e:\u003c\/span\u003e\u003cspan class=\u0022w\u0022\u003e \u003c\/span\u003e\u003cspan class=\u0022kc\u0022\u003etrue\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003c\/code\u003e\u003c\/pre\u003e\u003c\/div\u003e\n\u003c\/div\u003e\n\u003col start=\u00222\u0022\u003e\n\u003cli\u003e使用原生html5 details标签\u003c\/li\u003e\n\u003c\/ol\u003e\n\n\u003cdiv class=\u0022code-block-wrapper\u0022\u003e\n  \u003cdiv class=\u0022code-header\u0022\u003e\n    \u003cspan class=\u0022language-label\u0022\u003e\n      \u003cspan class=\u0022language-brackets\u0022\u003e\u0026lt;\/\u003e\u003c\/span\u003e  \n      \u003cspan class=\u0022language-name\u0022\u003ehtml\u003c\/span\u003e  \n    \u003c\/span\u003e\n\n    \u003cdiv class=\u0022code-buttons\u0022\u003e\n      \u003cbutton class=\u0022fold-button\u0022 title=\u0022Toggle fold\u0022\u003e\n        \u003ci class=\u0022fas fa-chevron-up\u0022\u003e\u003c\/i\u003e\n        \u003cspan\u003e折叠\u003c\/span\u003e\n      \u003c\/button\u003e\n      \u003cbutton class=\u0022copy-button\u0022 title=\u0022Copy code\u0022\u003e\n        \u003ci class=\u0022fas fa-copy\u0022\u003e\u003c\/i\u003e\n        \u003cspan\u003e复制\u003c\/span\u003e\n      \u003c\/button\u003e\n    \u003c\/div\u003e\n  \u003c\/div\u003e\n  \u003cdiv class=\u0022highlight\u0022\u003e\u003cpre tabindex=\u00220\u0022 class=\u0022chroma\u0022\u003e\u003ccode class=\u0022language-html\u0022 data-lang=\u0022html\u0022\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e1\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022p\u0022\u003e\u0026lt;\u003c\/span\u003e\u003cspan class=\u0022nt\u0022\u003edetails\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e\u0026gt;\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e2\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e  \u003cspan class=\u0022p\u0022\u003e\u0026lt;\u003c\/span\u003e\u003cspan class=\u0022nt\u0022\u003esummary\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e\u0026gt;\u003c\/span\u003e点击展开查看详情\u003cspan class=\u0022p\u0022\u003e\u0026lt;\/\u003c\/span\u003e\u003cspan class=\u0022nt\u0022\u003esummary\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e\u0026gt;\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e3\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e  \n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e4\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e  这里是隐藏的内容，支持 **Markdown** 格式：\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e5\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e  \n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e6\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e  - 列表项1\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e7\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e  - 列表项2\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e8\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e  - [链接](https:\/\/example.com)\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e9\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022p\u0022\u003e\u0026lt;\/\u003c\/span\u003e\u003cspan class=\u0022nt\u0022\u003edetails\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e\u0026gt;\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003c\/code\u003e\u003c\/pre\u003e\u003c\/div\u003e\n\u003c\/div\u003e\n\u003cdetails\u003e\n  \u003csummary\u003e效果：\u003c\/summary\u003e\n\u003cp\u003e这里是隐藏的内容，支持 \u003cstrong\u003eMarkdown\u003c\/strong\u003e 格式：\u003c\/p\u003e\n\u003cul\u003e\n\u003cli\u003e列表项1\u003c\/li\u003e\n\u003cli\u003e列表项2\u003c\/li\u003e\n\u003cli\u003e\u003ca\n  href=\u0022https:\/\/example.com\u0022\n    target=\u0022_blank\u0022\n  \u003e链接\u003c\/a\u003e\n\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003c\/details\u003e\n本质是隐藏细节\n\u003col start=\u00223\u0022\u003e\n\u003cli\u003e嵌套\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003cdetails\u003e\n  \u003csummary\u003e一级折叠标题\u003c\/summary\u003e\n\u003cp\u003e这是一级内容\u0026hellip;\u003c\/p\u003e",
+    "abstract": "\u003ch4 class=\u0022relative group\u0022\u003e1. 可折叠列表 HTML5 标签，折叠内容无法支持原生markdown语法 \n    \u003cdiv id=\u00221-可折叠列表-html5-标签折叠内容无法支持原生markdown语法\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#1-%e5%8f%af%e6%8a%98%e5%8f%a0%e5%88%97%e8%a1%a8-html5-%e6%a0%87%e7%ad%be%e6%8a%98%e5%8f%a0%e5%86%85%e5%ae%b9%e6%97%a0%e6%b3%95%e6%94%af%e6%8c%81%e5%8e%9f%e7%94%9fmarkdown%e8%af%ad%e6%b3%95\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h4\u003e\n\u003col\u003e\n\u003cli\u003econfig.yaml中配置，允许渲染 HTML 标签\u003c\/li\u003e\n\u003c\/ol\u003e\n\n\u003cdiv class=\u0022code-block-wrapper\u0022\u003e\n  \u003cdiv class=\u0022code-header\u0022\u003e\n    \u003cspan class=\u0022language-label\u0022\u003e\n      \u003cspan class=\u0022language-brackets\u0022\u003e\u0026lt;\/\u003e\u003c\/span\u003e  \n      \u003cspan class=\u0022language-name\u0022\u003eyaml\u003c\/span\u003e  \n    \u003c\/span\u003e\n\n    \u003cdiv class=\u0022code-buttons\u0022\u003e\n      \u003cbutton class=\u0022copy-button\u0022\u003e\n        \u003ci class=\u0022fas fa-copy\u0022\u003e\u003c\/i\u003e\n        \u003cspan\u003e复制\u003c\/span\u003e\n      \u003c\/button\u003e\n    \u003c\/div\u003e\n  \u003c\/div\u003e\n  \u003cdiv class=\u0022highlight\u0022\u003e\u003cpre tabindex=\u00220\u0022 class=\u0022chroma\u0022\u003e\u003ccode class=\u0022language-yaml\u0022 data-lang=\u0022yaml\u0022\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e1\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022nt\u0022\u003emarkup\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e:\u003c\/span\u003e\u003cspan class=\u0022w\u0022\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e2\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022w\u0022\u003e  \u003c\/span\u003e\u003cspan class=\u0022nt\u0022\u003egoldmark\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e:\u003c\/span\u003e\u003cspan class=\u0022w\u0022\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e3\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022w\u0022\u003e    \u003c\/span\u003e\u003cspan class=\u0022nt\u0022\u003erenderer\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e:\u003c\/span\u003e\u003cspan class=\u0022w\u0022\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e4\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022w\u0022\u003e      \u003c\/span\u003e\u003cspan class=\u0022nt\u0022\u003eunsafe\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e:\u003c\/span\u003e\u003cspan class=\u0022w\u0022\u003e \u003c\/span\u003e\u003cspan class=\u0022kc\u0022\u003etrue\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003c\/code\u003e\u003c\/pre\u003e\u003c\/div\u003e\n\u003c\/div\u003e\n\n\n\u003col start=\u00222\u0022\u003e\n\u003cli\u003e使用原生html5 details标签\u003c\/li\u003e\n\u003c\/ol\u003e\n\n\u003cdiv class=\u0022code-block-wrapper\u0022\u003e\n  \u003cdiv class=\u0022code-header\u0022\u003e\n    \u003cspan class=\u0022language-label\u0022\u003e\n      \u003cspan class=\u0022language-brackets\u0022\u003e\u0026lt;\/\u003e\u003c\/span\u003e  \n      \u003cspan class=\u0022language-name\u0022\u003ehtml\u003c\/span\u003e  \n    \u003c\/span\u003e\n\n    \u003cdiv class=\u0022code-buttons\u0022\u003e\n      \u003cbutton class=\u0022copy-button\u0022\u003e\n        \u003ci class=\u0022fas fa-copy\u0022\u003e\u003c\/i\u003e\n        \u003cspan\u003e复制\u003c\/span\u003e\n      \u003c\/button\u003e\n    \u003c\/div\u003e\n  \u003c\/div\u003e\n  \u003cdiv class=\u0022highlight\u0022\u003e\u003cpre tabindex=\u00220\u0022 class=\u0022chroma\u0022\u003e\u003ccode class=\u0022language-html\u0022 data-lang=\u0022html\u0022\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e1\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022p\u0022\u003e\u0026lt;\u003c\/span\u003e\u003cspan class=\u0022nt\u0022\u003edetails\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e\u0026gt;\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e2\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e  \u003cspan class=\u0022p\u0022\u003e\u0026lt;\u003c\/span\u003e\u003cspan class=\u0022nt\u0022\u003esummary\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e\u0026gt;\u003c\/span\u003e点击展开查看详情\u003cspan class=\u0022p\u0022\u003e\u0026lt;\/\u003c\/span\u003e\u003cspan class=\u0022nt\u0022\u003esummary\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e\u0026gt;\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e3\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e  \n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e4\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e  这里是隐藏的内容，支持 **Markdown** 格式：\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e5\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e  \n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e6\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e  - 列表项1\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e7\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e  - 列表项2\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e8\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e  - [链接](https:\/\/example.com)\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e9\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022p\u0022\u003e\u0026lt;\/\u003c\/span\u003e\u003cspan class=\u0022nt\u0022\u003edetails\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e\u0026gt;\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003c\/code\u003e\u003c\/pre\u003e\u003c\/div\u003e\n\u003c\/div\u003e\n\n\n\u003cdetails\u003e\n  \u003csummary\u003e效果：\u003c\/summary\u003e\n\u003cp\u003e这里是隐藏的内容，支持 \u003cstrong\u003eMarkdown\u003c\/strong\u003e 格式：\u003c\/p\u003e\n\u003cul\u003e\n\u003cli\u003e列表项1\u003c\/li\u003e\n\u003cli\u003e列表项2\u003c\/li\u003e\n\u003cli\u003e\u003ca\n  href=\u0022https:\/\/example.com\u0022\n    target=\u0022_blank\u0022\n  \u003e链接\u003c\/a\u003e\n\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003c\/details\u003e\n本质是隐藏细节\n\u003col start=\u00223\u0022\u003e\n\u003cli\u003e嵌套\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003cdetails\u003e\n  \u003csummary\u003e一级折叠标题\u003c\/summary\u003e\n\u003cp\u003e这是一级内容\u0026hellip;\u003c\/p\u003e\n  \u003cdetails\u003e\n    \u003csummary\u003e二级折叠标题\u003c\/summary\u003e\n\u003cpre\u003e\u003ccode\u003e\u0026lt;details\u0026gt;\n  \u0026lt;summary\u0026gt;三级折叠标题\u0026lt;\/summary\u0026gt;\n  \n  - 这是三级列表\n  - 支持 Markdown\n  - 可以无限嵌套（但建议不超过3-4层）\n\u0026lt;\/details\u0026gt;\n\u003c\/code\u003e\u003c\/pre\u003e\n  \u003c\/details\u003e\n\u003cul\u003e\n\u003cli\u003e一级内容中的普通列表\u003c\/li\u003e\n\u003cli\u003e也可以混合使用\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003c\/details\u003e\n\u003cp\u003e似乎只能嵌套两层\u003c\/p\u003e",
     "inLanguage": "zh-cn",
     "url" : "http:\/\/localhost:43997\/nayun.github.io\/tech\/frontend\/hugo\/hugo%E5%AD%A6%E4%B9%A0250728\/",
     "author" : {
@@ -121,7 +125,7 @@
     "keywords": ["技","hugo","前端"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "114"
+    "wordCount": "112"
   }]
   </script>
 
@@ -624,7 +628,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-07-28T15:33:17&#43;08:00">July 28, 2025</time><span class="px-2 text-primary-500">&middot;</span><span>114 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">1 分钟</span>
+      <time datetime="2025-07-28T15:33:17&#43;08:00">July 28, 2025</time><span class="px-2 text-primary-500">&middot;</span><span>112 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">1 分钟</span>
     
 
     
@@ -841,11 +845,7 @@
     </span>
 
     <div class="code-buttons">
-      <button class="fold-button" title="Toggle fold">
-        <i class="fas fa-chevron-up"></i>
-        <span>折叠</span>
-      </button>
-      <button class="copy-button" title="Copy code">
+      <button class="copy-button">
         <i class="fas fa-copy"></i>
         <span>复制</span>
       </button>
@@ -856,6 +856,8 @@
 </span></span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="w">    </span><span class="nt">renderer</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="w">      </span><span class="nt">unsafe</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span></span></span></code></pre></div>
 </div>
+
+
 <ol start="2">
 <li>使用原生html5 details标签</li>
 </ol>
@@ -868,11 +870,7 @@
     </span>
 
     <div class="code-buttons">
-      <button class="fold-button" title="Toggle fold">
-        <i class="fas fa-chevron-up"></i>
-        <span>折叠</span>
-      </button>
-      <button class="copy-button" title="Copy code">
+      <button class="copy-button">
         <i class="fas fa-copy"></i>
         <span>复制</span>
       </button>
@@ -888,6 +886,8 @@
 </span></span><span class="line"><span class="ln">8</span><span class="cl">  - [链接](https://example.com)
 </span></span><span class="line"><span class="ln">9</span><span class="cl"><span class="p">&lt;/</span><span class="nt">details</span><span class="p">&gt;</span></span></span></code></pre></div>
 </div>
+
+
 <details>
   <summary>效果：</summary>
 <p>这里是隐藏的内容，支持 <strong>Markdown</strong> 格式：</p>
@@ -1075,7 +1075,7 @@
   
   <script src="http://localhost:43997/nayun.github.io/js/custom_mermaid.min.1da0269623e4f164ced2e3b711f6e7a5753c14239113eb8f1d5ceace3238fdd8.js"></script>
   
-  <script src="http://localhost:43997/nayun.github.io/js/custom_code-header.min.9217b0aa7e71da48d0a21723ad836505bc5214329932fad0e5dff1125ee4da5b.js"></script>
+  <script src="http://localhost:43997/nayun.github.io/js/custom_code-header.min.fed9f69f2ee9173c88bdc0dd73ce5d789df82b307ee944a70bbe6f1ab86642f9.js"></script>
   
   
     

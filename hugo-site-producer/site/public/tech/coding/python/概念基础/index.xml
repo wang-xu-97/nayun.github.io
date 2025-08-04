@@ -27,11 +27,7 @@
     &lt;/span&gt;
 
     &lt;div class=&#34;code-buttons&#34;&gt;
-      &lt;button class=&#34;fold-button&#34; title=&#34;Toggle fold&#34;&gt;
-        &lt;i class=&#34;fas fa-chevron-up&#34;&gt;&lt;/i&gt;
-        &lt;span&gt;折叠&lt;/span&gt;
-      &lt;/button&gt;
-      &lt;button class=&#34;copy-button&#34; title=&#34;Copy code&#34;&gt;
+      &lt;button class=&#34;copy-button&#34;&gt;
         &lt;i class=&#34;fas fa-copy&#34;&gt;&lt;/i&gt;
         &lt;span&gt;复制&lt;/span&gt;
       &lt;/button&gt;

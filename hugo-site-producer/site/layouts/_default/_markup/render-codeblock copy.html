@@ -3,7 +3,7 @@
   <div class="code-header">
     <span class="language-label">
       <span class="language-brackets"></></span>  <!-- 单独控制符号 -->
-      <span class="language-name">{{ $lang }}</span>  <!-- 单独控制文字 -->
+      <span class="language-name">{{ $lang | markdownify }}</span>  <!-- 单独控制文字 -->
     </span>
 
     <div class="code-buttons">
