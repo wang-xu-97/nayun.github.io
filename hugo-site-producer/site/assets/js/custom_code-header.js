@@ -48,9 +48,11 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.language-label').forEach(button => {
       button.addEventListener('click', () => {
         const codeBlock = button.closest('.code-block-wrapper');
-        const content = codeBlock?.querySelector('pre.chroma');
-        if (content) content.classList.toggle('collapsed');
-        else console.error('折叠失败');
+        const chroma = codeBlock?.querySelector('pre.chroma');
+        if (chroma) {
+          chroma.classList.toggle('collapsed');
+        }
+        else console.error('chroma折叠失败');
       });
     });
 });
