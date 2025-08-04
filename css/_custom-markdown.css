@@ -14,7 +14,7 @@
     position: relative; /* 为绝对定位按钮提供参考 */
     max-height: var(--tw-leading,var(--text-sm--line-height));
     justify-content: space-between;
-    align-items:flex-end;
+    align-items:center;
 }
 .language-label {
     color: #333333;
