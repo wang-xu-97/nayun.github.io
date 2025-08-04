@@ -13,11 +13,7 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;span class="language-name">python&lt;/span>
 &lt;/span>
 &lt;div class="code-buttons">
-&lt;button class="fold-button" title="Toggle fold">
-&lt;i class="fas fa-chevron-up">&lt;/i>
-&lt;span>折叠&lt;/span>
-&lt;/button>
-&lt;button class="copy-button" title="Copy code">
+&lt;button class="copy-button">
 &lt;i class="fas fa-copy">&lt;/i>
 &lt;span>复制&lt;/span>
 &lt;/button>
@@ -51,11 +47,7 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;span class="language-name">python&lt;/span>
 &lt;/span>
 &lt;div class="code-buttons">
-&lt;button class="fold-button" title="Toggle fold">
-&lt;i class="fas fa-chevron-up">&lt;/i>
-&lt;span>折叠&lt;/span>
-&lt;/button>
-&lt;button class="copy-button" title="Copy code">
+&lt;button class="copy-button">
 &lt;i class="fas fa-copy">&lt;/i>
 &lt;span>复制&lt;/span>
 &lt;/button>
@@ -81,11 +73,7 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;span class="language-name">python&lt;/span>
 &lt;/span>
 &lt;div class="code-buttons">
-&lt;button class="fold-button" title="Toggle fold">
-&lt;i class="fas fa-chevron-up">&lt;/i>
-&lt;span>折叠&lt;/span>
-&lt;/button>
-&lt;button class="copy-button" title="Copy code">
+&lt;button class="copy-button">
 &lt;i class="fas fa-copy">&lt;/i>
 &lt;span>复制&lt;/span>
 &lt;/button>
@@ -131,11 +119,7 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;span class="language-name">python&lt;/span>
 &lt;/span>
 &lt;div class="code-buttons">
-&lt;button class="fold-button" title="Toggle fold">
-&lt;i class="fas fa-chevron-up">&lt;/i>
-&lt;span>折叠&lt;/span>
-&lt;/button>
-&lt;button class="copy-button" title="Copy code">
+&lt;button class="copy-button">
 &lt;i class="fas fa-copy">&lt;/i>
 &lt;span>复制&lt;/span>
 &lt;/button>
@@ -164,11 +148,7 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;span class="language-name">python&lt;/span>
 &lt;/span>
 &lt;div class="code-buttons">
-&lt;button class="fold-button" title="Toggle fold">
-&lt;i class="fas fa-chevron-up">&lt;/i>
-&lt;span>折叠&lt;/span>
-&lt;/button>
-&lt;button class="copy-button" title="Copy code">
+&lt;button class="copy-button">
 &lt;i class="fas fa-copy">&lt;/i>
 &lt;span>复制&lt;/span>
 &lt;/button>
@@ -234,11 +214,7 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;span class="language-name">python&lt;/span>
 &lt;/span>
 &lt;div class="code-buttons">
-&lt;button class="fold-button" title="Toggle fold">
-&lt;i class="fas fa-chevron-up">&lt;/i>
-&lt;span>折叠&lt;/span>
-&lt;/button>
-&lt;button class="copy-button" title="Copy code">
+&lt;button class="copy-button">
 &lt;i class="fas fa-copy">&lt;/i>
 &lt;span>复制&lt;/span>
 &lt;/button>
@@ -341,11 +317,7 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;span class="language-name">python&lt;/span>
 &lt;/span>
 &lt;div class="code-buttons">
-&lt;button class="fold-button" title="Toggle fold">
-&lt;i class="fas fa-chevron-up">&lt;/i>
-&lt;span>折叠&lt;/span>
-&lt;/button>
-&lt;button class="copy-button" title="Copy code">
+&lt;button class="copy-button">
 &lt;i class="fas fa-copy">&lt;/i>
 &lt;span>复制&lt;/span>
 &lt;/button>
@@ -425,11 +397,7 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;span class="language-name">python&lt;/span>
 &lt;/span>
 &lt;div class="code-buttons">
-&lt;button class="fold-button" title="Toggle fold">
-&lt;i class="fas fa-chevron-up">&lt;/i>
-&lt;span>折叠&lt;/span>
-&lt;/button>
-&lt;button class="copy-button" title="Copy code">
+&lt;button class="copy-button">
 &lt;i class="fas fa-copy">&lt;/i>
 &lt;span>复制&lt;/span>
 &lt;/button>
@@ -469,11 +437,7 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;span class="language-name">python&lt;/span>
 &lt;/span>
 &lt;div class="code-buttons">
-&lt;button class="fold-button" title="Toggle fold">
-&lt;i class="fas fa-chevron-up">&lt;/i>
-&lt;span>折叠&lt;/span>
-&lt;/button>
-&lt;button class="copy-button" title="Copy code">
+&lt;button class="copy-button">
 &lt;i class="fas fa-copy">&lt;/i>
 &lt;span>复制&lt;/span>
 &lt;/button>
@@ -509,11 +473,7 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;span class="language-name">python&lt;/span>
 &lt;/span>
 &lt;div class="code-buttons">
-&lt;button class="fold-button" title="Toggle fold">
-&lt;i class="fas fa-chevron-up">&lt;/i>
-&lt;span>折叠&lt;/span>
-&lt;/button>
-&lt;button class="copy-button" title="Copy code">
+&lt;button class="copy-button">
 &lt;i class="fas fa-copy">&lt;/i>
 &lt;span>复制&lt;/span>
 &lt;/button>
@@ -561,11 +521,7 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;span class="language-name">python&lt;/span>
 &lt;/span>
 &lt;div class="code-buttons">
-&lt;button class="fold-button" title="Toggle fold">
-&lt;i class="fas fa-chevron-up">&lt;/i>
-&lt;span>折叠&lt;/span>
-&lt;/button>
-&lt;button class="copy-button" title="Copy code">
+&lt;button class="copy-button">
 &lt;i class="fas fa-copy">&lt;/i>
 &lt;span>复制&lt;/span>
 &lt;/button>

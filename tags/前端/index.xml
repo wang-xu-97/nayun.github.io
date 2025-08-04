@@ -15,11 +15,7 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;span class="language-name">yaml&lt;/span>
 &lt;/span>
 &lt;div class="code-buttons">
-&lt;button class="fold-button" title="Toggle fold">
-&lt;i class="fas fa-chevron-up">&lt;/i>
-&lt;span>折叠&lt;/span>
-&lt;/button>
-&lt;button class="copy-button" title="Copy code">
+&lt;button class="copy-button">
 &lt;i class="fas fa-copy">&lt;/i>
 &lt;span>复制&lt;/span>
 &lt;/button>
@@ -40,11 +36,7 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;span class="language-name">html&lt;/span>
 &lt;/span>
 &lt;div class="code-buttons">
-&lt;button class="fold-button" title="Toggle fold">
-&lt;i class="fas fa-chevron-up">&lt;/i>
-&lt;span>折叠&lt;/span>
-&lt;/button>
-&lt;button class="copy-button" title="Copy code">
+&lt;button class="copy-button">
 &lt;i class="fas fa-copy">&lt;/i>
 &lt;span>复制&lt;/span>
 &lt;/button>
@@ -79,7 +71,23 @@ target="_blank"
 &lt;/ol>
 &lt;details>
 &lt;summary>一级折叠标题&lt;/summary>
-&lt;p>这是一级内容&amp;hellip;&lt;/p></description></item><item><title>词云实践流程</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/%E8%AF%8D%E4%BA%91%E5%AE%9E%E8%B7%B5%E6%B5%81%E7%A8%8B/</link><pubDate>Thu, 24 Jul 2025 17:15:11 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/%E8%AF%8D%E4%BA%91%E5%AE%9E%E8%B7%B5%E6%B5%81%E7%A8%8B/</guid><description>&lt;h4 class="relative group">1. 通过deepseek生成词云&lt;code>html、js、css&lt;/code>代码
+&lt;p>这是一级内容&amp;hellip;&lt;/p>
+&lt;details>
+&lt;summary>二级折叠标题&lt;/summary>
+&lt;pre>&lt;code>&amp;lt;details&amp;gt;
+&amp;lt;summary&amp;gt;三级折叠标题&amp;lt;/summary&amp;gt;
+- 这是三级列表
+- 支持 Markdown
+- 可以无限嵌套（但建议不超过3-4层）
+&amp;lt;/details&amp;gt;
+&lt;/code>&lt;/pre>
+&lt;/details>
+&lt;ul>
+&lt;li>一级内容中的普通列表&lt;/li>
+&lt;li>也可以混合使用&lt;/li>
+&lt;/ul>
+&lt;/details>
+&lt;p>似乎只能嵌套两层&lt;/p></description></item><item><title>词云实践流程</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/%E8%AF%8D%E4%BA%91%E5%AE%9E%E8%B7%B5%E6%B5%81%E7%A8%8B/</link><pubDate>Thu, 24 Jul 2025 17:15:11 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/%E8%AF%8D%E4%BA%91%E5%AE%9E%E8%B7%B5%E6%B5%81%E7%A8%8B/</guid><description>&lt;h4 class="relative group">1. 通过deepseek生成词云&lt;code>html、js、css&lt;/code>代码
 &lt;div id="1-通过deepseek生成词云htmljscss代码" class="anchor">&lt;/div>
 &lt;span
 class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
@@ -93,11 +101,7 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;span class="language-name">prompt参考&lt;/span>
 &lt;/span>
 &lt;div class="code-buttons">
-&lt;button class="fold-button" title="Toggle fold">
-&lt;i class="fas fa-chevron-up">&lt;/i>
-&lt;span>折叠&lt;/span>
-&lt;/button>
-&lt;button class="copy-button" title="Copy code">
+&lt;button class="copy-button">
 &lt;i class="fas fa-copy">&lt;/i>
 &lt;span>复制&lt;/span>
 &lt;/button>
@@ -113,11 +117,7 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;span class="language-name">生成&lt;/span>
 &lt;/span>
 &lt;div class="code-buttons">
-&lt;button class="fold-button" title="Toggle fold">
-&lt;i class="fas fa-chevron-up">&lt;/i>
-&lt;span>折叠&lt;/span>
-&lt;/button>
-&lt;button class="copy-button" title="Copy code">
+&lt;button class="copy-button">
 &lt;i class="fas fa-copy">&lt;/i>
 &lt;span>复制&lt;/span>
 &lt;/button>
@@ -142,11 +142,7 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;span class="language-name">路由机制&lt;/span>
 &lt;/span>
 &lt;div class="code-buttons">
-&lt;button class="fold-button" title="Toggle fold">
-&lt;i class="fas fa-chevron-up">&lt;/i>
-&lt;span>折叠&lt;/span>
-&lt;/button>
-&lt;button class="copy-button" title="Copy code">
+&lt;button class="copy-button">
 &lt;i class="fas fa-copy">&lt;/i>
 &lt;span>复制&lt;/span>
 &lt;/button>
@@ -177,11 +173,7 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;span class="language-name">tag.terms.html&lt;/span>
 &lt;/span>
 &lt;div class="code-buttons">
-&lt;button class="fold-button" title="Toggle fold">
-&lt;i class="fas fa-chevron-up">&lt;/i>
-&lt;span>折叠&lt;/span>
-&lt;/button>
-&lt;button class="copy-button" title="Copy code">
+&lt;button class="copy-button">
 &lt;i class="fas fa-copy">&lt;/i>
 &lt;span>复制&lt;/span>
 &lt;/button>
@@ -230,11 +222,7 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;span class="language-name">text&lt;/span>
 &lt;/span>
 &lt;div class="code-buttons">
-&lt;button class="fold-button" title="Toggle fold">
-&lt;i class="fas fa-chevron-up">&lt;/i>
-&lt;span>折叠&lt;/span>
-&lt;/button>
-&lt;button class="copy-button" title="Copy code">
+&lt;button class="copy-button">
 &lt;i class="fas fa-copy">&lt;/i>
 &lt;span>复制&lt;/span>
 &lt;/button>
@@ -272,11 +260,7 @@ href="#%e8%87%aa%e5%ae%9a%e4%b9%89%e9%85%8d%e7%bd%ae%e5%92%8c%e8%b5%84%e6%ba%90"
 &lt;span class="language-name">markdown&lt;/span>
 &lt;/span>
 &lt;div class="code-buttons">
-&lt;button class="fold-button" title="Toggle fold">
-&lt;i class="fas fa-chevron-up">&lt;/i>
-&lt;span>折叠&lt;/span>
-&lt;/button>
-&lt;button class="copy-button" title="Copy code">
+&lt;button class="copy-button">
 &lt;i class="fas fa-copy">&lt;/i>
 &lt;span>复制&lt;/span>
 &lt;/button>
@@ -334,11 +318,7 @@ target="_blank"
 &lt;span class="language-name">shell&lt;/span>
 &lt;/span>
 &lt;div class="code-buttons">
-&lt;button class="fold-button" title="Toggle fold">
-&lt;i class="fas fa-chevron-up">&lt;/i>
-&lt;span>折叠&lt;/span>
-&lt;/button>
-&lt;button class="copy-button" title="Copy code">
+&lt;button class="copy-button">
 &lt;i class="fas fa-copy">&lt;/i>
 &lt;span>复制&lt;/span>
 &lt;/button>
@@ -377,11 +357,7 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;span class="language-name">shell&lt;/span>
 &lt;/span>
 &lt;div class="code-buttons">
-&lt;button class="fold-button" title="Toggle fold">
-&lt;i class="fas fa-chevron-up">&lt;/i>
-&lt;span>折叠&lt;/span>
-&lt;/button>
-&lt;button class="copy-button" title="Copy code">
+&lt;button class="copy-button">
 &lt;i class="fas fa-copy">&lt;/i>
 &lt;span>复制&lt;/span>
 &lt;/button>
@@ -410,11 +386,7 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;span class="language-name">shell&lt;/span>
 &lt;/span>
 &lt;div class="code-buttons">
-&lt;button class="fold-button" title="Toggle fold">
-&lt;i class="fas fa-chevron-up">&lt;/i>
-&lt;span>折叠&lt;/span>
-&lt;/button>
-&lt;button class="copy-button" title="Copy code">
+&lt;button class="copy-button">
 &lt;i class="fas fa-copy">&lt;/i>
 &lt;span>复制&lt;/span>
 &lt;/button>
@@ -453,11 +425,7 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;span class="language-name">yaml&lt;/span>
 &lt;/span>
 &lt;div class="code-buttons">
-&lt;button class="fold-button" title="Toggle fold">
-&lt;i class="fas fa-chevron-up">&lt;/i>
-&lt;span>折叠&lt;/span>
-&lt;/button>
-&lt;button class="copy-button" title="Copy code">
+&lt;button class="copy-button">
 &lt;i class="fas fa-copy">&lt;/i>
 &lt;span>复制&lt;/span>
 &lt;/button>
@@ -475,11 +443,7 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;span class="language-name">scss&lt;/span>
 &lt;/span>
 &lt;div class="code-buttons">
-&lt;button class="fold-button" title="Toggle fold">
-&lt;i class="fas fa-chevron-up">&lt;/i>
-&lt;span>折叠&lt;/span>
-&lt;/button>
-&lt;button class="copy-button" title="Copy code">
+&lt;button class="copy-button">
 &lt;i class="fas fa-copy">&lt;/i>
 &lt;span>复制&lt;/span>
 &lt;/button>
