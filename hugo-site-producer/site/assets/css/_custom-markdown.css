@@ -8,7 +8,7 @@
   
     overflow: visible; /* 关键修复 */
     z-index: 1; /* 确保在提示之上 */
-  }
+}
   
   .code-header {
     /* padding-top: 0.5em; */
@@ -28,6 +28,7 @@
     letter-spacing: 1px;
     margin-left: 0.5rem;
     display: flex;
+    height: auto;
     align-items: center;
     gap: 8px;
     cursor: pointer;
@@ -49,13 +50,12 @@
   
     font-weight: 700; /* 中等粗细 */
     display: flex;
-    gap: 1px;
-    font-size: 1.1rem;
+    gap: 0px;
     transition: all 0.3s ease;
   }
   .language-label:hover .language-brackets {
       letter-spacing: 3px;
-      font-weight: 900;
+      font-weight: bolder;
   }
   
   .language-name {
@@ -70,55 +70,24 @@
     color: var(--color-muted-foreground);
   }
   
-  
-  
-   .code-buttons {
-    display: flex;
-    gap: 0.5rem;
-    margin-left: auto; /* 将按钮推到右侧 */
-    margin-right: 1rem; /* 将按钮推到右侧 */
-  }
-  
-  .fold-button {
-    background: transparent;
-    border: none;
-    color: oklch(0.61 0.01 97.42);
-    cursor: pointer;
-    opacity: 0.7;
-    transition: all 0.2s;
-  
-    place-items: center;
-    /* margin-right: 10rem;  */
-  
-    position: relative; /* 为绝对定位按钮提供参考 */
-    /* right: 7rem; */
-    width: 5rem;
-  
-  }
   .copy-button {
     background: transparent;
-    /* background: #FFE4E130; */
-  
-    opacity: 0.7;
-  
-    /* --text-opacity: 0.7;
-    color: rgba(oklch(0.61 0.01 97.42), var(--text-opacity));  */
-  
     border: none;
     color: oklch(0.61 0.01 97.42); 
     cursor: pointer;
     transition: all 0.2s;
-  
     place-items: center;
-  
     position: relative; /* 为绝对定位按钮提供参考 */
-  
-    visibility: visible !important; /* 确保可见 */
+    visibility: visible ;
     width: 5rem;
+    opacity: 0;
   }
-  
-  .copy-button:hover, .fold-button:hover {
-    opacity: 1;
+.code-block-wrapper:hover .copy-button {
+    opacity: 0.7;
+    visibility: visible ;
+}
+  .copy-button:hover {
+    opacity: 1 !important;
     color: var(--primary);
     background: #FFE4E130;
   } 
@@ -145,14 +114,13 @@
       border-top-color: #555;
     }
   }
-  
+  @media (hover: none) {
+    .copy_button {
+      opacity: 1;  /* 无悬停设备直接显示 */
+    }
+  }
   /* 隐藏原始按钮内容的类 */
   .copy-button.hide-original > :not(.copy-tooltip) {
     opacity: 0;
   }
   
-
-pre.chroma.collapsed {
-    max-height: 0;
-    border: none;
-}
