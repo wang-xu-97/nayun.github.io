@@ -1,0 +1,1594 @@
+<!doctype html>
+<html
+  lang="zh-cn"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="light"
+  data-auto-appearance="true"><head><script src="/nayun.github.io/livereload.js?mindelay=10&amp;v=2&amp;port=43997&amp;path=nayun.github.io/livereload" data-no-instant defer></script>
+    
+    <link type="text/css" rel="stylesheet" href="/nayun.github.io/css/TagCloudbtn.css">
+    
+    <link type="text/css" rel="stylesheet" href="/nayun.github.io/css/_custom-markdown.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta charset="utf-8" />
+    
+    <meta http-equiv="content-language" content="zh-cn" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    
+    <title>中间件工厂 &middot; nayun blog</title>
+    <meta name="title" content="中间件工厂 &middot; nayun blog" />
+    
+    
+    <meta name="keywords" content="技, 编程思想, python, golang, " />
+    
+    
+    <link rel="canonical" href="http://localhost:43997/nayun.github.io/tech/general/%E4%B8%AD%E9%97%B4%E4%BB%B6%E5%B7%A5%E5%8E%82/" />
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <link type="text/css" rel="stylesheet" href="/nayun.github.io/css/main.bundle.min.9da49f5e9990c1641b749a20583576ff53caa772d52669ec1cb67229e47b62bf91d6e45880865202869ef2a2676bafcc24646fc561626615ff11436515e5a148.css"
+      integrity="sha512-naSfXpmQwWQbdJogWDV2/1PKp3LVJmnsHLZyKeR7Yr&#43;R1uRYgIZSAoae8qJna6/MJGRvxWFiZhX/EUNlFeWhSA==" />
+    
+    
+    <script type="text/javascript" src="/nayun.github.io/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
+      integrity="sha512-UWoWdFvqWpvQERONJUzA/TlzzVXObhXz3sdj58fCx0SPj&#43;e1TMqBHLghsMfhLNFhyqzh3XlKw9NNQJN8vMnuEg=="></script>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script defer type="text/javascript" id="script-bundle" src="/nayun.github.io/js/main.bundle.min.54688f522dbd435cd17577667367d50a06517a06f4b40b8c2f04d9e61afcb5f1b807ce42dfbe1f0d7979b2430f4e253cf548907cf81ab2f7efb0d66e57933d16.js"
+      integrity="sha512-VGiPUi29Q1zRdXdmc2fVCgZRegb0tAuMLwTZ5hr8tfG4B85C374fDXl5skMPTiU89UiQfPgasvfvsNZuV5M9Fg==" data-copy="复制" data-copied="已复制"></script>
+    
+    
+    
+    <script src="/nayun.github.io/lib/zoom/zoom.min.f592a181a15d2a5b042daa7f746c3721acf9063f8b6acd175d989129865a37d400ae0e85b640f9ad42cd98d1f8ad30931718cf8811abdcc5fcb264400d1a2b0c.js" integrity="sha512-9ZKhgaFdKlsELap/dGw3Iaz5Bj&#43;Las0XXZiRKYZaN9QArg6FtkD5rULNmNH4rTCTFxjPiBGr3MX8smRADRorDA=="></script>
+    
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/nayun.github.io/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/nayun.github.io/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/nayun.github.io/favicon-16x16.png" />
+    <link rel="manifest" href="/nayun.github.io/site.webmanifest" />
+    
+    
+    
+    
+    
+    
+    
+    
+    <meta property="og:url" content="http://localhost:43997/nayun.github.io/tech/general/%E4%B8%AD%E9%97%B4%E4%BB%B6%E5%B7%A5%E5%8E%82/">
+  <meta property="og:site_name" content="nayun blog">
+  <meta property="og:title" content="中间件工厂">
+  <meta property="og:description" content="概念 # 在函数式编程和软件架构中，中间件工厂是一种创建中间件的高阶函数模式。它是在函数工厂（能够生成其他函数的函数）概念基础上的扩展应用。
+定义 # 中间件工厂是一个函数，它接收配置参数并返回一个中间件函数。这种模式常见于Web框架（如Express、Koa）和数据处理流程中。
+&lt;/&gt; javascript 复制 1// 中间件工厂示例 2function createMiddleware(config) { 3 return function middleware(req, res, next) { 4 // 使用config和实现中间件逻辑 5 if (config.condition) { 6 // 做一些事情 7 } 8 next(); 9 }; 10} 11 12// 使用 13const myMiddleware = createMiddleware({ condition: true }); 14app.use(myMiddleware); 核心意义 # 1. 配置与复用性 # 中间件工厂通过参数化配置，使得单个中间件实现可以适应多种使用场景，大大提高了代码的复用性。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="tech">
+    <meta property="article:published_time" content="2025-08-05T17:02:12+08:00">
+    <meta property="article:modified_time" content="2025-08-05T17:02:12+08:00">
+    <meta property="article:tag" content="技">
+    <meta property="article:tag" content="编程思想">
+    <meta property="article:tag" content="Python">
+    <meta property="article:tag" content="Golang">
+
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="中间件工厂">
+  <meta name="twitter:description" content="概念 # 在函数式编程和软件架构中，中间件工厂是一种创建中间件的高阶函数模式。它是在函数工厂（能够生成其他函数的函数）概念基础上的扩展应用。
+定义 # 中间件工厂是一个函数，它接收配置参数并返回一个中间件函数。这种模式常见于Web框架（如Express、Koa）和数据处理流程中。
+&lt;/&gt; javascript 复制 1// 中间件工厂示例 2function createMiddleware(config) { 3 return function middleware(req, res, next) { 4 // 使用config和实现中间件逻辑 5 if (config.condition) { 6 // 做一些事情 7 } 8 next(); 9 }; 10} 11 12// 使用 13const myMiddleware = createMiddleware({ condition: true }); 14app.use(myMiddleware); 核心意义 # 1. 配置与复用性 # 中间件工厂通过参数化配置，使得单个中间件实现可以适应多种使用场景，大大提高了代码的复用性。">
+
+      
+    
+    
+    <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "Teches",
+    "name": "中间件工厂",
+    "headline": "中间件工厂",
+    
+    "abstract": "\u003ch1 class=\u0022relative group\u0022\u003e概念 \n    \u003cdiv id=\u0022概念\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e6%a6%82%e5%bf%b5\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h1\u003e\n\u003cp\u003e在函数式编程和软件架构中，\u003cstrong\u003e中间件工厂\u003c\/strong\u003e是一种创建中间件的高阶函数模式。它是在\u003cstrong\u003e函数工厂\u003c\/strong\u003e（能够生成其他函数的函数）概念基础上的扩展应用。\u003c\/p\u003e\n\n\u003ch2 class=\u0022relative group\u0022\u003e定义 \n    \u003cdiv id=\u0022定义\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e5%ae%9a%e4%b9%89\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\u003cp\u003e中间件工厂是一个函数，它接收配置参数并返回一个中间件函数。这种模式常见于Web框架（如Express、Koa）和数据处理流程中。\u003c\/p\u003e\n\n\u003cdiv class=\u0022code-block-wrapper\u0022\u003e\n  \u003cdiv class=\u0022code-header\u0022\u003e\n    \u003cspan class=\u0022language-label\u0022\u003e\n      \u003cspan class=\u0022language-brackets\u0022\u003e\u0026lt;\/\u003e\u003c\/span\u003e  \n      \u003cspan class=\u0022language-name\u0022\u003ejavascript\u003c\/span\u003e  \n    \u003c\/span\u003e\n\n    \u003cdiv class=\u0022code-buttons\u0022\u003e\n      \u003cbutton class=\u0022copy-button\u0022\u003e\n        \u003ci class=\u0022fas fa-copy\u0022\u003e\u003c\/i\u003e\n        \u003cspan\u003e复制\u003c\/span\u003e\n      \u003c\/button\u003e\n    \u003c\/div\u003e\n  \u003c\/div\u003e\n  \u003cdiv class=\u0022highlight\u0022\u003e\u003cpre tabindex=\u00220\u0022 class=\u0022chroma\u0022\u003e\u003ccode class=\u0022language-javascript\u0022 data-lang=\u0022javascript\u0022\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 1\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022c1\u0022\u003e\/\/ 中间件工厂示例\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 2\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022c1\u0022\u003e\u003c\/span\u003e\u003cspan class=\u0022kd\u0022\u003efunction\u003c\/span\u003e \u003cspan class=\u0022nx\u0022\u003ecreateMiddleware\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e(\u003c\/span\u003e\u003cspan class=\u0022nx\u0022\u003econfig\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e)\u003c\/span\u003e \u003cspan class=\u0022p\u0022\u003e{\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 3\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e  \u003cspan class=\u0022k\u0022\u003ereturn\u003c\/span\u003e \u003cspan class=\u0022kd\u0022\u003efunction\u003c\/span\u003e \u003cspan class=\u0022nx\u0022\u003emiddleware\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e(\u003c\/span\u003e\u003cspan class=\u0022nx\u0022\u003ereq\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e,\u003c\/span\u003e \u003cspan class=\u0022nx\u0022\u003eres\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e,\u003c\/span\u003e \u003cspan class=\u0022nx\u0022\u003enext\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e)\u003c\/span\u003e \u003cspan class=\u0022p\u0022\u003e{\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 4\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022c1\u0022\u003e\/\/ 使用config和实现中间件逻辑\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 5\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022c1\u0022\u003e\u003c\/span\u003e    \u003cspan class=\u0022k\u0022\u003eif\u003c\/span\u003e \u003cspan class=\u0022p\u0022\u003e(\u003c\/span\u003e\u003cspan class=\u0022nx\u0022\u003econfig\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e.\u003c\/span\u003e\u003cspan class=\u0022nx\u0022\u003econdition\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e)\u003c\/span\u003e \u003cspan class=\u0022p\u0022\u003e{\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 6\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e      \u003cspan class=\u0022c1\u0022\u003e\/\/ 做一些事情\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 7\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022c1\u0022\u003e\u003c\/span\u003e    \u003cspan class=\u0022p\u0022\u003e}\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 8\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022nx\u0022\u003enext\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e();\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 9\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e  \u003cspan class=\u0022p\u0022\u003e};\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e10\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022p\u0022\u003e}\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e11\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e12\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022c1\u0022\u003e\/\/ 使用\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e13\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022c1\u0022\u003e\u003c\/span\u003e\u003cspan class=\u0022kr\u0022\u003econst\u003c\/span\u003e \u003cspan class=\u0022nx\u0022\u003emyMiddleware\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e=\u003c\/span\u003e \u003cspan class=\u0022nx\u0022\u003ecreateMiddleware\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e({\u003c\/span\u003e \u003cspan class=\u0022nx\u0022\u003econdition\u003c\/span\u003e\u003cspan class=\u0022o\u0022\u003e:\u003c\/span\u003e \u003cspan class=\u0022kc\u0022\u003etrue\u003c\/span\u003e \u003cspan class=\u0022p\u0022\u003e});\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e14\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022nx\u0022\u003eapp\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e.\u003c\/span\u003e\u003cspan class=\u0022nx\u0022\u003euse\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e(\u003c\/span\u003e\u003cspan class=\u0022nx\u0022\u003emyMiddleware\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e);\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003c\/code\u003e\u003c\/pre\u003e\u003c\/div\u003e\n\u003c\/div\u003e\n\n\n\n\u003ch2 class=\u0022relative group\u0022\u003e核心意义 \n    \u003cdiv id=\u0022核心意义\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e6%a0%b8%e5%bf%83%e6%84%8f%e4%b9%89\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\n\u003ch3 class=\u0022relative group\u0022\u003e1. 配置与复用性 \n    \u003cdiv id=\u00221-配置与复用性\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#1-%e9%85%8d%e7%bd%ae%e4%b8%8e%e5%a4%8d%e7%94%a8%e6%80%a7\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h3\u003e\n\u003cp\u003e中间件工厂通过参数化配置，使得单个中间件实现可以适应多种使用场景，大大提高了代码的复用性。\u003c\/p\u003e",
+    "inLanguage": "zh-cn",
+    "url" : "http:\/\/localhost:43997\/nayun.github.io\/tech\/general\/%E4%B8%AD%E9%97%B4%E4%BB%B6%E5%B7%A5%E5%8E%82\/",
+    "author" : {
+      "@type": "Person",
+      "name": "nayun"
+    },
+    "copyrightYear": "2025",
+    "dateCreated": "2025-08-05T17:02:12\u002b08:00",
+    "datePublished": "2025-08-05T17:02:12\u002b08:00",
+    
+    "dateModified": "2025-08-05T17:02:12\u002b08:00",
+    
+    "keywords": ["技","编程思想","python","golang"],
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "582"
+  }]
+  </script>
+
+
+    
+    
+    <meta name="author" content="nayun" />
+    
+    
+    
+
+<script src="/nayun.github.io/lib/jquery/jquery.slim.min.b0dca576e87d7eaa5850ae4e61759c065786cdb6489d68fcc82240539eebd5da522bdb4fda085ffd245808c8fe2acb2516408eb774ef26b5f6015fc6737c0ea8.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj&#43;KsslFkCOt3TvJrX2AV/Gc3wOqA=="></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+    
+    
+    <meta name="theme-color"/>
+    
+    
+  
+    
+    
+  </head>
+  <body
+    class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32 scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content"
+        ><span class="font-bold text-primary-600 ltr:pr-2 rtl:pl-2 dark:text-primary-400">&darr;</span>跳过正文</a
+      >
+    </div>
+    
+    
+      <div class="main-menu flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start gap-x-3 padding-main-menu">
+    
+    <div class="flex flex-1 items-center justify-between">
+        <nav class="flex space-x-3">
+
+            
+            <a href="/nayun.github.io/" class="text-base font-medium text-gray-500 hover:text-gray-900">nayun blog</a>
+            
+
+        </nav>
+        <nav class="hidden md:flex items-center gap-x-5 md:ml-12 h-12">
+
+            
+            
+            
+  <a
+  href="/nayun.github.io/tech/"
+  
+  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  
+  <p class="text-base font-medium" title="">
+    技
+  </p>
+</a>
+
+
+
+            
+            
+  <a
+  href="/nayun.github.io/art/"
+  
+  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  
+  <p class="text-base font-medium" title="">
+    艺
+  </p>
+</a>
+
+
+
+            
+            
+  <a
+  href="/nayun.github.io/life/"
+  
+  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  
+  <p class="text-base font-medium" title="">
+    生活
+  </p>
+</a>
+
+
+
+            
+            
+  <a
+  href="/nayun.github.io/about/"
+  
+  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  
+  <p class="text-base font-medium" title="">
+    关于
+  </p>
+</a>
+
+
+
+            
+            
+
+            
+
+
+            
+            <button id="search-button" aria-label="Search" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+                title="">
+                
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+            </button>
+            
+
+
+            
+            
+            <div
+                class=" flex items-center">
+                <button id="appearance-switcher" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400">
+                    <div class="flex items-center justify-center dark:hidden">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
+                    </div>
+                    <div class="items-center justify-center hidden dark:flex">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+                    </div>
+                </button>
+            </div>
+            
+
+        </nav>
+        <div class="flex md:hidden items-center gap-x-5 md:ml-12 h-12">
+
+            <span></span>
+
+            
+
+
+            
+            <button id="search-button-mobile" aria-label="Search" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+                title="">
+                
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+            </button>
+            
+
+            
+            
+            <button id="appearance-switcher-mobile" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400 ltr:mr-1 rtl:ml-1">
+                <div class="flex items-center justify-center dark:hidden">
+                    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
+                </div>
+                <div class="items-center justify-center hidden dark:flex">
+                    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+                </div>
+            </button>
+            
+
+        </div>
+    </div>
+    <div class="-my-2 md:hidden">
+
+        <label id="menu-button" class="block">
+            
+            <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+                
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+
+  </span>
+
+
+            </div>
+            <div id="menu-wrapper" class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50 padding-top-[5px]">
+                <ul
+                    class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none ltr:text-right rtl:text-left max-w-7xl">
+
+                    <li id="menu-close-button">
+                        <span
+                            class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+
+  </span>
+
+</span>
+                    </li>
+
+                    
+
+                    
+  <li class="mt-1">
+  <a
+    href="/nayun.github.io/tech/"
+    
+    class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="">
+      技
+    </p>
+  </a>
+</li>
+
+
+
+
+                    
+
+                    
+  <li class="mt-1">
+  <a
+    href="/nayun.github.io/art/"
+    
+    class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="">
+      艺
+    </p>
+  </a>
+</li>
+
+
+
+
+                    
+
+                    
+  <li class="mt-1">
+  <a
+    href="/nayun.github.io/life/"
+    
+    class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="">
+      生活
+    </p>
+  </a>
+</li>
+
+
+
+
+                    
+
+                    
+  <li class="mt-1">
+  <a
+    href="/nayun.github.io/about/"
+    
+    class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="">
+      关于
+    </p>
+  </a>
+</li>
+
+
+
+
+                    
+
+                </ul>
+                
+                
+
+            </div>
+        </label>
+    </div>
+</div>
+
+
+
+
+
+    
+    <div class="relative flex flex-col grow">
+      <main id="main-content" class="grow">
+        
+  
+
+
+  <article>
+    
+      
+      
+      
+      
+        
+  
+
+      
+    
+
+
+    <header id="single_header" class="mt-5 max-w-prose">
+      
+        <ol class="text-sm text-neutral-500 dark:text-neutral-400 print:hidden">
+  
+  
+    
+  
+    
+  
+    
+  
+  <li class="hidden">
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="/nayun.github.io/"
+      >nayun blog</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="inline">
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="/nayun.github.io/tech/"
+      >Teches</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="inline">
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="/nayun.github.io/tech/general/"
+      >通用编程思想</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="hidden">
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="/nayun.github.io/tech/general/%E4%B8%AD%E9%97%B4%E4%BB%B6%E5%B7%A5%E5%8E%82/"
+      >中间件工厂</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+</ol>
+
+
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        中间件工厂
+      </h1>
+      
+      
+        <div class="mt-3 mb-4 flex flex-wrap">
+          
+          
+          
+            <a href="/nayun.github.io/tags/%E6%8A%80/" 
+              class="tag px-1 py-0.5 text-xs font-medium rounded-md border mr-1 last:mr-0 dark:border-blue-400 dark:bg-gray-800 dark:text-blue-300 dark:hover:bg-blue-900/30">
+              技
+            </a>
+            
+          
+          
+            <a href="/nayun.github.io/tags/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/" 
+              class="tag px-1 py-0.5 text-xs font-medium rounded-md border mr-1 last:mr-0 dark:border-blue-400 dark:bg-gray-800 dark:text-blue-300 dark:hover:bg-blue-900/30">
+              编程思想
+            </a>
+            
+          
+          
+            <a href="/nayun.github.io/tags/python/" 
+              class="tag px-1 py-0.5 text-xs font-medium rounded-md border mr-1 last:mr-0 dark:border-blue-400 dark:bg-gray-800 dark:text-blue-300 dark:hover:bg-blue-900/30">
+              python
+            </a>
+            
+          
+          
+            <a href="/nayun.github.io/tags/golang/" 
+              class="tag px-1 py-0.5 text-xs font-medium rounded-md border mr-1 last:mr-0 dark:border-blue-400 dark:bg-gray-800 dark:text-blue-300 dark:hover:bg-blue-900/30">
+              golang
+            </a>
+            
+        </div>
+      
+      
+
+      <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+  
+
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2025-08-05T17:02:12&#43;08:00">August 5, 2025</time><span class="px-2 text-primary-500">&middot;</span><span>582 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">3 分钟</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+
+  
+  
+
+
+
+      </div>
+
+      
+      
+      
+      
+      
+
+      
+
+      
+
+    </header>
+
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      
+        <div class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
+          <div
+            class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky 
+              lg:top-10
+            
+            ">
+            
+              <details
+  open
+  id="TOCView"
+  class="toc-right mt-0 overflow-y-auto overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    目录
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#概念">概念</a>
+      <ul>
+        <li><a href="#定义">定义</a></li>
+        <li><a href="#核心意义">核心意义</a>
+          <ul>
+            <li><a href="#1-配置与复用性">1. 配置与复用性</a></li>
+            <li><a href="#2-封装与隔离">2. 封装与隔离</a></li>
+            <li><a href="#3-动态行为定制">3. 动态行为定制</a></li>
+          </ul>
+        </li>
+        <li><a href="#典型场景">典型场景</a></li>
+        <li><a href="#高级模式">高级模式</a>
+          <ul>
+            <li><a href="#组合式中间件工厂">组合式中间件工厂</a></li>
+            <li><a href="#条件式中间件工厂">条件式中间件工厂</a></li>
+          </ul>
+        </li>
+        <li><a href="#设计考量">设计考量</a></li>
+      </ul>
+    </li>
+    <li><a href="#示例">示例</a>
+      <ul>
+        <li><a href="#python-示例">Python 示例</a>
+          <ul>
+            <li><a href="#1-flask-中间件工厂">1. Flask 中间件工厂</a></li>
+            <li><a href="#2-通用-python-中间件工厂">2. 通用 Python 中间件工厂</a></li>
+          </ul>
+        </li>
+        <li><a href="#go-示例">Go 示例</a>
+          <ul>
+            <li><a href="#1-http-中间件工厂">1. HTTP 中间件工厂</a></li>
+            <li><a href="#2-认证中间件工厂">2. 认证中间件工厂</a></li>
+            <li><a href="#3-go-中间件链工厂">3. Go 中间件链工厂</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    目录
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#概念">概念</a>
+      <ul>
+        <li><a href="#定义">定义</a></li>
+        <li><a href="#核心意义">核心意义</a>
+          <ul>
+            <li><a href="#1-配置与复用性">1. 配置与复用性</a></li>
+            <li><a href="#2-封装与隔离">2. 封装与隔离</a></li>
+            <li><a href="#3-动态行为定制">3. 动态行为定制</a></li>
+          </ul>
+        </li>
+        <li><a href="#典型场景">典型场景</a></li>
+        <li><a href="#高级模式">高级模式</a>
+          <ul>
+            <li><a href="#组合式中间件工厂">组合式中间件工厂</a></li>
+            <li><a href="#条件式中间件工厂">条件式中间件工厂</a></li>
+          </ul>
+        </li>
+        <li><a href="#设计考量">设计考量</a></li>
+      </ul>
+    </li>
+    <li><a href="#示例">示例</a>
+      <ul>
+        <li><a href="#python-示例">Python 示例</a>
+          <ul>
+            <li><a href="#1-flask-中间件工厂">1. Flask 中间件工厂</a></li>
+            <li><a href="#2-通用-python-中间件工厂">2. 通用 Python 中间件工厂</a></li>
+          </ul>
+        </li>
+        <li><a href="#go-示例">Go 示例</a>
+          <ul>
+            <li><a href="#1-http-中间件工厂">1. HTTP 中间件工厂</a></li>
+            <li><a href="#2-认证中间件工厂">2. 认证中间件工厂</a></li>
+            <li><a href="#3-go-中间件链工厂">3. Go 中间件链工厂</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+
+<script>
+  (function () {
+    'use strict'
+
+    const SCROLL_OFFSET_RATIO = 0.33
+    const TOC_SELECTOR = '#TableOfContents'
+    const ANCHOR_SELECTOR = '.anchor'
+    const TOC_LINK_SELECTOR = 'a[href^="#"]'
+    const NESTED_LIST_SELECTOR = 'li ul'
+    const ACTIVE_CLASS = 'active'
+
+    function getActiveAnchorId(anchors, offsetRatio) {
+      const threshold = window.scrollY + window.innerHeight * offsetRatio
+      const tocLinks = [...document.querySelectorAll('#TableOfContents a[href^="#"]')]
+      const tocIds = new Set(tocLinks.map(link => link.getAttribute('href').substring(1)))
+
+      for (let i = anchors.length - 1; i >= 0; i--) {
+        const top = anchors[i].getBoundingClientRect().top + window.scrollY
+        if (top <= threshold && tocIds.has(anchors[i].id)) {
+          return anchors[i].id
+        }
+      }
+      return anchors.find(anchor => tocIds.has(anchor.id))?.id || ''
+    }
+
+    function updateTOC({ toc, anchors, links, scrollOffset, collapseInactive }) {
+      const activeId = getActiveAnchorId(anchors, scrollOffset)
+      if (!activeId) return
+
+      links.forEach(link => {
+        const isActive = link.getAttribute('href') === `#${activeId}`
+        link.classList.toggle(ACTIVE_CLASS, isActive)
+
+        if (collapseInactive) {
+          const ul = link.closest('li')?.querySelector('ul')
+          if (ul) ul.style.display = isActive ? '' : 'none'
+        }
+      })
+
+      if (collapseInactive) {
+        const activeLink = toc.querySelector(`a[href="#${CSS.escape(activeId)}"]`)
+        let el = activeLink
+        while (el && el !== toc) {
+          if (el.tagName === 'UL') el.style.display = ''
+          if (el.tagName === 'LI') el.querySelector('ul')?.style.setProperty('display', '')
+          el = el.parentElement
+        }
+      }
+    }
+
+    function initTOC() {
+      const toc = document.querySelector(TOC_SELECTOR)
+      if (!toc) return
+
+      const collapseInactive = true
+      const anchors = [...document.querySelectorAll(ANCHOR_SELECTOR)]
+      const links = [...toc.querySelectorAll(TOC_LINK_SELECTOR)]
+
+      if (collapseInactive) {
+        toc.querySelectorAll(NESTED_LIST_SELECTOR).forEach(ul => ul.style.display = 'none')
+      }
+
+      const config = {
+        toc,
+        anchors,
+        links,
+        scrollOffset: SCROLL_OFFSET_RATIO,
+        collapseInactive
+      }
+
+      window.addEventListener('scroll', () => updateTOC(config), { passive: true })
+      window.addEventListener('hashchange', () => updateTOC(config), { passive: true })
+
+      updateTOC(config)
+    }
+
+    document.readyState === 'loading'
+      ? document.addEventListener('DOMContentLoaded', initTOC)
+      : initTOC()
+  })()
+</script>
+
+
+            
+            
+          </div>
+        </div>
+      
+
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+
+
+
+        <div class="article-content max-w-prose mb-20">
+          
+<h1 class="relative group">概念 
+    <div id="概念" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%a6%82%e5%bf%b5" aria-label="锚点">#</a>
+    </span>        
+    
+</h1>
+<p>在函数式编程和软件架构中，<strong>中间件工厂</strong>是一种创建中间件的高阶函数模式。它是在<strong>函数工厂</strong>（能够生成其他函数的函数）概念基础上的扩展应用。</p>
+
+<h2 class="relative group">定义 
+    <div id="定义" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%ae%9a%e4%b9%89" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+<p>中间件工厂是一个函数，它接收配置参数并返回一个中间件函数。这种模式常见于Web框架（如Express、Koa）和数据处理流程中。</p>
+
+<div class="code-block-wrapper">
+  <div class="code-header">
+    <span class="language-label">
+      <span class="language-brackets">&lt;/></span>  
+      <span class="language-name">javascript</span>  
+    </span>
+
+    <div class="code-buttons">
+      <button class="copy-button">
+        <i class="fas fa-copy"></i>
+        <span>复制</span>
+      </button>
+    </div>
+  </div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="c1">// 中间件工厂示例
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="c1"></span><span class="kd">function</span> <span class="nx">createMiddleware</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">  <span class="k">return</span> <span class="kd">function</span> <span class="nx">middleware</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="c1">// 使用config和实现中间件逻辑
+</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="nx">config</span><span class="p">.</span><span class="nx">condition</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">      <span class="c1">// 做一些事情
+</span></span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="nx">next</span><span class="p">();</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">  <span class="p">};</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="c1">// 使用
+</span></span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">myMiddleware</span> <span class="o">=</span> <span class="nx">createMiddleware</span><span class="p">({</span> <span class="nx">condition</span><span class="o">:</span> <span class="kc">true</span> <span class="p">});</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">myMiddleware</span><span class="p">);</span></span></span></code></pre></div>
+</div>
+
+
+
+<h2 class="relative group">核心意义 
+    <div id="核心意义" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%a0%b8%e5%bf%83%e6%84%8f%e4%b9%89" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+
+<h3 class="relative group">1. 配置与复用性 
+    <div id="1-配置与复用性" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e9%85%8d%e7%bd%ae%e4%b8%8e%e5%a4%8d%e7%94%a8%e6%80%a7" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>中间件工厂通过参数化配置，使得单个中间件实现可以适应多种使用场景，大大提高了代码的复用性。</p>
+
+<h3 class="relative group">2. 封装与隔离 
+    <div id="2-封装与隔离" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e5%b0%81%e8%a3%85%e4%b8%8e%e9%9a%94%e7%a6%bb" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>将中间件的创建逻辑封装在工厂函数中，实现了：</p>
+<ul>
+<li>内部实现的隐藏</li>
+<li>依赖管理的集中化</li>
+<li>副作用隔离</li>
+</ul>
+
+<h3 class="relative group">3. 动态行为定制 
+    <div id="3-动态行为定制" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#3-%e5%8a%a8%e6%80%81%e8%a1%8c%e4%b8%ba%e5%ae%9a%e5%88%b6" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>允许在运行时根据不同的配置生成具有不同行为的中间件实例。</p>
+
+<h2 class="relative group">典型场景 
+    <div id="典型场景" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%85%b8%e5%9e%8b%e5%9c%ba%e6%99%af" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+<ol>
+<li><strong>认证中间件</strong>：根据不同策略（JWT、OAuth等）生成认证中间件</li>
+<li><strong>日志中间件</strong>：根据日志级别、输出目标等配置生成日志中间件</li>
+<li><strong>缓存中间件</strong>：根据缓存策略、过期时间等生成缓存处理中间件</li>
+<li><strong>错误处理中间件</strong>：根据不同环境（开发/生产）生成错误处理逻辑</li>
+</ol>
+
+<h2 class="relative group">高级模式 
+    <div id="高级模式" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e9%ab%98%e7%ba%a7%e6%a8%a1%e5%bc%8f" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+
+<h3 class="relative group">组合式中间件工厂 
+    <div id="组合式中间件工厂" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%bb%84%e5%90%88%e5%bc%8f%e4%b8%ad%e9%97%b4%e4%bb%b6%e5%b7%a5%e5%8e%82" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+
+<div class="code-block-wrapper">
+  <div class="code-header">
+    <span class="language-label">
+      <span class="language-brackets">&lt;/></span>  
+      <span class="language-name">javascript</span>  
+    </span>
+
+    <div class="code-buttons">
+      <button class="copy-button">
+        <i class="fas fa-copy"></i>
+        <span>复制</span>
+      </button>
+    </div>
+  </div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="ln">1</span><span class="cl"><span class="kd">function</span> <span class="nx">composeMiddlewares</span><span class="p">(...</span><span class="nx">middlewareFactories</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">  <span class="k">return</span> <span class="p">(</span><span class="nx">config</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">    <span class="kr">const</span> <span class="nx">middlewares</span> <span class="o">=</span> <span class="nx">middlewareFactories</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">factory</span> <span class="p">=&gt;</span> <span class="nx">factory</span><span class="p">(</span><span class="nx">config</span><span class="p">));</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="k">return</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">      <span class="c1">// 组合中间件的执行逻辑
+</span></span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="c1"></span>    <span class="p">};</span>
+</span></span><span class="line"><span class="ln">7</span><span class="cl">  <span class="p">};</span>
+</span></span><span class="line"><span class="ln">8</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+</div>
+
+
+
+<h3 class="relative group">条件式中间件工厂 
+    <div id="条件式中间件工厂" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%9d%a1%e4%bb%b6%e5%bc%8f%e4%b8%ad%e9%97%b4%e4%bb%b6%e5%b7%a5%e5%8e%82" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+
+<div class="code-block-wrapper">
+  <div class="code-header">
+    <span class="language-label">
+      <span class="language-brackets">&lt;/></span>  
+      <span class="language-name">javascript</span>  
+    </span>
+
+    <div class="code-buttons">
+      <button class="copy-button">
+        <i class="fas fa-copy"></i>
+        <span>复制</span>
+      </button>
+    </div>
+  </div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="ln">1</span><span class="cl"><span class="kd">function</span> <span class="nx">conditionalMiddleware</span><span class="p">(</span><span class="nx">condition</span><span class="p">,</span> <span class="nx">trueMiddleware</span><span class="p">,</span> <span class="nx">falseMiddleware</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">  <span class="k">return</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">    <span class="kr">const</span> <span class="nx">middleware</span> <span class="o">=</span> <span class="nx">condition</span><span class="p">(</span><span class="nx">req</span><span class="p">)</span> <span class="o">?</span> <span class="nx">trueMiddleware</span> <span class="o">:</span> <span class="nx">falseMiddleware</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="k">return</span> <span class="nx">middleware</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">  <span class="p">};</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+</div>
+
+
+
+<h2 class="relative group">设计考量 
+    <div id="设计考量" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e8%ae%be%e8%ae%a1%e8%80%83%e9%87%8f" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+<ol>
+<li><strong>单一职责</strong>：每个中间件工厂应专注于一个明确的功能</li>
+<li><strong>无状态设计</strong>：尽可能设计无状态的中间件，状态应通过配置传入</li>
+<li><strong>明确的接口</strong>：定义清晰的配置参数和返回的中间件接口</li>
+<li><strong>可测试性</strong>：确保中间件工厂和生成的中间件都易于单元测试</li>
+</ol>
+<p>中间件工厂模式通过将创建逻辑与执行逻辑分离，为复杂应用提供了更灵活、更可维护的架构解决方案。</p>
+
+<h1 class="relative group">示例 
+    <div id="示例" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%a4%ba%e4%be%8b" aria-label="锚点">#</a>
+    </span>        
+    
+</h1>
+
+<h2 class="relative group">Python 示例 
+    <div id="python-示例" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#python-%e7%a4%ba%e4%be%8b" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+
+<h3 class="relative group">1. Flask 中间件工厂 
+    <div id="1-flask-中间件工厂" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-flask-%e4%b8%ad%e9%97%b4%e4%bb%b6%e5%b7%a5%e5%8e%82" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+
+<div class="code-block-wrapper">
+  <div class="code-header">
+    <span class="language-label">
+      <span class="language-brackets">&lt;/></span>  
+      <span class="language-name">python</span>  
+    </span>
+
+    <div class="code-buttons">
+      <button class="copy-button">
+        <i class="fas fa-copy"></i>
+        <span>复制</span>
+      </button>
+    </div>
+  </div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="k">def</span> <span class="nf">create_logging_middleware</span><span class="p">(</span><span class="n">log_level</span><span class="o">=</span><span class="s1">&#39;INFO&#39;</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="k">def</span> <span class="nf">logging_middleware</span><span class="p">(</span><span class="n">next_middleware</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">        <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">            <span class="k">if</span> <span class="n">log_level</span> <span class="o">==</span> <span class="s1">&#39;DEBUG&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Request: </span><span class="si">{</span><span class="n">request</span><span class="o">.</span><span class="n">method</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">request</span><span class="o">.</span><span class="n">path</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">            <span class="n">response</span> <span class="o">=</span> <span class="n">next_middleware</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">            <span class="k">if</span> <span class="n">log_level</span> <span class="o">==</span> <span class="s1">&#39;DEBUG&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Response: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">            <span class="k">return</span> <span class="n">response</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">        <span class="k">return</span> <span class="n">wrapper</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">    <span class="k">return</span> <span class="n">logging_middleware</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">
+</span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="c1"># 使用中间件工厂</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="n">debug_logging</span> <span class="o">=</span> <span class="n">create_logging_middleware</span><span class="p">(</span><span class="n">log_level</span><span class="o">=</span><span class="s1">&#39;DEBUG&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="n">app</span><span class="o">.</span><span class="n">before_request</span><span class="p">(</span><span class="n">debug_logging</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">
+</span></span><span class="line"><span class="ln">21</span><span class="cl"><span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="k">def</span> <span class="nf">home</span><span class="p">():</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">    <span class="k">return</span> <span class="s2">&#34;Hello, World!&#34;</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">
+</span></span><span class="line"><span class="ln">25</span><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span></span></span></code></pre></div>
+</div>
+
+
+
+<h3 class="relative group">2. 通用 Python 中间件工厂 
+    <div id="2-通用-python-中间件工厂" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e9%80%9a%e7%94%a8-python-%e4%b8%ad%e9%97%b4%e4%bb%b6%e5%b7%a5%e5%8e%82" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+
+<div class="code-block-wrapper">
+  <div class="code-header">
+    <span class="language-label">
+      <span class="language-brackets">&lt;/></span>  
+      <span class="language-name">python</span>  
+    </span>
+
+    <div class="code-buttons">
+      <button class="copy-button">
+        <i class="fas fa-copy"></i>
+        <span>复制</span>
+      </button>
+    </div>
+  </div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">def</span> <span class="nf">create_auth_middleware</span><span class="p">(</span><span class="n">required_role</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="k">def</span> <span class="nf">auth_middleware</span><span class="p">(</span><span class="n">request_handler</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">        <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">            <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;user_role&#39;</span><span class="p">)</span> <span class="o">!=</span> <span class="n">required_role</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">                <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="s1">&#39;Unauthorized&#39;</span><span class="p">},</span> <span class="mi">403</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">            <span class="k">return</span> <span class="n">request_handler</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">        <span class="k">return</span> <span class="n">wrapper</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="k">return</span> <span class="n">auth_middleware</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="c1"># 使用</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="n">admin_auth</span> <span class="o">=</span> <span class="n">create_auth_middleware</span><span class="p">(</span><span class="n">required_role</span><span class="o">=</span><span class="s1">&#39;admin&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">
+</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="nd">@admin_auth</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="k">def</span> <span class="nf">handle_admin_request</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="s1">&#39;Admin resource&#39;</span><span class="p">}</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">
+</span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="c1"># 测试</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">handle_admin_request</span><span class="p">({</span><span class="s1">&#39;user_role&#39;</span><span class="p">:</span> <span class="s1">&#39;admin&#39;</span><span class="p">}))</span>  <span class="c1"># 正常</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">handle_admin_request</span><span class="p">({</span><span class="s1">&#39;user_role&#39;</span><span class="p">:</span> <span class="s1">&#39;user&#39;</span><span class="p">}))</span>   <span class="c1"># 返回403错误</span></span></span></code></pre></div>
+</div>
+
+
+
+<h2 class="relative group">Go 示例 
+    <div id="go-示例" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#go-%e7%a4%ba%e4%be%8b" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+
+<h3 class="relative group">1. HTTP 中间件工厂 
+    <div id="1-http-中间件工厂" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-http-%e4%b8%ad%e9%97%b4%e4%bb%b6%e5%b7%a5%e5%8e%82" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+
+<div class="code-block-wrapper">
+  <div class="code-header">
+    <span class="language-label">
+      <span class="language-brackets">&lt;/></span>  
+      <span class="language-name">go</span>  
+    </span>
+
+    <div class="code-buttons">
+      <button class="copy-button">
+        <i class="fas fa-copy"></i>
+        <span>复制</span>
+      </button>
+    </div>
+  </div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">	<span class="s">&#34;fmt&#34;</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">	<span class="s">&#34;net/http&#34;</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="c1">// 中间件工厂：创建日志中间件</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="kd">func</span> <span class="nf">loggingMiddlewareFactory</span><span class="p">(</span><span class="nx">logLevel</span> <span class="kt">string</span><span class="p">)</span> <span class="kd">func</span><span class="p">(</span><span class="nx">http</span><span class="p">.</span><span class="nx">Handler</span><span class="p">)</span> <span class="nx">http</span><span class="p">.</span><span class="nx">Handler</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">	<span class="k">return</span> <span class="kd">func</span><span class="p">(</span><span class="nx">next</span> <span class="nx">http</span><span class="p">.</span><span class="nx">Handler</span><span class="p">)</span> <span class="nx">http</span><span class="p">.</span><span class="nx">Handler</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">		<span class="k">return</span> <span class="nx">http</span><span class="p">.</span><span class="nf">HandlerFunc</span><span class="p">(</span><span class="kd">func</span><span class="p">(</span><span class="nx">w</span> <span class="nx">http</span><span class="p">.</span><span class="nx">ResponseWriter</span><span class="p">,</span> <span class="nx">r</span> <span class="o">*</span><span class="nx">http</span><span class="p">.</span><span class="nx">Request</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">			<span class="k">if</span> <span class="nx">logLevel</span> <span class="o">==</span> <span class="s">&#34;DEBUG&#34;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">				<span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;Request: %s %s\n&#34;</span><span class="p">,</span> <span class="nx">r</span><span class="p">.</span><span class="nx">Method</span><span class="p">,</span> <span class="nx">r</span><span class="p">.</span><span class="nx">URL</span><span class="p">.</span><span class="nx">Path</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">			<span class="p">}</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">			<span class="nx">next</span><span class="p">.</span><span class="nf">ServeHTTP</span><span class="p">(</span><span class="nx">w</span><span class="p">,</span> <span class="nx">r</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">		<span class="p">})</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">
+</span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="kd">func</span> <span class="nf">mainHandler</span><span class="p">(</span><span class="nx">w</span> <span class="nx">http</span><span class="p">.</span><span class="nx">ResponseWriter</span><span class="p">,</span> <span class="nx">r</span> <span class="o">*</span><span class="nx">http</span><span class="p">.</span><span class="nx">Request</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">	<span class="nx">w</span><span class="p">.</span><span class="nf">Write</span><span class="p">([]</span><span class="nb">byte</span><span class="p">(</span><span class="s">&#34;Hello, World!&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">
+</span></span><span class="line"><span class="ln">24</span><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">	<span class="c1">// 使用中间件工厂</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">	<span class="nx">debugLogging</span> <span class="o">:=</span> <span class="nf">loggingMiddlewareFactory</span><span class="p">(</span><span class="s">&#34;DEBUG&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">	
+</span></span><span class="line"><span class="ln">28</span><span class="cl">	<span class="nx">mux</span> <span class="o">:=</span> <span class="nx">http</span><span class="p">.</span><span class="nf">NewServeMux</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">	<span class="nx">mux</span><span class="p">.</span><span class="nf">Handle</span><span class="p">(</span><span class="s">&#34;/&#34;</span><span class="p">,</span> <span class="nf">debugLogging</span><span class="p">(</span><span class="nx">http</span><span class="p">.</span><span class="nf">HandlerFunc</span><span class="p">(</span><span class="nx">mainHandler</span><span class="p">)))</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">	
+</span></span><span class="line"><span class="ln">31</span><span class="cl">	<span class="nx">http</span><span class="p">.</span><span class="nf">ListenAndServe</span><span class="p">(</span><span class="s">&#34;:8080&#34;</span><span class="p">,</span> <span class="nx">mux</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">32</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+</div>
+
+
+
+<h3 class="relative group">2. 认证中间件工厂 
+    <div id="2-认证中间件工厂" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e8%ae%a4%e8%af%81%e4%b8%ad%e9%97%b4%e4%bb%b6%e5%b7%a5%e5%8e%82" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+
+<div class="code-block-wrapper">
+  <div class="code-header">
+    <span class="language-label">
+      <span class="language-brackets">&lt;/></span>  
+      <span class="language-name">go</span>  
+    </span>
+
+    <div class="code-buttons">
+      <button class="copy-button">
+        <i class="fas fa-copy"></i>
+        <span>复制</span>
+      </button>
+    </div>
+  </div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">	<span class="s">&#34;net/http&#34;</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="c1">// 中间件工厂：创建认证中间件</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="kd">func</span> <span class="nf">authMiddlewareFactory</span><span class="p">(</span><span class="nx">requiredRole</span> <span class="kt">string</span><span class="p">)</span> <span class="kd">func</span><span class="p">(</span><span class="nx">http</span><span class="p">.</span><span class="nx">Handler</span><span class="p">)</span> <span class="nx">http</span><span class="p">.</span><span class="nx">Handler</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">	<span class="k">return</span> <span class="kd">func</span><span class="p">(</span><span class="nx">next</span> <span class="nx">http</span><span class="p">.</span><span class="nx">Handler</span><span class="p">)</span> <span class="nx">http</span><span class="p">.</span><span class="nx">Handler</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">		<span class="k">return</span> <span class="nx">http</span><span class="p">.</span><span class="nf">HandlerFunc</span><span class="p">(</span><span class="kd">func</span><span class="p">(</span><span class="nx">w</span> <span class="nx">http</span><span class="p">.</span><span class="nx">ResponseWriter</span><span class="p">,</span> <span class="nx">r</span> <span class="o">*</span><span class="nx">http</span><span class="p">.</span><span class="nx">Request</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">			<span class="nx">userRole</span> <span class="o">:=</span> <span class="nx">r</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Get</span><span class="p">(</span><span class="s">&#34;X-User-Role&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">			<span class="k">if</span> <span class="nx">userRole</span> <span class="o">!=</span> <span class="nx">requiredRole</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">				<span class="nx">w</span><span class="p">.</span><span class="nf">WriteHeader</span><span class="p">(</span><span class="nx">http</span><span class="p">.</span><span class="nx">StatusForbidden</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">				<span class="nx">w</span><span class="p">.</span><span class="nf">Write</span><span class="p">([]</span><span class="nb">byte</span><span class="p">(</span><span class="s">&#34;Forbidden&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">				<span class="k">return</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">			<span class="p">}</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">			<span class="nx">next</span><span class="p">.</span><span class="nf">ServeHTTP</span><span class="p">(</span><span class="nx">w</span><span class="p">,</span> <span class="nx">r</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">		<span class="p">})</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">
+</span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="kd">func</span> <span class="nf">adminHandler</span><span class="p">(</span><span class="nx">w</span> <span class="nx">http</span><span class="p">.</span><span class="nx">ResponseWriter</span><span class="p">,</span> <span class="nx">r</span> <span class="o">*</span><span class="nx">http</span><span class="p">.</span><span class="nx">Request</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">	<span class="nx">w</span><span class="p">.</span><span class="nf">Write</span><span class="p">([]</span><span class="nb">byte</span><span class="p">(</span><span class="s">&#34;Admin Area&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">
+</span></span><span class="line"><span class="ln">26</span><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">	<span class="nx">adminAuth</span> <span class="o">:=</span> <span class="nf">authMiddlewareFactory</span><span class="p">(</span><span class="s">&#34;admin&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl">	
+</span></span><span class="line"><span class="ln">29</span><span class="cl">	<span class="nx">mux</span> <span class="o">:=</span> <span class="nx">http</span><span class="p">.</span><span class="nf">NewServeMux</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">	<span class="nx">mux</span><span class="p">.</span><span class="nf">Handle</span><span class="p">(</span><span class="s">&#34;/admin&#34;</span><span class="p">,</span> <span class="nf">adminAuth</span><span class="p">(</span><span class="nx">http</span><span class="p">.</span><span class="nf">HandlerFunc</span><span class="p">(</span><span class="nx">adminHandler</span><span class="p">)))</span>
+</span></span><span class="line"><span class="ln">31</span><span class="cl">	
+</span></span><span class="line"><span class="ln">32</span><span class="cl">	<span class="nx">http</span><span class="p">.</span><span class="nf">ListenAndServe</span><span class="p">(</span><span class="s">&#34;:8080&#34;</span><span class="p">,</span> <span class="nx">mux</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">33</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+</div>
+
+
+
+<h3 class="relative group">3. Go 中间件链工厂 
+    <div id="3-go-中间件链工厂" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#3-go-%e4%b8%ad%e9%97%b4%e4%bb%b6%e9%93%be%e5%b7%a5%e5%8e%82" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+
+<div class="code-block-wrapper">
+  <div class="code-header">
+    <span class="language-label">
+      <span class="language-brackets">&lt;/></span>  
+      <span class="language-name">go</span>  
+    </span>
+
+    <div class="code-buttons">
+      <button class="copy-button">
+        <i class="fas fa-copy"></i>
+        <span>复制</span>
+      </button>
+    </div>
+  </div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">	<span class="s">&#34;net/http&#34;</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="c1">// 中间件链工厂</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="kd">func</span> <span class="nf">middlewareChainFactory</span><span class="p">(</span><span class="nx">middlewares</span> <span class="o">...</span><span class="kd">func</span><span class="p">(</span><span class="nx">http</span><span class="p">.</span><span class="nx">Handler</span><span class="p">)</span> <span class="nx">http</span><span class="p">.</span><span class="nx">Handler</span><span class="p">)</span> <span class="kd">func</span><span class="p">(</span><span class="nx">http</span><span class="p">.</span><span class="nx">Handler</span><span class="p">)</span> <span class="nx">http</span><span class="p">.</span><span class="nx">Handler</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">	<span class="k">return</span> <span class="kd">func</span><span class="p">(</span><span class="nx">final</span> <span class="nx">http</span><span class="p">.</span><span class="nx">Handler</span><span class="p">)</span> <span class="nx">http</span><span class="p">.</span><span class="nx">Handler</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">		<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="nb">len</span><span class="p">(</span><span class="nx">middlewares</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">--</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">			<span class="nx">final</span> <span class="p">=</span> <span class="nx">middlewares</span><span class="p">[</span><span class="nx">i</span><span class="p">](</span><span class="nx">final</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">		<span class="k">return</span> <span class="nx">final</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">
+</span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">	<span class="nx">logging</span> <span class="o">:=</span> <span class="nf">loggingMiddlewareFactory</span><span class="p">(</span><span class="s">&#34;INFO&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">	<span class="nx">auth</span> <span class="o">:=</span> <span class="nf">authMiddlewareFactory</span><span class="p">(</span><span class="s">&#34;user&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">	
+</span></span><span class="line"><span class="ln">21</span><span class="cl">	<span class="c1">// 创建中间件链</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">	<span class="nx">chain</span> <span class="o">:=</span> <span class="nf">middlewareChainFactory</span><span class="p">(</span><span class="nx">logging</span><span class="p">,</span> <span class="nx">auth</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">	
+</span></span><span class="line"><span class="ln">24</span><span class="cl">	<span class="nx">mux</span> <span class="o">:=</span> <span class="nx">http</span><span class="p">.</span><span class="nf">NewServeMux</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">	<span class="nx">mux</span><span class="p">.</span><span class="nf">Handle</span><span class="p">(</span><span class="s">&#34;/&#34;</span><span class="p">,</span> <span class="nf">chain</span><span class="p">(</span><span class="nx">http</span><span class="p">.</span><span class="nf">HandlerFunc</span><span class="p">(</span><span class="nx">mainHandler</span><span class="p">)))</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">	
+</span></span><span class="line"><span class="ln">27</span><span class="cl">	<span class="nx">http</span><span class="p">.</span><span class="nf">ListenAndServe</span><span class="p">(</span><span class="s">&#34;:8080&#34;</span><span class="p">,</span> <span class="nx">mux</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+</div>
+
+
+<p>这些示例展示了如何在 Python 和 Go 中实现中间件工厂模式，包括日志记录、认证等常见用例。中间件工厂模式使得中间件的创建更加灵活和可配置，同时保持了代码的整洁和可维护性。</p>
+
+          
+          
+          
+        </div>
+
+        
+
+          
+
+          
+
+          
+
+        
+
+        
+
+        
+
+        
+
+      </div>
+
+      
+      
+        
+        
+          
+          
+        
+        
+        
+        <script
+          type="text/javascript"
+          src="/nayun.github.io/js/page.min.407e5b2727c1f241c95d53db24c776bea71bfc18e09511b815d669ad8caca6e9e18a53864ad364b1ccccfa2f2956768d33cfe193bfb64d3406f3b5ece354ba57.js"
+          integrity="sha512-QH5bJyfB8kHJXVPbJMd2vqcb/BjglRG4FdZprYyspunhilOGStNksczM&#43;i8pVnaNM8/hk7&#43;2TTQG87Xs41S6Vw=="
+          data-oid="views_tech/General/中间件工厂.md"
+          data-oid-likes="likes_tech/General/中间件工厂.md"></script>
+      
+
+    </section>
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600">
+      <div class="flex justify-between pt-3">
+        <span>
+          
+            <a class="flex group mr-3" href="/nayun.github.io/tech/general/%E9%97%AD%E5%8C%85/">
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span class="flex flex-col">
+                <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >闭包</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2025-07-14T11:35:25&#43;08:00">July 14, 2025</time>
+                  
+                </span>
+              </span>
+            </a>
+          
+        </span>
+        <span>
+          
+        </span>
+      </div>
+    </div>
+  
+
+
+      
+    </footer>
+  </article>
+
+        <div id="top-scroller" class="pointer-events-none absolute top-[110vh] bottom-0 w-12 ltr:right-0 rtl:left-0">
+  <a
+    href="#the-top"
+    class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 mb-16 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="返回顶部"
+    title="返回顶部">
+    &uarr;
+  </a>
+</div>
+
+      </main><footer id="site-footer" class="py-10 print:hidden">
+  <script src="https://unpkg.com/panzoom@9.4.0/dist/panzoom.min.js"></script> 
+  
+
+  
+  <script src="http://localhost:43997/nayun.github.io/js/custom_mermaid.min.1da0269623e4f164ced2e3b711f6e7a5753c14239113eb8f1d5ceace3238fdd8.js"></script>
+  
+  <script src="http://localhost:43997/nayun.github.io/js/custom_code-header.min.cef138d0888623df230f0f1706e2d0d92479fba3b322b2d9f5d45ded62edd5c9.js"></script>
+  
+  
+    
+  
+  <div class="flex items-center justify-between">
+    
+    
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+          &copy;
+          2025
+          nayun
+      </p>
+    
+
+    
+    
+      <p class="text-xs text-neutral-500 dark:text-neutral-400">
+        
+        
+        由 <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a> 强力驱动
+      </p>
+    
+
+  </div>
+  <script>
+    
+    mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+      margin: 24,
+      background: 'rgba(0,0,0,0.5)',
+      scrollOffset: 0,
+    })
+    
+  </script> 
+  
+  <script
+    type="text/javascript"
+    src="/nayun.github.io/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js"
+    integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-index-500"
+  data-url="http://localhost:43997/nayun.github.io/">
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="搜索"
+          tabindex="0">
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="关闭 (Esc)">
+        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+
+  </span>
+
+
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+    </div>
+  </body>
+  
+</html>
