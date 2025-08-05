@@ -62,10 +62,10 @@
     
     <item>
       <title>闭包</title>
-      <link>http://localhost:43997/nayun.github.io/tech/general/%E9%97%AD%E5%8C%85/</link>
+      <link>http://localhost:43997/nayun.github.io/tech/general/%E7%BC%96%E7%A8%8B%E6%A6%82%E5%BF%B5/%E9%97%AD%E5%8C%85/</link>
       <pubDate>Mon, 14 Jul 2025 11:35:25 +0800</pubDate>
       
-      <guid>http://localhost:43997/nayun.github.io/tech/general/%E9%97%AD%E5%8C%85/</guid>
+      <guid>http://localhost:43997/nayun.github.io/tech/general/%E7%BC%96%E7%A8%8B%E6%A6%82%E5%BF%B5/%E9%97%AD%E5%8C%85/</guid>
       <description>&lt;p&gt;在创建时封装当时状态，并使当时的状态生存周期延长至与闭包生存周期一致&lt;br&gt;
 闭包思想产物：&lt;br&gt;
 1. python装饰器&lt;br&gt;

@@ -2,7 +2,7 @@
 title: "Bufio"
 date: 2025-07-29T17:43:19+08:00
 draft: false
-tags: ["技", 'code', 'golang']
+tags: ["技", 'code', 'golang', 'learning']
 toc: true
 showTableOfContents: true
 ---

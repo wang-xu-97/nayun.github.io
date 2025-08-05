@@ -2,7 +2,7 @@
 title: "go基础语法"
 date: 2025-08-05T16:21:19+08:00
 draft: false
-tags: ["技", 'code', 'golang']
+tags: ["技", 'code', 'golang', 'learning']
 toc: true
 showTableOfContents: true
 ---

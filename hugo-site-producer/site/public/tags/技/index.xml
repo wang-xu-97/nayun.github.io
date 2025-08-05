@@ -11,10 +11,10 @@
     
     <item>
       <title>中间件工厂</title>
-      <link>http://localhost:43997/nayun.github.io/tech/general/%E4%B8%AD%E9%97%B4%E4%BB%B6%E5%B7%A5%E5%8E%82/</link>
+      <link>http://localhost:43997/nayun.github.io/tech/general/%E7%BC%96%E7%A8%8B%E6%A6%82%E5%BF%B5/%E4%B8%AD%E9%97%B4%E4%BB%B6%E5%B7%A5%E5%8E%82/</link>
       <pubDate>Tue, 05 Aug 2025 17:02:12 +0800</pubDate>
       
-      <guid>http://localhost:43997/nayun.github.io/tech/general/%E4%B8%AD%E9%97%B4%E4%BB%B6%E5%B7%A5%E5%8E%82/</guid>
+      <guid>http://localhost:43997/nayun.github.io/tech/general/%E7%BC%96%E7%A8%8B%E6%A6%82%E5%BF%B5/%E4%B8%AD%E9%97%B4%E4%BB%B6%E5%B7%A5%E5%8E%82/</guid>
       <description>&lt;h1 class=&#34;relative group&#34;&gt;概念 
     &lt;div id=&#34;概念&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -381,10 +381,10 @@
     
     <item>
       <title>LinuxHttp工具</title>
-      <link>http://localhost:43997/nayun.github.io/tech/general/%E5%B7%A5%E5%85%B7/linuxhttp%E5%B7%A5%E5%85%B7/</link>
+      <link>http://localhost:43997/nayun.github.io/tech/%E5%B7%A5%E5%85%B7/linuxhttp%E5%B7%A5%E5%85%B7/</link>
       <pubDate>Tue, 05 Aug 2025 14:28:04 +0800</pubDate>
       
-      <guid>http://localhost:43997/nayun.github.io/tech/general/%E5%B7%A5%E5%85%B7/linuxhttp%E5%B7%A5%E5%85%B7/</guid>
+      <guid>http://localhost:43997/nayun.github.io/tech/%E5%B7%A5%E5%85%B7/linuxhttp%E5%B7%A5%E5%85%B7/</guid>
       <description>&lt;h2 class=&#34;relative group&#34;&gt;wget 
     &lt;div id=&#34;wget&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -1365,10 +1365,10 @@ data为字典字符串，需要使用&lt;code&gt;json.dumps(payload)&lt;/code&gt
     
     <item>
       <title>Vscode</title>
-      <link>http://localhost:43997/nayun.github.io/tech/general/%E5%B7%A5%E5%85%B7/vscode/</link>
+      <link>http://localhost:43997/nayun.github.io/tech/%E5%B7%A5%E5%85%B7/vscode/</link>
       <pubDate>Wed, 30 Jul 2025 16:18:18 +0800</pubDate>
       
-      <guid>http://localhost:43997/nayun.github.io/tech/general/%E5%B7%A5%E5%85%B7/vscode/</guid>
+      <guid>http://localhost:43997/nayun.github.io/tech/%E5%B7%A5%E5%85%B7/vscode/</guid>
       <description>&lt;h2 class=&#34;relative group&#34;&gt;vscode 设置制表符转换空格 
     &lt;div id=&#34;vscode-设置制表符转换空格&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -2859,10 +2859,10 @@ data为字典字符串，需要使用&lt;code&gt;json.dumps(payload)&lt;/code&gt
     
     <item>
       <title>闭包</title>
-      <link>http://localhost:43997/nayun.github.io/tech/general/%E9%97%AD%E5%8C%85/</link>
+      <link>http://localhost:43997/nayun.github.io/tech/general/%E7%BC%96%E7%A8%8B%E6%A6%82%E5%BF%B5/%E9%97%AD%E5%8C%85/</link>
       <pubDate>Mon, 14 Jul 2025 11:35:25 +0800</pubDate>
       
-      <guid>http://localhost:43997/nayun.github.io/tech/general/%E9%97%AD%E5%8C%85/</guid>
+      <guid>http://localhost:43997/nayun.github.io/tech/general/%E7%BC%96%E7%A8%8B%E6%A6%82%E5%BF%B5/%E9%97%AD%E5%8C%85/</guid>
       <description>&lt;p&gt;在创建时封装当时状态，并使当时的状态生存周期延长至与闭包生存周期一致&lt;br&gt;
 闭包思想产物：&lt;br&gt;
 1. python装饰器&lt;br&gt;
