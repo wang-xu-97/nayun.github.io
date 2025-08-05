@@ -131,7 +131,7 @@
     "keywords": ["技","code","python","日志","文件处理"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "503"
+    "wordCount": "623"
   }]
   </script>
 
@@ -666,7 +666,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-07-30T16:44:17&#43;08:00">July 30, 2025</time><span class="px-2 text-primary-500">&middot;</span><span>503 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">3 分钟</span>
+      <time datetime="2025-07-30T16:44:17&#43;08:00">July 30, 2025</time><span class="px-2 text-primary-500">&middot;</span><span>623 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">3 分钟</span>
     
 
     
@@ -725,14 +725,6 @@
             <li><a href="#1-读全部日志">1. 读全部日志</a></li>
             <li><a href="#2-读部分日志限定时间范围">2. 读部分日志（限定时间范围）</a></li>
             <li><a href="#3-反向读日志">3. 反向读日志</a></li>
-            <li><a href="#异常日志场景">异常日志场景</a>
-              <ul>
-                <li><a href="#1-日志存在没有时间戳的行文本">1. 日志存在没有时间戳的行文本</a></li>
-                <li><a href="#2-日志时间戳错误偶发乱序超出读取时间范围">2. 日志时间戳错误（偶发乱序，超出读取时间范围）</a></li>
-                <li><a href="#3-日志时间戳错误偶发乱序仍在读取时间范围">3. 日志时间戳错误（偶发乱序，仍在读取时间范围）</a></li>
-                <li><a href="#4-存在二进制格式解码报错">4. 存在二进制格式，解码报错</a></li>
-              </ul>
-            </li>
           </ul>
         </li>
         <li><a href="#批量读取日志">批量读取日志</a></li>
@@ -758,14 +750,6 @@
             <li><a href="#1-读全部日志">1. 读全部日志</a></li>
             <li><a href="#2-读部分日志限定时间范围">2. 读部分日志（限定时间范围）</a></li>
             <li><a href="#3-反向读日志">3. 反向读日志</a></li>
-            <li><a href="#异常日志场景">异常日志场景</a>
-              <ul>
-                <li><a href="#1-日志存在没有时间戳的行文本">1. 日志存在没有时间戳的行文本</a></li>
-                <li><a href="#2-日志时间戳错误偶发乱序超出读取时间范围">2. 日志时间戳错误（偶发乱序，超出读取时间范围）</a></li>
-                <li><a href="#3-日志时间戳错误偶发乱序仍在读取时间范围">3. 日志时间戳错误（偶发乱序，仍在读取时间范围）</a></li>
-                <li><a href="#4-存在二进制格式解码报错">4. 存在二进制格式，解码报错</a></li>
-              </ul>
-            </li>
           </ul>
         </li>
         <li><a href="#批量读取日志">批量读取日志</a></li>
@@ -1136,56 +1120,6 @@
 
 
 
-<h3 class="relative group">异常日志场景 
-    <div id="异常日志场景" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%bc%82%e5%b8%b8%e6%97%a5%e5%bf%97%e5%9c%ba%e6%99%af" aria-label="锚点">#</a>
-    </span>        
-    
-</h3>
-
-<h4 class="relative group">1. 日志存在没有时间戳的行文本 
-    <div id="1-日志存在没有时间戳的行文本" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e6%97%a5%e5%bf%97%e5%ad%98%e5%9c%a8%e6%b2%a1%e6%9c%89%e6%97%b6%e9%97%b4%e6%88%b3%e7%9a%84%e8%a1%8c%e6%96%87%e6%9c%ac" aria-label="锚点">#</a>
-    </span>        
-    
-</h4>
-
-<h4 class="relative group">2. 日志时间戳错误（偶发乱序，超出读取时间范围） 
-    <div id="2-日志时间戳错误偶发乱序超出读取时间范围" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e6%97%a5%e5%bf%97%e6%97%b6%e9%97%b4%e6%88%b3%e9%94%99%e8%af%af%e5%81%b6%e5%8f%91%e4%b9%b1%e5%ba%8f%e8%b6%85%e5%87%ba%e8%af%bb%e5%8f%96%e6%97%b6%e9%97%b4%e8%8c%83%e5%9b%b4" aria-label="锚点">#</a>
-    </span>        
-    
-</h4>
-
-<h4 class="relative group">3. 日志时间戳错误（偶发乱序，仍在读取时间范围） 
-    <div id="3-日志时间戳错误偶发乱序仍在读取时间范围" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#3-%e6%97%a5%e5%bf%97%e6%97%b6%e9%97%b4%e6%88%b3%e9%94%99%e8%af%af%e5%81%b6%e5%8f%91%e4%b9%b1%e5%ba%8f%e4%bb%8d%e5%9c%a8%e8%af%bb%e5%8f%96%e6%97%b6%e9%97%b4%e8%8c%83%e5%9b%b4" aria-label="锚点">#</a>
-    </span>        
-    
-</h4>
-
-<h4 class="relative group">4. 存在二进制格式，解码报错 
-    <div id="4-存在二进制格式解码报错" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#4-%e5%ad%98%e5%9c%a8%e4%ba%8c%e8%bf%9b%e5%88%b6%e6%a0%bc%e5%bc%8f%e8%a7%a3%e7%a0%81%e6%8a%a5%e9%94%99" aria-label="锚点">#</a>
-    </span>        
-    
-</h4>
-
 <h2 class="relative group">批量读取日志 
     <div id="批量读取日志" class="anchor"></div>
     
@@ -1195,6 +1129,65 @@
     </span>        
     
 </h2>
+<ol>
+<li>需求：从一批log文件中，读取指定时间范围的日志内容</li>
+<li>思路：
+<ol>
+<li>Path捕获全部符合指定文件名模式的日志</li>
+<li>通过日志名中的时间命名规则，过滤时间范围外的日志文件</li>
+<li>排序，逐个读取单个日志文件，日志整合</li>
+</ol>
+</li>
+</ol>
+
+<div class="code-block-wrapper">
+  <div class="code-header">
+    <span class="language-label">
+      <span class="language-brackets">&lt;/></span>  
+      <span class="language-name">python</span>  
+    </span>
+
+    <div class="code-buttons">
+      <button class="copy-button">
+        <i class="fas fa-copy"></i>
+        <span>复制</span>
+      </button>
+    </div>
+  </div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">def</span> <span class="nf">batch_read_log</span><span class="p">(</span><span class="n">logpath</span><span class="p">,</span> <span class="n">timerange</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="n">text</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">    <span class="n">logpattern</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&#34;*.log&#34;</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="n">get_log_time</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">log</span><span class="p">:</span><span class="n">timestr2ts</span><span class="p">(</span><span class="n">log</span><span class="o">.</span><span class="n">stem</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;%Y_%m_</span><span class="si">%d</span><span class="s1">_%H_%M_%S&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">    <span class="n">logfiles</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">logpath</span><span class="p">)</span><span class="o">.</span><span class="n">rglob</span><span class="p">(</span><span class="n">logpattern</span><span class="p">),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">p</span><span class="p">:</span><span class="n">p</span><span class="o">.</span><span class="n">stem</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="n">lognum</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">logfiles</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Reading logs (total </span><span class="si">{</span><span class="n">lognum</span><span class="si">}</span><span class="s1">)...&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">log</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">logfiles</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">        <span class="k">if</span> <span class="n">get_log_time</span><span class="p">(</span><span class="n">log</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">timerange</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">            <span class="k">break</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">        
+</span></span><span class="line"><span class="ln">13</span><span class="cl">    <span class="n">readlogs</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">lognum</span> <span class="ow">and</span> <span class="p">(</span><span class="n">logtext</span><span class="o">:=</span><span class="n">readlog</span><span class="p">(</span><span class="n">logfiles</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">timerange</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">timerange</span><span class="p">[</span><span class="mi">1</span><span class="p">])):</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">        <span class="k">if</span> <span class="n">logfiles</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="n">readlogs</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">            <span class="k">continue</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;reading </span><span class="si">{</span><span class="n">logfiles</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">        <span class="n">text</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">logtext</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">        <span class="n">readlogs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">logfiles</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">
+</span></span><span class="line"><span class="ln">23</span><span class="cl">    <span class="n">size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">    <span class="k">if</span> <span class="n">size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">        <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;read 0 logs&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">        <span class="k">return</span> <span class="n">text</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">    <span class="n">logbegin</span> <span class="o">=</span> <span class="n">logline_time</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">])[</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="n">logend</span><span class="o">:=</span><span class="n">logline_time</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">        <span class="n">text</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;read </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">readlogs</span><span class="p">)</span><span class="si">:</span><span class="s1">&gt;2</span><span class="si">}</span><span class="s1"> logs [ </span><span class="si">{</span><span class="n">logbegin</span><span class="p">[:</span><span class="mi">19</span><span class="p">]</span><span class="si">}</span><span class="s1"> ~ </span><span class="si">{</span><span class="n">logend</span><span class="p">[</span><span class="mi">1</span><span class="p">][:</span><span class="mi">19</span><span class="p">]</span><span class="si">}</span><span class="s1"> ]  size:</span><span class="si">{</span><span class="n">size</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">31</span><span class="cl">    <span class="k">return</span> <span class="n">text</span></span></span></code></pre></div>
+</div>
+
+
 
           
           
