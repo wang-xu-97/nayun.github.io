@@ -1,4 +1,31 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>技 on nayun blog</title><link>https://wang-xu-97.github.io/nayun.github.io/tags/%E6%8A%80/</link><description>Recent content in 技 on nayun blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>© 2025 nayun</copyright><lastBuildDate>Mon, 04 Aug 2025 17:11:01 +0800</lastBuildDate><atom:link href="https://wang-xu-97.github.io/nayun.github.io/tags/%E6%8A%80/index.xml" rel="self" type="application/rss+xml"/><item><title>LearnHugo250804</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/learnhugo250804/</link><pubDate>Mon, 04 Aug 2025 17:11:01 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/learnhugo250804/</guid><description>&lt;h2 class="relative group">设置code-header.language-label点击折叠
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>技 on nayun blog</title><link>https://wang-xu-97.github.io/nayun.github.io/tags/%E6%8A%80/</link><description>Recent content in 技 on nayun blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>© 2025 nayun</copyright><lastBuildDate>Tue, 05 Aug 2025 14:28:04 +0800</lastBuildDate><atom:link href="https://wang-xu-97.github.io/nayun.github.io/tags/%E6%8A%80/index.xml" rel="self" type="application/rss+xml"/><item><title>LinuxHttp工具</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/general/%E5%B7%A5%E5%85%B7/linuxhttp%E5%B7%A5%E5%85%B7/</link><pubDate>Tue, 05 Aug 2025 14:28:04 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/general/%E5%B7%A5%E5%85%B7/linuxhttp%E5%B7%A5%E5%85%B7/</guid><description>&lt;h2 class="relative group">wget
+&lt;div id="wget" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#wget" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h2>
+&lt;p>wget获取指定ip路由下的全部文件&lt;br>
+&lt;code>-r&lt;/code>：递归&lt;br>
+&lt;code>--no-parent&lt;/code>：无父目录&lt;br>
+&lt;code>--accept&lt;/code>：接收文件，支持通配符&lt;br>
+&lt;code>--reject&lt;/code>：拒绝文件，支持通配符&lt;br>
+&lt;code>-P&lt;/code>：指定下载路径&lt;/p>
+&lt;div class="code-block-wrapper">
+&lt;div class="code-header">
+&lt;span class="language-label">
+&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
+&lt;span class="language-name">shell&lt;/span>
+&lt;/span>
+&lt;div class="code-buttons">
+&lt;button class="copy-button">
+&lt;i class="fas fa-copy">&lt;/i>
+&lt;span>复制&lt;/span>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">wget -r --no-parent --accept &lt;span class="s2">&amp;#34;*.zip*&amp;#34;&lt;/span> --reject &lt;span class="s2">&amp;#34;*.html&amp;#34;&lt;/span> ip:port -P ./download/&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div></description></item><item><title>LearnHugo250804</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/learnhugo250804/</link><pubDate>Mon, 04 Aug 2025 17:11:01 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/learnhugo250804/</guid><description>&lt;h2 class="relative group">设置code-header.language-label点击折叠
 &lt;div id="设置code-headerlanguage-label点击折叠" class="anchor">&lt;/div>
 &lt;span
 class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
