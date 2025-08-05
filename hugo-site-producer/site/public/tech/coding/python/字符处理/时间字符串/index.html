@@ -38,8 +38,8 @@
     
     
     
-    <link type="text/css" rel="stylesheet" href="/nayun.github.io/css/main.bundle.min.30ee2615025dd5ae00c553dde6aec618c5787feaaec9a4dbb56f0624df5691c993ca3ddcfb07952597309053cced6e9978d43aeb735bb27f68f9aa7eb27ff8ad.css"
-      integrity="sha512-MO4mFQJd1a4AxVPd5q7GGMV4f&#43;quyaTbtW8GJN9WkcmTyj3c&#43;weVJZcwkFPM7W6ZeNQ663Nbsn9o&#43;ap&#43;sn/4rQ==" />
+    <link type="text/css" rel="stylesheet" href="/nayun.github.io/css/main.bundle.min.5b152a8f7079a1cac96a04f6d681a7221343b1b4f5eef22c9eba3733dd69d6f3d9112b9ac11cec4b4eb20d2ecd13b00e362c389c667f6fd17252f196f5f248a1.css"
+      integrity="sha512-WxUqj3B5ocrJagT21oGnIhNDsbT17vIsnro3M91p1vPZESuawRzsS06yDS7NE7AONiw4nGZ/b9FyUvGW9fJIoQ==" />
     
     
     <script type="text/javascript" src="/nayun.github.io/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
@@ -79,7 +79,15 @@
     <meta property="og:url" content="http://localhost:43997/nayun.github.io/tech/coding/python/%E5%AD%97%E7%AC%A6%E5%A4%84%E7%90%86/%E6%97%B6%E9%97%B4%E5%AD%97%E7%AC%A6%E4%B8%B2/">
   <meta property="og:site_name" content="nayun blog">
   <meta property="og:title" content="时间字符串">
-  <meta property="og:description" content="tech">
+  <meta property="og:description" content="1. datetime系列 # 一般来说用from datetime import datetime
+1. .fromtimestamp # 接收一个浮点ts参数，返回datetime结构体，可接续使用datetime内置方法
+经典场景：ts -&gt; 格式化timestr
+datetime.fromtimestamp(ts).strftime(&#39;%Y-%m-%d-%H:%M:%S&#39;)
+&lt;/&gt; python 复制 1def ts2timestr(ts:float) -&gt; str: 2 return datetime.fromtimestamp(ts).strftime(&#39;%Y-%m-%d-%H:%M:%S&#39;) 2. .strptime # 接收1. 格式化timestr, 2. 格式format；返回datetime结构体(接续使用其他内置方法)
+经典场景：格式化timestr -&gt; ts
+datetime.strptime(timestr, pattern).timestamp()
+&lt;/&gt; python 复制 1def timestr2ts(timestr, pattern=&#39;%Y-%m-%d %H:%M:%S&#39;): 2 return datetime.strptime(timestr, pattern).timestamp() 3. .replace # python hint &lt;/&gt; python 复制 1(method) def replace( 2 year: SupportsIndex = ..., 3 month: SupportsIndex = ..., 4 day: SupportsIndex = ..., 5 hour: SupportsIndex = ..., 6 minute: SupportsIndex = ..., 7 second: SupportsIndex = ..., 8 microsecond: SupportsIndex = ..., 9 tzinfo: _TzInfo | None = ..., 10 *, 11 fold: int = ... 12) -&gt; datetime 一般使用关键字参数指定参数传参：
+.replace(hour=23, minute=59, second=59, microsecond=0)">
   <meta property="og:locale" content="zh_cn">
   <meta property="og:type" content="article">
     <meta property="article:section" content="tech">
@@ -93,7 +101,15 @@
     
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="时间字符串">
-  <meta name="twitter:description" content="tech">
+  <meta name="twitter:description" content="1. datetime系列 # 一般来说用from datetime import datetime
+1. .fromtimestamp # 接收一个浮点ts参数，返回datetime结构体，可接续使用datetime内置方法
+经典场景：ts -&gt; 格式化timestr
+datetime.fromtimestamp(ts).strftime(&#39;%Y-%m-%d-%H:%M:%S&#39;)
+&lt;/&gt; python 复制 1def ts2timestr(ts:float) -&gt; str: 2 return datetime.fromtimestamp(ts).strftime(&#39;%Y-%m-%d-%H:%M:%S&#39;) 2. .strptime # 接收1. 格式化timestr, 2. 格式format；返回datetime结构体(接续使用其他内置方法)
+经典场景：格式化timestr -&gt; ts
+datetime.strptime(timestr, pattern).timestamp()
+&lt;/&gt; python 复制 1def timestr2ts(timestr, pattern=&#39;%Y-%m-%d %H:%M:%S&#39;): 2 return datetime.strptime(timestr, pattern).timestamp() 3. .replace # python hint &lt;/&gt; python 复制 1(method) def replace( 2 year: SupportsIndex = ..., 3 month: SupportsIndex = ..., 4 day: SupportsIndex = ..., 5 hour: SupportsIndex = ..., 6 minute: SupportsIndex = ..., 7 second: SupportsIndex = ..., 8 microsecond: SupportsIndex = ..., 9 tzinfo: _TzInfo | None = ..., 10 *, 11 fold: int = ... 12) -&gt; datetime 一般使用关键字参数指定参数传参：
+.replace(hour=23, minute=59, second=59, microsecond=0)">
 
       
     
@@ -106,7 +122,7 @@
     "name": "时间字符串",
     "headline": "时间字符串",
     
-    "abstract": "\u003cp\u003etech\u003c\/p\u003e",
+    "abstract": "\u003ch2 class=\u0022relative group\u0022\u003e1. datetime系列 \n    \u003cdiv id=\u00221-datetime系列\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#1-datetime%e7%b3%bb%e5%88%97\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\u003cp\u003e一般来说用\u003ccode\u003efrom datetime import datetime\u003c\/code\u003e\u003c\/p\u003e\n\n\u003ch3 class=\u0022relative group\u0022\u003e1. \u003ccode\u003e.fromtimestamp\u003c\/code\u003e \n    \u003cdiv id=\u00221-fromtimestamp\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#1-fromtimestamp\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h3\u003e\n\u003cp\u003e接收一个浮点ts参数，返回datetime结构体，可接续使用datetime内置方法\u003cbr\u003e\n经典场景：ts -\u0026gt; 格式化timestr\u003cbr\u003e\n\u003ccode\u003edatetime.fromtimestamp(ts).strftime(\u0027%Y-%m-%d-%H:%M:%S\u0027)\u003c\/code\u003e\u003c\/p\u003e\n\n\u003cdiv class=\u0022code-block-wrapper\u0022\u003e\n  \u003cdiv class=\u0022code-header\u0022\u003e\n    \u003cspan class=\u0022language-label\u0022\u003e\n      \u003cspan class=\u0022language-brackets\u0022\u003e\u0026lt;\/\u003e\u003c\/span\u003e  \n      \u003cspan class=\u0022language-name\u0022\u003epython\u003c\/span\u003e  \n    \u003c\/span\u003e\n\n    \u003cdiv class=\u0022code-buttons\u0022\u003e\n      \u003cbutton class=\u0022copy-button\u0022\u003e\n        \u003ci class=\u0022fas fa-copy\u0022\u003e\u003c\/i\u003e\n        \u003cspan\u003e复制\u003c\/span\u003e\n      \u003c\/button\u003e\n    \u003c\/div\u003e\n  \u003c\/div\u003e\n  \u003cdiv class=\u0022highlight\u0022\u003e\u003cpre tabindex=\u00220\u0022 class=\u0022chroma\u0022\u003e\u003ccode class=\u0022language-python\u0022 data-lang=\u0022python\u0022\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e1\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022k\u0022\u003edef\u003c\/span\u003e \u003cspan class=\u0022nf\u0022\u003ets2timestr\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e(\u003c\/span\u003e\u003cspan class=\u0022n\u0022\u003ets\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e:\u003c\/span\u003e\u003cspan class=\u0022nb\u0022\u003efloat\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e)\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e-\u0026gt;\u003c\/span\u003e \u003cspan class=\u0022nb\u0022\u003estr\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e:\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e2\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022k\u0022\u003ereturn\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003edatetime\u003c\/span\u003e\u003cspan class=\u0022o\u0022\u003e.\u003c\/span\u003e\u003cspan class=\u0022n\u0022\u003efromtimestamp\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e(\u003c\/span\u003e\u003cspan class=\u0022n\u0022\u003ets\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e)\u003c\/span\u003e\u003cspan class=\u0022o\u0022\u003e.\u003c\/span\u003e\u003cspan class=\u0022n\u0022\u003estrftime\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e(\u003c\/span\u003e\u003cspan class=\u0022s1\u0022\u003e\u0026#39;%Y-%m-\u003c\/span\u003e\u003cspan class=\u0022si\u0022\u003e%d\u003c\/span\u003e\u003cspan class=\u0022s1\u0022\u003e-%H:%M:%S\u0026#39;\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e)\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003c\/code\u003e\u003c\/pre\u003e\u003c\/div\u003e\n\u003c\/div\u003e\n\n\n\n\u003ch3 class=\u0022relative group\u0022\u003e2. \u003ccode\u003e.strptime\u003c\/code\u003e \n    \u003cdiv id=\u00222-strptime\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#2-strptime\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h3\u003e\n\u003cp\u003e接收1. 格式化timestr, 2. 格式format；返回datetime结构体(接续使用其他内置方法)\u003cbr\u003e\n经典场景：格式化timestr -\u0026gt; ts\u003cbr\u003e\n\u003ccode\u003edatetime.strptime(timestr, pattern).timestamp()\u003c\/code\u003e\u003c\/p\u003e\n\n\u003cdiv class=\u0022code-block-wrapper\u0022\u003e\n  \u003cdiv class=\u0022code-header\u0022\u003e\n    \u003cspan class=\u0022language-label\u0022\u003e\n      \u003cspan class=\u0022language-brackets\u0022\u003e\u0026lt;\/\u003e\u003c\/span\u003e  \n      \u003cspan class=\u0022language-name\u0022\u003epython\u003c\/span\u003e  \n    \u003c\/span\u003e\n\n    \u003cdiv class=\u0022code-buttons\u0022\u003e\n      \u003cbutton class=\u0022copy-button\u0022\u003e\n        \u003ci class=\u0022fas fa-copy\u0022\u003e\u003c\/i\u003e\n        \u003cspan\u003e复制\u003c\/span\u003e\n      \u003c\/button\u003e\n    \u003c\/div\u003e\n  \u003c\/div\u003e\n  \u003cdiv class=\u0022highlight\u0022\u003e\u003cpre tabindex=\u00220\u0022 class=\u0022chroma\u0022\u003e\u003ccode class=\u0022language-python\u0022 data-lang=\u0022python\u0022\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e1\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022k\u0022\u003edef\u003c\/span\u003e \u003cspan class=\u0022nf\u0022\u003etimestr2ts\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e(\u003c\/span\u003e\u003cspan class=\u0022n\u0022\u003etimestr\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e,\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003epattern\u003c\/span\u003e\u003cspan class=\u0022o\u0022\u003e=\u003c\/span\u003e\u003cspan class=\u0022s1\u0022\u003e\u0026#39;%Y-%m-\u003c\/span\u003e\u003cspan class=\u0022si\u0022\u003e%d\u003c\/span\u003e\u003cspan class=\u0022s1\u0022\u003e %H:%M:%S\u0026#39;\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e):\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e2\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022k\u0022\u003ereturn\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003edatetime\u003c\/span\u003e\u003cspan class=\u0022o\u0022\u003e.\u003c\/span\u003e\u003cspan class=\u0022n\u0022\u003estrptime\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e(\u003c\/span\u003e\u003cspan class=\u0022n\u0022\u003etimestr\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e,\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003epattern\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e)\u003c\/span\u003e\u003cspan class=\u0022o\u0022\u003e.\u003c\/span\u003e\u003cspan class=\u0022n\u0022\u003etimestamp\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e()\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003c\/code\u003e\u003c\/pre\u003e\u003c\/div\u003e\n\u003c\/div\u003e\n\n\n\n\u003ch3 class=\u0022relative group\u0022\u003e3. \u003ccode\u003e.replace\u003c\/code\u003e \n    \u003cdiv id=\u00223-replace\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#3-replace\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h3\u003e\n\u003col\u003e\n\u003cli\u003epython hint\u003c\/li\u003e\n\u003c\/ol\u003e\n\n\u003cdiv class=\u0022code-block-wrapper\u0022\u003e\n  \u003cdiv class=\u0022code-header\u0022\u003e\n    \u003cspan class=\u0022language-label\u0022\u003e\n      \u003cspan class=\u0022language-brackets\u0022\u003e\u0026lt;\/\u003e\u003c\/span\u003e  \n      \u003cspan class=\u0022language-name\u0022\u003epython\u003c\/span\u003e  \n    \u003c\/span\u003e\n\n    \u003cdiv class=\u0022code-buttons\u0022\u003e\n      \u003cbutton class=\u0022copy-button\u0022\u003e\n        \u003ci class=\u0022fas fa-copy\u0022\u003e\u003c\/i\u003e\n        \u003cspan\u003e复制\u003c\/span\u003e\n      \u003c\/button\u003e\n    \u003c\/div\u003e\n  \u003c\/div\u003e\n  \u003cdiv class=\u0022highlight\u0022\u003e\u003cpre tabindex=\u00220\u0022 class=\u0022chroma\u0022\u003e\u003ccode class=\u0022language-python\u0022 data-lang=\u0022python\u0022\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 1\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022p\u0022\u003e(\u003c\/span\u003e\u003cspan class=\u0022n\u0022\u003emethod\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e)\u003c\/span\u003e \u003cspan class=\u0022k\u0022\u003edef\u003c\/span\u003e \u003cspan class=\u0022nf\u0022\u003ereplace\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e(\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 2\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022n\u0022\u003eyear\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e:\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003eSupportsIndex\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e=\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e...\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e,\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 3\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022n\u0022\u003emonth\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e:\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003eSupportsIndex\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e=\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e...\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e,\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 4\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022n\u0022\u003eday\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e:\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003eSupportsIndex\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e=\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e...\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e,\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 5\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022n\u0022\u003ehour\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e:\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003eSupportsIndex\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e=\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e...\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e,\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 6\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022n\u0022\u003eminute\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e:\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003eSupportsIndex\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e=\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e...\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e,\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 7\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022n\u0022\u003esecond\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e:\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003eSupportsIndex\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e=\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e...\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e,\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 8\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022n\u0022\u003emicrosecond\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e:\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003eSupportsIndex\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e=\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e...\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e,\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 9\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022n\u0022\u003etzinfo\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e:\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003e_TzInfo\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e|\u003c\/span\u003e \u003cspan class=\u0022kc\u0022\u003eNone\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e=\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e...\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e,\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e10\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022o\u0022\u003e*\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e,\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e11\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022n\u0022\u003efold\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e:\u003c\/span\u003e \u003cspan class=\u0022nb\u0022\u003eint\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e=\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e...\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e12\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022p\u0022\u003e)\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e-\u0026gt;\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003edatetime\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003c\/code\u003e\u003c\/pre\u003e\u003c\/div\u003e\n\u003c\/div\u003e\n\n\n\u003cp\u003e一般使用关键字参数指定参数传参：\u003cbr\u003e\n\u003ccode\u003e.replace(hour=23, minute=59, second=59, microsecond=0)\u003c\/code\u003e\u003c\/p\u003e",
     "inLanguage": "zh-cn",
     "url" : "http:\/\/localhost:43997\/nayun.github.io\/tech\/coding\/python\/%E5%AD%97%E7%AC%A6%E5%A4%84%E7%90%86\/%E6%97%B6%E9%97%B4%E5%AD%97%E7%AC%A6%E4%B8%B2\/",
     "author" : {
@@ -122,7 +138,7 @@
     "keywords": ["技","code","python","字符"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1"
+    "wordCount": "133"
   }]
   </script>
 
@@ -641,7 +657,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-07-31T15:44:35&#43;08:00">July 31, 2025</time><span class="px-2 text-primary-500">&middot;</span><span>1 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">1 分钟</span>
+      <time datetime="2025-07-31T15:44:35&#43;08:00">July 31, 2025</time><span class="px-2 text-primary-500">&middot;</span><span>133 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">1 分钟</span>
     
 
     
@@ -674,6 +690,154 @@
 
     <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
       
+        <div class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
+          <div
+            class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky 
+              lg:top-10
+            
+            ">
+            
+              <details
+  open
+  id="TOCView"
+  class="toc-right mt-0 overflow-y-auto overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    目录
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-datetime系列">1. datetime系列</a>
+          <ul>
+            <li><a href="#1-fromtimestamp">1. <code>.fromtimestamp</code></a></li>
+            <li><a href="#2-strptime">2. <code>.strptime</code></a></li>
+            <li><a href="#3-replace">3. <code>.replace</code></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    目录
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-datetime系列">1. datetime系列</a>
+          <ul>
+            <li><a href="#1-fromtimestamp">1. <code>.fromtimestamp</code></a></li>
+            <li><a href="#2-strptime">2. <code>.strptime</code></a></li>
+            <li><a href="#3-replace">3. <code>.replace</code></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+
+<script>
+  (function () {
+    'use strict'
+
+    const SCROLL_OFFSET_RATIO = 0.33
+    const TOC_SELECTOR = '#TableOfContents'
+    const ANCHOR_SELECTOR = '.anchor'
+    const TOC_LINK_SELECTOR = 'a[href^="#"]'
+    const NESTED_LIST_SELECTOR = 'li ul'
+    const ACTIVE_CLASS = 'active'
+
+    function getActiveAnchorId(anchors, offsetRatio) {
+      const threshold = window.scrollY + window.innerHeight * offsetRatio
+      const tocLinks = [...document.querySelectorAll('#TableOfContents a[href^="#"]')]
+      const tocIds = new Set(tocLinks.map(link => link.getAttribute('href').substring(1)))
+
+      for (let i = anchors.length - 1; i >= 0; i--) {
+        const top = anchors[i].getBoundingClientRect().top + window.scrollY
+        if (top <= threshold && tocIds.has(anchors[i].id)) {
+          return anchors[i].id
+        }
+      }
+      return anchors.find(anchor => tocIds.has(anchor.id))?.id || ''
+    }
+
+    function updateTOC({ toc, anchors, links, scrollOffset, collapseInactive }) {
+      const activeId = getActiveAnchorId(anchors, scrollOffset)
+      if (!activeId) return
+
+      links.forEach(link => {
+        const isActive = link.getAttribute('href') === `#${activeId}`
+        link.classList.toggle(ACTIVE_CLASS, isActive)
+
+        if (collapseInactive) {
+          const ul = link.closest('li')?.querySelector('ul')
+          if (ul) ul.style.display = isActive ? '' : 'none'
+        }
+      })
+
+      if (collapseInactive) {
+        const activeLink = toc.querySelector(`a[href="#${CSS.escape(activeId)}"]`)
+        let el = activeLink
+        while (el && el !== toc) {
+          if (el.tagName === 'UL') el.style.display = ''
+          if (el.tagName === 'LI') el.querySelector('ul')?.style.setProperty('display', '')
+          el = el.parentElement
+        }
+      }
+    }
+
+    function initTOC() {
+      const toc = document.querySelector(TOC_SELECTOR)
+      if (!toc) return
+
+      const collapseInactive = true
+      const anchors = [...document.querySelectorAll(ANCHOR_SELECTOR)]
+      const links = [...toc.querySelectorAll(TOC_LINK_SELECTOR)]
+
+      if (collapseInactive) {
+        toc.querySelectorAll(NESTED_LIST_SELECTOR).forEach(ul => ul.style.display = 'none')
+      }
+
+      const config = {
+        toc,
+        anchors,
+        links,
+        scrollOffset: SCROLL_OFFSET_RATIO,
+        collapseInactive
+      }
+
+      window.addEventListener('scroll', () => updateTOC(config), { passive: true })
+      window.addEventListener('hashchange', () => updateTOC(config), { passive: true })
+
+      updateTOC(config)
+    }
+
+    document.readyState === 'loading'
+      ? document.addEventListener('DOMContentLoaded', initTOC)
+      : initTOC()
+  })()
+</script>
+
+
+            
+            
+          </div>
+        </div>
+      
 
 
       <div class="min-w-0 min-h-0 max-w-fit">
@@ -682,7 +846,156 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <p>tech</p>
+          
+<h2 class="relative group">1. datetime系列 
+    <div id="1-datetime系列" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-datetime%e7%b3%bb%e5%88%97" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+<p>一般来说用<code>from datetime import datetime</code></p>
+
+<h3 class="relative group">1. <code>.fromtimestamp</code> 
+    <div id="1-fromtimestamp" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-fromtimestamp" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>接收一个浮点ts参数，返回datetime结构体，可接续使用datetime内置方法<br>
+经典场景：ts -&gt; 格式化timestr<br>
+<code>datetime.fromtimestamp(ts).strftime('%Y-%m-%d-%H:%M:%S')</code></p>
+
+<div class="code-block-wrapper">
+  <div class="code-header">
+    <span class="language-label">
+      <span class="language-brackets">&lt;/></span>  
+      <span class="language-name">python</span>  
+    </span>
+
+    <div class="code-buttons">
+      <button class="copy-button">
+        <i class="fas fa-copy"></i>
+        <span>复制</span>
+      </button>
+    </div>
+  </div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">def</span> <span class="nf">ts2timestr</span><span class="p">(</span><span class="n">ts</span><span class="p">:</span><span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="k">return</span> <span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="n">ts</span><span class="p">)</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">-%H:%M:%S&#39;</span><span class="p">)</span></span></span></code></pre></div>
+</div>
+
+
+
+<h3 class="relative group">2. <code>.strptime</code> 
+    <div id="2-strptime" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-strptime" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>接收1. 格式化timestr, 2. 格式format；返回datetime结构体(接续使用其他内置方法)<br>
+经典场景：格式化timestr -&gt; ts<br>
+<code>datetime.strptime(timestr, pattern).timestamp()</code></p>
+
+<div class="code-block-wrapper">
+  <div class="code-header">
+    <span class="language-label">
+      <span class="language-brackets">&lt;/></span>  
+      <span class="language-name">python</span>  
+    </span>
+
+    <div class="code-buttons">
+      <button class="copy-button">
+        <i class="fas fa-copy"></i>
+        <span>复制</span>
+      </button>
+    </div>
+  </div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">def</span> <span class="nf">timestr2ts</span><span class="p">(</span><span class="n">timestr</span><span class="p">,</span> <span class="n">pattern</span><span class="o">=</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:%M:%S&#39;</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="k">return</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">timestr</span><span class="p">,</span> <span class="n">pattern</span><span class="p">)</span><span class="o">.</span><span class="n">timestamp</span><span class="p">()</span></span></span></code></pre></div>
+</div>
+
+
+
+<h3 class="relative group">3. <code>.replace</code> 
+    <div id="3-replace" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#3-replace" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<ol>
+<li>python hint</li>
+</ol>
+
+<div class="code-block-wrapper">
+  <div class="code-header">
+    <span class="language-label">
+      <span class="language-brackets">&lt;/></span>  
+      <span class="language-name">python</span>  
+    </span>
+
+    <div class="code-buttons">
+      <button class="copy-button">
+        <i class="fas fa-copy"></i>
+        <span>复制</span>
+      </button>
+    </div>
+  </div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="p">(</span><span class="n">method</span><span class="p">)</span> <span class="k">def</span> <span class="nf">replace</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="n">year</span><span class="p">:</span> <span class="n">SupportsIndex</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">    <span class="n">month</span><span class="p">:</span> <span class="n">SupportsIndex</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="n">day</span><span class="p">:</span> <span class="n">SupportsIndex</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">    <span class="n">hour</span><span class="p">:</span> <span class="n">SupportsIndex</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="n">minute</span><span class="p">:</span> <span class="n">SupportsIndex</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">    <span class="n">second</span><span class="p">:</span> <span class="n">SupportsIndex</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="n">microsecond</span><span class="p">:</span> <span class="n">SupportsIndex</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="n">tzinfo</span><span class="p">:</span> <span class="n">_TzInfo</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="o">*</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="n">fold</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="o">...</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">datetime</span></span></span></code></pre></div>
+</div>
+
+
+<p>一般使用关键字参数指定参数传参：<br>
+<code>.replace(hour=23, minute=59, second=59, microsecond=0)</code></p>
+<ol start="2">
+<li>使用场景：
+<ol>
+<li>获取当天的23:59:59的timestamp值</li>
+<li>进阶：获取任意一天的末尾（23:59:59）ts值。使用<code>datetime.timedelta</code>对象控制天数</li>
+</ol>
+</li>
+</ol>
+
+<div class="code-block-wrapper">
+  <div class="code-header">
+    <span class="language-label">
+      <span class="language-brackets">&lt;/></span>  
+      <span class="language-name">python</span>  
+    </span>
+
+    <div class="code-buttons">
+      <button class="copy-button">
+        <i class="fas fa-copy"></i>
+        <span>复制</span>
+      </button>
+    </div>
+  </div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">def</span> <span class="nf">get_end_of_day</span><span class="p">(</span><span class="n">base</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(),</span> <span class="n">delta</span><span class="o">=</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">0</span><span class="p">)):</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="k">return</span> <span class="p">(</span><span class="n">base</span> <span class="o">+</span> <span class="n">delta</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">hour</span><span class="o">=</span><span class="mi">23</span><span class="p">,</span> <span class="n">minute</span><span class="o">=</span><span class="mi">59</span><span class="p">,</span> <span class="n">second</span><span class="o">=</span><span class="mi">59</span><span class="p">,</span> <span class="n">microsecond</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">timestamp</span><span class="p">()</span></span></span></code></pre></div>
+</div>
+
+
 
           
           
@@ -734,7 +1047,16 @@
     </footer>
   </article>
 
-        
+        <div id="top-scroller" class="pointer-events-none absolute top-[110vh] bottom-0 w-12 ltr:right-0 rtl:left-0">
+  <a
+    href="#the-top"
+    class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 mb-16 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="返回顶部"
+    title="返回顶部">
+    &uarr;
+  </a>
+</div>
+
       </main><footer id="site-footer" class="py-10 print:hidden">
   <script src="https://unpkg.com/panzoom@9.4.0/dist/panzoom.min.js"></script> 
   

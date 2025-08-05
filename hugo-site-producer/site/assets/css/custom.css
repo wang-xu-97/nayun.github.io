@@ -1,11 +1,11 @@
 
 
-body {
-  background-color: var(--bg-color) !important;
+/* body {
+  background-color: var(--bg-color);
 } */
 :root {
   --color-muted-foreground: oklch(0.61 0.01 97.42);
-  --bg-color: oklch(0.98 0.01 95.1); 
+  /* --bg-color: oklch(0.98 0.01 95.1);  */
   --container-width: 200%;  /* 调整整体容器宽度（百分比） */
   /* 最大宽度限制 */
   --container-max-width: 100rem;  
