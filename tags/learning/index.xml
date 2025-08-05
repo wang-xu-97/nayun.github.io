@@ -110,7 +110,7 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;tbody>
 &lt;tr>
 &lt;td>通信方式&lt;/td>
-&lt;td>进程内/间通信&lt;/td>
+&lt;td>进程内通信&lt;/td>
 &lt;td>进程间通信&lt;/td>
 &lt;/tr>
 &lt;tr>
