@@ -39,7 +39,7 @@
 &lt;p>相比传统 IPC (syscall, ioctl, procfs)，Netlink 具有显著优势：易于扩展、异步通信、完美支持内核模块、强大的组播能力、真正的全双工通信、开发者友好的标准 Socket API。&lt;/p>
 &lt;p>单播回显: 用户请求-&amp;gt;内核处理-&amp;gt;内核响应的双向通信模式&lt;br>
 内核主动组播: 内核主动向多个订阅进程广播事件的能力&lt;/p>
-&lt;p>netlink属于无连接协议（无连接协议是一种通信协议，其中每个数据包的处理都是独立的，不需要在发送数据之前建立连接）&lt;/p></description></item><item><title>闭包</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/general/%E9%97%AD%E5%8C%85/</link><pubDate>Mon, 14 Jul 2025 11:35:25 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/general/%E9%97%AD%E5%8C%85/</guid><description>&lt;p>在创建时封装当时状态，并使当时的状态生存周期延长至与闭包生存周期一致&lt;br>
+&lt;p>netlink属于无连接协议（无连接协议是一种通信协议，其中每个数据包的处理都是独立的，不需要在发送数据之前建立连接）&lt;/p></description></item><item><title>闭包</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/general/%E7%BC%96%E7%A8%8B%E6%A6%82%E5%BF%B5/%E9%97%AD%E5%8C%85/</link><pubDate>Mon, 14 Jul 2025 11:35:25 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/general/%E7%BC%96%E7%A8%8B%E6%A6%82%E5%BF%B5/%E9%97%AD%E5%8C%85/</guid><description>&lt;p>在创建时封装当时状态，并使当时的状态生存周期延长至与闭包生存周期一致&lt;br>
 闭包思想产物：&lt;br>
 1. python装饰器&lt;br>
 2. 回调函数&lt;br>
