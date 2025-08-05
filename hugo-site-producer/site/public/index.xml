@@ -158,7 +158,7 @@
   &lt;tbody&gt;
       &lt;tr&gt;
           &lt;td&gt;通信方式&lt;/td&gt;
-          &lt;td&gt;进程内/间通信&lt;/td&gt;
+          &lt;td&gt;进程内通信&lt;/td&gt;
           &lt;td&gt;进程间通信&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
