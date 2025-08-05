@@ -9,7 +9,7 @@
   --container-width: 200%;  /* 调整整体容器宽度（百分比） */
   /* 最大宽度限制 */
   --container-max-width: 100rem;  
-  --code-header-hover-color: oklch(0.7 0.2 110);
+  --code-header-hover-color: oklch(0.45 0.01 97.42);
 }
 
 pre {
