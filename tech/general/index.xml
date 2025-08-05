@@ -1,4 +1,62 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>通用编程思想 on nayun blog</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/general/</link><description>Recent content in 通用编程思想 on nayun blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>© 2025 nayun</copyright><lastBuildDate>Tue, 05 Aug 2025 14:28:04 +0800</lastBuildDate><atom:link href="https://wang-xu-97.github.io/nayun.github.io/tech/general/index.xml" rel="self" type="application/rss+xml"/><item><title>闭包</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/general/%E9%97%AD%E5%8C%85/</link><pubDate>Mon, 14 Jul 2025 11:35:25 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/general/%E9%97%AD%E5%8C%85/</guid><description>&lt;p>在创建时封装当时状态，并使当时的状态生存周期延长至与闭包生存周期一致&lt;br>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>通用编程思想 on nayun blog</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/general/</link><description>Recent content in 通用编程思想 on nayun blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>© 2025 nayun</copyright><lastBuildDate>Tue, 05 Aug 2025 17:02:12 +0800</lastBuildDate><atom:link href="https://wang-xu-97.github.io/nayun.github.io/tech/general/index.xml" rel="self" type="application/rss+xml"/><item><title>中间件工厂</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/general/%E4%B8%AD%E9%97%B4%E4%BB%B6%E5%B7%A5%E5%8E%82/</link><pubDate>Tue, 05 Aug 2025 17:02:12 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/general/%E4%B8%AD%E9%97%B4%E4%BB%B6%E5%B7%A5%E5%8E%82/</guid><description>&lt;h1 class="relative group">概念
+&lt;div id="概念" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%a6%82%e5%bf%b5" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h1>
+&lt;p>在函数式编程和软件架构中，&lt;strong>中间件工厂&lt;/strong>是一种创建中间件的高阶函数模式。它是在&lt;strong>函数工厂&lt;/strong>（能够生成其他函数的函数）概念基础上的扩展应用。&lt;/p>
+&lt;h2 class="relative group">定义
+&lt;div id="定义" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%ae%9a%e4%b9%89" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h2>
+&lt;p>中间件工厂是一个函数，它接收配置参数并返回一个中间件函数。这种模式常见于Web框架（如Express、Koa）和数据处理流程中。&lt;/p>
+&lt;div class="code-block-wrapper">
+&lt;div class="code-header">
+&lt;span class="language-label">
+&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
+&lt;span class="language-name">javascript&lt;/span>
+&lt;/span>
+&lt;div class="code-buttons">
+&lt;button class="copy-button">
+&lt;i class="fas fa-copy">&lt;/i>
+&lt;span>复制&lt;/span>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="line">&lt;span class="ln"> 1&lt;/span>&lt;span class="cl">&lt;span class="c1">// 中间件工厂示例
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 2&lt;/span>&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="kd">function&lt;/span> &lt;span class="nx">createMiddleware&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">config&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 3&lt;/span>&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="kd">function&lt;/span> &lt;span class="nx">middleware&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">req&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">res&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">next&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 4&lt;/span>&lt;span class="cl"> &lt;span class="c1">// 使用config和实现中间件逻辑
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 5&lt;/span>&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">config&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">condition&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 6&lt;/span>&lt;span class="cl"> &lt;span class="c1">// 做一些事情
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 7&lt;/span>&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 8&lt;/span>&lt;span class="cl"> &lt;span class="nx">next&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 9&lt;/span>&lt;span class="cl"> &lt;span class="p">};&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">10&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">11&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">12&lt;/span>&lt;span class="cl">&lt;span class="c1">// 使用
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">13&lt;/span>&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="kr">const&lt;/span> &lt;span class="nx">myMiddleware&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">createMiddleware&lt;/span>&lt;span class="p">({&lt;/span> &lt;span class="nx">condition&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="kc">true&lt;/span> &lt;span class="p">});&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">14&lt;/span>&lt;span class="cl">&lt;span class="nx">app&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">use&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">myMiddleware&lt;/span>&lt;span class="p">);&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;h2 class="relative group">核心意义
+&lt;div id="核心意义" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%a0%b8%e5%bf%83%e6%84%8f%e4%b9%89" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h2>
+&lt;h3 class="relative group">1. 配置与复用性
+&lt;div id="1-配置与复用性" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e9%85%8d%e7%bd%ae%e4%b8%8e%e5%a4%8d%e7%94%a8%e6%80%a7" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h3>
+&lt;p>中间件工厂通过参数化配置，使得单个中间件实现可以适应多种使用场景，大大提高了代码的复用性。&lt;/p></description></item><item><title>闭包</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/general/%E9%97%AD%E5%8C%85/</link><pubDate>Mon, 14 Jul 2025 11:35:25 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/general/%E9%97%AD%E5%8C%85/</guid><description>&lt;p>在创建时封装当时状态，并使当时的状态生存周期延长至与闭包生存周期一致&lt;br>
 闭包思想产物：&lt;br>
 1. python装饰器&lt;br>
 2. 回调函数&lt;br>
@@ -115,4 +173,9 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">16&lt;/span>&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nf">add5&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">3&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="c1">// 输出: 8 (3 + 5)&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">17&lt;/span>&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nf">add10&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">3&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="c1">// 输出: 13 (3 + 10)&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">18&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div></description></item></channel></rss>
+&lt;/div>
+&lt;ol start="3">
+&lt;li>&lt;a
+href="https://wang-xu-97.github.io/nayun.github.io/tech/general/%e4%b8%ad%e9%97%b4%e4%bb%b6%e5%b7%a5%e5%8e%82">go 中间件工厂&lt;/a>
+&lt;/li>
+&lt;/ol></description></item></channel></rss>

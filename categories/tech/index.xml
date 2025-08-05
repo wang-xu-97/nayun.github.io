@@ -156,7 +156,12 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">16&lt;/span>&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nf">add5&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">3&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="c1">// 输出: 8 (3 + 5)&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">17&lt;/span>&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nf">add10&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">3&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="c1">// 输出: 13 (3 + 10)&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">18&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div></description></item><item><title>Outline</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/outline/</link><pubDate>Mon, 14 Jul 2025 11:20:25 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/outline/</guid><description>&lt;h2 class="relative group">通用编程思想
+&lt;/div>
+&lt;ol start="3">
+&lt;li>&lt;a
+href="https://wang-xu-97.github.io/nayun.github.io/tech/general/%e4%b8%ad%e9%97%b4%e4%bb%b6%e5%b7%a5%e5%8e%82">go 中间件工厂&lt;/a>
+&lt;/li>
+&lt;/ol></description></item><item><title>Outline</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/outline/</link><pubDate>Mon, 14 Jul 2025 11:20:25 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/outline/</guid><description>&lt;h2 class="relative group">通用编程思想
 &lt;div id="通用编程思想" class="anchor">&lt;/div>
 &lt;span
 class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
