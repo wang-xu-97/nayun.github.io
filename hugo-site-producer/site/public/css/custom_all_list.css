@@ -11,7 +11,7 @@
     border-bottom: 1px solid #eee; /* 可选：添加分隔线 */
   }
   
-  .article-list li a {
+  .article-list li .a {
     font-size: 1.1rem;  /* 标题字体大小 */
     font-weight: 600;   /* 标题加粗 */
     color: #333;       /* 标题颜色 */

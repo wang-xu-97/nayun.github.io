@@ -8,6 +8,15 @@
         <span class="meta">
           <span class="date">{{ .Date.Format "2006-01-02" }}</span>
           <span class="section">{{ with .CurrentSection }}{{ .Title }}{{ end }}</span>
+          <span> | tags:</span>
+          {{ range .Params.tags }}
+          {{ $tag := . | urlize }}
+          {{ $url := printf "%s/tags/%s/" (strings.TrimSuffix "/" $.Site.BaseURL) $tag }}
+            <a href="{{ $url | relLangURL }}" 
+              class="_tag px-1 py-0.5 text-xs font-medium rounded-md border mr-1 last:mr-0">
+              {{ . }}
+            </a>
+          {{ end }}
         </span>
       </li>
     {{ end }}
