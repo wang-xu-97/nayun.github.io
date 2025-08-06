@@ -2,7 +2,7 @@
 title: "Gochannel"
 date: 2025-08-05T17:37:17+08:00
 draft: false
-tags: ["技", 'code', 'golang', 'learning']
+tags: ['code', 'golang', 'AIGC', 'learning']
 toc: true
 showTableOfContents: true
 ---
