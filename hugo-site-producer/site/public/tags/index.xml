@@ -20,6 +20,16 @@
     </item>
     
     <item>
+      <title>Learning</title>
+      <link>http://localhost:43997/nayun.github.io/tags/learning/</link>
+      <pubDate>Wed, 06 Aug 2025 11:31:02 +0800</pubDate>
+      
+      <guid>http://localhost:43997/nayun.github.io/tags/learning/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
       <title>Python</title>
       <link>http://localhost:43997/nayun.github.io/tags/python/</link>
       <pubDate>Wed, 06 Aug 2025 11:31:02 +0800</pubDate>
@@ -35,16 +45,6 @@
       <pubDate>Wed, 06 Aug 2025 11:31:02 +0800</pubDate>
       
       <guid>http://localhost:43997/nayun.github.io/tags/%E6%B3%9B%E5%9E%8B/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Learning</title>
-      <link>http://localhost:43997/nayun.github.io/tags/learning/</link>
-      <pubDate>Wed, 06 Aug 2025 11:14:51 +0800</pubDate>
-      
-      <guid>http://localhost:43997/nayun.github.io/tags/learning/</guid>
       <description></description>
       
     </item>
@@ -145,6 +145,16 @@
       <pubDate>Thu, 31 Jul 2025 15:44:35 +0800</pubDate>
       
       <guid>http://localhost:43997/nayun.github.io/tags/%E5%AD%97%E7%AC%A6/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>闭包</title>
+      <link>http://localhost:43997/nayun.github.io/tags/%E9%97%AD%E5%8C%85/</link>
+      <pubDate>Wed, 30 Jul 2025 16:44:17 +0800</pubDate>
+      
+      <guid>http://localhost:43997/nayun.github.io/tags/%E9%97%AD%E5%8C%85/</guid>
       <description></description>
       
     </item>
