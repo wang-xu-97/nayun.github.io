@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>泛型 on nayun blog</title><link>https://wang-xu-97.github.io/nayun.github.io/tags/%E6%B3%9B%E5%9E%8B/</link><description>Recent content in 泛型 on nayun blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>© 2025 nayun</copyright><lastBuildDate>Wed, 06 Aug 2025 11:31:02 +0800</lastBuildDate><atom:link href="https://wang-xu-97.github.io/nayun.github.io/tags/%E6%B3%9B%E5%9E%8B/index.xml" rel="self" type="application/rss+xml"/><item><title>ParamSpec</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E6%A6%82%E5%BF%B5%E5%9F%BA%E7%A1%80/paramspec/</link><pubDate>Wed, 06 Aug 2025 11:31:02 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E6%A6%82%E5%BF%B5%E5%9F%BA%E7%A1%80/paramspec/</guid><description>&lt;p>在 Python 的类型系统中，&lt;strong>&lt;code>ParamSpec&lt;/code>&lt;/strong>（参数规格）是一种高级泛型工具，用于&lt;strong>捕获函数或方法的参数类型信息&lt;/strong>，使得泛型高阶函数（如装饰器、回调工厂）能够精确保留原始函数的参数类型。以下是关于 &lt;code>ParamSpec&lt;/code> 的详细解析：&lt;/p>
+&lt;hr>
+&lt;h3 class="relative group">1. &lt;strong>&lt;code>ParamSpec&lt;/code> 的核心作用&lt;/strong>
+&lt;div id="1-paramspec" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-paramspec" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>解决的问题&lt;/strong>：在泛型装饰器或高阶函数中，传统 &lt;code>TypeVar&lt;/code> 无法描述函数的参数列表（如 &lt;code>*args&lt;/code> 和 &lt;code>**kwargs&lt;/code> 的类型）。&lt;/li>
+&lt;li>&lt;strong>功能&lt;/strong>：&lt;code>ParamSpec&lt;/code> 允许你&lt;strong>泛化函数的参数签名&lt;/strong>，保留参数名称、类型和顺序信息。&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 class="relative group">2. &lt;strong>基本语法&lt;/strong>
+&lt;div id="2-基本语法" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e5%9f%ba%e6%9c%ac%e8%af%ad%e6%b3%95" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h3>
+&lt;h4 class="relative group">&lt;strong>(1) 导入与定义&lt;/strong>
+&lt;div id="1-导入与定义" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e5%af%bc%e5%85%a5%e4%b8%8e%e5%ae%9a%e4%b9%89" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h4>
+&lt;div class="code-block-wrapper">
+&lt;div class="code-header">
+&lt;span class="language-label">
+&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
+&lt;span class="language-name">python&lt;/span>
+&lt;/span>
+&lt;div class="code-buttons">
+&lt;button class="copy-button">
+&lt;i class="fas fa-copy">&lt;/i>
+&lt;span>复制&lt;/span>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">typing&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">ParamSpec&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">Callable&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">TypeVar&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">&lt;span class="n">P&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">ParamSpec&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;P&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1"># 定义参数规格变量&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">&lt;span class="n">R&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">TypeVar&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;R&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1"># 定义返回值类型变量&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;ul>
+&lt;li>&lt;code>P&lt;/code> 表示一个函数的参数规格（包括位置参数和关键字参数）。&lt;/li>
+&lt;li>&lt;code>R&lt;/code> 表示函数的返回值类型。&lt;/li>
+&lt;/ul>
+&lt;h4 class="relative group">&lt;strong>(2) 使用场景&lt;/strong>
+&lt;div id="2-使用场景" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e4%bd%bf%e7%94%a8%e5%9c%ba%e6%99%af" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h4>
+&lt;p>主要用于泛型 &lt;code>Callable&lt;/code> 类型或装饰器：&lt;/p></description></item><item><title>3.12泛型特性</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E6%A6%82%E5%BF%B5%E5%9F%BA%E7%A1%80/3.12%E6%B3%9B%E5%9E%8B%E7%89%B9%E6%80%A7/</link><pubDate>Wed, 06 Aug 2025 11:04:17 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E6%A6%82%E5%BF%B5%E5%9F%BA%E7%A1%80/3.12%E6%B3%9B%E5%9E%8B%E7%89%B9%E6%80%A7/</guid><description>&lt;h3 class="relative group">&lt;strong>1. 泛型函数&lt;/strong>
+&lt;div id="1-泛型函数" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e6%b3%9b%e5%9e%8b%e5%87%bd%e6%95%b0" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h3>
+&lt;p>可以直接在函数名后使用 &lt;code>[T]&lt;/code> 定义类型参数，无需显式导入 &lt;code>TypeVar&lt;/code>：&lt;/p>
+&lt;div class="code-block-wrapper">
+&lt;div class="code-header">
+&lt;span class="language-label">
+&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
+&lt;span class="language-name">python&lt;/span>
+&lt;/span>
+&lt;div class="code-buttons">
+&lt;button class="copy-button">
+&lt;i class="fas fa-copy">&lt;/i>
+&lt;span>复制&lt;/span>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">max&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">T&lt;/span>&lt;span class="p">](&lt;/span>&lt;span class="n">args&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">Iterable&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">T&lt;/span>&lt;span class="p">])&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="n">T&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="c1"># 定义泛型函数&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nb">max&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">args&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">default&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="kc">None&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">&lt;span class="nb">max&lt;/span>&lt;span class="p">([&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">3&lt;/span>&lt;span class="p">])&lt;/span> &lt;span class="c1"># T 自动推断为 int&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl">&lt;span class="nb">max&lt;/span>&lt;span class="p">([&lt;/span>&lt;span class="s2">&amp;#34;a&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;b&amp;#34;&lt;/span>&lt;span class="p">])&lt;/span> &lt;span class="c1"># T 自动推断为 str&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>&lt;strong>特点&lt;/strong>：&lt;/p>
+&lt;ul>
+&lt;li>类型参数 &lt;code>T&lt;/code> 的作用域仅限于该函数。&lt;/li>
+&lt;li>支持默认类型推断，无需手动指定 &lt;code>[int]&lt;/code> 或 &lt;code>[str]&lt;/code>。&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 class="relative group">&lt;strong>2. 泛型类&lt;/strong>
+&lt;div id="2-泛型类" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e6%b3%9b%e5%9e%8b%e7%b1%bb" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h3>
+&lt;p>类名后可直接声明类型参数：&lt;/p>
+&lt;div class="code-block-wrapper">
+&lt;div class="code-header">
+&lt;span class="language-label">
+&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
+&lt;span class="language-name">python&lt;/span>
+&lt;/span>
+&lt;div class="code-buttons">
+&lt;button class="copy-button">
+&lt;i class="fas fa-copy">&lt;/i>
+&lt;span>复制&lt;/span>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="k">class&lt;/span> &lt;span class="nc">Box&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">T&lt;/span>&lt;span class="p">]:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="fm">__init__&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">value&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">T&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl"> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">value&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">value&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="nf">get&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="n">T&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">6&lt;/span>&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">value&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">7&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">8&lt;/span>&lt;span class="cl">&lt;span class="n">int_box&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Box&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nb">int&lt;/span>&lt;span class="p">](&lt;/span>&lt;span class="mi">42&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1"># 明确指定 T 为 int&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">9&lt;/span>&lt;span class="cl">&lt;span class="n">str_box&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Box&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;hello&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1"># 自动推断 T 为 str&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>&lt;strong>特点&lt;/strong>：&lt;/p></description></item><item><title>泛型</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/general/%E7%BC%96%E7%A8%8B%E6%A6%82%E5%BF%B5/%E6%B3%9B%E5%9E%8B/</link><pubDate>Wed, 06 Aug 2025 10:31:06 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/general/%E7%BC%96%E7%A8%8B%E6%A6%82%E5%BF%B5/%E6%B3%9B%E5%9E%8B/</guid><description>&lt;p>泛型（Generics）是编程语言中一种允许在定义函数、数据结构或类时&lt;strong>使用类型参数&lt;/strong>的特性。通过泛型，开发者可以编写更通用、灵活的代码，而无需为每种具体类型重复实现相同的逻辑。&lt;/p>
+&lt;h2 class="relative group">1. &lt;strong>泛型的核心概念&lt;/strong>
+&lt;div id="1-泛型的核心概念" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e6%b3%9b%e5%9e%8b%e7%9a%84%e6%a0%b8%e5%bf%83%e6%a6%82%e5%bf%b5" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h2>
+&lt;h3 class="relative group">（1）类型参数（Type Parameters）
+&lt;div id="1类型参数type-parameters" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1%e7%b1%bb%e5%9e%8b%e5%8f%82%e6%95%b0type-parameters" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h3>
+&lt;p>在定义函数或结构体时，可以声明一个或多个&lt;strong>类型参数&lt;/strong>，用方括号 &lt;code>[]&lt;/code> 包裹（Go 语言风格，其他语言可能用 &lt;code>&amp;lt;&amp;gt;&lt;/code>）。&lt;br>
+例如：&lt;/p>
+&lt;div class="code-block-wrapper">
+&lt;div class="code-header">
+&lt;span class="language-label">
+&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
+&lt;span class="language-name">go&lt;/span>
+&lt;/span>
+&lt;div class="code-buttons">
+&lt;button class="copy-button">
+&lt;i class="fas fa-copy">&lt;/i>
+&lt;span>复制&lt;/span>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="c1">// T 是类型参数，可以是任何类型&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nx">identity&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nx">T&lt;/span> &lt;span class="kt">any&lt;/span>&lt;span class="p">](&lt;/span>&lt;span class="nx">value&lt;/span> &lt;span class="nx">T&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="nx">T&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nx">value&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;h3 class="relative group">（2）类型约束（Type Constraints）
+&lt;div id="2类型约束type-constraints" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2%e7%b1%bb%e5%9e%8b%e7%ba%a6%e6%9d%9ftype-constraints" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h3>
+&lt;p>限制类型参数的范围，例如要求类型必须支持某些操作（如比较大小、相加等）。&lt;/p>
+&lt;ul>
+&lt;li>Go 中通过接口定义约束：
+&lt;div class="code-block-wrapper">
+&lt;div class="code-header">
+&lt;span class="language-label">
+&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
+&lt;span class="language-name">go&lt;/span>
+&lt;/span>
+&lt;div class="code-buttons">
+&lt;button class="copy-button">
+&lt;i class="fas fa-copy">&lt;/i>
+&lt;span>复制&lt;/span>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="kd">type&lt;/span> &lt;span class="nx">Number&lt;/span> &lt;span class="kd">interface&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl"> &lt;span class="kt">int&lt;/span> &lt;span class="p">|&lt;/span> &lt;span class="kt">float64&lt;/span> &lt;span class="c1">// 约束 T 只能是 int 或 float64&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nx">add&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nx">T&lt;/span> &lt;span class="nx">Number&lt;/span>&lt;span class="p">](&lt;/span>&lt;span class="nx">a&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">b&lt;/span> &lt;span class="nx">T&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="nx">T&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">6&lt;/span>&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nx">a&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="nx">b&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">7&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>其他语言（如 Java）通过泛型边界（&lt;code>&amp;lt;T extends Comparable&amp;gt;&lt;/code>）实现类似功能。&lt;/li>
+&lt;/ul>
+&lt;h3 class="relative group">（3）泛型数据结构
+&lt;div id="3泛型数据结构" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#3%e6%b3%9b%e5%9e%8b%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h3>
+&lt;p>泛型不仅用于函数，还可用于定义通用的数据结构（如链表、队列等）。&lt;br>
+例如，Go 中的泛型切片：&lt;/p></description></item></channel></rss>

@@ -5,7 +5,6 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e9%80%9a%e7%94%a8%e7%bc%96%e7%a8%8b%e6%80%9d%e6%83%b3" aria-label="锚点">#&lt;/a>
 &lt;/span>
 &lt;/h2>
-&lt;p>1&lt;/p>
 &lt;h3 class="relative group">闭包
 &lt;div id="闭包" class="anchor">&lt;/div>
 &lt;span
@@ -13,7 +12,6 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e9%97%ad%e5%8c%85" aria-label="锚点">#&lt;/a>
 &lt;/span>
 &lt;/h3>
-&lt;p>1&lt;/p>
 &lt;h3 class="relative group">多态
 &lt;div id="多态" class="anchor">&lt;/div>
 &lt;span
@@ -21,14 +19,13 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%a4%9a%e6%80%81" aria-label="锚点">#&lt;/a>
 &lt;/span>
 &lt;/h3>
-&lt;p>1&lt;br>
-1&lt;br>
-1&lt;br>
-1&lt;br>
-1&lt;br>
-1&lt;br>
-1&lt;br>
-1&lt;/p>
+&lt;h3 class="relative group">泛型
+&lt;div id="泛型" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%b3%9b%e5%9e%8b" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h3>
 &lt;h2 class="relative group">前端
 &lt;div id="前端" class="anchor">&lt;/div>
 &lt;span

@@ -1,4 +1,641 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>nayun blog</title><link>https://wang-xu-97.github.io/nayun.github.io/</link><description>Recent content on nayun blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>© 2025 nayun</copyright><lastBuildDate>Tue, 05 Aug 2025 17:37:17 +0800</lastBuildDate><atom:link href="https://wang-xu-97.github.io/nayun.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Gochannel</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/coding/golang/gochannel/</link><pubDate>Tue, 05 Aug 2025 17:37:17 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/coding/golang/gochannel/</guid><description>&lt;h1 class="relative group">Go 语言 Channel 详解及其与 Linux 管道的比较
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>nayun blog</title><link>https://wang-xu-97.github.io/nayun.github.io/</link><description>Recent content on nayun blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>© 2025 nayun</copyright><lastBuildDate>Wed, 06 Aug 2025 11:31:02 +0800</lastBuildDate><atom:link href="https://wang-xu-97.github.io/nayun.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>ParamSpec</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E6%A6%82%E5%BF%B5%E5%9F%BA%E7%A1%80/paramspec/</link><pubDate>Wed, 06 Aug 2025 11:31:02 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E6%A6%82%E5%BF%B5%E5%9F%BA%E7%A1%80/paramspec/</guid><description>&lt;p>在 Python 的类型系统中，&lt;strong>&lt;code>ParamSpec&lt;/code>&lt;/strong>（参数规格）是一种高级泛型工具，用于&lt;strong>捕获函数或方法的参数类型信息&lt;/strong>，使得泛型高阶函数（如装饰器、回调工厂）能够精确保留原始函数的参数类型。以下是关于 &lt;code>ParamSpec&lt;/code> 的详细解析：&lt;/p>
+&lt;hr>
+&lt;h3 class="relative group">1. &lt;strong>&lt;code>ParamSpec&lt;/code> 的核心作用&lt;/strong>
+&lt;div id="1-paramspec" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-paramspec" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>解决的问题&lt;/strong>：在泛型装饰器或高阶函数中，传统 &lt;code>TypeVar&lt;/code> 无法描述函数的参数列表（如 &lt;code>*args&lt;/code> 和 &lt;code>**kwargs&lt;/code> 的类型）。&lt;/li>
+&lt;li>&lt;strong>功能&lt;/strong>：&lt;code>ParamSpec&lt;/code> 允许你&lt;strong>泛化函数的参数签名&lt;/strong>，保留参数名称、类型和顺序信息。&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 class="relative group">2. &lt;strong>基本语法&lt;/strong>
+&lt;div id="2-基本语法" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e5%9f%ba%e6%9c%ac%e8%af%ad%e6%b3%95" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h3>
+&lt;h4 class="relative group">&lt;strong>(1) 导入与定义&lt;/strong>
+&lt;div id="1-导入与定义" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e5%af%bc%e5%85%a5%e4%b8%8e%e5%ae%9a%e4%b9%89" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h4>
+&lt;div class="code-block-wrapper">
+&lt;div class="code-header">
+&lt;span class="language-label">
+&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
+&lt;span class="language-name">python&lt;/span>
+&lt;/span>
+&lt;div class="code-buttons">
+&lt;button class="copy-button">
+&lt;i class="fas fa-copy">&lt;/i>
+&lt;span>复制&lt;/span>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">typing&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">ParamSpec&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">Callable&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">TypeVar&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">&lt;span class="n">P&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">ParamSpec&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;P&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1"># 定义参数规格变量&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">&lt;span class="n">R&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">TypeVar&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;R&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1"># 定义返回值类型变量&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;ul>
+&lt;li>&lt;code>P&lt;/code> 表示一个函数的参数规格（包括位置参数和关键字参数）。&lt;/li>
+&lt;li>&lt;code>R&lt;/code> 表示函数的返回值类型。&lt;/li>
+&lt;/ul>
+&lt;h4 class="relative group">&lt;strong>(2) 使用场景&lt;/strong>
+&lt;div id="2-使用场景" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e4%bd%bf%e7%94%a8%e5%9c%ba%e6%99%af" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h4>
+&lt;p>主要用于泛型 &lt;code>Callable&lt;/code> 类型或装饰器：&lt;/p></description></item><item><title>3.12高级类型参数</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E6%A6%82%E5%BF%B5%E5%9F%BA%E7%A1%80/3.12%E9%AB%98%E7%BA%A7%E7%B1%BB%E5%9E%8B%E5%8F%82%E6%95%B0/</link><pubDate>Wed, 06 Aug 2025 11:14:51 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E6%A6%82%E5%BF%B5%E5%9F%BA%E7%A1%80/3.12%E9%AB%98%E7%BA%A7%E7%B1%BB%E5%9E%8B%E5%8F%82%E6%95%B0/</guid><description>&lt;p>Python 3.12 通过 &lt;strong>PEP 695&lt;/strong> 引入了更强大的高级类型参数机制，包括 &lt;strong>可变类型参数（&lt;code>*Ts&lt;/code>）&lt;/strong> 和 &lt;strong>参数规格（&lt;code>**P&lt;/code>）&lt;/strong>，用于处理复杂泛型场景（如可变参数函数、回调函数类型等）。以下是对它们的详细解析：&lt;/p>
+&lt;hr>
+&lt;h3 class="relative group">1. &lt;strong>可变类型参数（&lt;code>*Ts&lt;/code>）&lt;/strong>
+&lt;div id="1-可变类型参数" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e5%8f%af%e5%8f%98%e7%b1%bb%e5%9e%8b%e5%8f%82%e6%95%b0" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h3>
+&lt;h4 class="relative group">&lt;strong>用途&lt;/strong>
+&lt;div id="用途" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%94%a8%e9%80%94" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h4>
+&lt;p>表示一组&lt;strong>不定数量&lt;/strong>的类型参数，类似 &lt;code>*args&lt;/code> 的泛型版本。常用于：&lt;/p>
+&lt;ul>
+&lt;li>泛型元组或可变长度容器&lt;/li>
+&lt;li>函数参数的类型标注（如 &lt;code>*args: *Ts&lt;/code>）&lt;/li>
+&lt;/ul>
+&lt;h4 class="relative group">&lt;strong>语法与示例&lt;/strong>
+&lt;div id="语法与示例" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e8%af%ad%e6%b3%95%e4%b8%8e%e7%a4%ba%e4%be%8b" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h4>
+&lt;div class="code-block-wrapper">
+&lt;div class="code-header">
+&lt;span class="language-label">
+&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
+&lt;span class="language-name">python&lt;/span>
+&lt;/span>
+&lt;div class="code-buttons">
+&lt;button class="copy-button">
+&lt;i class="fas fa-copy">&lt;/i>
+&lt;span>复制&lt;/span>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="ln"> 1&lt;/span>&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">typing&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">Tuple&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 2&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 3&lt;/span>&lt;span class="cl">&lt;span class="c1"># 定义泛型元组，第一个元素为 str，其余元素类型可变&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 4&lt;/span>&lt;span class="cl">&lt;span class="nb">type&lt;/span> &lt;span class="n">LabeledTuple&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="n">Ts&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">tuple&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nb">str&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="o">*&lt;/span>&lt;span class="n">Ts&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="c1"># PEP 695 语法&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 5&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 6&lt;/span>&lt;span class="cl">&lt;span class="c1"># 使用&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 7&lt;/span>&lt;span class="cl">&lt;span class="n">x&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">LabeledTuple&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nb">int&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nb">float&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">42&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mf">3.14&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1"># 等效于 tuple[str, int, float]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 8&lt;/span>&lt;span class="cl">&lt;span class="n">y&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">LabeledTuple&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nb">bool&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;flag&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="kc">True&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1"># 等效于 tuple[str, bool]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 9&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">10&lt;/span>&lt;span class="cl">&lt;span class="c1"># 函数中的可变参数类型&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">11&lt;/span>&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">zip&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="n">T&lt;/span>&lt;span class="p">](&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="n">args&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="o">*&lt;/span>&lt;span class="n">T&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="nb">list&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nb">tuple&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="n">T&lt;/span>&lt;span class="p">]]:&lt;/span> &lt;span class="c1"># 模拟内置 zip 的类型&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">12&lt;/span>&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nb">list&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nb">zip&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="n">args&lt;/span>&lt;span class="p">))&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;h4 class="relative group">&lt;strong>关键点&lt;/strong>
+&lt;div id="关键点" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%85%b3%e9%94%ae%e7%82%b9" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h4>
+&lt;ul>
+&lt;li>&lt;code>*Ts&lt;/code> 表示&lt;strong>类型元组&lt;/strong>，可匹配任意数量的类型参数。&lt;/li>
+&lt;li>运行时会被擦除为 &lt;code>tuple&lt;/code>，仅静态类型检查器（如 mypy）会验证类型安全性。&lt;/li>
+&lt;li>与传统 &lt;code>TypeVarTuple&lt;/code> 等效（Python 3.11 之前需用 &lt;code>from typing import TypeVarTuple&lt;/code>）。&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 class="relative group">2. &lt;strong>参数规格（&lt;code>**P&lt;/code>）&lt;/strong>
+&lt;div id="2-参数规格" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e5%8f%82%e6%95%b0%e8%a7%84%e6%a0%bc" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h3>
+&lt;h4 class="relative group">&lt;strong>用途&lt;/strong>
+&lt;div id="用途-1" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%94%a8%e9%80%94-1" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h4>
+&lt;p>描述函数的&lt;strong>参数类型和返回值类型&lt;/strong>，用于泛型高阶函数（如装饰器、回调函数）。类似 &lt;code>**kwargs&lt;/code> 的泛型扩展。&lt;/p></description></item><item><title>3.12泛型特性</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E6%A6%82%E5%BF%B5%E5%9F%BA%E7%A1%80/3.12%E6%B3%9B%E5%9E%8B%E7%89%B9%E6%80%A7/</link><pubDate>Wed, 06 Aug 2025 11:04:17 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E6%A6%82%E5%BF%B5%E5%9F%BA%E7%A1%80/3.12%E6%B3%9B%E5%9E%8B%E7%89%B9%E6%80%A7/</guid><description>&lt;h3 class="relative group">&lt;strong>1. 泛型函数&lt;/strong>
+&lt;div id="1-泛型函数" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e6%b3%9b%e5%9e%8b%e5%87%bd%e6%95%b0" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h3>
+&lt;p>可以直接在函数名后使用 &lt;code>[T]&lt;/code> 定义类型参数，无需显式导入 &lt;code>TypeVar&lt;/code>：&lt;/p>
+&lt;div class="code-block-wrapper">
+&lt;div class="code-header">
+&lt;span class="language-label">
+&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
+&lt;span class="language-name">python&lt;/span>
+&lt;/span>
+&lt;div class="code-buttons">
+&lt;button class="copy-button">
+&lt;i class="fas fa-copy">&lt;/i>
+&lt;span>复制&lt;/span>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">max&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">T&lt;/span>&lt;span class="p">](&lt;/span>&lt;span class="n">args&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">Iterable&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">T&lt;/span>&lt;span class="p">])&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="n">T&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="c1"># 定义泛型函数&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nb">max&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">args&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">default&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="kc">None&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">&lt;span class="nb">max&lt;/span>&lt;span class="p">([&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">3&lt;/span>&lt;span class="p">])&lt;/span> &lt;span class="c1"># T 自动推断为 int&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl">&lt;span class="nb">max&lt;/span>&lt;span class="p">([&lt;/span>&lt;span class="s2">&amp;#34;a&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;b&amp;#34;&lt;/span>&lt;span class="p">])&lt;/span> &lt;span class="c1"># T 自动推断为 str&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>&lt;strong>特点&lt;/strong>：&lt;/p>
+&lt;ul>
+&lt;li>类型参数 &lt;code>T&lt;/code> 的作用域仅限于该函数。&lt;/li>
+&lt;li>支持默认类型推断，无需手动指定 &lt;code>[int]&lt;/code> 或 &lt;code>[str]&lt;/code>。&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 class="relative group">&lt;strong>2. 泛型类&lt;/strong>
+&lt;div id="2-泛型类" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e6%b3%9b%e5%9e%8b%e7%b1%bb" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h3>
+&lt;p>类名后可直接声明类型参数：&lt;/p>
+&lt;div class="code-block-wrapper">
+&lt;div class="code-header">
+&lt;span class="language-label">
+&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
+&lt;span class="language-name">python&lt;/span>
+&lt;/span>
+&lt;div class="code-buttons">
+&lt;button class="copy-button">
+&lt;i class="fas fa-copy">&lt;/i>
+&lt;span>复制&lt;/span>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="k">class&lt;/span> &lt;span class="nc">Box&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">T&lt;/span>&lt;span class="p">]:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="fm">__init__&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">value&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">T&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl"> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">value&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">value&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="nf">get&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="n">T&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">6&lt;/span>&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">value&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">7&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">8&lt;/span>&lt;span class="cl">&lt;span class="n">int_box&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Box&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nb">int&lt;/span>&lt;span class="p">](&lt;/span>&lt;span class="mi">42&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1"># 明确指定 T 为 int&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">9&lt;/span>&lt;span class="cl">&lt;span class="n">str_box&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Box&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;hello&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1"># 自动推断 T 为 str&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>&lt;strong>特点&lt;/strong>：&lt;/p></description></item><item><title>泛型</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/general/%E7%BC%96%E7%A8%8B%E6%A6%82%E5%BF%B5/%E6%B3%9B%E5%9E%8B/</link><pubDate>Wed, 06 Aug 2025 10:31:06 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/general/%E7%BC%96%E7%A8%8B%E6%A6%82%E5%BF%B5/%E6%B3%9B%E5%9E%8B/</guid><description>&lt;p>泛型（Generics）是编程语言中一种允许在定义函数、数据结构或类时&lt;strong>使用类型参数&lt;/strong>的特性。通过泛型，开发者可以编写更通用、灵活的代码，而无需为每种具体类型重复实现相同的逻辑。&lt;/p>
+&lt;h2 class="relative group">1. &lt;strong>泛型的核心概念&lt;/strong>
+&lt;div id="1-泛型的核心概念" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e6%b3%9b%e5%9e%8b%e7%9a%84%e6%a0%b8%e5%bf%83%e6%a6%82%e5%bf%b5" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h2>
+&lt;h3 class="relative group">（1）类型参数（Type Parameters）
+&lt;div id="1类型参数type-parameters" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1%e7%b1%bb%e5%9e%8b%e5%8f%82%e6%95%b0type-parameters" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h3>
+&lt;p>在定义函数或结构体时，可以声明一个或多个&lt;strong>类型参数&lt;/strong>，用方括号 &lt;code>[]&lt;/code> 包裹（Go 语言风格，其他语言可能用 &lt;code>&amp;lt;&amp;gt;&lt;/code>）。&lt;br>
+例如：&lt;/p>
+&lt;div class="code-block-wrapper">
+&lt;div class="code-header">
+&lt;span class="language-label">
+&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
+&lt;span class="language-name">go&lt;/span>
+&lt;/span>
+&lt;div class="code-buttons">
+&lt;button class="copy-button">
+&lt;i class="fas fa-copy">&lt;/i>
+&lt;span>复制&lt;/span>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="c1">// T 是类型参数，可以是任何类型&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nx">identity&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nx">T&lt;/span> &lt;span class="kt">any&lt;/span>&lt;span class="p">](&lt;/span>&lt;span class="nx">value&lt;/span> &lt;span class="nx">T&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="nx">T&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nx">value&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;h3 class="relative group">（2）类型约束（Type Constraints）
+&lt;div id="2类型约束type-constraints" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2%e7%b1%bb%e5%9e%8b%e7%ba%a6%e6%9d%9ftype-constraints" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h3>
+&lt;p>限制类型参数的范围，例如要求类型必须支持某些操作（如比较大小、相加等）。&lt;/p>
+&lt;ul>
+&lt;li>Go 中通过接口定义约束：
+&lt;div class="code-block-wrapper">
+&lt;div class="code-header">
+&lt;span class="language-label">
+&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
+&lt;span class="language-name">go&lt;/span>
+&lt;/span>
+&lt;div class="code-buttons">
+&lt;button class="copy-button">
+&lt;i class="fas fa-copy">&lt;/i>
+&lt;span>复制&lt;/span>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="kd">type&lt;/span> &lt;span class="nx">Number&lt;/span> &lt;span class="kd">interface&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl"> &lt;span class="kt">int&lt;/span> &lt;span class="p">|&lt;/span> &lt;span class="kt">float64&lt;/span> &lt;span class="c1">// 约束 T 只能是 int 或 float64&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nx">add&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nx">T&lt;/span> &lt;span class="nx">Number&lt;/span>&lt;span class="p">](&lt;/span>&lt;span class="nx">a&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">b&lt;/span> &lt;span class="nx">T&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="nx">T&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">6&lt;/span>&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nx">a&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="nx">b&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">7&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>其他语言（如 Java）通过泛型边界（&lt;code>&amp;lt;T extends Comparable&amp;gt;&lt;/code>）实现类似功能。&lt;/li>
+&lt;/ul>
+&lt;h3 class="relative group">（3）泛型数据结构
+&lt;div id="3泛型数据结构" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#3%e6%b3%9b%e5%9e%8b%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h3>
+&lt;p>泛型不仅用于函数，还可用于定义通用的数据结构（如链表、队列等）。&lt;br>
+例如，Go 中的泛型切片：&lt;/p></description></item><item><title>Go语言特点</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/coding/golang/go%E8%AF%AD%E8%A8%80%E7%89%B9%E7%82%B9/</link><pubDate>Wed, 06 Aug 2025 10:18:47 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/coding/golang/go%E8%AF%AD%E8%A8%80%E7%89%B9%E7%82%B9/</guid><description>&lt;p>Go语言（Golang）的语法设计以简洁和明确性为核心，因此它避免了许多其他语言中常见的抽象或复杂的语法特性。以下是Go语言中一些相对少见或独特的语法设计，以及与其他语言的对比：&lt;/p>
+&lt;h3 class="relative group">1. &lt;strong>没有三元运算符（&lt;code>?:&lt;/code>）&lt;/strong>
+&lt;div id="1-没有三元运算符" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e6%b2%a1%e6%9c%89%e4%b8%89%e5%85%83%e8%bf%90%e7%ae%97%e7%ac%a6" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h3>
+&lt;ul>
+&lt;li>Go语言明确移除了C语言风格的三元运算符（&lt;code>condition ? a : b&lt;/code>），而是要求开发者使用&lt;code>if-else&lt;/code>语句来实现条件判断。这种设计旨在提高代码的可读性，避免嵌套过深的表达式。&lt;/li>
+&lt;li>&lt;strong>示例&lt;/strong>：
+&lt;div class="code-block-wrapper">
+&lt;div class="code-header">
+&lt;span class="language-label">
+&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
+&lt;span class="language-name">go&lt;/span>
+&lt;/span>
+&lt;div class="code-buttons">
+&lt;button class="copy-button">
+&lt;i class="fas fa-copy">&lt;/i>
+&lt;span>复制&lt;/span>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="c1">// Go 使用 if-else 替代三元运算符&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">&lt;span class="kd">var&lt;/span> &lt;span class="nx">result&lt;/span> &lt;span class="kt">int&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">&lt;span class="k">if&lt;/span> &lt;span class="nx">condition&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl"> &lt;span class="nx">result&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nx">a&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">6&lt;/span>&lt;span class="cl"> &lt;span class="nx">result&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nx">b&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">7&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>相比之下，C/C++、Java、JavaScript等语言支持三元运算符，而Go选择更显式的写法。&lt;/li>
+&lt;/ul>
+&lt;h3 class="relative group">2. &lt;strong>没有传统泛型（Go 1.18 前）&lt;/strong>
+&lt;div id="2-没有传统泛型go-118-前" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e6%b2%a1%e6%9c%89%e4%bc%a0%e7%bb%9f%e6%b3%9b%e5%9e%8bgo-118-%e5%89%8d" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h3>
+&lt;ul>
+&lt;li>Go在早期版本中没有像C++、Java那样的泛型支持，而是使用&lt;code>interface{}&lt;/code>、类型断言和反射来模拟泛型行为。&lt;/li>
+&lt;li>&lt;strong>示例&lt;/strong>：
+&lt;div class="code-block-wrapper">
+&lt;div class="code-header">
+&lt;span class="language-label">
+&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
+&lt;span class="language-name">go&lt;/span>
+&lt;/span>
+&lt;div class="code-buttons">
+&lt;button class="copy-button">
+&lt;i class="fas fa-copy">&lt;/i>
+&lt;span>复制&lt;/span>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="ln"> 1&lt;/span>&lt;span class="cl">&lt;span class="c1">// 使用 interface{} 和类型断言模拟泛型&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 2&lt;/span>&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nb">max&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">a&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">b&lt;/span> &lt;span class="kd">interface&lt;/span>&lt;span class="p">{})&lt;/span> &lt;span class="kd">interface&lt;/span>&lt;span class="p">{}&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 3&lt;/span>&lt;span class="cl"> &lt;span class="k">switch&lt;/span> &lt;span class="nx">a&lt;/span>&lt;span class="p">.(&lt;/span>&lt;span class="kd">type&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 4&lt;/span>&lt;span class="cl"> &lt;span class="k">case&lt;/span> &lt;span class="kt">int&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 5&lt;/span>&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">a&lt;/span>&lt;span class="p">.(&lt;/span>&lt;span class="kt">int&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">&amp;gt;&lt;/span> &lt;span class="nx">b&lt;/span>&lt;span class="p">.(&lt;/span>&lt;span class="kt">int&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 6&lt;/span>&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nx">a&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 7&lt;/span>&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 8&lt;/span>&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nx">b&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 9&lt;/span>&lt;span class="cl"> &lt;span class="k">case&lt;/span> &lt;span class="kt">float64&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">10&lt;/span>&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">a&lt;/span>&lt;span class="p">.(&lt;/span>&lt;span class="kt">float64&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">&amp;gt;&lt;/span> &lt;span class="nx">b&lt;/span>&lt;span class="p">.(&lt;/span>&lt;span class="kt">float64&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">11&lt;/span>&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nx">a&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">12&lt;/span>&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">13&lt;/span>&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nx">b&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">14&lt;/span>&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">15&lt;/span>&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="kc">nil&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">16&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>Go 1.18 引入了泛型（类型参数），但之前的代码风格仍然广泛存在。&lt;/li>
+&lt;/ul>
+&lt;h3 class="relative group">3. &lt;strong>没有类继承（OOP 风格）&lt;/strong>
+&lt;div id="3-没有类继承oop-风格" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#3-%e6%b2%a1%e6%9c%89%e7%b1%bb%e7%bb%a7%e6%89%bfoop-%e9%a3%8e%e6%a0%bc" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h3>
+&lt;ul>
+&lt;li>Go语言没有类（&lt;code>class&lt;/code>）和继承（&lt;code>inheritance&lt;/code>），而是使用结构体（&lt;code>struct&lt;/code>）和接口（&lt;code>interface&lt;/code>）的组合来实现类似功能。&lt;/li>
+&lt;li>&lt;strong>示例&lt;/strong>：
+&lt;div class="code-block-wrapper">
+&lt;div class="code-header">
+&lt;span class="language-label">
+&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
+&lt;span class="language-name">go&lt;/span>
+&lt;/span>
+&lt;div class="code-buttons">
+&lt;button class="copy-button">
+&lt;i class="fas fa-copy">&lt;/i>
+&lt;span>复制&lt;/span>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="ln"> 1&lt;/span>&lt;span class="cl">&lt;span class="kd">type&lt;/span> &lt;span class="nx">Animal&lt;/span> &lt;span class="kd">struct&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 2&lt;/span>&lt;span class="cl"> &lt;span class="nx">Name&lt;/span> &lt;span class="kt">string&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 3&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 4&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 5&lt;/span>&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">a&lt;/span> &lt;span class="o">*&lt;/span>&lt;span class="nx">Animal&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="nf">Speak&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 6&lt;/span>&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">a&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Name&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;makes a sound&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 7&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 8&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 9&lt;/span>&lt;span class="cl">&lt;span class="kd">type&lt;/span> &lt;span class="nx">Dog&lt;/span> &lt;span class="kd">struct&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">10&lt;/span>&lt;span class="cl"> &lt;span class="nx">Animal&lt;/span> &lt;span class="c1">// 嵌入结构体（组合而非继承）&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">11&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">12&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">13&lt;/span>&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">d&lt;/span> &lt;span class="o">*&lt;/span>&lt;span class="nx">Dog&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="nf">Speak&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">14&lt;/span>&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">d&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Name&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;barks&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">15&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>这种方式更接近组合（composition over inheritance），而非传统OOP的继承机制。&lt;/li>
+&lt;/ul>
+&lt;h3 class="relative group">4. &lt;strong>没有异常处理（&lt;code>try-catch&lt;/code>）&lt;/strong>
+&lt;div id="4-没有异常处理" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#4-%e6%b2%a1%e6%9c%89%e5%bc%82%e5%b8%b8%e5%a4%84%e7%90%86" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h3>
+&lt;ul>
+&lt;li>Go语言使用显式的错误返回（&lt;code>error&lt;/code> 类型）而非异常机制，要求开发者手动检查错误。&lt;/li>
+&lt;li>&lt;strong>示例&lt;/strong>：
+&lt;div class="code-block-wrapper">
+&lt;div class="code-header">
+&lt;span class="language-label">
+&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
+&lt;span class="language-name">go&lt;/span>
+&lt;/span>
+&lt;div class="code-buttons">
+&lt;button class="copy-button">
+&lt;i class="fas fa-copy">&lt;/i>
+&lt;span>复制&lt;/span>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="nx">file&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">os&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Open&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;example.txt&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">&lt;span class="k">if&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="kc">nil&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl"> &lt;span class="nx">log&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Fatal&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">err&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl">&lt;span class="k">defer&lt;/span> &lt;span class="nx">file&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Close&lt;/span>&lt;span class="p">()&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>相比之下，Java、Python等语言使用&lt;code>try-catch&lt;/code>机制，而Go选择更可控的错误处理方式。&lt;/li>
+&lt;/ul>
+&lt;h3 class="relative group">5. &lt;strong>没有&lt;code>while&lt;/code>循环&lt;/strong>
+&lt;div id="5-没有" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#5-%e6%b2%a1%e6%9c%89" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h3>
+&lt;ul>
+&lt;li>Go语言只有&lt;code>for&lt;/code>循环，没有单独的&lt;code>while&lt;/code>关键字。&lt;code>while&lt;/code>循环的功能通过&lt;code>for&lt;/code>实现。&lt;/li>
+&lt;li>&lt;strong>示例&lt;/strong>：
+&lt;div class="code-block-wrapper">
+&lt;div class="code-header">
+&lt;span class="language-label">
+&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
+&lt;span class="language-name">go&lt;/span>
+&lt;/span>
+&lt;div class="code-buttons">
+&lt;button class="copy-button">
+&lt;i class="fas fa-copy">&lt;/i>
+&lt;span>复制&lt;/span>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="c1">// Go 的 while 循环等效写法&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">&lt;span class="k">for&lt;/span> &lt;span class="nx">condition&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl"> &lt;span class="c1">// 循环体&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">6&lt;/span>&lt;span class="cl">&lt;span class="c1">// 无限循环&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">7&lt;/span>&lt;span class="cl">&lt;span class="k">for&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">8&lt;/span>&lt;span class="cl"> &lt;span class="c1">// 循环体&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">9&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>这种设计减少了语言的关键字数量，使语法更简洁。&lt;/li>
+&lt;/ul>
+&lt;h3 class="relative group">6. &lt;strong>没有函数重载（Overloading）&lt;/strong>
+&lt;div id="6-没有函数重载overloading" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#6-%e6%b2%a1%e6%9c%89%e5%87%bd%e6%95%b0%e9%87%8d%e8%bd%bdoverloading" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h3>
+&lt;ul>
+&lt;li>Go不支持函数名重载（即相同函数名不同参数列表），而是鼓励使用不同的函数名或可变参数（&lt;code>...&lt;/code>）。&lt;/li>
+&lt;li>&lt;strong>示例&lt;/strong>：
+&lt;div class="code-block-wrapper">
+&lt;div class="code-header">
+&lt;span class="language-label">
+&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
+&lt;span class="language-name">go&lt;/span>
+&lt;/span>
+&lt;div class="code-buttons">
+&lt;button class="copy-button">
+&lt;i class="fas fa-copy">&lt;/i>
+&lt;span>复制&lt;/span>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">AddInt&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">a&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">b&lt;/span> &lt;span class="kt">int&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="kt">int&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nx">a&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="nx">b&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">AddFloat&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">a&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">b&lt;/span> &lt;span class="kt">float64&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="kt">float64&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">6&lt;/span>&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nx">a&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="nx">b&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">7&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>相比之下，C++、Java等语言允许函数重载。&lt;/li>
+&lt;/ul>
+&lt;h3 class="relative group">7. &lt;strong>&lt;code>switch&lt;/code> 语句的独特设计&lt;/strong>
+&lt;div id="7-switch" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#7-switch" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h3>
+&lt;ul>
+&lt;li>Go的&lt;code>switch&lt;/code>语句不需要&lt;code>break&lt;/code>，默认不会“穿透”（fallthrough），除非显式使用&lt;code>fallthrough&lt;/code>关键字。&lt;/li>
+&lt;li>&lt;strong>示例&lt;/strong>：
+&lt;div class="code-block-wrapper">
+&lt;div class="code-header">
+&lt;span class="language-label">
+&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
+&lt;span class="language-name">go&lt;/span>
+&lt;/span>
+&lt;div class="code-buttons">
+&lt;button class="copy-button">
+&lt;i class="fas fa-copy">&lt;/i>
+&lt;span>复制&lt;/span>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="k">switch&lt;/span> &lt;span class="nx">value&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">&lt;span class="k">case&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;One&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">&lt;span class="k">case&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;Two&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">6&lt;/span>&lt;span class="cl"> &lt;span class="k">fallthrough&lt;/span> &lt;span class="c1">// 显式继续执行下一个 case&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">7&lt;/span>&lt;span class="cl">&lt;span class="k">case&lt;/span> &lt;span class="mi">3&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">8&lt;/span>&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;Three&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">9&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>这种设计避免了C/C++中常见的&lt;code>switch&lt;/code>穿透问题。&lt;/li>
+&lt;/ul>
+&lt;h3 class="relative group">8. &lt;strong>&lt;code>defer&lt;/code> 关键字&lt;/strong>
+&lt;div id="8-defer" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#8-defer" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h3>
+&lt;ul>
+&lt;li>Go的&lt;code>defer&lt;/code>用于延迟执行函数调用，通常用于资源清理（如文件关闭、锁释放等），这在其他语言中较少见。&lt;/li>
+&lt;li>&lt;strong>示例&lt;/strong>：
+&lt;div class="code-block-wrapper">
+&lt;div class="code-header">
+&lt;span class="language-label">
+&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
+&lt;span class="language-name">go&lt;/span>
+&lt;/span>
+&lt;div class="code-buttons">
+&lt;button class="copy-button">
+&lt;i class="fas fa-copy">&lt;/i>
+&lt;span>复制&lt;/span>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="nx">file&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">os&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Open&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;file.txt&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">&lt;span class="k">if&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="kc">nil&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl"> &lt;span class="nx">log&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Fatal&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">err&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl">&lt;span class="k">defer&lt;/span> &lt;span class="nx">file&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Close&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="c1">// 确保函数退出时关闭文件&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>类似的功能在C++中可能使用RAII，而在Python中可能使用&lt;code>with&lt;/code>语句。&lt;/li>
+&lt;/ul>
+&lt;h3 class="relative group">9. &lt;strong>&lt;code>:=&lt;/code> 短变量声明&lt;/strong>
+&lt;div id="9-" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#9-" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h3>
+&lt;ul>
+&lt;li>Go使用&lt;code>:=&lt;/code>进行短变量声明，编译器自动推断类型，这在静态类型语言中较为少见。&lt;/li>
+&lt;li>&lt;strong>示例&lt;/strong>：
+&lt;div class="code-block-wrapper">
+&lt;div class="code-header">
+&lt;span class="language-label">
+&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
+&lt;span class="language-name">go&lt;/span>
+&lt;/span>
+&lt;div class="code-buttons">
+&lt;button class="copy-button">
+&lt;i class="fas fa-copy">&lt;/i>
+&lt;span>复制&lt;/span>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="nx">x&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="mi">42&lt;/span> &lt;span class="c1">// 自动推断为 int&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">&lt;span class="nx">name&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="s">&amp;#34;Alice&amp;#34;&lt;/span> &lt;span class="c1">// 自动推断为 string&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>类似的功能在Python中是动态类型的自然特性，但在静态类型语言中较少见。&lt;/li>
+&lt;/ul>
+&lt;h3 class="relative group">10. &lt;strong>没有&lt;code>do-while&lt;/code>循环&lt;/strong>
+&lt;div id="10-没有" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#10-%e6%b2%a1%e6%9c%89" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h3>
+&lt;ul>
+&lt;li>Go语言没有&lt;code>do-while&lt;/code>循环结构，类似的功能需要通过&lt;code>for&lt;/code>循环模拟。&lt;/li>
+&lt;li>&lt;strong>示例&lt;/strong>：
+&lt;div class="code-block-wrapper">
+&lt;div class="code-header">
+&lt;span class="language-label">
+&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
+&lt;span class="language-name">go&lt;/span>
+&lt;/span>
+&lt;div class="code-buttons">
+&lt;button class="copy-button">
+&lt;i class="fas fa-copy">&lt;/i>
+&lt;span>复制&lt;/span>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="k">for&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl"> &lt;span class="c1">// 循环体&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">!&lt;/span>&lt;span class="nx">condition&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl"> &lt;span class="k">break&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">6&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ul>
+&lt;h3 class="relative group">总结
+&lt;div id="总结" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%80%bb%e7%bb%93" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h3>
+&lt;p>Go语言的语法设计强调&lt;strong>简洁性&lt;/strong>和&lt;strong>明确性&lt;/strong>，因此它移除了许多其他语言中常见的抽象或复杂特性（如三元运算符、异常、类继承等），转而采用更直接的方式（如&lt;code>if-else&lt;/code>、错误返回、组合模式）。这些设计选择使Go代码更易读、易维护，但也可能让习惯其他语言的开发者感到陌生。&lt;/p></description></item><item><title>Gochannel</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/coding/golang/gochannel/</link><pubDate>Tue, 05 Aug 2025 17:37:17 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/coding/golang/gochannel/</guid><description>&lt;h1 class="relative group">Go 语言 Channel 详解及其与 Linux 管道的比较
 &lt;div id="go-语言-channel-详解及其与-linux-管道的比较" class="anchor">&lt;/div>
 &lt;span
 class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
@@ -3108,7 +3745,6 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e9%80%9a%e7%94%a8%e7%bc%96%e7%a8%8b%e6%80%9d%e6%83%b3" aria-label="锚点">#&lt;/a>
 &lt;/span>
 &lt;/h2>
-&lt;p>1&lt;/p>
 &lt;h3 class="relative group">闭包
 &lt;div id="闭包" class="anchor">&lt;/div>
 &lt;span
@@ -3116,7 +3752,6 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e9%97%ad%e5%8c%85" aria-label="锚点">#&lt;/a>
 &lt;/span>
 &lt;/h3>
-&lt;p>1&lt;/p>
 &lt;h3 class="relative group">多态
 &lt;div id="多态" class="anchor">&lt;/div>
 &lt;span
@@ -3124,14 +3759,13 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%a4%9a%e6%80%81" aria-label="锚点">#&lt;/a>
 &lt;/span>
 &lt;/h3>
-&lt;p>1&lt;br>
-1&lt;br>
-1&lt;br>
-1&lt;br>
-1&lt;br>
-1&lt;br>
-1&lt;br>
-1&lt;/p>
+&lt;h3 class="relative group">泛型
+&lt;div id="泛型" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%b3%9b%e5%9e%8b" aria-label="锚点">#&lt;/a>
+&lt;/span>
+&lt;/h3>
 &lt;h2 class="relative group">前端
 &lt;div id="前端" class="anchor">&lt;/div>
 &lt;span
