@@ -1,0 +1,40 @@
+
+.article-list {
+    list-style: none; /* 移除默认列表标记 */
+    padding-left: 0;  /* 移除默认缩进 */
+    max-width: 65ch; /* 可选：限制列表宽度 */
+    margin: 0 auto;   /* 可选：居中列表 */
+  }
+  
+  .article-list li {
+    padding: 1rem 0;  /* 增加垂直间距 */
+    border-bottom: 1px solid #eee; /* 可选：添加分隔线 */
+  }
+  
+  .article-list li a {
+    font-size: 1.1rem;  /* 标题字体大小 */
+    font-weight: 600;   /* 标题加粗 */
+    color: #333;       /* 标题颜色 */
+    text-decoration: none; /* 移除下划线 */
+    display: block;     /* 使标题单独一行 */
+    margin-bottom: 0.5rem; /* 标题与下方元素的间距 */
+  }
+  
+  .article-list li a:hover {
+    color: #0066cc;    /* 悬停颜色 */
+  }
+  
+  .article-list .meta {
+    display: block;    /* 使元数据单独一行 */
+    font-size: 0.85rem; /* 较小字体 */
+    color: #666;       /* 较浅颜色 */
+  }
+  
+  .article-list .date {
+    display: inline-block;
+    margin-right: 1rem; /* 日期与分类的间距 */
+  }
+  
+  .article-list .section {
+    display: inline-block;
+  }

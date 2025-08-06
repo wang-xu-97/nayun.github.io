@@ -1,0 +1,18 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  <ul class="article-list">
+    {{ $paginator := .Paginate (where .Site.RegularPages "Kind" "page") }}
+    {{ range $paginator.Pages }}
+      <li>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        <span class="meta">
+          <span class="date">{{ .Date.Format "2006-01-02" }}</span>
+          <span class="section">{{ with .CurrentSection }}{{ .Title }}{{ end }}</span>
+        </span>
+      </li>
+    {{ end }}
+  </ul>
+
+  <!-- 添加分页导航 -->
+  {{ template "partials/pagination.html" . }}
+{{ end }}
