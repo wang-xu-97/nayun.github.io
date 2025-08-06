@@ -253,7 +253,7 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;/div>
 &lt;ol start="3">
 &lt;li>&lt;a
-href="https://wang-xu-97.github.io/nayun.github.io/tech/general/%e4%b8%ad%e9%97%b4%e4%bb%b6%e5%b7%a5%e5%8e%82">go 中间件工厂&lt;/a>
+href="https://wang-xu-97.github.io/nayun.github.io/tech/general/%e7%bc%96%e7%a8%8b%e6%a6%82%e5%bf%b5/%e4%b8%ad%e9%97%b4%e4%bb%b6%e5%b7%a5%e5%8e%82">go 中间件工厂&lt;/a>
 &lt;/li>
 &lt;li>带配置的函数工厂&lt;/li>
 &lt;/ol>
