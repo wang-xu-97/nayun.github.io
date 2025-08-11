@@ -141,7 +141,18 @@
       <pubDate>Tue, 29 Jul 2025 13:50:23 +0800</pubDate>
       
       <guid>http://localhost:43997/nayun.github.io/art/%E5%8D%9A%E5%BE%B7%E4%B9%8B%E9%97%A83/</guid>
-      <description>&lt;h1 class=&#34;relative group&#34;&gt;build 
+      <description>&lt;h1 class=&#34;relative group&#34;&gt;todo 
+    &lt;div id=&#34;todo&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#todo&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;        
+    
+&lt;/h1&gt;
+&lt;p&gt;星辰帕&lt;/p&gt;
+
+&lt;h1 class=&#34;relative group&#34;&gt;build 
     &lt;div id=&#34;build&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
     &lt;span
