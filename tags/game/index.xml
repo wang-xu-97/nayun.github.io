@@ -258,10 +258,13 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;ol>
 &lt;li>卡疾走buff 1R&lt;/li>
 &lt;li>开大跳/羽落 10R&lt;/li>
+&lt;li>飞行 10R&lt;/li>
 &lt;/ol>
 &lt;/li>
 &lt;li>增伤：
 &lt;ol>
+&lt;li>蘸火：1d4火焰增伤 4R&lt;/li>
+&lt;li>武器蘸毒 10R&lt;/li>
 &lt;li>生死离别 5R&lt;/li>
 &lt;/ol>
 &lt;/li>
@@ -271,6 +274,7 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;li>喝药+轻声承诺 2R&lt;/li>
 &lt;/ol>
 &lt;/li>
+&lt;li>防御：朦胧术+镜像术 10R&lt;/li>
 &lt;li>其他：
 &lt;ol>
 &lt;li>加速术 10R，加速药 3R&lt;/li>
@@ -305,6 +309,31 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;ol>
 &lt;li>第一种：站在敌人锥形视野范围外（背后），且在敌人视野距离内，蹲伏，使用敌对动作：攻击、标记&lt;/li>
 &lt;li>第二种：吃隐身药水，站在敌人视野内，使用敌对动作显形&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>具体build开战准备（做操）
+&lt;ol>
+&lt;li>星辰战帕
+&lt;ol>
+&lt;li>普通战斗：脆弱诅咒&lt;/li>
+&lt;li>Boss/困难战斗：
+&lt;ol>
+&lt;li>镜像术&lt;/li>
+&lt;li>橡棍术（后期魅调&amp;gt;力调）&lt;/li>
+&lt;li>神圣武器&lt;/li>
+&lt;li>飞行药水&lt;/li>
+&lt;li>武器蘸毒&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>轻声承诺+卡哈项链：提前扔血瓶&lt;/li>
+&lt;li>剑咏
+&lt;ol>
+&lt;li>镜像、朦胧/加速&lt;/li>
+&lt;li>生死离别&lt;/li>
+&lt;/ol>
+&lt;/li>
 &lt;/ol>
 &lt;/li>
 &lt;/ol>
