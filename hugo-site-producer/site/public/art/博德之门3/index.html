@@ -180,7 +180,7 @@ build # 职业能力 # 参考 bg3能力一图流 星辰战帕 # 加点：
     "keywords": ["艺","game"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "711"
+    "wordCount": "720"
   }]
   </script>
 
@@ -658,7 +658,7 @@ build # 职业能力 # 参考 bg3能力一图流 星辰战帕 # 加点：
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-07-29T13:50:23&#43;08:00">July 29, 2025</time><span class="px-2 text-primary-500">&middot;</span><span>711 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">4 分钟</span>
+      <time datetime="2025-07-29T13:50:23&#43;08:00">July 29, 2025</time><span class="px-2 text-primary-500">&middot;</span><span>720 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">4 分钟</span>
     
 
     
@@ -744,6 +744,7 @@ build # 职业能力 # 参考 bg3能力一图流 星辰战帕 # 加点：
         <li><a href="#基础负重规则">基础负重规则</a></li>
         <li><a href="#专注豁免">专注豁免</a></li>
         <li><a href="#命中判定">命中判定</a></li>
+        <li><a href="#职业施法属性法术位数量法术环位计算">职业施法属性、法术位数量/法术环位计算</a></li>
       </ul>
     </li>
     <li><a href="#机制">机制</a>
@@ -764,7 +765,6 @@ build # 职业能力 # 参考 bg3能力一图流 星辰战帕 # 加点：
         </li>
         <li><a href="#多动">多动</a></li>
         <li><a href="#附动">附动</a></li>
-        <li><a href="#法术位数量法术环位计算">法术位数量/法术环位计算</a></li>
         <li><a href="#附伤装备表">附伤装备表</a></li>
       </ul>
     </li>
@@ -834,6 +834,7 @@ build # 职业能力 # 参考 bg3能力一图流 星辰战帕 # 加点：
         <li><a href="#基础负重规则">基础负重规则</a></li>
         <li><a href="#专注豁免">专注豁免</a></li>
         <li><a href="#命中判定">命中判定</a></li>
+        <li><a href="#职业施法属性法术位数量法术环位计算">职业施法属性、法术位数量/法术环位计算</a></li>
       </ul>
     </li>
     <li><a href="#机制">机制</a>
@@ -854,7 +855,6 @@ build # 职业能力 # 参考 bg3能力一图流 星辰战帕 # 加点：
         </li>
         <li><a href="#多动">多动</a></li>
         <li><a href="#附动">附动</a></li>
-        <li><a href="#法术位数量法术环位计算">法术位数量/法术环位计算</a></li>
         <li><a href="#附伤装备表">附伤装备表</a></li>
       </ul>
     </li>
@@ -1568,6 +1568,189 @@ build # 职业能力 # 参考 bg3能力一图流 星辰战帕 # 加点：
 <li>近战吃力量，远程吃敏捷，灵巧武器取<code>max(力,敏)</code></li>
 </ol>
 
+<h2 class="relative group">职业施法属性、法术位数量/法术环位计算 
+    <div id="职业施法属性法术位数量法术环位计算" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e8%81%8c%e4%b8%9a%e6%96%bd%e6%b3%95%e5%b1%9e%e6%80%a7%e6%b3%95%e6%9c%af%e4%bd%8d%e6%95%b0%e9%87%8f%e6%b3%95%e6%9c%af%e7%8e%af%e4%bd%8d%e8%ae%a1%e7%ae%97" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+<ol>
+<li>
+<p>施法属性是最后一种兼职的职业施法属性</p>
+<table>
+  <thead>
+      <tr>
+          <th><strong>属性</strong></th>
+          <th><strong>对应职业</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>智力（INT）</strong></td>
+          <td>法师、奥法骑士、诡术师</td>
+      </tr>
+      <tr>
+          <td><strong>感知（WIS）</strong></td>
+          <td>牧师、德鲁伊、游侠</td>
+      </tr>
+      <tr>
+          <td><strong>魅力（CHA）</strong></td>
+          <td>吟游诗人、圣武士、术士、邪术师</td>
+      </tr>
+  </tbody>
+</table>
+</li>
+<li>
+<p>施法者区分</p>
+<ol>
+<li>完全施法者：1级职业等级=1级有效施法者等级(ESL)
+<ol>
+<li>诗、牧、德、术、法</li>
+</ol>
+</li>
+<li>半施法者：1级职业等级=0.5级ESL（向下取整，如3级=1级ESL）
+<ol>
+<li>游侠、圣武士</li>
+</ol>
+</li>
+<li>1/3施法者：1级职业等级=1/3级ESL（向下取整）
+<ol>
+<li>诡术师（游荡子职）、奥法骑士</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>有效施法者等级对应法术环位表</p>
+<table>
+  <thead>
+      <tr>
+          <th>ESL</th>
+          <th>1环数量</th>
+          <th>2环数量</th>
+          <th>3环数量</th>
+          <th>4环数量</th>
+          <th>5环数量</th>
+          <th>6环数量</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>3</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>4</td>
+          <td>2</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>4</td>
+          <td>3</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>4</td>
+          <td>3</td>
+          <td>2</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td>4</td>
+          <td>3</td>
+          <td>3</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+      </tr>
+      <tr>
+          <td>7</td>
+          <td>4</td>
+          <td>3</td>
+          <td>3</td>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+      </tr>
+      <tr>
+          <td>8</td>
+          <td>4</td>
+          <td>3</td>
+          <td>3</td>
+          <td>2</td>
+          <td>0</td>
+          <td>0</td>
+      </tr>
+      <tr>
+          <td>9</td>
+          <td>4</td>
+          <td>3</td>
+          <td>3</td>
+          <td>3</td>
+          <td>1</td>
+          <td>0</td>
+      </tr>
+      <tr>
+          <td>10</td>
+          <td>4</td>
+          <td>3</td>
+          <td>3</td>
+          <td>3</td>
+          <td>2</td>
+          <td>0</td>
+      </tr>
+      <tr>
+          <td>11</td>
+          <td>4</td>
+          <td>3</td>
+          <td>3</td>
+          <td>3</td>
+          <td>2</td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>12</td>
+          <td>4</td>
+          <td>3</td>
+          <td>3</td>
+          <td>3</td>
+          <td>2</td>
+          <td>1</td>
+      </tr>
+  </tbody>
+</table>
+</li>
+</ol>
+
 <h1 class="relative group">机制 
     <div id="机制" class="anchor"></div>
     
@@ -1902,162 +2085,6 @@ build # 职业能力 # 参考 bg3能力一图流 星辰战帕 # 加点：
 </li>
 <li>刺客附动隐蔽</li>
 <li>战士回气、术士回点..</li>
-</ol>
-
-<h2 class="relative group">法术位数量/法术环位计算 
-    <div id="法术位数量法术环位计算" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%b3%95%e6%9c%af%e4%bd%8d%e6%95%b0%e9%87%8f%e6%b3%95%e6%9c%af%e7%8e%af%e4%bd%8d%e8%ae%a1%e7%ae%97" aria-label="锚点">#</a>
-    </span>        
-    
-</h2>
-<ol>
-<li>施法者区分
-<ol>
-<li>完全施法者：1级职业等级=1级有效施法者等级(ESL)
-<ol>
-<li>诗、牧、德、术、法</li>
-</ol>
-</li>
-<li>半施法者：1级职业等级=0.5级ESL（向下取整，如3级=1级ESL）
-<ol>
-<li>游侠、圣武士</li>
-</ol>
-</li>
-<li>1/3施法者：1级职业等级=1/3级ESL（向下取整）
-<ol>
-<li>诡术师（游荡子职）、奥法骑士</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>有效施法者等级对应法术环位表
-<table>
-  <thead>
-      <tr>
-          <th>ESL</th>
-          <th>1环数量</th>
-          <th>2环数量</th>
-          <th>3环数量</th>
-          <th>4环数量</th>
-          <th>5环数量</th>
-          <th>6环数量</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>1</td>
-          <td>2</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-      </tr>
-      <tr>
-          <td>2</td>
-          <td>3</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-      </tr>
-      <tr>
-          <td>3</td>
-          <td>4</td>
-          <td>2</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-      </tr>
-      <tr>
-          <td>4</td>
-          <td>4</td>
-          <td>3</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-      </tr>
-      <tr>
-          <td>5</td>
-          <td>4</td>
-          <td>3</td>
-          <td>2</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-      </tr>
-      <tr>
-          <td>6</td>
-          <td>4</td>
-          <td>3</td>
-          <td>3</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-      </tr>
-      <tr>
-          <td>7</td>
-          <td>4</td>
-          <td>3</td>
-          <td>3</td>
-          <td>1</td>
-          <td>0</td>
-          <td>0</td>
-      </tr>
-      <tr>
-          <td>8</td>
-          <td>4</td>
-          <td>3</td>
-          <td>3</td>
-          <td>2</td>
-          <td>0</td>
-          <td>0</td>
-      </tr>
-      <tr>
-          <td>9</td>
-          <td>4</td>
-          <td>3</td>
-          <td>3</td>
-          <td>3</td>
-          <td>1</td>
-          <td>0</td>
-      </tr>
-      <tr>
-          <td>10</td>
-          <td>4</td>
-          <td>3</td>
-          <td>3</td>
-          <td>3</td>
-          <td>2</td>
-          <td>0</td>
-      </tr>
-      <tr>
-          <td>11</td>
-          <td>4</td>
-          <td>3</td>
-          <td>3</td>
-          <td>3</td>
-          <td>2</td>
-          <td>1</td>
-      </tr>
-      <tr>
-          <td>12</td>
-          <td>4</td>
-          <td>3</td>
-          <td>3</td>
-          <td>3</td>
-          <td>2</td>
-          <td>1</td>
-      </tr>
-  </tbody>
-</table>
-</li>
 </ol>
 
 <h2 class="relative group">附伤装备表 
