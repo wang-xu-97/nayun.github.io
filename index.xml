@@ -3228,6 +3228,12 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;/li>
 &lt;/ol>
 &lt;/li>
+&lt;li>敌人受惊（敌人没有警觉特性）
+&lt;ol>
+&lt;li>第一种：站在敌人视野外（背后），且在敌人视野距离内，蹲伏，使用敌对动作：攻击、标记&lt;/li>
+&lt;li>第二种：吃隐身药水，站在敌人视野内，使用敌对动作显形&lt;/li>
+&lt;/ol>
+&lt;/li>
 &lt;/ol>
 &lt;h2 class="relative group">2. 战斗中无消耗动作
 &lt;div id="2-战斗中无消耗动作" class="anchor">&lt;/div>
