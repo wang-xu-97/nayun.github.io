@@ -1,660 +1,660 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>前端 on nayun blog</title><link>https://wang-xu-97.github.io/nayun.github.io/tags/%E5%89%8D%E7%AB%AF/</link><description>Recent content in 前端 on nayun blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>© 2025 nayun</copyright><lastBuildDate>Mon, 04 Aug 2025 17:11:01 +0800</lastBuildDate><atom:link href="https://wang-xu-97.github.io/nayun.github.io/tags/%E5%89%8D%E7%AB%AF/index.xml" rel="self" type="application/rss+xml"/><item><title>LearnHugo250804</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/learnhugo250804/</link><pubDate>Mon, 04 Aug 2025 17:11:01 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/learnhugo250804/</guid><description>&lt;h2 class="relative group">设置code-header.language-label点击折叠
-&lt;div id="设置code-headerlanguage-label点击折叠" class="anchor">&lt;/div>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>前端 on nayun blog</title><link>https://wang-xu-97.github.io/nayun.github.io/tags/%E5%89%8D%E7%AB%AF/</link><description>Recent content in 前端 on nayun blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>© 2025 nayun</copyright><lastBuildDate>Mon, 04 Aug 2025 17:11:01 +0800</lastBuildDate><atom:link href="https://wang-xu-97.github.io/nayun.github.io/tags/%E5%89%8D%E7%AB%AF/index.xml" rel="self" type="application/rss+xml"/><item><title>LearnHugo250804</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/learnhugo250804/</link><pubDate>Mon, 04 Aug 2025 17:11:01 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/learnhugo250804/</guid><description>&lt;h2 class="relative group"&gt;设置code-header.language-label点击折叠
+&lt;div id="设置code-headerlanguage-label点击折叠" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e8%ae%be%e7%bd%aecode-headerlanguage-label%e7%82%b9%e5%87%bb%e6%8a%98%e5%8f%a0" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h2>
-&lt;ol>
-&lt;li>设置悬停spacing扩展效果&lt;/li>
-&lt;/ol>
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">css&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-css" data-lang="css">&lt;span class="line">&lt;span class="ln"> 1&lt;/span>&lt;span class="cl">&lt;span class="p">.&lt;/span>&lt;span class="nc">language-brackets&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 2&lt;/span>&lt;span class="cl"> &lt;span class="c">/* 全属性切换过渡动画效果 */&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 3&lt;/span>&lt;span class="cl"> &lt;span class="k">transition&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">all&lt;/span> &lt;span class="mf">0.3&lt;/span>&lt;span class="kt">s&lt;/span> &lt;span class="kc">ease&lt;/span>&lt;span class="p">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 4&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 5&lt;/span>&lt;span class="cl">&lt;span class="c">/* 悬停间距扩展，颜色高亮 */&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 6&lt;/span>&lt;span class="cl">&lt;span class="p">.&lt;/span>&lt;span class="nc">language-label&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="nd">hover&lt;/span> &lt;span class="p">.&lt;/span>&lt;span class="nc">language-brackets&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 7&lt;/span>&lt;span class="cl"> &lt;span class="k">letter-spacing&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">3&lt;/span>&lt;span class="kt">px&lt;/span>&lt;span class="p">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 8&lt;/span>&lt;span class="cl"> &lt;span class="k">color&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="nf">var&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">--&lt;/span>&lt;span class="n">code&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">header&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">hover&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="kc">color&lt;/span>&lt;span class="p">);&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 9&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">10&lt;/span>&lt;span class="cl">&lt;span class="p">.&lt;/span>&lt;span class="nc">language-label&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="nd">hover&lt;/span> &lt;span class="p">.&lt;/span>&lt;span class="nc">language-name&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">11&lt;/span>&lt;span class="cl"> &lt;span class="k">color&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="nf">var&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">--&lt;/span>&lt;span class="n">code&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">header&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">hover&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="kc">color&lt;/span>&lt;span class="p">);&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">12&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;ol start="2">
-&lt;li>js设置点击label切换chroma.collapsed&lt;/li>
-&lt;/ol>
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">javascript&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="line">&lt;span class="ln"> 1&lt;/span>&lt;span class="cl"> &lt;span class="nb">document&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">querySelectorAll&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;.language-label&amp;#39;&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="nx">forEach&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">button&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 2&lt;/span>&lt;span class="cl"> &lt;span class="nx">button&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">addEventListener&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;click&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">()&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 3&lt;/span>&lt;span class="cl"> &lt;span class="kr">const&lt;/span> &lt;span class="nx">codeBlock&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">button&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">closest&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;.code-block-wrapper&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 4&lt;/span>&lt;span class="cl"> &lt;span class="kr">const&lt;/span> &lt;span class="nx">chroma&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">codeBlock&lt;/span>&lt;span class="o">?&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">querySelector&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;pre.chroma&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 5&lt;/span>&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">chroma&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 6&lt;/span>&lt;span class="cl"> &lt;span class="nx">chroma&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">classList&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">toggle&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;collapsed&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 7&lt;/span>&lt;span class="cl"> &lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 8&lt;/span>&lt;span class="cl"> &lt;span class="k">else&lt;/span> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">error&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;chroma折叠失败&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 9&lt;/span>&lt;span class="cl"> &lt;span class="p">});&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">10&lt;/span>&lt;span class="cl"> &lt;span class="p">});&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;ol start="3">
-&lt;li>设置pre.chroma.collapsed折叠样式&lt;/li>
-&lt;/ol>
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">css&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-css" data-lang="css">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="nt">pre&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">chroma&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">collapsed&lt;/span>&lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl"> &lt;span class="c">/* 折叠方法：设置高度为0 */&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl"> &lt;span class="k">max-height&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="cp">!important&lt;/span>&lt;span class="p">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl"> &lt;span class="c">/* 去除溢出拖动条 */&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl"> &lt;span class="k">overflow&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">hidden&lt;/span> &lt;span class="cp">!important&lt;/span>&lt;span class="p">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">6&lt;/span>&lt;span class="cl"> &lt;span class="c">/* 去除顽固padding */&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">7&lt;/span>&lt;span class="cl"> &lt;span class="k">padding&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="cp">!important&lt;/span>&lt;span class="p">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">8&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;h2 class="relative group">设置代码块换行按钮功能
-&lt;div id="设置代码块换行按钮功能" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e8%ae%be%e7%bd%aecode-headerlanguage-label%e7%82%b9%e5%87%bb%e6%8a%98%e5%8f%a0" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;设置悬停spacing扩展效果&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;css&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-css" data-lang="css"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;language-brackets&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 2&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="c"&gt;/* 全属性切换过渡动画效果 */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 3&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;transition&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;all&lt;/span&gt; &lt;span class="mf"&gt;0.3&lt;/span&gt;&lt;span class="kt"&gt;s&lt;/span&gt; &lt;span class="kc"&gt;ease&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;/* 悬停间距扩展，颜色高亮 */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 6&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;language-label&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;hover&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;language-brackets&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;letter-spacing&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nf"&gt;var&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;code&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;header&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;hover&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="kc"&gt;color&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;language-label&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;hover&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;language-name&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nf"&gt;var&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;code&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;header&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;hover&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="kc"&gt;color&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;12&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;js设置点击label切换chroma.collapsed&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;javascript&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-javascript" data-lang="javascript"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 1&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;querySelectorAll&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;.language-label&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="nx"&gt;forEach&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;button&lt;/span&gt; &lt;span class="p"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 2&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;button&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;addEventListener&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;click&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 3&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;codeBlock&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;button&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;closest&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;.code-block-wrapper&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 4&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;chroma&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;codeBlock&lt;/span&gt;&lt;span class="o"&gt;?&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;querySelector&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;pre.chroma&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 5&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;chroma&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 6&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;chroma&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;classList&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;toggle&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;collapsed&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;error&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;chroma折叠失败&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;});&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;});&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;ol start="3"&gt;
+&lt;li&gt;设置pre.chroma.collapsed折叠样式&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;css&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-css" data-lang="css"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;pre&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;chroma&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;collapsed&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="c"&gt;/* 折叠方法：设置高度为0 */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;max-height&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="cp"&gt;!important&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="c"&gt;/* 去除溢出拖动条 */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;overflow&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;hidden&lt;/span&gt; &lt;span class="cp"&gt;!important&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;6&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="c"&gt;/* 去除顽固padding */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;7&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;padding&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="cp"&gt;!important&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;8&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 class="relative group"&gt;设置代码块换行按钮功能
+&lt;div id="设置代码块换行按钮功能" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e8%ae%be%e7%bd%ae%e4%bb%a3%e7%a0%81%e5%9d%97%e6%8d%a2%e8%a1%8c%e6%8c%89%e9%92%ae%e5%8a%9f%e8%83%bd" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h2>
-&lt;ol>
-&lt;li>核心样式方案：把ln设置固定宽度，cl设置为block，固定左侧间距&lt;/li>
-&lt;/ol>
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">css&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-css" data-lang="css">&lt;span class="line">&lt;span class="ln"> 1&lt;/span>&lt;span class="cl">&lt;span class="nt">pre&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">chroma&lt;/span> &lt;span class="p">.&lt;/span>&lt;span class="nc">ln&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 2&lt;/span>&lt;span class="cl"> &lt;span class="k">float&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">left&lt;/span>&lt;span class="p">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 3&lt;/span>&lt;span class="cl"> &lt;span class="c">/* 设置行号区域的宽度 */&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 4&lt;/span>&lt;span class="cl"> &lt;span class="k">width&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">20&lt;/span>&lt;span class="kt">px&lt;/span>&lt;span class="p">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 5&lt;/span>&lt;span class="cl"> &lt;span class="k">text-align&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">right&lt;/span>&lt;span class="p">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 6&lt;/span>&lt;span class="cl"> &lt;span class="k">margin-right&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">10&lt;/span>&lt;span class="kt">px&lt;/span>&lt;span class="p">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 7&lt;/span>&lt;span class="cl"> &lt;span class="k">user-select&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">none&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c">/* 禁止行号被选中 */&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 8&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 9&lt;/span>&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">10&lt;/span>&lt;span class="cl">&lt;span class="nt">pre&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">chroma&lt;/span> &lt;span class="p">.&lt;/span>&lt;span class="nc">cl&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">11&lt;/span>&lt;span class="cl"> &lt;span class="k">display&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">block&lt;/span>&lt;span class="p">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">12&lt;/span>&lt;span class="cl"> &lt;span class="k">margin-left&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">30&lt;/span>&lt;span class="kt">px&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c">/* 与行号宽度一致 */&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">13&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">14&lt;/span>&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">15&lt;/span>&lt;span class="cl">&lt;span class="nt">pre&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">chroma&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">wrap-lines&lt;/span> &lt;span class="p">.&lt;/span>&lt;span class="nc">cl&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">16&lt;/span>&lt;span class="cl"> &lt;span class="k">display&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">block&lt;/span>&lt;span class="p">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">17&lt;/span>&lt;span class="cl"> &lt;span class="k">margin-left&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">30&lt;/span>&lt;span class="kt">px&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c">/* 与行号宽度一致 */&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">18&lt;/span>&lt;span class="cl"> &lt;span class="k">white-space&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">pre-wrap&lt;/span> &lt;span class="cp">!important&lt;/span>&lt;span class="p">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">19&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;ol start="2">
-&lt;li>js代码&lt;/li>
-&lt;/ol>
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">javascript&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="line">&lt;span class="ln"> 1&lt;/span>&lt;span class="cl"> &lt;span class="nb">document&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">querySelectorAll&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;.code-block-wrapper&amp;#39;&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="nx">forEach&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">wrapper&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 2&lt;/span>&lt;span class="cl"> &lt;span class="c1">// 为每个代码块创建换行状态存储
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 3&lt;/span>&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="nx">preElement&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">wrapper&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">querySelector&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;pre.chroma&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 4&lt;/span>&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">preElement&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 5&lt;/span>&lt;span class="cl"> &lt;span class="c1">// 默认从 localStorage 读取用户偏好
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 6&lt;/span>&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="nx">wrapEnabled&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">localStorage&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">getItem&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;codeWrapEnabled&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">===&lt;/span> &lt;span class="s1">&amp;#39;true&amp;#39;&lt;/span>&lt;span class="p">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 7&lt;/span>&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">wrapEnabled&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 8&lt;/span>&lt;span class="cl"> &lt;span class="nx">preElement&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">classList&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">add&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;wrap-lines&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 9&lt;/span>&lt;span class="cl"> &lt;span class="kr">const&lt;/span> &lt;span class="nx">wrapButton&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">wrapper&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">querySelector&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;.wrap-button&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">10&lt;/span>&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">wrapButton&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">11&lt;/span>&lt;span class="cl"> &lt;span class="nx">wrapButton&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">classList&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">add&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;active&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">12&lt;/span>&lt;span class="cl"> &lt;span class="kr">const&lt;/span> &lt;span class="nx">span&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">wrapButton&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">querySelector&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;span&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">13&lt;/span>&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">span&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="nx">span&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">textContent&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;不换行&amp;#39;&lt;/span>&lt;span class="p">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">14&lt;/span>&lt;span class="cl"> &lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">15&lt;/span>&lt;span class="cl"> &lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">16&lt;/span>&lt;span class="cl"> &lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">17&lt;/span>&lt;span class="cl"> &lt;span class="p">});&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">18&lt;/span>&lt;span class="cl"> &lt;span class="c1">// 换行按钮功能
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">19&lt;/span>&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nb">document&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">addEventListener&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;click&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="kd">function&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">e&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">20&lt;/span>&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">e&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">target&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">closest&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;.wrap-button&amp;#39;&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">21&lt;/span>&lt;span class="cl"> &lt;span class="kr">const&lt;/span> &lt;span class="nx">button&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">e&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">target&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">closest&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;.wrap-button&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">22&lt;/span>&lt;span class="cl"> &lt;span class="kr">const&lt;/span> &lt;span class="nx">codeBlock&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">button&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">closest&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;.code-block-wrapper&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">23&lt;/span>&lt;span class="cl"> &lt;span class="kr">const&lt;/span> &lt;span class="nx">preElement&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">codeBlock&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">querySelector&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;pre.chroma&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">24&lt;/span>&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">25&lt;/span>&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">preElement&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">26&lt;/span>&lt;span class="cl"> &lt;span class="nx">preElement&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">classList&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">toggle&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;wrap-lines&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">27&lt;/span>&lt;span class="cl"> &lt;span class="nx">button&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">classList&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">toggle&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;active&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">28&lt;/span>&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">29&lt;/span>&lt;span class="cl"> &lt;span class="c1">// 保存用户偏好
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">30&lt;/span>&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="nx">isNowWrapped&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">preElement&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">classList&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">contains&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;wrap-lines&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">31&lt;/span>&lt;span class="cl"> &lt;span class="nx">localStorage&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">setItem&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;codeWrapEnabled&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">isNowWrapped&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">toString&lt;/span>&lt;span class="p">());&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">32&lt;/span>&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">33&lt;/span>&lt;span class="cl"> &lt;span class="c1">// 更新按钮文本
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">34&lt;/span>&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="nx">span&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">button&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">querySelector&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;span&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">35&lt;/span>&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">span&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">36&lt;/span>&lt;span class="cl"> &lt;span class="nx">span&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">textContent&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">isNowWrapped&lt;/span> &lt;span class="o">?&lt;/span> &lt;span class="s1">&amp;#39;换行&amp;#39;&lt;/span> &lt;span class="o">:&lt;/span> &lt;span class="s1">&amp;#39;不换行&amp;#39;&lt;/span>&lt;span class="p">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">37&lt;/span>&lt;span class="cl"> &lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">38&lt;/span>&lt;span class="cl"> &lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">39&lt;/span>&lt;span class="cl"> &lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">40&lt;/span>&lt;span class="cl"> &lt;span class="p">});&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div></description></item><item><title>Hugo学习250728</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250728/</link><pubDate>Mon, 28 Jul 2025 15:33:17 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250728/</guid><description>&lt;h4 class="relative group">1. 可折叠列表 HTML5 标签，折叠内容无法支持原生markdown语法
-&lt;div id="1-可折叠列表-html5-标签折叠内容无法支持原生markdown语法" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e8%ae%be%e7%bd%ae%e4%bb%a3%e7%a0%81%e5%9d%97%e6%8d%a2%e8%a1%8c%e6%8c%89%e9%92%ae%e5%8a%9f%e8%83%bd" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;核心样式方案：把ln设置固定宽度，cl设置为block，固定左侧间距&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;css&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-css" data-lang="css"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;pre&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;chroma&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;ln&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 2&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;float&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;left&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 3&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="c"&gt;/* 设置行号区域的宽度 */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 4&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;width&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 5&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;text-align&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;right&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 6&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;margin-right&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;user-select&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;none&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="c"&gt;/* 禁止行号被选中 */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;pre&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;chroma&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;cl&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;display&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;block&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;12&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;margin-left&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="c"&gt;/* 与行号宽度一致 */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;13&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;14&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;15&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;pre&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;chroma&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;wrap-lines&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;cl&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;16&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;display&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;block&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;17&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;margin-left&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="c"&gt;/* 与行号宽度一致 */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;18&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;white-space&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;pre-wrap&lt;/span&gt; &lt;span class="cp"&gt;!important&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;19&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;js代码&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;javascript&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-javascript" data-lang="javascript"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 1&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;querySelectorAll&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;.code-block-wrapper&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="nx"&gt;forEach&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;wrapper&lt;/span&gt; &lt;span class="p"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 2&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// 为每个代码块创建换行状态存储
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;&lt;/span&gt; &lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;preElement&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;wrapper&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;querySelector&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;pre.chroma&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 4&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;preElement&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 5&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// 默认从 localStorage 读取用户偏好
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 6&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;&lt;/span&gt; &lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;wrapEnabled&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;localStorage&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;getItem&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;codeWrapEnabled&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;===&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;true&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;wrapEnabled&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;preElement&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;classList&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;wrap-lines&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;wrapButton&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;wrapper&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;querySelector&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;.wrap-button&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;wrapButton&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;wrapButton&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;classList&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;active&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;12&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;span&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;wrapButton&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;querySelector&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;span&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;13&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;span&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nx"&gt;span&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;textContent&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;不换行&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;14&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;15&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;16&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;17&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;});&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;18&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// 换行按钮功能
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;19&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;&lt;/span&gt; &lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;addEventListener&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;click&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;e&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;20&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;e&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;target&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;closest&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;.wrap-button&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;21&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;button&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;e&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;target&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;closest&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;.wrap-button&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;22&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;codeBlock&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;button&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;closest&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;.code-block-wrapper&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;23&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;preElement&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;codeBlock&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;querySelector&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;pre.chroma&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;24&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;25&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;preElement&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;26&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;preElement&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;classList&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;toggle&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;wrap-lines&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;27&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;button&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;classList&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;toggle&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;active&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;28&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;29&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// 保存用户偏好
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;30&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;&lt;/span&gt; &lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;isNowWrapped&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;preElement&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;classList&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;contains&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;wrap-lines&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;31&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;localStorage&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;setItem&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;codeWrapEnabled&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;isNowWrapped&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;toString&lt;/span&gt;&lt;span class="p"&gt;());&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;32&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;33&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// 更新按钮文本
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;34&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;&lt;/span&gt; &lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;span&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;button&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;querySelector&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;span&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;35&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;span&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;36&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;span&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;textContent&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;isNowWrapped&lt;/span&gt; &lt;span class="o"&gt;?&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;换行&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;不换行&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;37&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;38&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;39&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;40&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;});&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;</description></item><item><title>Hugo学习250728</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250728/</link><pubDate>Mon, 28 Jul 2025 15:33:17 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250728/</guid><description>&lt;h4 class="relative group"&gt;1. 可折叠列表 HTML5 标签，折叠内容无法支持原生markdown语法
+&lt;div id="1-可折叠列表-html5-标签折叠内容无法支持原生markdown语法" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e5%8f%af%e6%8a%98%e5%8f%a0%e5%88%97%e8%a1%a8-html5-%e6%a0%87%e7%ad%be%e6%8a%98%e5%8f%a0%e5%86%85%e5%ae%b9%e6%97%a0%e6%b3%95%e6%94%af%e6%8c%81%e5%8e%9f%e7%94%9fmarkdown%e8%af%ad%e6%b3%95" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h4>
-&lt;ol>
-&lt;li>config.yaml中配置，允许渲染 HTML 标签&lt;/li>
-&lt;/ol>
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">yaml&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="nt">markup&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">goldmark&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">renderer&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">unsafe&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">true&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;ol start="2">
-&lt;li>使用原生html5 details标签&lt;/li>
-&lt;/ol>
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">html&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">details&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">summary&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>点击展开查看详情&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">summary&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl"> 这里是隐藏的内容，支持 **Markdown** 格式：
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">6&lt;/span>&lt;span class="cl"> - 列表项1
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">7&lt;/span>&lt;span class="cl"> - 列表项2
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">8&lt;/span>&lt;span class="cl"> - [链接](https://example.com)
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">9&lt;/span>&lt;span class="cl">&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">details&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;details>
-&lt;summary>效果：&lt;/summary>
-&lt;p>这里是隐藏的内容，支持 &lt;strong>Markdown&lt;/strong> 格式：&lt;/p>
-&lt;ul>
-&lt;li>列表项1&lt;/li>
-&lt;li>列表项2&lt;/li>
-&lt;li>&lt;a
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e5%8f%af%e6%8a%98%e5%8f%a0%e5%88%97%e8%a1%a8-html5-%e6%a0%87%e7%ad%be%e6%8a%98%e5%8f%a0%e5%86%85%e5%ae%b9%e6%97%a0%e6%b3%95%e6%94%af%e6%8c%81%e5%8e%9f%e7%94%9fmarkdown%e8%af%ad%e6%b3%95" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;config.yaml中配置，允许渲染 HTML 标签&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;yaml&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;markup&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;goldmark&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;renderer&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;unsafe&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;使用原生html5 details标签&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;html&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-html" data-lang="html"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;details&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;summary&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;点击展开查看详情&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;summary&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt; 这里是隐藏的内容，支持 **Markdown** 格式：
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;6&lt;/span&gt;&lt;span class="cl"&gt; - 列表项1
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;7&lt;/span&gt;&lt;span class="cl"&gt; - 列表项2
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;8&lt;/span&gt;&lt;span class="cl"&gt; - [链接](https://example.com)
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;9&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;details&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;details&gt;
+&lt;summary&gt;效果：&lt;/summary&gt;
+&lt;p&gt;这里是隐藏的内容，支持 &lt;strong&gt;Markdown&lt;/strong&gt; 格式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;列表项1&lt;/li&gt;
+&lt;li&gt;列表项2&lt;/li&gt;
+&lt;li&gt;&lt;a
 href="https://example.com"
 target="_blank"
->链接&lt;/a>
-&lt;/li>
-&lt;/ul>
-&lt;/details>
+&gt;链接&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/details&gt;
 本质是隐藏细节
-&lt;ol start="3">
-&lt;li>嵌套&lt;/li>
-&lt;/ol>
-&lt;details>
-&lt;summary>一级折叠标题&lt;/summary>
-&lt;p>这是一级内容&amp;hellip;&lt;/p>
-&lt;details>
-&lt;summary>二级折叠标题&lt;/summary>
-&lt;pre>&lt;code>&amp;lt;details&amp;gt;
+&lt;ol start="3"&gt;
+&lt;li&gt;嵌套&lt;/li&gt;
+&lt;/ol&gt;
+&lt;details&gt;
+&lt;summary&gt;一级折叠标题&lt;/summary&gt;
+&lt;p&gt;这是一级内容&amp;hellip;&lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;二级折叠标题&lt;/summary&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;details&amp;gt;
 &amp;lt;summary&amp;gt;三级折叠标题&amp;lt;/summary&amp;gt;
 - 这是三级列表
 - 支持 Markdown
 - 可以无限嵌套（但建议不超过3-4层）
 &amp;lt;/details&amp;gt;
-&lt;/code>&lt;/pre>
-&lt;/details>
-&lt;ul>
-&lt;li>一级内容中的普通列表&lt;/li>
-&lt;li>也可以混合使用&lt;/li>
-&lt;/ul>
-&lt;/details>
-&lt;p>似乎只能嵌套两层&lt;/p></description></item><item><title>词云实践流程</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/%E8%AF%8D%E4%BA%91%E5%AE%9E%E8%B7%B5%E6%B5%81%E7%A8%8B/</link><pubDate>Thu, 24 Jul 2025 17:15:11 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/%E8%AF%8D%E4%BA%91%E5%AE%9E%E8%B7%B5%E6%B5%81%E7%A8%8B/</guid><description>&lt;h4 class="relative group">1. 通过deepseek生成词云&lt;code>html、js、css&lt;/code>代码
-&lt;div id="1-通过deepseek生成词云htmljscss代码" class="anchor">&lt;/div>
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/details&gt;
+&lt;ul&gt;
+&lt;li&gt;一级内容中的普通列表&lt;/li&gt;
+&lt;li&gt;也可以混合使用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/details&gt;
+&lt;p&gt;似乎只能嵌套两层&lt;/p&gt;</description></item><item><title>词云实践流程</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/%E8%AF%8D%E4%BA%91%E5%AE%9E%E8%B7%B5%E6%B5%81%E7%A8%8B/</link><pubDate>Thu, 24 Jul 2025 17:15:11 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/%E8%AF%8D%E4%BA%91%E5%AE%9E%E8%B7%B5%E6%B5%81%E7%A8%8B/</guid><description>&lt;h4 class="relative group"&gt;1. 通过deepseek生成词云&lt;code&gt;html、js、css&lt;/code&gt;代码
+&lt;div id="1-通过deepseek生成词云htmljscss代码" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e9%80%9a%e8%bf%87deepseek%e7%94%9f%e6%88%90%e8%af%8d%e4%ba%91htmljscss%e4%bb%a3%e7%a0%81" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h4>
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">prompt参考&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">我在做hugo页面，帮我生成标签词云的代码，我会在首页index.html中导入，词云内容为tag，点击跳转对应url，每个tag样式为圆形，大小只和tag字符关联，无旋转，排序权值使用tag文章数量，权值越高越靠中间，分成html css js三个文件实现，tag在html中使用.Site.Taxonomies.tags生成
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">让词云标签贴合，至少行对齐（居中、等分对齐），有一定的对齐的美感&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">生成&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">tag-cloud.html
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">tag-cloud.css
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">tag-cloud.js&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;h4 class="relative group">2. tag-cloud绑定在baseURL/tags/url上
-&lt;div id="2-tag-cloud绑定在baseurltagsurl上" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e9%80%9a%e8%bf%87deepseek%e7%94%9f%e6%88%90%e8%af%8d%e4%ba%91htmljscss%e4%bb%a3%e7%a0%81" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h4&gt;
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;prompt参考&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;我在做hugo页面，帮我生成标签词云的代码，我会在首页index.html中导入，词云内容为tag，点击跳转对应url，每个tag样式为圆形，大小只和tag字符关联，无旋转，排序权值使用tag文章数量，权值越高越靠中间，分成html css js三个文件实现，tag在html中使用.Site.Taxonomies.tags生成
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;让词云标签贴合，至少行对齐（居中、等分对齐），有一定的对齐的美感&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;生成&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;tag-cloud.html
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;tag-cloud.css
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;tag-cloud.js&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;h4 class="relative group"&gt;2. tag-cloud绑定在baseURL/tags/url上
+&lt;div id="2-tag-cloud绑定在baseurltagsurl上" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-tag-cloud%e7%bb%91%e5%ae%9a%e5%9c%a8baseurltagsurl%e4%b8%8a" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h4>
-&lt;p>原理：&lt;/p>
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">路由机制&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">Hugo 会自动将 layouts/taxonomy/tag.terms.html 映射到 /tags/ URL
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">这是 Hugo 分类系统（Taxonomy）的标准行为&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;p>流程：&lt;/p>
-&lt;h5 class="relative group">- 1. 创建layouts/taxonomy/tag.terms.html
-&lt;div id="--1-创建layoutstaxonomytagtermshtml" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-tag-cloud%e7%bb%91%e5%ae%9a%e5%9c%a8baseurltagsurl%e4%b8%8a" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h4&gt;
+&lt;p&gt;原理：&lt;/p&gt;
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;路由机制&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;Hugo 会自动将 layouts/taxonomy/tag.terms.html 映射到 /tags/ URL
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;这是 Hugo 分类系统（Taxonomy）的标准行为&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;流程：&lt;/p&gt;
+&lt;h5 class="relative group"&gt;- 1. 创建layouts/taxonomy/tag.terms.html
+&lt;div id="--1-创建layoutstaxonomytagtermshtml" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#--1-%e5%88%9b%e5%bb%balayoutstaxonomytagtermshtml" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h5>
-&lt;h5 class="relative group">- 2. 在tag.terms.html中直接调用tag-cloud.html
-&lt;div id="--2-在tagtermshtml中直接调用tag-cloudhtml" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#--1-%e5%88%9b%e5%bb%balayoutstaxonomytagtermshtml" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h5&gt;
+&lt;h5 class="relative group"&gt;- 2. 在tag.terms.html中直接调用tag-cloud.html
+&lt;div id="--2-在tagtermshtml中直接调用tag-cloudhtml" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#--2-%e5%9c%a8tagtermshtml%e4%b8%ad%e7%9b%b4%e6%8e%a5%e8%b0%83%e7%94%a8tag-cloudhtml" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h5>
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">tag.terms.html&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-tag.terms.html" data-lang="tag.terms.html">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">{{ define &amp;#34;main&amp;#34; }}
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">{{ partial &amp;#34;tag-cloud.html&amp;#34; . }}
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">{{ end }}&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;h5 class="relative group">- 3. 导入css、js文件
-&lt;div id="--3-导入cssjs文件" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#--2-%e5%9c%a8tagtermshtml%e4%b8%ad%e7%9b%b4%e6%8e%a5%e8%b0%83%e7%94%a8tag-cloudhtml" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h5&gt;
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;tag.terms.html&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-tag.terms.html" data-lang="tag.terms.html"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;{{ define &amp;#34;main&amp;#34; }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;{{ partial &amp;#34;tag-cloud.html&amp;#34; . }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;{{ end }}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;h5 class="relative group"&gt;- 3. 导入css、js文件
+&lt;div id="--3-导入cssjs文件" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#--3-%e5%af%bc%e5%85%a5cssjs%e6%96%87%e4%bb%b6" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h5>
-&lt;p>为了方便，直接在tag-cloud.html中嵌入了css、js的导入（缺点，页面会动态加载js）&lt;/p></description></item><item><title>hugo学习250723</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250723/</link><pubDate>Wed, 23 Jul 2025 15:01:34 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250723/</guid><description>&lt;h2 class="relative group">hugo工作流程
-&lt;div id="hugo工作流程" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#--3-%e5%af%bc%e5%85%a5cssjs%e6%96%87%e4%bb%b6" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h5&gt;
+&lt;p&gt;为了方便，直接在tag-cloud.html中嵌入了css、js的导入（缺点，页面会动态加载js）&lt;/p&gt;</description></item><item><title>hugo学习250723</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250723/</link><pubDate>Wed, 23 Jul 2025 15:01:34 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250723/</guid><description>&lt;h2 class="relative group"&gt;hugo工作流程
+&lt;div id="hugo工作流程" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#hugo%e5%b7%a5%e4%bd%9c%e6%b5%81%e7%a8%8b" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h2>
-&lt;ol>
-&lt;li>url route -&amp;gt; 确定页面类型&lt;/li>
-&lt;/ol>
-&lt;h3 class="relative group">hugo页面类型推断
-&lt;div id="hugo页面类型推断" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#hugo%e5%b7%a5%e4%bd%9c%e6%b5%81%e7%a8%8b" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;url route -&amp;gt; 确定页面类型&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 class="relative group"&gt;hugo页面类型推断
+&lt;div id="hugo页面类型推断" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#hugo%e9%a1%b5%e9%9d%a2%e7%b1%bb%e5%9e%8b%e6%8e%a8%e6%96%ad" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h3>
-&lt;h4 class="relative group">(1) 文件系统结构
-&lt;div id="1-文件系统结构" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#hugo%e9%a1%b5%e9%9d%a2%e7%b1%bb%e5%9e%8b%e6%8e%a8%e6%96%ad" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;
+&lt;h4 class="relative group"&gt;(1) 文件系统结构
+&lt;div id="1-文件系统结构" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e6%96%87%e4%bb%b6%e7%b3%bb%e7%bb%9f%e7%bb%93%e6%9e%84" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h4>
-&lt;p>Hugo 会扫描 content/ 目录下的内容文件（如 .md 或 .html），根据文件的位置和命名规则自动推断页面类型：&lt;/p>
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">text&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">_index.md → 列表页（kind: &amp;#34;section&amp;#34; 或 kind: &amp;#34;home&amp;#34;）
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">普通内容文件（如 post.md） → 单页（kind: &amp;#34;page&amp;#34; 或 kind: &amp;#34;single&amp;#34;）
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl">分类/标签页 → 分类列表（kind: &amp;#34;taxonomy&amp;#34; 或 kind: &amp;#34;term&amp;#34;）&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;h4 class="relative group">(2) 页面 Front Matter
-&lt;div id="2-页面-front-matter" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e6%96%87%e4%bb%b6%e7%b3%bb%e7%bb%9f%e7%bb%93%e6%9e%84" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h4&gt;
+&lt;p&gt;Hugo 会扫描 content/ 目录下的内容文件（如 .md 或 .html），根据文件的位置和命名规则自动推断页面类型：&lt;/p&gt;
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;text&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;_index.md → 列表页（kind: &amp;#34;section&amp;#34; 或 kind: &amp;#34;home&amp;#34;）
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;普通内容文件（如 post.md） → 单页（kind: &amp;#34;page&amp;#34; 或 kind: &amp;#34;single&amp;#34;）
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;分类/标签页 → 分类列表（kind: &amp;#34;taxonomy&amp;#34; 或 kind: &amp;#34;term&amp;#34;）&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;h4 class="relative group"&gt;(2) 页面 Front Matter
+&lt;div id="2-页面-front-matter" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e9%a1%b5%e9%9d%a2-front-matter" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h4>
-&lt;p>通过 Front Matter 中的 type 或 layout 字段可手动指定类型（覆盖自动推断）：&lt;/p></description></item><item><title>Hugo理解</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E7%90%86%E8%A7%A3/</link><pubDate>Wed, 09 Jul 2025 14:07:34 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E7%90%86%E8%A7%A3/</guid><description>&lt;h2 class="relative group">hugo工作流程
-&lt;div id="hugo工作流程" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e9%a1%b5%e9%9d%a2-front-matter" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h4&gt;
+&lt;p&gt;通过 Front Matter 中的 type 或 layout 字段可手动指定类型（覆盖自动推断）：&lt;/p&gt;</description></item><item><title>Hugo理解</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E7%90%86%E8%A7%A3/</link><pubDate>Wed, 09 Jul 2025 14:07:34 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E7%90%86%E8%A7%A3/</guid><description>&lt;h2 class="relative group"&gt;hugo工作流程
+&lt;div id="hugo工作流程" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#hugo%e5%b7%a5%e4%bd%9c%e6%b5%81%e7%a8%8b" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h2>
-&lt;ol>
-&lt;li>导入主题后，完成&lt;a
-href="#%e8%87%aa%e5%ae%9a%e4%b9%89%e9%85%8d%e7%bd%ae%e5%92%8c%e8%b5%84%e6%ba%90">自定义配置和资源&lt;/a>
-&lt;/li>
-&lt;/ol>
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">markdown&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-markdown" data-lang="markdown">&lt;span class="line">&lt;span class="ln"> 1&lt;/span>&lt;span class="cl">&lt;span class="k">-&lt;/span> config yaml/toml/json
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 2&lt;/span>&lt;span class="cl">&lt;span class="k">-&lt;/span> assets
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 3&lt;/span>&lt;span class="cl"> &lt;span class="k">-&lt;/span> css
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 4&lt;/span>&lt;span class="cl"> &lt;span class="k">-&lt;/span> js
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 5&lt;/span>&lt;span class="cl"> &lt;span class="k">-&lt;/span> images
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 6&lt;/span>&lt;span class="cl">&lt;span class="k">-&lt;/span> layouts
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 7&lt;/span>&lt;span class="cl"> &lt;span class="k">-&lt;/span> 404.html : 404错误页面模板
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 8&lt;/span>&lt;span class="cl"> &lt;span class="k">-&lt;/span> _default/ : 默认模板
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 9&lt;/span>&lt;span class="cl"> &lt;span class="k">-&lt;/span> baseof.html : 基础模板框架
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">10&lt;/span>&lt;span class="cl"> &lt;span class="k">-&lt;/span> list.html : 列表页模板（如分类、标签页）
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">11&lt;/span>&lt;span class="cl"> &lt;span class="k">-&lt;/span> single.html : 单内容页模板（如文章页）
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">12&lt;/span>&lt;span class="cl"> &lt;span class="k">-&lt;/span> terms.html : 分类列表模板（如所有标签的列表）
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">13&lt;/span>&lt;span class="cl"> &lt;span class="k">-&lt;/span> partials/ : 可重用部分模板
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">14&lt;/span>&lt;span class="cl"> &lt;span class="k">-&lt;/span> header.html : 页头部分
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">15&lt;/span>&lt;span class="cl"> &lt;span class="k">-&lt;/span> footer.html : 页脚部分
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">16&lt;/span>&lt;span class="cl"> &lt;span class="k">-&lt;/span> head.html : &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">head&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>部分
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">17&lt;/span>&lt;span class="cl"> &lt;span class="k">-&lt;/span> ... : 其他部分模板
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">18&lt;/span>&lt;span class="cl"> &lt;span class="k">-&lt;/span> shortcodes/ : 短代码模板
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">19&lt;/span>&lt;span class="cl"> &lt;span class="k">-&lt;/span> figure.html : 图片短代码
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">20&lt;/span>&lt;span class="cl"> &lt;span class="k">-&lt;/span> ... : 其他短代码
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">21&lt;/span>&lt;span class="cl"> &lt;span class="k">-&lt;/span> index.html : 首页模板
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">22&lt;/span>&lt;span class="cl"> &lt;span class="k">-&lt;/span> section/ : 分区模板（如博客、文档等）
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">23&lt;/span>&lt;span class="cl"> &lt;span class="k">-&lt;/span> blog.html : 博客分区模板
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">24&lt;/span>&lt;span class="cl"> &lt;span class="k">-&lt;/span> ... : 其他分区模板
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">25&lt;/span>&lt;span class="cl"> &lt;span class="k">-&lt;/span> taxonomy/ : 分类法模板
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">26&lt;/span>&lt;span class="cl"> &lt;span class="k">-&lt;/span> category.html : 分类页面模板
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">27&lt;/span>&lt;span class="cl"> &lt;span class="k">-&lt;/span> tag.html : 标签页面模板
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">28&lt;/span>&lt;span class="cl"> - ... : 其他自定义模板&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;p>所有layouts模板均可&lt;/p></description></item><item><title>Hugo博客搭建记录</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/</link><pubDate>Tue, 08 Jul 2025 10:18:41 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/</guid><description>&lt;h2 class="relative group">环境准备
-&lt;div id="环境准备" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#hugo%e5%b7%a5%e4%bd%9c%e6%b5%81%e7%a8%8b" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;导入主题后，完成&lt;a
+href="#%e8%87%aa%e5%ae%9a%e4%b9%89%e9%85%8d%e7%bd%ae%e5%92%8c%e8%b5%84%e6%ba%90"&gt;自定义配置和资源&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;markdown&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-markdown" data-lang="markdown"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;-&lt;/span&gt; config yaml/toml/json
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;-&lt;/span&gt; assets
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 3&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;-&lt;/span&gt; css
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 4&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;-&lt;/span&gt; js
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 5&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;-&lt;/span&gt; images
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 6&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;-&lt;/span&gt; layouts
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;-&lt;/span&gt; 404.html : 404错误页面模板
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;-&lt;/span&gt; _default/ : 默认模板
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;-&lt;/span&gt; baseof.html : 基础模板框架
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;-&lt;/span&gt; list.html : 列表页模板（如分类、标签页）
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;-&lt;/span&gt; single.html : 单内容页模板（如文章页）
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;12&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;-&lt;/span&gt; terms.html : 分类列表模板（如所有标签的列表）
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;13&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;-&lt;/span&gt; partials/ : 可重用部分模板
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;14&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;-&lt;/span&gt; header.html : 页头部分
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;15&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;-&lt;/span&gt; footer.html : 页脚部分
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;16&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;-&lt;/span&gt; head.html : &amp;lt;head&amp;gt;部分
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;17&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;-&lt;/span&gt; ... : 其他部分模板
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;18&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;-&lt;/span&gt; shortcodes/ : 短代码模板
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;19&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;-&lt;/span&gt; figure.html : 图片短代码
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;20&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;-&lt;/span&gt; ... : 其他短代码
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;21&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;-&lt;/span&gt; index.html : 首页模板
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;22&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;-&lt;/span&gt; section/ : 分区模板（如博客、文档等）
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;23&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;-&lt;/span&gt; blog.html : 博客分区模板
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;24&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;-&lt;/span&gt; ... : 其他分区模板
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;25&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;-&lt;/span&gt; taxonomy/ : 分类法模板
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;26&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;-&lt;/span&gt; category.html : 分类页面模板
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;27&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;-&lt;/span&gt; tag.html : 标签页面模板
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;28&lt;/span&gt;&lt;span class="cl"&gt; - ... : 其他自定义模板&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;所有layouts模板均可&lt;/p&gt;</description></item><item><title>Hugo博客搭建记录</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/</link><pubDate>Tue, 08 Jul 2025 10:18:41 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/</guid><description>&lt;h2 class="relative group"&gt;环境准备
+&lt;div id="环境准备" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%8e%af%e5%a2%83%e5%87%86%e5%a4%87" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h2>
-&lt;ol>
-&lt;li>设备：ubuntu&lt;/li>
-&lt;li>github地址：&lt;a
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%8e%af%e5%a2%83%e5%87%86%e5%a4%87" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;设备：ubuntu&lt;/li&gt;
+&lt;li&gt;github地址：&lt;a
 href="https://github.com/gohugoio/hugo"
 target="_blank"
->https://github.com/gohugoio/hugo&lt;/a>
-&lt;/li>
-&lt;li>安装：&lt;/li>
-&lt;/ol>
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">shell&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">wget https://github.com/gohugoio/hugo/releases/download/v0.147.9/hugo_extended_0.147.9_Linux-64bit.tar.gz
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">tar -xvzf hugo_extended_0.147.9_Linux-64bit.tar.gz
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">sudo su
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">mv hugo /usr/bin&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;h2 class="relative group">Start!
-&lt;div id="start" class="anchor">&lt;/div>
+&gt;https://github.com/gohugoio/hugo&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;安装：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;shell&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;wget https://github.com/gohugoio/hugo/releases/download/v0.147.9/hugo_extended_0.147.9_Linux-64bit.tar.gz
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;tar -xvzf hugo_extended_0.147.9_Linux-64bit.tar.gz
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;sudo su
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;mv hugo /usr/bin&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 class="relative group"&gt;Start!
+&lt;div id="start" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#start" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h2>
-&lt;h3 class="relative group">1. 基础
-&lt;div id="1-基础" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#start" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;
+&lt;h3 class="relative group"&gt;1. 基础
+&lt;div id="1-基础" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e5%9f%ba%e7%a1%80" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h3>
-&lt;h4 class="relative group">1. 创建新博客
-&lt;div id="1-创建新博客" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e5%9f%ba%e7%a1%80" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;
+&lt;h4 class="relative group"&gt;1. 创建新博客
+&lt;div id="1-创建新博客" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e5%88%9b%e5%bb%ba%e6%96%b0%e5%8d%9a%e5%ae%a2" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h4>
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">shell&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">hugo new site siteproducer&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;h4 class="relative group">2. 重要配置&amp;amp;配置逻辑链
-&lt;div id="2-重要配置配置逻辑链" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e5%88%9b%e5%bb%ba%e6%96%b0%e5%8d%9a%e5%ae%a2" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h4&gt;
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;shell&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;hugo new site siteproducer&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;h4 class="relative group"&gt;2. 重要配置&amp;amp;配置逻辑链
+&lt;div id="2-重要配置配置逻辑链" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e9%87%8d%e8%a6%81%e9%85%8d%e7%bd%ae%e9%85%8d%e7%bd%ae%e9%80%bb%e8%be%91%e9%93%be" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h4>
-&lt;h3 class="relative group">2. 使用stack主题
-&lt;div id="2-使用stack主题" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e9%87%8d%e8%a6%81%e9%85%8d%e7%bd%ae%e9%85%8d%e7%bd%ae%e9%80%bb%e8%be%91%e9%93%be" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h4&gt;
+&lt;h3 class="relative group"&gt;2. 使用stack主题
+&lt;div id="2-使用stack主题" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e4%bd%bf%e7%94%a8stack%e4%b8%bb%e9%a2%98" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h3>
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">shell&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">git submodule add https://github.com/CaiJimmy/hugo-theme-stack themes/hugo-theme-stack&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;h2 class="relative group">Hugo Tricks
-&lt;div id="hugo-tricks" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e4%bd%bf%e7%94%a8stack%e4%b8%bb%e9%a2%98" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;shell&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;git submodule add https://github.com/CaiJimmy/hugo-theme-stack themes/hugo-theme-stack&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 class="relative group"&gt;Hugo Tricks
+&lt;div id="hugo-tricks" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#hugo-tricks" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h2>
-&lt;h3 class="relative group">1. 自定义样式
-&lt;div id="1-自定义样式" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#hugo-tricks" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;
+&lt;h3 class="relative group"&gt;1. 自定义样式
+&lt;div id="1-自定义样式" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e8%87%aa%e5%ae%9a%e4%b9%89%e6%a0%b7%e5%bc%8f" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h3>
-&lt;h4 class="relative group">1. 样式覆盖规则：后引入覆盖前引入
-&lt;div id="1-样式覆盖规则后引入覆盖前引入" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e8%87%aa%e5%ae%9a%e4%b9%89%e6%a0%b7%e5%bc%8f" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;
+&lt;h4 class="relative group"&gt;1. 样式覆盖规则：后引入覆盖前引入
+&lt;div id="1-样式覆盖规则后引入覆盖前引入" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e6%a0%b7%e5%bc%8f%e8%a6%86%e7%9b%96%e8%a7%84%e5%88%99%e5%90%8e%e5%bc%95%e5%85%a5%e8%a6%86%e7%9b%96%e5%89%8d%e5%bc%95%e5%85%a5" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h4>
-&lt;ol>
-&lt;li>params.yaml配置中指定自定义custom_css&lt;/li>
-&lt;/ol>
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">yaml&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="nt">custom_css&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s2">&amp;#34;scss/custom.scss&amp;#34;&lt;/span>&lt;span class="p">]&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;ol start="2">
-&lt;li>assets/custom.scss中&lt;/li>
-&lt;/ol>
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">scss&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-scss" data-lang="scss">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="c1">// 引入主题样式
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">@import&lt;/span> &lt;span class="s2">&amp;#34;general&amp;#34;&lt;/span>&lt;span class="p">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">&lt;span class="c1">// 引入你的自定义覆盖
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">@import&lt;/span> &lt;span class="s2">&amp;#34;custom-markdown&amp;#34;&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="o">//&lt;/span> &lt;span class="nt">无下划线&lt;/span>&lt;span class="err">、&lt;/span>&lt;span class="nt">无扩展名&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;h4 class="relative group">2. 自定义鸿蒙字体
-&lt;div id="2-自定义鸿蒙字体" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e6%a0%b7%e5%bc%8f%e8%a6%86%e7%9b%96%e8%a7%84%e5%88%99%e5%90%8e%e5%bc%95%e5%85%a5%e8%a6%86%e7%9b%96%e5%89%8d%e5%bc%95%e5%85%a5" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;params.yaml配置中指定自定义custom_css&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;yaml&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;custom_css&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;scss/custom.scss&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;assets/custom.scss中&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;scss&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-scss" data-lang="scss"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;// 引入主题样式
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;&lt;/span&gt;&lt;span class="k"&gt;@import&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;general&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;// 引入你的自定义覆盖
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;&lt;/span&gt;&lt;span class="k"&gt;@import&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;custom-markdown&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="o"&gt;//&lt;/span&gt; &lt;span class="nt"&gt;无下划线&lt;/span&gt;&lt;span class="err"&gt;、&lt;/span&gt;&lt;span class="nt"&gt;无扩展名&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;h4 class="relative group"&gt;2. 自定义鸿蒙字体
+&lt;div id="2-自定义鸿蒙字体" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e8%87%aa%e5%ae%9a%e4%b9%89%e9%b8%bf%e8%92%99%e5%ad%97%e4%bd%93" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h4>
-&lt;ol>
-&lt;li>下载&lt;a
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e8%87%aa%e5%ae%9a%e4%b9%89%e9%b8%bf%e8%92%99%e5%ad%97%e4%bd%93" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;下载&lt;a
 href="https://github.com/Irithys/cdn/tree/master/src/fonts?ref=irithys.com"
 target="_blank"
->鸿蒙字体&lt;/a>
-&lt;/li>
-&lt;li>解压到siteproducer/assets/fonts目录&lt;/li>
-&lt;li>在assets/scss/中创建_fonts.scss，并在scss/custom.scss中引用&lt;/li>
-&lt;/ol>
-&lt;p>font.scss&lt;/p></description></item></channel></rss>
+&gt;鸿蒙字体&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;解压到siteproducer/assets/fonts目录&lt;/li&gt;
+&lt;li&gt;在assets/scss/中创建_fonts.scss，并在scss/custom.scss中引用&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;font.scss&lt;/p&gt;</description></item></channel></rss>

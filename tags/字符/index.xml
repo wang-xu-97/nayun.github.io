@@ -1,98 +1,98 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>字符 on nayun blog</title><link>https://wang-xu-97.github.io/nayun.github.io/tags/%E5%AD%97%E7%AC%A6/</link><description>Recent content in 字符 on nayun blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>© 2025 nayun</copyright><lastBuildDate>Thu, 31 Jul 2025 15:44:35 +0800</lastBuildDate><atom:link href="https://wang-xu-97.github.io/nayun.github.io/tags/%E5%AD%97%E7%AC%A6/index.xml" rel="self" type="application/rss+xml"/><item><title>时间字符串</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E5%AD%97%E7%AC%A6%E5%A4%84%E7%90%86/%E6%97%B6%E9%97%B4%E5%AD%97%E7%AC%A6%E4%B8%B2/</link><pubDate>Thu, 31 Jul 2025 15:44:35 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E5%AD%97%E7%AC%A6%E5%A4%84%E7%90%86/%E6%97%B6%E9%97%B4%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid><description>&lt;h2 class="relative group">1. datetime系列
-&lt;div id="1-datetime系列" class="anchor">&lt;/div>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>字符 on nayun blog</title><link>https://wang-xu-97.github.io/nayun.github.io/tags/%E5%AD%97%E7%AC%A6/</link><description>Recent content in 字符 on nayun blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>© 2025 nayun</copyright><lastBuildDate>Thu, 31 Jul 2025 15:44:35 +0800</lastBuildDate><atom:link href="https://wang-xu-97.github.io/nayun.github.io/tags/%E5%AD%97%E7%AC%A6/index.xml" rel="self" type="application/rss+xml"/><item><title>时间字符串</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E5%AD%97%E7%AC%A6%E5%A4%84%E7%90%86/%E6%97%B6%E9%97%B4%E5%AD%97%E7%AC%A6%E4%B8%B2/</link><pubDate>Thu, 31 Jul 2025 15:44:35 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E5%AD%97%E7%AC%A6%E5%A4%84%E7%90%86/%E6%97%B6%E9%97%B4%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid><description>&lt;h2 class="relative group"&gt;1. datetime系列
+&lt;div id="1-datetime系列" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-datetime%e7%b3%bb%e5%88%97" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h2>
-&lt;p>一般来说用&lt;code>from datetime import datetime&lt;/code>&lt;/p>
-&lt;h3 class="relative group">1. &lt;code>.fromtimestamp&lt;/code>
-&lt;div id="1-fromtimestamp" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-datetime%e7%b3%bb%e5%88%97" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;
+&lt;p&gt;一般来说用&lt;code&gt;from datetime import datetime&lt;/code&gt;&lt;/p&gt;
+&lt;h3 class="relative group"&gt;1. &lt;code&gt;.fromtimestamp&lt;/code&gt;
+&lt;div id="1-fromtimestamp" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-fromtimestamp" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h3>
-&lt;p>接收一个浮点ts参数，返回datetime结构体，可接续使用datetime内置方法&lt;br>
-经典场景：ts -&amp;gt; 格式化timestr&lt;br>
-&lt;code>datetime.fromtimestamp(ts).strftime('%Y-%m-%d-%H:%M:%S')&lt;/code>&lt;/p>
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">python&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">ts2timestr&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">ts&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="nb">float&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="nb">str&lt;/span>&lt;span class="p">:&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">datetime&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">fromtimestamp&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">ts&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">strftime&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;%Y-%m-&lt;/span>&lt;span class="si">%d&lt;/span>&lt;span class="s1">-%H:%M:%S&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;h3 class="relative group">2. &lt;code>.strptime&lt;/code>
-&lt;div id="2-strptime" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-fromtimestamp" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;
+&lt;p&gt;接收一个浮点ts参数，返回datetime结构体，可接续使用datetime内置方法&lt;br&gt;
+经典场景：ts -&amp;gt; 格式化timestr&lt;br&gt;
+&lt;code&gt;datetime.fromtimestamp(ts).strftime('%Y-%m-%d-%H:%M:%S')&lt;/code&gt;&lt;/p&gt;
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;python&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;ts2timestr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ts&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nb"&gt;float&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fromtimestamp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ts&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;strftime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;%Y-%m-&lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s1"&gt;-%H:%M:%S&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 class="relative group"&gt;2. &lt;code&gt;.strptime&lt;/code&gt;
+&lt;div id="2-strptime" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-strptime" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h3>
-&lt;p>接收1. 格式化timestr, 2. 格式format；返回datetime结构体(接续使用其他内置方法)&lt;br>
-经典场景：格式化timestr -&amp;gt; ts&lt;br>
-&lt;code>datetime.strptime(timestr, pattern).timestamp()&lt;/code>&lt;/p>
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">python&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">timestr2ts&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">timestr&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">pattern&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s1">&amp;#39;%Y-%m-&lt;/span>&lt;span class="si">%d&lt;/span>&lt;span class="s1"> %H:%M:%S&amp;#39;&lt;/span>&lt;span class="p">):&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">datetime&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">strptime&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">timestr&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">pattern&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">timestamp&lt;/span>&lt;span class="p">()&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;h3 class="relative group">3. &lt;code>.replace&lt;/code>
-&lt;div id="3-replace" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-strptime" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;
+&lt;p&gt;接收1. 格式化timestr, 2. 格式format；返回datetime结构体(接续使用其他内置方法)&lt;br&gt;
+经典场景：格式化timestr -&amp;gt; ts&lt;br&gt;
+&lt;code&gt;datetime.strptime(timestr, pattern).timestamp()&lt;/code&gt;&lt;/p&gt;
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;python&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;timestr2ts&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;timestr&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;pattern&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;%Y-%m-&lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s1"&gt; %H:%M:%S&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;strptime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;timestr&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;pattern&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;timestamp&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 class="relative group"&gt;3. &lt;code&gt;.replace&lt;/code&gt;
+&lt;div id="3-replace" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#3-replace" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h3>
-&lt;ol>
-&lt;li>python hint&lt;/li>
-&lt;/ol>
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">python&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="ln"> 1&lt;/span>&lt;span class="cl">&lt;span class="p">(&lt;/span>&lt;span class="n">method&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="k">def&lt;/span> &lt;span class="nf">replace&lt;/span>&lt;span class="p">(&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 2&lt;/span>&lt;span class="cl"> &lt;span class="n">year&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">SupportsIndex&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="o">...&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 3&lt;/span>&lt;span class="cl"> &lt;span class="n">month&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">SupportsIndex&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="o">...&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 4&lt;/span>&lt;span class="cl"> &lt;span class="n">day&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">SupportsIndex&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="o">...&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 5&lt;/span>&lt;span class="cl"> &lt;span class="n">hour&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">SupportsIndex&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="o">...&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 6&lt;/span>&lt;span class="cl"> &lt;span class="n">minute&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">SupportsIndex&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="o">...&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 7&lt;/span>&lt;span class="cl"> &lt;span class="n">second&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">SupportsIndex&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="o">...&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 8&lt;/span>&lt;span class="cl"> &lt;span class="n">microsecond&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">SupportsIndex&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="o">...&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 9&lt;/span>&lt;span class="cl"> &lt;span class="n">tzinfo&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">_TzInfo&lt;/span> &lt;span class="o">|&lt;/span> &lt;span class="kc">None&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="o">...&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">10&lt;/span>&lt;span class="cl"> &lt;span class="o">*&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">11&lt;/span>&lt;span class="cl"> &lt;span class="n">fold&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="nb">int&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="o">...&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">12&lt;/span>&lt;span class="cl">&lt;span class="p">)&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="n">datetime&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;p>一般使用关键字参数指定参数传参：&lt;br>
-&lt;code>.replace(hour=23, minute=59, second=59, microsecond=0)&lt;/code>&lt;/p></description></item></channel></rss>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#3-replace" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;python hint&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;python&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;method&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;replace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 2&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;year&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;SupportsIndex&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;...&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 3&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;month&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;SupportsIndex&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;...&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 4&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;day&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;SupportsIndex&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;...&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 5&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;hour&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;SupportsIndex&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;...&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 6&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;minute&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;SupportsIndex&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;...&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;second&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;SupportsIndex&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;...&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;microsecond&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;SupportsIndex&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;...&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;tzinfo&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;_TzInfo&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;...&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;fold&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;12&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;一般使用关键字参数指定参数传参：&lt;br&gt;
+&lt;code&gt;.replace(hour=23, minute=59, second=59, microsecond=0)&lt;/code&gt;&lt;/p&gt;</description></item></channel></rss>

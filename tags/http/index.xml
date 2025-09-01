@@ -1,158 +1,158 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Http on nayun blog</title><link>https://wang-xu-97.github.io/nayun.github.io/tags/http/</link><description>Recent content in Http on nayun blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>© 2025 nayun</copyright><lastBuildDate>Tue, 05 Aug 2025 14:28:04 +0800</lastBuildDate><atom:link href="https://wang-xu-97.github.io/nayun.github.io/tags/http/index.xml" rel="self" type="application/rss+xml"/><item><title>LinuxHttp工具</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/%E5%B7%A5%E5%85%B7/linuxhttp%E5%B7%A5%E5%85%B7/</link><pubDate>Tue, 05 Aug 2025 14:28:04 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/%E5%B7%A5%E5%85%B7/linuxhttp%E5%B7%A5%E5%85%B7/</guid><description>&lt;h2 class="relative group">wget
-&lt;div id="wget" class="anchor">&lt;/div>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Http on nayun blog</title><link>https://wang-xu-97.github.io/nayun.github.io/tags/http/</link><description>Recent content in Http on nayun blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>© 2025 nayun</copyright><lastBuildDate>Tue, 05 Aug 2025 14:28:04 +0800</lastBuildDate><atom:link href="https://wang-xu-97.github.io/nayun.github.io/tags/http/index.xml" rel="self" type="application/rss+xml"/><item><title>LinuxHttp工具</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/%E5%B7%A5%E5%85%B7/linuxhttp%E5%B7%A5%E5%85%B7/</link><pubDate>Tue, 05 Aug 2025 14:28:04 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/%E5%B7%A5%E5%85%B7/linuxhttp%E5%B7%A5%E5%85%B7/</guid><description>&lt;h2 class="relative group"&gt;wget
+&lt;div id="wget" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#wget" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h2>
-&lt;p>wget获取指定ip路由下的全部文件&lt;br>
-&lt;code>-r&lt;/code>：递归&lt;br>
-&lt;code>--no-parent&lt;/code>：无父目录&lt;br>
-&lt;code>--accept&lt;/code>：接收文件，支持通配符&lt;br>
-&lt;code>--reject&lt;/code>：拒绝文件，支持通配符&lt;br>
-&lt;code>-P&lt;/code>：指定下载路径&lt;/p>
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">shell&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">wget -r --no-parent --accept &lt;span class="s2">&amp;#34;*.zip*&amp;#34;&lt;/span> --reject &lt;span class="s2">&amp;#34;*.html&amp;#34;&lt;/span> ip:port -P ./download/&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;h2 class="relative group">Http文件服务器
-&lt;div id="http文件服务器" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#wget" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;
+&lt;p&gt;wget获取指定ip路由下的全部文件&lt;br&gt;
+&lt;code&gt;-r&lt;/code&gt;：递归&lt;br&gt;
+&lt;code&gt;--no-parent&lt;/code&gt;：无父目录&lt;br&gt;
+&lt;code&gt;--accept&lt;/code&gt;：接收文件，支持通配符&lt;br&gt;
+&lt;code&gt;--reject&lt;/code&gt;：拒绝文件，支持通配符&lt;br&gt;
+&lt;code&gt;-P&lt;/code&gt;：指定下载路径&lt;/p&gt;
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;shell&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;wget -r --no-parent --accept &lt;span class="s2"&gt;&amp;#34;*.zip*&amp;#34;&lt;/span&gt; --reject &lt;span class="s2"&gt;&amp;#34;*.html&amp;#34;&lt;/span&gt; ip:port -P ./download/&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 class="relative group"&gt;Http文件服务器
+&lt;div id="http文件服务器" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#http%e6%96%87%e4%bb%b6%e6%9c%8d%e5%8a%a1%e5%99%a8" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h2>
-&lt;ol>
-&lt;li>python3 http server模块快速启动&lt;br>
-&lt;code>python3 -m http.server 8000 --directory /path/&lt;/code>&lt;/li>
-&lt;/ol>
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">console&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-console" data-lang="console">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="go">Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;p>优点：快速&lt;br>
-缺点：不能直观看到本地ip&lt;/p>
-&lt;ol start="2">
-&lt;li>python3 代码&lt;/li>
-&lt;/ol>
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">python&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="ln"> 1&lt;/span>&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">socket&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 2&lt;/span>&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">sys&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 3&lt;/span>&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">http.server&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 4&lt;/span>&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">socketserver&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 5&lt;/span>&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">traceback&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 6&lt;/span>&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 7&lt;/span>&lt;span class="cl">&lt;span class="k">class&lt;/span> &lt;span class="nc">Handler&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">http&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">server&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">SimpleHTTPRequestHandler&lt;/span>&lt;span class="p">):&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 8&lt;/span>&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="fm">__init__&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="o">*&lt;/span>&lt;span class="n">args&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="o">**&lt;/span>&lt;span class="n">kwargs&lt;/span>&lt;span class="p">):&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 9&lt;/span>&lt;span class="cl"> &lt;span class="nb">super&lt;/span>&lt;span class="p">()&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="fm">__init__&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="n">args&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">directory&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">target&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="o">**&lt;/span>&lt;span class="n">kwargs&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">10&lt;/span>&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">11&lt;/span>&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="nf">end_headers&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="p">):&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">12&lt;/span>&lt;span class="cl"> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">send_header&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;Connection&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;close&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">13&lt;/span>&lt;span class="cl"> &lt;span class="nb">super&lt;/span>&lt;span class="p">()&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">end_headers&lt;/span>&lt;span class="p">()&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">14&lt;/span>&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">15&lt;/span>&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">get_local_ip&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="nb">str&lt;/span>&lt;span class="p">:&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">16&lt;/span>&lt;span class="cl"> &lt;span class="k">try&lt;/span>&lt;span class="p">:&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">17&lt;/span>&lt;span class="cl"> &lt;span class="n">s&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">socket&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">socket&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">socket&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">AF_INET&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">socket&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">SOCK_DGRAM&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">18&lt;/span>&lt;span class="cl"> &lt;span class="n">s&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">connect&lt;/span>&lt;span class="p">((&lt;/span>&lt;span class="s2">&amp;#34;8.8.8.8&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">80&lt;/span>&lt;span class="p">))&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">19&lt;/span>&lt;span class="cl"> &lt;span class="n">local_ip&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">s&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">getsockname&lt;/span>&lt;span class="p">()[&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">]&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">20&lt;/span>&lt;span class="cl"> &lt;span class="n">s&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">close&lt;/span>&lt;span class="p">()&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">21&lt;/span>&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">local_ip&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">22&lt;/span>&lt;span class="cl"> &lt;span class="k">except&lt;/span> &lt;span class="ne">Exception&lt;/span> &lt;span class="k">as&lt;/span> &lt;span class="n">e&lt;/span>&lt;span class="p">:&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">23&lt;/span>&lt;span class="cl"> &lt;span class="k">raise&lt;/span> &lt;span class="ne">Exception&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sa">f&lt;/span>&lt;span class="s2">&amp;#34;无法获取IP: &lt;/span>&lt;span class="si">{&lt;/span>&lt;span class="nb">str&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">e&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s2">请检查网络环境&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">24&lt;/span>&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">25&lt;/span>&lt;span class="cl">&lt;span class="k">if&lt;/span> &lt;span class="vm">__name__&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="s1">&amp;#39;__main__&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">26&lt;/span>&lt;span class="cl"> &lt;span class="n">local_ip&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">get_local_ip&lt;/span>&lt;span class="p">()&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">27&lt;/span>&lt;span class="cl"> &lt;span class="n">target&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;&amp;#39;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">28&lt;/span>&lt;span class="cl"> &lt;span class="k">try&lt;/span>&lt;span class="p">:&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">29&lt;/span>&lt;span class="cl"> &lt;span class="n">target&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">sys&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">argv&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">]&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">30&lt;/span>&lt;span class="cl"> &lt;span class="k">except&lt;/span>&lt;span class="p">:&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">31&lt;/span>&lt;span class="cl"> &lt;span class="n">target&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;.&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">32&lt;/span>&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">33&lt;/span>&lt;span class="cl"> &lt;span class="k">with&lt;/span> &lt;span class="n">socketserver&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">ThreadingTCPServer&lt;/span>&lt;span class="p">((&lt;/span>&lt;span class="s2">&amp;#34;&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="n">Handler&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="k">as&lt;/span> &lt;span class="n">httpd&lt;/span>&lt;span class="p">:&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">34&lt;/span>&lt;span class="cl"> &lt;span class="n">port&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">httpd&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">server_address&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">]&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">35&lt;/span>&lt;span class="cl"> &lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sa">f&lt;/span>&lt;span class="s2">&amp;#34;Serving HTTP on http://&lt;/span>&lt;span class="si">{&lt;/span>&lt;span class="n">local_ip&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s2">:&lt;/span>&lt;span class="si">{&lt;/span>&lt;span class="n">port&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s2">/&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">36&lt;/span>&lt;span class="cl"> &lt;span class="k">try&lt;/span>&lt;span class="p">:&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">37&lt;/span>&lt;span class="cl"> &lt;span class="n">httpd&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">serve_forever&lt;/span>&lt;span class="p">()&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">38&lt;/span>&lt;span class="cl"> &lt;span class="k">except&lt;/span>&lt;span class="p">:&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">39&lt;/span>&lt;span class="cl"> &lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">traceback&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">format_exc&lt;/span>&lt;span class="p">())&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">40&lt;/span>&lt;span class="cl"> &lt;span class="k">finally&lt;/span>&lt;span class="p">:&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">41&lt;/span>&lt;span class="cl"> &lt;span class="n">httpd&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">server_close&lt;/span>&lt;span class="p">()&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">42&lt;/span>&lt;span class="cl"> &lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;exit.&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">shell&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">python3 autofileserver.py /path/&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;p>优点：快速、直观看到ip:port&lt;/p></description></item><item><title>Requests</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E8%87%AA%E5%AE%9A%E6%A8%A1%E5%9D%97/requests/</link><pubDate>Thu, 31 Jul 2025 15:29:43 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E8%87%AA%E5%AE%9A%E6%A8%A1%E5%9D%97/requests/</guid><description>&lt;h2 class="relative group">requests.request方法
-&lt;div id="requestsrequest方法" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#http%e6%96%87%e4%bb%b6%e6%9c%8d%e5%8a%a1%e5%99%a8" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;python3 http server模块快速启动&lt;br&gt;
+&lt;code&gt;python3 -m http.server 8000 --directory /path/&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;console&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-console" data-lang="console"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="go"&gt;Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;优点：快速&lt;br&gt;
+缺点：不能直观看到本地ip&lt;/p&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;python3 代码&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;python&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;socket&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sys&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;http.server&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;socketserver&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;traceback&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 6&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Handler&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;SimpleHTTPRequestHandler&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="nb"&gt;super&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="fm"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;directory&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;target&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;end_headers&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;12&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;send_header&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Connection&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;close&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;13&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="nb"&gt;super&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;end_headers&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;14&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;15&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;get_local_ip&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;16&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;17&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;socket&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;socket&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;socket&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;AF_INET&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;socket&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;SOCK_DGRAM&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;18&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;connect&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;8.8.8.8&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;80&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;19&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;local_ip&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;getsockname&lt;/span&gt;&lt;span class="p"&gt;()[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;20&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;close&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;21&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;local_ip&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;22&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="ne"&gt;Exception&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;23&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;raise&lt;/span&gt; &lt;span class="ne"&gt;Exception&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sa"&gt;f&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;无法获取IP: &lt;/span&gt;&lt;span class="si"&gt;{&lt;/span&gt;&lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s2"&gt;请检查网络环境&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;24&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;25&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="vm"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;26&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;local_ip&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;get_local_ip&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;27&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;target&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;28&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;29&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;target&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;argv&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;30&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;except&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;31&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;target&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;.&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;32&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;33&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;socketserver&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ThreadingTCPServer&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;Handler&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;httpd&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;34&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;port&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;httpd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;server_address&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;35&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sa"&gt;f&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;Serving HTTP on http://&lt;/span&gt;&lt;span class="si"&gt;{&lt;/span&gt;&lt;span class="n"&gt;local_ip&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;:&lt;/span&gt;&lt;span class="si"&gt;{&lt;/span&gt;&lt;span class="n"&gt;port&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;/&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;36&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;37&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;httpd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;serve_forever&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;38&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;except&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;39&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;traceback&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format_exc&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;40&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;finally&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;41&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;httpd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;server_close&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;42&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;exit.&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;shell&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;python3 autofileserver.py /path/&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;优点：快速、直观看到ip:port&lt;/p&gt;</description></item><item><title>Requests</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E8%87%AA%E5%AE%9A%E6%A8%A1%E5%9D%97/requests/</link><pubDate>Thu, 31 Jul 2025 15:29:43 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E8%87%AA%E5%AE%9A%E6%A8%A1%E5%9D%97/requests/</guid><description>&lt;h2 class="relative group"&gt;requests.request方法
+&lt;div id="requestsrequest方法" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#requestsrequest%e6%96%b9%e6%b3%95" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h2>
-&lt;p>基础用法：&lt;/p>
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">python&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="n">requests&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">request&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">method&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">url&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">headers&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">json&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">&lt;span class="n">requests&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">request&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">method&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">url&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">headers&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">data&lt;/span>&lt;span class="p">)&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;p>参数json和data的区别：&lt;br>
-json为字典对象&lt;br>
-data为字典字符串，需要使用&lt;code>json.dumps(payload)&lt;/code>转换为字符串&lt;/p></description></item></channel></rss>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#requestsrequest%e6%96%b9%e6%b3%95" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;
+&lt;p&gt;基础用法：&lt;/p&gt;
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;python&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;requests&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;method&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;headers&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;json&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;requests&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;method&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;headers&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;参数json和data的区别：&lt;br&gt;
+json为字典对象&lt;br&gt;
+data为字典字符串，需要使用&lt;code&gt;json.dumps(payload)&lt;/code&gt;转换为字符串&lt;/p&gt;</description></item></channel></rss>

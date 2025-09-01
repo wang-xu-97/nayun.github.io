@@ -1,880 +1,880 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>golang on nayun blog</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/coding/golang/</link><description>Recent content in golang on nayun blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>© 2025 nayun</copyright><lastBuildDate>Wed, 06 Aug 2025 10:18:47 +0800</lastBuildDate><atom:link href="https://wang-xu-97.github.io/nayun.github.io/tech/coding/golang/index.xml" rel="self" type="application/rss+xml"/><item><title>Go语言特点</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/coding/golang/go%E8%AF%AD%E8%A8%80%E7%89%B9%E7%82%B9/</link><pubDate>Wed, 06 Aug 2025 10:18:47 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/coding/golang/go%E8%AF%AD%E8%A8%80%E7%89%B9%E7%82%B9/</guid><description>&lt;p>Go语言（Golang）的语法设计以简洁和明确性为核心，因此它避免了许多其他语言中常见的抽象或复杂的语法特性。以下是Go语言中一些相对少见或独特的语法设计，以及与其他语言的对比：&lt;/p>
-&lt;h3 class="relative group">1. &lt;strong>没有三元运算符（&lt;code>?:&lt;/code>）&lt;/strong>
-&lt;div id="1-没有三元运算符" class="anchor">&lt;/div>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>golang on nayun blog</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/coding/golang/</link><description>Recent content in golang on nayun blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>© 2025 nayun</copyright><lastBuildDate>Wed, 06 Aug 2025 10:18:47 +0800</lastBuildDate><atom:link href="https://wang-xu-97.github.io/nayun.github.io/tech/coding/golang/index.xml" rel="self" type="application/rss+xml"/><item><title>Go语言特点</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/coding/golang/go%E8%AF%AD%E8%A8%80%E7%89%B9%E7%82%B9/</link><pubDate>Wed, 06 Aug 2025 10:18:47 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/coding/golang/go%E8%AF%AD%E8%A8%80%E7%89%B9%E7%82%B9/</guid><description>&lt;p&gt;Go语言（Golang）的语法设计以简洁和明确性为核心，因此它避免了许多其他语言中常见的抽象或复杂的语法特性。以下是Go语言中一些相对少见或独特的语法设计，以及与其他语言的对比：&lt;/p&gt;
+&lt;h3 class="relative group"&gt;1. &lt;strong&gt;没有三元运算符（&lt;code&gt;?:&lt;/code&gt;）&lt;/strong&gt;
+&lt;div id="1-没有三元运算符" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e6%b2%a1%e6%9c%89%e4%b8%89%e5%85%83%e8%bf%90%e7%ae%97%e7%ac%a6" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h3>
-&lt;ul>
-&lt;li>Go语言明确移除了C语言风格的三元运算符（&lt;code>condition ? a : b&lt;/code>），而是要求开发者使用&lt;code>if-else&lt;/code>语句来实现条件判断。这种设计旨在提高代码的可读性，避免嵌套过深的表达式。&lt;/li>
-&lt;li>&lt;strong>示例&lt;/strong>：
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">go&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="c1">// Go 使用 if-else 替代三元运算符&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">&lt;span class="kd">var&lt;/span> &lt;span class="nx">result&lt;/span> &lt;span class="kt">int&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">&lt;span class="k">if&lt;/span> &lt;span class="nx">condition&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl"> &lt;span class="nx">result&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nx">a&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">6&lt;/span>&lt;span class="cl"> &lt;span class="nx">result&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nx">b&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">7&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;/li>
-&lt;li>相比之下，C/C++、Java、JavaScript等语言支持三元运算符，而Go选择更显式的写法。&lt;/li>
-&lt;/ul>
-&lt;h3 class="relative group">2. &lt;strong>没有传统泛型（Go 1.18 前）&lt;/strong>
-&lt;div id="2-没有传统泛型go-118-前" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e6%b2%a1%e6%9c%89%e4%b8%89%e5%85%83%e8%bf%90%e7%ae%97%e7%ac%a6" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Go语言明确移除了C语言风格的三元运算符（&lt;code&gt;condition ? a : b&lt;/code&gt;），而是要求开发者使用&lt;code&gt;if-else&lt;/code&gt;语句来实现条件判断。这种设计旨在提高代码的可读性，避免嵌套过深的表达式。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;示例&lt;/strong&gt;：
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;go&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;// Go 使用 if-else 替代三元运算符&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="kd"&gt;var&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;result&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;condition&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;result&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;a&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;6&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;result&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;b&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;7&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;相比之下，C/C++、Java、JavaScript等语言支持三元运算符，而Go选择更显式的写法。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 class="relative group"&gt;2. &lt;strong&gt;没有传统泛型（Go 1.18 前）&lt;/strong&gt;
+&lt;div id="2-没有传统泛型go-118-前" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e6%b2%a1%e6%9c%89%e4%bc%a0%e7%bb%9f%e6%b3%9b%e5%9e%8bgo-118-%e5%89%8d" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h3>
-&lt;ul>
-&lt;li>Go在早期版本中没有像C++、Java那样的泛型支持，而是使用&lt;code>interface{}&lt;/code>、类型断言和反射来模拟泛型行为。&lt;/li>
-&lt;li>&lt;strong>示例&lt;/strong>：
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">go&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="ln"> 1&lt;/span>&lt;span class="cl">&lt;span class="c1">// 使用 interface{} 和类型断言模拟泛型&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 2&lt;/span>&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nb">max&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">a&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">b&lt;/span> &lt;span class="kd">interface&lt;/span>&lt;span class="p">{})&lt;/span> &lt;span class="kd">interface&lt;/span>&lt;span class="p">{}&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 3&lt;/span>&lt;span class="cl"> &lt;span class="k">switch&lt;/span> &lt;span class="nx">a&lt;/span>&lt;span class="p">.(&lt;/span>&lt;span class="kd">type&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 4&lt;/span>&lt;span class="cl"> &lt;span class="k">case&lt;/span> &lt;span class="kt">int&lt;/span>&lt;span class="p">:&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 5&lt;/span>&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">a&lt;/span>&lt;span class="p">.(&lt;/span>&lt;span class="kt">int&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">&amp;gt;&lt;/span> &lt;span class="nx">b&lt;/span>&lt;span class="p">.(&lt;/span>&lt;span class="kt">int&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 6&lt;/span>&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nx">a&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 7&lt;/span>&lt;span class="cl"> &lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 8&lt;/span>&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nx">b&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 9&lt;/span>&lt;span class="cl"> &lt;span class="k">case&lt;/span> &lt;span class="kt">float64&lt;/span>&lt;span class="p">:&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">10&lt;/span>&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">a&lt;/span>&lt;span class="p">.(&lt;/span>&lt;span class="kt">float64&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">&amp;gt;&lt;/span> &lt;span class="nx">b&lt;/span>&lt;span class="p">.(&lt;/span>&lt;span class="kt">float64&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">11&lt;/span>&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nx">a&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">12&lt;/span>&lt;span class="cl"> &lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">13&lt;/span>&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nx">b&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">14&lt;/span>&lt;span class="cl"> &lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">15&lt;/span>&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="kc">nil&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">16&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;/li>
-&lt;li>Go 1.18 引入了泛型（类型参数），但之前的代码风格仍然广泛存在。&lt;/li>
-&lt;/ul>
-&lt;h3 class="relative group">3. &lt;strong>没有类继承（OOP 风格）&lt;/strong>
-&lt;div id="3-没有类继承oop-风格" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e6%b2%a1%e6%9c%89%e4%bc%a0%e7%bb%9f%e6%b3%9b%e5%9e%8bgo-118-%e5%89%8d" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Go在早期版本中没有像C++、Java那样的泛型支持，而是使用&lt;code&gt;interface{}&lt;/code&gt;、类型断言和反射来模拟泛型行为。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;示例&lt;/strong&gt;：
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;go&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;// 使用 interface{} 和类型断言模拟泛型&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="kd"&gt;func&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;max&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;b&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;interface&lt;/span&gt;&lt;span class="p"&gt;{})&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;interface&lt;/span&gt;&lt;span class="p"&gt;{}&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;switch&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;a&lt;/span&gt;&lt;span class="p"&gt;.(&lt;/span&gt;&lt;span class="kd"&gt;type&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;case&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;a&lt;/span&gt;&lt;span class="p"&gt;.(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;b&lt;/span&gt;&lt;span class="p"&gt;.(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 6&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;a&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;b&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;case&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;float64&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;a&lt;/span&gt;&lt;span class="p"&gt;.(&lt;/span&gt;&lt;span class="kt"&gt;float64&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;b&lt;/span&gt;&lt;span class="p"&gt;.(&lt;/span&gt;&lt;span class="kt"&gt;float64&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;a&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;12&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;13&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;b&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;14&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;15&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;nil&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;16&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;Go 1.18 引入了泛型（类型参数），但之前的代码风格仍然广泛存在。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 class="relative group"&gt;3. &lt;strong&gt;没有类继承（OOP 风格）&lt;/strong&gt;
+&lt;div id="3-没有类继承oop-风格" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#3-%e6%b2%a1%e6%9c%89%e7%b1%bb%e7%bb%a7%e6%89%bfoop-%e9%a3%8e%e6%a0%bc" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h3>
-&lt;ul>
-&lt;li>Go语言没有类（&lt;code>class&lt;/code>）和继承（&lt;code>inheritance&lt;/code>），而是使用结构体（&lt;code>struct&lt;/code>）和接口（&lt;code>interface&lt;/code>）的组合来实现类似功能。&lt;/li>
-&lt;li>&lt;strong>示例&lt;/strong>：
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">go&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="ln"> 1&lt;/span>&lt;span class="cl">&lt;span class="kd">type&lt;/span> &lt;span class="nx">Animal&lt;/span> &lt;span class="kd">struct&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 2&lt;/span>&lt;span class="cl"> &lt;span class="nx">Name&lt;/span> &lt;span class="kt">string&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 3&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 4&lt;/span>&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 5&lt;/span>&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">a&lt;/span> &lt;span class="o">*&lt;/span>&lt;span class="nx">Animal&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="nf">Speak&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 6&lt;/span>&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">a&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Name&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;makes a sound&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 7&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 8&lt;/span>&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 9&lt;/span>&lt;span class="cl">&lt;span class="kd">type&lt;/span> &lt;span class="nx">Dog&lt;/span> &lt;span class="kd">struct&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">10&lt;/span>&lt;span class="cl"> &lt;span class="nx">Animal&lt;/span> &lt;span class="c1">// 嵌入结构体（组合而非继承）&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">11&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">12&lt;/span>&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">13&lt;/span>&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">d&lt;/span> &lt;span class="o">*&lt;/span>&lt;span class="nx">Dog&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="nf">Speak&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">14&lt;/span>&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">d&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Name&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;barks&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">15&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;/li>
-&lt;li>这种方式更接近组合（composition over inheritance），而非传统OOP的继承机制。&lt;/li>
-&lt;/ul>
-&lt;h3 class="relative group">4. &lt;strong>没有异常处理（&lt;code>try-catch&lt;/code>）&lt;/strong>
-&lt;div id="4-没有异常处理" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#3-%e6%b2%a1%e6%9c%89%e7%b1%bb%e7%bb%a7%e6%89%bfoop-%e9%a3%8e%e6%a0%bc" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Go语言没有类（&lt;code&gt;class&lt;/code&gt;）和继承（&lt;code&gt;inheritance&lt;/code&gt;），而是使用结构体（&lt;code&gt;struct&lt;/code&gt;）和接口（&lt;code&gt;interface&lt;/code&gt;）的组合来实现类似功能。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;示例&lt;/strong&gt;：
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;go&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="kd"&gt;type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;Animal&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;struct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;Name&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;string&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="kd"&gt;func&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="nx"&gt;Animal&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;Speak&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 6&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;fmt&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;Println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;a&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;#34;makes a sound&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="kd"&gt;type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;Dog&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;struct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;Animal&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// 嵌入结构体（组合而非继承）&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;12&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;13&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="kd"&gt;func&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;d&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="nx"&gt;Dog&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;Speak&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;14&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;fmt&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;Println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;d&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;#34;barks&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;15&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;这种方式更接近组合（composition over inheritance），而非传统OOP的继承机制。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 class="relative group"&gt;4. &lt;strong&gt;没有异常处理（&lt;code&gt;try-catch&lt;/code&gt;）&lt;/strong&gt;
+&lt;div id="4-没有异常处理" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#4-%e6%b2%a1%e6%9c%89%e5%bc%82%e5%b8%b8%e5%a4%84%e7%90%86" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h3>
-&lt;ul>
-&lt;li>Go语言使用显式的错误返回（&lt;code>error&lt;/code> 类型）而非异常机制，要求开发者手动检查错误。&lt;/li>
-&lt;li>&lt;strong>示例&lt;/strong>：
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">go&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="nx">file&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">os&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Open&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;example.txt&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">&lt;span class="k">if&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="kc">nil&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl"> &lt;span class="nx">log&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Fatal&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">err&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl">&lt;span class="k">defer&lt;/span> &lt;span class="nx">file&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Close&lt;/span>&lt;span class="p">()&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;/li>
-&lt;li>相比之下，Java、Python等语言使用&lt;code>try-catch&lt;/code>机制，而Go选择更可控的错误处理方式。&lt;/li>
-&lt;/ul>
-&lt;h3 class="relative group">5. &lt;strong>没有&lt;code>while&lt;/code>循环&lt;/strong>
-&lt;div id="5-没有" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#4-%e6%b2%a1%e6%9c%89%e5%bc%82%e5%b8%b8%e5%a4%84%e7%90%86" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Go语言使用显式的错误返回（&lt;code&gt;error&lt;/code&gt; 类型）而非异常机制，要求开发者手动检查错误。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;示例&lt;/strong&gt;：
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;go&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;file&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;err&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;os&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;Open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;example.txt&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;err&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;!=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;nil&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;Fatal&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;err&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="k"&gt;defer&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;file&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;Close&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;相比之下，Java、Python等语言使用&lt;code&gt;try-catch&lt;/code&gt;机制，而Go选择更可控的错误处理方式。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 class="relative group"&gt;5. &lt;strong&gt;没有&lt;code&gt;while&lt;/code&gt;循环&lt;/strong&gt;
+&lt;div id="5-没有" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#5-%e6%b2%a1%e6%9c%89" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h3>
-&lt;ul>
-&lt;li>Go语言只有&lt;code>for&lt;/code>循环，没有单独的&lt;code>while&lt;/code>关键字。&lt;code>while&lt;/code>循环的功能通过&lt;code>for&lt;/code>实现。&lt;/li>
-&lt;li>&lt;strong>示例&lt;/strong>：
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">go&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="c1">// Go 的 while 循环等效写法&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">&lt;span class="k">for&lt;/span> &lt;span class="nx">condition&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl"> &lt;span class="c1">// 循环体&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">6&lt;/span>&lt;span class="cl">&lt;span class="c1">// 无限循环&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">7&lt;/span>&lt;span class="cl">&lt;span class="k">for&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">8&lt;/span>&lt;span class="cl"> &lt;span class="c1">// 循环体&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">9&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;/li>
-&lt;li>这种设计减少了语言的关键字数量，使语法更简洁。&lt;/li>
-&lt;/ul>
-&lt;h3 class="relative group">6. &lt;strong>没有函数重载（Overloading）&lt;/strong>
-&lt;div id="6-没有函数重载overloading" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#5-%e6%b2%a1%e6%9c%89" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Go语言只有&lt;code&gt;for&lt;/code&gt;循环，没有单独的&lt;code&gt;while&lt;/code&gt;关键字。&lt;code&gt;while&lt;/code&gt;循环的功能通过&lt;code&gt;for&lt;/code&gt;实现。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;示例&lt;/strong&gt;：
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;go&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;// Go 的 while 循环等效写法&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;condition&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// 循环体&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;6&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="c1"&gt;// 无限循环&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;7&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;8&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// 循环体&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;9&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;这种设计减少了语言的关键字数量，使语法更简洁。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 class="relative group"&gt;6. &lt;strong&gt;没有函数重载（Overloading）&lt;/strong&gt;
+&lt;div id="6-没有函数重载overloading" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#6-%e6%b2%a1%e6%9c%89%e5%87%bd%e6%95%b0%e9%87%8d%e8%bd%bdoverloading" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h3>
-&lt;ul>
-&lt;li>Go不支持函数名重载（即相同函数名不同参数列表），而是鼓励使用不同的函数名或可变参数（&lt;code>...&lt;/code>）。&lt;/li>
-&lt;li>&lt;strong>示例&lt;/strong>：
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">go&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">AddInt&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">a&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">b&lt;/span> &lt;span class="kt">int&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="kt">int&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nx">a&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="nx">b&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">AddFloat&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">a&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">b&lt;/span> &lt;span class="kt">float64&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="kt">float64&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">6&lt;/span>&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nx">a&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="nx">b&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">7&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;/li>
-&lt;li>相比之下，C++、Java等语言允许函数重载。&lt;/li>
-&lt;/ul>
-&lt;h3 class="relative group">7. &lt;strong>&lt;code>switch&lt;/code> 语句的独特设计&lt;/strong>
-&lt;div id="7-switch" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#6-%e6%b2%a1%e6%9c%89%e5%87%bd%e6%95%b0%e9%87%8d%e8%bd%bdoverloading" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Go不支持函数名重载（即相同函数名不同参数列表），而是鼓励使用不同的函数名或可变参数（&lt;code&gt;...&lt;/code&gt;）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;示例&lt;/strong&gt;：
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;go&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="kd"&gt;func&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;AddInt&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;b&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;b&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="kd"&gt;func&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;AddFloat&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;b&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;float64&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;float64&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;6&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;b&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;7&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;相比之下，C++、Java等语言允许函数重载。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 class="relative group"&gt;7. &lt;strong&gt;&lt;code&gt;switch&lt;/code&gt; 语句的独特设计&lt;/strong&gt;
+&lt;div id="7-switch" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#7-switch" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h3>
-&lt;ul>
-&lt;li>Go的&lt;code>switch&lt;/code>语句不需要&lt;code>break&lt;/code>，默认不会“穿透”（fallthrough），除非显式使用&lt;code>fallthrough&lt;/code>关键字。&lt;/li>
-&lt;li>&lt;strong>示例&lt;/strong>：
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">go&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="k">switch&lt;/span> &lt;span class="nx">value&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">&lt;span class="k">case&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">:&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;One&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">&lt;span class="k">case&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">:&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;Two&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">6&lt;/span>&lt;span class="cl"> &lt;span class="k">fallthrough&lt;/span> &lt;span class="c1">// 显式继续执行下一个 case&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">7&lt;/span>&lt;span class="cl">&lt;span class="k">case&lt;/span> &lt;span class="mi">3&lt;/span>&lt;span class="p">:&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">8&lt;/span>&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;Three&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">9&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;/li>
-&lt;li>这种设计避免了C/C++中常见的&lt;code>switch&lt;/code>穿透问题。&lt;/li>
-&lt;/ul>
-&lt;h3 class="relative group">8. &lt;strong>&lt;code>defer&lt;/code> 关键字&lt;/strong>
-&lt;div id="8-defer" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#7-switch" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Go的&lt;code&gt;switch&lt;/code&gt;语句不需要&lt;code&gt;break&lt;/code&gt;，默认不会“穿透”（fallthrough），除非显式使用&lt;code&gt;fallthrough&lt;/code&gt;关键字。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;示例&lt;/strong&gt;：
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;go&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;switch&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;value&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="k"&gt;case&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;fmt&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;Println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;One&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="k"&gt;case&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;fmt&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;Println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;Two&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;6&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;fallthrough&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// 显式继续执行下一个 case&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;7&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="k"&gt;case&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;8&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;fmt&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;Println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;Three&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;9&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;这种设计避免了C/C++中常见的&lt;code&gt;switch&lt;/code&gt;穿透问题。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 class="relative group"&gt;8. &lt;strong&gt;&lt;code&gt;defer&lt;/code&gt; 关键字&lt;/strong&gt;
+&lt;div id="8-defer" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#8-defer" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h3>
-&lt;ul>
-&lt;li>Go的&lt;code>defer&lt;/code>用于延迟执行函数调用，通常用于资源清理（如文件关闭、锁释放等），这在其他语言中较少见。&lt;/li>
-&lt;li>&lt;strong>示例&lt;/strong>：
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">go&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="nx">file&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">os&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Open&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;file.txt&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">&lt;span class="k">if&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="kc">nil&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl"> &lt;span class="nx">log&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Fatal&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">err&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl">&lt;span class="k">defer&lt;/span> &lt;span class="nx">file&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Close&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="c1">// 确保函数退出时关闭文件&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;/li>
-&lt;li>类似的功能在C++中可能使用RAII，而在Python中可能使用&lt;code>with&lt;/code>语句。&lt;/li>
-&lt;/ul>
-&lt;h3 class="relative group">9. &lt;strong>&lt;code>:=&lt;/code> 短变量声明&lt;/strong>
-&lt;div id="9-" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#8-defer" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Go的&lt;code&gt;defer&lt;/code&gt;用于延迟执行函数调用，通常用于资源清理（如文件关闭、锁释放等），这在其他语言中较少见。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;示例&lt;/strong&gt;：
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;go&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;file&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;err&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;os&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;Open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;file.txt&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;err&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;!=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;nil&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;Fatal&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;err&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="k"&gt;defer&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;file&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;Close&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// 确保函数退出时关闭文件&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;类似的功能在C++中可能使用RAII，而在Python中可能使用&lt;code&gt;with&lt;/code&gt;语句。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 class="relative group"&gt;9. &lt;strong&gt;&lt;code&gt;:=&lt;/code&gt; 短变量声明&lt;/strong&gt;
+&lt;div id="9-" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#9-" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h3>
-&lt;ul>
-&lt;li>Go使用&lt;code>:=&lt;/code>进行短变量声明，编译器自动推断类型，这在静态类型语言中较为少见。&lt;/li>
-&lt;li>&lt;strong>示例&lt;/strong>：
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">go&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="nx">x&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="mi">42&lt;/span> &lt;span class="c1">// 自动推断为 int&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">&lt;span class="nx">name&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="s">&amp;#34;Alice&amp;#34;&lt;/span> &lt;span class="c1">// 自动推断为 string&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;/li>
-&lt;li>类似的功能在Python中是动态类型的自然特性，但在静态类型语言中较少见。&lt;/li>
-&lt;/ul>
-&lt;h3 class="relative group">10. &lt;strong>没有&lt;code>do-while&lt;/code>循环&lt;/strong>
-&lt;div id="10-没有" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#9-" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Go使用&lt;code&gt;:=&lt;/code&gt;进行短变量声明，编译器自动推断类型，这在静态类型语言中较为少见。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;示例&lt;/strong&gt;：
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;go&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;x&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;42&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// 自动推断为 int&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nx"&gt;name&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;#34;Alice&amp;#34;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// 自动推断为 string&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;类似的功能在Python中是动态类型的自然特性，但在静态类型语言中较少见。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 class="relative group"&gt;10. &lt;strong&gt;没有&lt;code&gt;do-while&lt;/code&gt;循环&lt;/strong&gt;
+&lt;div id="10-没有" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#10-%e6%b2%a1%e6%9c%89" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h3>
-&lt;ul>
-&lt;li>Go语言没有&lt;code>do-while&lt;/code>循环结构，类似的功能需要通过&lt;code>for&lt;/code>循环模拟。&lt;/li>
-&lt;li>&lt;strong>示例&lt;/strong>：
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">go&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="k">for&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl"> &lt;span class="c1">// 循环体&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">!&lt;/span>&lt;span class="nx">condition&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl"> &lt;span class="k">break&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl"> &lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">6&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;/li>
-&lt;/ul>
-&lt;h3 class="relative group">总结
-&lt;div id="总结" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#10-%e6%b2%a1%e6%9c%89" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Go语言没有&lt;code&gt;do-while&lt;/code&gt;循环结构，类似的功能需要通过&lt;code&gt;for&lt;/code&gt;循环模拟。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;示例&lt;/strong&gt;：
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;go&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// 循环体&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;!&lt;/span&gt;&lt;span class="nx"&gt;condition&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;break&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;6&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 class="relative group"&gt;总结
+&lt;div id="总结" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%80%bb%e7%bb%93" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h3>
-&lt;p>Go语言的语法设计强调&lt;strong>简洁性&lt;/strong>和&lt;strong>明确性&lt;/strong>，因此它移除了许多其他语言中常见的抽象或复杂特性（如三元运算符、异常、类继承等），转而采用更直接的方式（如&lt;code>if-else&lt;/code>、错误返回、组合模式）。这些设计选择使Go代码更易读、易维护，但也可能让习惯其他语言的开发者感到陌生。&lt;/p></description></item><item><title>Gochannel</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/coding/golang/gochannel/</link><pubDate>Tue, 05 Aug 2025 17:37:17 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/coding/golang/gochannel/</guid><description>&lt;h1 class="relative group">Go 语言 Channel 详解及其与 Linux 管道的比较
-&lt;div id="go-语言-channel-详解及其与-linux-管道的比较" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%80%bb%e7%bb%93" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;
+&lt;p&gt;Go语言的语法设计强调&lt;strong&gt;简洁性&lt;/strong&gt;和&lt;strong&gt;明确性&lt;/strong&gt;，因此它移除了许多其他语言中常见的抽象或复杂特性（如三元运算符、异常、类继承等），转而采用更直接的方式（如&lt;code&gt;if-else&lt;/code&gt;、错误返回、组合模式）。这些设计选择使Go代码更易读、易维护，但也可能让习惯其他语言的开发者感到陌生。&lt;/p&gt;</description></item><item><title>Gochannel</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/coding/golang/gochannel/</link><pubDate>Tue, 05 Aug 2025 17:37:17 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/coding/golang/gochannel/</guid><description>&lt;h1 class="relative group"&gt;Go 语言 Channel 详解及其与 Linux 管道的比较
+&lt;div id="go-语言-channel-详解及其与-linux-管道的比较" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#go-%e8%af%ad%e8%a8%80-channel-%e8%af%a6%e8%a7%a3%e5%8f%8a%e5%85%b6%e4%b8%8e-linux-%e7%ae%a1%e9%81%93%e7%9a%84%e6%af%94%e8%be%83" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h1>
-&lt;h2 class="relative group">1. Go Channel 基本概念
-&lt;div id="1-go-channel-基本概念" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#go-%e8%af%ad%e8%a8%80-channel-%e8%af%a6%e8%a7%a3%e5%8f%8a%e5%85%b6%e4%b8%8e-linux-%e7%ae%a1%e9%81%93%e7%9a%84%e6%af%94%e8%be%83" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h1&gt;
+&lt;h2 class="relative group"&gt;1. Go Channel 基本概念
+&lt;div id="1-go-channel-基本概念" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-go-channel-%e5%9f%ba%e6%9c%ac%e6%a6%82%e5%bf%b5" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h2>
-&lt;p>Channel（通道）是 Go 语言中的一种核心并发原语，用于在不同的 goroutine 之间进行通信和同步。它类似于 Unix 系统中的管道概念，但具有更丰富的特性和更强的类型安全性。&lt;/p>
-&lt;h3 class="relative group">Channel 的特性：
-&lt;div id="channel-的特性" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-go-channel-%e5%9f%ba%e6%9c%ac%e6%a6%82%e5%bf%b5" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;
+&lt;p&gt;Channel（通道）是 Go 语言中的一种核心并发原语，用于在不同的 goroutine 之间进行通信和同步。它类似于 Unix 系统中的管道概念，但具有更丰富的特性和更强的类型安全性。&lt;/p&gt;
+&lt;h3 class="relative group"&gt;Channel 的特性：
+&lt;div id="channel-的特性" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#channel-%e7%9a%84%e7%89%b9%e6%80%a7" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h3>
-&lt;ul>
-&lt;li>&lt;strong>类型化的&lt;/strong>：每个 channel 只能传递特定类型的值&lt;/li>
-&lt;li>&lt;strong>并发安全&lt;/strong>：多个 goroutine 可以同时访问 channel 而无需额外同步&lt;/li>
-&lt;li>&lt;strong>阻塞机制&lt;/strong>：发送和接收操作在默认情况下是阻塞的&lt;/li>
-&lt;li>&lt;strong>先进先出&lt;/strong> (FIFO)：保持消息的发送顺序&lt;/li>
-&lt;/ul>
-&lt;h2 class="relative group">2. Channel 的基本使用
-&lt;div id="2-channel-的基本使用" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#channel-%e7%9a%84%e7%89%b9%e6%80%a7" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;类型化的&lt;/strong&gt;：每个 channel 只能传递特定类型的值&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;并发安全&lt;/strong&gt;：多个 goroutine 可以同时访问 channel 而无需额外同步&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;阻塞机制&lt;/strong&gt;：发送和接收操作在默认情况下是阻塞的&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;先进先出&lt;/strong&gt; (FIFO)：保持消息的发送顺序&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 class="relative group"&gt;2. Channel 的基本使用
+&lt;div id="2-channel-的基本使用" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-channel-%e7%9a%84%e5%9f%ba%e6%9c%ac%e4%bd%bf%e7%94%a8" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h2>
-&lt;h3 class="relative group">创建 Channel
-&lt;div id="创建-channel" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-channel-%e7%9a%84%e5%9f%ba%e6%9c%ac%e4%bd%bf%e7%94%a8" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;
+&lt;h3 class="relative group"&gt;创建 Channel
+&lt;div id="创建-channel" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%88%9b%e5%bb%ba-channel" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h3>
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">go&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="nx">ch&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nb">make&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="kd">chan&lt;/span> &lt;span class="kt">int&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1">// 无缓冲 channel&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">&lt;span class="nx">ch&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nb">make&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="kd">chan&lt;/span> &lt;span class="kt">int&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">5&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1">// 缓冲大小为5的 channel&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;h3 class="relative group">发送和接收数据
-&lt;div id="发送和接收数据" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%88%9b%e5%bb%ba-channel" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;go&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;ch&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;make&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kd"&gt;chan&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// 无缓冲 channel&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nx"&gt;ch&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;make&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kd"&gt;chan&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// 缓冲大小为5的 channel&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 class="relative group"&gt;发送和接收数据
+&lt;div id="发送和接收数据" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%8f%91%e9%80%81%e5%92%8c%e6%8e%a5%e6%94%b6%e6%95%b0%e6%8d%ae" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h3>
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">go&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="c1">// 发送数据&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">&lt;span class="nx">ch&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="mi">42&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">&lt;span class="c1">// 接收数据&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl">&lt;span class="nx">value&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span>&lt;span class="nx">ch&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">6&lt;/span>&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">7&lt;/span>&lt;span class="cl">&lt;span class="c1">// 关闭 channel&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">8&lt;/span>&lt;span class="cl">&lt;span class="nb">close&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">ch&lt;/span>&lt;span class="p">)&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;h2 class="relative group">3. Channel 与 Linux 管道的比较
-&lt;div id="3-channel-与-linux-管道的比较" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%8f%91%e9%80%81%e5%92%8c%e6%8e%a5%e6%94%b6%e6%95%b0%e6%8d%ae" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;go&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;// 发送数据&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nx"&gt;ch&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;42&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="c1"&gt;// 接收数据&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nx"&gt;value&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;-&lt;/span&gt;&lt;span class="nx"&gt;ch&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;6&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;7&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="c1"&gt;// 关闭 channel&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;8&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nb"&gt;close&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;ch&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 class="relative group"&gt;3. Channel 与 Linux 管道的比较
+&lt;div id="3-channel-与-linux-管道的比较" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#3-channel-%e4%b8%8e-linux-%e7%ae%a1%e9%81%93%e7%9a%84%e6%af%94%e8%be%83" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h2>
-&lt;h3 class="relative group">相似之处：
-&lt;div id="相似之处" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#3-channel-%e4%b8%8e-linux-%e7%ae%a1%e9%81%93%e7%9a%84%e6%af%94%e8%be%83" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;
+&lt;h3 class="relative group"&gt;相似之处：
+&lt;div id="相似之处" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%9b%b8%e4%bc%bc%e4%b9%8b%e5%a4%84" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h3>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>特性&lt;/th>
-&lt;th>Go Channel&lt;/th>
-&lt;th>Linux 管道&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>通信方式&lt;/td>
-&lt;td>进程内通信&lt;/td>
-&lt;td>进程间通信&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>数据流&lt;/td>
-&lt;td>单向/双向&lt;/td>
-&lt;td>单向&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>同步机制&lt;/td>
-&lt;td>阻塞操作&lt;/td>
-&lt;td>阻塞操作&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>数据顺序&lt;/td>
-&lt;td>FIFO&lt;/td>
-&lt;td>FIFO&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h3 class="relative group">主要区别：
-&lt;div id="主要区别" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%9b%b8%e4%bc%bc%e4%b9%8b%e5%a4%84" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;特性&lt;/th&gt;
+&lt;th&gt;Go Channel&lt;/th&gt;
+&lt;th&gt;Linux 管道&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;通信方式&lt;/td&gt;
+&lt;td&gt;进程内通信&lt;/td&gt;
+&lt;td&gt;进程间通信&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;数据流&lt;/td&gt;
+&lt;td&gt;单向/双向&lt;/td&gt;
+&lt;td&gt;单向&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;同步机制&lt;/td&gt;
+&lt;td&gt;阻塞操作&lt;/td&gt;
+&lt;td&gt;阻塞操作&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;数据顺序&lt;/td&gt;
+&lt;td&gt;FIFO&lt;/td&gt;
+&lt;td&gt;FIFO&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 class="relative group"&gt;主要区别：
+&lt;div id="主要区别" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e4%b8%bb%e8%a6%81%e5%8c%ba%e5%88%ab" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h3>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>特性&lt;/th>
-&lt;th>Go Channel&lt;/th>
-&lt;th>Linux 管道&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>作用范围&lt;/td>
-&lt;td>主要在单个进程内的 goroutine 之间&lt;/td>
-&lt;td>主要在进程之间&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>类型安全&lt;/td>
-&lt;td>强类型，编译时检查&lt;/td>
-&lt;td>字节流，无类型&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>缓冲机制&lt;/td>
-&lt;td>可配置缓冲大小&lt;/td>
-&lt;td>固定大小缓冲区(通常64KB)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>多路复用&lt;/td>
-&lt;td>原生支持 select 多路复用&lt;/td>
-&lt;td>需要配合 select/poll/epoll&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>关闭机制&lt;/td>
-&lt;td>有明确的关闭操作&lt;/td>
-&lt;td>文件描述符关闭即结束&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>性能&lt;/td>
-&lt;td>更高(内存间通信)&lt;/td>
-&lt;td>较低(涉及系统调用)&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2 class="relative group">4. Channel 的高级特性
-&lt;div id="4-channel-的高级特性" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e4%b8%bb%e8%a6%81%e5%8c%ba%e5%88%ab" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;特性&lt;/th&gt;
+&lt;th&gt;Go Channel&lt;/th&gt;
+&lt;th&gt;Linux 管道&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;作用范围&lt;/td&gt;
+&lt;td&gt;主要在单个进程内的 goroutine 之间&lt;/td&gt;
+&lt;td&gt;主要在进程之间&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;类型安全&lt;/td&gt;
+&lt;td&gt;强类型，编译时检查&lt;/td&gt;
+&lt;td&gt;字节流，无类型&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;缓冲机制&lt;/td&gt;
+&lt;td&gt;可配置缓冲大小&lt;/td&gt;
+&lt;td&gt;固定大小缓冲区(通常64KB)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;多路复用&lt;/td&gt;
+&lt;td&gt;原生支持 select 多路复用&lt;/td&gt;
+&lt;td&gt;需要配合 select/poll/epoll&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;关闭机制&lt;/td&gt;
+&lt;td&gt;有明确的关闭操作&lt;/td&gt;
+&lt;td&gt;文件描述符关闭即结束&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;性能&lt;/td&gt;
+&lt;td&gt;更高(内存间通信)&lt;/td&gt;
+&lt;td&gt;较低(涉及系统调用)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 class="relative group"&gt;4. Channel 的高级特性
+&lt;div id="4-channel-的高级特性" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#4-channel-%e7%9a%84%e9%ab%98%e7%ba%a7%e7%89%b9%e6%80%a7" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h2>
-&lt;h3 class="relative group">方向性 Channel
-&lt;div id="方向性-channel" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#4-channel-%e7%9a%84%e9%ab%98%e7%ba%a7%e7%89%b9%e6%80%a7" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;
+&lt;h3 class="relative group"&gt;方向性 Channel
+&lt;div id="方向性-channel" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%96%b9%e5%90%91%e6%80%a7-channel" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h3>
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">go&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">sender&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">ch&lt;/span> &lt;span class="kd">chan&lt;/span>&lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="kt">int&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="c1">// 只发送channel&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl"> &lt;span class="nx">ch&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="mi">1&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">receiver&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">ch&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span>&lt;span class="kd">chan&lt;/span> &lt;span class="kt">int&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="c1">// 只接收channel&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">6&lt;/span>&lt;span class="cl"> &lt;span class="nx">v&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span>&lt;span class="nx">ch&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">7&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;h3 class="relative group">Select 多路复用
-&lt;div id="select-多路复用" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%96%b9%e5%90%91%e6%80%a7-channel" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;go&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="kd"&gt;func&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;sender&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;ch&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;chan&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// 只发送channel&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;ch&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="kd"&gt;func&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;receiver&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;ch&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;-&lt;/span&gt;&lt;span class="kd"&gt;chan&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// 只接收channel&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;6&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;v&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;-&lt;/span&gt;&lt;span class="nx"&gt;ch&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;7&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 class="relative group"&gt;Select 多路复用
+&lt;div id="select-多路复用" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#select-%e5%a4%9a%e8%b7%af%e5%a4%8d%e7%94%a8" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h3>
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">go&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="k">select&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">&lt;span class="k">case&lt;/span> &lt;span class="nx">v&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span>&lt;span class="nx">ch1&lt;/span>&lt;span class="p">:&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">v&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">&lt;span class="k">case&lt;/span> &lt;span class="nx">ch2&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="mi">42&lt;/span>&lt;span class="p">:&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;sent&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">6&lt;/span>&lt;span class="cl">&lt;span class="k">default&lt;/span>&lt;span class="p">:&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">7&lt;/span>&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;default&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">8&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;h3 class="relative group">Channel 的遍历
-&lt;div id="channel-的遍历" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#select-%e5%a4%9a%e8%b7%af%e5%a4%8d%e7%94%a8" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;go&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;select&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="k"&gt;case&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;v&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;-&lt;/span&gt;&lt;span class="nx"&gt;ch1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;fmt&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;Println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;v&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="k"&gt;case&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;ch2&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;42&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;fmt&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;Println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;sent&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;6&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="k"&gt;default&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;7&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;fmt&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;Println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;default&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;8&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 class="relative group"&gt;Channel 的遍历
+&lt;div id="channel-的遍历" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#channel-%e7%9a%84%e9%81%8d%e5%8e%86" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h3>
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">go&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="k">for&lt;/span> &lt;span class="nx">v&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="k">range&lt;/span> &lt;span class="nx">ch&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">v&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;h2 class="relative group">5. 实际应用场景
-&lt;div id="5-实际应用场景" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#channel-%e7%9a%84%e9%81%8d%e5%8e%86" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;go&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;v&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;range&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;ch&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;fmt&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;Println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;v&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 class="relative group"&gt;5. 实际应用场景
+&lt;div id="5-实际应用场景" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#5-%e5%ae%9e%e9%99%85%e5%ba%94%e7%94%a8%e5%9c%ba%e6%99%af" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h2>
-&lt;ol>
-&lt;li>&lt;strong>goroutine 同步&lt;/strong>：等待多个 goroutine 完成&lt;/li>
-&lt;li>&lt;strong>工作池模式&lt;/strong>：分发任务给多个 worker&lt;/li>
-&lt;li>&lt;strong>事件通知&lt;/strong>：作为轻量级的事件总线&lt;/li>
-&lt;li>&lt;strong>数据流水线&lt;/strong>：构建多阶段处理管道&lt;/li>
-&lt;/ol>
-&lt;h2 class="relative group">6. 性能考虑
-&lt;div id="6-性能考虑" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#5-%e5%ae%9e%e9%99%85%e5%ba%94%e7%94%a8%e5%9c%ba%e6%99%af" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;goroutine 同步&lt;/strong&gt;：等待多个 goroutine 完成&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;工作池模式&lt;/strong&gt;：分发任务给多个 worker&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;事件通知&lt;/strong&gt;：作为轻量级的事件总线&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;数据流水线&lt;/strong&gt;：构建多阶段处理管道&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 class="relative group"&gt;6. 性能考虑
+&lt;div id="6-性能考虑" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#6-%e6%80%a7%e8%83%bd%e8%80%83%e8%99%91" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h2>
-&lt;ul>
-&lt;li>无缓冲 channel 的通信延迟约 50ns&lt;/li>
-&lt;li>缓冲 channel 的吞吐量可达每秒数百万次&lt;/li>
-&lt;li>与 Linux 管道相比，channel 的性能通常高 1-2 个数量级&lt;/li>
-&lt;/ul>
-&lt;h2 class="relative group">总结
-&lt;div id="总结" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#6-%e6%80%a7%e8%83%bd%e8%80%83%e8%99%91" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;无缓冲 channel 的通信延迟约 50ns&lt;/li&gt;
+&lt;li&gt;缓冲 channel 的吞吐量可达每秒数百万次&lt;/li&gt;
+&lt;li&gt;与 Linux 管道相比，channel 的性能通常高 1-2 个数量级&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 class="relative group"&gt;总结
+&lt;div id="总结" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%80%bb%e7%bb%93" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h2>
-&lt;p>Go 的 channel 设计确实受到了 Unix 管道的启发，但它针对 Go 的并发模型进行了专门优化：&lt;/p></description></item><item><title>Go基础语法</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/coding/golang/go%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</link><pubDate>Tue, 05 Aug 2025 16:21:19 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/coding/golang/go%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</guid><description>&lt;h2 class="relative group">赋值
-&lt;div id="赋值" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%80%bb%e7%bb%93" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;
+&lt;p&gt;Go 的 channel 设计确实受到了 Unix 管道的启发，但它针对 Go 的并发模型进行了专门优化：&lt;/p&gt;</description></item><item><title>Go基础语法</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/coding/golang/go%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</link><pubDate>Tue, 05 Aug 2025 16:21:19 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/coding/golang/go%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</guid><description>&lt;h2 class="relative group"&gt;赋值
+&lt;div id="赋值" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e8%b5%8b%e5%80%bc" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h2>
-&lt;p>&lt;code>Go 是强类型语言，赋值时类型必须匹配&lt;/code>&lt;/p>
-&lt;ol>
-&lt;li>基本赋值&lt;/li>
-&lt;/ol>
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">go&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="kd">var&lt;/span> &lt;span class="nx">a&lt;/span> &lt;span class="kt">int&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">&lt;span class="nx">a&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="mi">10&lt;/span> &lt;span class="c1">// 基本赋值&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">&lt;span class="nx">b&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="mi">20&lt;/span> &lt;span class="c1">// 短变量声明并赋值&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;ol start="2">
-&lt;li>数组赋值&lt;/li>
-&lt;/ol>
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">go&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="kd">var&lt;/span> &lt;span class="nx">arr&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="mi">3&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="kt">int&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">&lt;span class="nx">arr&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="mi">3&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="kt">int&lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">3&lt;/span>&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">&lt;span class="c1">// 或者&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl">&lt;span class="nx">arr2&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="o">...&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="kt">int&lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="mi">4&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">5&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">6&lt;/span>&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;ol start="3">
-&lt;li>Map赋值&lt;/li>
-&lt;/ol>
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">go&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="nx">m&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nb">make&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="kd">map&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="kt">string&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="kt">int&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">&lt;span class="nx">m&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s">&amp;#34;key1&amp;#34;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="c1">// 添加或修改键值对&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">&lt;span class="c1">// 初始化赋值&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl">&lt;span class="nx">m2&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="kd">map&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="kt">string&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="kt">int&lt;/span>&lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">6&lt;/span>&lt;span class="cl"> &lt;span class="s">&amp;#34;a&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">7&lt;/span>&lt;span class="cl"> &lt;span class="s">&amp;#34;b&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">8&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;ol start="4">
-&lt;li>指针赋值&lt;/li>
-&lt;/ol>
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">go&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="kd">var&lt;/span> &lt;span class="nx">a&lt;/span> &lt;span class="kt">int&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="mi">10&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">&lt;span class="kd">var&lt;/span> &lt;span class="nx">p&lt;/span> &lt;span class="o">*&lt;/span>&lt;span class="kt">int&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="o">&amp;amp;&lt;/span>&lt;span class="nx">a&lt;/span> &lt;span class="c1">// p 指向 a&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">&lt;span class="o">*&lt;/span>&lt;span class="nx">p&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="mi">20&lt;/span> &lt;span class="c1">// 通过指针修改 a 的值&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl">&lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">a&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1">// 输出 20&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;ol start="5">
-&lt;li>运算后赋值&lt;/li>
-&lt;/ol>
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">go&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="ln"> 1&lt;/span>&lt;span class="cl">&lt;span class="nx">a&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="mi">10&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 2&lt;/span>&lt;span class="cl">&lt;span class="nx">a&lt;/span> &lt;span class="o">+=&lt;/span> &lt;span class="mi">5&lt;/span> &lt;span class="c1">// a = a + 5&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 3&lt;/span>&lt;span class="cl">&lt;span class="nx">a&lt;/span> &lt;span class="o">-=&lt;/span> &lt;span class="mi">3&lt;/span> &lt;span class="c1">// a = a - 3&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 4&lt;/span>&lt;span class="cl">&lt;span class="nx">a&lt;/span> &lt;span class="o">*=&lt;/span> &lt;span class="mi">2&lt;/span> &lt;span class="c1">// a = a * 2&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 5&lt;/span>&lt;span class="cl">&lt;span class="nx">a&lt;/span> &lt;span class="o">/=&lt;/span> &lt;span class="mi">4&lt;/span> &lt;span class="c1">// a = a / 4&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 6&lt;/span>&lt;span class="cl">&lt;span class="nx">a&lt;/span> &lt;span class="o">%=&lt;/span> &lt;span class="mi">3&lt;/span> &lt;span class="c1">// a = a % 3&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 7&lt;/span>&lt;span class="cl">&lt;span class="nx">a&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;=&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="c1">// a = a &amp;lt;&amp;lt; 1 (左移)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 8&lt;/span>&lt;span class="cl">&lt;span class="nx">a&lt;/span> &lt;span class="o">&amp;gt;&amp;gt;=&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="c1">// a = a &amp;gt;&amp;gt; 1 (右移)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 9&lt;/span>&lt;span class="cl">&lt;span class="nx">a&lt;/span> &lt;span class="o">&amp;amp;=&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="c1">// a = a &amp;amp; 1 (按位与)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">10&lt;/span>&lt;span class="cl">&lt;span class="nx">a&lt;/span> &lt;span class="o">|=&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="c1">// a = a | 1 (按位或)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">11&lt;/span>&lt;span class="cl">&lt;span class="nx">a&lt;/span> &lt;span class="p">^=&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="c1">// a = a ^ 1 (按位异或)&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;ol start="6">
-&lt;li>接口赋值&lt;/li>
-&lt;/ol>
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">go&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="kd">var&lt;/span> &lt;span class="nx">w&lt;/span> &lt;span class="nx">io&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Writer&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">&lt;span class="nx">w&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nx">os&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Stdout&lt;/span> &lt;span class="c1">// 只要 os.Stdout 实现了 io.Writer 接口&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;h2 class="relative group">匿名函数
-&lt;div id="匿名函数" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e8%b5%8b%e5%80%bc" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;Go 是强类型语言，赋值时类型必须匹配&lt;/code&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;基本赋值&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;go&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="kd"&gt;var&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nx"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// 基本赋值&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nx"&gt;b&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// 短变量声明并赋值&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;数组赋值&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;go&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="kd"&gt;var&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;arr&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nx"&gt;arr&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="c1"&gt;// 或者&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nx"&gt;arr2&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;...&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;ol start="3"&gt;
+&lt;li&gt;Map赋值&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;go&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;m&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;make&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kd"&gt;map&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="kt"&gt;string&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nx"&gt;m&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;key1&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// 添加或修改键值对&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="c1"&gt;// 初始化赋值&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nx"&gt;m2&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;map&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="kt"&gt;string&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;6&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;#34;a&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;7&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;#34;b&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;8&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;ol start="4"&gt;
+&lt;li&gt;指针赋值&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;go&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="kd"&gt;var&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="kd"&gt;var&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nx"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// p 指向 a&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="nx"&gt;p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// 通过指针修改 a 的值&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nx"&gt;fmt&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;Println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// 输出 20&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;ol start="5"&gt;
+&lt;li&gt;运算后赋值&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;go&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nx"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// a = a + 5&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nx"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// a = a - 3&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nx"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// a = a * 2&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nx"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;/=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// a = a / 4&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 6&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nx"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;%=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// a = a % 3&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nx"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// a = a &amp;lt;&amp;lt; 1 (左移)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nx"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// a = a &amp;gt;&amp;gt; 1 (右移)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nx"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;amp;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// a = a &amp;amp; 1 (按位与)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nx"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;|=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// a = a | 1 (按位或)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nx"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;^=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// a = a ^ 1 (按位异或)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;ol start="6"&gt;
+&lt;li&gt;接口赋值&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;go&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="kd"&gt;var&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;w&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;io&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Writer&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nx"&gt;w&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;os&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Stdout&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// 只要 os.Stdout 实现了 io.Writer 接口&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 class="relative group"&gt;匿名函数
+&lt;div id="匿名函数" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%8c%bf%e5%90%8d%e5%87%bd%e6%95%b0" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h2>
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">go&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="kd">func&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">参数列表&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="nx">返回值列表&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl"> &lt;span class="c1">// 函数体&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl">&lt;span class="nx">add&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="kd">func&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">a&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">b&lt;/span> &lt;span class="kt">int&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="kt">int&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">6&lt;/span>&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nx">a&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="nx">b&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">7&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;h2 class="relative group">make
-&lt;div id="make" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%8c%bf%e5%90%8d%e5%87%bd%e6%95%b0" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;go&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="kd"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;参数列表&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;返回值列表&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// 函数体&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nx"&gt;add&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;b&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;6&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;b&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;7&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 class="relative group"&gt;make
+&lt;div id="make" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#make" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h2>
-&lt;p>&lt;code>make&lt;/code> 是 Go 语言中用于初始化某些内置类型（slice、map 和 channel）的内建函数。与 &lt;code>new&lt;/code> 不同，&lt;code>make&lt;/code> 不仅分配内存，还会进行初始化设置。&lt;/p></description></item><item><title>Bufio</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/coding/golang/bufio/</link><pubDate>Tue, 29 Jul 2025 17:43:19 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/coding/golang/bufio/</guid><description>&lt;h1 class="relative group">bufio 包详解
-&lt;div id="bufio-包详解" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#make" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;make&lt;/code&gt; 是 Go 语言中用于初始化某些内置类型（slice、map 和 channel）的内建函数。与 &lt;code&gt;new&lt;/code&gt; 不同，&lt;code&gt;make&lt;/code&gt; 不仅分配内存，还会进行初始化设置。&lt;/p&gt;</description></item><item><title>Bufio</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/coding/golang/bufio/</link><pubDate>Tue, 29 Jul 2025 17:43:19 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/coding/golang/bufio/</guid><description>&lt;h1 class="relative group"&gt;bufio 包详解
+&lt;div id="bufio-包详解" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#bufio-%e5%8c%85%e8%af%a6%e8%a7%a3" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h1>
-&lt;p>&lt;code>bufio&lt;/code> 是 Go 标准库中的一个包，提供了带缓冲的 I/O 操作功能。它可以包装现有的 &lt;code>io.Reader&lt;/code> 和 &lt;code>io.Writer&lt;/code> 对象，创建具有缓冲功能的对象，从而提高 I/O 操作的效率。&lt;/p>
-&lt;h2 class="relative group">核心概念
-&lt;div id="核心概念" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#bufio-%e5%8c%85%e8%af%a6%e8%a7%a3" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h1&gt;
+&lt;p&gt;&lt;code&gt;bufio&lt;/code&gt; 是 Go 标准库中的一个包，提供了带缓冲的 I/O 操作功能。它可以包装现有的 &lt;code&gt;io.Reader&lt;/code&gt; 和 &lt;code&gt;io.Writer&lt;/code&gt; 对象，创建具有缓冲功能的对象，从而提高 I/O 操作的效率。&lt;/p&gt;
+&lt;h2 class="relative group"&gt;核心概念
+&lt;div id="核心概念" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%a0%b8%e5%bf%83%e6%a6%82%e5%bf%b5" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h2>
-&lt;h3 class="relative group">缓冲 I/O 的优势
-&lt;div id="缓冲-io-的优势" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%a0%b8%e5%bf%83%e6%a6%82%e5%bf%b5" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;
+&lt;h3 class="relative group"&gt;缓冲 I/O 的优势
+&lt;div id="缓冲-io-的优势" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%bc%93%e5%86%b2-io-%e7%9a%84%e4%bc%98%e5%8a%bf" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h3>
-&lt;ol>
-&lt;li>&lt;strong>减少系统调用&lt;/strong>：通过缓冲数据，减少实际的 I/O 操作次数&lt;/li>
-&lt;li>&lt;strong>提高性能&lt;/strong>：特别是对于小数据量的频繁读写操作&lt;/li>
-&lt;li>&lt;strong>提供更方便的接口&lt;/strong>：如按行读取等功能&lt;/li>
-&lt;/ol>
-&lt;h2 class="relative group">主要类型和方法
-&lt;div id="主要类型和方法" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%bc%93%e5%86%b2-io-%e7%9a%84%e4%bc%98%e5%8a%bf" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;减少系统调用&lt;/strong&gt;：通过缓冲数据，减少实际的 I/O 操作次数&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;提高性能&lt;/strong&gt;：特别是对于小数据量的频繁读写操作&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;提供更方便的接口&lt;/strong&gt;：如按行读取等功能&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 class="relative group"&gt;主要类型和方法
+&lt;div id="主要类型和方法" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e4%b8%bb%e8%a6%81%e7%b1%bb%e5%9e%8b%e5%92%8c%e6%96%b9%e6%b3%95" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h2>
-&lt;h3 class="relative group">1. Reader
-&lt;div id="1-reader" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e4%b8%bb%e8%a6%81%e7%b1%bb%e5%9e%8b%e5%92%8c%e6%96%b9%e6%b3%95" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;
+&lt;h3 class="relative group"&gt;1. Reader
+&lt;div id="1-reader" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-reader" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h3>
-&lt;p>&lt;code>bufio.Reader&lt;/code> 为读取操作提供缓冲。&lt;/p></description></item></channel></rss>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-reader" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;bufio.Reader&lt;/code&gt; 为读取操作提供缓冲。&lt;/p&gt;</description></item></channel></rss>

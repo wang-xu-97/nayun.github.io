@@ -1,230 +1,230 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>概念基础 on nayun blog</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E6%A6%82%E5%BF%B5%E5%9F%BA%E7%A1%80/</link><description>Recent content in 概念基础 on nayun blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>© 2025 nayun</copyright><lastBuildDate>Wed, 06 Aug 2025 11:31:02 +0800</lastBuildDate><atom:link href="https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E6%A6%82%E5%BF%B5%E5%9F%BA%E7%A1%80/index.xml" rel="self" type="application/rss+xml"/><item><title>ParamSpec</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E6%A6%82%E5%BF%B5%E5%9F%BA%E7%A1%80/paramspec/</link><pubDate>Wed, 06 Aug 2025 11:31:02 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E6%A6%82%E5%BF%B5%E5%9F%BA%E7%A1%80/paramspec/</guid><description>&lt;p>在 Python 的类型系统中，&lt;strong>&lt;code>ParamSpec&lt;/code>&lt;/strong>（参数规格）是一种高级泛型工具，用于&lt;strong>捕获函数或方法的参数类型信息&lt;/strong>，使得泛型高阶函数（如装饰器、回调工厂）能够精确保留原始函数的参数类型。以下是关于 &lt;code>ParamSpec&lt;/code> 的详细解析：&lt;/p>
-&lt;hr>
-&lt;h3 class="relative group">1. &lt;strong>&lt;code>ParamSpec&lt;/code> 的核心作用&lt;/strong>
-&lt;div id="1-paramspec" class="anchor">&lt;/div>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>概念基础 on nayun blog</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E6%A6%82%E5%BF%B5%E5%9F%BA%E7%A1%80/</link><description>Recent content in 概念基础 on nayun blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>© 2025 nayun</copyright><lastBuildDate>Wed, 06 Aug 2025 11:31:02 +0800</lastBuildDate><atom:link href="https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E6%A6%82%E5%BF%B5%E5%9F%BA%E7%A1%80/index.xml" rel="self" type="application/rss+xml"/><item><title>ParamSpec</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E6%A6%82%E5%BF%B5%E5%9F%BA%E7%A1%80/paramspec/</link><pubDate>Wed, 06 Aug 2025 11:31:02 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E6%A6%82%E5%BF%B5%E5%9F%BA%E7%A1%80/paramspec/</guid><description>&lt;p&gt;在 Python 的类型系统中，&lt;strong&gt;&lt;code&gt;ParamSpec&lt;/code&gt;&lt;/strong&gt;（参数规格）是一种高级泛型工具，用于&lt;strong&gt;捕获函数或方法的参数类型信息&lt;/strong&gt;，使得泛型高阶函数（如装饰器、回调工厂）能够精确保留原始函数的参数类型。以下是关于 &lt;code&gt;ParamSpec&lt;/code&gt; 的详细解析：&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 class="relative group"&gt;1. &lt;strong&gt;&lt;code&gt;ParamSpec&lt;/code&gt; 的核心作用&lt;/strong&gt;
+&lt;div id="1-paramspec" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-paramspec" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h3>
-&lt;ul>
-&lt;li>&lt;strong>解决的问题&lt;/strong>：在泛型装饰器或高阶函数中，传统 &lt;code>TypeVar&lt;/code> 无法描述函数的参数列表（如 &lt;code>*args&lt;/code> 和 &lt;code>**kwargs&lt;/code> 的类型）。&lt;/li>
-&lt;li>&lt;strong>功能&lt;/strong>：&lt;code>ParamSpec&lt;/code> 允许你&lt;strong>泛化函数的参数签名&lt;/strong>，保留参数名称、类型和顺序信息。&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 class="relative group">2. &lt;strong>基本语法&lt;/strong>
-&lt;div id="2-基本语法" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-paramspec" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;解决的问题&lt;/strong&gt;：在泛型装饰器或高阶函数中，传统 &lt;code&gt;TypeVar&lt;/code&gt; 无法描述函数的参数列表（如 &lt;code&gt;*args&lt;/code&gt; 和 &lt;code&gt;**kwargs&lt;/code&gt; 的类型）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;功能&lt;/strong&gt;：&lt;code&gt;ParamSpec&lt;/code&gt; 允许你&lt;strong&gt;泛化函数的参数签名&lt;/strong&gt;，保留参数名称、类型和顺序信息。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 class="relative group"&gt;2. &lt;strong&gt;基本语法&lt;/strong&gt;
+&lt;div id="2-基本语法" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e5%9f%ba%e6%9c%ac%e8%af%ad%e6%b3%95" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h3>
-&lt;h4 class="relative group">&lt;strong>(1) 导入与定义&lt;/strong>
-&lt;div id="1-导入与定义" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e5%9f%ba%e6%9c%ac%e8%af%ad%e6%b3%95" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;
+&lt;h4 class="relative group"&gt;&lt;strong&gt;(1) 导入与定义&lt;/strong&gt;
+&lt;div id="1-导入与定义" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e5%af%bc%e5%85%a5%e4%b8%8e%e5%ae%9a%e4%b9%89" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h4>
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">python&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">typing&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">ParamSpec&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">Callable&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">TypeVar&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">&lt;span class="n">P&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">ParamSpec&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;P&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1"># 定义参数规格变量&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">&lt;span class="n">R&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">TypeVar&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;R&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1"># 定义返回值类型变量&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;ul>
-&lt;li>&lt;code>P&lt;/code> 表示一个函数的参数规格（包括位置参数和关键字参数）。&lt;/li>
-&lt;li>&lt;code>R&lt;/code> 表示函数的返回值类型。&lt;/li>
-&lt;/ul>
-&lt;h4 class="relative group">&lt;strong>(2) 使用场景&lt;/strong>
-&lt;div id="2-使用场景" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e5%af%bc%e5%85%a5%e4%b8%8e%e5%ae%9a%e4%b9%89" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h4&gt;
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;python&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;typing&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;ParamSpec&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Callable&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;TypeVar&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;P&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ParamSpec&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;P&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;# 定义参数规格变量&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;R&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;TypeVar&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;R&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;# 定义返回值类型变量&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;P&lt;/code&gt; 表示一个函数的参数规格（包括位置参数和关键字参数）。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;R&lt;/code&gt; 表示函数的返回值类型。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 class="relative group"&gt;&lt;strong&gt;(2) 使用场景&lt;/strong&gt;
+&lt;div id="2-使用场景" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e4%bd%bf%e7%94%a8%e5%9c%ba%e6%99%af" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h4>
-&lt;p>主要用于泛型 &lt;code>Callable&lt;/code> 类型或装饰器：&lt;/p></description></item><item><title>3.12高级类型参数</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E6%A6%82%E5%BF%B5%E5%9F%BA%E7%A1%80/3.12%E9%AB%98%E7%BA%A7%E7%B1%BB%E5%9E%8B%E5%8F%82%E6%95%B0/</link><pubDate>Wed, 06 Aug 2025 11:14:51 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E6%A6%82%E5%BF%B5%E5%9F%BA%E7%A1%80/3.12%E9%AB%98%E7%BA%A7%E7%B1%BB%E5%9E%8B%E5%8F%82%E6%95%B0/</guid><description>&lt;p>Python 3.12 通过 &lt;strong>PEP 695&lt;/strong> 引入了更强大的高级类型参数机制，包括 &lt;strong>可变类型参数（&lt;code>*Ts&lt;/code>）&lt;/strong> 和 &lt;strong>参数规格（&lt;code>**P&lt;/code>）&lt;/strong>，用于处理复杂泛型场景（如可变参数函数、回调函数类型等）。以下是对它们的详细解析：&lt;/p>
-&lt;hr>
-&lt;h3 class="relative group">1. &lt;strong>可变类型参数（&lt;code>*Ts&lt;/code>）&lt;/strong>
-&lt;div id="1-可变类型参数" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e4%bd%bf%e7%94%a8%e5%9c%ba%e6%99%af" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h4&gt;
+&lt;p&gt;主要用于泛型 &lt;code&gt;Callable&lt;/code&gt; 类型或装饰器：&lt;/p&gt;</description></item><item><title>3.12高级类型参数</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E6%A6%82%E5%BF%B5%E5%9F%BA%E7%A1%80/3.12%E9%AB%98%E7%BA%A7%E7%B1%BB%E5%9E%8B%E5%8F%82%E6%95%B0/</link><pubDate>Wed, 06 Aug 2025 11:14:51 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E6%A6%82%E5%BF%B5%E5%9F%BA%E7%A1%80/3.12%E9%AB%98%E7%BA%A7%E7%B1%BB%E5%9E%8B%E5%8F%82%E6%95%B0/</guid><description>&lt;p&gt;Python 3.12 通过 &lt;strong&gt;PEP 695&lt;/strong&gt; 引入了更强大的高级类型参数机制，包括 &lt;strong&gt;可变类型参数（&lt;code&gt;*Ts&lt;/code&gt;）&lt;/strong&gt; 和 &lt;strong&gt;参数规格（&lt;code&gt;**P&lt;/code&gt;）&lt;/strong&gt;，用于处理复杂泛型场景（如可变参数函数、回调函数类型等）。以下是对它们的详细解析：&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 class="relative group"&gt;1. &lt;strong&gt;可变类型参数（&lt;code&gt;*Ts&lt;/code&gt;）&lt;/strong&gt;
+&lt;div id="1-可变类型参数" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e5%8f%af%e5%8f%98%e7%b1%bb%e5%9e%8b%e5%8f%82%e6%95%b0" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h3>
-&lt;h4 class="relative group">&lt;strong>用途&lt;/strong>
-&lt;div id="用途" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e5%8f%af%e5%8f%98%e7%b1%bb%e5%9e%8b%e5%8f%82%e6%95%b0" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;
+&lt;h4 class="relative group"&gt;&lt;strong&gt;用途&lt;/strong&gt;
+&lt;div id="用途" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%94%a8%e9%80%94" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h4>
-&lt;p>表示一组&lt;strong>不定数量&lt;/strong>的类型参数，类似 &lt;code>*args&lt;/code> 的泛型版本。常用于：&lt;/p>
-&lt;ul>
-&lt;li>泛型元组或可变长度容器&lt;/li>
-&lt;li>函数参数的类型标注（如 &lt;code>*args: *Ts&lt;/code>）&lt;/li>
-&lt;/ul>
-&lt;h4 class="relative group">&lt;strong>语法与示例&lt;/strong>
-&lt;div id="语法与示例" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%94%a8%e9%80%94" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h4&gt;
+&lt;p&gt;表示一组&lt;strong&gt;不定数量&lt;/strong&gt;的类型参数，类似 &lt;code&gt;*args&lt;/code&gt; 的泛型版本。常用于：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;泛型元组或可变长度容器&lt;/li&gt;
+&lt;li&gt;函数参数的类型标注（如 &lt;code&gt;*args: *Ts&lt;/code&gt;）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 class="relative group"&gt;&lt;strong&gt;语法与示例&lt;/strong&gt;
+&lt;div id="语法与示例" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e8%af%ad%e6%b3%95%e4%b8%8e%e7%a4%ba%e4%be%8b" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h4>
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">python&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="ln"> 1&lt;/span>&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">typing&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">Tuple&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 2&lt;/span>&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 3&lt;/span>&lt;span class="cl">&lt;span class="c1"># 定义泛型元组，第一个元素为 str，其余元素类型可变&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 4&lt;/span>&lt;span class="cl">&lt;span class="nb">type&lt;/span> &lt;span class="n">LabeledTuple&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="n">Ts&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">tuple&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nb">str&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="o">*&lt;/span>&lt;span class="n">Ts&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="c1"># PEP 695 语法&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 5&lt;/span>&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 6&lt;/span>&lt;span class="cl">&lt;span class="c1"># 使用&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 7&lt;/span>&lt;span class="cl">&lt;span class="n">x&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">LabeledTuple&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nb">int&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nb">float&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;id&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">42&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mf">3.14&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1"># 等效于 tuple[str, int, float]&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 8&lt;/span>&lt;span class="cl">&lt;span class="n">y&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">LabeledTuple&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nb">bool&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;flag&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="kc">True&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1"># 等效于 tuple[str, bool]&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 9&lt;/span>&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">10&lt;/span>&lt;span class="cl">&lt;span class="c1"># 函数中的可变参数类型&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">11&lt;/span>&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">zip&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="n">T&lt;/span>&lt;span class="p">](&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="n">args&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="o">*&lt;/span>&lt;span class="n">T&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="nb">list&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nb">tuple&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="n">T&lt;/span>&lt;span class="p">]]:&lt;/span> &lt;span class="c1"># 模拟内置 zip 的类型&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">12&lt;/span>&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nb">list&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nb">zip&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="n">args&lt;/span>&lt;span class="p">))&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;h4 class="relative group">&lt;strong>关键点&lt;/strong>
-&lt;div id="关键点" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e8%af%ad%e6%b3%95%e4%b8%8e%e7%a4%ba%e4%be%8b" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h4&gt;
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;python&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;typing&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Tuple&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 2&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 定义泛型元组，第一个元素为 str，其余元素类型可变&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;type&lt;/span&gt; &lt;span class="n"&gt;LabeledTuple&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;Ts&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;tuple&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;Ts&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="c1"&gt;# PEP 695 语法&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 5&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 6&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 使用&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;LabeledTuple&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;float&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;id&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;42&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;3.14&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;# 等效于 tuple[str, int, float]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;LabeledTuple&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;bool&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;flag&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;# 等效于 tuple[str, bool]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 函数中的可变参数类型&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;zip&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;T&lt;/span&gt;&lt;span class="p"&gt;](&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;T&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;tuple&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;T&lt;/span&gt;&lt;span class="p"&gt;]]:&lt;/span&gt; &lt;span class="c1"&gt;# 模拟内置 zip 的类型&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;12&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;zip&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;h4 class="relative group"&gt;&lt;strong&gt;关键点&lt;/strong&gt;
+&lt;div id="关键点" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%85%b3%e9%94%ae%e7%82%b9" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h4>
-&lt;ul>
-&lt;li>&lt;code>*Ts&lt;/code> 表示&lt;strong>类型元组&lt;/strong>，可匹配任意数量的类型参数。&lt;/li>
-&lt;li>运行时会被擦除为 &lt;code>tuple&lt;/code>，仅静态类型检查器（如 mypy）会验证类型安全性。&lt;/li>
-&lt;li>与传统 &lt;code>TypeVarTuple&lt;/code> 等效（Python 3.11 之前需用 &lt;code>from typing import TypeVarTuple&lt;/code>）。&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 class="relative group">2. &lt;strong>参数规格（&lt;code>**P&lt;/code>）&lt;/strong>
-&lt;div id="2-参数规格" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%85%b3%e9%94%ae%e7%82%b9" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;*Ts&lt;/code&gt; 表示&lt;strong&gt;类型元组&lt;/strong&gt;，可匹配任意数量的类型参数。&lt;/li&gt;
+&lt;li&gt;运行时会被擦除为 &lt;code&gt;tuple&lt;/code&gt;，仅静态类型检查器（如 mypy）会验证类型安全性。&lt;/li&gt;
+&lt;li&gt;与传统 &lt;code&gt;TypeVarTuple&lt;/code&gt; 等效（Python 3.11 之前需用 &lt;code&gt;from typing import TypeVarTuple&lt;/code&gt;）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 class="relative group"&gt;2. &lt;strong&gt;参数规格（&lt;code&gt;**P&lt;/code&gt;）&lt;/strong&gt;
+&lt;div id="2-参数规格" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e5%8f%82%e6%95%b0%e8%a7%84%e6%a0%bc" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h3>
-&lt;h4 class="relative group">&lt;strong>用途&lt;/strong>
-&lt;div id="用途-1" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e5%8f%82%e6%95%b0%e8%a7%84%e6%a0%bc" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;
+&lt;h4 class="relative group"&gt;&lt;strong&gt;用途&lt;/strong&gt;
+&lt;div id="用途-1" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%94%a8%e9%80%94-1" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h4>
-&lt;p>描述函数的&lt;strong>参数类型和返回值类型&lt;/strong>，用于泛型高阶函数（如装饰器、回调函数）。类似 &lt;code>**kwargs&lt;/code> 的泛型扩展。&lt;/p></description></item><item><title>3.12泛型特性</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E6%A6%82%E5%BF%B5%E5%9F%BA%E7%A1%80/3.12%E6%B3%9B%E5%9E%8B%E7%89%B9%E6%80%A7/</link><pubDate>Wed, 06 Aug 2025 11:04:17 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E6%A6%82%E5%BF%B5%E5%9F%BA%E7%A1%80/3.12%E6%B3%9B%E5%9E%8B%E7%89%B9%E6%80%A7/</guid><description>&lt;h3 class="relative group">&lt;strong>1. 泛型函数&lt;/strong>
-&lt;div id="1-泛型函数" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%94%a8%e9%80%94-1" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h4&gt;
+&lt;p&gt;描述函数的&lt;strong&gt;参数类型和返回值类型&lt;/strong&gt;，用于泛型高阶函数（如装饰器、回调函数）。类似 &lt;code&gt;**kwargs&lt;/code&gt; 的泛型扩展。&lt;/p&gt;</description></item><item><title>3.12泛型特性</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E6%A6%82%E5%BF%B5%E5%9F%BA%E7%A1%80/3.12%E6%B3%9B%E5%9E%8B%E7%89%B9%E6%80%A7/</link><pubDate>Wed, 06 Aug 2025 11:04:17 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E6%A6%82%E5%BF%B5%E5%9F%BA%E7%A1%80/3.12%E6%B3%9B%E5%9E%8B%E7%89%B9%E6%80%A7/</guid><description>&lt;h3 class="relative group"&gt;&lt;strong&gt;1. 泛型函数&lt;/strong&gt;
+&lt;div id="1-泛型函数" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e6%b3%9b%e5%9e%8b%e5%87%bd%e6%95%b0" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h3>
-&lt;p>可以直接在函数名后使用 &lt;code>[T]&lt;/code> 定义类型参数，无需显式导入 &lt;code>TypeVar&lt;/code>：&lt;/p>
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">python&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">max&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">T&lt;/span>&lt;span class="p">](&lt;/span>&lt;span class="n">args&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">Iterable&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">T&lt;/span>&lt;span class="p">])&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="n">T&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="c1"># 定义泛型函数&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nb">max&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">args&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">default&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="kc">None&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">&lt;span class="nb">max&lt;/span>&lt;span class="p">([&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">3&lt;/span>&lt;span class="p">])&lt;/span> &lt;span class="c1"># T 自动推断为 int&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl">&lt;span class="nb">max&lt;/span>&lt;span class="p">([&lt;/span>&lt;span class="s2">&amp;#34;a&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;b&amp;#34;&lt;/span>&lt;span class="p">])&lt;/span> &lt;span class="c1"># T 自动推断为 str&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;p>&lt;strong>特点&lt;/strong>：&lt;/p>
-&lt;ul>
-&lt;li>类型参数 &lt;code>T&lt;/code> 的作用域仅限于该函数。&lt;/li>
-&lt;li>支持默认类型推断，无需手动指定 &lt;code>[int]&lt;/code> 或 &lt;code>[str]&lt;/code>。&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 class="relative group">&lt;strong>2. 泛型类&lt;/strong>
-&lt;div id="2-泛型类" class="anchor">&lt;/div>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e6%b3%9b%e5%9e%8b%e5%87%bd%e6%95%b0" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;
+&lt;p&gt;可以直接在函数名后使用 &lt;code&gt;[T]&lt;/code&gt; 定义类型参数，无需显式导入 &lt;code&gt;TypeVar&lt;/code&gt;：&lt;/p&gt;
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;python&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;max&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;T&lt;/span&gt;&lt;span class="p"&gt;](&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Iterable&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;T&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;T&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="c1"&gt;# 定义泛型函数&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nb"&gt;max&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;default&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;max&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt; &lt;span class="c1"&gt;# T 自动推断为 int&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;max&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;a&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;b&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt; &lt;span class="c1"&gt;# T 自动推断为 str&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;特点&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;类型参数 &lt;code&gt;T&lt;/code&gt; 的作用域仅限于该函数。&lt;/li&gt;
+&lt;li&gt;支持默认类型推断，无需手动指定 &lt;code&gt;[int]&lt;/code&gt; 或 &lt;code&gt;[str]&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 class="relative group"&gt;&lt;strong&gt;2. 泛型类&lt;/strong&gt;
+&lt;div id="2-泛型类" class="anchor"&gt;&lt;/div&gt;
 &lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e6%b3%9b%e5%9e%8b%e7%b1%bb" aria-label="锚点">#&lt;/a>
-&lt;/span>
-&lt;/h3>
-&lt;p>类名后可直接声明类型参数：&lt;/p>
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">python&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="k">class&lt;/span> &lt;span class="nc">Box&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">T&lt;/span>&lt;span class="p">]:&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="fm">__init__&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">value&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">T&lt;/span>&lt;span class="p">):&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl"> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">value&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">value&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="nf">get&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="n">T&lt;/span>&lt;span class="p">:&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">6&lt;/span>&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">value&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">7&lt;/span>&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">8&lt;/span>&lt;span class="cl">&lt;span class="n">int_box&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Box&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nb">int&lt;/span>&lt;span class="p">](&lt;/span>&lt;span class="mi">42&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1"># 明确指定 T 为 int&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">9&lt;/span>&lt;span class="cl">&lt;span class="n">str_box&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Box&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;hello&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1"># 自动推断 T 为 str&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;p>&lt;strong>特点&lt;/strong>：&lt;/p></description></item><item><title>元类MetaClass</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E6%A6%82%E5%BF%B5%E5%9F%BA%E7%A1%80/%E5%85%83%E7%B1%BBmetaclass/</link><pubDate>Fri, 25 Jul 2025 16:08:19 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E6%A6%82%E5%BF%B5%E5%9F%BA%E7%A1%80/%E5%85%83%E7%B1%BBmetaclass/</guid><description>&lt;p>元类作用时机&lt;br>
-当使用此元类定义新类时（如 class MyClass(metaclass=StaticMethodMeta)），元类的 &lt;code>__new__&lt;/code> 方法会在类创建时被调用。&lt;/p>
-&lt;p>利用元类改变类特性 -&amp;gt; 创建一个成员函数自动转换为静态成员函数的类&lt;/p>
-&lt;div class="code-block-wrapper">
-&lt;div class="code-header">
-&lt;span class="language-label">
-&lt;span class="language-brackets">&amp;lt;/>&lt;/span>
-&lt;span class="language-name">python&lt;/span>
-&lt;/span>
-&lt;div class="code-buttons">
-&lt;button class="copy-button">
-&lt;i class="fas fa-copy">&lt;/i>
-&lt;span>复制&lt;/span>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="ln"> 1&lt;/span>&lt;span class="cl">&lt;span class="k">class&lt;/span> &lt;span class="nc">StaticMethodMeta&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nb">type&lt;/span>&lt;span class="p">):&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 2&lt;/span>&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="fm">__new__&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">cls&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">name&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">bases&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">namespace&lt;/span>&lt;span class="p">):&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 3&lt;/span>&lt;span class="cl"> &lt;span class="k">for&lt;/span> &lt;span class="n">attr_name&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">attr_value&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">namespace&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">items&lt;/span>&lt;span class="p">():&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 4&lt;/span>&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="n">callable&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">attr_value&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="ow">and&lt;/span> &lt;span class="ow">not&lt;/span> &lt;span class="n">attr_name&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">startswith&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;__&amp;#39;&lt;/span>&lt;span class="p">):&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 5&lt;/span>&lt;span class="cl"> &lt;span class="n">namespace&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">attr_name&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">staticmethod&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">attr_value&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 6&lt;/span>&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nb">super&lt;/span>&lt;span class="p">()&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="fm">__new__&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">cls&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">name&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">bases&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">namespace&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 7&lt;/span>&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 8&lt;/span>&lt;span class="cl">&lt;span class="k">class&lt;/span> &lt;span class="nc">tool&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">metaclass&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">StaticMethodMeta&lt;/span>&lt;span class="p">):&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 9&lt;/span>&lt;span class="cl"> &lt;span class="c1"># 静态成员没有self参数&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">10&lt;/span>&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="nf">tool1&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">p1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">p2&lt;/span>&lt;span class="p">):&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">11&lt;/span>&lt;span class="cl"> &lt;span class="k">pass&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div></description></item></channel></rss>
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e6%b3%9b%e5%9e%8b%e7%b1%bb" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;
+&lt;p&gt;类名后可直接声明类型参数：&lt;/p&gt;
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;python&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Box&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;T&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;T&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;value&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;T&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;6&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;7&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;8&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;int_box&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Box&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;](&lt;/span&gt;&lt;span class="mi"&gt;42&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;# 明确指定 T 为 int&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;9&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;str_box&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Box&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;hello&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;# 自动推断 T 为 str&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;特点&lt;/strong&gt;：&lt;/p&gt;</description></item><item><title>元类MetaClass</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E6%A6%82%E5%BF%B5%E5%9F%BA%E7%A1%80/%E5%85%83%E7%B1%BBmetaclass/</link><pubDate>Fri, 25 Jul 2025 16:08:19 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E6%A6%82%E5%BF%B5%E5%9F%BA%E7%A1%80/%E5%85%83%E7%B1%BBmetaclass/</guid><description>&lt;p&gt;元类作用时机&lt;br&gt;
+当使用此元类定义新类时（如 class MyClass(metaclass=StaticMethodMeta)），元类的 &lt;code&gt;__new__&lt;/code&gt; 方法会在类创建时被调用。&lt;/p&gt;
+&lt;p&gt;利用元类改变类特性 -&amp;gt; 创建一个成员函数自动转换为静态成员函数的类&lt;/p&gt;
+&lt;div class="code-block-wrapper"&gt;
+&lt;div class="code-header"&gt;
+&lt;span class="language-label"&gt;
+&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
+&lt;span class="language-name"&gt;python&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class="code-buttons"&gt;
+&lt;button class="copy-button"&gt;
+&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
+&lt;span&gt;复制&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;StaticMethodMeta&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;type&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 2&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__new__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;cls&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;bases&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;namespace&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 3&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;attr_name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;attr_value&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;namespace&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;items&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 4&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;callable&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;attr_value&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;attr_name&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;startswith&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;__&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 5&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;namespace&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;attr_name&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;staticmethod&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;attr_value&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 6&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nb"&gt;super&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="fm"&gt;__new__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;cls&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;bases&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;namespace&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;tool&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;metaclass&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;StaticMethodMeta&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;# 静态成员没有self参数&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;tool1&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;p2&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;pass&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;</description></item></channel></rss>
