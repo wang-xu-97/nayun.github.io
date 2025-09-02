@@ -81,10 +81,14 @@
     <meta property="og:url" content="http://localhost:43997/nayun.github.io/resource/bg3%E6%8E%B7%E9%AA%B0%E6%A6%82%E7%8E%87/">
   <meta property="og:site_name" content="nayun blog">
   <meta property="og:title" content="bg3掷骰概率">
-  <meta property="og:description" content="问题1：单次掷骰DC21检定不通过概率 # 问题2：10次掷骰DC20检定不通过概率 # 描述：D20骰子投掷10次，每次投掷的最终结果严格小于20点的概率。最终结果取决于D20的投掷点数R和加值G，其中G是两次D4投掷的和加上6。
-问题分析 # 我们需要计算D20骰子投掷10次，每次投掷的最终结果严格小于20点的概率。最终结果取决于D20的投掷结果（R）和加值（G），其中加值G由两次D4骰子投掷和加上6得到。
-加值G的概率分布 # G = (D4 &#43; D4) &#43; 6，因此G的取值范围是8到14。两次D4投掷和的概率分布如下：
-G = 8: 概率 1/16 G = 9: 概率 2/16 G = 10: 概率 3/16 G = 11: 概率 4/16 G = 12: 概率 3/16 G = 13: 概率 2/16 G = 14: 概率 1/16 单次投掷最终结果F &lt; 20的概率 # 最终结果F取决于D20的投掷结果R：">
+  <meta property="og:description" content="问题1：DC21检定优势骰（2次掷骰）不通过概率 # 根据D20骰子的投掷规则：
+投掷1时，最终结果为1，总是小于21点。 投掷20时，最终结果为正无穷，总是大于或等于21点，因此不计入小于21点的概率。 投掷2到19时，最终结果为投掷点数加上加值G，其中G = 1D6 &#43; 3D4 &#43; 13。 加值G的概率分布经计算如下：
+G的取值范围为17到31。 P(G=17) = 1/384 P(G=18) = 4/384 其他G值的概率不影响本次计算。 最终结果F小于21点的概率取决于D20投掷结果R：
+当R=1时，P(F&lt;21) = 1。 当R=2时，需要G ≤ 18，P(G≤18) = P(G=17) &#43; P(G=18) = 1/384 &#43; 4/384 = 5/384。 当R=3时，需要G ≤ 17，P(G≤17) = P(G=17) = 1/384。 当R=4到20时，P(F&lt;21) = 0。 由于D20每个面概率均为1/20，单次投掷概率为：
+P(F&lt;21) = 1/20(1&#43;5/384&#43;1/384) = 13/256
+因此，两次掷骰结果小于21点的概率为
+(13/256)2=0.002578735
+问题2：10次掷骰DC20检定不通过概率 # 描述：D20骰子投掷10次，每次投掷的最终结果严格小于20点的概率。最终结果取决于D20的投掷点数R和加值G，其中G是两次D4投掷的和加上6。">
   <meta property="og:locale" content="zh_cn">
   <meta property="og:type" content="article">
     <meta property="article:section" content="resource">
@@ -95,10 +99,14 @@ G = 8: 概率 1/16 G = 9: 概率 2/16 G = 10: 概率 3/16 G = 11: 概率 4/16 G 
     
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="bg3掷骰概率">
-  <meta name="twitter:description" content="问题1：单次掷骰DC21检定不通过概率 # 问题2：10次掷骰DC20检定不通过概率 # 描述：D20骰子投掷10次，每次投掷的最终结果严格小于20点的概率。最终结果取决于D20的投掷点数R和加值G，其中G是两次D4投掷的和加上6。
-问题分析 # 我们需要计算D20骰子投掷10次，每次投掷的最终结果严格小于20点的概率。最终结果取决于D20的投掷结果（R）和加值（G），其中加值G由两次D4骰子投掷和加上6得到。
-加值G的概率分布 # G = (D4 &#43; D4) &#43; 6，因此G的取值范围是8到14。两次D4投掷和的概率分布如下：
-G = 8: 概率 1/16 G = 9: 概率 2/16 G = 10: 概率 3/16 G = 11: 概率 4/16 G = 12: 概率 3/16 G = 13: 概率 2/16 G = 14: 概率 1/16 单次投掷最终结果F &lt; 20的概率 # 最终结果F取决于D20的投掷结果R：">
+  <meta name="twitter:description" content="问题1：DC21检定优势骰（2次掷骰）不通过概率 # 根据D20骰子的投掷规则：
+投掷1时，最终结果为1，总是小于21点。 投掷20时，最终结果为正无穷，总是大于或等于21点，因此不计入小于21点的概率。 投掷2到19时，最终结果为投掷点数加上加值G，其中G = 1D6 &#43; 3D4 &#43; 13。 加值G的概率分布经计算如下：
+G的取值范围为17到31。 P(G=17) = 1/384 P(G=18) = 4/384 其他G值的概率不影响本次计算。 最终结果F小于21点的概率取决于D20投掷结果R：
+当R=1时，P(F&lt;21) = 1。 当R=2时，需要G ≤ 18，P(G≤18) = P(G=17) &#43; P(G=18) = 1/384 &#43; 4/384 = 5/384。 当R=3时，需要G ≤ 17，P(G≤17) = P(G=17) = 1/384。 当R=4到20时，P(F&lt;21) = 0。 由于D20每个面概率均为1/20，单次投掷概率为：
+P(F&lt;21) = 1/20(1&#43;5/384&#43;1/384) = 13/256
+因此，两次掷骰结果小于21点的概率为
+(13/256)2=0.002578735
+问题2：10次掷骰DC20检定不通过概率 # 描述：D20骰子投掷10次，每次投掷的最终结果严格小于20点的概率。最终结果取决于D20的投掷点数R和加值G，其中G是两次D4投掷的和加上6。">
 
       
     
@@ -111,7 +119,7 @@ G = 8: 概率 1/16 G = 9: 概率 2/16 G = 10: 概率 3/16 G = 11: 概率 4/16 G 
     "name": "bg3掷骰概率",
     "headline": "bg3掷骰概率",
     
-    "abstract": "\u003ch2 class=\u0022relative group\u0022\u003e问题1：单次掷骰DC21检定不通过概率 \n    \u003cdiv id=\u0022问题1单次掷骰dc21检定不通过概率\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e9%97%ae%e9%a2%981%e5%8d%95%e6%ac%a1%e6%8e%b7%e9%aa%b0dc21%e6%a3%80%e5%ae%9a%e4%b8%8d%e9%80%9a%e8%bf%87%e6%a6%82%e7%8e%87\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\n\u003ch2 class=\u0022relative group\u0022\u003e问题2：10次掷骰DC20检定不通过概率 \n    \u003cdiv id=\u0022问题210次掷骰dc20检定不通过概率\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e9%97%ae%e9%a2%98210%e6%ac%a1%e6%8e%b7%e9%aa%b0dc20%e6%a3%80%e5%ae%9a%e4%b8%8d%e9%80%9a%e8%bf%87%e6%a6%82%e7%8e%87\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\u003cp\u003e描述：D20骰子投掷10次，每次投掷的最终结果严格小于20点的概率。最终结果取决于D20的投掷点数R和加值G，其中G是两次D4投掷的和加上6。\u003c\/p\u003e\n\n\u003ch3 class=\u0022relative group\u0022\u003e问题分析 \n    \u003cdiv id=\u0022问题分析\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e9%97%ae%e9%a2%98%e5%88%86%e6%9e%90\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h3\u003e\n\u003cp\u003e我们需要计算D20骰子投掷10次，每次投掷的最终结果严格小于20点的概率。最终结果取决于D20的投掷结果（R）和加值（G），其中加值G由两次D4骰子投掷和加上6得到。\u003c\/p\u003e\n\n\u003ch3 class=\u0022relative group\u0022\u003e加值G的概率分布 \n    \u003cdiv id=\u0022加值g的概率分布\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e5%8a%a0%e5%80%bcg%e7%9a%84%e6%a6%82%e7%8e%87%e5%88%86%e5%b8%83\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h3\u003e\n\u003cp\u003eG = (D4 \u002b D4) \u002b 6，因此G的取值范围是8到14。两次D4投掷和的概率分布如下：\u003c\/p\u003e\n\u003cul\u003e\n\u003cli\u003eG = 8: 概率 1\/16\u003c\/li\u003e\n\u003cli\u003eG = 9: 概率 2\/16\u003c\/li\u003e\n\u003cli\u003eG = 10: 概率 3\/16\u003c\/li\u003e\n\u003cli\u003eG = 11: 概率 4\/16\u003c\/li\u003e\n\u003cli\u003eG = 12: 概率 3\/16\u003c\/li\u003e\n\u003cli\u003eG = 13: 概率 2\/16\u003c\/li\u003e\n\u003cli\u003eG = 14: 概率 1\/16\u003c\/li\u003e\n\u003c\/ul\u003e\n\n\u003ch3 class=\u0022relative group\u0022\u003e单次投掷最终结果F \u0026lt; 20的概率 \n    \u003cdiv id=\u0022单次投掷最终结果f--20的概率\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e5%8d%95%e6%ac%a1%e6%8a%95%e6%8e%b7%e6%9c%80%e7%bb%88%e7%bb%93%e6%9e%9cf--20%e7%9a%84%e6%a6%82%e7%8e%87\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h3\u003e\n\u003cp\u003e最终结果F取决于D20的投掷结果R：\u003c\/p\u003e",
+    "abstract": "\u003ch2 class=\u0022relative group\u0022\u003e问题1：DC21检定优势骰（2次掷骰）不通过概率 \n    \u003cdiv id=\u0022问题1dc21检定优势骰2次掷骰不通过概率\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e9%97%ae%e9%a2%981dc21%e6%a3%80%e5%ae%9a%e4%bc%98%e5%8a%bf%e9%aa%b02%e6%ac%a1%e6%8e%b7%e9%aa%b0%e4%b8%8d%e9%80%9a%e8%bf%87%e6%a6%82%e7%8e%87\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\u003cp\u003e根据D20骰子的投掷规则：\u003c\/p\u003e\n\u003cul\u003e\n\u003cli\u003e投掷1时，最终结果为1，总是小于21点。\u003c\/li\u003e\n\u003cli\u003e投掷20时，最终结果为正无穷，总是大于或等于21点，因此不计入小于21点的概率。\u003c\/li\u003e\n\u003cli\u003e投掷2到19时，最终结果为投掷点数加上加值G，其中G = 1D6 \u002b 3D4 \u002b 13。\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003cp\u003e加值G的概率分布经计算如下：\u003c\/p\u003e\n\u003cul\u003e\n\u003cli\u003eG的取值范围为17到31。\u003c\/li\u003e\n\u003cli\u003eP(G=17) = 1\/384\u003c\/li\u003e\n\u003cli\u003eP(G=18) = 4\/384\u003c\/li\u003e\n\u003cli\u003e其他G值的概率不影响本次计算。\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003cp\u003e最终结果F小于21点的概率取决于D20投掷结果R：\u003c\/p\u003e\n\u003cul\u003e\n\u003cli\u003e当R=1时，P(F\u0026lt;21) = 1。\u003c\/li\u003e\n\u003cli\u003e当R=2时，需要G ≤ 18，P(G≤18) = P(G=17) \u002b P(G=18) = 1\/384 \u002b 4\/384 = 5\/384。\u003c\/li\u003e\n\u003cli\u003e当R=3时，需要G ≤ 17，P(G≤17) = P(G=17) = 1\/384。\u003c\/li\u003e\n\u003cli\u003e当R=4到20时，P(F\u0026lt;21) = 0。\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003cp\u003e由于D20每个面概率均为1\/20，单次投掷概率为：\u003cbr\u003e\nP(F\u0026lt;21) = \u003csup\u003e1\u003c\/sup\u003e\/\u003csub\u003e20\u003c\/sub\u003e(1\u002b\u003csup\u003e5\u003c\/sup\u003e\/\u003csub\u003e384\u003c\/sub\u003e\u002b\u003csup\u003e1\u003c\/sup\u003e\/\u003csub\u003e384\u003c\/sub\u003e) = \u003csup\u003e13\u003c\/sup\u003e\/\u003csub\u003e256\u003c\/sub\u003e\u003c\/p\u003e\n\u003cp\u003e因此，两次掷骰结果小于21点的概率为\u003cbr\u003e\n(\u003csup\u003e13\u003c\/sup\u003e\/\u003csub\u003e256\u003c\/sub\u003e)\u003csup\u003e2\u003c\/sup\u003e=0.002578735\u003c\/p\u003e\n\n\u003ch2 class=\u0022relative group\u0022\u003e问题2：10次掷骰DC20检定不通过概率 \n    \u003cdiv id=\u0022问题210次掷骰dc20检定不通过概率\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e9%97%ae%e9%a2%98210%e6%ac%a1%e6%8e%b7%e9%aa%b0dc20%e6%a3%80%e5%ae%9a%e4%b8%8d%e9%80%9a%e8%bf%87%e6%a6%82%e7%8e%87\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\u003cp\u003e描述：D20骰子投掷10次，每次投掷的最终结果严格小于20点的概率。最终结果取决于D20的投掷点数R和加值G，其中G是两次D4投掷的和加上6。\u003c\/p\u003e",
     "inLanguage": "zh-cn",
     "url" : "http:\/\/localhost:43997\/nayun.github.io\/resource\/bg3%E6%8E%B7%E9%AA%B0%E6%A6%82%E7%8E%87\/",
     "author" : {
@@ -127,7 +135,7 @@ G = 8: 概率 1/16 G = 9: 概率 2/16 G = 10: 概率 3/16 G = 11: 概率 4/16 G 
     "keywords": ["resource"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "158"
+    "wordCount": "212"
   }]
   </script>
 
@@ -598,7 +606,7 @@ G = 8: 概率 1/16 G = 9: 概率 2/16 G = 10: 概率 3/16 G = 11: 概率 4/16 G 
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-09-02T09:50:08&#43;08:00">September 2, 2025</time><span class="px-2 text-primary-500">&middot;</span><span>158 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">1 分钟</span>
+      <time datetime="2025-09-02T09:50:08&#43;08:00">September 2, 2025</time><span class="px-2 text-primary-500">&middot;</span><span>212 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">1 分钟</span>
     
 
     
@@ -652,7 +660,7 @@ G = 8: 概率 1/16 G = 9: 概率 2/16 G = 10: 概率 3/16 G = 11: 概率 4/16 G 
   <ul>
     <li>
       <ul>
-        <li><a href="#问题1单次掷骰dc21检定不通过概率">问题1：单次掷骰DC21检定不通过概率</a></li>
+        <li><a href="#问题1dc21检定优势骰2次掷骰不通过概率">问题1：DC21检定优势骰（2次掷骰）不通过概率</a></li>
         <li><a href="#问题210次掷骰dc20检定不通过概率">问题2：10次掷骰DC20检定不通过概率</a>
           <ul>
             <li><a href="#问题分析">问题分析</a></li>
@@ -678,7 +686,7 @@ G = 8: 概率 1/16 G = 9: 概率 2/16 G = 10: 概率 3/16 G = 11: 概率 4/16 G 
   <ul>
     <li>
       <ul>
-        <li><a href="#问题1单次掷骰dc21检定不通过概率">问题1：单次掷骰DC21检定不通过概率</a></li>
+        <li><a href="#问题1dc21检定优势骰2次掷骰不通过概率">问题1：DC21检定优势骰（2次掷骰）不通过概率</a></li>
         <li><a href="#问题210次掷骰dc20检定不通过概率">问题2：10次掷骰DC20检定不通过概率</a>
           <ul>
             <li><a href="#问题分析">问题分析</a></li>
@@ -792,15 +800,39 @@ G = 8: 概率 1/16 G = 9: 概率 2/16 G = 10: 概率 3/16 G = 11: 概率 4/16 G 
 
         <div class="article-content max-w-prose mb-20">
           
-<h2 class="relative group">问题1：单次掷骰DC21检定不通过概率 
-    <div id="问题1单次掷骰dc21检定不通过概率" class="anchor"></div>
+<h2 class="relative group">问题1：DC21检定优势骰（2次掷骰）不通过概率 
+    <div id="问题1dc21检定优势骰2次掷骰不通过概率" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e9%97%ae%e9%a2%981%e5%8d%95%e6%ac%a1%e6%8e%b7%e9%aa%b0dc21%e6%a3%80%e5%ae%9a%e4%b8%8d%e9%80%9a%e8%bf%87%e6%a6%82%e7%8e%87" aria-label="锚点">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e9%97%ae%e9%a2%981dc21%e6%a3%80%e5%ae%9a%e4%bc%98%e5%8a%bf%e9%aa%b02%e6%ac%a1%e6%8e%b7%e9%aa%b0%e4%b8%8d%e9%80%9a%e8%bf%87%e6%a6%82%e7%8e%87" aria-label="锚点">#</a>
     </span>        
     
 </h2>
+<p>根据D20骰子的投掷规则：</p>
+<ul>
+<li>投掷1时，最终结果为1，总是小于21点。</li>
+<li>投掷20时，最终结果为正无穷，总是大于或等于21点，因此不计入小于21点的概率。</li>
+<li>投掷2到19时，最终结果为投掷点数加上加值G，其中G = 1D6 + 3D4 + 13。</li>
+</ul>
+<p>加值G的概率分布经计算如下：</p>
+<ul>
+<li>G的取值范围为17到31。</li>
+<li>P(G=17) = 1/384</li>
+<li>P(G=18) = 4/384</li>
+<li>其他G值的概率不影响本次计算。</li>
+</ul>
+<p>最终结果F小于21点的概率取决于D20投掷结果R：</p>
+<ul>
+<li>当R=1时，P(F&lt;21) = 1。</li>
+<li>当R=2时，需要G ≤ 18，P(G≤18) = P(G=17) + P(G=18) = 1/384 + 4/384 = 5/384。</li>
+<li>当R=3时，需要G ≤ 17，P(G≤17) = P(G=17) = 1/384。</li>
+<li>当R=4到20时，P(F&lt;21) = 0。</li>
+</ul>
+<p>由于D20每个面概率均为1/20，单次投掷概率为：<br>
+P(F&lt;21) = <sup>1</sup>/<sub>20</sub>(1+<sup>5</sup>/<sub>384</sub>+<sup>1</sup>/<sub>384</sub>) = <sup>13</sup>/<sub>256</sub></p>
+<p>因此，两次掷骰结果小于21点的概率为<br>
+(<sup>13</sup>/<sub>256</sub>)<sup>2</sup>=0.002578735</p>
 
 <h2 class="relative group">问题2：10次掷骰DC20检定不通过概率 
     <div id="问题210次掷骰dc20检定不通过概率" class="anchor"></div>
