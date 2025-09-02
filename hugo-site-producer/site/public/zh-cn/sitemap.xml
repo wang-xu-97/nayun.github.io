@@ -3,12 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>http://localhost:43997/nayun.github.io/resource/bg3%E9%99%84%E4%BC%A4%E8%A3%85%E5%A4%87%E8%A1%A8/</loc>
-    <lastmod>2025-08-25T11:00:09+08:00</lastmod>
+    <loc>http://localhost:43997/nayun.github.io/resource/bg3%E6%8E%B7%E9%AA%B0%E6%A6%82%E7%8E%87/</loc>
+    <lastmod>2025-09-02T09:50:08+08:00</lastmod>
   </url>
   <url>
     <loc>http://localhost:43997/nayun.github.io/</loc>
-    <lastmod>2025-08-25T11:00:09+08:00</lastmod>
+    <lastmod>2025-09-02T09:50:08+08:00</lastmod>
     <xhtml:link
       rel="alternate"
       hreflang="en"
@@ -22,6 +22,10 @@
   </url>
   <url>
     <loc>http://localhost:43997/nayun.github.io/resource/</loc>
+    <lastmod>2025-09-02T09:50:08+08:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:43997/nayun.github.io/resource/bg3%E9%99%84%E4%BC%A4%E8%A3%85%E5%A4%87%E8%A1%A8/</loc>
     <lastmod>2025-08-25T11:00:09+08:00</lastmod>
   </url>
   <url>
