@@ -1,4 +1,51 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>resource on nayun blog</title><link>https://wang-xu-97.github.io/nayun.github.io/resource/</link><description>Recent content in resource on nayun blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>© 2025 nayun</copyright><lastBuildDate>Mon, 25 Aug 2025 11:00:09 +0800</lastBuildDate><atom:link href="https://wang-xu-97.github.io/nayun.github.io/resource/index.xml" rel="self" type="application/rss+xml"/><item><title>Bg3附伤装备表</title><link>https://wang-xu-97.github.io/nayun.github.io/resource/bg3%E9%99%84%E4%BC%A4%E8%A3%85%E5%A4%87%E8%A1%A8/</link><pubDate>Mon, 25 Aug 2025 11:00:09 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/resource/bg3%E9%99%84%E4%BC%A4%E8%A3%85%E5%A4%87%E8%A1%A8/</guid><description>&lt;p&gt;（7号补丁）&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>resource on nayun blog</title><link>https://wang-xu-97.github.io/nayun.github.io/resource/</link><description>Recent content in resource on nayun blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>© 2025 nayun</copyright><lastBuildDate>Tue, 02 Sep 2025 09:50:08 +0800</lastBuildDate><atom:link href="https://wang-xu-97.github.io/nayun.github.io/resource/index.xml" rel="self" type="application/rss+xml"/><item><title>bg3掷骰概率</title><link>https://wang-xu-97.github.io/nayun.github.io/resource/bg3%E6%8E%B7%E9%AA%B0%E6%A6%82%E7%8E%87/</link><pubDate>Tue, 02 Sep 2025 09:50:08 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/resource/bg3%E6%8E%B7%E9%AA%B0%E6%A6%82%E7%8E%87/</guid><description>&lt;h2 class="relative group"&gt;问题1：单次掷骰DC21检定不通过概率
+&lt;div id="问题1单次掷骰dc21检定不通过概率" class="anchor"&gt;&lt;/div&gt;
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e9%97%ae%e9%a2%981%e5%8d%95%e6%ac%a1%e6%8e%b7%e9%aa%b0dc21%e6%a3%80%e5%ae%9a%e4%b8%8d%e9%80%9a%e8%bf%87%e6%a6%82%e7%8e%87" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;
+&lt;h2 class="relative group"&gt;问题2：10次掷骰DC20检定不通过概率
+&lt;div id="问题210次掷骰dc20检定不通过概率" class="anchor"&gt;&lt;/div&gt;
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e9%97%ae%e9%a2%98210%e6%ac%a1%e6%8e%b7%e9%aa%b0dc20%e6%a3%80%e5%ae%9a%e4%b8%8d%e9%80%9a%e8%bf%87%e6%a6%82%e7%8e%87" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;
+&lt;p&gt;描述：D20骰子投掷10次，每次投掷的最终结果严格小于20点的概率。最终结果取决于D20的投掷点数R和加值G，其中G是两次D4投掷的和加上6。&lt;/p&gt;
+&lt;h3 class="relative group"&gt;问题分析
+&lt;div id="问题分析" class="anchor"&gt;&lt;/div&gt;
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e9%97%ae%e9%a2%98%e5%88%86%e6%9e%90" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;
+&lt;p&gt;我们需要计算D20骰子投掷10次，每次投掷的最终结果严格小于20点的概率。最终结果取决于D20的投掷结果（R）和加值（G），其中加值G由两次D4骰子投掷和加上6得到。&lt;/p&gt;
+&lt;h3 class="relative group"&gt;加值G的概率分布
+&lt;div id="加值g的概率分布" class="anchor"&gt;&lt;/div&gt;
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%8a%a0%e5%80%bcg%e7%9a%84%e6%a6%82%e7%8e%87%e5%88%86%e5%b8%83" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;
+&lt;p&gt;G = (D4 + D4) + 6，因此G的取值范围是8到14。两次D4投掷和的概率分布如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;G = 8: 概率 1/16&lt;/li&gt;
+&lt;li&gt;G = 9: 概率 2/16&lt;/li&gt;
+&lt;li&gt;G = 10: 概率 3/16&lt;/li&gt;
+&lt;li&gt;G = 11: 概率 4/16&lt;/li&gt;
+&lt;li&gt;G = 12: 概率 3/16&lt;/li&gt;
+&lt;li&gt;G = 13: 概率 2/16&lt;/li&gt;
+&lt;li&gt;G = 14: 概率 1/16&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 class="relative group"&gt;单次投掷最终结果F &amp;lt; 20的概率
+&lt;div id="单次投掷最终结果f--20的概率" class="anchor"&gt;&lt;/div&gt;
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%8d%95%e6%ac%a1%e6%8a%95%e6%8e%b7%e6%9c%80%e7%bb%88%e7%bb%93%e6%9e%9cf--20%e7%9a%84%e6%a6%82%e7%8e%87" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;
+&lt;p&gt;最终结果F取决于D20的投掷结果R：&lt;/p&gt;</description></item><item><title>Bg3附伤装备表</title><link>https://wang-xu-97.github.io/nayun.github.io/resource/bg3%E9%99%84%E4%BC%A4%E8%A3%85%E5%A4%87%E8%A1%A8/</link><pubDate>Mon, 25 Aug 2025 11:00:09 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/resource/bg3%E9%99%84%E4%BC%A4%E8%A3%85%E5%A4%87%E8%A1%A8/</guid><description>&lt;p&gt;（7号补丁）&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
