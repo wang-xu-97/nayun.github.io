@@ -3842,7 +3842,9 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;ol&gt;
 &lt;li&gt;第一章：
 &lt;ol&gt;
-&lt;li&gt;斯瓦特比的探伤者、轻声承诺+山莓&lt;/li&gt;
+&lt;li&gt;斯瓦特比的探伤者&lt;/li&gt;
+&lt;li&gt;轻声承诺+山莓&lt;/li&gt;
+&lt;li&gt;精准油&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
@@ -3855,7 +3857,7 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;第一章：波尔恩赐、败者之勇、隐形威胁&lt;/p&gt;</description></item><item><title>Hugo学习250728</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250728/</link><pubDate>Mon, 28 Jul 2025 15:33:17 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250728/</guid><description>&lt;h4 class="relative group"&gt;1. 可折叠列表 HTML5 标签，折叠内容无法支持原生markdown语法
+&lt;p&gt;第一章：&lt;/p&gt;</description></item><item><title>Hugo学习250728</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250728/</link><pubDate>Mon, 28 Jul 2025 15:33:17 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250728/</guid><description>&lt;h4 class="relative group"&gt;1. 可折叠列表 HTML5 标签，折叠内容无法支持原生markdown语法
 &lt;div id="1-可折叠列表-html5-标签折叠内容无法支持原生markdown语法" class="anchor"&gt;&lt;/div&gt;
 &lt;span
 class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
