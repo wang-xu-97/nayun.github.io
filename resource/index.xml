@@ -6,8 +6,13 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;/span&gt;
 &lt;/h2&gt;
 &lt;p&gt;组合公式&lt;br&gt;
+n! / r!⋅(n−r)!&lt;br&gt;
+​&lt;/p&gt;
+&lt;p&gt;星与条定理（将 n 个相同的物品（星星 ★）分配到 k 个不同的组中，允许某些组为空）公式：&lt;br&gt;
 n+k-1&lt;br&gt;
 n&lt;/p&gt;
+&lt;p&gt;&amp;ndash;&amp;gt;&lt;br&gt;
+(n+k-1)!/(n!*(k-1)!)&lt;/p&gt;
 &lt;h2 class="relative group"&gt;问题1：DC21检定优势骰（2次掷骰）不通过概率
 &lt;div id="问题1dc21检定优势骰2次掷骰不通过概率" class="anchor"&gt;&lt;/div&gt;
 &lt;span
