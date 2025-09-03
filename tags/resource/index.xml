@@ -1,4 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Resource on nayun blog</title><link>https://wang-xu-97.github.io/nayun.github.io/tags/resource/</link><description>Recent content in Resource on nayun blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>© 2025 nayun</copyright><lastBuildDate>Tue, 02 Sep 2025 09:50:08 +0800</lastBuildDate><atom:link href="https://wang-xu-97.github.io/nayun.github.io/tags/resource/index.xml" rel="self" type="application/rss+xml"/><item><title>bg3掷骰概率</title><link>https://wang-xu-97.github.io/nayun.github.io/resource/bg3%E6%8E%B7%E9%AA%B0%E6%A6%82%E7%8E%87/</link><pubDate>Tue, 02 Sep 2025 09:50:08 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/resource/bg3%E6%8E%B7%E9%AA%B0%E6%A6%82%E7%8E%87/</guid><description>&lt;h2 class="relative group"&gt;问题1：DC21检定优势骰（2次掷骰）不通过概率
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Resource on nayun blog</title><link>https://wang-xu-97.github.io/nayun.github.io/tags/resource/</link><description>Recent content in Resource on nayun blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>© 2025 nayun</copyright><lastBuildDate>Tue, 02 Sep 2025 09:50:08 +0800</lastBuildDate><atom:link href="https://wang-xu-97.github.io/nayun.github.io/tags/resource/index.xml" rel="self" type="application/rss+xml"/><item><title>bg3掷骰概率</title><link>https://wang-xu-97.github.io/nayun.github.io/resource/bg3%E6%8E%B7%E9%AA%B0%E6%A6%82%E7%8E%87/</link><pubDate>Tue, 02 Sep 2025 09:50:08 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/resource/bg3%E6%8E%B7%E9%AA%B0%E6%A6%82%E7%8E%87/</guid><description>&lt;h2 class="relative group"&gt;核心定理：星条定理
+&lt;div id="核心定理星条定理" class="anchor"&gt;&lt;/div&gt;
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%a0%b8%e5%bf%83%e5%ae%9a%e7%90%86%e6%98%9f%e6%9d%a1%e5%ae%9a%e7%90%86" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;
+&lt;p&gt;组合公式&lt;br&gt;
+n+k-1&lt;br&gt;
+n&lt;/p&gt;
+&lt;h2 class="relative group"&gt;问题1：DC21检定优势骰（2次掷骰）不通过概率
 &lt;div id="问题1dc21检定优势骰2次掷骰不通过概率" class="anchor"&gt;&lt;/div&gt;
 &lt;span
 class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
@@ -9,31 +19,25 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;ul&gt;
 &lt;li&gt;投掷1时，最终结果为1，总是小于21点。&lt;/li&gt;
 &lt;li&gt;投掷20时，最终结果为正无穷，总是大于或等于21点，因此不计入小于21点的概率。&lt;/li&gt;
-&lt;li&gt;投掷2到19时，最终结果为投掷点数加上加值G，其中G = 1D6 + 3D4 + 13。&lt;/li&gt;
+&lt;li&gt;投掷2到19时，最终结果为投掷点数加上加值G，其中G = 1D6 + 3D4 + 11（15~29）。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;加值G的概率分布经计算如下：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;G的取值范围为17到31。&lt;/li&gt;
-&lt;li&gt;P(G=17) = 1/384&lt;/li&gt;
-&lt;li&gt;P(G=18) = 4/384&lt;/li&gt;
+&lt;li&gt;G的取值范围为15到29。&lt;/li&gt;
+&lt;li&gt;P(G=15) = 1/384&lt;/li&gt;
+&lt;li&gt;P(G=16) = 4/384&lt;/li&gt;
+&lt;li&gt;P(G=17) = 10/384&lt;/li&gt;
+&lt;li&gt;P(G=18) = 20/384&lt;/li&gt;
 &lt;li&gt;其他G值的概率不影响本次计算。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;最终结果F小于21点的概率取决于D20投掷结果R：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;当R=1时，P(F&amp;lt;21) = 1。&lt;/li&gt;
-&lt;li&gt;当R=2时，需要G ≤ 18，P(G≤18) = P(G=17) + P(G=18) = 1/384 + 4/384 = 5/384。&lt;/li&gt;
-&lt;li&gt;当R=3时，需要G ≤ 17，P(G≤17) = P(G=17) = 1/384。&lt;/li&gt;
-&lt;li&gt;当R=4到20时，P(F&amp;lt;21) = 0。&lt;/li&gt;
+&lt;li&gt;当R=2时，需要G ≤ 18，P(G≤18) = 35/384。&lt;/li&gt;
+&lt;li&gt;当R=3时，需要G ≤ 17，P(G≤17) 15/384。&lt;/li&gt;
+&lt;li&gt;当R=4时，需要G ≤ 16，P(G≤16) 5/384。&lt;/li&gt;
+&lt;li&gt;当R=5时，需要G ≤ 15，P(G≤15) 1/384。&lt;/li&gt;
+&lt;li&gt;当R=6到20时，P(F&amp;lt;21) = 0。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;由于D20每个面概率均为1/20，单次投掷概率为：&lt;br&gt;
-P(F&amp;lt;21) = &lt;sup&gt;1&lt;/sup&gt;/&lt;sub&gt;20&lt;/sub&gt;(1+&lt;sup&gt;5&lt;/sup&gt;/&lt;sub&gt;384&lt;/sub&gt;+&lt;sup&gt;1&lt;/sup&gt;/&lt;sub&gt;384&lt;/sub&gt;) = &lt;sup&gt;13&lt;/sup&gt;/&lt;sub&gt;256&lt;/sub&gt;&lt;/p&gt;
-&lt;p&gt;因此，两次掷骰结果小于21点的概率为&lt;br&gt;
-(&lt;sup&gt;13&lt;/sup&gt;/&lt;sub&gt;256&lt;/sub&gt;)&lt;sup&gt;2&lt;/sup&gt;=0.002578735&lt;/p&gt;
-&lt;h2 class="relative group"&gt;问题2：10次掷骰DC20检定不通过概率
-&lt;div id="问题210次掷骰dc20检定不通过概率" class="anchor"&gt;&lt;/div&gt;
-&lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e9%97%ae%e9%a2%98210%e6%ac%a1%e6%8e%b7%e9%aa%b0dc20%e6%a3%80%e5%ae%9a%e4%b8%8d%e9%80%9a%e8%bf%87%e6%a6%82%e7%8e%87" aria-label="锚点"&gt;#&lt;/a&gt;
-&lt;/span&gt;
-&lt;/h2&gt;
-&lt;p&gt;描述：D20骰子投掷10次，每次投掷的最终结果严格小于20点的概率。最终结果取决于D20的投掷点数R和加值G，其中G是两次D4投掷的和加上6。&lt;/p&gt;</description></item></channel></rss>
+P(F&amp;lt;21) = &lt;sup&gt;1&lt;/sup&gt;/&lt;sub&gt;20&lt;/sub&gt;(1+&lt;sup&gt;35&lt;/sup&gt;/&lt;sub&gt;384&lt;/sub&gt;+&lt;sup&gt;15&lt;/sup&gt;/&lt;sub&gt;384&lt;/sub&gt;+&lt;sup&gt;5&lt;/sup&gt;/&lt;sub&gt;384&lt;/sub&gt;+&lt;sup&gt;1&lt;/sup&gt;/&lt;sub&gt;384&lt;/sub&gt;) = &lt;sup&gt;11&lt;/sup&gt;/&lt;sub&gt;192&lt;/sub&gt;&lt;/p&gt;</description></item></channel></rss>
