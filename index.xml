@@ -3892,62 +3892,8 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;/span&gt;
 &lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;问题：3~4级战斗力偏弱
-&lt;ol&gt;
-&lt;li&gt;半兽人凶蛮打击≠凶蛮打手专长，需要中后期定身术稳定暴击才能体现优势，不是前期优势能力，理解错误&lt;/li&gt;
-&lt;li&gt;过渡依赖波尔恩赐+尖刺球造优手段&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;调整
-&lt;ol&gt;
-&lt;li&gt;5级前可以先不吃嗜血/力量药，多使用法术位增强战斗力
-&lt;ol&gt;
-&lt;li&gt;前期辅助2德2术可以是输出主力，多捏术法点，打濡湿成双冰冻射线/电爪&lt;/li&gt;
-&lt;li&gt;主控1游荡2战1咒战斗力偏弱，尝试其它前期强力bd（2德2术/4刺/风流剑客）过渡&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;5级后
-&lt;ol&gt;
-&lt;li&gt;主控洗点奥法解锁2打拿探伤者凶蛮打手/1术4牧力量短棒（豁免加速术2打），第二章考虑转型&lt;/li&gt;
-&lt;li&gt;辅助洗点猛虎蛮&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 class="relative group"&gt;命中
-&lt;div id="命中" class="anchor"&gt;&lt;/div&gt;
-&lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%91%bd%e4%b8%ad" aria-label="锚点"&gt;#&lt;/a&gt;
-&lt;/span&gt;
-&lt;/h3&gt;
-&lt;h4 class="relative group"&gt;攻击加值
-&lt;div id="攻击加值" class="anchor"&gt;&lt;/div&gt;
-&lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%94%bb%e5%87%bb%e5%8a%a0%e5%80%bc" aria-label="锚点"&gt;#&lt;/a&gt;
-&lt;/span&gt;
-&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;第一章：
-&lt;ol&gt;
-&lt;li&gt;斯瓦特比的探伤者&lt;/li&gt;
-&lt;li&gt;轻声承诺+山莓&lt;/li&gt;
-&lt;li&gt;精准油&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4 class="relative group"&gt;攻击优势
-&lt;div id="攻击优势" class="anchor"&gt;&lt;/div&gt;
-&lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%94%bb%e5%87%bb%e4%bc%98%e5%8a%bf" aria-label="锚点"&gt;#&lt;/a&gt;
-&lt;/span&gt;
-&lt;/h4&gt;
-&lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;第一章：&lt;/p&gt;</description></item><item><title>Hugo学习250728</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250728/</link><pubDate>Mon, 28 Jul 2025 15:33:17 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250728/</guid><description>&lt;h4 class="relative group"&gt;1. 可折叠列表 HTML5 标签，折叠内容无法支持原生markdown语法
+&lt;p&gt;问题：3~4级战斗力偏弱&lt;/p&gt;</description></item><item><title>Hugo学习250728</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250728/</link><pubDate>Mon, 28 Jul 2025 15:33:17 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250728/</guid><description>&lt;h4 class="relative group"&gt;1. 可折叠列表 HTML5 标签，折叠内容无法支持原生markdown语法
 &lt;div id="1-可折叠列表-html5-标签折叠内容无法支持原生markdown语法" class="anchor"&gt;&lt;/div&gt;
 &lt;span
 class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
