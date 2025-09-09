@@ -720,177 +720,220 @@ P(F&amp;lt;21) = &lt;sup&gt;1&lt;/sup&gt;/&lt;sub&gt;20&lt;/sub&gt;(1+&lt;sup&gt
       <pubDate>Wed, 20 Aug 2025 14:16:02 +0800</pubDate>
       
       <guid>http://localhost:43997/nayun.github.io/resource/bg3%E8%83%BD%E5%8A%9B%E4%B8%80%E5%9B%BE%E6%B5%81/</guid>
-      <description>&lt;p&gt;来源：&lt;a
+      <description>&lt;h1 class=&#34;relative group&#34;&gt;专长 
+    &lt;div id=&#34;专长&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#%e4%b8%93%e9%95%bf&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;        
+    
+&lt;/h1&gt;
+
+&lt;h1 class=&#34;relative group&#34;&gt;《博德之门3》全专长一览表 
+    &lt;div id=&#34;博德之门3全专长一览表&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#%e5%8d%9a%e5%be%b7%e4%b9%8b%e9%97%a83%e5%85%a8%e4%b8%93%e9%95%bf%e4%b8%80%e8%a7%88%e8%a1%a8&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;        
+    
+&lt;/h1&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;专长名称&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;效果描述&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;推荐度与备注&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;属性提升&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;一项属性+2，或两项属性各+1（上限20）&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;通用选择，缺啥补啥&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;演员&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;魅力+1（上限20），表演和欺瞒检定熟练加值翻倍&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;适合魅力型角色，剧情流可选&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;警觉&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;先攻+5&lt;/strong&gt;，不會陷入受驚狀態&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;極力推薦&lt;/strong&gt;，几乎所有角色都受益于高先攻&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;運動員&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;力量或敏捷+1（上限20），倒地站立所需移動力更低，&lt;strong&gt;跳躍距離增加50%&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;近战角色不错，跳跃是强大的机动手段&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;衝鋒&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;獲得衝擊：武器攻擊以及衝擊：推擊&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;不推荐，动作消耗大，性价比低&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;強弩專家&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;近戰用弩無劣勢，穿刺射擊開放傷口時長翻倍&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;弩箭手可选，应对近身贴脸&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;防禦式決鬥&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;被熟練的靈巧武器近戰命中時，可用反應使AC+2&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;适合敏捷型近战角色，相当于无限次“护盾术”&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;雙持客&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;可雙持非輕型武器&lt;/strong&gt;，雙持近戰武器時AC+1&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;法師必學&lt;/strong&gt;（双持法杖），近战双持流可选&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;地牢探索者&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;察覺偵測隱藏、豁免抵抗陷阱有優勢，有陷阱傷害抗性&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;不推荐，宠物或队友可处理陷阱&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;歷久彌堅&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;體質+1（上限20），&lt;strong&gt;短休恢復全部生命值&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;前期开荒可选，后期药水多，作用下降&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;元素導師&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;選擇一種法術類型無視其傷害抗性，對應法術不會骰出1&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;法系输出可选，但若打易伤则收益低&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;巨武器大師&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;重擊或擊殺後可用附贈動作再攻擊一次&lt;/strong&gt;；可選-5命中+10傷害&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;雙手武器近戰必學&lt;/strong&gt;，需配合优势或命中加成抵消惩罚&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;重甲運用&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;獲得重甲熟練項，力量+1（上限20）&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;需要重甲但职业不提供时才考虑，通常职业自带&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;重甲大師&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;力量+1（上限20），穿重甲時非魔法攻擊的繼發傷害-3&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;重甲坦克強力推薦&lt;/strong&gt;，显著提升生存能力&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;輕甲運用&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;獲得輕甲熟練項，力量或敏捷+1（上限20）&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;需要轻甲但职业不提供时才考虑&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;幸運&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;獲得3點幸運點（長休回復），可用於讓自身檢定獲優勢或讓敵人重骰攻擊&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;泛用性強&lt;/strong&gt;，戰鬥内外都有用&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;法師殺手&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;近戰範圍內敵人施法時，其豁免檢定處於優勢，可反應攻擊，命中後敵人專注檢定劣勢&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;PVP強，PVE法師怪較少威脅一般&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;魔法學徒&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;學會2種戲法和1種1環法術（對應職業列表，長休施放一次），施法關鍵屬性取決於所選職業&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;不推荐，收益较低，通常不如属性提升或專用专长&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;戰技專家&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;學會2種戰技，獲得1顆優勢骰（短休或長休回復）&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;兼职战技大师且等级不高时可考虑，否则骰子太少&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;中甲大師&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;中甲不為隱匿檢定加劣勢，敏捷調整值獲得的AC加值變為+3&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;適合中甲潛行流派&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;靈活移動&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;移動速度增加，疾走時劣勢地形不降速，發動近戰攻擊後移動不招致借機&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;遊蕩者必點&lt;/strong&gt;，其他職業根據需要&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;中甲運用&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;獲得中甲和盾牌熟練項，力量或敏捷+1（上限20）&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;需要中甲但职业不提供时才考虑&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;表演者&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;獲得樂器熟練項，魅力+1（上限20）&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;吟游诗人自带，其他职业除非特别需要乐器&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;長柄武器大師&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;用特定長柄武器攻擊時，可用附贈動作進行握柄攻擊；目標進入範圍可發動借機攻擊&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;长柄武器流可选，注意某些效果可能有Bug&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;堅如磐石&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;一項屬性+1（上限20），並獲得該屬性豁免檢定的熟練項&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;缺特定豁免熟练项时可考虑，但一般优先度不高&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;儀式施法者&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;學會2種任選的儀式法術&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;不推荐，仪式法术可通过其他方式获得&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;凶蠻打手&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;近戰武器攻擊時，&lt;strong&gt;傷害骰擲兩次取高&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;近戰輸出強力推薦&lt;/strong&gt;，稳定提升伤害&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;神射手&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;遠程武器攻擊無視高地規則減值&lt;/strong&gt;；可選-5命中+10傷害&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;远程物理输出核心专长&lt;/strong&gt;，需注意命中率&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;盾牌大師&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;持盾時敏捷豁免+2；可反應法術敏捷豁免成功免傷，失敗減半&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;持盾前排推薦&lt;/strong&gt;，显著提升法術生存能力&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;熟習&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;選擇任意三種技能並獲得其熟練項&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;缺关键技能时考虑&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;法術狙擊&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;學會一種戲法，&lt;strong&gt;觸發重擊所需攻擊骰點數-1&lt;/strong&gt;（可疊加）&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;法系输出可选，注意效果是否正常触发&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;酒館毆鬥者&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;力量或敏捷+1（上限20），徒手、臨時武器或投擲物時，&lt;strong&gt;傷害和攻擊骰可加雙倍力量調整值&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;投掷流核心&lt;/strong&gt;，但需注意版本变动&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;哨兵&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;近戰範圍內敵人攻擊盟友時，可用反應對該敵人攻擊；借機攻擊有優勢，且命中後目標本回合無法移動&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;控制型近戰推薦&lt;/strong&gt;，保护队友，限制敌人移动&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;武器大師&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;選擇四種武器獲得熟練項，力量或敏捷+1（上限20）&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;缺特定武器熟练项时考虑，近战职业通常不缺&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;戰地施法者&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;維持法術專注的豁免檢定有優勢；可用反應對移出近戰範圍的目標施展電爪&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;前排法師或需要維持專注的施法者可考慮&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;健壯&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;每級生命上限+2&lt;/strong&gt;（計算基於當前等級）&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;通用生存向專長&lt;/strong&gt;，任何角色都可以考慮，提升血量&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;来源：&lt;a
   href=&#34;https://www.bilibili.com/read/readlist/rl937101?spm_id_from=333.1369.opus.module_collection.click&#34;
     target=&#34;_blank&#34;
   &gt;拽拽z&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;h1 class=&#34;relative group&#34;&gt;1. 法师 
-    &lt;div id=&#34;1-法师&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
-        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#1-%e6%b3%95%e5%b8%88&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;        
-    
-&lt;/h1&gt;
-&lt;p&gt;
-
-
-
-
-
-
-&lt;figure&gt;
-    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;法1&#34; src=&#34;../images/%E6%B3%951.png&#34;&gt;
-
-  
-&lt;/figure&gt;
-&lt;br&gt;
-
-
-
-
-
-
-
-&lt;figure&gt;
-    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;法2&#34; src=&#34;../images/%E6%B3%952.png&#34;&gt;
-
-  
-&lt;/figure&gt;
-&lt;br&gt;
-
-
-
-
-
-
-
-&lt;figure&gt;
-    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;法3&#34; src=&#34;../images/%E6%B3%953.png&#34;&gt;
-
-  
-&lt;/figure&gt;
-&lt;/p&gt;
-
-&lt;h1 class=&#34;relative group&#34;&gt;2. 术士 
-    &lt;div id=&#34;2-术士&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
-        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#2-%e6%9c%af%e5%a3%ab&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;        
-    
-&lt;/h1&gt;
-&lt;p&gt;
-
-
-
-
-
-
-&lt;figure&gt;
-    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;术&#34; src=&#34;../images/%E6%9C%AF.png&#34;&gt;
-
-  
-&lt;/figure&gt;
-&lt;/p&gt;
-
-&lt;h1 class=&#34;relative group&#34;&gt;3. 牧师 
-    &lt;div id=&#34;3-牧师&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
-        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#3-%e7%89%a7%e5%b8%88&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;        
-    
-&lt;/h1&gt;
-&lt;p&gt;
-
-
-
-
-
-
-&lt;figure&gt;
-    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;牧1&#34; src=&#34;../images/%E7%89%A71.png&#34;&gt;
-
-  
-&lt;/figure&gt;
-&lt;br&gt;
-
-
-
-
-
-
-
-&lt;figure&gt;
-    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;牧2&#34; src=&#34;../images/%E7%89%A72.png&#34;&gt;
-
-  
-&lt;/figure&gt;
-&lt;/p&gt;
-
-&lt;h1 class=&#34;relative group&#34;&gt;4. 德鲁伊 
-    &lt;div id=&#34;4-德鲁伊&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
-        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#4-%e5%be%b7%e9%b2%81%e4%bc%8a&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;        
-    
-&lt;/h1&gt;
-&lt;p&gt;
-
-
-
-
-
-
-&lt;figure&gt;
-    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;德&#34; src=&#34;../images/%E5%BE%B7.png&#34;&gt;
-
-  
-&lt;/figure&gt;
-&lt;/p&gt;
-
-&lt;h1 class=&#34;relative group&#34;&gt;5. 圣武士 
-    &lt;div id=&#34;5-圣武士&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
-        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#5-%e5%9c%a3%e6%ad%a6%e5%a3%ab&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;        
-    
-&lt;/h1&gt;
-&lt;p&gt;
-
-
-
-
-
-
-&lt;figure&gt;
-    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;帕1&#34; src=&#34;../images/%E5%B8%951.png&#34;&gt;
-
-  
-&lt;/figure&gt;
-&lt;br&gt;
-
-
-
-
-
-
-
-&lt;figure&gt;
-    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;帕2&#34; src=&#34;../images/%E5%B8%952.png&#34;&gt;
-
-  
-&lt;/figure&gt;
 &lt;/p&gt;</description>
       
     </item>
