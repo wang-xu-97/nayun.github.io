@@ -5086,7 +5086,7 @@ data为字典字符串，需要使用&lt;code&gt;json.dumps(payload)&lt;/code&gt
 &lt;ol&gt;
 &lt;li&gt;游侠开
 &lt;ol&gt;
-&lt;li&gt;集群弓-&amp;gt;战弓诗： 16 16 14 8 12 8 -&amp;gt; 5集群 -&amp;gt; 9级：5集群4刺 -&amp;gt; 10级洗点8 17 15 8 8 16 8诗2战&lt;br&gt;
+&lt;li&gt;集群弓-&amp;gt;战弓诗： 16 16 14 8 12 8 -&amp;gt; 5集群 -&amp;gt; 9级：5集群4刺 -&amp;gt; 10级洗点8 17 15 8 8 16 8诗2战 -&amp;gt; 10诗2战&lt;br&gt;
 战弓诗消耗：力量药&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
