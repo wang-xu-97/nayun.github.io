@@ -5061,10 +5061,6 @@ data为字典字符串，需要使用&lt;code&gt;json.dumps(payload)&lt;/code&gt
 &lt;ol&gt;
 &lt;li&gt;联机bd：
 &lt;ol&gt;
-&lt;li&gt;前排
-&lt;ol&gt;
-&lt;li&gt;辅助
-&lt;ol&gt;
 &lt;li&gt;德开
 &lt;ol&gt;
 &lt;li&gt;软刺-&amp;gt;诗帕：      16 16 14 8 10 8 -&amp;gt; 2德3软 -&amp;gt; 8级前排软刺（2德3软3刺） -&amp;gt; 9级~12级诗帕（2德1黑骑/王冠6剑刃诗 -&amp;gt; 2德2战2帕6剑刃诗）&lt;/li&gt;
@@ -5072,18 +5068,10 @@ data为字典字符串，需要使用&lt;code&gt;json.dumps(payload)&lt;/code&gt
 &lt;li&gt;不吃装备加速剑德帕  10 16 14 16 8 8 -&amp;gt; 2德2剑咏 -&amp;gt; 9级洗点保持智力施法者：2德1帕6剑咏 -&amp;gt; 2德2帕6剑咏2战&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;输出
-&lt;ol&gt;
 &lt;li&gt;刺开
 &lt;ol&gt;
 &lt;li&gt;橡棍加速魅调软刺：   15 17 16 8 8 8 -&amp;gt; 3刺 -&amp;gt; 8级：5软3刺 -&amp;gt; 10~11级5软4刺2战 -&amp;gt; 12级洗点：10 16 14 8 8 16 5软4刺1德1法1术 凶蛮打手+属性提升/+1敏&lt;/li&gt;
 &lt;li&gt;风流剑客心灵刀重击：  15 16 16 8 10 8 -&amp;gt; 4风流剑客 -&amp;gt; 5级洗点10 16 14 8 8 17 4风流剑客1咒 -&amp;gt; 4风流剑客5咒3冠勇（思考：3咒剑是否可以用奥术滋养灵药施法高环幽影刃）&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
