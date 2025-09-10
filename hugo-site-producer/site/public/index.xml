@@ -4741,6 +4741,16 @@ data为字典字符串，需要使用&lt;code&gt;json.dumps(payload)&lt;/code&gt
     &lt;/span&gt;        
     
 &lt;/h2&gt;
+
+&lt;h3 class=&#34;relative group&#34;&gt;等级区分 
+    &lt;div id=&#34;等级区分&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#%e7%ad%89%e7%ba%a7%e5%8c%ba%e5%88%86&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;        
+    
+&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;5级前
 &lt;ol&gt;
@@ -4790,6 +4800,46 @@ data为字典字符串，需要使用&lt;code&gt;json.dumps(payload)&lt;/code&gt
 &lt;ol&gt;
 &lt;li&gt;[&lt;strong&gt;剑咏&lt;/strong&gt;] 2战6剑咏2星辰德2帕 -&amp;gt; 动潮+保专注加速5打、绚烂吐息、剑咏AC、5+4环至圣斩爆发&lt;/li&gt;
 &lt;li&gt;[&lt;strong&gt;诗帕&lt;/strong&gt;] 10诗2帕 -&amp;gt; 2打华舞放逐斩、6+5环至圣斩爆发、奥敏头神秘头箍附赠稳定控&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 class=&#34;relative group&#34;&gt;功能区分 
+    &lt;div id=&#34;功能区分&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#%e5%8a%9f%e8%83%bd%e5%8c%ba%e5%88%86&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;        
+    
+&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;联机bd：
+&lt;ol&gt;
+&lt;li&gt;前排
+&lt;ol&gt;
+&lt;li&gt;辅助
+&lt;ol&gt;
+&lt;li&gt;德开
+&lt;ol&gt;
+&lt;li&gt;软刺-&amp;gt;诗帕：   16 16 14 8 10 8 -&amp;gt; 2德3软 -&amp;gt; 8级前排软刺（2德3软3刺） -&amp;gt; 9级~12级诗帕（2德1黑骑/王冠6剑刃诗 -&amp;gt; 2德2战2帕6剑刃诗）&lt;/li&gt;
+&lt;li&gt;风暴牧-&amp;gt;水电法：10 16 14 8 8 16 -&amp;gt; 2德1牧 -&amp;gt; 5级：2德2牧1术 -&amp;gt; 7级洗点保持魅力施法：2德2牧1法2术 -&amp;gt; 2德2牧2法6术&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;输出
+&lt;ol&gt;
+&lt;li&gt;刺开
+&lt;ol&gt;
+&lt;li&gt;橡棍加速软刺：  15 17 16 8 8 8 -&amp;gt; 3刺 -&amp;gt; 8级：5软3刺 -&amp;gt; 10~11级5软4刺2战 -&amp;gt; 12级洗点：10 16 14 8 8 16 5软4刺1德1法1术 凶蛮打手+属性提升/+1敏&lt;/li&gt;
+&lt;li&gt;风流剑客心灵刀重击：  15 17 16 8 8 8 -&amp;gt; 4风流剑客 -&amp;gt; 5级洗点10 16 14 8 8 17 4风流剑客1咒 -&amp;gt; 4风流剑客5咒3冠勇（思考：3咒剑是否可以用奥术滋养灵药施法高环幽影刃）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
