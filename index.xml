@@ -4128,19 +4128,10 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;/span&gt;
 &lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;1咒&lt;/li&gt;
-&lt;li&gt;1法&lt;/li&gt;
-&lt;li&gt;1野蛮人/武僧（无甲防御）&lt;/li&gt;
-&lt;li&gt;1游荡&lt;/li&gt;
-&lt;li&gt;1战争牧&lt;/li&gt;
-&lt;li&gt;2帕（后期多法术位）&lt;/li&gt;
-&lt;li&gt;2战&lt;/li&gt;
-&lt;li&gt;2风暴牧&lt;/li&gt;
-&lt;li&gt;2星辰德&lt;/li&gt;
-&lt;li&gt;3术&lt;/li&gt;
-&lt;li&gt;3贼&lt;/li&gt;
-&lt;li&gt;3刺&lt;/li&gt;
-&lt;li&gt;4风流剑客&lt;/li&gt;
+&lt;li&gt;1级：咒、法、野蛮人/武僧（无甲防御）、游荡、战争牧&lt;/li&gt;
+&lt;li&gt;2级：2帕（后期多法术位）、2战、2风暴牧、2星辰德&lt;/li&gt;
+&lt;li&gt;3级：3术、3贼、3刺、&lt;/li&gt;
+&lt;li&gt;4级：4风流剑客&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 class="relative group"&gt;等级区分
 &lt;div id="等级区分" class="anchor"&gt;&lt;/div&gt;
