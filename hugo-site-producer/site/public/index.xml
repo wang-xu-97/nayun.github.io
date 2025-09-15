@@ -4990,7 +4990,7 @@ data为字典字符串，需要使用&lt;code&gt;json.dumps(payload)&lt;/code&gt
     &lt;/span&gt;        
     
 &lt;/h3&gt;
-&lt;p&gt;1级：咒、法、野蛮人/武僧（无甲防御）、游荡、战争牧&lt;br&gt;
+&lt;p&gt;1级：咒、法、蛮/僧（无甲防御）、游荡、战争牧&lt;br&gt;
 2级：2帕（后期多法术位）、2战、2风暴牧、2星辰德&lt;br&gt;
 3级：3术、3贼、3刺、&lt;br&gt;
 4级：4风流剑客&lt;/p&gt;</description>
