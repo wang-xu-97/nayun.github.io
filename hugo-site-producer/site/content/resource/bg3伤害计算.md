@@ -222,6 +222,6 @@ D20掷骰结果为k的概率P<sub>k</sub>, k∈[1,20]
 
 - 非重击伤害期望=7.5
 #### 打开巨武器大师
-- 非重击命中率P<sub>n</sub>： ∑<sub>k=(Ac-Bonus+dim)</sub><sup>20-C-1</sup>P<sub>k</sub> = ∑<sub>k=(15)</sub><sup>19</sup>P<sub>k</sub>
+- 非重击命中率P<sub>n</sub>： ∑<sub>k=(Ac-Bonus+dim)</sub><sup>20-C-1</sup>P<sub>k</sub> = ∑<sub>k=15</sub><sup>19</sup>P<sub>k</sub>
 
 - 非重击伤害期望=17.5
