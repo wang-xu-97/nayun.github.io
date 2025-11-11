@@ -82,8 +82,10 @@
   <meta property="og:site_name" content="nayun blog">
   <meta property="og:title" content="bg3伤害计算">
   <meta property="og:description" content="最终伤害 = 命中率 * 实际伤害期望
-命中率 # 攻击骰1d20 # 掷20-(重击减值)：命中且重击 掷1：严重失误，必定未命中 掷2~(20-重击减值)：假设掷x(2 &lt;= x &lt;= 20-重击减值-1)
-命中条件：x &#43; 攻击加值 &gt;= 敌方护甲AC 攻击加值 # 攻击属性调整值： 近战： 非灵巧武器 &amp; 灵巧武器但是力量&gt;敏捷 使用力调 灵巧武器且敏捷&gt;力量 使用敏调 远程： 使用敏调 攻击骰法术： 使用施法主属性调整值 对应攻击属性熟练项加值（固定存在，总等级1~4级&#43;2，5~8级&#43;3，9~12级&#43;4） 增益buff: 祝福术1d4 高地 装备加值 攻击优势骰 # 豁免骰 # 豁免DC &gt;= 豁免AC">
+命中率 # 攻击骰1d20计算优劣势 # 掷20-(重击减值)：必定命中且重击 掷1：严重失误，必定未命中 掷2~(20-重击减值)：假设攻击骰掷x(2 &lt;= x &lt;= 20-重击减值-1)
+命中条件：x &#43; 攻击加值 &gt;= 敌方护甲AC 攻击加值 # 攻击属性调整值： 近战： 非灵巧武器 &amp; 灵巧武器但是力量&gt;敏捷 使用力调 灵巧武器且敏捷&gt;力量 使用敏调 远程： 使用敏调 攻击骰法术： 使用施法主属性调整值 对应攻击属性熟练项加值（固定存在，总等级1~4级&#43;2，5~8级&#43;3，9~12级&#43;4） 增益buff: 祝福术1d4 高地 装备加值 豁免骰 # 豁免检定骰1d20计算优劣势 # 掷20：必定豁免成功 掷1：严重失误，必定豁免失败 掷2~19：假设豁免检定骰掷x
+豁免AC = x &#43; 法术豁免属性 &#43; 豁免属性熟练项加值（0-没有熟练项 或者 总等级1~4级&#43;2，5~8级&#43;3，9~12级&#43;4-拥有熟练项） &#43; 装备豁免检定AC加值
+命中条件：豁免DC &gt;= 豁免AC 豁免DC # 非固定豁免DC # 豁免DC = 8 &#43; 施法属性调整值 &#43; 施法属性熟练项加值（固定存在，总等级1~4级&#43;2，5~8级&#43;3，9~12级&#43;4） &#43; 装备法术豁免等级DC加值">
   <meta property="og:locale" content="zh_cn">
   <meta property="og:type" content="article">
     <meta property="article:section" content="resource">
@@ -95,8 +97,10 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="bg3伤害计算">
   <meta name="twitter:description" content="最终伤害 = 命中率 * 实际伤害期望
-命中率 # 攻击骰1d20 # 掷20-(重击减值)：命中且重击 掷1：严重失误，必定未命中 掷2~(20-重击减值)：假设掷x(2 &lt;= x &lt;= 20-重击减值-1)
-命中条件：x &#43; 攻击加值 &gt;= 敌方护甲AC 攻击加值 # 攻击属性调整值： 近战： 非灵巧武器 &amp; 灵巧武器但是力量&gt;敏捷 使用力调 灵巧武器且敏捷&gt;力量 使用敏调 远程： 使用敏调 攻击骰法术： 使用施法主属性调整值 对应攻击属性熟练项加值（固定存在，总等级1~4级&#43;2，5~8级&#43;3，9~12级&#43;4） 增益buff: 祝福术1d4 高地 装备加值 攻击优势骰 # 豁免骰 # 豁免DC &gt;= 豁免AC">
+命中率 # 攻击骰1d20计算优劣势 # 掷20-(重击减值)：必定命中且重击 掷1：严重失误，必定未命中 掷2~(20-重击减值)：假设攻击骰掷x(2 &lt;= x &lt;= 20-重击减值-1)
+命中条件：x &#43; 攻击加值 &gt;= 敌方护甲AC 攻击加值 # 攻击属性调整值： 近战： 非灵巧武器 &amp; 灵巧武器但是力量&gt;敏捷 使用力调 灵巧武器且敏捷&gt;力量 使用敏调 远程： 使用敏调 攻击骰法术： 使用施法主属性调整值 对应攻击属性熟练项加值（固定存在，总等级1~4级&#43;2，5~8级&#43;3，9~12级&#43;4） 增益buff: 祝福术1d4 高地 装备加值 豁免骰 # 豁免检定骰1d20计算优劣势 # 掷20：必定豁免成功 掷1：严重失误，必定豁免失败 掷2~19：假设豁免检定骰掷x
+豁免AC = x &#43; 法术豁免属性 &#43; 豁免属性熟练项加值（0-没有熟练项 或者 总等级1~4级&#43;2，5~8级&#43;3，9~12级&#43;4-拥有熟练项） &#43; 装备豁免检定AC加值
+命中条件：豁免DC &gt;= 豁免AC 豁免DC # 非固定豁免DC # 豁免DC = 8 &#43; 施法属性调整值 &#43; 施法属性熟练项加值（固定存在，总等级1~4级&#43;2，5~8级&#43;3，9~12级&#43;4） &#43; 装备法术豁免等级DC加值">
 
       
     
@@ -109,7 +113,7 @@
     "name": "bg3伤害计算",
     "headline": "bg3伤害计算",
     
-    "abstract": "\u003cp\u003e最终伤害 = 命中率 * 实际伤害期望\u003c\/p\u003e\n\n\u003ch2 class=\u0022relative group\u0022\u003e命中率 \n    \u003cdiv id=\u0022命中率\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e5%91%bd%e4%b8%ad%e7%8e%87\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\n\u003ch3 class=\u0022relative group\u0022\u003e攻击骰1d20 \n    \u003cdiv id=\u0022攻击骰1d20\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e6%94%bb%e5%87%bb%e9%aa%b01d20\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h3\u003e\n\u003col\u003e\n\u003cli\u003e掷20-(重击减值)：命中且重击\u003c\/li\u003e\n\u003cli\u003e掷1：严重失误，必定未命中\u003c\/li\u003e\n\u003cli\u003e掷2~(20-重击减值)：假设掷x(2 \u0026lt;= x \u0026lt;= 20-重击减值-1)\u003cbr\u003e\n命中条件：x \u002b 攻击加值 \u0026gt;= 敌方护甲AC\u003c\/li\u003e\n\u003c\/ol\u003e\n\n\u003ch4 class=\u0022relative group\u0022\u003e攻击加值 \n    \u003cdiv id=\u0022攻击加值\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e6%94%bb%e5%87%bb%e5%8a%a0%e5%80%bc\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h4\u003e\n\u003col\u003e\n\u003cli\u003e攻击属性调整值：\n\u003col\u003e\n\u003cli\u003e近战：\n\u003col\u003e\n\u003cli\u003e非灵巧武器 \u0026amp; 灵巧武器但是力量\u0026gt;敏捷\n\u003col\u003e\n\u003cli\u003e使用力调\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003c\/li\u003e\n\u003cli\u003e灵巧武器且敏捷\u0026gt;力量\n\u003col\u003e\n\u003cli\u003e使用敏调\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003c\/li\u003e\n\u003cli\u003e远程：\n\u003col\u003e\n\u003cli\u003e使用敏调\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003c\/li\u003e\n\u003cli\u003e攻击骰法术：\n\u003col\u003e\n\u003cli\u003e使用施法主属性调整值\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003c\/li\u003e\n\u003cli\u003e对应攻击属性熟练项加值（固定存在，总等级1~4级\u002b2，5~8级\u002b3，9~12级\u002b4）\u003c\/li\u003e\n\u003cli\u003e增益buff:\n\u003col\u003e\n\u003cli\u003e祝福术1d4\u003c\/li\u003e\n\u003cli\u003e高地\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003c\/li\u003e\n\u003cli\u003e装备加值\u003c\/li\u003e\n\u003c\/ol\u003e\n\n\u003ch4 class=\u0022relative group\u0022\u003e攻击优势骰 \n    \u003cdiv id=\u0022攻击优势骰\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e6%94%bb%e5%87%bb%e4%bc%98%e5%8a%bf%e9%aa%b0\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h4\u003e\n\n\u003ch3 class=\u0022relative group\u0022\u003e豁免骰 \n    \u003cdiv id=\u0022豁免骰\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e8%b1%81%e5%85%8d%e9%aa%b0\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h3\u003e\n\u003cp\u003e豁免DC \u0026gt;= 豁免AC\u003c\/p\u003e",
+    "abstract": "\u003cp\u003e最终伤害 = 命中率 * 实际伤害期望\u003c\/p\u003e\n\n\u003ch2 class=\u0022relative group\u0022\u003e命中率 \n    \u003cdiv id=\u0022命中率\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e5%91%bd%e4%b8%ad%e7%8e%87\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\n\u003ch3 class=\u0022relative group\u0022\u003e攻击骰1d20计算优劣势 \n    \u003cdiv id=\u0022攻击骰1d20计算优劣势\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e6%94%bb%e5%87%bb%e9%aa%b01d20%e8%ae%a1%e7%ae%97%e4%bc%98%e5%8a%a3%e5%8a%bf\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h3\u003e\n\u003col\u003e\n\u003cli\u003e掷20-(重击减值)：必定命中且重击\u003c\/li\u003e\n\u003cli\u003e掷1：严重失误，必定未命中\u003c\/li\u003e\n\u003cli\u003e掷2~(20-重击减值)：假设攻击骰掷x(2 \u0026lt;= x \u0026lt;= 20-重击减值-1)\u003cbr\u003e\n命中条件：x \u002b 攻击加值 \u0026gt;= 敌方护甲AC\u003c\/li\u003e\n\u003c\/ol\u003e\n\n\u003ch4 class=\u0022relative group\u0022\u003e攻击加值 \n    \u003cdiv id=\u0022攻击加值\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e6%94%bb%e5%87%bb%e5%8a%a0%e5%80%bc\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h4\u003e\n\u003col\u003e\n\u003cli\u003e攻击属性调整值：\n\u003col\u003e\n\u003cli\u003e近战：\n\u003col\u003e\n\u003cli\u003e非灵巧武器 \u0026amp; 灵巧武器但是力量\u0026gt;敏捷\n\u003col\u003e\n\u003cli\u003e使用力调\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003c\/li\u003e\n\u003cli\u003e灵巧武器且敏捷\u0026gt;力量\n\u003col\u003e\n\u003cli\u003e使用敏调\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003c\/li\u003e\n\u003cli\u003e远程：\n\u003col\u003e\n\u003cli\u003e使用敏调\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003c\/li\u003e\n\u003cli\u003e攻击骰法术：\n\u003col\u003e\n\u003cli\u003e使用施法主属性调整值\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003c\/li\u003e\n\u003cli\u003e对应攻击属性熟练项加值（固定存在，总等级1~4级\u002b2，5~8级\u002b3，9~12级\u002b4）\u003c\/li\u003e\n\u003cli\u003e增益buff:\n\u003col\u003e\n\u003cli\u003e祝福术1d4\u003c\/li\u003e\n\u003cli\u003e高地\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003c\/li\u003e\n\u003cli\u003e装备加值\u003c\/li\u003e\n\u003c\/ol\u003e\n\n\u003ch3 class=\u0022relative group\u0022\u003e豁免骰 \n    \u003cdiv id=\u0022豁免骰\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e8%b1%81%e5%85%8d%e9%aa%b0\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h3\u003e\n\n\u003ch4 class=\u0022relative group\u0022\u003e豁免检定骰1d20计算优劣势 \n    \u003cdiv id=\u0022豁免检定骰1d20计算优劣势\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e8%b1%81%e5%85%8d%e6%a3%80%e5%ae%9a%e9%aa%b01d20%e8%ae%a1%e7%ae%97%e4%bc%98%e5%8a%a3%e5%8a%bf\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h4\u003e\n\u003col\u003e\n\u003cli\u003e掷20：必定豁免成功\u003c\/li\u003e\n\u003cli\u003e掷1：严重失误，必定豁免失败\u003c\/li\u003e\n\u003cli\u003e掷2~19：假设豁免检定骰掷x\u003cbr\u003e\n豁免AC = x \u002b 法术豁免属性 \u002b 豁免属性熟练项加值（0-没有熟练项 或者 总等级1~4级\u002b2，5~8级\u002b3，9~12级\u002b4-拥有熟练项） \u002b 装备豁免检定AC加值\u003cbr\u003e\n命中条件：豁免DC \u0026gt;= 豁免AC\u003c\/li\u003e\n\u003c\/ol\u003e\n\n\u003ch4 class=\u0022relative group\u0022\u003e豁免DC \n    \u003cdiv id=\u0022豁免dc\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e8%b1%81%e5%85%8ddc\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h4\u003e\n\n\u003ch5 class=\u0022relative group\u0022\u003e非固定豁免DC \n    \u003cdiv id=\u0022非固定豁免dc\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e9%9d%9e%e5%9b%ba%e5%ae%9a%e8%b1%81%e5%85%8ddc\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h5\u003e\n\u003cp\u003e豁免DC = 8 \u002b 施法属性调整值 \u002b 施法属性熟练项加值（固定存在，总等级1~4级\u002b2，5~8级\u002b3，9~12级\u002b4） \u002b 装备法术豁免等级DC加值\u003c\/p\u003e",
     "inLanguage": "zh-cn",
     "url" : "http:\/\/localhost:43997\/nayun.github.io\/resource\/bg3%E4%BC%A4%E5%AE%B3%E8%AE%A1%E7%AE%97\/",
     "author" : {
@@ -125,7 +129,7 @@
     "keywords": ["resource"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "179"
+    "wordCount": "168"
   }]
   </script>
 
@@ -596,7 +600,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-11-11T10:50:08&#43;08:00">November 11, 2025</time><span class="px-2 text-primary-500">&middot;</span><span>179 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">1 分钟</span>
+      <time datetime="2025-11-11T10:50:08&#43;08:00">November 11, 2025</time><span class="px-2 text-primary-500">&middot;</span><span>168 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">1 分钟</span>
     
 
     
@@ -652,28 +656,18 @@
       <ul>
         <li><a href="#命中率">命中率</a>
           <ul>
-            <li><a href="#攻击骰1d20">攻击骰1d20</a>
+            <li><a href="#攻击骰1d20计算优劣势">攻击骰1d20计算优劣势</a>
               <ul>
                 <li><a href="#攻击加值">攻击加值</a></li>
-                <li><a href="#攻击优势骰">攻击优势骰</a></li>
               </ul>
             </li>
             <li><a href="#豁免骰">豁免骰</a>
               <ul>
-                <li><a href="#豁免ac">豁免AC</a>
-                  <ul>
-                    <li><a href="#豁免属性熟练项加值">豁免属性熟练项加值</a></li>
-                    <li><a href="#豁免劣势骰">豁免劣势骰</a></li>
-                  </ul>
-                </li>
+                <li><a href="#豁免检定骰1d20计算优劣势">豁免检定骰1d20计算优劣势</a></li>
                 <li><a href="#豁免dc">豁免DC</a>
                   <ul>
-                    <li><a href="#固定豁免dc">固定豁免DC</a></li>
-                    <li><a href="#非固定豁免dc">非固定豁免DC</a>
-                      <ul>
-                        <li><a href="#施法属性熟练项加值">施法属性熟练项加值</a></li>
-                      </ul>
-                    </li>
+                    <li><a href="#非固定豁免dc">非固定豁免DC</a></li>
+                    <li><a href="#捏豁免法术卷轴固定豁免dc">捏豁免法术卷轴固定豁免DC</a></li>
                   </ul>
                 </li>
                 <li><a href="#开卡职业豁免属性属性豁免带熟练项加值">开卡职业豁免属性（属性豁免带熟练项加值）</a></li>
@@ -700,28 +694,18 @@
       <ul>
         <li><a href="#命中率">命中率</a>
           <ul>
-            <li><a href="#攻击骰1d20">攻击骰1d20</a>
+            <li><a href="#攻击骰1d20计算优劣势">攻击骰1d20计算优劣势</a>
               <ul>
                 <li><a href="#攻击加值">攻击加值</a></li>
-                <li><a href="#攻击优势骰">攻击优势骰</a></li>
               </ul>
             </li>
             <li><a href="#豁免骰">豁免骰</a>
               <ul>
-                <li><a href="#豁免ac">豁免AC</a>
-                  <ul>
-                    <li><a href="#豁免属性熟练项加值">豁免属性熟练项加值</a></li>
-                    <li><a href="#豁免劣势骰">豁免劣势骰</a></li>
-                  </ul>
-                </li>
+                <li><a href="#豁免检定骰1d20计算优劣势">豁免检定骰1d20计算优劣势</a></li>
                 <li><a href="#豁免dc">豁免DC</a>
                   <ul>
-                    <li><a href="#固定豁免dc">固定豁免DC</a></li>
-                    <li><a href="#非固定豁免dc">非固定豁免DC</a>
-                      <ul>
-                        <li><a href="#施法属性熟练项加值">施法属性熟练项加值</a></li>
-                      </ul>
-                    </li>
+                    <li><a href="#非固定豁免dc">非固定豁免DC</a></li>
+                    <li><a href="#捏豁免法术卷轴固定豁免dc">捏豁免法术卷轴固定豁免DC</a></li>
                   </ul>
                 </li>
                 <li><a href="#开卡职业豁免属性属性豁免带熟练项加值">开卡职业豁免属性（属性豁免带熟练项加值）</a></li>
@@ -845,19 +829,19 @@
     
 </h2>
 
-<h3 class="relative group">攻击骰1d20 
-    <div id="攻击骰1d20" class="anchor"></div>
+<h3 class="relative group">攻击骰1d20计算优劣势 
+    <div id="攻击骰1d20计算优劣势" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%94%bb%e5%87%bb%e9%aa%b01d20" aria-label="锚点">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%94%bb%e5%87%bb%e9%aa%b01d20%e8%ae%a1%e7%ae%97%e4%bc%98%e5%8a%a3%e5%8a%bf" aria-label="锚点">#</a>
     </span>        
     
 </h3>
 <ol>
-<li>掷20-(重击减值)：命中且重击</li>
+<li>掷20-(重击减值)：必定命中且重击</li>
 <li>掷1：严重失误，必定未命中</li>
-<li>掷2~(20-重击减值)：假设掷x(2 &lt;= x &lt;= 20-重击减值-1)<br>
+<li>掷2~(20-重击减值)：假设攻击骰掷x(2 &lt;= x &lt;= 20-重击减值-1)<br>
 命中条件：x + 攻击加值 &gt;= 敌方护甲AC</li>
 </ol>
 
@@ -909,16 +893,6 @@
 <li>装备加值</li>
 </ol>
 
-<h4 class="relative group">攻击优势骰 
-    <div id="攻击优势骰" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%94%bb%e5%87%bb%e4%bc%98%e5%8a%bf%e9%aa%b0" aria-label="锚点">#</a>
-    </span>        
-    
-</h4>
-
 <h3 class="relative group">豁免骰 
     <div id="豁免骰" class="anchor"></div>
     
@@ -928,39 +902,23 @@
     </span>        
     
 </h3>
-<p>豁免DC &gt;= 豁免AC</p>
 
-<h4 class="relative group">豁免AC 
-    <div id="豁免ac" class="anchor"></div>
+<h4 class="relative group">豁免检定骰1d20计算优劣势 
+    <div id="豁免检定骰1d20计算优劣势" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e8%b1%81%e5%85%8dac" aria-label="锚点">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e8%b1%81%e5%85%8d%e6%a3%80%e5%ae%9a%e9%aa%b01d20%e8%ae%a1%e7%ae%97%e4%bc%98%e5%8a%a3%e5%8a%bf" aria-label="锚点">#</a>
     </span>        
     
 </h4>
-<p>豁免AC = 1d20 + 法术豁免属性 + 豁免属性熟练项加值（0-没有熟练项 或者 总等级1~4级+2，5~8级+3，9~12级+4-拥有熟练项） + 装备豁免检定AC加值</p>
-
-<h5 class="relative group">豁免属性熟练项加值 
-    <div id="豁免属性熟练项加值" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e8%b1%81%e5%85%8d%e5%b1%9e%e6%80%a7%e7%86%9f%e7%bb%83%e9%a1%b9%e5%8a%a0%e5%80%bc" aria-label="锚点">#</a>
-    </span>        
-    
-</h5>
-<p>需要考虑 开卡职业是否拥有 对应豁免属性的熟练项，只有拥有该属性的豁免熟练项，才有对应加值（总等级1~4级+2，5~8级+3，9~12级+4）</p>
-
-<h5 class="relative group">豁免劣势骰 
-    <div id="豁免劣势骰" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e8%b1%81%e5%85%8d%e5%8a%a3%e5%8a%bf%e9%aa%b0" aria-label="锚点">#</a>
-    </span>        
-    
-</h5>
+<ol>
+<li>掷20：必定豁免成功</li>
+<li>掷1：严重失误，必定豁免失败</li>
+<li>掷2~19：假设豁免检定骰掷x<br>
+豁免AC = x + 法术豁免属性 + 豁免属性熟练项加值（0-没有熟练项 或者 总等级1~4级+2，5~8级+3，9~12级+4-拥有熟练项） + 装备豁免检定AC加值<br>
+命中条件：豁免DC &gt;= 豁免AC</li>
+</ol>
 
 <h4 class="relative group">豁免DC 
     <div id="豁免dc" class="anchor"></div>
@@ -972,17 +930,26 @@
     
 </h4>
 
-<h5 class="relative group">固定豁免DC 
-    <div id="固定豁免dc" class="anchor"></div>
+<h5 class="relative group">非固定豁免DC 
+    <div id="非固定豁免dc" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%9b%ba%e5%ae%9a%e8%b1%81%e5%85%8ddc" aria-label="锚点">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e9%9d%9e%e5%9b%ba%e5%ae%9a%e8%b1%81%e5%85%8ddc" aria-label="锚点">#</a>
     </span>        
     
 </h5>
-<ol>
-<li>捏卷轴
+<p>豁免DC = 8 + 施法属性调整值 + 施法属性熟练项加值（固定存在，总等级1~4级+2，5~8级+3，9~12级+4） + 装备法术豁免等级DC加值</p>
+
+<h5 class="relative group">捏豁免法术卷轴固定豁免DC 
+    <div id="捏豁免法术卷轴固定豁免dc" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%8d%8f%e8%b1%81%e5%85%8d%e6%b3%95%e6%9c%af%e5%8d%b7%e8%bd%b4%e5%9b%ba%e5%ae%9a%e8%b1%81%e5%85%8ddc" aria-label="锚点">#</a>
+    </span>        
+    
+</h5>
 <table>
   <thead>
       <tr>
@@ -1021,32 +988,8 @@
       </tr>
   </tbody>
 </table>
-</li>
-</ol>
 <blockquote>
 <p><strong>请注意</strong>：上表中的熟练项加值是按照D&amp;D 5e通用规则推算的，《博德之门3》中实际数值可能微调，但其<strong>固定不变</strong>的核心机制不变。例如，游戏内大部分1-2环卷轴的DC很可能就是<strong>12</strong>。</p></blockquote>
-
-<h5 class="relative group">非固定豁免DC 
-    <div id="非固定豁免dc" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e9%9d%9e%e5%9b%ba%e5%ae%9a%e8%b1%81%e5%85%8ddc" aria-label="锚点">#</a>
-    </span>        
-    
-</h5>
-<p>豁免DC = 8 + 施法属性调整值 + 施法属性熟练项加值（固定存在，总等级1~4级+2，5~8级+3，9~12级+4） + 装备法术豁免等级DC加值</p>
-
-<h6 class="relative group">施法属性熟练项加值 
-    <div id="施法属性熟练项加值" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%96%bd%e6%b3%95%e5%b1%9e%e6%80%a7%e7%86%9f%e7%bb%83%e9%a1%b9%e5%8a%a0%e5%80%bc" aria-label="锚点">#</a>
-    </span>        
-    
-</h6>
-<p>实际为 总是获得与总等级相关的加值，不需考虑是否拥有属性熟练项（总等级1~4级+2，5~8级+3，9~12级+4）</p>
 
 <h4 class="relative group">开卡职业豁免属性（属性豁免带熟练项加值） 
     <div id="开卡职业豁免属性属性豁免带熟练项加值" class="anchor"></div>
