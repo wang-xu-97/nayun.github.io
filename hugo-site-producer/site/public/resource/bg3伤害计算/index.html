@@ -20,14 +20,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     
-    <title>bg3掷骰概率 &middot; nayun blog</title>
-    <meta name="title" content="bg3掷骰概率 &middot; nayun blog" />
+    <title>bg3伤害计算 &middot; nayun blog</title>
+    <meta name="title" content="bg3伤害计算 &middot; nayun blog" />
     
     
     <meta name="keywords" content="resource, " />
     
     
-    <link rel="canonical" href="http://localhost:43997/nayun.github.io/resource/bg3%E6%8E%B7%E9%AA%B0%E6%A6%82%E7%8E%87/" />
+    <link rel="canonical" href="http://localhost:43997/nayun.github.io/resource/bg3%E4%BC%A4%E5%AE%B3%E8%AE%A1%E7%AE%97/" />
     
     
     
@@ -78,45 +78,27 @@
     
     
     
-    <meta property="og:url" content="http://localhost:43997/nayun.github.io/resource/bg3%E6%8E%B7%E9%AA%B0%E6%A6%82%E7%8E%87/">
+    <meta property="og:url" content="http://localhost:43997/nayun.github.io/resource/bg3%E4%BC%A4%E5%AE%B3%E8%AE%A1%E7%AE%97/">
   <meta property="og:site_name" content="nayun blog">
-  <meta property="og:title" content="bg3掷骰概率">
-  <meta property="og:description" content="核心定理：星条定理 # 组合公式
-n! / r!⋅(n−r)!
-​
-星与条定理（将 n 个相同的物品（星星 ★）分配到 k 个不同的组中，允许某些组为空）公式：
-n&#43;k-1
-n
-–&gt;
-(n&#43;k-1)!/(n!*(k-1)!)
-问题1：DC21检定优势骰（2次掷骰）不通过概率 # 根据D20骰子的投掷规则：
-投掷1时，最终结果为1，总是小于21点。 投掷20时，最终结果为正无穷，总是大于或等于21点，因此不计入小于21点的概率。 投掷2到19时，最终结果为投掷点数加上加值G，其中G = 1D6 &#43; 3D4 &#43; 11（15~29）。 加值G的概率分布经计算如下：
-G的取值范围为15到29。 P(G=15) = 1/384 P(G=16) = 4/384 P(G=17) = 10/384 P(G=18) = 20/384 其他G值的概率不影响本次计算。 最终结果F小于21点的概率取决于D20投掷结果R：
-当R=1时，P(F&lt;21) = 1。 当R=2时，需要G ≤ 18，P(G≤18) = 35/384。 当R=3时，需要G ≤ 17，P(G≤17) 15/384。 当R=4时，需要G ≤ 16，P(G≤16) 5/384。 当R=5时，需要G ≤ 15，P(G≤15) 1/384。 当R=6到20时，P(F&lt;21) = 0。 由于D20每个面概率均为1/20，单次投掷概率为：
-P(F&lt;21) = 1/20(1&#43;35/384&#43;15/384&#43;5/384&#43;1/384) = 11/192">
+  <meta property="og:title" content="bg3伤害计算">
+  <meta property="og:description" content="最终伤害 = 命中率 * 实际伤害期望
+命中率 # 攻击骰1d20 # 掷20-(重击减值)：命中且重击 掷1：严重失误，必定未命中 掷2~(20-重击减值)：假设掷x(2 &lt;= x &lt;= 20-重击减值-1)
+命中条件：x &#43; 攻击加值 - 敌方护甲AC &gt; 0 攻击加值 # 攻击属性调整值： 近战： 非灵巧武器 &amp; 灵巧武器但是力量&gt;敏捷 使用力调 灵巧武器且敏捷&gt;力量 使用敏调 远程： 使用敏调 攻击骰法术： 使用施法主属性调整值 对应攻击属性熟练项加值（总等级14级&#43;2，58级&#43;3，9~12级&#43;4） 增益buff: 祝福术1d4 高地 装备加值 豁免骰 # 豁免AC # 豁免AC = 1d20 &#43; 法术豁免属性 &#43; 豁免属性熟练项加值（0-没有熟练项 或者 总等级14级&#43;2，58级&#43;3，912级&#43;4-拥有熟练项） &#43; 装备豁免检定AC加值
+豁免属性熟练项加值 需要考虑 开卡职业是否拥有 对应豁免属性的熟练项，只有拥有该属性的豁免熟练项，才有对应加值（总等级14级&#43;2，58级&#43;3，912级&#43;4）">
   <meta property="og:locale" content="zh_cn">
   <meta property="og:type" content="article">
     <meta property="article:section" content="resource">
-    <meta property="article:published_time" content="2025-09-02T09:50:08+08:00">
-    <meta property="article:modified_time" content="2025-09-02T09:50:08+08:00">
+    <meta property="article:published_time" content="2025-11-11T10:50:08+08:00">
+    <meta property="article:modified_time" content="2025-11-11T10:50:08+08:00">
     <meta property="article:tag" content="Resource">
 
     
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="bg3掷骰概率">
-  <meta name="twitter:description" content="核心定理：星条定理 # 组合公式
-n! / r!⋅(n−r)!
-​
-星与条定理（将 n 个相同的物品（星星 ★）分配到 k 个不同的组中，允许某些组为空）公式：
-n&#43;k-1
-n
-–&gt;
-(n&#43;k-1)!/(n!*(k-1)!)
-问题1：DC21检定优势骰（2次掷骰）不通过概率 # 根据D20骰子的投掷规则：
-投掷1时，最终结果为1，总是小于21点。 投掷20时，最终结果为正无穷，总是大于或等于21点，因此不计入小于21点的概率。 投掷2到19时，最终结果为投掷点数加上加值G，其中G = 1D6 &#43; 3D4 &#43; 11（15~29）。 加值G的概率分布经计算如下：
-G的取值范围为15到29。 P(G=15) = 1/384 P(G=16) = 4/384 P(G=17) = 10/384 P(G=18) = 20/384 其他G值的概率不影响本次计算。 最终结果F小于21点的概率取决于D20投掷结果R：
-当R=1时，P(F&lt;21) = 1。 当R=2时，需要G ≤ 18，P(G≤18) = 35/384。 当R=3时，需要G ≤ 17，P(G≤17) 15/384。 当R=4时，需要G ≤ 16，P(G≤16) 5/384。 当R=5时，需要G ≤ 15，P(G≤15) 1/384。 当R=6到20时，P(F&lt;21) = 0。 由于D20每个面概率均为1/20，单次投掷概率为：
-P(F&lt;21) = 1/20(1&#43;35/384&#43;15/384&#43;5/384&#43;1/384) = 11/192">
+  <meta name="twitter:title" content="bg3伤害计算">
+  <meta name="twitter:description" content="最终伤害 = 命中率 * 实际伤害期望
+命中率 # 攻击骰1d20 # 掷20-(重击减值)：命中且重击 掷1：严重失误，必定未命中 掷2~(20-重击减值)：假设掷x(2 &lt;= x &lt;= 20-重击减值-1)
+命中条件：x &#43; 攻击加值 - 敌方护甲AC &gt; 0 攻击加值 # 攻击属性调整值： 近战： 非灵巧武器 &amp; 灵巧武器但是力量&gt;敏捷 使用力调 灵巧武器且敏捷&gt;力量 使用敏调 远程： 使用敏调 攻击骰法术： 使用施法主属性调整值 对应攻击属性熟练项加值（总等级14级&#43;2，58级&#43;3，9~12级&#43;4） 增益buff: 祝福术1d4 高地 装备加值 豁免骰 # 豁免AC # 豁免AC = 1d20 &#43; 法术豁免属性 &#43; 豁免属性熟练项加值（0-没有熟练项 或者 总等级14级&#43;2，58级&#43;3，912级&#43;4-拥有熟练项） &#43; 装备豁免检定AC加值
+豁免属性熟练项加值 需要考虑 开卡职业是否拥有 对应豁免属性的熟练项，只有拥有该属性的豁免熟练项，才有对应加值（总等级14级&#43;2，58级&#43;3，912级&#43;4）">
 
       
     
@@ -126,26 +108,26 @@ P(F&lt;21) = 1/20(1&#43;35/384&#43;15/384&#43;5/384&#43;1/384) = 11/192">
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "resource",
-    "name": "bg3掷骰概率",
-    "headline": "bg3掷骰概率",
+    "name": "bg3伤害计算",
+    "headline": "bg3伤害计算",
     
-    "abstract": "\u003ch2 class=\u0022relative group\u0022\u003e核心定理：星条定理 \n    \u003cdiv id=\u0022核心定理星条定理\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e6%a0%b8%e5%bf%83%e5%ae%9a%e7%90%86%e6%98%9f%e6%9d%a1%e5%ae%9a%e7%90%86\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\u003cp\u003e组合公式\u003cbr\u003e\nn! \/ r!⋅(n−r)!\u003cbr\u003e\n​\u003c\/p\u003e\n\u003cp\u003e星与条定理（将 n 个相同的物品（星星 ★）分配到 k 个不同的组中，允许某些组为空）公式：\u003cbr\u003e\nn\u002bk-1\u003cbr\u003e\nn\u003c\/p\u003e\n\u003cp\u003e\u0026ndash;\u0026gt;\u003c\/p\u003e\n\u003cp\u003e(n\u002bk-1)!\/(n!*(k-1)!)\u003c\/p\u003e\n\n\u003ch2 class=\u0022relative group\u0022\u003e问题1：DC21检定优势骰（2次掷骰）不通过概率 \n    \u003cdiv id=\u0022问题1dc21检定优势骰2次掷骰不通过概率\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e9%97%ae%e9%a2%981dc21%e6%a3%80%e5%ae%9a%e4%bc%98%e5%8a%bf%e9%aa%b02%e6%ac%a1%e6%8e%b7%e9%aa%b0%e4%b8%8d%e9%80%9a%e8%bf%87%e6%a6%82%e7%8e%87\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\u003cp\u003e根据D20骰子的投掷规则：\u003c\/p\u003e\n\u003cul\u003e\n\u003cli\u003e投掷1时，最终结果为1，总是小于21点。\u003c\/li\u003e\n\u003cli\u003e投掷20时，最终结果为正无穷，总是大于或等于21点，因此不计入小于21点的概率。\u003c\/li\u003e\n\u003cli\u003e投掷2到19时，最终结果为投掷点数加上加值G，其中G = 1D6 \u002b 3D4 \u002b 11（15~29）。\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003cp\u003e加值G的概率分布经计算如下：\u003c\/p\u003e\n\u003cul\u003e\n\u003cli\u003eG的取值范围为15到29。\u003c\/li\u003e\n\u003cli\u003eP(G=15) = 1\/384\u003c\/li\u003e\n\u003cli\u003eP(G=16) = 4\/384\u003c\/li\u003e\n\u003cli\u003eP(G=17) = 10\/384\u003c\/li\u003e\n\u003cli\u003eP(G=18) = 20\/384\u003c\/li\u003e\n\u003cli\u003e其他G值的概率不影响本次计算。\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003cp\u003e最终结果F小于21点的概率取决于D20投掷结果R：\u003c\/p\u003e\n\u003cul\u003e\n\u003cli\u003e当R=1时，P(F\u0026lt;21) = 1。\u003c\/li\u003e\n\u003cli\u003e当R=2时，需要G ≤ 18，P(G≤18) = 35\/384。\u003c\/li\u003e\n\u003cli\u003e当R=3时，需要G ≤ 17，P(G≤17) 15\/384。\u003c\/li\u003e\n\u003cli\u003e当R=4时，需要G ≤ 16，P(G≤16) 5\/384。\u003c\/li\u003e\n\u003cli\u003e当R=5时，需要G ≤ 15，P(G≤15) 1\/384。\u003c\/li\u003e\n\u003cli\u003e当R=6到20时，P(F\u0026lt;21) = 0。\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003cp\u003e由于D20每个面概率均为1\/20，单次投掷概率为：\u003cbr\u003e\nP(F\u0026lt;21) = \u003csup\u003e1\u003c\/sup\u003e\/\u003csub\u003e20\u003c\/sub\u003e(1\u002b\u003csup\u003e35\u003c\/sup\u003e\/\u003csub\u003e384\u003c\/sub\u003e\u002b\u003csup\u003e15\u003c\/sup\u003e\/\u003csub\u003e384\u003c\/sub\u003e\u002b\u003csup\u003e5\u003c\/sup\u003e\/\u003csub\u003e384\u003c\/sub\u003e\u002b\u003csup\u003e1\u003c\/sup\u003e\/\u003csub\u003e384\u003c\/sub\u003e) = \u003csup\u003e11\u003c\/sup\u003e\/\u003csub\u003e192\u003c\/sub\u003e\u003c\/p\u003e",
+    "abstract": "\u003cp\u003e最终伤害 = 命中率 * 实际伤害期望\u003c\/p\u003e\n\n\u003ch2 class=\u0022relative group\u0022\u003e命中率 \n    \u003cdiv id=\u0022命中率\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e5%91%bd%e4%b8%ad%e7%8e%87\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\n\u003ch3 class=\u0022relative group\u0022\u003e攻击骰1d20 \n    \u003cdiv id=\u0022攻击骰1d20\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e6%94%bb%e5%87%bb%e9%aa%b01d20\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h3\u003e\n\u003col\u003e\n\u003cli\u003e掷20-(重击减值)：命中且重击\u003c\/li\u003e\n\u003cli\u003e掷1：严重失误，必定未命中\u003c\/li\u003e\n\u003cli\u003e掷2~(20-重击减值)：假设掷x(2 \u0026lt;= x \u0026lt;= 20-重击减值-1)\u003cbr\u003e\n命中条件：x \u002b 攻击加值 - 敌方护甲AC \u0026gt; 0\u003c\/li\u003e\n\u003c\/ol\u003e\n\n\u003ch4 class=\u0022relative group\u0022\u003e攻击加值 \n    \u003cdiv id=\u0022攻击加值\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e6%94%bb%e5%87%bb%e5%8a%a0%e5%80%bc\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h4\u003e\n\u003col\u003e\n\u003cli\u003e攻击属性调整值：\n\u003col\u003e\n\u003cli\u003e近战：\n\u003col\u003e\n\u003cli\u003e非灵巧武器 \u0026amp; 灵巧武器但是力量\u0026gt;敏捷\n\u003col\u003e\n\u003cli\u003e使用力调\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003c\/li\u003e\n\u003cli\u003e灵巧武器且敏捷\u0026gt;力量\n\u003col\u003e\n\u003cli\u003e使用敏调\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003c\/li\u003e\n\u003cli\u003e远程：\n\u003col\u003e\n\u003cli\u003e使用敏调\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003c\/li\u003e\n\u003cli\u003e攻击骰法术：\n\u003col\u003e\n\u003cli\u003e使用施法主属性调整值\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003c\/li\u003e\n\u003cli\u003e对应攻击属性熟练项加值（总等级1\u003cdel\u003e4级\u002b2，5\u003c\/del\u003e8级\u002b3，9~12级\u002b4）\u003c\/li\u003e\n\u003cli\u003e增益buff:\n\u003col\u003e\n\u003cli\u003e祝福术1d4\u003c\/li\u003e\n\u003cli\u003e高地\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003c\/li\u003e\n\u003cli\u003e装备加值\u003c\/li\u003e\n\u003c\/ol\u003e\n\n\u003ch3 class=\u0022relative group\u0022\u003e豁免骰 \n    \u003cdiv id=\u0022豁免骰\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e8%b1%81%e5%85%8d%e9%aa%b0\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h3\u003e\n\n\u003ch4 class=\u0022relative group\u0022\u003e豁免AC \n    \u003cdiv id=\u0022豁免ac\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e8%b1%81%e5%85%8dac\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h4\u003e\n\u003cp\u003e豁免AC = 1d20 \u002b 法术豁免属性 \u002b 豁免属性熟练项加值（0-没有熟练项 或者 总等级1\u003cdel\u003e4级\u002b2，5\u003c\/del\u003e8级\u002b3，9\u003cdel\u003e12级\u002b4-拥有熟练项） \u002b 装备豁免检定AC加值\u003cbr\u003e\n豁免属性熟练项加值 需要考虑 开卡职业是否拥有 对应豁免属性的熟练项，只有拥有该属性的豁免熟练项，才有对应加值（总等级1\u003c\/del\u003e4级\u002b2，5\u003cdel\u003e8级\u002b3，9\u003c\/del\u003e12级\u002b4）\u003c\/p\u003e",
     "inLanguage": "zh-cn",
-    "url" : "http:\/\/localhost:43997\/nayun.github.io\/resource\/bg3%E6%8E%B7%E9%AA%B0%E6%A6%82%E7%8E%87\/",
+    "url" : "http:\/\/localhost:43997\/nayun.github.io\/resource\/bg3%E4%BC%A4%E5%AE%B3%E8%AE%A1%E7%AE%97\/",
     "author" : {
       "@type": "Person",
       "name": "nayun"
     },
     "copyrightYear": "2025",
-    "dateCreated": "2025-09-02T09:50:08\u002b08:00",
-    "datePublished": "2025-09-02T09:50:08\u002b08:00",
+    "dateCreated": "2025-11-11T10:50:08\u002b08:00",
+    "datePublished": "2025-11-11T10:50:08\u002b08:00",
     
-    "dateModified": "2025-09-02T09:50:08\u002b08:00",
+    "dateModified": "2025-11-11T10:50:08\u002b08:00",
     
     "keywords": ["resource"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "232"
+    "wordCount": "126"
   }]
   </script>
 
@@ -538,8 +520,8 @@ P(F&lt;21) = 1/20(1&#43;35/384&#43;15/384&#43;5/384&#43;1/384) = 11/192">
 
   
   <li class="hidden">
-    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="/nayun.github.io/resource/bg3%E6%8E%B7%E9%AA%B0%E6%A6%82%E7%8E%87/"
-      >bg3掷骰概率</a
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="/nayun.github.io/resource/bg3%E4%BC%A4%E5%AE%B3%E8%AE%A1%E7%AE%97/"
+      >bg3伤害计算</a
     ><span class="px-1 text-primary-500">/</span>
   </li>
 
@@ -548,7 +530,7 @@ P(F&lt;21) = 1/20(1&#43;35/384&#43;15/384&#43;5/384&#43;1/384) = 11/192">
 
       
       <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-        bg3掷骰概率
+        bg3伤害计算
       </h1>
       
       
@@ -616,7 +598,7 @@ P(F&lt;21) = 1/20(1&#43;35/384&#43;15/384&#43;5/384&#43;1/384) = 11/192">
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-09-02T09:50:08&#43;08:00">September 2, 2025</time><span class="px-2 text-primary-500">&middot;</span><span>232 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">2 分钟</span>
+      <time datetime="2025-11-11T10:50:08&#43;08:00">November 11, 2025</time><span class="px-2 text-primary-500">&middot;</span><span>126 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">1 分钟</span>
     
 
     
@@ -670,14 +652,25 @@ P(F&lt;21) = 1/20(1&#43;35/384&#43;15/384&#43;5/384&#43;1/384) = 11/192">
   <ul>
     <li>
       <ul>
-        <li><a href="#核心定理星条定理">核心定理：星条定理</a></li>
-        <li><a href="#问题1dc21检定优势骰2次掷骰不通过概率">问题1：DC21检定优势骰（2次掷骰）不通过概率</a></li>
-        <li><a href="#问题210次掷骰dc20检定不通过概率">问题2：10次掷骰DC20检定不通过概率</a>
+        <li><a href="#命中率">命中率</a>
           <ul>
-            <li><a href="#问题分析">问题分析</a></li>
-            <li><a href="#加值g的概率分布">加值G的概率分布</a></li>
-            <li><a href="#单次投掷最终结果f--20的概率">单次投掷最终结果F &lt; 20的概率</a></li>
-            <li><a href="#10次投掷概率">10次投掷概率</a></li>
+            <li><a href="#攻击骰1d20">攻击骰1d20</a>
+              <ul>
+                <li><a href="#攻击加值">攻击加值</a></li>
+              </ul>
+            </li>
+            <li><a href="#豁免骰">豁免骰</a>
+              <ul>
+                <li><a href="#豁免ac">豁免AC</a></li>
+                <li><a href="#豁免dc">豁免DC</a>
+                  <ul>
+                    <li><a href="#固定豁免dc">固定豁免DC</a></li>
+                    <li><a href="#非固定豁免dc">非固定豁免DC</a></li>
+                  </ul>
+                </li>
+                <li><a href="#开卡职业豁免属性属性豁免带熟练项加值">开卡职业豁免属性（属性豁免带熟练项加值）</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
       </ul>
@@ -697,14 +690,25 @@ P(F&lt;21) = 1/20(1&#43;35/384&#43;15/384&#43;5/384&#43;1/384) = 11/192">
   <ul>
     <li>
       <ul>
-        <li><a href="#核心定理星条定理">核心定理：星条定理</a></li>
-        <li><a href="#问题1dc21检定优势骰2次掷骰不通过概率">问题1：DC21检定优势骰（2次掷骰）不通过概率</a></li>
-        <li><a href="#问题210次掷骰dc20检定不通过概率">问题2：10次掷骰DC20检定不通过概率</a>
+        <li><a href="#命中率">命中率</a>
           <ul>
-            <li><a href="#问题分析">问题分析</a></li>
-            <li><a href="#加值g的概率分布">加值G的概率分布</a></li>
-            <li><a href="#单次投掷最终结果f--20的概率">单次投掷最终结果F &lt; 20的概率</a></li>
-            <li><a href="#10次投掷概率">10次投掷概率</a></li>
+            <li><a href="#攻击骰1d20">攻击骰1d20</a>
+              <ul>
+                <li><a href="#攻击加值">攻击加值</a></li>
+              </ul>
+            </li>
+            <li><a href="#豁免骰">豁免骰</a>
+              <ul>
+                <li><a href="#豁免ac">豁免AC</a></li>
+                <li><a href="#豁免dc">豁免DC</a>
+                  <ul>
+                    <li><a href="#固定豁免dc">固定豁免DC</a></li>
+                    <li><a href="#非固定豁免dc">非固定豁免DC</a></li>
+                  </ul>
+                </li>
+                <li><a href="#开卡职业豁免属性属性豁免带熟练项加值">开卡职业豁免属性（属性豁免带熟练项加值）</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
       </ul>
@@ -811,150 +815,272 @@ P(F&lt;21) = 1/20(1&#43;35/384&#43;15/384&#43;5/384&#43;1/384) = 11/192">
 
 
         <div class="article-content max-w-prose mb-20">
-          
-<h2 class="relative group">核心定理：星条定理 
-    <div id="核心定理星条定理" class="anchor"></div>
+          <p>最终伤害 = 命中率 * 实际伤害期望</p>
+
+<h2 class="relative group">命中率 
+    <div id="命中率" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%a0%b8%e5%bf%83%e5%ae%9a%e7%90%86%e6%98%9f%e6%9d%a1%e5%ae%9a%e7%90%86" aria-label="锚点">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%91%bd%e4%b8%ad%e7%8e%87" aria-label="锚点">#</a>
     </span>        
     
 </h2>
-<p>组合公式<br>
-n! / r!⋅(n−r)!<br>
-​</p>
-<p>星与条定理（将 n 个相同的物品（星星 ★）分配到 k 个不同的组中，允许某些组为空）公式：<br>
-n+k-1<br>
-n</p>
-<p>&ndash;&gt;</p>
-<p>(n+k-1)!/(n!*(k-1)!)</p>
 
-<h2 class="relative group">问题1：DC21检定优势骰（2次掷骰）不通过概率 
-    <div id="问题1dc21检定优势骰2次掷骰不通过概率" class="anchor"></div>
+<h3 class="relative group">攻击骰1d20 
+    <div id="攻击骰1d20" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e9%97%ae%e9%a2%981dc21%e6%a3%80%e5%ae%9a%e4%bc%98%e5%8a%bf%e9%aa%b02%e6%ac%a1%e6%8e%b7%e9%aa%b0%e4%b8%8d%e9%80%9a%e8%bf%87%e6%a6%82%e7%8e%87" aria-label="锚点">#</a>
-    </span>        
-    
-</h2>
-<p>根据D20骰子的投掷规则：</p>
-<ul>
-<li>投掷1时，最终结果为1，总是小于21点。</li>
-<li>投掷20时，最终结果为正无穷，总是大于或等于21点，因此不计入小于21点的概率。</li>
-<li>投掷2到19时，最终结果为投掷点数加上加值G，其中G = 1D6 + 3D4 + 11（15~29）。</li>
-</ul>
-<p>加值G的概率分布经计算如下：</p>
-<ul>
-<li>G的取值范围为15到29。</li>
-<li>P(G=15) = 1/384</li>
-<li>P(G=16) = 4/384</li>
-<li>P(G=17) = 10/384</li>
-<li>P(G=18) = 20/384</li>
-<li>其他G值的概率不影响本次计算。</li>
-</ul>
-<p>最终结果F小于21点的概率取决于D20投掷结果R：</p>
-<ul>
-<li>当R=1时，P(F&lt;21) = 1。</li>
-<li>当R=2时，需要G ≤ 18，P(G≤18) = 35/384。</li>
-<li>当R=3时，需要G ≤ 17，P(G≤17) 15/384。</li>
-<li>当R=4时，需要G ≤ 16，P(G≤16) 5/384。</li>
-<li>当R=5时，需要G ≤ 15，P(G≤15) 1/384。</li>
-<li>当R=6到20时，P(F&lt;21) = 0。</li>
-</ul>
-<p>由于D20每个面概率均为1/20，单次投掷概率为：<br>
-P(F&lt;21) = <sup>1</sup>/<sub>20</sub>(1+<sup>35</sup>/<sub>384</sub>+<sup>15</sup>/<sub>384</sub>+<sup>5</sup>/<sub>384</sub>+<sup>1</sup>/<sub>384</sub>) = <sup>11</sup>/<sub>192</sub></p>
-<p>因此，两次掷骰结果小于21点的概率为<br>
-(<sup>11</sup>/<sub>192</sub>)<sup>2</sup>=0.003282335≈1/304</p>
-
-<h2 class="relative group">问题2：10次掷骰DC20检定不通过概率 
-    <div id="问题210次掷骰dc20检定不通过概率" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e9%97%ae%e9%a2%98210%e6%ac%a1%e6%8e%b7%e9%aa%b0dc20%e6%a3%80%e5%ae%9a%e4%b8%8d%e9%80%9a%e8%bf%87%e6%a6%82%e7%8e%87" aria-label="锚点">#</a>
-    </span>        
-    
-</h2>
-<p>描述：D20骰子投掷10次，每次投掷的最终结果严格小于20点的概率。最终结果取决于D20的投掷点数R和加值G，其中G是两次D4投掷的和加上6。</p>
-
-<h3 class="relative group">问题分析 
-    <div id="问题分析" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e9%97%ae%e9%a2%98%e5%88%86%e6%9e%90" aria-label="锚点">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%94%bb%e5%87%bb%e9%aa%b01d20" aria-label="锚点">#</a>
     </span>        
     
 </h3>
-<p>我们需要计算D20骰子投掷10次，每次投掷的最终结果严格小于20点的概率。最终结果取决于D20的投掷结果（R）和加值（G），其中加值G由两次D4骰子投掷和加上6得到。</p>
+<ol>
+<li>掷20-(重击减值)：命中且重击</li>
+<li>掷1：严重失误，必定未命中</li>
+<li>掷2~(20-重击减值)：假设掷x(2 &lt;= x &lt;= 20-重击减值-1)<br>
+命中条件：x + 攻击加值 - 敌方护甲AC &gt; 0</li>
+</ol>
 
-<h3 class="relative group">加值G的概率分布 
-    <div id="加值g的概率分布" class="anchor"></div>
+<h4 class="relative group">攻击加值 
+    <div id="攻击加值" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%8a%a0%e5%80%bcg%e7%9a%84%e6%a6%82%e7%8e%87%e5%88%86%e5%b8%83" aria-label="锚点">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%94%bb%e5%87%bb%e5%8a%a0%e5%80%bc" aria-label="锚点">#</a>
     </span>        
     
-</h3>
-<p>G = (D4 + D4) + 6，因此G的取值范围是8到14。两次D4投掷和的概率分布如下：</p>
-<ul>
-<li>G = 8: 概率 1/16</li>
-<li>G = 9: 概率 2/16</li>
-<li>G = 10: 概率 3/16</li>
-<li>G = 11: 概率 4/16</li>
-<li>G = 12: 概率 3/16</li>
-<li>G = 13: 概率 2/16</li>
-<li>G = 14: 概率 1/16</li>
-</ul>
+</h4>
+<ol>
+<li>攻击属性调整值：
+<ol>
+<li>近战：
+<ol>
+<li>非灵巧武器 &amp; 灵巧武器但是力量&gt;敏捷
+<ol>
+<li>使用力调</li>
+</ol>
+</li>
+<li>灵巧武器且敏捷&gt;力量
+<ol>
+<li>使用敏调</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>远程：
+<ol>
+<li>使用敏调</li>
+</ol>
+</li>
+<li>攻击骰法术：
+<ol>
+<li>使用施法主属性调整值</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>对应攻击属性熟练项加值（总等级1<del>4级+2，5</del>8级+3，9~12级+4）</li>
+<li>增益buff:
+<ol>
+<li>祝福术1d4</li>
+<li>高地</li>
+</ol>
+</li>
+<li>装备加值</li>
+</ol>
 
-<h3 class="relative group">单次投掷最终结果F &lt; 20的概率 
-    <div id="单次投掷最终结果f--20的概率" class="anchor"></div>
+<h3 class="relative group">豁免骰 
+    <div id="豁免骰" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%8d%95%e6%ac%a1%e6%8a%95%e6%8e%b7%e6%9c%80%e7%bb%88%e7%bb%93%e6%9e%9cf--20%e7%9a%84%e6%a6%82%e7%8e%87" aria-label="锚点">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e8%b1%81%e5%85%8d%e9%aa%b0" aria-label="锚点">#</a>
     </span>        
     
 </h3>
-<p>最终结果F取决于D20的投掷结果R：</p>
-<ul>
-<li>如果 R=1，则 F=1，总是小于20，概率为1。</li>
-<li>如果 R=20，则 F=∞，总是大于或等于20，概率为0。</li>
-<li>如果 2≤R≤19，则 F=R+G，需要 R+G &lt; 20。</li>
-</ul>
-<p>对于每个R，计算条件概率 P(F &lt; 20 | R)：</p>
-<ul>
-<li>R=1: P=1</li>
-<li>R=2: F=2+G&lt;20 ⇒ G&lt;18 ⇒ G≤17（总是成立），P=1</li>
-<li>R=3: F=3+G&lt;20 ⇒ G&lt;17 ⇒ G≤16（总是成立），P=1</li>
-<li>R=4: F=4+G&lt;20 ⇒ G&lt;16 ⇒ G≤15（总是成立），P=1</li>
-<li>R=5: F=5+G&lt;20 ⇒ G&lt;15 ⇒ G≤14（总是成立），P=1</li>
-<li>R=6: F=6+G&lt;20 ⇒ G&lt;14 ⇒ G≤13，P(G≤13)=15/16</li>
-<li>R=7: F=7+G&lt;20 ⇒ G&lt;13 ⇒ G≤12，P(G≤12)=13/16</li>
-<li>R=8: F=8+G&lt;20 ⇒ G&lt;12 ⇒ G≤11，P(G≤11)=10/16=5/8</li>
-<li>R=9: F=9+G&lt;20 ⇒ G&lt;11 ⇒ G≤10，P(G≤10)=6/16=3/8</li>
-<li>R=10: F=10+G&lt;20 ⇒ G&lt;10 ⇒ G≤9，P(G≤9)=3/16</li>
-<li>R=11: F=11+G&lt;20 ⇒ G&lt;9 ⇒ G≤8，P(G≤8)=1/16</li>
-<li>R=12 to 20: F≥12+G≥12+8=20，总是大于或等于20，P=0</li>
-</ul>
-<p>单次投掷概率 P(F &lt; 20) 是以上条件概率的平均值（每个R的概率为1/20）：<br>
-P_one = <sup>1</sup>/<sub>20</sub>(1+1+1+1+1+<sup>15</sup>/<sub>16</sub>+<sup>13</sup>/<sub>16</sub>+<sup>10</sup>/<sub>16</sub>+<sup>6</sup>/<sub>16</sub>+<sup>3</sup>/<sub>16</sub>+<sup>1</sup>/<sub>16</sub>+0+⋯+0)<br>
-求和部分：求和部分：R=1到5贡献5，R=6到11贡献<sup>15+13+10+6+3+1</sup>/<sub>16</sub>=3，总和为8。<br>
-P_one = <sup>8</sup>/<sub>20</sub> = <sup>2</sup>/<sub>5</sub></p>
 
-<h3 class="relative group">10次投掷概率 
-    <div id="10次投掷概率" class="anchor"></div>
+<h4 class="relative group">豁免AC 
+    <div id="豁免ac" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#10%e6%ac%a1%e6%8a%95%e6%8e%b7%e6%a6%82%e7%8e%87" aria-label="锚点">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e8%b1%81%e5%85%8dac" aria-label="锚点">#</a>
     </span>        
     
-</h3>
-<p>由于每次投掷独立，10次投掷全部结果小于20点的概率为：(<sup>2</sup>/<sub>5</sub>)^10=0.000104858</p>
+</h4>
+<p>豁免AC = 1d20 + 法术豁免属性 + 豁免属性熟练项加值（0-没有熟练项 或者 总等级1<del>4级+2，5</del>8级+3，9<del>12级+4-拥有熟练项） + 装备豁免检定AC加值<br>
+豁免属性熟练项加值 需要考虑 开卡职业是否拥有 对应豁免属性的熟练项，只有拥有该属性的豁免熟练项，才有对应加值（总等级1</del>4级+2，5<del>8级+3，9</del>12级+4）</p>
+
+<h4 class="relative group">豁免DC 
+    <div id="豁免dc" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e8%b1%81%e5%85%8ddc" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+
+<h5 class="relative group">固定豁免DC 
+    <div id="固定豁免dc" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%9b%ba%e5%ae%9a%e8%b1%81%e5%85%8ddc" aria-label="锚点">#</a>
+    </span>        
+    
+</h5>
+<ol>
+<li>捏卷轴</li>
+<li>其他根据具体法术/戏法有不同</li>
+</ol>
+
+<h5 class="relative group">非固定豁免DC 
+    <div id="非固定豁免dc" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e9%9d%9e%e5%9b%ba%e5%ae%9a%e8%b1%81%e5%85%8ddc" aria-label="锚点">#</a>
+    </span>        
+    
+</h5>
+<p>豁免DC = 8 + 施法属性调整值 + 施法属性熟练项加值（总等级1<del>4级+2，5</del>8级+3，9<del>12级+4） + 装备法术豁免等级DC加值<br>
+其中：施法属性熟练项加值 实际为 总是获得与总等级相关的加值，不需考虑是否拥有属性熟练项（总等级1</del>4级+2，5<del>8级+3，9</del>12级+4）</p>
+
+<h4 class="relative group">开卡职业豁免属性（属性豁免带熟练项加值） 
+    <div id="开卡职业豁免属性属性豁免带熟练项加值" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%bc%80%e5%8d%a1%e8%81%8c%e4%b8%9a%e8%b1%81%e5%85%8d%e5%b1%9e%e6%80%a7%e5%b1%9e%e6%80%a7%e8%b1%81%e5%85%8d%e5%b8%a6%e7%86%9f%e7%bb%83%e9%a1%b9%e5%8a%a0%e5%80%bc" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">开卡职业</th>
+          <th style="text-align: center">力量</th>
+          <th style="text-align: center">敏捷</th>
+          <th style="text-align: center">体质</th>
+          <th style="text-align: center">智力</th>
+          <th style="text-align: center">感知</th>
+          <th style="text-align: center">魅力</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">战士</td>
+          <td style="text-align: center">√</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">√</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">野蛮人</td>
+          <td style="text-align: center">√</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">√</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">游侠</td>
+          <td style="text-align: center">√</td>
+          <td style="text-align: center">√</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">武僧</td>
+          <td style="text-align: center">√</td>
+          <td style="text-align: center">√</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">游荡者</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">√</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">√</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">吟游诗人</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">√</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">√</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">圣武士</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">√</td>
+          <td style="text-align: center">√</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">邪术师</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">√</td>
+          <td style="text-align: center">√</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">牧师</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">√</td>
+          <td style="text-align: center">√</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">术士</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">√</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">√</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">德鲁伊</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">√</td>
+          <td style="text-align: center">√</td>
+          <td style="text-align: center"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">法师</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">√</td>
+          <td style="text-align: center">√</td>
+          <td style="text-align: center"></td>
+      </tr>
+  </tbody>
+</table>
 
           
           
@@ -992,8 +1118,8 @@ P_one = <sup>8</sup>/<sub>20</sub> = <sup>2</sup>/<sub>5</sub></p>
           type="text/javascript"
           src="/nayun.github.io/js/page.min.407e5b2727c1f241c95d53db24c776bea71bfc18e09511b815d669ad8caca6e9e18a53864ad364b1ccccfa2f2956768d33cfe193bfb64d3406f3b5ece354ba57.js"
           integrity="sha512-QH5bJyfB8kHJXVPbJMd2vqcb/BjglRG4FdZprYyspunhilOGStNksczM&#43;i8pVnaNM8/hk7&#43;2TTQG87Xs41S6Vw=="
-          data-oid="views_resource/bg3掷骰概率.md"
-          data-oid-likes="likes_resource/bg3掷骰概率.md"></script>
+          data-oid="views_resource/bg3伤害计算.md"
+          data-oid-likes="likes_resource/bg3伤害计算.md"></script>
       
 
     </section>
@@ -1008,7 +1134,7 @@ P_one = <sup>8</sup>/<sub>20</sub> = <sup>2</sup>/<sub>5</sub></p>
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="flex group mr-3" href="/nayun.github.io/resource/bg3%E9%99%84%E4%BC%A4%E8%A3%85%E5%A4%87%E8%A1%A8/">
+            <a class="flex group mr-3" href="/nayun.github.io/resource/bg3%E6%8E%B7%E9%AA%B0%E6%A6%82%E7%8E%87/">
               <span
                 class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
                 >&larr;</span
@@ -1019,11 +1145,11 @@ P_one = <sup>8</sup>/<sub>20</sub> = <sup>2</sup>/<sub>5</sub></p>
               >
               <span class="flex flex-col">
                 <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >Bg3附伤装备表</span
+                  >bg3掷骰概率</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2025-08-25T11:00:09&#43;08:00">August 25, 2025</time>
+                    <time datetime="2025-09-02T09:50:08&#43;08:00">September 2, 2025</time>
                   
                 </span>
               </span>
@@ -1031,27 +1157,6 @@ P_one = <sup>8</sup>/<sub>20</sub> = <sup>2</sup>/<sub>5</sub></p>
           
         </span>
         <span>
-          
-            <a class="flex text-right group ml-3" href="/nayun.github.io/resource/bg3%E4%BC%A4%E5%AE%B3%E8%AE%A1%E7%AE%97/">
-              <span class="flex flex-col">
-                <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >bg3伤害计算</span
-                >
-                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
-                  
-                    <time datetime="2025-11-11T10:50:08&#43;08:00">November 11, 2025</time>
-                  
-                </span>
-              </span>
-              <span
-                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
-                >&rarr;</span
-              >
-              <span
-                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
-                >&larr;</span
-              >
-            </a>
           
         </span>
       </div>
