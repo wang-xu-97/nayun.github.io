@@ -125,7 +125,7 @@
     "keywords": ["resource"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "618"
+    "wordCount": "584"
   }]
   </script>
 
@@ -596,7 +596,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-11-11T10:50:08&#43;08:00">November 11, 2025</time><span class="px-2 text-primary-500">&middot;</span><span>618 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">3 分钟</span>
+      <time datetime="2025-11-11T10:50:08&#43;08:00">November 11, 2025</time><span class="px-2 text-primary-500">&middot;</span><span>584 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">3 分钟</span>
     
 
     
@@ -680,9 +680,12 @@
           <ul>
             <li><a href="#攻击骰1d20计算优劣势-1">攻击骰1d20计算优劣势</a>
               <ul>
-                <li><a href="#命中率-1">命中率：</a></li>
-                <li><a href="#1-取两个骰子中较大值的概率">1. 取两个骰子中较大值的概率</a></li>
-                <li><a href="#2-取两个骰子中较小值的概率">2. 取两个骰子中较小值的概率</a></li>
+                <li><a href="#命中率-1">命中率：</a>
+                  <ul>
+                    <li><a href="#1-优势概率表">1. 优势概率表</a></li>
+                    <li><a href="#2-劣势概率表">2. 劣势概率表</a></li>
+                  </ul>
+                </li>
                 <li><a href="#攻击加值-1">攻击加值</a></li>
               </ul>
             </li>
@@ -747,9 +750,12 @@
           <ul>
             <li><a href="#攻击骰1d20计算优劣势-1">攻击骰1d20计算优劣势</a>
               <ul>
-                <li><a href="#命中率-1">命中率：</a></li>
-                <li><a href="#1-取两个骰子中较大值的概率">1. 取两个骰子中较大值的概率</a></li>
-                <li><a href="#2-取两个骰子中较小值的概率">2. 取两个骰子中较小值的概率</a></li>
+                <li><a href="#命中率-1">命中率：</a>
+                  <ul>
+                    <li><a href="#1-优势概率表">1. 优势概率表</a></li>
+                    <li><a href="#2-劣势概率表">2. 劣势概率表</a></li>
+                  </ul>
+                </li>
                 <li><a href="#攻击加值-1">攻击加值</a></li>
               </ul>
             </li>
@@ -1277,16 +1283,15 @@
 <li>劣势: P<sub>(min=k)</sub> = (41-2k)/400</li>
 </ol>
 
-<h4 class="relative group">1. 取两个骰子中较大值的概率 
-    <div id="1-取两个骰子中较大值的概率" class="anchor"></div>
+<h5 class="relative group">1. 优势概率表 
+    <div id="1-优势概率表" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e5%8f%96%e4%b8%a4%e4%b8%aa%e9%aa%b0%e5%ad%90%e4%b8%ad%e8%be%83%e5%a4%a7%e5%80%bc%e7%9a%84%e6%a6%82%e7%8e%87" aria-label="锚点">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e4%bc%98%e5%8a%bf%e6%a6%82%e7%8e%87%e8%a1%a8" aria-label="锚点">#</a>
     </span>        
     
-</h4>
-<p>对于较大值 ( k )（其中 ( k ) 从1到20），概率计算公式为 ( P(\text{max} = k) = \frac{2k - 1}{400} )。以下是每个值的概率表格（概率以分数和小数形式表示，小数保留四位）：</p>
+</h5>
 <table>
   <thead>
       <tr>
@@ -1399,16 +1404,15 @@
   </tbody>
 </table>
 
-<h4 class="relative group">2. 取两个骰子中较小值的概率 
-    <div id="2-取两个骰子中较小值的概率" class="anchor"></div>
+<h5 class="relative group">2. 劣势概率表 
+    <div id="2-劣势概率表" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e5%8f%96%e4%b8%a4%e4%b8%aa%e9%aa%b0%e5%ad%90%e4%b8%ad%e8%be%83%e5%b0%8f%e5%80%bc%e7%9a%84%e6%a6%82%e7%8e%87" aria-label="锚点">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e5%8a%a3%e5%8a%bf%e6%a6%82%e7%8e%87%e8%a1%a8" aria-label="锚点">#</a>
     </span>        
     
-</h4>
-<p>对于较小值 ( k )（其中 ( k ) 从1到20），概率计算公式为 ( P(\text{min} = k) = \frac{41 - 2k}{400} )。以下是每个值的概率表格（概率以分数和小数形式表示，小数保留四位）：</p>
+</h5>
 <table>
   <thead>
       <tr>
