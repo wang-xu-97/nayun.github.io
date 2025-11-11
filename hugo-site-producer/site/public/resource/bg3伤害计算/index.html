@@ -125,7 +125,7 @@
     "keywords": ["resource"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "373"
+    "wordCount": "446"
   }]
   </script>
 
@@ -596,7 +596,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-11-11T10:50:08&#43;08:00">November 11, 2025</time><span class="px-2 text-primary-500">&middot;</span><span>373 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">2 分钟</span>
+      <time datetime="2025-11-11T10:50:08&#43;08:00">November 11, 2025</time><span class="px-2 text-primary-500">&middot;</span><span>446 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">3 分钟</span>
     
 
     
@@ -688,6 +688,16 @@
         </li>
         <li><a href="#非重击命中伤害期望">非重击命中伤害期望</a></li>
         <li><a href="#重击减值与实际伤害期望对应表">重击减值与实际伤害期望对应表</a></li>
+        <li><a href="#技能伤害期望">技能伤害期望</a>
+          <ul>
+            <li><a href="#巨武器大师">巨武器大师</a>
+              <ul>
+                <li><a href="#关闭巨武器大师">关闭巨武器大师</a></li>
+                <li><a href="#打开巨武器大师">打开巨武器大师</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -743,6 +753,16 @@
         </li>
         <li><a href="#非重击命中伤害期望">非重击命中伤害期望</a></li>
         <li><a href="#重击减值与实际伤害期望对应表">重击减值与实际伤害期望对应表</a></li>
+        <li><a href="#技能伤害期望">技能伤害期望</a>
+          <ul>
+            <li><a href="#巨武器大师">巨武器大师</a>
+              <ul>
+                <li><a href="#关闭巨武器大师">关闭巨武器大师</a></li>
+                <li><a href="#打开巨武器大师">打开巨武器大师</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -1198,7 +1218,7 @@
     </span>        
     
 </h1>
-<p>实际伤害期望 = 非重击命中伤害期望 * (重击命中率 * 2 + 非重击命中率)<br>
+<p>实际伤害期望 = 非重击命中伤害期望D<sub>p</sub> * (重击命中率P<sub>h</sub> * 2 + 非重击命中率P<sub>n</sub>)<br>
 实际命中率 = (重击命中率 * 2 + 非重击命中率)<br>
 = P<sub>h</sub> * 2 + P<sub>n</sub><br>
 = ∑<sub>k=20-重击减值</sub><sup>20</sup>P<sub>k</sub> * 2 + ∑<sub>k=(Ac-Bonus)</sub><sup>20-重击减值-1</sup>P<sub>k</sub><br>
@@ -1314,7 +1334,7 @@
     
 </h2>
 <p>伤害公式 = 伤害骰数量n * 伤害骰面数d + 伤害加值Bonus_damage(Bd)<br>
-伤害期望 = n * (1+d)/2 + Bd</p>
+伤害期望Dp = n * (1+d)/2 + Bd</p>
 
 <h2 class="relative group">重击减值与实际伤害期望对应表 
     <div id="重击减值与实际伤害期望对应表" class="anchor"></div>
@@ -1388,6 +1408,83 @@
   </tbody>
 </table>
 <p><strong>整体趋势</strong>：随着重击减值增加，均势和优势的提升百分比逐渐下降（边际收益递减），而劣势的提升百分比逐渐上升（因为重击范围扩大对劣势的收益逐渐显现）。</p>
+
+<h2 class="relative group">技能伤害期望 
+    <div id="技能伤害期望" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%8a%80%e8%83%bd%e4%bc%a4%e5%ae%b3%e6%9c%9f%e6%9c%9b" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+<ul>
+<li>敌方AC=15</li>
+<li>重击减值C=0</li>
+<li>力调=3，等级=4（熟练项加值=2） -&gt; 攻击加值Bonus = 5<br>
+D20掷骰结果为k的概率P<sub>k</sub>, k∈[1,20]</li>
+</ul>
+<ol>
+<li>均势: P<sub>k</sub> = 1/20</li>
+<li>优势: P<sub>(max=k)</sub> = (2k-1)/400</li>
+<li>劣势: P<sub>(min=k)</sub> = (41-2k)/400</li>
+</ol>
+
+<h3 class="relative group">巨武器大师 
+    <div id="巨武器大师" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%b7%a8%e6%ad%a6%e5%99%a8%e5%a4%a7%e5%b8%88" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>专长减值dim = 5<br>
+伤害加值Db = 10<br>
+例：3力调至上真神之视，双手1d8，伤害骰1d8 + 3 -&gt; 非重击伤害期望=7.5</p>
+<p>实际命中率：(重击命中率P<sub>h</sub> * 2 + 非重击命中率P<sub>n</sub>)</p>
+<p>重击命中率P<sub>h</sub> = P<sub>k=20<sub> =</p>
+<ul>
+<li>均势: P<sub>20</sub> = 1/20</li>
+<li>优势: P<sub>(max=20)</sub> = (2*20-1)/400 =</li>
+<li>劣势: P<sub>(min=20)</sub> = (41-2*20)/400 =</li>
+</ul>
+
+<h4 class="relative group">关闭巨武器大师 
+    <div id="关闭巨武器大师" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%85%b3%e9%97%ad%e5%b7%a8%e6%ad%a6%e5%99%a8%e5%a4%a7%e5%b8%88" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li>
+<p>非重击命中率P<sub>n</sub>： ∑<sub>k=(Ac-Bonus)</sub><sup>20-C-1</sup>P<sub>k</sub> = ∑<sub>k=10</sub><sup>19</sup>P<sub>k</sub></p>
+</li>
+<li>
+<p>非重击伤害期望=7.5</p>
+</li>
+</ul>
+
+<h4 class="relative group">打开巨武器大师 
+    <div id="打开巨武器大师" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%89%93%e5%bc%80%e5%b7%a8%e6%ad%a6%e5%99%a8%e5%a4%a7%e5%b8%88" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li>
+<p>非重击命中率P<sub>n</sub>： ∑<sub>k=(Ac-Bonus+dim)</sub><sup>20-C-1</sup>P<sub>k</sub> = ∑<sub>k=(15)</sub><sup>19</sup>P<sub>k</sub></p>
+</li>
+<li>
+<p>非重击伤害期望=17.5</p>
+</li>
+</ul>
 
           
           
