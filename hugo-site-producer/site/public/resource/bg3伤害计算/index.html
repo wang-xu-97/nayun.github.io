@@ -125,7 +125,7 @@
     "keywords": ["resource"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "446"
+    "wordCount": "618"
   }]
   </script>
 
@@ -596,7 +596,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-11-11T10:50:08&#43;08:00">November 11, 2025</time><span class="px-2 text-primary-500">&middot;</span><span>446 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">3 分钟</span>
+      <time datetime="2025-11-11T10:50:08&#43;08:00">November 11, 2025</time><span class="px-2 text-primary-500">&middot;</span><span>618 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">3 分钟</span>
     
 
     
@@ -676,11 +676,13 @@
     </li>
     <li><a href="#攻击骰实际伤害期望">攻击骰实际伤害期望</a>
       <ul>
-        <li><a href="#命中率-1">命中率</a>
+        <li><a href="#实际命中率">实际命中率</a>
           <ul>
             <li><a href="#攻击骰1d20计算优劣势-1">攻击骰1d20计算优劣势</a>
               <ul>
-                <li><a href="#命中率-2">命中率：</a></li>
+                <li><a href="#命中率-1">命中率：</a></li>
+                <li><a href="#1-取两个骰子中较大值的概率">1. 取两个骰子中较大值的概率</a></li>
+                <li><a href="#2-取两个骰子中较小值的概率">2. 取两个骰子中较小值的概率</a></li>
                 <li><a href="#攻击加值-1">攻击加值</a></li>
               </ul>
             </li>
@@ -741,11 +743,13 @@
     </li>
     <li><a href="#攻击骰实际伤害期望">攻击骰实际伤害期望</a>
       <ul>
-        <li><a href="#命中率-1">命中率</a>
+        <li><a href="#实际命中率">实际命中率</a>
           <ul>
             <li><a href="#攻击骰1d20计算优劣势-1">攻击骰1d20计算优劣势</a>
               <ul>
-                <li><a href="#命中率-2">命中率：</a></li>
+                <li><a href="#命中率-1">命中率：</a></li>
+                <li><a href="#1-取两个骰子中较大值的概率">1. 取两个骰子中较大值的概率</a></li>
+                <li><a href="#2-取两个骰子中较小值的概率">2. 取两个骰子中较小值的概率</a></li>
                 <li><a href="#攻击加值-1">攻击加值</a></li>
               </ul>
             </li>
@@ -1229,12 +1233,12 @@
 <li>劣势: P<sub>(min=k)</sub> = (41-2k)/400</li>
 </ol>
 
-<h2 class="relative group">命中率 
-    <div id="命中率-1" class="anchor"></div>
+<h2 class="relative group">实际命中率 
+    <div id="实际命中率" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%91%bd%e4%b8%ad%e7%8e%87-1" aria-label="锚点">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%ae%9e%e9%99%85%e5%91%bd%e4%b8%ad%e7%8e%87" aria-label="锚点">#</a>
     </span>        
     
 </h2>
@@ -1258,11 +1262,11 @@
 </ol>
 
 <h4 class="relative group">命中率： 
-    <div id="命中率-2" class="anchor"></div>
+    <div id="命中率-1" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%91%bd%e4%b8%ad%e7%8e%87-2" aria-label="锚点">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%91%bd%e4%b8%ad%e7%8e%87-1" aria-label="锚点">#</a>
     </span>        
     
 </h4>
@@ -1272,9 +1276,265 @@
 <li>优势: P<sub>(max=k)</sub> = (2k-1)/400</li>
 <li>劣势: P<sub>(min=k)</sub> = (41-2k)/400</li>
 </ol>
-<p>重击命中率P<sub>h</sub> = ∑<sub>k=20-重击减值</sub><sup>20</sup>P<sub>k</sub><br>
-大失败率P<sub>f</sub> = P<sub>k=1</sub><br>
-非重击命中率P<sub>n</sub> = ∑<sub>k=(Ac-Bonus)</sub><sup>20-重击减值-1</sup>P<sub>k</sub></p>
+
+<h4 class="relative group">1. 取两个骰子中较大值的概率 
+    <div id="1-取两个骰子中较大值的概率" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e5%8f%96%e4%b8%a4%e4%b8%aa%e9%aa%b0%e5%ad%90%e4%b8%ad%e8%be%83%e5%a4%a7%e5%80%bc%e7%9a%84%e6%a6%82%e7%8e%87" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<p>对于较大值 ( k )（其中 ( k ) 从1到20），概率计算公式为 ( P(\text{max} = k) = \frac{2k - 1}{400} )。以下是每个值的概率表格（概率以分数和小数形式表示，小数保留四位）：</p>
+<table>
+  <thead>
+      <tr>
+          <th>值 ( k )</th>
+          <th>概率（分数）</th>
+          <th>概率（小数）</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>1/400</td>
+          <td>0.0025</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>3/400</td>
+          <td>0.0075</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>5/400</td>
+          <td>0.0125</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>7/400</td>
+          <td>0.0175</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>9/400</td>
+          <td>0.0225</td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td>11/400</td>
+          <td>0.0275</td>
+      </tr>
+      <tr>
+          <td>7</td>
+          <td>13/400</td>
+          <td>0.0325</td>
+      </tr>
+      <tr>
+          <td>8</td>
+          <td>15/400</td>
+          <td>0.0375</td>
+      </tr>
+      <tr>
+          <td>9</td>
+          <td>17/400</td>
+          <td>0.0425</td>
+      </tr>
+      <tr>
+          <td>10</td>
+          <td>19/400</td>
+          <td>0.0475</td>
+      </tr>
+      <tr>
+          <td>11</td>
+          <td>21/400</td>
+          <td>0.0525</td>
+      </tr>
+      <tr>
+          <td>12</td>
+          <td>23/400</td>
+          <td>0.0575</td>
+      </tr>
+      <tr>
+          <td>13</td>
+          <td>25/400</td>
+          <td>0.0625</td>
+      </tr>
+      <tr>
+          <td>14</td>
+          <td>27/400</td>
+          <td>0.0675</td>
+      </tr>
+      <tr>
+          <td>15</td>
+          <td>29/400</td>
+          <td>0.0725</td>
+      </tr>
+      <tr>
+          <td>16</td>
+          <td>31/400</td>
+          <td>0.0775</td>
+      </tr>
+      <tr>
+          <td>17</td>
+          <td>33/400</td>
+          <td>0.0825</td>
+      </tr>
+      <tr>
+          <td>18</td>
+          <td>35/400</td>
+          <td>0.0875</td>
+      </tr>
+      <tr>
+          <td>19</td>
+          <td>37/400</td>
+          <td>0.0925</td>
+      </tr>
+      <tr>
+          <td>20</td>
+          <td>39/400</td>
+          <td>0.0975</td>
+      </tr>
+  </tbody>
+</table>
+
+<h4 class="relative group">2. 取两个骰子中较小值的概率 
+    <div id="2-取两个骰子中较小值的概率" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e5%8f%96%e4%b8%a4%e4%b8%aa%e9%aa%b0%e5%ad%90%e4%b8%ad%e8%be%83%e5%b0%8f%e5%80%bc%e7%9a%84%e6%a6%82%e7%8e%87" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<p>对于较小值 ( k )（其中 ( k ) 从1到20），概率计算公式为 ( P(\text{min} = k) = \frac{41 - 2k}{400} )。以下是每个值的概率表格（概率以分数和小数形式表示，小数保留四位）：</p>
+<table>
+  <thead>
+      <tr>
+          <th>值 ( k )</th>
+          <th>概率（分数）</th>
+          <th>概率（小数）</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>39/400</td>
+          <td>0.0975</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>37/400</td>
+          <td>0.0925</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>35/400</td>
+          <td>0.0875</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>33/400</td>
+          <td>0.0825</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>31/400</td>
+          <td>0.0775</td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td>29/400</td>
+          <td>0.0725</td>
+      </tr>
+      <tr>
+          <td>7</td>
+          <td>27/400</td>
+          <td>0.0675</td>
+      </tr>
+      <tr>
+          <td>8</td>
+          <td>25/400</td>
+          <td>0.0625</td>
+      </tr>
+      <tr>
+          <td>9</td>
+          <td>23/400</td>
+          <td>0.0575</td>
+      </tr>
+      <tr>
+          <td>10</td>
+          <td>21/400</td>
+          <td>0.0525</td>
+      </tr>
+      <tr>
+          <td>11</td>
+          <td>19/400</td>
+          <td>0.0475</td>
+      </tr>
+      <tr>
+          <td>12</td>
+          <td>17/400</td>
+          <td>0.0425</td>
+      </tr>
+      <tr>
+          <td>13</td>
+          <td>15/400</td>
+          <td>0.0375</td>
+      </tr>
+      <tr>
+          <td>14</td>
+          <td>13/400</td>
+          <td>0.0325</td>
+      </tr>
+      <tr>
+          <td>15</td>
+          <td>11/400</td>
+          <td>0.0275</td>
+      </tr>
+      <tr>
+          <td>16</td>
+          <td>9/400</td>
+          <td>0.0225</td>
+      </tr>
+      <tr>
+          <td>17</td>
+          <td>7/400</td>
+          <td>0.0175</td>
+      </tr>
+      <tr>
+          <td>18</td>
+          <td>5/400</td>
+          <td>0.0125</td>
+      </tr>
+      <tr>
+          <td>19</td>
+          <td>3/400</td>
+          <td>0.0075</td>
+      </tr>
+      <tr>
+          <td>20</td>
+          <td>1/400</td>
+          <td>0.0025</td>
+      </tr>
+      <tr>
+          <td>重击命中率P<sub>h</sub> = ∑<sub>k=20-重击减值</sub><sup>20</sup>P<sub>k</sub></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>大失败率P<sub>f</sub> = P<sub>k=1</sub></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>非重击命中率P<sub>n</sub> = ∑<sub>k=(Ac-Bonus)</sub><sup>20-重击减值-1</sup>P<sub>k</sub></td>
+          <td></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
 
 <h4 class="relative group">攻击加值 
     <div id="攻击加值-1" class="anchor"></div>
