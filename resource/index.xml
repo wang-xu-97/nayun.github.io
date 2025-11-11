@@ -6,17 +6,17 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%91%bd%e4%b8%ad%e7%8e%87" aria-label="锚点"&gt;#&lt;/a&gt;
 &lt;/span&gt;
 &lt;/h2&gt;
-&lt;h3 class="relative group"&gt;攻击骰1d20
-&lt;div id="攻击骰1d20" class="anchor"&gt;&lt;/div&gt;
+&lt;h3 class="relative group"&gt;攻击骰1d20计算优劣势
+&lt;div id="攻击骰1d20计算优劣势" class="anchor"&gt;&lt;/div&gt;
 &lt;span
 class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%94%bb%e5%87%bb%e9%aa%b01d20" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%94%bb%e5%87%bb%e9%aa%b01d20%e8%ae%a1%e7%ae%97%e4%bc%98%e5%8a%a3%e5%8a%bf" aria-label="锚点"&gt;#&lt;/a&gt;
 &lt;/span&gt;
 &lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;掷20-(重击减值)：命中且重击&lt;/li&gt;
+&lt;li&gt;掷20-(重击减值)：必定命中且重击&lt;/li&gt;
 &lt;li&gt;掷1：严重失误，必定未命中&lt;/li&gt;
-&lt;li&gt;掷2~(20-重击减值)：假设掷x(2 &amp;lt;= x &amp;lt;= 20-重击减值-1)&lt;br&gt;
+&lt;li&gt;掷2~(20-重击减值)：假设攻击骰掷x(2 &amp;lt;= x &amp;lt;= 20-重击减值-1)&lt;br&gt;
 命中条件：x + 攻击加值 &amp;gt;= 敌方护甲AC&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h4 class="relative group"&gt;攻击加值
@@ -64,13 +64,6 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;/li&gt;
 &lt;li&gt;装备加值&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h4 class="relative group"&gt;攻击优势骰
-&lt;div id="攻击优势骰" class="anchor"&gt;&lt;/div&gt;
-&lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%94%bb%e5%87%bb%e4%bc%98%e5%8a%bf%e9%aa%b0" aria-label="锚点"&gt;#&lt;/a&gt;
-&lt;/span&gt;
-&lt;/h4&gt;
 &lt;h3 class="relative group"&gt;豁免骰
 &lt;div id="豁免骰" class="anchor"&gt;&lt;/div&gt;
 &lt;span
@@ -78,7 +71,35 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e8%b1%81%e5%85%8d%e9%aa%b0" aria-label="锚点"&gt;#&lt;/a&gt;
 &lt;/span&gt;
 &lt;/h3&gt;
-&lt;p&gt;豁免DC &amp;gt;= 豁免AC&lt;/p&gt;</description></item><item><title>bg3掷骰概率</title><link>https://wang-xu-97.github.io/nayun.github.io/resource/bg3%E6%8E%B7%E9%AA%B0%E6%A6%82%E7%8E%87/</link><pubDate>Tue, 02 Sep 2025 09:50:08 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/resource/bg3%E6%8E%B7%E9%AA%B0%E6%A6%82%E7%8E%87/</guid><description>&lt;h2 class="relative group"&gt;核心定理：星条定理
+&lt;h4 class="relative group"&gt;豁免检定骰1d20计算优劣势
+&lt;div id="豁免检定骰1d20计算优劣势" class="anchor"&gt;&lt;/div&gt;
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e8%b1%81%e5%85%8d%e6%a3%80%e5%ae%9a%e9%aa%b01d20%e8%ae%a1%e7%ae%97%e4%bc%98%e5%8a%a3%e5%8a%bf" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;掷20：必定豁免成功&lt;/li&gt;
+&lt;li&gt;掷1：严重失误，必定豁免失败&lt;/li&gt;
+&lt;li&gt;掷2~19：假设豁免检定骰掷x&lt;br&gt;
+豁免AC = x + 法术豁免属性 + 豁免属性熟练项加值（0-没有熟练项 或者 总等级1~4级+2，5~8级+3，9~12级+4-拥有熟练项） + 装备豁免检定AC加值&lt;br&gt;
+命中条件：豁免DC &amp;gt;= 豁免AC&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 class="relative group"&gt;豁免DC
+&lt;div id="豁免dc" class="anchor"&gt;&lt;/div&gt;
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e8%b1%81%e5%85%8ddc" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h4&gt;
+&lt;h5 class="relative group"&gt;非固定豁免DC
+&lt;div id="非固定豁免dc" class="anchor"&gt;&lt;/div&gt;
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e9%9d%9e%e5%9b%ba%e5%ae%9a%e8%b1%81%e5%85%8ddc" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h5&gt;
+&lt;p&gt;豁免DC = 8 + 施法属性调整值 + 施法属性熟练项加值（固定存在，总等级1~4级+2，5~8级+3，9~12级+4） + 装备法术豁免等级DC加值&lt;/p&gt;</description></item><item><title>bg3掷骰概率</title><link>https://wang-xu-97.github.io/nayun.github.io/resource/bg3%E6%8E%B7%E9%AA%B0%E6%A6%82%E7%8E%87/</link><pubDate>Tue, 02 Sep 2025 09:50:08 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/resource/bg3%E6%8E%B7%E9%AA%B0%E6%A6%82%E7%8E%87/</guid><description>&lt;h2 class="relative group"&gt;核心定理：星条定理
 &lt;div id="核心定理星条定理" class="anchor"&gt;&lt;/div&gt;
 &lt;span
 class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
