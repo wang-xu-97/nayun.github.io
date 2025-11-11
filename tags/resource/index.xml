@@ -90,7 +90,7 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;li&gt;掷2~19：假设豁免检定骰掷x
 &lt;ol&gt;
 &lt;li&gt;豁免AC = x + 法术豁免属性 + 豁免属性熟练项加值（0-没有熟练项 或者 总等级1~4级+2，5~8级+3，9~12级+4-拥有熟练项） + 装备豁免检定AC加值&lt;/li&gt;
-&lt;li&gt;命中条件：豁免DC &amp;gt;= 豁免AC&lt;/li&gt;
+&lt;li&gt;豁免失败条件：豁免DC &amp;gt;= 豁免AC&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
