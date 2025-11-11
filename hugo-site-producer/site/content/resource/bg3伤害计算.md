@@ -218,10 +218,16 @@ D20掷骰结果为k的概率P<sub>k</sub>, k∈[1,20]
  
 
 #### 关闭巨武器大师
-- 非重击命中率P<sub>n</sub>： ∑<sub>k=(Ac-Bonus)</sub><sup>20-C-1</sup>P<sub>k</sub> = ∑<sub>k=10</sub><sup>19</sup>P<sub>k</sub>
-
 - 非重击伤害期望=7.5
-#### 打开巨武器大师
-- 非重击命中率P<sub>n</sub>： ∑<sub>k=(Ac-Bonus+dim)</sub><sup>20-C-1</sup>P<sub>k</sub> = ∑<sub>k=15</sub><sup>19</sup>P<sub>k</sub>
+- 非重击命中率P<sub>n</sub>： ∑<sub>k=(Ac-Bonus)</sub><sup>20-C-1</sup>P<sub>k</sub> = ∑<sub>k=10</sub><sup>19</sup>P<sub>k</sub>
+- 均势: 0.5 -> 3.75
+- 优势: 0.7 -> 5.25
+- 劣势: 0.3 -> 2.25
 
+#### 打开巨武器大师
 - 非重击伤害期望=17.5
+- 非重击命中率P<sub>n</sub>： ∑<sub>k=(Ac-Bonus+dim)</sub><sup>20-C-1</sup>P<sub>k</sub> = ∑<sub>k=15</sub><sup>19</sup>P<sub>k</sub>
+- 均势: 0.25  -> 4.375
+- 优势: 0.4125 -> 7.21875
+- 劣势: 0.0875 -> 1.53125
+
