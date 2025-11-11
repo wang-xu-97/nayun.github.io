@@ -64,6 +64,13 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;/li&gt;
 &lt;li&gt;装备加值&lt;/li&gt;
 &lt;/ol&gt;
+&lt;h4 class="relative group"&gt;攻击优势骰
+&lt;div id="攻击优势骰" class="anchor"&gt;&lt;/div&gt;
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%94%bb%e5%87%bb%e4%bc%98%e5%8a%bf%e9%aa%b0" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h4&gt;
 &lt;h3 class="relative group"&gt;豁免骰
 &lt;div id="豁免骰" class="anchor"&gt;&lt;/div&gt;
 &lt;span
