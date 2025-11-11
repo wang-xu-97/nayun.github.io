@@ -125,7 +125,7 @@
     "keywords": ["resource"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "267"
+    "wordCount": "344"
   }]
   </script>
 
@@ -596,7 +596,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-11-11T10:50:08&#43;08:00">November 11, 2025</time><span class="px-2 text-primary-500">&middot;</span><span>267 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">2 分钟</span>
+      <time datetime="2025-11-11T10:50:08&#43;08:00">November 11, 2025</time><span class="px-2 text-primary-500">&middot;</span><span>344 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">2 分钟</span>
     
 
     
@@ -686,6 +686,7 @@
             </li>
           </ul>
         </li>
+        <li><a href="#1d104伤害敌人ac15攻击加值bonus6重击减值与实际伤害期望对应表">1d10+4伤害，敌人Ac=15，攻击加值Bonus=6，重击减值与实际伤害期望对应表</a></li>
       </ul>
     </li>
   </ul>
@@ -739,6 +740,7 @@
             </li>
           </ul>
         </li>
+        <li><a href="#1d104伤害敌人ac15攻击加值bonus6重击减值与实际伤害期望对应表">1d10+4伤害，敌人Ac=15，攻击加值Bonus=6，重击减值与实际伤害期望对应表</a></li>
       </ul>
     </li>
   </ul>
@@ -1299,6 +1301,71 @@
 </li>
 <li>装备加值</li>
 </ol>
+
+<h2 class="relative group">1d10+4伤害，敌人Ac=15，攻击加值Bonus=6，重击减值与实际伤害期望对应表 
+    <div id="1d104伤害敌人ac15攻击加值bonus6重击减值与实际伤害期望对应表" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1d104%e4%bc%a4%e5%ae%b3%e6%95%8c%e4%ba%baac15%e6%94%bb%e5%87%bb%e5%8a%a0%e5%80%bcbonus6%e9%87%8d%e5%87%bb%e5%87%8f%e5%80%bc%e4%b8%8e%e5%ae%9e%e9%99%85%e4%bc%a4%e5%ae%b3%e6%9c%9f%e6%9c%9b%e5%af%b9%e5%ba%94%e8%a1%a8" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+<ul>
+<li>伤害骰：1d10+4，全伤害骰期望 = 5.5 + 4 = 9.5</li>
+<li>攻击加值（Bonus）：+6</li>
+<li>敌方AC：15</li>
+<li>重击减值（C）：1到5</li>
+</ul>
+<p>计算公式说明：</p>
+<ul>
+<li><strong>均势</strong>：每个骰子值概率为1/20。实际命中率因子 = (13 + C) / 20。</li>
+<li><strong>优势</strong>：取两个d20的最大值，概率P(max=k) = (2k-1)/400。重击命中率 = 1 - [(L_crit - 1)/20]²，非重击命中率 = [(L_crit - 1)/20]² - (8/20)²，其中L_crit = 20 - C。</li>
+<li><strong>劣势</strong>：取两个d20的最小值，概率P(min=k) = (41-2k)/400。重击命中率 = [(21 - L_crit)/20]²，非重击命中率 = (12/20)² - [(21 - L_crit)/20]²。</li>
+</ul>
+<p>计算结果如下表（伤害期望值保留两位小数）：</p>
+<table>
+  <thead>
+      <tr>
+          <th>重击减值</th>
+          <th>均势伤害期望</th>
+          <th>优势伤害期望</th>
+          <th>劣势伤害期望</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>6.65</td>
+          <td>9.79</td>
+          <td>3.52</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>7.13</td>
+          <td>10.62</td>
+          <td>3.63</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>7.60</td>
+          <td>11.40</td>
+          <td>3.80</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>8.08</td>
+          <td>12.14</td>
+          <td>4.01</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>8.55</td>
+          <td>12.83</td>
+          <td>4.28</td>
+      </tr>
+  </tbody>
+</table>
 
           
           
