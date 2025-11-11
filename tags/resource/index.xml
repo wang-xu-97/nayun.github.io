@@ -78,8 +78,7 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e8%b1%81%e5%85%8dac" aria-label="锚点"&gt;#&lt;/a&gt;
 &lt;/span&gt;
 &lt;/h4&gt;
-&lt;p&gt;豁免AC = 1d20 + 法术豁免属性 + 豁免属性熟练项加值（0-没有熟练项 或者 总等级1~4级+2，5~8级+3，9~12级+4-拥有熟练项） + 装备豁免检定AC加值&lt;br&gt;
-豁免属性熟练项加值 需要考虑 开卡职业是否拥有 对应豁免属性的熟练项，只有拥有该属性的豁免熟练项，才有对应加值（总等级1~4级+2，5~8级+3，9~12级+4）&lt;/p&gt;</description></item><item><title>bg3掷骰概率</title><link>https://wang-xu-97.github.io/nayun.github.io/resource/bg3%E6%8E%B7%E9%AA%B0%E6%A6%82%E7%8E%87/</link><pubDate>Tue, 02 Sep 2025 09:50:08 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/resource/bg3%E6%8E%B7%E9%AA%B0%E6%A6%82%E7%8E%87/</guid><description>&lt;h2 class="relative group"&gt;核心定理：星条定理
+&lt;p&gt;豁免AC = 1d20 + 法术豁免属性 + 豁免属性熟练项加值（0-没有熟练项 或者 总等级1~4级+2，5~8级+3，9~12级+4-拥有熟练项） + 装备豁免检定AC加值&lt;/p&gt;</description></item><item><title>bg3掷骰概率</title><link>https://wang-xu-97.github.io/nayun.github.io/resource/bg3%E6%8E%B7%E9%AA%B0%E6%A6%82%E7%8E%87/</link><pubDate>Tue, 02 Sep 2025 09:50:08 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/resource/bg3%E6%8E%B7%E9%AA%B0%E6%A6%82%E7%8E%87/</guid><description>&lt;h2 class="relative group"&gt;核心定理：星条定理
 &lt;div id="核心定理星条定理" class="anchor"&gt;&lt;/div&gt;
 &lt;span
 class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
