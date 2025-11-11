@@ -55,7 +55,7 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
-&lt;li&gt;对应攻击属性熟练项加值（总等级1~4级+2，5~8级+3，9~12级+4）&lt;/li&gt;
+&lt;li&gt;对应攻击属性熟练项加值（固定存在，总等级1~4级+2，5~8级+3，9~12级+4）&lt;/li&gt;
 &lt;li&gt;增益buff:
 &lt;ol&gt;
 &lt;li&gt;祝福术1d4&lt;/li&gt;
