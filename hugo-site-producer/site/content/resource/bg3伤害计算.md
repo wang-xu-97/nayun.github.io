@@ -168,34 +168,10 @@ D20掷骰结果为k的概率P<sub>k</sub>, k∈[1,20]
 ## 巨武器大师
 攻击减值 = 5
 不能重击的伤害加值 = 10
-### 关闭巨武器大师
-1. 均势
-{{< math type="block" >}}
-D_{exp} = D_p \times \frac{2(C+1) + \max(20-C-B, 0)}{20}
-{{< /math >}}
-2. 优势
-{{< math type="block" >}}
-D_{exp} = D_p \times \frac{2(1+C)(39-C) + \max(20-C-B, 0) \times (B + 18 - C)}{400}
-{{< /math >}}
-3. 劣势
-{{< math type="block" >}}
-D_{exp} = D_p \times \frac{2(1+C)^2 + \max(20-C-B, 0) \times (22 - B + C)}{400}
-{{< /math >}}
-### 打开巨武器大师
-B<sub>2</sub> = B + 5
-D<sub>p2</sub> = D<sub>p</sub> + 10
-1. 均势
-{{< math type="block" >}}
-D_{exp} = D_{p2} \times \frac{2(C+1) + \max(20-C-B_2, 0)}{20}
-{{< /math >}}
-2. 优势
-{{< math type="block" >}}
-D_{exp} = D_{p2} \times \frac{2(1+C)(39-C) + \max(20-C-B_2, 0) \times (B_2 + 18 - C)}{400}
-{{< /math >}}
-3. 劣势
-{{< math type="block" >}}
-D_{exp} = D_{p2} \times \frac{2(1+C)^2 + \max(20-C-B_2, 0) \times (22 - B_2 + C)}{400}
-{{< /math >}}
+
+实际护甲B<sub>2</sub> = B + 5
+不可重击伤害期望D<sub>p_special</sub> = 3（力调）+10
+
 ### 巨武器大师增伤期望表
 1d12伤害骰，3力调
 列：实际护甲Ac-Bonus
