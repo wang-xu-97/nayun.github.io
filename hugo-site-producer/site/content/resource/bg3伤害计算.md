@@ -145,30 +145,35 @@ D20掷骰结果为k的概率P<sub>k</sub>, k∈[1,20]
 1. 优势: P<sub>(max=k)</sub> = (2k-1)/400
 1. 劣势: P<sub>(min=k)</sub> = (41-2k)/400
 
-### 巨武器大师
-专长减值dim = 5
-伤害加值Db = 10
-例：3力调至上真神之视，双手1d8，伤害骰1d8 + 3 -> 非重击伤害期望=7.5
-
-实际命中率：(重击命中率P<sub>h</sub> * 2 + 非重击命中率P<sub>n</sub>)
-
-重击命中率P<sub>h</sub> = P<sub>k=20</sub> = 
-- 均势: 1/20
-- 优势: 0.0975
-- 劣势: 0.0025
- 
-
-#### 关闭巨武器大师
-- 非重击伤害期望=7.5
-- 非重击命中率P<sub>n</sub>： ∑<sub>k=(Ac-Bonus)</sub><sup>20-C-1</sup>P<sub>k</sub> = ∑<sub>k=10</sub><sup>19</sup>P<sub>k</sub>
-- 均势: 0.5 -> 3.75
-- 优势: 0.7 -> 5.25
-- 劣势: 0.3 -> 2.25
-
-#### 打开巨武器大师
-- 非重击伤害期望=17.5
-- 非重击命中率P<sub>n</sub>： ∑<sub>k=(Ac-Bonus+dim)</sub><sup>20-C-1</sup>P<sub>k</sub> = ∑<sub>k=15</sub><sup>19</sup>P<sub>k</sub>
-- 均势: 0.25  -> 4.375
-- 优势: 0.4125 -> 7.21875
-- 劣势: 0.0875 -> 1.53125
+## 巨武器大师
+攻击减值 = 5
+伤害加值 = 10
+### 关闭巨武器大师
+1. 均势
+{{< math type="block" >}}
+D_{exp} = D_p \times \frac{2(C+1) + \max(20-C-B, 0)}{20}
+{{< /math >}}
+2. 优势
+{{< math type="block" >}}
+D_{exp} = D_p \times \frac{2(1+C)(39-C) + \max(20-C-B, 0) \times (B + 18 - C)}{400}
+{{< /math >}}
+3. 劣势
+{{< math type="block" >}}
+D_{exp} = D_p \times \frac{2(1+C)^2 + \max(20-C-B, 0) \times (22 - B + C)}{400}
+{{< /math >}}
+### 打开巨武器大师
+B<sub>2</sub> = B + 5
+D<sub>p2</sub> = D<sub>p</sub> + 10
+1. 均势
+{{< math type="block" >}}
+D_{exp} = D_{p2} \times \frac{2(C+1) + \max(20-C-B_2, 0)}{20}
+{{< /math >}}
+2. 优势
+{{< math type="block" >}}
+D_{exp} = D_{p2} \times \frac{2(1+C)(39-C) + \max(20-C-B_2, 0) \times (B_2 + 18 - C)}{400}
+{{< /math >}}
+3. 劣势
+{{< math type="block" >}}
+D_{exp} = D_{p2} \times \frac{2(1+C)^2 + \max(20-C-B_2, 0) \times (22 - B_2 + C)}{400}
+{{< /math >}}
 
