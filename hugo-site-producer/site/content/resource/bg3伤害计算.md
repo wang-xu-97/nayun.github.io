@@ -95,6 +95,7 @@ D_{exp} = D_p \times \frac{2(1+C)^2 + \max(20-C-B, 0) \times (22 - B + C)}{400}
 {{< /math >}}
 
 #### 有不可重击伤害期望
+固定伤害加值一般不可重击，比如力调、敏调、巨武器大师、酸戒
 D<sub>exp</sub> = 可重击的非重击伤害期望D<sub>p_normal</sub> * (P<sub>h</sub> * 2 + P<sub>n</sub>) + 不可重击伤害期望D<sub>p_special</sub> * (P<sub>h</sub>  + P<sub>n</sub>)
 
 - 均势

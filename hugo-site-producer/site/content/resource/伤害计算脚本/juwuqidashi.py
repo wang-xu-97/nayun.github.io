@@ -11,14 +11,14 @@ D_p_special = 10 # 不可重击期望
 # 定义你的方程 f1(a,b) 和 f2(a,b)
 # 请根据你的具体方程修改这些函数
 def f1(C, B):
-    """示例方程1，请替换为你的实际方程"""
+    """关闭巨武器大师"""
     # return a**2 + b**2
     t = np.maximum(20-C-B, 0)
     hit_chance_normal = (2 * (C + 1) + t) / 20
     return D_p_normal * hit_chance_normal
 
 def f2(C, B):
-    """示例方程2，请替换为你的实际方程"""
+    """打开巨武器大师"""
     # return a * b
     t = np.maximum(20-C-B-5, 0)
     hit_chance_normal = (2 * (C + 1) + t) / 20
