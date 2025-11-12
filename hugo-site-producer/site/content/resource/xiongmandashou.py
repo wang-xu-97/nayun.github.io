@@ -6,23 +6,24 @@ plt.rcParams['axes.unicode_minus'] = False   # 解决坐标轴负号显示为方
 from mpl_toolkits.mplot3d import Axes3D
 
 tolerance = 0.5  # 容忍度，可以根据需要调整
-normal_full_dmg = 6.5 + 3
-D_p = 9.5
+D_p_normal = 9.5
+D_p_special = 10
 # 定义你的方程 f1(a,b) 和 f2(a,b)
 # 请根据你的具体方程修改这些函数
 def f1(C, B):
     """示例方程1，请替换为你的实际方程"""
     # return a**2 + b**2
     t = np.maximum(20-C-B, 0)
-    numerator = 2 * (C + 1) + t
-    return D_p * numerator / 20
+    hit_chance_normal = (2 * (C + 1) + t) / 20
+    return D_p_normal * hit_chance_normal
 
 def f2(C, B):
     """示例方程2，请替换为你的实际方程"""
     # return a * b
     t = np.maximum(20-C-B, 0)
-    numerator = 2 * (C + 1) + t
-    return (D_p+3) * numerator / 20
+    hit_chance_normal = (2 * (C + 1) + t) / 20
+    hit_chance_special = ((C + 1) + t) / 20
+    return D_p_normal * hit_chance_normal + D_p_special * hit_chance_special
 
 # 参数范围
 min_val, max_val = 0, 20
