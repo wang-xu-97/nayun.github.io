@@ -22,7 +22,7 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;ol&gt;
 &lt;li&gt;掷20-(重击减值)：必定命中且重击&lt;/li&gt;
 &lt;li&gt;掷1：严重失误，必定未命中&lt;/li&gt;
-&lt;li&gt;掷2~(20-重击减值)：假设攻击骰掷x(2 &amp;lt;= x &amp;lt;= 20-重击减值-1)&lt;br&gt;
+&lt;li&gt;掷2~(20-重击减值-1)：假设攻击骰掷x(2 &amp;lt;= x &amp;lt;= 20-重击减值-1)&lt;br&gt;
 命中条件：x + 攻击加值 &amp;gt;= 敌方护甲AC&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h4 class="relative group"&gt;攻击加值
