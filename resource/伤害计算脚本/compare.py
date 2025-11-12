@@ -103,7 +103,7 @@ ax1 = fig.add_subplot(131, projection='3d')
 surf1 = ax1.plot_surface(A, B, F1, cmap='viridis', alpha=0.8)
 ax1.set_xlabel('重击减值')
 ax1.set_ylabel('实际护甲Ac-Bonus')
-ax1.set_zlabel(f"关{coord_info['title']}")
+ax1.set_zlabel(f"伤害期望")
 ax1.set_title(f"关{coord_info['title']} 3D")
 fig.colorbar(surf1, ax=ax1, shrink=0.5, label='f1值')
 
@@ -112,7 +112,7 @@ ax2 = fig.add_subplot(132, projection='3d')
 surf2 = ax2.plot_surface(A, B, F2, cmap='plasma', alpha=0.8)
 ax2.set_xlabel('重击减值')
 ax2.set_ylabel('实际护甲Ac-Bonus')
-ax2.set_zlabel(f"开{coord_info['title']}")
+ax2.set_zlabel(f"伤害期望")
 ax2.set_title(f"开{coord_info['title']} 3D")
 fig.colorbar(surf2, ax=ax2, shrink=0.5, label='f2值')
 
@@ -181,7 +181,7 @@ else:
 
 ax3.set_xlabel('重击减值')
 ax3.set_ylabel('实际护甲Ac-Bonus')
-ax3.set_zlabel('函数值')
+ax3.set_zlabel('伤害期望')
 ax3.set_title('f1 f2 intersection')
 # ax3.legend()
 
