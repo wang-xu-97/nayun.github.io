@@ -6,24 +6,25 @@ plt.rcParams['axes.unicode_minus'] = False   # 解决坐标轴负号显示为方
 from mpl_toolkits.mplot3d import Axes3D
 
 tolerance = 0.5  # 容忍度，可以根据需要调整
-D_p_normal = 9.5 # 可重击非重击伤害期望
+D_p_normal = 6.5 # 可重击非重击伤害期望
 D_p_special = 10 # 不可重击期望
 # 定义你的方程 f1(a,b) 和 f2(a,b)
 # 请根据你的具体方程修改这些函数
 def f1(C, B):
-    """关闭巨武器大师"""
+    """关闭巨武器大师 均势伤害期望公式"""
     # return a**2 + b**2
     t = np.maximum(20-C-B, 0)
-    hit_chance_normal = (2 * (C + 1) + t) / 20
-    return D_p_normal * hit_chance_normal
+    hit_chance_special = (2 * (C + 1) + t) / 20
+    hit_chance = ((C + 1) + t) / 20
+    return D_p_normal * hit_chance_special + 3 * hit_chance
 
 def f2(C, B):
-    """打开巨武器大师"""
+    """打开巨武器大师 均势伤害期望公式"""
     # return a * b
     t = np.maximum(20-C-B-5, 0)
-    hit_chance_normal = (2 * (C + 1) + t) / 20
-    hit_chance_special = ((C + 1) + t) / 20
-    return D_p_normal * hit_chance_normal + D_p_special * hit_chance_special
+    hit_chance_special = (2 * (C + 1) + t) / 20
+    hit_chance = ((C + 1) + t) / 20
+    return D_p_normal * hit_chance_special + 10 * hit_chance
 
 # 参数范围
 min_val, max_val = 0, 20
