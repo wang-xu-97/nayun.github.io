@@ -82,8 +82,10 @@
   <meta property="og:site_name" content="nayun blog">
   <meta property="og:title" content="bg3伤害计算">
   <meta property="og:description" content="基础 # 命中率 # 攻击骰1d20计算优劣势 # 掷20-(重击减值)：必定命中且重击 掷1：严重失误，必定未命中 掷2~(20-重击减值-1)：假设攻击骰掷x(2 &lt;= x &lt;= 20-重击减值-1)
-命中条件：x &#43; 攻击加值 &gt;= 敌方护甲AC 攻击加值 # 攻击属性调整值： 近战： 非灵巧武器 &amp; 灵巧武器但是力量&gt;敏捷 使用力调 灵巧武器且敏捷&gt;力量 使用敏调 远程： 使用敏调 攻击骰法术： 使用施法主属性调整值 对应攻击属性熟练项加值（固定存在，总等级1~4级&#43;2，5~8级&#43;3，9~12级&#43;4） 增益buff: 祝福术1d4 高地 装备加值 豁免骰 # 豁免检定骰1d20计算优劣势 # 掷20：必定豁免成功 掷1：必定豁免失败 掷2~19：假设豁免检定骰掷x 豁免AC = x &#43; 法术豁免属性 &#43; 豁免属性熟练项加值（0-没有熟练项 或者 总等级1~4级&#43;2，5~8级&#43;3，9~12级&#43;4-拥有熟练项） &#43; 装备豁免检定AC加值 豁免失败条件：豁免DC &gt;= 豁免AC 豁免DC # 非固定豁免DC
-豁免DC = 8 &#43; 施法属性调整值 &#43; 施法属性熟练项加值（固定存在，总等级1~4级&#43;2，5~8级&#43;3，9~12级&#43;4） &#43; 装备法术豁免等级DC加值 固定豁免DC：捏豁免法术卷轴 开卡职业豁免属性（属性豁免带熟练项加值） # 开卡职业 力量 敏捷 体质 智力 感知 魅力 战士 √ √ 野蛮人 √ √ 游侠 √ √ 武僧 √ √ 游荡者 √ √ 吟游诗人 √ √ 圣武士 √ √ 邪术师 √ √ 牧师 √ √ 术士 √ √ 德鲁伊 √ √ 法师 √ √ 卷轴豁免DC/攻击加值 # 法术环阶 豁免DC 攻击加值 戏法 13 &#43;5 1环 13 &#43;5 2环 13 &#43;5 3环 15 &#43;7 4环 15 &#43;7 5环 17 &#43;9 6环 17 &#43;9 豁免骰实际伤害期望 # 豁免成功率 * 豁免成功伤害期望 &#43; 豁免失败率 * 豁免失败伤害期望">
+命中条件：x &#43; 攻击加值 &gt;= 敌方护甲AC D20掷骰结果为k的概率Pk # k∈[1,20]
+均势: Pk = 1/20 优势: P(max=k) = (2k-1)/400 劣势: P(min=k) = (41-2k)/400 重击命中率Ph = ∑k=20-重击减值20Pk
+大失败率Pf = Pk=1
+非重击命中率Pn = ∑k=(Ac-Bonus)20-重击减值-1Pk">
   <meta property="og:locale" content="zh_cn">
   <meta property="og:type" content="article">
     <meta property="article:section" content="resource">
@@ -95,8 +97,10 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="bg3伤害计算">
   <meta name="twitter:description" content="基础 # 命中率 # 攻击骰1d20计算优劣势 # 掷20-(重击减值)：必定命中且重击 掷1：严重失误，必定未命中 掷2~(20-重击减值-1)：假设攻击骰掷x(2 &lt;= x &lt;= 20-重击减值-1)
-命中条件：x &#43; 攻击加值 &gt;= 敌方护甲AC 攻击加值 # 攻击属性调整值： 近战： 非灵巧武器 &amp; 灵巧武器但是力量&gt;敏捷 使用力调 灵巧武器且敏捷&gt;力量 使用敏调 远程： 使用敏调 攻击骰法术： 使用施法主属性调整值 对应攻击属性熟练项加值（固定存在，总等级1~4级&#43;2，5~8级&#43;3，9~12级&#43;4） 增益buff: 祝福术1d4 高地 装备加值 豁免骰 # 豁免检定骰1d20计算优劣势 # 掷20：必定豁免成功 掷1：必定豁免失败 掷2~19：假设豁免检定骰掷x 豁免AC = x &#43; 法术豁免属性 &#43; 豁免属性熟练项加值（0-没有熟练项 或者 总等级1~4级&#43;2，5~8级&#43;3，9~12级&#43;4-拥有熟练项） &#43; 装备豁免检定AC加值 豁免失败条件：豁免DC &gt;= 豁免AC 豁免DC # 非固定豁免DC
-豁免DC = 8 &#43; 施法属性调整值 &#43; 施法属性熟练项加值（固定存在，总等级1~4级&#43;2，5~8级&#43;3，9~12级&#43;4） &#43; 装备法术豁免等级DC加值 固定豁免DC：捏豁免法术卷轴 开卡职业豁免属性（属性豁免带熟练项加值） # 开卡职业 力量 敏捷 体质 智力 感知 魅力 战士 √ √ 野蛮人 √ √ 游侠 √ √ 武僧 √ √ 游荡者 √ √ 吟游诗人 √ √ 圣武士 √ √ 邪术师 √ √ 牧师 √ √ 术士 √ √ 德鲁伊 √ √ 法师 √ √ 卷轴豁免DC/攻击加值 # 法术环阶 豁免DC 攻击加值 戏法 13 &#43;5 1环 13 &#43;5 2环 13 &#43;5 3环 15 &#43;7 4环 15 &#43;7 5环 17 &#43;9 6环 17 &#43;9 豁免骰实际伤害期望 # 豁免成功率 * 豁免成功伤害期望 &#43; 豁免失败率 * 豁免失败伤害期望">
+命中条件：x &#43; 攻击加值 &gt;= 敌方护甲AC D20掷骰结果为k的概率Pk # k∈[1,20]
+均势: Pk = 1/20 优势: P(max=k) = (2k-1)/400 劣势: P(min=k) = (41-2k)/400 重击命中率Ph = ∑k=20-重击减值20Pk
+大失败率Pf = Pk=1
+非重击命中率Pn = ∑k=(Ac-Bonus)20-重击减值-1Pk">
 
       
     
@@ -109,7 +113,7 @@
     "name": "bg3伤害计算",
     "headline": "bg3伤害计算",
     
-    "abstract": "\u003ch1 class=\u0022relative group\u0022\u003e基础 \n    \u003cdiv id=\u0022基础\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e5%9f%ba%e7%a1%80\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h1\u003e\n\n\u003ch2 class=\u0022relative group\u0022\u003e命中率 \n    \u003cdiv id=\u0022命中率\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e5%91%bd%e4%b8%ad%e7%8e%87\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\n\u003ch3 class=\u0022relative group\u0022\u003e攻击骰1d20计算优劣势 \n    \u003cdiv id=\u0022攻击骰1d20计算优劣势\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e6%94%bb%e5%87%bb%e9%aa%b01d20%e8%ae%a1%e7%ae%97%e4%bc%98%e5%8a%a3%e5%8a%bf\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h3\u003e\n\u003col\u003e\n\u003cli\u003e掷20-(重击减值)：必定命中且重击\u003c\/li\u003e\n\u003cli\u003e掷1：严重失误，必定未命中\u003c\/li\u003e\n\u003cli\u003e掷2~(20-重击减值-1)：假设攻击骰掷x(2 \u0026lt;= x \u0026lt;= 20-重击减值-1)\u003cbr\u003e\n命中条件：x \u002b 攻击加值 \u0026gt;= 敌方护甲AC\u003c\/li\u003e\n\u003c\/ol\u003e\n\n\u003ch4 class=\u0022relative group\u0022\u003e攻击加值 \n    \u003cdiv id=\u0022攻击加值\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e6%94%bb%e5%87%bb%e5%8a%a0%e5%80%bc\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h4\u003e\n\u003col\u003e\n\u003cli\u003e攻击属性调整值：\n\u003col\u003e\n\u003cli\u003e近战：\n\u003col\u003e\n\u003cli\u003e非灵巧武器 \u0026amp; 灵巧武器但是力量\u0026gt;敏捷\n\u003col\u003e\n\u003cli\u003e使用力调\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003c\/li\u003e\n\u003cli\u003e灵巧武器且敏捷\u0026gt;力量\n\u003col\u003e\n\u003cli\u003e使用敏调\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003c\/li\u003e\n\u003cli\u003e远程：\n\u003col\u003e\n\u003cli\u003e使用敏调\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003c\/li\u003e\n\u003cli\u003e攻击骰法术：\n\u003col\u003e\n\u003cli\u003e使用施法主属性调整值\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003c\/li\u003e\n\u003cli\u003e对应攻击属性熟练项加值（固定存在，总等级1~4级\u002b2，5~8级\u002b3，9~12级\u002b4）\u003c\/li\u003e\n\u003cli\u003e增益buff:\n\u003col\u003e\n\u003cli\u003e祝福术1d4\u003c\/li\u003e\n\u003cli\u003e高地\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003c\/li\u003e\n\u003cli\u003e装备加值\u003c\/li\u003e\n\u003c\/ol\u003e\n\n\u003ch3 class=\u0022relative group\u0022\u003e豁免骰 \n    \u003cdiv id=\u0022豁免骰\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e8%b1%81%e5%85%8d%e9%aa%b0\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h3\u003e\n\n\u003ch4 class=\u0022relative group\u0022\u003e豁免检定骰1d20计算优劣势 \n    \u003cdiv id=\u0022豁免检定骰1d20计算优劣势\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e8%b1%81%e5%85%8d%e6%a3%80%e5%ae%9a%e9%aa%b01d20%e8%ae%a1%e7%ae%97%e4%bc%98%e5%8a%a3%e5%8a%bf\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h4\u003e\n\u003col\u003e\n\u003cli\u003e掷20：必定豁免成功\u003c\/li\u003e\n\u003cli\u003e掷1：必定豁免失败\u003c\/li\u003e\n\u003cli\u003e掷2~19：假设豁免检定骰掷x\n\u003col\u003e\n\u003cli\u003e豁免AC = x \u002b 法术豁免属性 \u002b 豁免属性熟练项加值（0-没有熟练项 或者 总等级1~4级\u002b2，5~8级\u002b3，9~12级\u002b4-拥有熟练项） \u002b 装备豁免检定AC加值\u003c\/li\u003e\n\u003cli\u003e豁免失败条件：豁免DC \u0026gt;= 豁免AC\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003c\/li\u003e\n\u003c\/ol\u003e\n\n\u003ch4 class=\u0022relative group\u0022\u003e豁免DC \n    \u003cdiv id=\u0022豁免dc\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e8%b1%81%e5%85%8ddc\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h4\u003e\n\u003col\u003e\n\u003cli\u003e非固定豁免DC\u003cbr\u003e\n豁免DC = 8 \u002b 施法属性调整值 \u002b 施法属性熟练项加值（固定存在，总等级1~4级\u002b2，5~8级\u002b3，9~12级\u002b4） \u002b 装备法术豁免等级DC加值\u003c\/li\u003e\n\u003cli\u003e固定豁免DC：\u003ca\n  href=\u0022\/nayun.github.io\/resource\/bg3%e4%bc%a4%e5%ae%b3%e8%ae%a1%e7%ae%97\/#%e5%8d%b7%e8%bd%b4%e8%b1%81%e5%85%8ddc%e6%94%bb%e5%87%bb%e5%8a%a0%e5%80%bc\u0022\u003e捏豁免法术卷轴\u003c\/a\u003e\n\u003c\/li\u003e\n\u003c\/ol\u003e\n\n\u003ch4 class=\u0022relative group\u0022\u003e开卡职业豁免属性（属性豁免带熟练项加值） \n    \u003cdiv id=\u0022开卡职业豁免属性属性豁免带熟练项加值\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e5%bc%80%e5%8d%a1%e8%81%8c%e4%b8%9a%e8%b1%81%e5%85%8d%e5%b1%9e%e6%80%a7%e5%b1%9e%e6%80%a7%e8%b1%81%e5%85%8d%e5%b8%a6%e7%86%9f%e7%bb%83%e9%a1%b9%e5%8a%a0%e5%80%bc\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h4\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n      \u003ctr\u003e\n          \u003cth style=\u0022text-align: left\u0022\u003e开卡职业\u003c\/th\u003e\n          \u003cth style=\u0022text-align: center\u0022\u003e力量\u003c\/th\u003e\n          \u003cth style=\u0022text-align: center\u0022\u003e敏捷\u003c\/th\u003e\n          \u003cth style=\u0022text-align: center\u0022\u003e体质\u003c\/th\u003e\n          \u003cth style=\u0022text-align: center\u0022\u003e智力\u003c\/th\u003e\n          \u003cth style=\u0022text-align: center\u0022\u003e感知\u003c\/th\u003e\n          \u003cth style=\u0022text-align: center\u0022\u003e魅力\u003c\/th\u003e\n      \u003c\/tr\u003e\n  \u003c\/thead\u003e\n  \u003ctbody\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: left\u0022\u003e战士\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e√\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e√\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n      \u003c\/tr\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: left\u0022\u003e野蛮人\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e√\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e√\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n      \u003c\/tr\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: left\u0022\u003e游侠\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e√\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e√\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n      \u003c\/tr\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: left\u0022\u003e武僧\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e√\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e√\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n      \u003c\/tr\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: left\u0022\u003e游荡者\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e√\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e√\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n      \u003c\/tr\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: left\u0022\u003e吟游诗人\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e√\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e√\u003c\/td\u003e\n      \u003c\/tr\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: left\u0022\u003e圣武士\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e√\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e√\u003c\/td\u003e\n      \u003c\/tr\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: left\u0022\u003e邪术师\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e√\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e√\u003c\/td\u003e\n      \u003c\/tr\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: left\u0022\u003e牧师\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e√\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e√\u003c\/td\u003e\n      \u003c\/tr\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: left\u0022\u003e术士\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e√\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e√\u003c\/td\u003e\n      \u003c\/tr\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: left\u0022\u003e德鲁伊\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e√\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e√\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n      \u003c\/tr\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: left\u0022\u003e法师\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e√\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e√\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003c\/td\u003e\n      \u003c\/tr\u003e\n  \u003c\/tbody\u003e\n\u003c\/table\u003e\n\n\u003ch3 class=\u0022relative group\u0022\u003e卷轴豁免DC\/攻击加值 \n    \u003cdiv id=\u0022卷轴豁免dc攻击加值\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e5%8d%b7%e8%bd%b4%e8%b1%81%e5%85%8ddc%e6%94%bb%e5%87%bb%e5%8a%a0%e5%80%bc\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h3\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n      \u003ctr\u003e\n          \u003cth style=\u0022text-align: left\u0022\u003e法术环阶\u003c\/th\u003e\n          \u003cth style=\u0022text-align: center\u0022\u003e豁免DC\u003c\/th\u003e\n          \u003cth style=\u0022text-align: center\u0022\u003e攻击加值\u003c\/th\u003e\n      \u003c\/tr\u003e\n  \u003c\/thead\u003e\n  \u003ctbody\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: left\u0022\u003e戏法\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e13\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u002b5\u003c\/td\u003e\n      \u003c\/tr\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: left\u0022\u003e1环\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e13\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u002b5\u003c\/td\u003e\n      \u003c\/tr\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: left\u0022\u003e2环\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e13\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u002b5\u003c\/td\u003e\n      \u003c\/tr\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: left\u0022\u003e3环\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e15\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u002b7\u003c\/td\u003e\n      \u003c\/tr\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: left\u0022\u003e4环\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e15\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u002b7\u003c\/td\u003e\n      \u003c\/tr\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: left\u0022\u003e5环\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e17\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u002b9\u003c\/td\u003e\n      \u003c\/tr\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: left\u0022\u003e6环\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e17\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u002b9\u003c\/td\u003e\n      \u003c\/tr\u003e\n  \u003c\/tbody\u003e\n\u003c\/table\u003e\n\n\u003ch1 class=\u0022relative group\u0022\u003e豁免骰实际伤害期望 \n    \u003cdiv id=\u0022豁免骰实际伤害期望\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e8%b1%81%e5%85%8d%e9%aa%b0%e5%ae%9e%e9%99%85%e4%bc%a4%e5%ae%b3%e6%9c%9f%e6%9c%9b\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h1\u003e\n\u003cp\u003e豁免成功率 * 豁免成功伤害期望 \u002b 豁免失败率 * 豁免失败伤害期望\u003c\/p\u003e",
+    "abstract": "\u003ch1 class=\u0022relative group\u0022\u003e基础 \n    \u003cdiv id=\u0022基础\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e5%9f%ba%e7%a1%80\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h1\u003e\n\n\u003ch2 class=\u0022relative group\u0022\u003e命中率 \n    \u003cdiv id=\u0022命中率\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e5%91%bd%e4%b8%ad%e7%8e%87\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\n\u003ch3 class=\u0022relative group\u0022\u003e攻击骰1d20计算优劣势 \n    \u003cdiv id=\u0022攻击骰1d20计算优劣势\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e6%94%bb%e5%87%bb%e9%aa%b01d20%e8%ae%a1%e7%ae%97%e4%bc%98%e5%8a%a3%e5%8a%bf\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h3\u003e\n\u003col\u003e\n\u003cli\u003e掷20-(重击减值)：必定命中且重击\u003c\/li\u003e\n\u003cli\u003e掷1：严重失误，必定未命中\u003c\/li\u003e\n\u003cli\u003e掷2~(20-重击减值-1)：假设攻击骰掷x(2 \u0026lt;= x \u0026lt;= 20-重击减值-1)\u003cbr\u003e\n命中条件：x \u002b 攻击加值 \u0026gt;= 敌方护甲AC\u003c\/li\u003e\n\u003c\/ol\u003e\n\n\u003ch4 class=\u0022relative group\u0022\u003eD20掷骰结果为k的概率P\u003csub\u003ek\u003c\/sub\u003e \n    \u003cdiv id=\u0022d20掷骰结果为k的概率pk\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#d20%e6%8e%b7%e9%aa%b0%e7%bb%93%e6%9e%9c%e4%b8%bak%e7%9a%84%e6%a6%82%e7%8e%87pk\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h4\u003e\n\u003cp\u003ek∈[1,20]\u003c\/p\u003e\n\u003col\u003e\n\u003cli\u003e均势: P\u003csub\u003ek\u003c\/sub\u003e = 1\/20\u003c\/li\u003e\n\u003cli\u003e优势: P\u003csub\u003e(max=k)\u003c\/sub\u003e = (2k-1)\/400\u003c\/li\u003e\n\u003cli\u003e劣势: P\u003csub\u003e(min=k)\u003c\/sub\u003e = (41-2k)\/400\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003cp\u003e重击命中率P\u003csub\u003eh\u003c\/sub\u003e = ∑\u003csub\u003ek=20-重击减值\u003c\/sub\u003e\u003csup\u003e20\u003c\/sup\u003eP\u003csub\u003ek\u003c\/sub\u003e\u003cbr\u003e\n大失败率P\u003csub\u003ef\u003c\/sub\u003e = P\u003csub\u003ek=1\u003c\/sub\u003e\u003cbr\u003e\n非重击命中率P\u003csub\u003en\u003c\/sub\u003e = ∑\u003csub\u003ek=(Ac-Bonus)\u003c\/sub\u003e\u003csup\u003e20-重击减值-1\u003c\/sup\u003eP\u003csub\u003ek\u003c\/sub\u003e\u003c\/p\u003e",
     "inLanguage": "zh-cn",
     "url" : "http:\/\/localhost:43997\/nayun.github.io\/resource\/bg3%E4%BC%A4%E5%AE%B3%E8%AE%A1%E7%AE%97\/",
     "author" : {
@@ -125,7 +129,7 @@
     "keywords": ["resource"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "605"
+    "wordCount": "578"
   }]
   </script>
 
@@ -605,7 +609,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-11-11T10:50:08&#43;08:00">November 11, 2025</time><span class="px-2 text-primary-500">&middot;</span><span>605 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">3 分钟</span>
+      <time datetime="2025-11-11T10:50:08&#43;08:00">November 11, 2025</time><span class="px-2 text-primary-500">&middot;</span><span>578 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">3 分钟</span>
     
 
     
@@ -663,6 +667,11 @@
           <ul>
             <li><a href="#攻击骰1d20计算优劣势">攻击骰1d20计算优劣势</a>
               <ul>
+                <li><a href="#d20掷骰结果为k的概率pk">D20掷骰结果为k的概率P<sub>k</sub></a>
+                  <ul>
+                    <li><a href="#优劣势骰概率表">优劣势骰概率表</a></li>
+                  </ul>
+                </li>
                 <li><a href="#攻击加值">攻击加值</a></li>
               </ul>
             </li>
@@ -692,19 +701,6 @@
                 <li><a href="#1-均势">1. 均势</a></li>
                 <li><a href="#2-优势">2. 优势</a></li>
                 <li><a href="#3-劣势">3. 劣势</a></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li><a href="#实际命中率">实际命中率</a>
-          <ul>
-            <li><a href="#攻击骰1d20计算优劣势-1">攻击骰1d20计算优劣势</a>
-              <ul>
-                <li><a href="#命中率-1">命中率：</a>
-                  <ul>
-                    <li><a href="#优劣势骰概率表">优劣势骰概率表</a></li>
-                  </ul>
-                </li>
                 <li><a href="#攻击加值-1">攻击加值</a></li>
               </ul>
             </li>
@@ -743,6 +739,11 @@
           <ul>
             <li><a href="#攻击骰1d20计算优劣势">攻击骰1d20计算优劣势</a>
               <ul>
+                <li><a href="#d20掷骰结果为k的概率pk">D20掷骰结果为k的概率P<sub>k</sub></a>
+                  <ul>
+                    <li><a href="#优劣势骰概率表">优劣势骰概率表</a></li>
+                  </ul>
+                </li>
                 <li><a href="#攻击加值">攻击加值</a></li>
               </ul>
             </li>
@@ -772,19 +773,6 @@
                 <li><a href="#1-均势">1. 均势</a></li>
                 <li><a href="#2-优势">2. 优势</a></li>
                 <li><a href="#3-劣势">3. 劣势</a></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li><a href="#实际命中率">实际命中率</a>
-          <ul>
-            <li><a href="#攻击骰1d20计算优劣势-1">攻击骰1d20计算优劣势</a>
-              <ul>
-                <li><a href="#命中率-1">命中率：</a>
-                  <ul>
-                    <li><a href="#优劣势骰概率表">优劣势骰概率表</a></li>
-                  </ul>
-                </li>
                 <li><a href="#攻击加值-1">攻击加值</a></li>
               </ul>
             </li>
@@ -942,6 +930,188 @@
 <li>掷2~(20-重击减值-1)：假设攻击骰掷x(2 &lt;= x &lt;= 20-重击减值-1)<br>
 命中条件：x + 攻击加值 &gt;= 敌方护甲AC</li>
 </ol>
+
+<h4 class="relative group">D20掷骰结果为k的概率P<sub>k</sub> 
+    <div id="d20掷骰结果为k的概率pk" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#d20%e6%8e%b7%e9%aa%b0%e7%bb%93%e6%9e%9c%e4%b8%bak%e7%9a%84%e6%a6%82%e7%8e%87pk" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<p>k∈[1,20]</p>
+<ol>
+<li>均势: P<sub>k</sub> = 1/20</li>
+<li>优势: P<sub>(max=k)</sub> = (2k-1)/400</li>
+<li>劣势: P<sub>(min=k)</sub> = (41-2k)/400</li>
+</ol>
+<p>重击命中率P<sub>h</sub> = ∑<sub>k=20-重击减值</sub><sup>20</sup>P<sub>k</sub><br>
+大失败率P<sub>f</sub> = P<sub>k=1</sub><br>
+非重击命中率P<sub>n</sub> = ∑<sub>k=(Ac-Bonus)</sub><sup>20-重击减值-1</sup>P<sub>k</sub></p>
+
+<h5 class="relative group">优劣势骰概率表 
+    <div id="优劣势骰概率表" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e4%bc%98%e5%8a%a3%e5%8a%bf%e9%aa%b0%e6%a6%82%e7%8e%87%e8%a1%a8" aria-label="锚点">#</a>
+    </span>        
+    
+</h5>
+<table>
+  <thead>
+      <tr>
+          <th>值 ( k )</th>
+          <th>优势概率（分数）</th>
+          <th>优势概率（小数）</th>
+          <th>劣势概率（分数）</th>
+          <th>劣势概率（小数）</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>1/400</td>
+          <td>0.0025</td>
+          <td>39/400</td>
+          <td>0.0975</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>3/400</td>
+          <td>0.0075</td>
+          <td>37/400</td>
+          <td>0.0925</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>5/400</td>
+          <td>0.0125</td>
+          <td>35/400</td>
+          <td>0.0875</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>7/400</td>
+          <td>0.0175</td>
+          <td>33/400</td>
+          <td>0.0825</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>9/400</td>
+          <td>0.0225</td>
+          <td>31/400</td>
+          <td>0.0775</td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td>11/400</td>
+          <td>0.0275</td>
+          <td>29/400</td>
+          <td>0.0725</td>
+      </tr>
+      <tr>
+          <td>7</td>
+          <td>13/400</td>
+          <td>0.0325</td>
+          <td>27/400</td>
+          <td>0.0675</td>
+      </tr>
+      <tr>
+          <td>8</td>
+          <td>15/400</td>
+          <td>0.0375</td>
+          <td>25/400</td>
+          <td>0.0625</td>
+      </tr>
+      <tr>
+          <td>9</td>
+          <td>17/400</td>
+          <td>0.0425</td>
+          <td>23/400</td>
+          <td>0.0575</td>
+      </tr>
+      <tr>
+          <td>10</td>
+          <td>19/400</td>
+          <td>0.0475</td>
+          <td>21/400</td>
+          <td>0.0525</td>
+      </tr>
+      <tr>
+          <td>11</td>
+          <td>21/400</td>
+          <td>0.0525</td>
+          <td>19/400</td>
+          <td>0.0475</td>
+      </tr>
+      <tr>
+          <td>12</td>
+          <td>23/400</td>
+          <td>0.0575</td>
+          <td>17/400</td>
+          <td>0.0425</td>
+      </tr>
+      <tr>
+          <td>13</td>
+          <td>25/400</td>
+          <td>0.0625</td>
+          <td>15/400</td>
+          <td>0.0375</td>
+      </tr>
+      <tr>
+          <td>14</td>
+          <td>27/400</td>
+          <td>0.0675</td>
+          <td>13/400</td>
+          <td>0.0325</td>
+      </tr>
+      <tr>
+          <td>15</td>
+          <td>29/400</td>
+          <td>0.0725</td>
+          <td>11/400</td>
+          <td>0.0275</td>
+      </tr>
+      <tr>
+          <td>16</td>
+          <td>31/400</td>
+          <td>0.0775</td>
+          <td>9/400</td>
+          <td>0.0225</td>
+      </tr>
+      <tr>
+          <td>17</td>
+          <td>33/400</td>
+          <td>0.0825</td>
+          <td>7/400</td>
+          <td>0.0175</td>
+      </tr>
+      <tr>
+          <td>18</td>
+          <td>35/400</td>
+          <td>0.0875</td>
+          <td>5/400</td>
+          <td>0.0125</td>
+      </tr>
+      <tr>
+          <td>19</td>
+          <td>37/400</td>
+          <td>0.0925</td>
+          <td>3/400</td>
+          <td>0.0075</td>
+      </tr>
+      <tr>
+          <td>20</td>
+          <td>39/400</td>
+          <td>0.0975</td>
+          <td>1/400</td>
+          <td>0.0025</td>
+      </tr>
+  </tbody>
+</table>
 
 <h4 class="relative group">攻击加值 
     <div id="攻击加值" class="anchor"></div>
@@ -1328,216 +1498,6 @@
 
     \]
 </div>
-
-<h2 class="relative group">实际命中率 
-    <div id="实际命中率" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%ae%9e%e9%99%85%e5%91%bd%e4%b8%ad%e7%8e%87" aria-label="锚点">#</a>
-    </span>        
-    
-</h2>
-<p>命中率 = x + 攻击加值Bonus &gt;= 敌方护甲Ac, 整数x取[2, 20-重击减值-1]<br>
-假设Ac始终大于加值Bonus</p>
-
-<h3 class="relative group">攻击骰1d20计算优劣势 
-    <div id="攻击骰1d20计算优劣势-1" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%94%bb%e5%87%bb%e9%aa%b01d20%e8%ae%a1%e7%ae%97%e4%bc%98%e5%8a%a3%e5%8a%bf-1" aria-label="锚点">#</a>
-    </span>        
-    
-</h3>
-<ol>
-<li>掷20-(重击减值)：必定命中且重击</li>
-<li>掷1：严重失误，必定未命中</li>
-<li>掷2~(20-重击减值)：假设攻击骰掷x(2 &lt;= x &lt;= 20-重击减值-1)<br>
-命中条件：x + 攻击加值Bonus &gt;= 敌方护甲Ac</li>
-</ol>
-
-<h4 class="relative group">命中率： 
-    <div id="命中率-1" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%91%bd%e4%b8%ad%e7%8e%87-1" aria-label="锚点">#</a>
-    </span>        
-    
-</h4>
-<p>D20掷骰结果为k的概率P<sub>k</sub>, k∈[1,20]</p>
-<ol>
-<li>均势: P<sub>k</sub> = 1/20</li>
-<li>优势: P<sub>(max=k)</sub> = (2k-1)/400</li>
-<li>劣势: P<sub>(min=k)</sub> = (41-2k)/400</li>
-</ol>
-<p>重击命中率P<sub>h</sub> = ∑<sub>k=20-重击减值</sub><sup>20</sup>P<sub>k</sub><br>
-大失败率P<sub>f</sub> = P<sub>k=1</sub><br>
-非重击命中率P<sub>n</sub> = ∑<sub>k=(Ac-Bonus)</sub><sup>20-重击减值-1</sup>P<sub>k</sub></p>
-
-<h5 class="relative group">优劣势骰概率表 
-    <div id="优劣势骰概率表" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e4%bc%98%e5%8a%a3%e5%8a%bf%e9%aa%b0%e6%a6%82%e7%8e%87%e8%a1%a8" aria-label="锚点">#</a>
-    </span>        
-    
-</h5>
-<table>
-  <thead>
-      <tr>
-          <th>值 ( k )</th>
-          <th>优势概率（分数）</th>
-          <th>优势概率（小数）</th>
-          <th>劣势概率（分数）</th>
-          <th>劣势概率（小数）</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>1</td>
-          <td>1/400</td>
-          <td>0.0025</td>
-          <td>39/400</td>
-          <td>0.0975</td>
-      </tr>
-      <tr>
-          <td>2</td>
-          <td>3/400</td>
-          <td>0.0075</td>
-          <td>37/400</td>
-          <td>0.0925</td>
-      </tr>
-      <tr>
-          <td>3</td>
-          <td>5/400</td>
-          <td>0.0125</td>
-          <td>35/400</td>
-          <td>0.0875</td>
-      </tr>
-      <tr>
-          <td>4</td>
-          <td>7/400</td>
-          <td>0.0175</td>
-          <td>33/400</td>
-          <td>0.0825</td>
-      </tr>
-      <tr>
-          <td>5</td>
-          <td>9/400</td>
-          <td>0.0225</td>
-          <td>31/400</td>
-          <td>0.0775</td>
-      </tr>
-      <tr>
-          <td>6</td>
-          <td>11/400</td>
-          <td>0.0275</td>
-          <td>29/400</td>
-          <td>0.0725</td>
-      </tr>
-      <tr>
-          <td>7</td>
-          <td>13/400</td>
-          <td>0.0325</td>
-          <td>27/400</td>
-          <td>0.0675</td>
-      </tr>
-      <tr>
-          <td>8</td>
-          <td>15/400</td>
-          <td>0.0375</td>
-          <td>25/400</td>
-          <td>0.0625</td>
-      </tr>
-      <tr>
-          <td>9</td>
-          <td>17/400</td>
-          <td>0.0425</td>
-          <td>23/400</td>
-          <td>0.0575</td>
-      </tr>
-      <tr>
-          <td>10</td>
-          <td>19/400</td>
-          <td>0.0475</td>
-          <td>21/400</td>
-          <td>0.0525</td>
-      </tr>
-      <tr>
-          <td>11</td>
-          <td>21/400</td>
-          <td>0.0525</td>
-          <td>19/400</td>
-          <td>0.0475</td>
-      </tr>
-      <tr>
-          <td>12</td>
-          <td>23/400</td>
-          <td>0.0575</td>
-          <td>17/400</td>
-          <td>0.0425</td>
-      </tr>
-      <tr>
-          <td>13</td>
-          <td>25/400</td>
-          <td>0.0625</td>
-          <td>15/400</td>
-          <td>0.0375</td>
-      </tr>
-      <tr>
-          <td>14</td>
-          <td>27/400</td>
-          <td>0.0675</td>
-          <td>13/400</td>
-          <td>0.0325</td>
-      </tr>
-      <tr>
-          <td>15</td>
-          <td>29/400</td>
-          <td>0.0725</td>
-          <td>11/400</td>
-          <td>0.0275</td>
-      </tr>
-      <tr>
-          <td>16</td>
-          <td>31/400</td>
-          <td>0.0775</td>
-          <td>9/400</td>
-          <td>0.0225</td>
-      </tr>
-      <tr>
-          <td>17</td>
-          <td>33/400</td>
-          <td>0.0825</td>
-          <td>7/400</td>
-          <td>0.0175</td>
-      </tr>
-      <tr>
-          <td>18</td>
-          <td>35/400</td>
-          <td>0.0875</td>
-          <td>5/400</td>
-          <td>0.0125</td>
-      </tr>
-      <tr>
-          <td>19</td>
-          <td>37/400</td>
-          <td>0.0925</td>
-          <td>3/400</td>
-          <td>0.0075</td>
-      </tr>
-      <tr>
-          <td>20</td>
-          <td>39/400</td>
-          <td>0.0975</td>
-          <td>1/400</td>
-          <td>0.0025</td>
-      </tr>
-  </tbody>
-</table>
 
 <h4 class="relative group">攻击加值 
     <div id="攻击加值-1" class="anchor"></div>
