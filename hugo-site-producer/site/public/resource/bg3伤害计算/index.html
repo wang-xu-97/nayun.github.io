@@ -81,11 +81,10 @@
     <meta property="og:url" content="http://localhost:43997/nayun.github.io/resource/bg3%E4%BC%A4%E5%AE%B3%E8%AE%A1%E7%AE%97/">
   <meta property="og:site_name" content="nayun blog">
   <meta property="og:title" content="bg3伤害计算">
-  <meta property="og:description" content="基础 # 命中率 # 攻击骰1d20计算优劣势 # 掷20-(重击减值)：必定命中且重击 掷1：严重失误，必定未命中 掷2~(20-重击减值-1)：假设攻击骰掷x(2 &lt;= x &lt;= 20-重击减值-1)
-命中条件：x &#43; 攻击加值 &gt;= 敌方护甲AC D20掷骰结果为k的概率Pk # k∈[1,20]
-均势: Pk = 1/20 优势: P(max=k) = (2k-1)/400 劣势: P(min=k) = (41-2k)/400 重击命中率Ph = ∑k=20-重击减值20Pk
-大失败率Pf = Pk=1
-非重击命中率Pn = ∑k=(Ac-Bonus)20-重击减值-1Pk">
+  <meta property="og:description" content="基础 # 攻击骰 # 非重击命中伤害期望 # 伤害公式 = 伤害骰数量n * 伤害骰面数d &#43; 伤害加值Bonus_damage(Bd)
+伤害期望Dp = n * (1&#43;d)/2 &#43; Bd
+攻击骰1d20计算优劣势 # 掷20-(重击减值)：必定命中且重击 掷1：严重失误，必定未命中 掷2~(20-重击减值-1)：假设攻击骰掷x(2 &lt;= x &lt;= 20-重击减值-1)
+命中条件：x &#43; 攻击加值 &gt;= 敌方护甲AC D20掷骰结果为k的概率Pk # k∈[1,20]">
   <meta property="og:locale" content="zh_cn">
   <meta property="og:type" content="article">
     <meta property="article:section" content="resource">
@@ -96,11 +95,10 @@
     
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="bg3伤害计算">
-  <meta name="twitter:description" content="基础 # 命中率 # 攻击骰1d20计算优劣势 # 掷20-(重击减值)：必定命中且重击 掷1：严重失误，必定未命中 掷2~(20-重击减值-1)：假设攻击骰掷x(2 &lt;= x &lt;= 20-重击减值-1)
-命中条件：x &#43; 攻击加值 &gt;= 敌方护甲AC D20掷骰结果为k的概率Pk # k∈[1,20]
-均势: Pk = 1/20 优势: P(max=k) = (2k-1)/400 劣势: P(min=k) = (41-2k)/400 重击命中率Ph = ∑k=20-重击减值20Pk
-大失败率Pf = Pk=1
-非重击命中率Pn = ∑k=(Ac-Bonus)20-重击减值-1Pk">
+  <meta name="twitter:description" content="基础 # 攻击骰 # 非重击命中伤害期望 # 伤害公式 = 伤害骰数量n * 伤害骰面数d &#43; 伤害加值Bonus_damage(Bd)
+伤害期望Dp = n * (1&#43;d)/2 &#43; Bd
+攻击骰1d20计算优劣势 # 掷20-(重击减值)：必定命中且重击 掷1：严重失误，必定未命中 掷2~(20-重击减值-1)：假设攻击骰掷x(2 &lt;= x &lt;= 20-重击减值-1)
+命中条件：x &#43; 攻击加值 &gt;= 敌方护甲AC D20掷骰结果为k的概率Pk # k∈[1,20]">
 
       
     
@@ -113,7 +111,7 @@
     "name": "bg3伤害计算",
     "headline": "bg3伤害计算",
     
-    "abstract": "\u003ch1 class=\u0022relative group\u0022\u003e基础 \n    \u003cdiv id=\u0022基础\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e5%9f%ba%e7%a1%80\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h1\u003e\n\n\u003ch2 class=\u0022relative group\u0022\u003e命中率 \n    \u003cdiv id=\u0022命中率\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e5%91%bd%e4%b8%ad%e7%8e%87\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\n\u003ch3 class=\u0022relative group\u0022\u003e攻击骰1d20计算优劣势 \n    \u003cdiv id=\u0022攻击骰1d20计算优劣势\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e6%94%bb%e5%87%bb%e9%aa%b01d20%e8%ae%a1%e7%ae%97%e4%bc%98%e5%8a%a3%e5%8a%bf\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h3\u003e\n\u003col\u003e\n\u003cli\u003e掷20-(重击减值)：必定命中且重击\u003c\/li\u003e\n\u003cli\u003e掷1：严重失误，必定未命中\u003c\/li\u003e\n\u003cli\u003e掷2~(20-重击减值-1)：假设攻击骰掷x(2 \u0026lt;= x \u0026lt;= 20-重击减值-1)\u003cbr\u003e\n命中条件：x \u002b 攻击加值 \u0026gt;= 敌方护甲AC\u003c\/li\u003e\n\u003c\/ol\u003e\n\n\u003ch4 class=\u0022relative group\u0022\u003eD20掷骰结果为k的概率P\u003csub\u003ek\u003c\/sub\u003e \n    \u003cdiv id=\u0022d20掷骰结果为k的概率pk\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#d20%e6%8e%b7%e9%aa%b0%e7%bb%93%e6%9e%9c%e4%b8%bak%e7%9a%84%e6%a6%82%e7%8e%87pk\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h4\u003e\n\u003cp\u003ek∈[1,20]\u003c\/p\u003e\n\u003col\u003e\n\u003cli\u003e均势: P\u003csub\u003ek\u003c\/sub\u003e = 1\/20\u003c\/li\u003e\n\u003cli\u003e优势: P\u003csub\u003e(max=k)\u003c\/sub\u003e = (2k-1)\/400\u003c\/li\u003e\n\u003cli\u003e劣势: P\u003csub\u003e(min=k)\u003c\/sub\u003e = (41-2k)\/400\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003cp\u003e重击命中率P\u003csub\u003eh\u003c\/sub\u003e = ∑\u003csub\u003ek=20-重击减值\u003c\/sub\u003e\u003csup\u003e20\u003c\/sup\u003eP\u003csub\u003ek\u003c\/sub\u003e\u003cbr\u003e\n大失败率P\u003csub\u003ef\u003c\/sub\u003e = P\u003csub\u003ek=1\u003c\/sub\u003e\u003cbr\u003e\n非重击命中率P\u003csub\u003en\u003c\/sub\u003e = ∑\u003csub\u003ek=(Ac-Bonus)\u003c\/sub\u003e\u003csup\u003e20-重击减值-1\u003c\/sup\u003eP\u003csub\u003ek\u003c\/sub\u003e\u003c\/p\u003e",
+    "abstract": "\u003ch1 class=\u0022relative group\u0022\u003e基础 \n    \u003cdiv id=\u0022基础\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e5%9f%ba%e7%a1%80\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h1\u003e\n\n\u003ch2 class=\u0022relative group\u0022\u003e攻击骰 \n    \u003cdiv id=\u0022攻击骰\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e6%94%bb%e5%87%bb%e9%aa%b0\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\n\u003ch3 class=\u0022relative group\u0022\u003e非重击命中伤害期望 \n    \u003cdiv id=\u0022非重击命中伤害期望\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e9%9d%9e%e9%87%8d%e5%87%bb%e5%91%bd%e4%b8%ad%e4%bc%a4%e5%ae%b3%e6%9c%9f%e6%9c%9b\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h3\u003e\n\u003cp\u003e伤害公式 = 伤害骰数量n * 伤害骰面数d \u002b 伤害加值Bonus_damage(Bd)\u003cbr\u003e\n伤害期望Dp = n * (1\u002bd)\/2 \u002b Bd\u003c\/p\u003e\n\n\u003ch3 class=\u0022relative group\u0022\u003e攻击骰1d20计算优劣势 \n    \u003cdiv id=\u0022攻击骰1d20计算优劣势\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e6%94%bb%e5%87%bb%e9%aa%b01d20%e8%ae%a1%e7%ae%97%e4%bc%98%e5%8a%a3%e5%8a%bf\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h3\u003e\n\u003col\u003e\n\u003cli\u003e掷20-(重击减值)：必定命中且重击\u003c\/li\u003e\n\u003cli\u003e掷1：严重失误，必定未命中\u003c\/li\u003e\n\u003cli\u003e掷2~(20-重击减值-1)：假设攻击骰掷x(2 \u0026lt;= x \u0026lt;= 20-重击减值-1)\u003cbr\u003e\n命中条件：x \u002b 攻击加值 \u0026gt;= 敌方护甲AC\u003c\/li\u003e\n\u003c\/ol\u003e\n\n\u003ch4 class=\u0022relative group\u0022\u003eD20掷骰结果为k的概率P\u003csub\u003ek\u003c\/sub\u003e \n    \u003cdiv id=\u0022d20掷骰结果为k的概率pk\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#d20%e6%8e%b7%e9%aa%b0%e7%bb%93%e6%9e%9c%e4%b8%bak%e7%9a%84%e6%a6%82%e7%8e%87pk\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h4\u003e\n\u003cp\u003ek∈[1,20]\u003c\/p\u003e",
     "inLanguage": "zh-cn",
     "url" : "http:\/\/localhost:43997\/nayun.github.io\/resource\/bg3%E4%BC%A4%E5%AE%B3%E8%AE%A1%E7%AE%97\/",
     "author" : {
@@ -129,7 +127,7 @@
     "keywords": ["resource"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "578"
+    "wordCount": "559"
   }]
   </script>
 
@@ -609,7 +607,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-11-11T10:50:08&#43;08:00">November 11, 2025</time><span class="px-2 text-primary-500">&middot;</span><span>578 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">3 分钟</span>
+      <time datetime="2025-11-11T10:50:08&#43;08:00">November 11, 2025</time><span class="px-2 text-primary-500">&middot;</span><span>559 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">3 分钟</span>
     
 
     
@@ -663,8 +661,9 @@
   <ul>
     <li><a href="#基础">基础</a>
       <ul>
-        <li><a href="#命中率">命中率</a>
+        <li><a href="#攻击骰">攻击骰</a>
           <ul>
+            <li><a href="#非重击命中伤害期望">非重击命中伤害期望</a></li>
             <li><a href="#攻击骰1d20计算优劣势">攻击骰1d20计算优劣势</a>
               <ul>
                 <li><a href="#d20掷骰结果为k的概率pk">D20掷骰结果为k的概率P<sub>k</sub></a>
@@ -675,16 +674,19 @@
                 <li><a href="#攻击加值">攻击加值</a></li>
               </ul>
             </li>
-            <li><a href="#豁免骰">豁免骰</a>
-              <ul>
-                <li><a href="#豁免检定骰1d20计算优劣势">豁免检定骰1d20计算优劣势</a></li>
-                <li><a href="#豁免dc">豁免DC</a></li>
-                <li><a href="#开卡职业豁免属性属性豁免带熟练项加值">开卡职业豁免属性（属性豁免带熟练项加值）</a></li>
-              </ul>
-            </li>
-            <li><a href="#卷轴豁免dc攻击加值">卷轴豁免DC/攻击加值</a></li>
           </ul>
         </li>
+        <li><a href="#豁免骰">豁免骰</a>
+          <ul>
+            <li><a href="#豁免检定骰1d20计算优劣势">豁免检定骰1d20计算优劣势</a>
+              <ul>
+                <li><a href="#豁免dc">豁免DC</a></li>
+              </ul>
+            </li>
+            <li><a href="#开卡职业豁免属性">开卡职业豁免属性</a></li>
+          </ul>
+        </li>
+        <li><a href="#卷轴固定豁免dc攻击加值表">卷轴固定豁免DC、攻击加值表</a></li>
       </ul>
     </li>
     <li><a href="#豁免骰实际伤害期望">豁免骰实际伤害期望</a>
@@ -701,12 +703,10 @@
                 <li><a href="#1-均势">1. 均势</a></li>
                 <li><a href="#2-优势">2. 优势</a></li>
                 <li><a href="#3-劣势">3. 劣势</a></li>
-                <li><a href="#攻击加值-1">攻击加值</a></li>
               </ul>
             </li>
           </ul>
         </li>
-        <li><a href="#非重击命中伤害期望">非重击命中伤害期望</a></li>
         <li><a href="#重击减值与实际伤害期望对应表">重击减值与实际伤害期望对应表</a></li>
         <li><a href="#技能伤害期望">技能伤害期望</a>
           <ul>
@@ -735,8 +735,9 @@
   <ul>
     <li><a href="#基础">基础</a>
       <ul>
-        <li><a href="#命中率">命中率</a>
+        <li><a href="#攻击骰">攻击骰</a>
           <ul>
+            <li><a href="#非重击命中伤害期望">非重击命中伤害期望</a></li>
             <li><a href="#攻击骰1d20计算优劣势">攻击骰1d20计算优劣势</a>
               <ul>
                 <li><a href="#d20掷骰结果为k的概率pk">D20掷骰结果为k的概率P<sub>k</sub></a>
@@ -747,16 +748,19 @@
                 <li><a href="#攻击加值">攻击加值</a></li>
               </ul>
             </li>
-            <li><a href="#豁免骰">豁免骰</a>
-              <ul>
-                <li><a href="#豁免检定骰1d20计算优劣势">豁免检定骰1d20计算优劣势</a></li>
-                <li><a href="#豁免dc">豁免DC</a></li>
-                <li><a href="#开卡职业豁免属性属性豁免带熟练项加值">开卡职业豁免属性（属性豁免带熟练项加值）</a></li>
-              </ul>
-            </li>
-            <li><a href="#卷轴豁免dc攻击加值">卷轴豁免DC/攻击加值</a></li>
           </ul>
         </li>
+        <li><a href="#豁免骰">豁免骰</a>
+          <ul>
+            <li><a href="#豁免检定骰1d20计算优劣势">豁免检定骰1d20计算优劣势</a>
+              <ul>
+                <li><a href="#豁免dc">豁免DC</a></li>
+              </ul>
+            </li>
+            <li><a href="#开卡职业豁免属性">开卡职业豁免属性</a></li>
+          </ul>
+        </li>
+        <li><a href="#卷轴固定豁免dc攻击加值表">卷轴固定豁免DC、攻击加值表</a></li>
       </ul>
     </li>
     <li><a href="#豁免骰实际伤害期望">豁免骰实际伤害期望</a>
@@ -773,12 +777,10 @@
                 <li><a href="#1-均势">1. 均势</a></li>
                 <li><a href="#2-优势">2. 优势</a></li>
                 <li><a href="#3-劣势">3. 劣势</a></li>
-                <li><a href="#攻击加值-1">攻击加值</a></li>
               </ul>
             </li>
           </ul>
         </li>
-        <li><a href="#非重击命中伤害期望">非重击命中伤害期望</a></li>
         <li><a href="#重击减值与实际伤害期望对应表">重击减值与实际伤害期望对应表</a></li>
         <li><a href="#技能伤害期望">技能伤害期望</a>
           <ul>
@@ -905,15 +907,27 @@
     
 </h1>
 
-<h2 class="relative group">命中率 
-    <div id="命中率" class="anchor"></div>
+<h2 class="relative group">攻击骰 
+    <div id="攻击骰" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%91%bd%e4%b8%ad%e7%8e%87" aria-label="锚点">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%94%bb%e5%87%bb%e9%aa%b0" aria-label="锚点">#</a>
     </span>        
     
 </h2>
+
+<h3 class="relative group">非重击命中伤害期望 
+    <div id="非重击命中伤害期望" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e9%9d%9e%e9%87%8d%e5%87%bb%e5%91%bd%e4%b8%ad%e4%bc%a4%e5%ae%b3%e6%9c%9f%e6%9c%9b" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>伤害公式 = 伤害骰数量n * 伤害骰面数d + 伤害加值Bonus_damage(Bd)<br>
+伤害期望Dp = n * (1+d)/2 + Bd</p>
 
 <h3 class="relative group">攻击骰1d20计算优劣势 
     <div id="攻击骰1d20计算优劣势" class="anchor"></div>
@@ -1161,7 +1175,7 @@
 <li>装备加值</li>
 </ol>
 
-<h3 class="relative group">豁免骰 
+<h2 class="relative group">豁免骰 
     <div id="豁免骰" class="anchor"></div>
     
     <span
@@ -1169,9 +1183,9 @@
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e8%b1%81%e5%85%8d%e9%aa%b0" aria-label="锚点">#</a>
     </span>        
     
-</h3>
+</h2>
 
-<h4 class="relative group">豁免检定骰1d20计算优劣势 
+<h3 class="relative group">豁免检定骰1d20计算优劣势 
     <div id="豁免检定骰1d20计算优劣势" class="anchor"></div>
     
     <span
@@ -1179,7 +1193,7 @@
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e8%b1%81%e5%85%8d%e6%a3%80%e5%ae%9a%e9%aa%b01d20%e8%ae%a1%e7%ae%97%e4%bc%98%e5%8a%a3%e5%8a%bf" aria-label="锚点">#</a>
     </span>        
     
-</h4>
+</h3>
 <ol>
 <li>掷20：必定豁免成功</li>
 <li>掷1：必定豁免失败</li>
@@ -1204,19 +1218,19 @@
 <li>非固定豁免DC<br>
 豁免DC = 8 + 施法属性调整值 + 施法属性熟练项加值（固定存在，总等级1~4级+2，5~8级+3，9~12级+4） + 装备法术豁免等级DC加值</li>
 <li>固定豁免DC：<a
-  href="/nayun.github.io/resource/bg3%e4%bc%a4%e5%ae%b3%e8%ae%a1%e7%ae%97/#%e5%8d%b7%e8%bd%b4%e8%b1%81%e5%85%8ddc%e6%94%bb%e5%87%bb%e5%8a%a0%e5%80%bc">捏豁免法术卷轴</a>
+  href="/nayun.github.io/resource/bg3%e4%bc%a4%e5%ae%b3%e8%ae%a1%e7%ae%97/#%e5%8d%b7%e8%bd%b4%e5%9b%ba%e5%ae%9a%e8%b1%81%e5%85%8ddc%e6%94%bb%e5%87%bb%e5%8a%a0%e5%80%bc%e8%a1%a8">捏豁免法术卷轴</a>
 </li>
 </ol>
 
-<h4 class="relative group">开卡职业豁免属性（属性豁免带熟练项加值） 
-    <div id="开卡职业豁免属性属性豁免带熟练项加值" class="anchor"></div>
+<h3 class="relative group">开卡职业豁免属性 
+    <div id="开卡职业豁免属性" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%bc%80%e5%8d%a1%e8%81%8c%e4%b8%9a%e8%b1%81%e5%85%8d%e5%b1%9e%e6%80%a7%e5%b1%9e%e6%80%a7%e8%b1%81%e5%85%8d%e5%b8%a6%e7%86%9f%e7%bb%83%e9%a1%b9%e5%8a%a0%e5%80%bc" aria-label="锚点">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%bc%80%e5%8d%a1%e8%81%8c%e4%b8%9a%e8%b1%81%e5%85%8d%e5%b1%9e%e6%80%a7" aria-label="锚点">#</a>
     </span>        
     
-</h4>
+</h3>
 <table>
   <thead>
       <tr>
@@ -1341,15 +1355,15 @@
   </tbody>
 </table>
 
-<h3 class="relative group">卷轴豁免DC/攻击加值 
-    <div id="卷轴豁免dc攻击加值" class="anchor"></div>
+<h2 class="relative group">卷轴固定豁免DC、攻击加值表 
+    <div id="卷轴固定豁免dc攻击加值表" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%8d%b7%e8%bd%b4%e8%b1%81%e5%85%8ddc%e6%94%bb%e5%87%bb%e5%8a%a0%e5%80%bc" aria-label="锚点">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%8d%b7%e8%bd%b4%e5%9b%ba%e5%ae%9a%e8%b1%81%e5%85%8ddc%e6%94%bb%e5%87%bb%e5%8a%a0%e5%80%bc%e8%a1%a8" aria-label="锚点">#</a>
     </span>        
     
-</h3>
+</h2>
 <table>
   <thead>
       <tr>
@@ -1498,66 +1512,6 @@
 
     \]
 </div>
-
-<h4 class="relative group">攻击加值 
-    <div id="攻击加值-1" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%94%bb%e5%87%bb%e5%8a%a0%e5%80%bc-1" aria-label="锚点">#</a>
-    </span>        
-    
-</h4>
-<ol>
-<li>攻击属性调整值：
-<ol>
-<li>近战：
-<ol>
-<li>非灵巧武器 &amp; 灵巧武器但是力量&gt;敏捷
-<ol>
-<li>使用力调</li>
-</ol>
-</li>
-<li>灵巧武器且敏捷&gt;力量
-<ol>
-<li>使用敏调</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>远程：
-<ol>
-<li>使用敏调</li>
-</ol>
-</li>
-<li>攻击骰法术：
-<ol>
-<li>使用施法主属性调整值</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>对应攻击属性熟练项加值（固定存在，总等级1~4级+2，5~8级+3，9~12级+4）</li>
-<li>增益buff:
-<ol>
-<li>祝福术1d4</li>
-<li>高地</li>
-</ol>
-</li>
-<li>装备加值</li>
-</ol>
-
-<h2 class="relative group">非重击命中伤害期望 
-    <div id="非重击命中伤害期望" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e9%9d%9e%e9%87%8d%e5%87%bb%e5%91%bd%e4%b8%ad%e4%bc%a4%e5%ae%b3%e6%9c%9f%e6%9c%9b" aria-label="锚点">#</a>
-    </span>        
-    
-</h2>
-<p>伤害公式 = 伤害骰数量n * 伤害骰面数d + 伤害加值Bonus_damage(Bd)<br>
-伤害期望Dp = n * (1+d)/2 + Bd</p>
 
 <h2 class="relative group">重击减值与实际伤害期望对应表 
     <div id="重击减值与实际伤害期望对应表" class="anchor"></div>
