@@ -1,0 +1,14 @@
+{{- $content := .Inner -}}
+{{- $type := .Get "type" | default "inline" -}}
+
+{{- if eq $type "block" -}}
+<div class="math-block">
+    \[
+    {{ $content }}
+    \]
+</div>
+{{- else -}}
+<span class="math-inline">
+    \({{ $content }}\)
+</span>
+{{- end -}}

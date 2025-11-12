@@ -79,10 +79,37 @@ showTableOfContents: true
 实际命中率 = (重击命中率 * 2 + 非重击命中率)
  = P<sub>h</sub> * 2 + P<sub>n</sub>
  = ∑<sub>k=20-重击减值</sub><sup>20</sup>P<sub>k</sub> * 2 + ∑<sub>k=(Ac-Bonus)</sub><sup>20-重击减值-1</sup>P<sub>k</sub>
+ = n/2()
 ，P<sub>k</sub> = 
 1. 均势: P<sub>k</sub> = 1/20
 1. 优势: P<sub>(max=k)</sub> = (2k-1)/400
 1. 劣势: P<sub>(min=k)</sub> = (41-2k)/400
+
+四元函数形式，公式基于投骰方式（均势、优势、劣势）和参数：
+- 非重击命中伤害期望 \(D_p\)
+- 敌方护甲 AC
+- 攻击加值 Bonus
+- 重击减值 C
+
+其中，令 \(B = AC - Bonus\)，表示命中所需的最小骰子值（调整前）。
+
+***简化后的伤害期望公式***
+公式假设 \(B\) 在 1 到 20 之间，如果 \(B < 1\)，则设 \(B = 1\)。
+
+#### 1. 均势
+{{< math type="block" >}}
+\text{Dmg} = D_p \times \frac{2(C+1) + \max(20-C-B, 0)}{20}
+{{< /math >}}
+#### 2. 优势
+{{< math type="block" >}}
+\text{Dmg} = D_p \times \frac{2(1+C)(39-C) + \max(20-C-B, 0) \times (B + 18 - C)}{400}
+{{< /math >}}
+
+#### 3. 劣势
+{{< math type="block" >}}
+\text{Dmg} = D_p \times \frac{2(1+C)^2 + \max(20-C-B, 0) \times (22 - B + C)}{400}
+{{< /math >}}
+
 ## 实际命中率
 命中率 = x + 攻击加值Bonus >= 敌方护甲Ac, 整数x取[2, 20-重击减值-1]
 假设Ac始终大于加值Bonus
@@ -97,8 +124,11 @@ D20掷骰结果为k的概率P<sub>k</sub>, k∈[1,20]
 1. 优势: P<sub>(max=k)</sub> = (2k-1)/400
 1. 劣势: P<sub>(min=k)</sub> = (41-2k)/400
 
-##### 1. 优势概率表
+重击命中率P<sub>h</sub> = ∑<sub>k=20-重击减值</sub><sup>20</sup>P<sub>k</sub>
+大失败率P<sub>f</sub> = P<sub>k=1</sub>
+非重击命中率P<sub>n</sub> = ∑<sub>k=(Ac-Bonus)</sub><sup>20-重击减值-1</sup>P<sub>k</sub>
 
+##### 1. 优势概率表
 | 值 \( k \) | 概率（分数） | 概率（小数） |
 |------------|---------------|---------------|
 | 1          | 1/400         | 0.0025        |
@@ -146,9 +176,6 @@ D20掷骰结果为k的概率P<sub>k</sub>, k∈[1,20]
 | 18         | 5/400         | 0.0125        |
 | 19         | 3/400         | 0.0075        |
 | 20         | 1/400         | 0.0025        |
-重击命中率P<sub>h</sub> = ∑<sub>k=20-重击减值</sub><sup>20</sup>P<sub>k</sub>
-大失败率P<sub>f</sub> = P<sub>k=1</sub>
-非重击命中率P<sub>n</sub> = ∑<sub>k=(Ac-Bonus)</sub><sup>20-重击减值-1</sup>P<sub>k</sub>
 
 #### 攻击加值
 1. 攻击属性调整值：

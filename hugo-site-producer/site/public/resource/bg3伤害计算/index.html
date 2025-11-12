@@ -40,8 +40,8 @@
     
     
     
-    <link type="text/css" rel="stylesheet" href="/nayun.github.io/css/main.bundle.min.9da49f5e9990c1641b749a20583576ff53caa772d52669ec1cb67229e47b62bf91d6e45880865202869ef2a2676bafcc24646fc561626615ff11436515e5a148.css"
-      integrity="sha512-naSfXpmQwWQbdJogWDV2/1PKp3LVJmnsHLZyKeR7Yr&#43;R1uRYgIZSAoae8qJna6/MJGRvxWFiZhX/EUNlFeWhSA==" />
+    <link type="text/css" rel="stylesheet" href="/nayun.github.io/css/main.bundle.min.d5a4ea2c0a3cbf732f5d6f318d3bdb41fcd70d1bb1d18108c9aac83e0aace72a357e93fce51f3c7743f2b4f6bbdd7c119e820c2acdb47aa6951f48f14cace2c8.css"
+      integrity="sha512-1aTqLAo8v3MvXW8xjTvbQfzXDRux0YEIyarIPgqs5yo1fpP85R88d0PytPa73XwRnoIMKs20eqaVH0jxTKziyA==" />
     
     
     <script type="text/javascript" src="/nayun.github.io/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
@@ -125,7 +125,7 @@
     "keywords": ["resource"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "600"
+    "wordCount": "682"
   }]
   </script>
 
@@ -176,6 +176,15 @@
   
     
     
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        }
+      };
+      </script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
   </head>
   <body
     class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32 scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
@@ -596,7 +605,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-11-11T10:50:08&#43;08:00">November 11, 2025</time><span class="px-2 text-primary-500">&middot;</span><span>600 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">3 分钟</span>
+      <time datetime="2025-11-11T10:50:08&#43;08:00">November 11, 2025</time><span class="px-2 text-primary-500">&middot;</span><span>682 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">4 分钟</span>
     
 
     
@@ -676,6 +685,17 @@
     </li>
     <li><a href="#攻击骰实际伤害期望">攻击骰实际伤害期望</a>
       <ul>
+        <li>
+          <ul>
+            <li>
+              <ul>
+                <li><a href="#1-均势">1. 均势</a></li>
+                <li><a href="#2-优势">2. 优势</a></li>
+                <li><a href="#3-劣势">3. 劣势</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
         <li><a href="#实际命中率">实际命中率</a>
           <ul>
             <li><a href="#攻击骰1d20计算优劣势-1">攻击骰1d20计算优劣势</a>
@@ -746,6 +766,17 @@
     </li>
     <li><a href="#攻击骰实际伤害期望">攻击骰实际伤害期望</a>
       <ul>
+        <li>
+          <ul>
+            <li>
+              <ul>
+                <li><a href="#1-均势">1. 均势</a></li>
+                <li><a href="#2-优势">2. 优势</a></li>
+                <li><a href="#3-劣势">3. 劣势</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
         <li><a href="#实际命中率">实际命中率</a>
           <ul>
             <li><a href="#攻击骰1d20计算优劣势-1">攻击骰1d20计算优劣势</a>
@@ -1232,12 +1263,74 @@
 实际命中率 = (重击命中率 * 2 + 非重击命中率)<br>
 = P<sub>h</sub> * 2 + P<sub>n</sub><br>
 = ∑<sub>k=20-重击减值</sub><sup>20</sup>P<sub>k</sub> * 2 + ∑<sub>k=(Ac-Bonus)</sub><sup>20-重击减值-1</sup>P<sub>k</sub><br>
+= n/2()<br>
 ，P<sub>k</sub> =</p>
 <ol>
 <li>均势: P<sub>k</sub> = 1/20</li>
 <li>优势: P<sub>(max=k)</sub> = (2k-1)/400</li>
 <li>劣势: P<sub>(min=k)</sub> = (41-2k)/400</li>
 </ol>
+<p>四元函数形式，公式基于投骰方式（均势、优势、劣势）和参数：</p>
+<ul>
+<li>非重击命中伤害期望 (D_p)</li>
+<li>敌方护甲 AC</li>
+<li>攻击加值 Bonus</li>
+<li>重击减值 C</li>
+</ul>
+<p>其中，令 (B = AC - Bonus)，表示命中所需的最小骰子值（调整前）。</p>
+<p><em><strong>简化后的伤害期望公式</strong></em><br>
+公式假设 (B) 在 1 到 20 之间，如果 (B &lt; 1)，则设 (B = 1)。</p>
+
+<h4 class="relative group">1. 均势 
+    <div id="1-均势" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e5%9d%87%e5%8a%bf" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<div class="math-block">
+    \[
+    
+\text{Dmg} = D_p \times \frac{2(C+1) + \max(20-C-B, 0)}{20}
+
+    \]
+</div>
+
+<h4 class="relative group">2. 优势 
+    <div id="2-优势" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e4%bc%98%e5%8a%bf" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<div class="math-block">
+    \[
+    
+\text{Dmg} = D_p \times \frac{2(1+C)(39-C) + \max(20-C-B, 0) \times (B + 18 - C)}{400}
+
+    \]
+</div>
+
+<h4 class="relative group">3. 劣势 
+    <div id="3-劣势" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#3-%e5%8a%a3%e5%8a%bf" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<div class="math-block">
+    \[
+    
+\text{Dmg} = D_p \times \frac{2(1+C)^2 + \max(20-C-B, 0) \times (22 - B + C)}{400}
+
+    \]
+</div>
 
 <h2 class="relative group">实际命中率 
     <div id="实际命中率" class="anchor"></div>
@@ -1282,6 +1375,9 @@
 <li>优势: P<sub>(max=k)</sub> = (2k-1)/400</li>
 <li>劣势: P<sub>(min=k)</sub> = (41-2k)/400</li>
 </ol>
+<p>重击命中率P<sub>h</sub> = ∑<sub>k=20-重击减值</sub><sup>20</sup>P<sub>k</sub><br>
+大失败率P<sub>f</sub> = P<sub>k=1</sub><br>
+非重击命中率P<sub>n</sub> = ∑<sub>k=(Ac-Bonus)</sub><sup>20-重击减值-1</sup>P<sub>k</sub></p>
 
 <h5 class="relative group">1. 优势概率表 
     <div id="1-优势概率表" class="anchor"></div>
@@ -1521,21 +1617,6 @@
           <td>20</td>
           <td>1/400</td>
           <td>0.0025</td>
-      </tr>
-      <tr>
-          <td>重击命中率P<sub>h</sub> = ∑<sub>k=20-重击减值</sub><sup>20</sup>P<sub>k</sub></td>
-          <td></td>
-          <td></td>
-      </tr>
-      <tr>
-          <td>大失败率P<sub>f</sub> = P<sub>k=1</sub></td>
-          <td></td>
-          <td></td>
-      </tr>
-      <tr>
-          <td>非重击命中率P<sub>n</sub> = ∑<sub>k=(Ac-Bonus)</sub><sup>20-重击减值-1</sup>P<sub>k</sub></td>
-          <td></td>
-          <td></td>
       </tr>
   </tbody>
 </table>

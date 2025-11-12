@@ -66,3 +66,21 @@ pre.chroma.collapsed{
     padding: 0 15px;   
   }
 } */
+.math-block {
+  text-align: center;
+  margin: 1.5em 0;
+  padding: 1em;
+  overflow-x: auto;
+}
+
+.math-inline {
+  font-style: italic;
+}
+
+/* 确保数学公式在移动设备上可读 */
+@media (max-width: 768px) {
+  .math-block {
+      font-size: 0.9em;
+      padding: 0.5em;
+  }
+}
