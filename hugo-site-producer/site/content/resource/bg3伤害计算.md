@@ -62,15 +62,11 @@ k∈[1,20]
 1. 装备加值
 
 ### 攻击骰实际伤害期望
-实际伤害期望 = 非重击命中伤害期望D<sub>p</sub> * (重击命中率P<sub>h</sub> * 2 + 非重击命中率P<sub>n</sub>)
+实际伤害期望D<sub>exp</sub> = 非重击命中伤害期望D<sub>p</sub> * (重击命中率P<sub>h</sub> * 2 + 非重击命中率P<sub>n</sub>)
 实际命中率 = (重击命中率 * 2 + 非重击命中率)
  = P<sub>h</sub> * 2 + P<sub>n</sub>
  = ∑<sub>k=20-重击减值</sub><sup>20</sup>P<sub>k</sub> * 2 + ∑<sub>k=(Ac-Bonus)</sub><sup>20-重击减值-1</sup>P<sub>k</sub>
-，P<sub>k</sub> = 
-1. 均势: P<sub>k</sub> = 1/20
-1. 优势: P<sub>(max=k)</sub> = (2k-1)/400
-1. 劣势: P<sub>(min=k)</sub> = (41-2k)/400
-
+ 
 四元函数形式，公式基于投骰方式（均势、优势、劣势）和参数：
 - 非重击命中伤害期望 \(D_p\)
 - 敌方护甲 AC
@@ -84,16 +80,16 @@ k∈[1,20]
 
 #### 1. 均势
 {{< math type="block" >}}
-\text{Dmg} = D_p \times \frac{2(C+1) + \max(20-C-B, 0)}{20}
+D_{exp} = D_p \times \frac{2(C+1) + \max(20-C-B, 0)}{20}
 {{< /math >}}
 #### 2. 优势
 {{< math type="block" >}}
-\text{Dmg} = D_p \times \frac{2(1+C)(39-C) + \max(20-C-B, 0) \times (B + 18 - C)}{400}
+D_{exp} = D_p \times \frac{2(1+C)(39-C) + \max(20-C-B, 0) \times (B + 18 - C)}{400}
 {{< /math >}}
 
 #### 3. 劣势
 {{< math type="block" >}}
-\text{Dmg} = D_p \times \frac{2(1+C)^2 + \max(20-C-B, 0) \times (22 - B + C)}{400}
+D_{exp} = D_p \times \frac{2(1+C)^2 + \max(20-C-B, 0) \times (22 - B + C)}{400}
 {{< /math >}}
 
 ## 豁免骰
