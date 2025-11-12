@@ -211,4 +211,11 @@ D_{exp} = D_p \times \frac{2(1+C)(39-C) + \max(20-C-B, 0) \times (B + 18 - C)}{4
 D_{exp} = D_p \times \frac{2(1+C)^2 + \max(20-C-B, 0) \times (22 - B + C)}{400}
 {{< /math >}}
 实际命中率相同，非重击预期伤害不同
+### 凶蛮打手伤害骰计算
+参数：
+- 骰子面数d
+{{< math type="block" >}}
+E_{\text{max}} = \frac{(d+1)(4d-1)}{6d}
+{{< /math >}}
+
 ### 无凶蛮打手

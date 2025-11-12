@@ -4,9 +4,11 @@ import matplotlib.pyplot as plt
 plt.rcParams['font.sans-serif'] = ['AR PL UMing CN']  # 指定默认字体为黑体[citation:4][citation:6]
 plt.rcParams['axes.unicode_minus'] = False   # 解决坐标轴负号显示为方块的问题[citation:4][citation:6]
 from mpl_toolkits.mplot3d import Axes3D
+import argparse
 
 # 修改导入函数脚本
-from juwuqidashi import f1, f2
+# from juwuqidashi import f1, f2, coord_info
+from xiongmandashou import f1, f2, coord_info
 
 tolerance = 0.5  # 容忍度，可以根据需要调整
 # 定义你的方程 f1(a,b) 和 f2(a,b)
@@ -57,8 +59,8 @@ for i, a in enumerate(a_vals):
         row += f"{increase:>7.1f}%({F1[i, j]:.1f}->{F2[i, j]:.1f})"
     print(row)
 
-print("\n说明：正值表示f2 > f1（开启巨武器大师更优）")
-print("      负值表示f2 < f1（关闭巨武器大师更优）")
+print(f"\n说明：正值表示f2 > f1（开启{coord_info['title']}更优）")
+print(f"      负值表示f2 < f1（关闭{coord_info['title']}更优）")
 print("=" * 80)
 print()
 
@@ -101,8 +103,8 @@ ax1 = fig.add_subplot(131, projection='3d')
 surf1 = ax1.plot_surface(A, B, F1, cmap='viridis', alpha=0.8)
 ax1.set_xlabel('重击减值')
 ax1.set_ylabel('实际护甲Ac-Bonus')
-ax1.set_zlabel('关巨武器大师')
-ax1.set_title('关巨武器大师 3D')
+ax1.set_zlabel(f"关{coord_info['title']}")
+ax1.set_title(f"关{coord_info['title']} 3D")
 fig.colorbar(surf1, ax=ax1, shrink=0.5, label='f1值')
 
 # 子图2: f2(a,b) 的3D曲面
@@ -110,8 +112,8 @@ ax2 = fig.add_subplot(132, projection='3d')
 surf2 = ax2.plot_surface(A, B, F2, cmap='plasma', alpha=0.8)
 ax2.set_xlabel('重击减值')
 ax2.set_ylabel('实际护甲Ac-Bonus')
-ax2.set_zlabel('开巨武器大师')
-ax2.set_title('开巨武器大师 3D')
+ax2.set_zlabel(f"开{coord_info['title']}")
+ax2.set_title(f"开{coord_info['title']} 3D")
 fig.colorbar(surf2, ax=ax2, shrink=0.5, label='f2值')
 
 # 子图3: 两个曲面和相交线
