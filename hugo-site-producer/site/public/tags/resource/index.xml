@@ -25,15 +25,27 @@
     
 &lt;/h1&gt;
 
-&lt;h2 class=&#34;relative group&#34;&gt;命中率 
-    &lt;div id=&#34;命中率&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+&lt;h2 class=&#34;relative group&#34;&gt;攻击骰 
+    &lt;div id=&#34;攻击骰&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
     &lt;span
         class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
-        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#%e5%91%bd%e4%b8%ad%e7%8e%87&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#%e6%94%bb%e5%87%bb%e9%aa%b0&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
     &lt;/span&gt;        
     
 &lt;/h2&gt;
+
+&lt;h3 class=&#34;relative group&#34;&gt;非重击命中伤害期望 
+    &lt;div id=&#34;非重击命中伤害期望&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#%e9%9d%9e%e9%87%8d%e5%87%bb%e5%91%bd%e4%b8%ad%e4%bc%a4%e5%ae%b3%e6%9c%9f%e6%9c%9b&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;        
+    
+&lt;/h3&gt;
+&lt;p&gt;伤害公式 = 伤害骰数量n * 伤害骰面数d + 伤害加值Bonus_damage(Bd)&lt;br&gt;
+伤害期望D&lt;sub&gt;p&lt;/sub&gt; = n * (1+d)/2 + Bd&lt;/p&gt;
 
 &lt;h3 class=&#34;relative group&#34;&gt;攻击骰1d20计算优劣势 
     &lt;div id=&#34;攻击骰1d20计算优劣势&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
@@ -47,304 +59,20 @@
 &lt;ol&gt;
 &lt;li&gt;掷20-(重击减值)：必定命中且重击&lt;/li&gt;
 &lt;li&gt;掷1：严重失误，必定未命中&lt;/li&gt;
-&lt;li&gt;掷2~(20-重击减值)：假设攻击骰掷x(2 &amp;lt;= x &amp;lt;= 20-重击减值-1)&lt;br&gt;
+&lt;li&gt;掷2~(20-重击减值-1)：假设攻击骰掷x(2 &amp;lt;= x &amp;lt;= 20-重击减值-1)&lt;br&gt;
 命中条件：x + 攻击加值 &amp;gt;= 敌方护甲AC&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h4 class=&#34;relative group&#34;&gt;攻击加值 
-    &lt;div id=&#34;攻击加值&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+&lt;h4 class=&#34;relative group&#34;&gt;D20掷骰结果为k的概率P&lt;sub&gt;k&lt;/sub&gt; 
+    &lt;div id=&#34;d20掷骰结果为k的概率pk&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
     &lt;span
         class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
-        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#%e6%94%bb%e5%87%bb%e5%8a%a0%e5%80%bc&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#d20%e6%8e%b7%e9%aa%b0%e7%bb%93%e6%9e%9c%e4%b8%bak%e7%9a%84%e6%a6%82%e7%8e%87pk&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
     &lt;/span&gt;        
     
 &lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;攻击属性调整值：
-&lt;ol&gt;
-&lt;li&gt;近战：
-&lt;ol&gt;
-&lt;li&gt;非灵巧武器 &amp;amp; 灵巧武器但是力量&amp;gt;敏捷
-&lt;ol&gt;
-&lt;li&gt;使用力调&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;灵巧武器且敏捷&amp;gt;力量
-&lt;ol&gt;
-&lt;li&gt;使用敏调&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;远程：
-&lt;ol&gt;
-&lt;li&gt;使用敏调&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;攻击骰法术：
-&lt;ol&gt;
-&lt;li&gt;使用施法主属性调整值&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;对应攻击属性熟练项加值（固定存在，总等级1~4级+2，5~8级+3，9~12级+4）&lt;/li&gt;
-&lt;li&gt;增益buff:
-&lt;ol&gt;
-&lt;li&gt;祝福术1d4&lt;/li&gt;
-&lt;li&gt;高地&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;装备加值&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 class=&#34;relative group&#34;&gt;豁免骰 
-    &lt;div id=&#34;豁免骰&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
-        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#%e8%b1%81%e5%85%8d%e9%aa%b0&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;        
-    
-&lt;/h3&gt;
-
-&lt;h4 class=&#34;relative group&#34;&gt;豁免检定骰1d20计算优劣势 
-    &lt;div id=&#34;豁免检定骰1d20计算优劣势&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
-        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#%e8%b1%81%e5%85%8d%e6%a3%80%e5%ae%9a%e9%aa%b01d20%e8%ae%a1%e7%ae%97%e4%bc%98%e5%8a%a3%e5%8a%bf&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;        
-    
-&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;掷20：必定豁免成功&lt;/li&gt;
-&lt;li&gt;掷1：必定豁免失败&lt;/li&gt;
-&lt;li&gt;掷2~19：假设豁免检定骰掷x
-&lt;ol&gt;
-&lt;li&gt;豁免AC = x + 法术豁免属性 + 豁免属性熟练项加值（0-没有熟练项 或者 总等级1~4级+2，5~8级+3，9~12级+4-拥有熟练项） + 装备豁免检定AC加值&lt;/li&gt;
-&lt;li&gt;豁免失败条件：豁免DC &amp;gt;= 豁免AC&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 class=&#34;relative group&#34;&gt;豁免DC 
-    &lt;div id=&#34;豁免dc&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
-        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#%e8%b1%81%e5%85%8ddc&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;        
-    
-&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;非固定豁免DC&lt;br&gt;
-豁免DC = 8 + 施法属性调整值 + 施法属性熟练项加值（固定存在，总等级1~4级+2，5~8级+3，9~12级+4） + 装备法术豁免等级DC加值&lt;/li&gt;
-&lt;li&gt;固定豁免DC：&lt;a
-  href=&#34;http://localhost:43997/nayun.github.io/resource/bg3%e4%bc%a4%e5%ae%b3%e8%ae%a1%e7%ae%97/#%e5%8d%b7%e8%bd%b4%e8%b1%81%e5%85%8ddc%e6%94%bb%e5%87%bb%e5%8a%a0%e5%80%bc&#34;&gt;捏豁免法术卷轴&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 class=&#34;relative group&#34;&gt;开卡职业豁免属性（属性豁免带熟练项加值） 
-    &lt;div id=&#34;开卡职业豁免属性属性豁免带熟练项加值&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
-        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#%e5%bc%80%e5%8d%a1%e8%81%8c%e4%b8%9a%e8%b1%81%e5%85%8d%e5%b1%9e%e6%80%a7%e5%b1%9e%e6%80%a7%e8%b1%81%e5%85%8d%e5%b8%a6%e7%86%9f%e7%bb%83%e9%a1%b9%e5%8a%a0%e5%80%bc&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;        
-    
-&lt;/h4&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;开卡职业&lt;/th&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;力量&lt;/th&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;敏捷&lt;/th&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;体质&lt;/th&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;智力&lt;/th&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;感知&lt;/th&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;魅力&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;战士&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;√&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;√&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;野蛮人&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;√&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;√&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;游侠&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;√&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;√&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;武僧&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;√&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;√&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;游荡者&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;√&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;√&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;吟游诗人&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;√&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;√&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;圣武士&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;√&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;√&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;邪术师&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;√&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;√&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;牧师&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;√&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;√&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;术士&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;√&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;√&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;德鲁伊&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;√&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;√&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;法师&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;√&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;√&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h3 class=&#34;relative group&#34;&gt;卷轴豁免DC/攻击加值 
-    &lt;div id=&#34;卷轴豁免dc攻击加值&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
-        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#%e5%8d%b7%e8%bd%b4%e8%b1%81%e5%85%8ddc%e6%94%bb%e5%87%bb%e5%8a%a0%e5%80%bc&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;        
-    
-&lt;/h3&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;法术环阶&lt;/th&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;豁免DC&lt;/th&gt;
-          &lt;th style=&#34;text-align: center&#34;&gt;攻击加值&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;戏法&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;13&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;+5&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;1环&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;13&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;+5&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;2环&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;13&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;+5&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;3环&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;15&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;+7&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;4环&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;15&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;+7&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;5环&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;17&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;+9&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;6环&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;17&lt;/td&gt;
-          &lt;td style=&#34;text-align: center&#34;&gt;+9&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h1 class=&#34;relative group&#34;&gt;豁免骰实际伤害期望 
-    &lt;div id=&#34;豁免骰实际伤害期望&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
-        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#%e8%b1%81%e5%85%8d%e9%aa%b0%e5%ae%9e%e9%99%85%e4%bc%a4%e5%ae%b3%e6%9c%9f%e6%9c%9b&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;        
-    
-&lt;/h1&gt;
-&lt;p&gt;豁免成功率 * 豁免成功伤害期望 + 豁免失败率 * 豁免失败伤害期望&lt;/p&gt;</description>
+&lt;p&gt;k∈[1,20]&lt;/p&gt;</description>
       
     </item>
     
