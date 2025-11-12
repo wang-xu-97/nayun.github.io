@@ -18,7 +18,8 @@ xncde = xmds_non_crit_dice_expectation
 
 D_p_normal = nncde(dice_d)
 D_p_xmds = xncde(dice_d)
-
+print(D_p_normal)
+print(D_p_xmds)
 def f1(C, B):
     """无凶蛮打手"""
     # return a**2 + b**2
@@ -30,7 +31,7 @@ def f1(C, B):
 def f2(C, B):
     """有凶蛮打手"""
     # return a * b
-    t = np.maximum(20-C-B-5, 0)
+    t = np.maximum(20-C-B, 0)
     hit_chance_special = (2 * (C + 1) + t) / 20
     hit_chance = ((C + 1) + t) / 20
     return D_p_xmds * hit_chance_special + 3 * hit_chance
