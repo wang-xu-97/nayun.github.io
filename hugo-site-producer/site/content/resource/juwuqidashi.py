@@ -6,8 +6,8 @@ plt.rcParams['axes.unicode_minus'] = False   # 解决坐标轴负号显示为方
 from mpl_toolkits.mplot3d import Axes3D
 
 tolerance = 0.5  # 容忍度，可以根据需要调整
-D_p_normal = 9.5
-D_p_special = 10
+D_p_normal = 9.5 # 可重击非重击伤害期望
+D_p_special = 10 # 不可重击期望
 # 定义你的方程 f1(a,b) 和 f2(a,b)
 # 请根据你的具体方程修改这些函数
 def f1(C, B):
