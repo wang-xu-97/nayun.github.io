@@ -21,7 +21,7 @@ def f2(C, B):
     # return a * b
     t = np.maximum(20-C-B-5, 0)
     numerator = 2 * (C + 1) + t
-    return (D_p+10) * numerator / 20
+    return (D_p) * numerator / 20 + 10
 
 # 参数范围
 min_val, max_val = 0, 20
@@ -140,7 +140,7 @@ if intersection_points:
         points = a_groups[a_val]
         print(f"重击减值 = {a_val}:")
         for point in points:
-            print(f"  实际护甲 = {point['实际护甲Ac-Bonus']}, 关期望 = {point['f1']:.2f}, 开期望 = {point['f2']:.2f}, 差值 = {point['diff']:.4f}")
+            print(f"  实际护甲 = {point['实际护甲Ac-Bonus']}, 关期望 = {point['f1']:.2f}, 开期望 = {point['f2']:.2f}, 差值 = {point['diff']:.4f}, 显示命中率 = {(21-point['实际护甲Ac-Bonus'])/20:.2f}")
         print()
     
     # 统计信息
