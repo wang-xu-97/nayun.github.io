@@ -27,6 +27,7 @@ k∈[1,20]
 重击命中率P<sub>h</sub> = ∑<sub>k=20-重击减值</sub><sup>20</sup>P<sub>k</sub>
 大失败率P<sub>f</sub> = P<sub>k=1</sub>
 非重击命中率P<sub>n</sub> = ∑<sub>k=(Ac-Bonus)</sub><sup>20-重击减值-1</sup>P<sub>k</sub>
+显示命中率P<sub>show</sub> = ∑<sub>k=B=(Ac-Bonus)</sub><sup>20</sup>P<sub>k</sub>
 
 ##### 优劣势骰概率表
 | 值 \( k \) | 优势概率（分数） | 优势概率（小数） | 劣势概率（分数） | 劣势概率（小数） |
@@ -62,7 +63,8 @@ k∈[1,20]
 1. 装备加值
 
 ### 攻击骰实际伤害期望
-实际伤害期望D<sub>exp</sub> = 非重击命中伤害期望D<sub>p</sub> * (重击命中率P<sub>h</sub> * 2 + 非重击命中率P<sub>n</sub>)
+#### 无不可重击伤害期望
+D<sub>exp</sub> = 非重击命中伤害期望D<sub>p</sub> * (重击命中率P<sub>h</sub> * 2 + 非重击命中率P<sub>n</sub>)
 实际命中率 = (重击命中率 * 2 + 非重击命中率)
  = P<sub>h</sub> * 2 + P<sub>n</sub>
  = ∑<sub>k=20-重击减值</sub><sup>20</sup>P<sub>k</sub> * 2 + ∑<sub>k=(Ac-Bonus)</sub><sup>20-重击减值-1</sup>P<sub>k</sub>
@@ -78,18 +80,35 @@ k∈[1,20]
 ***简化后的伤害期望公式***
 公式假设 \(B\) 在 1 到 20 之间，如果 \(B < 1\)，则设 \(B = 1\)。
 
-#### 1. 均势
+- 均势
 {{< math type="block" >}}
 D_{exp} = D_p \times \frac{2(C+1) + \max(20-C-B, 0)}{20}
 {{< /math >}}
-#### 2. 优势
+- 优势
 {{< math type="block" >}}
 D_{exp} = D_p \times \frac{2(1+C)(39-C) + \max(20-C-B, 0) \times (B + 18 - C)}{400}
 {{< /math >}}
 
-#### 3. 劣势
+- 劣势
 {{< math type="block" >}}
 D_{exp} = D_p \times \frac{2(1+C)^2 + \max(20-C-B, 0) \times (22 - B + C)}{400}
+{{< /math >}}
+
+#### 有不可重击伤害期望
+D<sub>exp</sub> = 可重击的非重击伤害期望D<sub>p_normal</sub> * (P<sub>h</sub> * 2 + P<sub>n</sub>) + 不可重击伤害期望D<sub>p_special</sub> * (P<sub>h</sub>  + P<sub>n</sub>)
+
+- 均势
+{{< math type="block" >}}
+D_{exp} = D_{p\_normal} \times \frac{2(C+1) + \max(20-C-B, 0)}{20} + D_{p\_special} \times \frac{(C+1) + \max(20-C-B, 0)}{20}
+{{< /math >}}
+- 优势
+{{< math type="block" >}}
+D_{exp} = D_{p\_normal} \times \frac{2(1+C)(39-C) + \max(20-C-B, 0) \times (B + 18 - C)}{400} + D_{p\_special} \times \frac{(1+C)(39-C) + \max(20-C-B, 0) \times (B + 18 - C)}{400}
+{{< /math >}}
+
+- 劣势
+{{< math type="block" >}}
+D_{exp} = D_{p\_normal} \times \frac{2(1+C)^2 + \max(20-C-B, 0) \times (22 - B + C)}{400} + D_{p\_special} \times \frac{(1+C)^2 + \max(20-C-B, 0) \times (22 - B + C)}{400}
 {{< /math >}}
 
 ## 豁免骰
@@ -147,7 +166,7 @@ D20掷骰结果为k的概率P<sub>k</sub>, k∈[1,20]
 
 ## 巨武器大师
 攻击减值 = 5
-伤害加值 = 10
+不能重击的伤害加值 = 10
 ### 关闭巨武器大师
 1. 均势
 {{< math type="block" >}}
@@ -177,3 +196,18 @@ D_{exp} = D_{p2} \times \frac{2(1+C)(39-C) + \max(20-C-B_2, 0) \times (B_2 + 18 
 D_{exp} = D_{p2} \times \frac{2(1+C)^2 + \max(20-C-B_2, 0) \times (22 - B_2 + C)}{400}
 {{< /math >}}
 
+## 凶蛮打手
+1. 均势
+{{< math type="block" >}}
+D_{exp} = D_p \times \frac{2(C+1) + \max(20-C-B, 0)}{20}
+{{< /math >}}
+2. 优势
+{{< math type="block" >}}
+D_{exp} = D_p \times \frac{2(1+C)(39-C) + \max(20-C-B, 0) \times (B + 18 - C)}{400}
+{{< /math >}}
+3. 劣势
+{{< math type="block" >}}
+D_{exp} = D_p \times \frac{2(1+C)^2 + \max(20-C-B, 0) \times (22 - B + C)}{400}
+{{< /math >}}
+实际命中率相同，非重击预期伤害不同
+### 无凶蛮打手
