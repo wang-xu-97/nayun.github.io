@@ -12,7 +12,7 @@ showTableOfContents: true
 ### 攻击骰1d20计算优劣势
 1. 掷20-(重击减值)：必定命中且重击
 1. 掷1：严重失误，必定未命中
-1. 掷2\~(20-重击减值)：假设攻击骰掷x(2 <= x <= 20-重击减值-1)
+1. 掷2\~(20-重击减值-1)：假设攻击骰掷x(2 <= x <= 20-重击减值-1)
 命中条件：x + 攻击加值 >= 敌方护甲AC
 #### 攻击加值
 1. 攻击属性调整值：
@@ -79,7 +79,6 @@ showTableOfContents: true
 实际命中率 = (重击命中率 * 2 + 非重击命中率)
  = P<sub>h</sub> * 2 + P<sub>n</sub>
  = ∑<sub>k=20-重击减值</sub><sup>20</sup>P<sub>k</sub> * 2 + ∑<sub>k=(Ac-Bonus)</sub><sup>20-重击减值-1</sup>P<sub>k</sub>
- = n/2()
 ，P<sub>k</sub> = 
 1. 均势: P<sub>k</sub> = 1/20
 1. 优势: P<sub>(max=k)</sub> = (2k-1)/400
