@@ -6,22 +6,24 @@ plt.rcParams['axes.unicode_minus'] = False   # 解决坐标轴负号显示为方
 from mpl_toolkits.mplot3d import Axes3D
 
 tolerance = 0.5  # 容忍度，可以根据需要调整
-D_p = 9.5
+D_p_normal = 9.5
+D_p_special = 10
 # 定义你的方程 f1(a,b) 和 f2(a,b)
 # 请根据你的具体方程修改这些函数
 def f1(C, B):
     """示例方程1，请替换为你的实际方程"""
     # return a**2 + b**2
     t = np.maximum(20-C-B, 0)
-    numerator = 2 * (C + 1) + t
-    return D_p * numerator / 20
+    hit_chance_normal = (2 * (C + 1) + t) / 20
+    return D_p_normal * hit_chance_normal
 
 def f2(C, B):
     """示例方程2，请替换为你的实际方程"""
     # return a * b
     t = np.maximum(20-C-B-5, 0)
-    numerator = 2 * (C + 1) + t
-    return (D_p) * numerator / 20 + 10
+    hit_chance_normal = (2 * (C + 1) + t) / 20
+    hit_chance_special = ((C + 1) + t) / 20
+    return D_p_normal * hit_chance_normal + D_p_special * hit_chance_special
 
 # 参数范围
 min_val, max_val = 0, 20
@@ -36,6 +38,43 @@ A, B = np.meshgrid(a_vals, b_vals, indexing='ij')
 # 计算方程值
 F1 = f1(A, B)
 F2 = f2(A, B)
+
+# ============================================================================
+# 新增：计算f2相对于f1的增幅百分比矩阵
+# ============================================================================
+percentage_increase = np.zeros_like(F1)
+for i in range(len(a_vals)):
+    for j in range(len(b_vals)):
+        if F1[i, j] != 0:  # 避免除以零
+            percentage_increase[i, j] = ((F2[i, j] - F1[i, j]) / F1[i, j]) * 100
+        else:
+            percentage_increase[i, j] = 0
+
+# 打印增幅百分比矩阵
+print("=" * 80)
+print("f2 相对于 f1 的离散增幅百分比矩阵")
+print("=" * 80)
+print("行: 重击减值 (0-5)")
+print("列: 实际护甲Ac-Bonus (5-15)")
+print()
+
+# 打印表头
+header = "重击减值\\护甲" + "".join([f"{b:>18}" for b in b_vals])
+print(header)
+print("-" * len(header))
+
+# 打印数据行
+for i, a in enumerate(a_vals):
+    row = f"{a:>11}  "
+    for j, b in enumerate(b_vals):
+        increase = percentage_increase[i, j]
+        row += f"{increase:>7.1f}%({F1[i, j]:.1f}->{F2[i, j]:.1f})"
+    print(row)
+
+print("\n说明：正值表示f2 > f1（开启巨武器大师更优）")
+print("      负值表示f2 < f1（关闭巨武器大师更优）")
+print("=" * 80)
+print()
 
 # 扁平化数组用于绘图
 a_flat = A.flatten()
