@@ -1,5 +1,12 @@
 import numpy as np
 
+coord_info = {
+    'title': '巨武器大师', 
+    'x': '重击减值', 
+    'y': '实际护甲Ac-Bonus', 
+    'z': '伤害期望'
+}
+
 D_p_normal = 6.5 # 可重击非重击伤害期望
 def f1(C, B):
     """关闭巨武器大师 均势伤害期望公式"""
