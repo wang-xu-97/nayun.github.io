@@ -20,7 +20,7 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;/span&gt;
 &lt;/h3&gt;
 &lt;p&gt;伤害公式 = 伤害骰数量n * 伤害骰面数d + 伤害加值Bonus_damage(Bd)&lt;br&gt;
-伤害期望Dp = n * (1+d)/2 + Bd&lt;/p&gt;
+伤害期望D&lt;sub&gt;p&lt;/sub&gt; = n * (1+d)/2 + Bd&lt;/p&gt;
 &lt;h3 class="relative group"&gt;攻击骰1d20计算优劣势
 &lt;div id="攻击骰1d20计算优劣势" class="anchor"&gt;&lt;/div&gt;
 &lt;span
