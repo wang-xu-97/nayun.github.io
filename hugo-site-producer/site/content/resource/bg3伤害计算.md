@@ -233,7 +233,7 @@ D20掷骰结果为k的概率P<sub>k</sub>, k∈[1,20]
 参数：
 - 骰子面数d
 {{< math type="block" >}}
-E_{\text{max}} = \frac{(d+1)(4d-1)}{6d}
+D_p = \frac{(d+1)(4d-1)}{6d}
 {{< /math >}}
 行: 重击减值 (0-5)
 列: 实际护甲Ac-Bonus (5-15)
