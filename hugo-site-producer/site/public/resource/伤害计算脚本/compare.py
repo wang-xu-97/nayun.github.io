@@ -4,12 +4,22 @@ import matplotlib.pyplot as plt
 plt.rcParams['font.sans-serif'] = ['AR PL UMing CN']  # 指定默认字体为黑体[citation:4][citation:6]
 plt.rcParams['axes.unicode_minus'] = False   # 解决坐标轴负号显示为方块的问题[citation:4][citation:6]
 from mpl_toolkits.mplot3d import Axes3D
+from tool import text_to_markdown_table
 import argparse
 
+def parse_args():
+    parser = argparse.ArgumentParser(description='测试.')
+    parser.add_argument('-f',                     default="jwqds",   choices=['jwqds', 'xmds', 'buff'],                  help='函数')
+    return parser.parse_args()
+
+args = parse_args()
 # 修改导入函数脚本
-# from juwuqidashi import f1, f2, coord_info
-from ExtBuff import f1, f2, coord_info
-# from xiongmandashou import f1, f2, coord_info
+if args.f == 'jwqds':
+    from juwuqidashi import f1, f2, coord_info
+elif args.f == 'xmds':
+    from xiongmandashou import f1, f2, coord_info
+elif args.f == 'buff':
+    from ExtBuff import f1, f2, coord_info
 
 tolerance = 0.5  # 容忍度，可以根据需要调整
 # 定义你的方程 f1(a,b) 和 f2(a,b)
@@ -49,17 +59,18 @@ print()
 
 # 打印表头
 header = "重击减值\\护甲" + "".join([f"{b:>18}" for b in b_vals])
-print(header)
-print("-" * len(header))
-
+# print(header)
+# print("-" * len(header))
+rows = f'{header}\n{"-" * len(header)}\n'
 # 打印数据行
 for i, a in enumerate(a_vals):
     row = f"{a:>11}  "
     for j, b in enumerate(b_vals):
         increase = percentage_increase[i, j]
         row += f"{increase:>7.1f}%({F1[i, j]:.1f}->{F2[i, j]:.1f})"
-    print(row)
-
+    # print(row)
+    rows += f'{row}\n'
+print(text_to_markdown_table(rows))
 print(f"\n说明：正值表示f2 > f1（开启{coord_info['title']}更优）")
 print(f"      负值表示f2 < f1（关闭{coord_info['title']}更优）")
 print("=" * 80)

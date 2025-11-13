@@ -1,5 +1,5 @@
 import numpy as np
-from tool import xncde, nncde
+from tool import *
 coord_info = {
     'title': '增伤buff', 
 }

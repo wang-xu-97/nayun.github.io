@@ -1,5 +1,5 @@
 import numpy as np
-from tool import xncde, nncde
+from tool import *
 coord_info = {
     'title': '凶蛮打手', 
     'x': '重击减值', 
@@ -21,7 +21,7 @@ def f1(C, B):
     t = np.maximum(20-C-B, 0)
     hit_chance_special = (2 * (C + 1) + t) / 20
     hit_chance = ((C + 1) + t) / 20
-    return D_p_normal_buffed * hit_chance_special + 3 * hit_chance
+    return D_p_normal * hit_chance_special + 3 * hit_chance
 
 def f2(C, B):
     """有凶蛮打手"""
