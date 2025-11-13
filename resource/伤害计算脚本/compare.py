@@ -177,7 +177,7 @@ if intersection_points:
     print("-" * 50)
     for a_val in sorted(a_groups.keys()):
         points = a_groups[a_val]
-        print(f"重击减值 = {a_val}:")
+        print(f"- 重击减值 = {a_val}:")
         for point in points:
             print(f"  实际护甲 = {point['实际护甲Ac-Bonus']}, 关期望 = {point['f1']:.2f}, 开期望 = {point['f2']:.2f}, 差值 = {point['diff']:.4f}, 显示命中率 = {(21-point['实际护甲Ac-Bonus'])/20:.2f}")
         print()
