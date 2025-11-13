@@ -18,6 +18,8 @@ xncde = xmds_non_crit_dice_expectation
 
 D_p_normal = nncde(dice_d)
 D_p_xmds = xncde(dice_d)
+D_p_normal_buffed = nncde(12) + nncde(4) + nncde(4) + nncde(6)
+D_p_xmds_buffed = xncde(12) + xncde(4) + xncde(4) + xncde(6)
 print(D_p_normal)
 print(D_p_xmds)
 def f1(C, B):
@@ -26,7 +28,7 @@ def f1(C, B):
     t = np.maximum(20-C-B, 0)
     hit_chance_special = (2 * (C + 1) + t) / 20
     hit_chance = ((C + 1) + t) / 20
-    return D_p_normal * hit_chance_special + 3 * hit_chance
+    return D_p_normal_buffed * hit_chance_special + 3 * hit_chance
 
 def f2(C, B):
     """有凶蛮打手"""
@@ -34,4 +36,4 @@ def f2(C, B):
     t = np.maximum(20-C-B, 0)
     hit_chance_special = (2 * (C + 1) + t) / 20
     hit_chance = ((C + 1) + t) / 20
-    return D_p_xmds * hit_chance_special + 3 * hit_chance
+    return D_p_xmds_buffed * hit_chance_special + 3 * hit_chance

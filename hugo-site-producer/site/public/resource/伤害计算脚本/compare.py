@@ -7,8 +7,8 @@ from mpl_toolkits.mplot3d import Axes3D
 import argparse
 
 # 修改导入函数脚本
-from juwuqidashi import f1, f2, coord_info
-# from xiongmandashou import f1, f2, coord_info
+# from juwuqidashi import f1, f2, coord_info
+from xiongmandashou import f1, f2, coord_info
 
 tolerance = 0.5  # 容忍度，可以根据需要调整
 # 定义你的方程 f1(a,b) 和 f2(a,b)
@@ -56,7 +56,7 @@ for i, a in enumerate(a_vals):
     row = f"{a:>11}  "
     for j, b in enumerate(b_vals):
         increase = percentage_increase[i, j]
-        row += f"{increase:>7.1f}%({F1[i, j]:.1f}->{F2[i, j]:.1f})"
+        row += f"{increase:>7.1f}%({F1[i, j]:.2f}->{F2[i, j]:.2f})"
     print(row)
 
 print(f"\n说明：正值表示f2 > f1（开启{coord_info['title']}更优）")
