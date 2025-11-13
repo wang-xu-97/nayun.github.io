@@ -121,7 +121,7 @@
     "keywords": ["resource"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1948"
+    "wordCount": "1962"
   }]
   </script>
 
@@ -601,7 +601,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-11-11T10:50:08&#43;08:00">November 11, 2025</time><span class="px-2 text-primary-500">&middot;</span><span>1948 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">10 分钟</span>
+      <time datetime="2025-11-11T10:50:08&#43;08:00">November 11, 2025</time><span class="px-2 text-primary-500">&middot;</span><span>1962 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">10 分钟</span>
     
 
     
@@ -685,11 +685,8 @@
               </ul>
             </li>
             <li><a href="#开卡职业豁免属性">开卡职业豁免属性</a></li>
-          </ul>
-        </li>
-        <li><a href="#豁免骰实际伤害期望">豁免骰实际伤害期望</a>
-          <ul>
             <li><a href="#豁免成功率">豁免成功率</a></li>
+            <li><a href="#豁免骰实际伤害期望">豁免骰实际伤害期望</a></li>
           </ul>
         </li>
         <li><a href="#卷轴固定豁免dc攻击加值表">卷轴固定豁免DC、攻击加值表</a></li>
@@ -776,11 +773,8 @@
               </ul>
             </li>
             <li><a href="#开卡职业豁免属性">开卡职业豁免属性</a></li>
-          </ul>
-        </li>
-        <li><a href="#豁免骰实际伤害期望">豁免骰实际伤害期望</a>
-          <ul>
             <li><a href="#豁免成功率">豁免成功率</a></li>
+            <li><a href="#豁免骰实际伤害期望">豁免骰实际伤害期望</a></li>
           </ul>
         </li>
         <li><a href="#卷轴固定豁免dc攻击加值表">卷轴固定豁免DC、攻击加值表</a></li>
@@ -1492,17 +1486,6 @@ D_{exp} = D_{p\_normal} \times \frac{2(1+C)^2 + \max(20-C-B, 0) \times (22 - B +
   </tbody>
 </table>
 
-<h2 class="relative group">豁免骰实际伤害期望 
-    <div id="豁免骰实际伤害期望" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e8%b1%81%e5%85%8d%e9%aa%b0%e5%ae%9e%e9%99%85%e4%bc%a4%e5%ae%b3%e6%9c%9f%e6%9c%9b" aria-label="锚点">#</a>
-    </span>        
-    
-</h2>
-<p>豁免成功率 * 豁免成功伤害期望 + 豁免失败率 * 豁免失败伤害期望</p>
-
 <h3 class="relative group">豁免成功率 
     <div id="豁免成功率" class="anchor"></div>
     
@@ -1555,6 +1538,24 @@ P_{save\_success} &= \frac{\sum_{k=B}^{20} (-2k + 41)}{400}\\
     \]
 </div></li>
 </ul>
+
+<h3 class="relative group">豁免骰实际伤害期望 
+    <div id="豁免骰实际伤害期望" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e8%b1%81%e5%85%8d%e9%aa%b0%e5%ae%9e%e9%99%85%e4%bc%a4%e5%ae%b3%e6%9c%9f%e6%9c%9b" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>豁免成功率 * 豁免成功伤害期望 + 豁免失败率 * 豁免失败伤害期望<br>
+<div class="math-block">
+    \[
+    
+D_{exp} = P_{save\_sucess} * D_{exp\_save_sucess} + (1 - P_{save\_sucess}) * D_{exp\_save_fail} + 
+
+    \]
+</div></p>
 
 <h2 class="relative group">卷轴固定豁免DC、攻击加值表 
     <div id="卷轴固定豁免dc攻击加值表" class="anchor"></div>

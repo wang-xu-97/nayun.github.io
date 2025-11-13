@@ -150,8 +150,6 @@ D_{exp} = D_{p\_normal} \times \frac{2(1+C)^2 + \max(20-C-B, 0) \times (22 - B +
 |德鲁伊| | | |√|√| |
 |法师| | | |√|√| |
 
-## 豁免骰实际伤害期望
-豁免成功率 * 豁免成功伤害期望 + 豁免失败率 * 豁免失败伤害期望
 ### 豁免成功率
 豁免成功率{{< math type="inline" >}}P_{save\_success} = \sum_{k=(DC - \mathrm{Bonus}\_{save})}^{20} P_k{{< /math >}}
 令实际豁免难度等级{{< math type="inline" >}}B = DC-Bonus\_save{{< /math >}}，B∈[0, 20]
@@ -178,6 +176,13 @@ P_{save\_success} &= \frac{\sum_{k=B}^{20} (-2k + 41)}{400}\\
 
 \end{align}
 {{< /math >}}
+
+### 豁免骰实际伤害期望
+豁免成功率 * 豁免成功伤害期望 + 豁免失败率 * 豁免失败伤害期望
+{{< math type="block" >}}
+D_{exp} = P_{save\_sucess} * D_{exp\_save_sucess} + (1 - P_{save\_sucess}) * D_{exp\_save_fail} + 
+{{< /math >}}
+
 ## 卷轴固定豁免DC、攻击加值表
 | 法术环阶 | 豁免DC | 攻击加值 |
 | :--- | :---: | :---: |
