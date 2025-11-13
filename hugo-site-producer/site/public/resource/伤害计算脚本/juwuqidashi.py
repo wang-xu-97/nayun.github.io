@@ -10,6 +10,8 @@ coord_info = {
 
 D_p_normal = nncde(12)
 D_p_normal_buffed = nncde(12) + nncde(4) + nncde(4) + nncde(6)
+print(D_p_normal)
+print(D_p_normal_buffed)
 def f1(C, B):
     """关闭巨武器大师 均势伤害期望公式"""
     # return a**2 + b**2
