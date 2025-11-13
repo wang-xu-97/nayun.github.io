@@ -1,4 +1,5 @@
 import numpy as np
+from tool import xncde, nncde
 
 coord_info = {
     'title': '巨武器大师', 
@@ -7,7 +8,8 @@ coord_info = {
     'z': '伤害期望'
 }
 
-D_p_normal = 6.5 # 可重击非重击伤害期望
+D_p_normal = nncde(12)
+D_p_normal_buffed = nncde(12) + nncde(4) + nncde(4) + nncde(6)
 def f1(C, B):
     """关闭巨武器大师 均势伤害期望公式"""
     # return a**2 + b**2
@@ -22,4 +24,4 @@ def f2(C, B):
     t = np.maximum(20-C-B-5, 0)
     hit_chance_special = (2 * (C + 1) + t) / 20
     hit_chance = ((C + 1) + t) / 20
-    return D_p_normal * hit_chance_special + 10 * hit_chance
+    return D_p_normal * hit_chance_special + 13 * hit_chance

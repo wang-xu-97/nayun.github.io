@@ -1,4 +1,5 @@
 import numpy as np
+from tool import xncde, nncde
 coord_info = {
     'title': '凶蛮打手', 
     'x': '重击减值', 
@@ -7,14 +8,6 @@ coord_info = {
 }
 dice_n = 1
 dice_d = 12
-def normal_non_crit_dice_expectation(d):
-    return (1+d)/2
-
-def xmds_non_crit_dice_expectation(d):
-    return (d+1)*(4*d-1)/(6*d)
-
-nncde = normal_non_crit_dice_expectation
-xncde = xmds_non_crit_dice_expectation
 
 D_p_normal = nncde(dice_d)
 D_p_xmds = xncde(dice_d)
