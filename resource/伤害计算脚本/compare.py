@@ -56,7 +56,7 @@ for i, a in enumerate(a_vals):
     row = f"{a:>11}  "
     for j, b in enumerate(b_vals):
         increase = percentage_increase[i, j]
-        row += f"{increase:>7.1f}%({F1[i, j]:.2f}->{F2[i, j]:.2f})"
+        row += f"{increase:>7.1f}%({F1[i, j]:.1f}->{F2[i, j]:.1f})"
     print(row)
 
 print(f"\n说明：正值表示f2 > f1（开启{coord_info['title']}更优）")
