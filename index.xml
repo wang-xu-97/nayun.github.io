@@ -5,43 +5,25 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%9f%ba%e7%a1%80" aria-label="锚点"&gt;#&lt;/a&gt;
 &lt;/span&gt;
 &lt;/h1&gt;
-&lt;h2 class="relative group"&gt;攻击骰
-&lt;div id="攻击骰" class="anchor"&gt;&lt;/div&gt;
+&lt;h2 class="relative group"&gt;线性函数的Sigma求和闭合公式
+&lt;div id="线性函数的sigma求和闭合公式" class="anchor"&gt;&lt;/div&gt;
 &lt;span
 class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%94%bb%e5%87%bb%e9%aa%b0" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%ba%bf%e6%80%a7%e5%87%bd%e6%95%b0%e7%9a%84sigma%e6%b1%82%e5%92%8c%e9%97%ad%e5%90%88%e5%85%ac%e5%bc%8f" aria-label="锚点"&gt;#&lt;/a&gt;
 &lt;/span&gt;
 &lt;/h2&gt;
-&lt;h3 class="relative group"&gt;非重击命中伤害期望
-&lt;div id="非重击命中伤害期望" class="anchor"&gt;&lt;/div&gt;
-&lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e9%9d%9e%e9%87%8d%e5%87%bb%e5%91%bd%e4%b8%ad%e4%bc%a4%e5%ae%b3%e6%9c%9f%e6%9c%9b" aria-label="锚点"&gt;#&lt;/a&gt;
-&lt;/span&gt;
-&lt;/h3&gt;
-&lt;p&gt;伤害公式 = 伤害骰数量n * 伤害骰面数d + 伤害加值Bonus_damage(Bd)&lt;br&gt;
-伤害期望D&lt;sub&gt;p&lt;/sub&gt; = n * (1+d)/2 + Bd&lt;/p&gt;
-&lt;h3 class="relative group"&gt;攻击骰1d20计算优劣势
-&lt;div id="攻击骰1d20计算优劣势" class="anchor"&gt;&lt;/div&gt;
-&lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%94%bb%e5%87%bb%e9%aa%b01d20%e8%ae%a1%e7%ae%97%e4%bc%98%e5%8a%a3%e5%8a%bf" aria-label="锚点"&gt;#&lt;/a&gt;
-&lt;/span&gt;
-&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;掷20-(重击减值)：必定命中且重击&lt;/li&gt;
-&lt;li&gt;掷1：严重失误，必定未命中&lt;/li&gt;
-&lt;li&gt;掷2~(20-重击减值-1)：假设攻击骰掷x(2 &amp;lt;= x &amp;lt;= 20-重击减值-1)&lt;br&gt;
-命中条件：x + 攻击加值 &amp;gt;= 敌方护甲AC&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4 class="relative group"&gt;D20掷骰结果为k的概率P&lt;sub&gt;k&lt;/sub&gt;
-&lt;div id="d20掷骰结果为k的概率pk" class="anchor"&gt;&lt;/div&gt;
-&lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#d20%e6%8e%b7%e9%aa%b0%e7%bb%93%e6%9e%9c%e4%b8%bak%e7%9a%84%e6%a6%82%e7%8e%87pk" aria-label="锚点"&gt;#&lt;/a&gt;
-&lt;/span&gt;
-&lt;/h4&gt;
-&lt;p&gt;k∈[1,20]&lt;/p&gt;</description></item><item><title>bg3掷骰概率</title><link>https://wang-xu-97.github.io/nayun.github.io/resource/bg3%E6%8E%B7%E9%AA%B0%E6%A6%82%E7%8E%87/</link><pubDate>Tue, 02 Sep 2025 09:50:08 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/resource/bg3%E6%8E%B7%E9%AA%B0%E6%A6%82%E7%8E%87/</guid><description>&lt;h2 class="relative group"&gt;核心定理：星条定理
+&lt;p&gt;&lt;span class="math-inline"&gt;
+\( f(k) = ak + b\)
+&lt;/span&gt;&lt;br&gt;
+&lt;div class="math-block"&gt;
+\[
+\begin{align}
+\sum_{k=s}^{e}f(k) &amp;= \sum_{k=s}^{e} (ak + b) \\
+&amp;= a \sum_{k=s}^{e} k + b \sum_{k=s}^{e} 1 \\
+&amp;= a \cdot \frac{(s + e)(e - s + 1)}{2} + b \cdot (e - s + 1)
+\end{align}
+\]
+&lt;/div&gt;&lt;/p&gt;</description></item><item><title>bg3掷骰概率</title><link>https://wang-xu-97.github.io/nayun.github.io/resource/bg3%E6%8E%B7%E9%AA%B0%E6%A6%82%E7%8E%87/</link><pubDate>Tue, 02 Sep 2025 09:50:08 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/resource/bg3%E6%8E%B7%E9%AA%B0%E6%A6%82%E7%8E%87/</guid><description>&lt;h2 class="relative group"&gt;核心定理：星条定理
 &lt;div id="核心定理星条定理" class="anchor"&gt;&lt;/div&gt;
 &lt;span
 class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
