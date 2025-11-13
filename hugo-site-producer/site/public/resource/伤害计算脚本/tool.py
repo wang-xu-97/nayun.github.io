@@ -31,7 +31,7 @@ def text_to_markdown_table(data_text):
     markdown_lines = []
     
     # 添加表头
-    header_row = "| " + " | ".join(headers) + " |"
+    header_row = "| | " + " | ".join(headers[1:]) + " |"
     markdown_lines.append(header_row)
     
     # 添加分隔线
