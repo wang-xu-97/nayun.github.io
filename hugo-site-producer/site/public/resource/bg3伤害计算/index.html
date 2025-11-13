@@ -81,10 +81,7 @@
     <meta property="og:url" content="http://localhost:43997/nayun.github.io/resource/bg3%E4%BC%A4%E5%AE%B3%E8%AE%A1%E7%AE%97/">
   <meta property="og:site_name" content="nayun blog">
   <meta property="og:title" content="bg3伤害计算">
-  <meta property="og:description" content="基础 # 攻击骰 # 非重击命中伤害期望 # 伤害公式 = 伤害骰数量n * 伤害骰面数d &#43; 伤害加值Bonus_damage(Bd)
-伤害期望Dp = n * (1&#43;d)/2 &#43; Bd
-攻击骰1d20计算优劣势 # 掷20-(重击减值)：必定命中且重击 掷1：严重失误，必定未命中 掷2~(20-重击减值-1)：假设攻击骰掷x(2 &lt;= x &lt;= 20-重击减值-1)
-命中条件：x &#43; 攻击加值 &gt;= 敌方护甲AC D20掷骰结果为k的概率Pk # k∈[1,20]">
+  <meta property="og:description" content="基础 # 线性函数的Sigma求和闭合公式 # \( f(k) = ak &#43; b\) \[ \begin{align} \sum_{k=s}^{e}f(k) &amp;= \sum_{k=s}^{e} (ak &#43; b) \\ &amp;= a \sum_{k=s}^{e} k &#43; b \sum_{k=s}^{e} 1 \\ &amp;= a \cdot \frac{(s &#43; e)(e - s &#43; 1)}{2} &#43; b \cdot (e - s &#43; 1) \end{align} \]">
   <meta property="og:locale" content="zh_cn">
   <meta property="og:type" content="article">
     <meta property="article:section" content="resource">
@@ -95,10 +92,7 @@
     
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="bg3伤害计算">
-  <meta name="twitter:description" content="基础 # 攻击骰 # 非重击命中伤害期望 # 伤害公式 = 伤害骰数量n * 伤害骰面数d &#43; 伤害加值Bonus_damage(Bd)
-伤害期望Dp = n * (1&#43;d)/2 &#43; Bd
-攻击骰1d20计算优劣势 # 掷20-(重击减值)：必定命中且重击 掷1：严重失误，必定未命中 掷2~(20-重击减值-1)：假设攻击骰掷x(2 &lt;= x &lt;= 20-重击减值-1)
-命中条件：x &#43; 攻击加值 &gt;= 敌方护甲AC D20掷骰结果为k的概率Pk # k∈[1,20]">
+  <meta name="twitter:description" content="基础 # 线性函数的Sigma求和闭合公式 # \( f(k) = ak &#43; b\) \[ \begin{align} \sum_{k=s}^{e}f(k) &amp;= \sum_{k=s}^{e} (ak &#43; b) \\ &amp;= a \sum_{k=s}^{e} k &#43; b \sum_{k=s}^{e} 1 \\ &amp;= a \cdot \frac{(s &#43; e)(e - s &#43; 1)}{2} &#43; b \cdot (e - s &#43; 1) \end{align} \]">
 
       
     
@@ -111,7 +105,7 @@
     "name": "bg3伤害计算",
     "headline": "bg3伤害计算",
     
-    "abstract": "\u003ch1 class=\u0022relative group\u0022\u003e基础 \n    \u003cdiv id=\u0022基础\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e5%9f%ba%e7%a1%80\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h1\u003e\n\n\u003ch2 class=\u0022relative group\u0022\u003e攻击骰 \n    \u003cdiv id=\u0022攻击骰\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e6%94%bb%e5%87%bb%e9%aa%b0\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\n\u003ch3 class=\u0022relative group\u0022\u003e非重击命中伤害期望 \n    \u003cdiv id=\u0022非重击命中伤害期望\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e9%9d%9e%e9%87%8d%e5%87%bb%e5%91%bd%e4%b8%ad%e4%bc%a4%e5%ae%b3%e6%9c%9f%e6%9c%9b\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h3\u003e\n\u003cp\u003e伤害公式 = 伤害骰数量n * 伤害骰面数d \u002b 伤害加值Bonus_damage(Bd)\u003cbr\u003e\n伤害期望D\u003csub\u003ep\u003c\/sub\u003e = n * (1\u002bd)\/2 \u002b Bd\u003c\/p\u003e\n\n\u003ch3 class=\u0022relative group\u0022\u003e攻击骰1d20计算优劣势 \n    \u003cdiv id=\u0022攻击骰1d20计算优劣势\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e6%94%bb%e5%87%bb%e9%aa%b01d20%e8%ae%a1%e7%ae%97%e4%bc%98%e5%8a%a3%e5%8a%bf\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h3\u003e\n\u003col\u003e\n\u003cli\u003e掷20-(重击减值)：必定命中且重击\u003c\/li\u003e\n\u003cli\u003e掷1：严重失误，必定未命中\u003c\/li\u003e\n\u003cli\u003e掷2~(20-重击减值-1)：假设攻击骰掷x(2 \u0026lt;= x \u0026lt;= 20-重击减值-1)\u003cbr\u003e\n命中条件：x \u002b 攻击加值 \u0026gt;= 敌方护甲AC\u003c\/li\u003e\n\u003c\/ol\u003e\n\n\u003ch4 class=\u0022relative group\u0022\u003eD20掷骰结果为k的概率P\u003csub\u003ek\u003c\/sub\u003e \n    \u003cdiv id=\u0022d20掷骰结果为k的概率pk\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#d20%e6%8e%b7%e9%aa%b0%e7%bb%93%e6%9e%9c%e4%b8%bak%e7%9a%84%e6%a6%82%e7%8e%87pk\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h4\u003e\n\u003cp\u003ek∈[1,20]\u003c\/p\u003e",
+    "abstract": "\u003ch1 class=\u0022relative group\u0022\u003e基础 \n    \u003cdiv id=\u0022基础\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e5%9f%ba%e7%a1%80\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h1\u003e\n\n\u003ch2 class=\u0022relative group\u0022\u003e线性函数的Sigma求和闭合公式 \n    \u003cdiv id=\u0022线性函数的sigma求和闭合公式\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e7%ba%bf%e6%80%a7%e5%87%bd%e6%95%b0%e7%9a%84sigma%e6%b1%82%e5%92%8c%e9%97%ad%e5%90%88%e5%85%ac%e5%bc%8f\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\u003cp\u003e\u003cspan class=\u0022math-inline\u0022\u003e\n    \\( f(k) = ak \u002b b\\)\n\u003c\/span\u003e\u003cbr\u003e\n\u003cdiv class=\u0022math-block\u0022\u003e\n    \\[\n    \n\\begin{align}\n\\sum_{k=s}^{e}f(k) \u0026= \\sum_{k=s}^{e} (ak \u002b b) \\\\\n \u0026= a \\sum_{k=s}^{e} k \u002b b \\sum_{k=s}^{e} 1 \\\\\n \u0026= a \\cdot \\frac{(s \u002b e)(e - s \u002b 1)}{2} \u002b b \\cdot (e - s \u002b 1)\n\\end{align}\n\n    \\]\n\u003c\/div\u003e\u003c\/p\u003e",
     "inLanguage": "zh-cn",
     "url" : "http:\/\/localhost:43997\/nayun.github.io\/resource\/bg3%E4%BC%A4%E5%AE%B3%E8%AE%A1%E7%AE%97\/",
     "author" : {
@@ -127,7 +121,7 @@
     "keywords": ["resource"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1850"
+    "wordCount": "1948"
   }]
   </script>
 
@@ -607,7 +601,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-11-11T10:50:08&#43;08:00">November 11, 2025</time><span class="px-2 text-primary-500">&middot;</span><span>1850 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">9 分钟</span>
+      <time datetime="2025-11-11T10:50:08&#43;08:00">November 11, 2025</time><span class="px-2 text-primary-500">&middot;</span><span>1948 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">10 分钟</span>
     
 
     
@@ -661,6 +655,7 @@
   <ul>
     <li><a href="#基础">基础</a>
       <ul>
+        <li><a href="#线性函数的sigma求和闭合公式">线性函数的Sigma求和闭合公式</a></li>
         <li><a href="#攻击骰">攻击骰</a>
           <ul>
             <li><a href="#非重击命中伤害期望">非重击命中伤害期望</a></li>
@@ -751,6 +746,7 @@
   <ul>
     <li><a href="#基础">基础</a>
       <ul>
+        <li><a href="#线性函数的sigma求和闭合公式">线性函数的Sigma求和闭合公式</a></li>
         <li><a href="#攻击骰">攻击骰</a>
           <ul>
             <li><a href="#非重击命中伤害期望">非重击命中伤害期望</a></li>
@@ -938,6 +934,30 @@
     </span>        
     
 </h1>
+
+<h2 class="relative group">线性函数的Sigma求和闭合公式 
+    <div id="线性函数的sigma求和闭合公式" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%ba%bf%e6%80%a7%e5%87%bd%e6%95%b0%e7%9a%84sigma%e6%b1%82%e5%92%8c%e9%97%ad%e5%90%88%e5%85%ac%e5%bc%8f" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+<p><span class="math-inline">
+    \( f(k) = ak + b\)
+</span><br>
+<div class="math-block">
+    \[
+    
+\begin{align}
+\sum_{k=s}^{e}f(k) &= \sum_{k=s}^{e} (ak + b) \\
+ &= a \sum_{k=s}^{e} k + b \sum_{k=s}^{e} 1 \\
+ &= a \cdot \frac{(s + e)(e - s + 1)}{2} + b \cdot (e - s + 1)
+\end{align}
+
+    \]
+</div></p>
 
 <h2 class="relative group">攻击骰 
     <div id="攻击骰" class="anchor"></div>
@@ -1505,6 +1525,32 @@ D_{exp} = D_{p\_normal} \times \frac{2(1+C)^2 + \max(20-C-B, 0) \times (22 - B +
     \[
     
 P_{save\_success} = \frac{21-B}{20}
+
+    \]
+</div></li>
+<li>优势：<br>
+<div class="math-block">
+    \[
+    
+\begin{align}
+P_{save\_success} &= \frac{\sum_{k=B}^{20} (2k - 1)}{400}\\
+&= \frac{\sum_{k=1}^{20} (2k - 1) - \sum_{k=1}^{B-1} (2k - 1)}{400}\\
+&= 1 - \frac{(B-1)^2}{400}\\
+
+\end{align}
+
+    \]
+</div></li>
+<li>劣势：<br>
+<div class="math-block">
+    \[
+    
+\begin{align}
+P_{save\_success} &= \frac{\sum_{k=B}^{20} (-2k + 41)}{400}\\
+&= \frac {-2 \cdot \frac{(20+B)(21-B)}{2} + 41 \cdot (21 - B)}{400}\\
+&= \frac {(21 - B)^2}{400}
+
+\end{align}
 
     \]
 </div></li>

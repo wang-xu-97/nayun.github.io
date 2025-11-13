@@ -8,6 +8,16 @@ showTableOfContents: true
 ---
 
 # 基础
+## 线性函数的Sigma求和闭合公式
+{{< math type="inline" >}} f(k) = ak + b{{< /math>}}
+{{< math type="block" >}}
+\begin{align}
+\sum_{k=s}^{e}f(k) &= \sum_{k=s}^{e} (ak + b) \\
+ &= a \sum_{k=s}^{e} k + b \sum_{k=s}^{e} 1 \\
+ &= a \cdot \frac{(s + e)(e - s + 1)}{2} + b \cdot (e - s + 1)
+\end{align}
+{{< /math>}}
+
 ## 攻击骰
 ### 非重击命中伤害期望
 伤害公式 = 伤害骰数量n * 伤害骰面数d + 伤害加值Bonus_damage(Bd)
@@ -149,6 +159,24 @@ D_{exp} = D_{p\_normal} \times \frac{2(1+C)^2 + \max(20-C-B, 0) \times (22 - B +
 - 均势：
 {{< math type="block" >}}
 P_{save\_success} = \frac{21-B}{20}
+{{< /math >}}
+- 优势：
+{{< math type="block" >}}
+\begin{align}
+P_{save\_success} &= \frac{\sum_{k=B}^{20} (2k - 1)}{400}\\
+&= \frac{\sum_{k=1}^{20} (2k - 1) - \sum_{k=1}^{B-1} (2k - 1)}{400}\\
+&= 1 - \frac{(B-1)^2}{400}\\
+
+\end{align}
+{{< /math >}}
+- 劣势：
+{{< math type="block" >}}
+\begin{align}
+P_{save\_success} &= \frac{\sum_{k=B}^{20} (-2k + 41)}{400}\\
+&= \frac {-2 \cdot \frac{(20+B)(21-B)}{2} + 41 \cdot (21 - B)}{400}\\
+&= \frac {(21 - B)^2}{400}
+
+\end{align}
 {{< /math >}}
 ## 卷轴固定豁免DC、攻击加值表
 | 法术环阶 | 豁免DC | 攻击加值 |
