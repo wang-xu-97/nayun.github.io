@@ -7,8 +7,8 @@ from mpl_toolkits.mplot3d import Axes3D
 import argparse
 
 # 修改导入函数脚本
-# from juwuqidashi import f1, f2, coord_info
-from xiongmandashou import f1, f2, coord_info
+from juwuqidashi import f1, f2, coord_info
+# from xiongmandashou import f1, f2, coord_info
 
 tolerance = 0.5  # 容忍度，可以根据需要调整
 # 定义你的方程 f1(a,b) 和 f2(a,b)
