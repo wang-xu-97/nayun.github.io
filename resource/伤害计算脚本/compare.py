@@ -3,23 +3,22 @@ import matplotlib.pyplot as plt
 
 plt.rcParams['font.sans-serif'] = ['AR PL UMing CN']  # 指定默认字体为黑体[citation:4][citation:6]
 plt.rcParams['axes.unicode_minus'] = False   # 解决坐标轴负号显示为方块的问题[citation:4][citation:6]
-from mpl_toolkits.mplot3d import Axes3D
-from tool import text_to_markdown_table
+
+from tool import *
 import argparse
 
 def parse_args():
     parser = argparse.ArgumentParser(description='测试.')
-    parser.add_argument('-f',       default="jwqds",   choices=['jwqds', 'xmds', 'buff'],       nargs='+',           help='函数')
+    parser.add_argument('-e', '--enable', default="jwqds",   choices=skills,       nargs='+',           help='启用技能，默认启用巨武器大师')
+    parser.add_argument('-d', '--dice',   type=lambda v:dice(*v.split('d')) ,      default="1d12",      help='武器伤害骰')
     return parser.parse_args()
 
-args = parse_args()
-# 修改导入函数脚本
-if args.f == 'jwqds':
-    from juwuqidashi import f1, f2, coord_info
-elif args.f == 'xmds':
-    from xiongmandashou import f1, f2, coord_info
-elif args.f == 'buff':
-    from ExtBuff import f1, f2, coord_info
+f1, f2, coord_info = factory(parse_args())
+print(f1)
+print(f2)
+print(coord_info)
+exit()
+
 
 tolerance = 0.5  # 容忍度，可以根据需要调整
 # 定义你的方程 f1(a,b) 和 f2(a,b)
