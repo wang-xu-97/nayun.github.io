@@ -40,6 +40,7 @@ def factory(args):
     print(D_p_xmds)
     
     def maker(skill_status):
+        print(skill_status)
         def f(C, B):
             if skill_status['xmds']:
                 if skill_status['buff']:D_p_ablecrit = D_p_xmds_buffed

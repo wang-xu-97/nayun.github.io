@@ -27,6 +27,7 @@ def main():
     func_dict = factory(args)
     singlefuncpack = None
     for v in func_dict.values():
+        print(v)
         if not singlefuncpack and (tt:=v.info['title']) and  tt!= 'default':
             singlefuncpack = v
     
