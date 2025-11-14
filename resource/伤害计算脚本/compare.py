@@ -7,16 +7,25 @@ plt.rcParams['axes.unicode_minus'] = False   # 解决坐标轴负号显示为方
 from tool import *
 import argparse
 
+def parse_skillgroup(v):
+    v.replace('，', ',')
+    if ',' in v:
+        return v.split(',')
+    elif v not in supported_skill_list:
+        print(f'{v} not in supported skill list({supported_skill_list})')
+        return []
+    else:
+        return [v]
+
 def parse_args():
     parser = argparse.ArgumentParser(description='测试.')
-    parser.add_argument('-e', '--enable', default="jwqds",   choices=skills,       nargs='+',           help='启用技能，默认启用巨武器大师')
+    parser.add_argument('-e', '--enable', type=parse_skillgroup, default=[],          nargs='+',           help='启用技能，默认启用巨武器大师')
     parser.add_argument('-d', '--dice',   type=lambda v:dice(*v.split('d')) ,      default="1d12",      help='武器伤害骰')
+    parser.add_argument('-b', '--bonus',   type=int ,      default=3,      help='武器伤害固定加值')
     return parser.parse_args()
 
-f1, f2, coord_info = factory(parse_args())
-print(f1)
-print(f2)
-print(coord_info)
+func_dict = factory(parse_args())
+print(func_dict)
 exit()
 
 
