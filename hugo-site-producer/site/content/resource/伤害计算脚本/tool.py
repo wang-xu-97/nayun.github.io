@@ -10,67 +10,69 @@ def xmds_non_crit_dice_expectation(d):
 nncde = normal_non_crit_dice_expectation
 xncde = xmds_non_crit_dice_expectation
 
-skills = ['jwqds', 'xmds', 'buff']
+supported_skill_list = ['jwqds', 'xmds', 'buff']
 
 class dice:
     def __init__(self, n, d) -> None:
         self.n = int(n)
         self.d = int(d)
 
+class function_pack:
+    def __init__(self, func, info) -> None:
+        self.func = func
+        self.info = info
+
+fp = function_pack
+
 def factory(args):
-    
-    skill_status = {
-        skill : skill in args.enable
-        for skill in skills
-    }
-    print(skill_status)
-    ttmap = {'xmds': '凶蛮打手', 'buff': '3可重击增伤增益', 'jwqds':'巨武器大师'}
+    skill_group = [[]] + [i for i in args.enable if i]
+    print(skill_group)
     d = args.dice
     print(d.n)
     print(d.d)
     D_p_normal = nncde(d.d)
-    def f_default(C, B):
-        """基础"""
-        # return a**2 + b**2
-        t = np.maximum(20-C-B, 0)
-        hit_chance_special = (2 * (C + 1) + t) / 20
-        hit_chance = ((C + 1) + t) / 20
-        return D_p_normal * hit_chance_special + 3 * hit_chance
-
-    func_dict = {'基础':f_default}
-    coord_info = {
-        'title': '凶蛮打手', 
-        'x': '重击减值', 
-        'y': '实际护甲Ac-Bonus', 
-        'z': '伤害期望'
-    }
-    dice_n = 1
-    dice_d = 12
-
-    D_p_normal = nncde(dice_d)
-    D_p_xmds = xncde(dice_d)
-    D_p_normal_buffed = nncde(12) + nncde(4) + nncde(4) + nncde(6)
-    D_p_xmds_buffed = xncde(12) + xncde(4) + xncde(4) + xncde(6)
+    D_p_normal_buffed = nncde(d.d) + nncde(4) + nncde(4) + nncde(6)
+    D_p_xmds = xncde(d.d)
+    D_p_xmds_buffed = xncde(d.d) + xncde(4) + xncde(4) + xncde(6)
     print(D_p_normal)
     print(D_p_xmds)
-    def f1(C, B):
-        """无凶蛮打手"""
-        # return a**2 + b**2
-        t = np.maximum(20-C-B, 0)
-        hit_chance_special = (2 * (C + 1) + t) / 20
-        hit_chance = ((C + 1) + t) / 20
-        return D_p_normal * hit_chance_special + 3 * hit_chance
+    
+    def maker(skill_status):
+        def f(C, B):
+            if skill_status['xmds']:
+                if skill_status['buff']:D_p_ablecrit = D_p_xmds_buffed
+                else:                   D_p_ablecrit = D_p_xmds
+            else:
+                if skill_status['buff']:D_p_ablecrit = D_p_normal_buffed
+                else:                   D_p_ablecrit = D_p_normal
+            D_p_unablecrit = args.bonus
+            if skill_status['jwqds']: 
+                B += 5
+                D_p_unablecrit += 10
 
-    def f2(C, B):
-        """有凶蛮打手"""
-        # return a * b
-        t = np.maximum(20-C-B, 0)
-        hit_chance_special = (2 * (C + 1) + t) / 20
-        hit_chance = ((C + 1) + t) / 20
-        return D_p_xmds_buffed * hit_chance_special + 3 * hit_chance
+            t = np.maximum(20-C-B, 0)
+            hit_chance_special = (2 * (C + 1) + t) / 20
+            hit_chance = ((C + 1) + t) / 20
+            return D_p_ablecrit * hit_chance_special + D_p_unablecrit * hit_chance
 
+        return f
 
-    return f1, f2, coord_info
+    def tt(skills):
+        ttmap = {'xmds': '凶蛮打手', 'buff': '3可重击增伤buff', 'jwqds':'巨武器大师'}
+        return '+'.join([
+            ttmap.get(sk, '')
+            for sk in skills
+        ])
+    
+    func_dict = {
+        '+'.join(skills) if skills != [] else 'default': fp(maker({
+            skill: skill in skills
+            for skill in supported_skill_list
+        }), {'title':tt(skills)})
+        for skills in skill_group
+    }
+
+    return func_dict
 
 
 def text_to_markdown_table(data_text):
@@ -118,17 +120,3 @@ def text_to_markdown_table(data_text):
     
     # 返回完整的Markdown表格
     return "\n".join(markdown_lines)
-
-if __name__ == '__main__':
-    s = '''
-重击减值\护甲                 5                 6                 7                 8                 9                10                11                12                13                14                15
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-          0     91.2%(7.9->15.2)   91.3%(7.5->14.2)   91.4%(7.0->13.3)   91.5%(6.5->12.4)   91.7%(6.0->11.6)   91.9%(5.5->10.7)   92.1%(5.1->9.8)   92.4%(4.6->8.8)   92.7%(4.1->8.0)   93.2%(3.6->7.0)   93.7%(3.2->6.2)
-          1     92.7%(8.2->15.9)   92.9%(7.8->15.0)   93.2%(7.3->14.1)   93.4%(6.8->13.2)   93.7%(6.3->12.3)   94.0%(5.9->11.4)   94.4%(5.4->10.5)   94.9%(4.9->9.6)   95.5%(4.5->8.7)   96.2%(4.0->7.8)   97.1%(3.5->6.9)
-          2     94.2%(8.6->16.6)   94.4%(8.1->15.8)   94.8%(7.6->14.8)   95.1%(7.2->13.9)   95.5%(6.7->13.1)   96.0%(6.2->12.2)   96.5%(5.7->11.2)   97.1%(5.2->10.3)   97.9%(4.8->9.4)   98.8%(4.3->8.6)  100.0%(3.8->7.7)
-          3     95.5%(8.9->17.4)   95.8%(8.4->16.5)   96.2%(8.0->15.6)   96.7%(7.5->14.7)   97.1%(7.0->13.8)   97.7%(6.5->12.9)   98.3%(6.0->12.0)   99.1%(5.6->11.1)  100.0%(5.1->10.2)  101.1%(4.6->9.3)  102.4%(4.2->8.4)
-          4     96.7%(9.2->18.1)   97.1%(8.8->17.2)   97.6%(8.3->16.4)   98.1%(7.8->15.4)   98.6%(7.3->14.6)   99.3%(6.9->13.7)  100.0%(6.4->12.8)  100.8%(5.9->11.8)  101.8%(5.4->10.9)  103.0%(4.9->10.1)  104.5%(4.5->9.2)
-          5     97.9%(9.6->18.9)   98.3%(9.1->18.0)   98.8%(8.6->17.1)   99.4%(8.1->16.2)  100.0%(7.7->15.3)  100.7%(7.2->14.4)  101.5%(6.7->13.5)  102.4%(6.2->12.6)  103.5%(5.8->11.7)  104.7%(5.3->10.8)  106.3%(4.8->9.9)
-
-'''
-    print(text_to_markdown_table(s))
