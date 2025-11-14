@@ -180,7 +180,14 @@ P_{save\_success} &= \frac{\sum_{k=B}^{20} (-2k + 41)}{400}\\
 ### 豁免骰实际伤害期望
 豁免成功率 * 豁免成功伤害期望 + 豁免失败率 * 豁免失败伤害期望
 {{< math type="block" >}}
-D_{exp} = P_{save\_sucess} * D_{exp\_save_sucess} + (1 - P_{save\_sucess}) * D_{exp\_save_fail} + 
+\begin{align}
+D_{exp} &= P_{save\_sucess} * D_{exp\_save\_sucess} + (1 - P_{save\_sucess}) * D_{exp\_save\_fail}\\
+
+&= 
+\begin{cases}
+D_{exp\_save\_sucess} \cdot \frac {P_{save\_sucess} + 1}{2}  & \text{if } D_{exp\_save\_fail} = 2 \cdot D_{exp\_save\_sucess}
+\end{cases}
+\end{align}
 {{< /math >}}
 
 ## 卷轴固定豁免DC、攻击加值表
