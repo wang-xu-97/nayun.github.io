@@ -25,54 +25,29 @@
     
 &lt;/h1&gt;
 
-&lt;h2 class=&#34;relative group&#34;&gt;攻击骰 
-    &lt;div id=&#34;攻击骰&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+&lt;h2 class=&#34;relative group&#34;&gt;线性函数的Sigma求和闭合公式 
+    &lt;div id=&#34;线性函数的sigma求和闭合公式&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
     &lt;span
         class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
-        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#%e6%94%bb%e5%87%bb%e9%aa%b0&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#%e7%ba%bf%e6%80%a7%e5%87%bd%e6%95%b0%e7%9a%84sigma%e6%b1%82%e5%92%8c%e9%97%ad%e5%90%88%e5%85%ac%e5%bc%8f&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
     &lt;/span&gt;        
     
 &lt;/h2&gt;
+&lt;p&gt;&lt;span class=&#34;math-inline&#34;&gt;
+    \( f(k) = ak + b\)
+&lt;/span&gt;&lt;br&gt;
+&lt;div class=&#34;math-block&#34;&gt;
+    \[
+    
+\begin{align}
+\sum_{k=s}^{e}f(k) &amp;= \sum_{k=s}^{e} (ak + b) \\
+ &amp;= a \sum_{k=s}^{e} k + b \sum_{k=s}^{e} 1 \\
+ &amp;= a \cdot \frac{(s + e)(e - s + 1)}{2} + b \cdot (e - s + 1)
+\end{align}
 
-&lt;h3 class=&#34;relative group&#34;&gt;非重击命中伤害期望 
-    &lt;div id=&#34;非重击命中伤害期望&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
-        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#%e9%9d%9e%e9%87%8d%e5%87%bb%e5%91%bd%e4%b8%ad%e4%bc%a4%e5%ae%b3%e6%9c%9f%e6%9c%9b&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;        
-    
-&lt;/h3&gt;
-&lt;p&gt;伤害公式 = 伤害骰数量n * 伤害骰面数d + 伤害加值Bonus_damage(Bd)&lt;br&gt;
-伤害期望D&lt;sub&gt;p&lt;/sub&gt; = n * (1+d)/2 + Bd&lt;/p&gt;
-
-&lt;h3 class=&#34;relative group&#34;&gt;攻击骰1d20计算优劣势 
-    &lt;div id=&#34;攻击骰1d20计算优劣势&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
-        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#%e6%94%bb%e5%87%bb%e9%aa%b01d20%e8%ae%a1%e7%ae%97%e4%bc%98%e5%8a%a3%e5%8a%bf&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;        
-    
-&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;掷20-(重击减值)：必定命中且重击&lt;/li&gt;
-&lt;li&gt;掷1：严重失误，必定未命中&lt;/li&gt;
-&lt;li&gt;掷2~(20-重击减值-1)：假设攻击骰掷x(2 &amp;lt;= x &amp;lt;= 20-重击减值-1)&lt;br&gt;
-命中条件：x + 攻击加值 &amp;gt;= 敌方护甲AC&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 class=&#34;relative group&#34;&gt;D20掷骰结果为k的概率P&lt;sub&gt;k&lt;/sub&gt; 
-    &lt;div id=&#34;d20掷骰结果为k的概率pk&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
-        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#d20%e6%8e%b7%e9%aa%b0%e7%bb%93%e6%9e%9c%e4%b8%bak%e7%9a%84%e6%a6%82%e7%8e%87pk&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;        
-    
-&lt;/h4&gt;
-&lt;p&gt;k∈[1,20]&lt;/p&gt;</description>
+    \]
+&lt;/div&gt;&lt;/p&gt;</description>
       
     </item>
     

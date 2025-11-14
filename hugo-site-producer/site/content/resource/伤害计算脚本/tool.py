@@ -13,7 +13,11 @@ xncde = xmds_non_crit_dice_expectation
 
 def factory(args):
     
-    skill_status = {}
+    skill_status = {
+        skill : skill in args.f
+        for skill in ['xmds', 'buff', 'jwqds']
+    }
+    ttmap = {'xmds': '凶蛮打手', 'buff': '3可重击增伤增益', 'jwqds':'巨武器大师'}
     coord_info = {
         'title': '凶蛮打手', 
         'x': '重击减值', 

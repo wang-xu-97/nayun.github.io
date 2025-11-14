@@ -9,7 +9,7 @@ import argparse
 
 def parse_args():
     parser = argparse.ArgumentParser(description='测试.')
-    parser.add_argument('-f',                     default="jwqds",   choices=['jwqds', 'xmds', 'buff'],                  help='函数')
+    parser.add_argument('-f',       default="jwqds",   choices=['jwqds', 'xmds', 'buff'],       nargs='+',           help='函数')
     return parser.parse_args()
 
 args = parse_args()
