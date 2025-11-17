@@ -21,7 +21,9 @@ def parse_args():
     parser = argparse.ArgumentParser(description='测试.')
     parser.add_argument('-e', '--enable', type=parse_skillgroup, default=[],          nargs='+',           help='启用技能，默认启用巨武器大师')
     parser.add_argument('-d', '--dice',   type=lambda v:dice(*v.split('d')) ,      default="1d12",      help='武器伤害骰')
-    parser.add_argument('-b', '--bonus',   type=int ,      default=3,      help='武器伤害固定加值')
+    parser.add_argument('-Db', '--DMGbonus',   type=int ,      default=3,      help='伤害固定加值')
+    parser.add_argument('-Hb', '--HITbonus',   type=int ,      default=3,      help='命中固定加值')
+    parser.add_argument('-ac', '--ac',   type=int ,      default=15,      help='敌人AC')
     return parser.parse_args()
 
 func_dict = factory(parse_args())
