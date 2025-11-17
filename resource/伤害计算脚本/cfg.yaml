@@ -1,0 +1,11 @@
+# Attack or Saving
+cast_type: 'Attack'
+self_status: 
+  Attribute: |
+  AC: |
+  Saving_Bonus: |
+
+enemy_status: 
+  Attribute: ['-', '-', '-', '-', '-', '-']
+  AC: 15
+  Saving_Bonus: |

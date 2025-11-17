@@ -5,25 +5,41 @@ plt.rcParams['axes.unicode_minus'] = False   # 解决坐标轴负号显示为方
 
 def parse_skillgroup(v):
     v.replace('，', ',')
-    if ',' in v:
-        return v.split(',')
-    elif v not in supported_skill_list:
-        print(f'{v} not in supported skill list({supported_skill_list})')
-        return []
-    else:
-        return [v]
+    def in_preset(s):
+        if s in supported_skill_list:return True
+        print(f'{s} not in supported skill list({supported_skill_list})')
+        return False
+
+    if ',' in v:return [s for s in v.split(',') if in_preset(s)]
+    elif in_preset(v):[v]
+    return []
+
+def parse_cfg(c):
+    for fig in ['self_status', 'enemy_status']:
+        try:
+            for idx, attr in enumerate(c[fig]['Attribute']):
+                try:   c[fig]['Attribute'][idx] = int(attr)
+                except:c[fig]['Attribute'][idx] = 10
+            if (cfasize:=len(c[fig]['Attribute'])) < 6:c[fig]['Attribute'].extend([10]*(6-cfasize))
+        except: c[fig]['Attribute'] = [10] * 6
+        try: c[fig]['AC'] = int(c[fig]['AC'])
+        except: c[fig]['AC'] = 15
+    return c
 
 def parse_args():
     parser = argparse.ArgumentParser(description='测试.')
     parser.add_argument('-e', '--enable', type=parse_skillgroup, default=[],          nargs='+',           help='启用技能，默认启用巨武器大师')
     parser.add_argument('-d', '--dice',   type=lambda v:dice(*v.split('d')) ,      default="1d12",      help='武器伤害骰')
     parser.add_argument('-b', '--bonus',   type=int ,      default=3,      help='武器伤害固定加值')
-    parser.add_argument('-m', '--mode', choices=['single', 'compare'], default='compare', help='分析模式: single-单函数分析, compare-多函数对比')
     return parser.parse_args()
 
 
 def main():
     args = parse_args()
+    print(args.enable)
+    c = tl.read_yml('cfg.yaml')
+    tl.printdict(parse_cfg(c))
+    exit()
     func_dict = factory(args)
     singlefuncpack = None
     for v in func_dict.values():
