@@ -1,11 +1,21 @@
 # Attack or Saving
 cast_type: 'Attack'
 self_status: 
-  Attribute: |
-  AC: |
-  Saving_Bonus: |
+  Attribute: ['16->148', '16', '15', '-', '-', '-']
+  AC: 
+  Saving_Bonus: 
+  Spell_Save_DC_Bonus:
+  Attack_Bonus: 
+  weapon_dice: ['1d8', '1d12']
+  Passive_skills: [['xmds','jwqds']]
+  Active_skills: [['zsz', 'fyzsz']]
 
 enemy_status: 
   Attribute: ['-', '-', '-', '-', '-', '-']
-  AC: 15
-  Saving_Bonus: |
+  AC: 10->15
+  Saving_Bonus: 
+  Spell_Save_DC_Bonus:
+  Attack_Bonus: 
+  weapon_dice: 
+  Passive_skills:
+  Active_skills:
