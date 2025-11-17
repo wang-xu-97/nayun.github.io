@@ -1,39 +1,7 @@
-import re, yaml
+import re
 import numpy as np
 import matplotlib.pyplot as plt
 import numpy as np
-from collections import defaultdict
-
-class StaticMethodMeta(type):
-    def __new__(cls, name, bases, namespace):
-        for attr_name, attr_value in namespace.items():
-            if callable(attr_value) and not attr_name.startswith('__'):
-                namespace[attr_name] = staticmethod(attr_value)
-        return super().__new__(cls, name, bases, namespace)
-
-class tools(metaclass=StaticMethodMeta):
-    def read_yml(filepath):
-        with open(filepath, 'r') as f:
-            content = f.read()
-        return yaml.safe_load(content)
-    
-    def printdict(data:dict, indent:str=""):
-        for k, v in data.items():
-            if isinstance(v, (dict, defaultdict)):
-                print(f"{indent}{k}:")
-                tl.printdict(v, indent+"\t")
-            elif isinstance(v, list):
-                print(f"{indent}{k}({len(v)}):[")
-                tl.printlist(v, indent+'\t')
-                print(f"{indent}]")
-            else:
-                print(f"{indent}{k}:\t{v if v else None}")
-
-    def printlist(l, indent:str=""):
-        for i, c in enumerate(l):
-            print(f"{indent}{i+1}.\t{c}")
-    
-tl = tools
 
 def normal_non_crit_dice_expectation(d):
     return (1+d)/2
@@ -44,13 +12,8 @@ def xmds_non_crit_dice_expectation(d):
 nncde = normal_non_crit_dice_expectation
 xncde = xmds_non_crit_dice_expectation
 
-supported_skill_list = {
-    'xmds': '凶蛮打手', 
-    'buff': '3可重击增伤buff', 
-    'jwqds':'巨武器大师', 
-    'sxts':'属性提升',
-    'fsjj':'法术狙击'
-}
+supported_skill_list = ['jwqds', 'xmds', 'buff', 'sxts']
+ttmap = {'xmds': '凶蛮打手', 'buff': '3可重击增伤buff', 'jwqds':'巨武器大师', 'sxts':'属性提升'}
 
 class dice:
     def __init__(self, n, d) -> None:
