@@ -55,7 +55,9 @@ passive_skill_list = {
     'buff': '3可重击增伤buff', 
     'jwqds':'巨武器大师', 
     'sxts':'属性提升',
-    'fsjj':'法术狙击'
+    'fsjj':'法术狙击',
+    'mfkx1':'魔法抗性1',
+    'wlkx1':'物理抗性1',
 }
 active_skill_list = {
     'hmj': '轰鸣剑', 
