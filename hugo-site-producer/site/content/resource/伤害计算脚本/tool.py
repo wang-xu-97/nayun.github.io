@@ -27,12 +27,18 @@ class tools(metaclass=StaticMethodMeta):
                 tl.printlist(v, indent+'\t')
                 print(f"{indent}]")
             else:
-                print(f"{indent}{k}:\t{v if v else None}")
+                print(f"{indent}{k}:\t{v if v != None else None}")
 
     def printlist(l, indent:str=""):
         for i, c in enumerate(l):
             print(f"{indent}{i+1}.\t{c}")
     
+    def execute_immediately(r:list):
+        def wp(f):
+            r.append(f())
+        return wp
+    execute = execute_immediately
+
 tl = tools
 
 def normal_non_crit_dice_expectation(d):
@@ -44,13 +50,21 @@ def xmds_non_crit_dice_expectation(d):
 nncde = normal_non_crit_dice_expectation
 xncde = xmds_non_crit_dice_expectation
 
-supported_skill_list = {
+passive_skill_list = {
     'xmds': '凶蛮打手', 
     'buff': '3可重击增伤buff', 
     'jwqds':'巨武器大师', 
     'sxts':'属性提升',
     'fsjj':'法术狙击'
 }
+active_skill_list = {
+    'hmj': '轰鸣剑', 
+    'zsz': '至圣斩', 
+    'fyzsz': '反应至圣斩', 
+    
+}
+
+attributes = ['STR', 'DEX', 'CON', 'INT', 'WIS', 'CHA']
 
 class dice:
     def __init__(self, n, d) -> None:
