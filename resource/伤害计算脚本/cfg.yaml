@@ -5,11 +5,13 @@ self_status:
   AC: 
   Saving_Bonus: 
   Spell_Save_DC_Bonus:
-  Attack_Bonus: 
+  Attack_Bonus: 4->5
+  Crit_Bonus: 
   weapon_dice: 
   # weapon_dice: ['1d8', '1d12']
   # Passive_skill_group: [['xmds'], ['xmds','jwqds','1'], ['buff1']]
-  Active_skill_group: [['na'], ['zsz', 'fyzsz'], ['12']]
+  Passive_skill_group: [['xmds','jwqds','1']]
+  # Active_skill_group: [['na'], ['zsz', 'fyzsz'], ['12']]
 
 enemy_status: 
   Attribute: ['-', '-', '-', '-', '-', '-']
