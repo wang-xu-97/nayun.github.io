@@ -21,8 +21,10 @@ def parse_cfg(c):
                             metric.update({k:s})
                     return s
                 
-                if 'dice' in k:return update_metric()
-                sl = (active_skill_list if 'Active_skill_group' in k else passive_skill_list)
+                if 'dice' not in k:return update_metric()
+                if 'Active_skill_group' in k:sl = active_skill_list
+                elif 'Passive_skill_group' in k:sl = passive_skill_list
+                else: sl = Vulnerability_list
                 for i, _s in enumerate(s):
                     for __s in _s:
                         if __s not in sl:
@@ -68,15 +70,18 @@ def parse_cfg(c):
         'weapon_dice': ['1d10'],
         'Passive_skill_group': [[]],
         'Active_skill_group': [['na']],
+        'Vulnerability': [[]],
     }
     for fig in ['self_status', 'enemy_status']:
         try:
-            for idx, attr in enumerate(c[fig]['Attribute']):c[fig]['Attribute'][idx] = axis_metric_determine(f'{fig}-{attributes[idx]}', str(attr), 10)
+            for idx, attr in enumerate(c[fig]['Attribute']):c[fig]['Attribute'][idx] = axis_metric_determine(f'{fig}-{list(attributes.keys())[idx]}', str(attr), 10)
             if (cfasize:=len(c[fig]['Attribute'])) < 6:c[fig]['Attribute'].extend([10]*(6-cfasize))
         except: c[fig]['Attribute'] = [10] * 6
         for k, v in defaults.items():c[fig][k] = axis_metric_determine(f'{fig}-{k}', str(c[fig].get(k, None)) if type(v)!=list else c[fig].get(k, None), v, v_type=type(v))
     c['axis'] = axis
     c['metric'] = metric
+    c['cast_type'] = 'Attack' if not (bm:=tl.best_match(c['cast_type'], cast_types.keys())) else bm
+    c['Roll_status'] = 'Neutral' if not (bm:=tl.best_match(c['Roll_status'], Roll_status.keys())) else bm
     return c
 
 

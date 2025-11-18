@@ -1,7 +1,7 @@
-import re, yaml
+import re, yaml, difflib
 import numpy as np
 import matplotlib.pyplot as plt
-import numpy as np
+from typing import List, Optional
 from collections import defaultdict
 
 class StaticMethodMeta(type):
@@ -39,6 +39,15 @@ class tools(metaclass=StaticMethodMeta):
         return wp
     execute = execute_immediately
 
+    def find_most_similar_string(input_str: str, string_list: List[str], cutoff: float = 0.6) -> Optional[str]:
+        """
+        最相似的字符串，如果找不到相似度足够高的则返回None
+        """
+        if not string_list:return None
+        matches = difflib.get_close_matches(input_str, string_list, n=1, cutoff=cutoff)
+        return matches[0] if matches else None
+    best_match = find_most_similar_string
+
 tl = tools
 
 def normal_non_crit_dice_expectation(d):
@@ -67,8 +76,18 @@ active_skill_list = {
     'fyzsz': '反应至圣斩', 
     
 }
+Vulnerability_list = {
+    'wet': '濡湿',
+    'freeze': '冻僵',
+    'oil': '火易伤',
+    'physical': '物理',
+    'Radiant': '光耀',
+    'psychic': '心灵',
+}
 
-attributes = ['STR', 'DEX', 'CON', 'INT', 'WIS', 'CHA']
+cast_types = {'Attack':'攻击骰', 'Saving':'豁免骰'}
+Roll_status = {'Advantage':'优势', 'Disadvantage':'劣势', 'Neutral':'均势'}
+attributes = {'STR':'力量', 'DEX':'敏捷', 'CON':'体质', 'INT':'智力', 'WIS':'感知', 'CHA':'魅力'}
 
 class dice:
     def __init__(self, n, d) -> None:
@@ -82,26 +101,15 @@ class function_pack:
 
 fp = function_pack
 def gen_multimetric():pass
-def factory(cfg):
+
+def AttackFunc(cfg):
+    """
+    攻击骰
+    Ph = ∑(k=20-Crit_Bonus->20)Pk
+    Pn = ∑(k=(foe.Ac-Attack_Bonus)->20-Crit_Bonus-1)Pk
+    D_exp = D_p_ablecrit * (Ph * 2 + Pn) + D_p_unablecrit * (Ph + Pn)
+    """
     self, foe, cast_type, axis, metric = cfg['self_status'], cfg['enemy_status'], cfg['cast_type'], cfg['axis'], cfg['metric']
-
-    if metric:
-        print(f'multi metric mode')
-        m_k, m_v = list(metric.items())[0]
-        assert len(metric) == 1 and len(m_v) > 1, f'metric size error({metric})'
-        gen_multimetric(cfg)
-    else:
-        print(f'single metric mode')
-        d = dice(*self['weapon_dice'][0].split('d'))
-        print(d.n, d.d)
-        D_p_normal = nncde(d.d)
-        D_p_normal_buffed = nncde(d.d) + nncde(4) + nncde(4) + nncde(6)
-        D_p_xmds = xncde(d.d)
-        D_p_xmds_buffed = xncde(d.d) + xncde(4) + xncde(4) + xncde(6)
-        print(D_p_normal)
-        print(D_p_xmds)
-        gen_singlemetric(cfg)
-
     def gen_singlemetric():
         skill_active = lambda s:s in self['Passive_skill_group'][0]
 
@@ -122,6 +130,29 @@ def factory(cfg):
             return D_p_ablecrit * hit_chance_special + D_p_unablecrit * hit_chance
         return f
     
+    if metric:
+        print(f'multi metric mode')
+        m_k, m_v = list(metric.items())[0]
+        assert len(metric) == 1 and len(m_v) > 1, f'metric size error({metric})'
+        gen_multimetric(cfg)
+    else:
+        print(f'single metric mode')
+        d = dice(*self['weapon_dice'][0].split('d'))
+        print(d.n, d.d)
+        D_p_normal = nncde(d.d)
+        D_p_normal_buffed = nncde(d.d) + nncde(4) + nncde(4) + nncde(6)
+        D_p_xmds = xncde(d.d)
+        D_p_xmds_buffed = xncde(d.d) + xncde(4) + xncde(4) + xncde(6)
+        print(D_p_normal)
+        print(D_p_xmds)
+        gen_singlemetric()
+
+def SavingFunc(cfg):pass
+def factory(cfg):
+    if cfg['cast_type'] == "Attack":
+        AttackFunc(cfg)
+    else:
+        SavingFunc(cfg)
     
     skill_group = [[]] + [i for i in args.enable if i]
     print(skill_group)

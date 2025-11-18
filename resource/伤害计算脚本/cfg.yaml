@@ -1,5 +1,6 @@
 # Attack or Saving
-cast_type: 'Attack'
+cast_type: Attack
+Roll_status: Neutral
 self_status: 
   Attribute: ['16->20', '16', '15', '-', '-', '-']
   AC: 
@@ -22,3 +23,5 @@ enemy_status:
   weapon_dice: 
   Passive_skill_group:
   Active_skill_group:
+  is_controlled: False->True
+  Vulnerability: [['wet']]
