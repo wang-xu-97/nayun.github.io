@@ -54,8 +54,8 @@ def parse_cfg(c):
         'Spell_Save_DC_Bonus': 0, 
         'Attack_Bonus': 0,
         'weapon_dice': [],
-        'Passive_skills': [],
-        'Active_skills': [],
+        'Passive_skill_group': [],
+        'Active_skill_group': [],
     }
     for fig in ['self_status', 'enemy_status']:
         try:
