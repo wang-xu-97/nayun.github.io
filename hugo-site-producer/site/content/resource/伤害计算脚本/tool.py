@@ -58,6 +58,7 @@ passive_skill_list = {
     'fsjj':'法术狙击',
     'mfkx1':'魔法抗性1',
     'wlkx1':'物理抗性1',
+    'hmkn':'毁灭狂怒',
 }
 active_skill_list = {
     'na':'普通攻击',
@@ -80,50 +81,50 @@ class function_pack:
         self.info = info
 
 fp = function_pack
-def gen_singlemetric(cfg):
-    def f(C, B):
-        if skill_status['xmds']:
-            if skill_status['buff']:D_p_ablecrit = D_p_xmds_buffed
-            else:                   D_p_ablecrit = D_p_xmds
-        else:
-            if skill_status['buff']:D_p_ablecrit = D_p_normal_buffed
-            else:                   D_p_ablecrit = D_p_normal
-        D_p_unablecrit = args.bonus
-        if skill_status['jwqds']: 
-            B += 5
-            D_p_unablecrit += 10
-
-        t = np.maximum(20-C-B, 0)
-        hit_chance_special = (2 * (C + 1) + t) / 20
-        hit_chance = ((C + 1) + t) / 20
-        return D_p_ablecrit * hit_chance_special + D_p_unablecrit * hit_chance
-
-    return f
 def gen_multimetric():pass
 def factory(cfg):
-    self, foe, metric = cfg['self_status'], cfg['enemy_status'], cfg['metric']
-    def maker():
-        if metric:
-            print(f'multi metric mode')
-            m_k, m_v = list(metric.items())[0]
-            assert len(metric) == 1 and len(m_v) > 1, f'metric size error({metric})'
-            gen_singlemetric(cfg)
-        else:
-            print(f'single metric mode')
-            gen_multimetric(cfg)
+    self, foe, cast_type, axis, metric = cfg['self_status'], cfg['enemy_status'], cfg['cast_type'], cfg['axis'], cfg['metric']
+
+    if metric:
+        print(f'multi metric mode')
+        m_k, m_v = list(metric.items())[0]
+        assert len(metric) == 1 and len(m_v) > 1, f'metric size error({metric})'
+        gen_multimetric(cfg)
+    else:
+        print(f'single metric mode')
+        d = dice(*self['weapon_dice'][0].split('d'))
+        print(d.n, d.d)
+        D_p_normal = nncde(d.d)
+        D_p_normal_buffed = nncde(d.d) + nncde(4) + nncde(4) + nncde(6)
+        D_p_xmds = xncde(d.d)
+        D_p_xmds_buffed = xncde(d.d) + xncde(4) + xncde(4) + xncde(6)
+        print(D_p_normal)
+        print(D_p_xmds)
+        gen_singlemetric(cfg)
+
+    def gen_singlemetric():
+        skill_active = lambda s:s in self['Passive_skill_group'][0]
+
+        def f(axx, axy):
+            if skill_active('xmds'):
+                if skill_active('buff'):D_p_ablecrit = D_p_xmds_buffed
+                else:                   D_p_ablecrit = D_p_xmds
+            else:
+                if skill_active('buff'):D_p_ablecrit = D_p_normal_buffed
+                else:                   D_p_ablecrit = D_p_normal
+            if skill_active('jwqds'): 
+                B += 5
+                D_p_unablecrit += 10
+
+            t = np.maximum(20-C-B, 0)
+            hit_chance_special = (2 * (C + 1) + t) / 20
+            hit_chance = ((C + 1) + t) / 20
+            return D_p_ablecrit * hit_chance_special + D_p_unablecrit * hit_chance
+        return f
     
-    maker()
+    
     skill_group = [[]] + [i for i in args.enable if i]
     print(skill_group)
-    d = args.dice
-    print(d.n)
-    print(d.d)
-    D_p_normal = nncde(d.d)
-    D_p_normal_buffed = nncde(d.d) + nncde(4) + nncde(4) + nncde(6)
-    D_p_xmds = xncde(d.d)
-    D_p_xmds_buffed = xncde(d.d) + xncde(4) + xncde(4) + xncde(6)
-    print(D_p_normal)
-    print(D_p_xmds)
     
     def maker(skill_status):
         print(skill_status)
