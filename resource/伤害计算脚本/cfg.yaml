@@ -7,8 +7,8 @@ self_status:
   Spell_Save_DC_Bonus:
   Attack_Bonus: 
   weapon_dice: ['1d8', '1d12']
-  Passive_skills: [['xmds','jwqds']]
-  Active_skills: [['zsz', 'fyzsz']]
+  Passive_skill_group: [['xmds','jwqds']]
+  Active_skill_group: [['zsz', 'fyzsz']]
 
 enemy_status: 
   Attribute: ['-', '-', '-', '-', '-', '-']
@@ -17,5 +17,5 @@ enemy_status:
   Spell_Save_DC_Bonus:
   Attack_Bonus: 
   weapon_dice: 
-  Passive_skills:
-  Active_skills:
+  Passive_skill_group:
+  Active_skill_group:
