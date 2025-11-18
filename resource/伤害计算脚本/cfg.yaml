@@ -1,13 +1,13 @@
 # Attack or Saving
 cast_type: Attack
 Roll_status: N
-self_status: 
+self: 
   Attribute: ['16->20', '16', '15', '-', '-', '-']
   Main_att_attr_physic: STR
   AC: 
   Saving_Bonus: 
   Spell_Save_DC_Bonus:
-  Attack_Bonus: 4->5
+  Attack_Bonus: 4
   Crit_Bonus: 
   weapon_dice: 
   # weapon_dice: ['1d8', '1d12']
@@ -15,7 +15,7 @@ self_status:
   Passive_skill_group: [['xmds','jwqds','1']]
   # Active_skill_group: [['na'], ['zsz', 'fyzsz'], ['12']]
 
-enemy_status: 
+enemy: 
   Attribute: ['-', '-', '-', '-', '-', '-']
   AC: 10->15
   Saving_Bonus: 

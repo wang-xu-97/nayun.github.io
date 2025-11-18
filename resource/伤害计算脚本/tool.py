@@ -134,7 +134,7 @@ class function_pack:
 fp = function_pack
 
 def D_exp(params):
-    self, foe, cast_type, rollstat, axis, metric = params['self_status'], params['enemy_status'], params['cast_type'], params['Roll_status'], params['axis'], params['metric']
+    self, foe, cast_type, rollstat, axis, metric = params['self'], params['enemy'], params['cast_type'], params['Roll_status'], params['axis'], params['metric']
     skill_active = lambda s:s in self['Passive_skill_group'][0]
     d = dice(*self['weapon_dice'][0].split('d'))
     print(d.n, d.d)
@@ -198,8 +198,6 @@ def AttackFunc(cfg:dict):
     """
     def gen_singlemetric():
         print(f'single metric mode')
-        f = create_formula_function(deepcopy(cfg), D_exp)
-        print(f(16, 1))
         return create_formula_function(deepcopy(cfg), D_exp)
     
     if cfg['metric']:
@@ -210,118 +208,34 @@ def AttackFunc(cfg:dict):
     else:
         return gen_singlemetric()
 
-def _AttackFunc(cfg):
-    """
-    攻击骰
-    Ph = ∑(k=20-Crit_Bonus->20)Pk
-    Pn = ∑(k=(foe.Ac-Attack_Bonus)->20-Crit_Bonus-1)Pk
-    D_exp = D_p_ablecrit * (Ph * 2 + Pn) + D_p_unablecrit * (Ph + Pn)
-    """
-    self, foe, cast_type, rollstat, axis, metric = cfg['self_status'], cfg['enemy_status'], cfg['cast_type'], cfg['Roll_status'], cfg['axis'], cfg['metric']
-    def gen_singlemetric():
-        skill_active = lambda s:s in self['Passive_skill_group'][0]
-
-        def f(axx, axy):
-            if skill_active('xmds'):
-                if skill_active('buff'):D_p_ablecrit = D_p_xmds_buffed
-                else:                   D_p_ablecrit = D_p_xmds
-            else:
-                if skill_active('buff'):D_p_ablecrit = D_p_normal_buffed
-                else:                   D_p_ablecrit = D_p_normal
-            if skill_active('jwqds'): 
-                B += 5
-                D_p_unablecrit += 10
-
-            t = np.maximum(20-C-B, 0)
-            hit_chance_special = (2 * (C + 1) + t) / 20
-            hit_chance = ((C + 1) + t) / 20
-            return D_p_ablecrit * hit_chance_special + D_p_unablecrit * hit_chance
-        return f
-    
-    if metric:
-        print(f'multi metric mode')
-        m_k, m_v = list(metric.items())[0]
-        assert len(metric) == 1 and len(m_v) > 1, f'metric size error({metric})'
-        gen_multimetric(cfg)
-    else:
-        print(f'single metric mode')
-        d = dice(*self['weapon_dice'][0].split('d'))
-        print(d.n, d.d)
-        D_p_normal = nncde(d.d)
-        D_p_normal_buffed = nncde(d.d) + nncde(4) + nncde(4) + nncde(6)
-        D_p_xmds = xncde(d.d)
-        D_p_xmds_buffed = xncde(d.d) + xncde(4) + xncde(4) + xncde(6)
-        print(D_p_normal)
-        print(D_p_xmds)
-        gen_singlemetric()
-
 def SavingFunc(cfg):pass
+
 def factory(cfg):
     axa = tl.gndv(cfg, cfg['axis'][0].split('-'))
-    axb = tl.gndv(cfg, cfg['axis'][1].split('-'))
-    print(axa)
-    print(axb)
-    a_vals = np.arange(axa[0], axa[1] + 1)    # 重击减值
-    b_vals = np.arange(axb[0], axb[1] + 1)    # 重击减值
+    info = {
+        'title':'2D 曲线图', 
+        'axis':{
+            'axa':{
+                'label':cfg['axis'][0], 
+                'vals':np.arange(axa[0], axa[1] + 1),
+            },
+        }
+    }
+    if len(cfg['axis']) == 2: 
+        axb = tl.gndv(cfg, cfg['axis'][1].split('-'))
+        tl.update_nested_dict(info, ['axis', 'axb'], {
+                'label':cfg['axis'][1], 
+                'vals':np.arange(axb[0], axb[1] + 1),
+        })
+        info['title'] = '3D 曲面图'
     if cfg['cast_type'] == "Attack":
-        return fp(AttackFunc(deepcopy(cfg)), {'title':'3D 曲面图'})
+        return fp(AttackFunc(deepcopy(cfg)), info)
     else:
         SavingFunc(cfg)
     
 
 
-
-def _factory(args):
-    skill_group = [[]] + [i for i in args.enable if i]
-    print(skill_group)
-    d = args.dice
-    print(d.n)
-    print(d.d)
-    D_p_normal = nncde(d.d)
-    D_p_normal_buffed = nncde(d.d) + nncde(4) + nncde(4) + nncde(6)
-    D_p_xmds = xncde(d.d)
-    D_p_xmds_buffed = xncde(d.d) + xncde(4) + xncde(4) + xncde(6)
-    print(D_p_normal)
-    print(D_p_xmds)
-    
-    def maker(skill_status):
-        print(skill_status)
-        def f(C, B):
-            if skill_status['xmds']:
-                if skill_status['buff']:D_p_ablecrit = D_p_xmds_buffed
-                else:                   D_p_ablecrit = D_p_xmds
-            else:
-                if skill_status['buff']:D_p_ablecrit = D_p_normal_buffed
-                else:                   D_p_ablecrit = D_p_normal
-            D_p_unablecrit = args.bonus
-            if skill_status['jwqds']: 
-                B += 5
-                D_p_unablecrit += 10
-
-            t = np.maximum(20-C-B, 0)
-            hit_chance_special = (2 * (C + 1) + t) / 20
-            hit_chance = ((C + 1) + t) / 20
-            return D_p_ablecrit * hit_chance_special + D_p_unablecrit * hit_chance
-
-        return f
-
-    def tt(skills):
-        return '+'.join([
-            ttmap.get(sk, '')
-            for sk in skills
-        ])
-    
-    func_dict = {
-        '+'.join(skills) if skills != [] else 'default': fp(maker({
-            skill: skill in skills
-            for skill in supported_skill_list
-        }), {'title':tt(skills)})
-        for skills in skill_group
-    }
-
-    return func_dict
-
-def single_function_analysis(funcpack:fp, a_vals, b_vals):
+def single_function_analysis(funcpack:fp):
     """单函数分析模式"""
     if not funcpack.func:
         print("错误: 没有找到可分析的函数")
@@ -333,41 +247,64 @@ def single_function_analysis(funcpack:fp, a_vals, b_vals):
     print(f"=== 单函数分析: {func_name} ===")
     
     # 创建网格
-    A, B = np.meshgrid(a_vals, b_vals, indexing='ij')
-    
-    # 计算函数值
-    F = func(A, B)
-    
-    # 打印函数值矩阵
-    print(f"\n{func_name} 函数值矩阵:")
-    print("行: 重击减值 (0-5)")
-    print("列: 实际护甲Ac-Bonus (5-15)")
-    print()
-    
-    header = "重击减值\\护甲" + "".join([f"{b:>8}" for b in b_vals])
-    rows = f'{header}\n{"-" * len(header)}\n'
-    
-    for i, a in enumerate(a_vals):
-        row = f"{a:>11}  "
-        for j, b in enumerate(b_vals):
-            row += f"{F[i, j]:>8.1f}"
-        rows += f'{row}\n'
-    
-    print(text_to_markdown_table(rows))
-    
-    # 创建3D图
-    fig = plt.figure(figsize=(10, 8))
-    ax = fig.add_subplot(111, projection='3d')
-    
-    surf = ax.plot_surface(A, B, F, cmap='viridis', alpha=0.8)
-    ax.set_xlabel('重击减值')
-    ax.set_ylabel('实际护甲Ac-Bonus')
-    ax.set_zlabel('伤害期望')
-    ax.set_title(f'{coord_info.get("title", "技能")}')
-    fig.colorbar(surf, ax=ax, shrink=0.5, label='函数值')
-    
-    plt.tight_layout()
-    plt.show()
+    axis = coord_info['axis']
+    if len(axis) == 1:
+        F = func(axis['axa']['vals'])
+        fig = plt.figure(figsize=(10, 8))
+        ax = fig.add_subplot(111)  # 不需要 projection 参数
+        A = axis['axa']['vals']
+        F = func(A)
+
+        # 绘制线图
+        line = ax.plot(A, F, linewidth=2, color='blue', alpha=0.8)
+        ax.set_xlabel(axis['axa']['label'])  # 使用你的 axis 字典
+        ax.set_ylabel('伤害期望')
+        ax.set_title(f'{coord_info.get("title", "技能")}')
+
+        # 如果需要颜色条，在 2D 图中通常不需要，但可以添加其他元素
+        # 例如添加网格
+        ax.grid(True, alpha=0.3)
+
+        plt.tight_layout()
+        plt.show()
+
+    if len(axis) == 2:
+        a_vals, b_vals = axis['axa']['vals'], axis['axb']['vals']
+        A, B = np.meshgrid(a_vals, b_vals, indexing='ij')
+        
+        # 计算函数值
+        F = func(A, B)
+        
+        # 打印函数值矩阵
+        print(f"\n{func_name} 函数值矩阵:")
+        print(f"行: {axis['axa']['label']}")
+        print(f"列: {axis['axb']['label']}")
+        print()
+        
+        header = "--" + "".join([f"{b:>8}" for b in b_vals])
+        rows = f'{header}\n{"-" * len(header)}\n'
+        
+        for i, a in enumerate(a_vals):
+            row = f"{a:>11}  "
+            for j, b in enumerate(b_vals):
+                row += f"{F[i, j]:>8.1f}"
+            rows += f'{row}\n'
+        
+        print(text_to_markdown_table(rows))
+        
+        # 创建3D图
+        fig = plt.figure(figsize=(10, 8))
+        ax = fig.add_subplot(111, projection='3d')
+        
+        surf = ax.plot_surface(A, B, F, cmap='viridis', alpha=0.8)
+        ax.set_xlabel(axis['axa']['label'])
+        ax.set_ylabel(axis['axb']['label'])
+        ax.set_zlabel('伤害期望')
+        ax.set_title(f'{coord_info.get("title", "技能")}')
+        fig.colorbar(surf, ax=ax, shrink=0.5, label='函数值')
+        
+        plt.tight_layout()
+        plt.show()
 
 
 def multi_function_compare(func_dict, a_vals, b_vals):
