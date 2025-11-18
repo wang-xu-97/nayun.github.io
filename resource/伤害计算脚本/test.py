@@ -12,13 +12,24 @@ def parse_cfg(c):
             @tl.execute(r)
             def determin_metric():
                 if not s:return s_default
-                if len(v_type(s)) > 1:
-                    if len(metric) > 0:
-                        print(f'曲面矩阵已设置{metric}，{k}矩阵({s})设置不生效，重置为默认({s_default})')
-                        return s_default
-                    else:
-                        metric.update({k:s})
-                return s
+                def update_metric():
+                    if len(v_type(s)) > 1:
+                        if len(metric) > 0:
+                            print(f'曲面矩阵已设置{metric}，{k}矩阵({s})设置不生效，重置为默认({s_default})')
+                            return s_default
+                        else:
+                            metric.update({k:s})
+                    return s
+                
+                if 'dice' in k:return update_metric()
+                sl = (active_skill_list if 'Active_skill_group' in k else passive_skill_list)
+                for i, _s in enumerate(s):
+                    for __s in _s:
+                        if __s not in sl:
+                            print(f'{k}->{_s}->{__s} not in skill list{sl}')
+                            _s.remove(__s)
+                    s[i] = _s
+                return update_metric()
         else:
             @tl.execute(r)
             def determine_axis():
@@ -55,14 +66,14 @@ def parse_cfg(c):
         'Attack_Bonus': 0,
         'weapon_dice': [],
         'Passive_skill_group': [],
-        'Active_skill_group': [],
+        'Active_skill_group': [['na']],
     }
     for fig in ['self_status', 'enemy_status']:
         try:
             for idx, attr in enumerate(c[fig]['Attribute']):c[fig]['Attribute'][idx] = axis_metric_determine(f'{fig}-{attributes[idx]}', str(attr), 10)
             if (cfasize:=len(c[fig]['Attribute'])) < 6:c[fig]['Attribute'].extend([10]*(6-cfasize))
         except: c[fig]['Attribute'] = [10] * 6
-        for k, v in defaults.items():c[fig][k] = axis_metric_determine(f'{fig}-{k}', str(c[fig][k]) if type(v)!=list else c[fig][k], v, v_type=type(v))
+        for k, v in defaults.items():c[fig][k] = axis_metric_determine(f'{fig}-{k}', str(c[fig].get(k, None)) if type(v)!=list else c[fig].get(k, None), v, v_type=type(v))
     c['axis'] = axis
     c['metric'] = metric
     return c
@@ -71,8 +82,8 @@ def parse_cfg(c):
 def main():
     c = parse_cfg(tl.read_yml('cfg.yaml'))
     tl.printdict(c)
+    func_dict = factory(c)
     exit()
-    func_dict = factory(args)
     singlefuncpack = None
     for v in func_dict.values():
         print(v)

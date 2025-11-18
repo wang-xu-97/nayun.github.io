@@ -1,14 +1,15 @@
 # Attack or Saving
 cast_type: 'Attack'
 self_status: 
-  Attribute: ['16->148', '16', '15', '-', '-', '-']
+  Attribute: ['16->20', '16', '15', '-', '-', '-']
   AC: 
   Saving_Bonus: 
   Spell_Save_DC_Bonus:
   Attack_Bonus: 
-  weapon_dice: ['1d8', '1d12']
-  Passive_skill_group: [['xmds','jwqds']]
-  Active_skill_group: [['zsz', 'fyzsz']]
+  weapon_dice: 
+  # weapon_dice: ['1d8', '1d12']
+  # Passive_skill_group: [['xmds'], ['xmds','jwqds','1'], ['buff1']]
+  Active_skill_group: [['na'], ['zsz', 'fyzsz'], ['12']]
 
 enemy_status: 
   Attribute: ['-', '-', '-', '-', '-', '-']
