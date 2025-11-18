@@ -76,7 +76,7 @@ def parse_cfg(c):
         'Active_skill_group': [['na']],
         'Vulnerability': [[]],
     }
-    for fig in ['self_status', 'enemy_status']:
+    for fig in ['self', 'enemy']:
         try:
             attrs = {}
             for idx, attr in enumerate(c[fig]['Attribute']):attrs[list(attributes.keys())[idx]] = axis_metric_determine(f'{fig}-Attribute-{list(attributes.keys())[idx]}', str(attr), 10)
@@ -97,14 +97,7 @@ def main():
     print('1='*150)
     singlefuncpack = factory(c)
     print('2='*150)
-
-    axa = tl.gndv(c, c['axis'][0].split('-'))
-    axb = tl.gndv(c, c['axis'][1].split('-'))
-    print(axa)
-    print(axb)
-    a_vals = np.arange(axa[0], axa[1] + 1)    # 重击减值
-    b_vals = np.arange(axb[0], axb[1] + 1)    # 重击减值
-    single_function_analysis(singlefuncpack, a_vals, b_vals)
+    single_function_analysis(singlefuncpack)
     exit()
     singlefuncpack = None
     for v in func_dict.values():
