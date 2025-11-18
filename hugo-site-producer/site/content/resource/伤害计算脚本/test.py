@@ -94,10 +94,17 @@ def parse_cfg(c):
 def main():
     c = parse_cfg(tl.read_yml('cfg.yaml'))
     tl.printdict(c)
-    func_dict = factory(c)
+    print('1='*150)
+    singlefuncpack = factory(c)
+    print('2='*150)
 
-    a_vals = np.arange(0, 5 + 1)    # 重击减值
-    b_vals = np.arange(5, 15 + 1)   # 实际护甲Ac-Bonus
+    axa = tl.gndv(c, c['axis'][0].split('-'))
+    axb = tl.gndv(c, c['axis'][1].split('-'))
+    print(axa)
+    print(axb)
+    a_vals = np.arange(axa[0], axa[1] + 1)    # 重击减值
+    b_vals = np.arange(axb[0], axb[1] + 1)    # 重击减值
+    single_function_analysis(singlefuncpack, a_vals, b_vals)
     exit()
     singlefuncpack = None
     for v in func_dict.values():

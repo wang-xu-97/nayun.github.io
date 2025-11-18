@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from typing import List, Optional
 from collections import defaultdict
+from copy import deepcopy
 
 class StaticMethodMeta(type):
     def __new__(cls, name, bases, namespace):
@@ -51,6 +52,14 @@ class tools(metaclass=StaticMethodMeta):
         return matches[0] if matches else None
     best_match = find_most_similar_string
 
+    def get_nested_dict_v(d, keys):
+        """
+        递归查找多层字典
+        """
+        if len(keys) == 1:return d[keys[0]]
+        else:return tl.get_nested_dict_v(d[keys[0]], keys[1:])
+    gndv = get_nested_dict_v
+
     def update_nested_dict(d, keys, value):
         """
         递归更新多层字典
@@ -62,7 +71,6 @@ class tools(metaclass=StaticMethodMeta):
             if key not in d or not isinstance(d[key], dict):
                 d[key] = {}
             tl.update_nested_dict(d[key], keys[1:], value)
-
 
 tl = tools
 
@@ -77,7 +85,7 @@ class math(metaclass=StaticMethodMeta):
     xncde = xmds_non_crit_dice_expectation
     
     def attribute_adjustment_value(attr:int):
-        return int((attr-10) / 2)
+        return ((np.asarray(attr) - 10) // 2).astype(int)
     attr_adj_v = attribute_adjustment_value
 
 m = math
@@ -170,13 +178,11 @@ def create_formula_function(cfg, func_Dp):
         axis = cfg['axis']
         if len(axis_values) != len(axis):raise ValueError(f"期望 {len(axis)} 个坐标轴参数，但得到了 {len(axis_values)} 个")
         
-        current_params = cfg.copy()
+        current_params = deepcopy(cfg)
         
         for i, axis_key in enumerate(axis):
             tl.update_nested_dict(current_params, axis_key.split('-'), axis_values[i])
 
-        tl.pd(current_params)
-        
         # 使用全部参数计算固定公式
         return func_Dp(current_params)
     
@@ -192,9 +198,9 @@ def AttackFunc(cfg:dict):
     """
     def gen_singlemetric():
         print(f'single metric mode')
-        f = create_formula_function(cfg, D_exp)
+        f = create_formula_function(deepcopy(cfg), D_exp)
         print(f(16, 1))
-        return create_formula_function(cfg, D_exp)
+        return create_formula_function(deepcopy(cfg), D_exp)
     
     if cfg['metric']:
         print(f'multi metric mode')
@@ -202,7 +208,7 @@ def AttackFunc(cfg:dict):
         assert len(metric) == 1 and len(m_v) > 1, f'metric size error({metric})'
         gen_multimetric(cfg)
     else:
-        gen_singlemetric()
+        return gen_singlemetric()
 
 def _AttackFunc(cfg):
     """
@@ -251,8 +257,14 @@ def _AttackFunc(cfg):
 
 def SavingFunc(cfg):pass
 def factory(cfg):
+    axa = tl.gndv(cfg, cfg['axis'][0].split('-'))
+    axb = tl.gndv(cfg, cfg['axis'][1].split('-'))
+    print(axa)
+    print(axb)
+    a_vals = np.arange(axa[0], axa[1] + 1)    # 重击减值
+    b_vals = np.arange(axb[0], axb[1] + 1)    # 重击减值
     if cfg['cast_type'] == "Attack":
-        AttackFunc(cfg)
+        return fp(AttackFunc(deepcopy(cfg)), {'title':'3D 曲面图'})
     else:
         SavingFunc(cfg)
     
