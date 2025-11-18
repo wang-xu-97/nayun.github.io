@@ -32,6 +32,9 @@ class tools(metaclass=StaticMethodMeta):
     def printlist(l, indent:str=""):
         for i, c in enumerate(l):
             print(f"{indent}{i+1}.\t{c}")
+
+    pd = printdict
+    pl = printlist
     
     def execute_immediately(r:list):
         def wp(f):
@@ -39,7 +42,7 @@ class tools(metaclass=StaticMethodMeta):
         return wp
     execute = execute_immediately
 
-    def find_most_similar_string(input_str: str, string_list: List[str], cutoff: float = 0.6) -> Optional[str]:
+    def find_most_similar_string(input_str: str, string_list: List[str], cutoff: float = 0.1) -> Optional[str]:
         """
         最相似的字符串，如果找不到相似度足够高的则返回None
         """
@@ -48,16 +51,37 @@ class tools(metaclass=StaticMethodMeta):
         return matches[0] if matches else None
     best_match = find_most_similar_string
 
+    def update_nested_dict(d, keys, value):
+        """
+        递归更新多层字典
+        """
+        if len(keys) == 1:
+            d[keys[0]] = value
+        else:
+            key = keys[0]
+            if key not in d or not isinstance(d[key], dict):
+                d[key] = {}
+            tl.update_nested_dict(d[key], keys[1:], value)
+
+
 tl = tools
 
-def normal_non_crit_dice_expectation(d):
-    return (1+d)/2
+class math(metaclass=StaticMethodMeta):
 
-def xmds_non_crit_dice_expectation(d):
-    return (d+1)*(4*d-1)/(6*d)
+    def normal_non_crit_dice_expectation(d):
+        return (1+d)/2
+    nncde = normal_non_crit_dice_expectation
 
-nncde = normal_non_crit_dice_expectation
-xncde = xmds_non_crit_dice_expectation
+    def xmds_non_crit_dice_expectation(d):
+        return (d+1)*(4*d-1)/(6*d)
+    xncde = xmds_non_crit_dice_expectation
+    
+    def attribute_adjustment_value(attr:int):
+        return int((attr-10) / 2)
+    attr_adj_v = attribute_adjustment_value
+
+m = math
+
 
 passive_skill_list = {
     'xmds': '凶蛮打手', 
@@ -100,16 +124,94 @@ class function_pack:
         self.info = info
 
 fp = function_pack
-def gen_multimetric():pass
 
-def AttackFunc(cfg):
+def D_exp(params):
+    self, foe, cast_type, rollstat, axis, metric = params['self_status'], params['enemy_status'], params['cast_type'], params['Roll_status'], params['axis'], params['metric']
+    skill_active = lambda s:s in self['Passive_skill_group'][0]
+    d = dice(*self['weapon_dice'][0].split('d'))
+    print(d.n, d.d)
+    D_p_normal = m.nncde(d.d)
+    D_p_normal_buffed = m.nncde(d.d) + m.nncde(4) + m.nncde(4) + m.nncde(6)
+    D_p_xmds = m.xncde(d.d)
+    D_p_xmds_buffed = m.xncde(d.d) + m.xncde(4) + m.xncde(4) + m.xncde(6)
+    print(D_p_normal)
+    print(D_p_xmds)
+    C = self['Crit_Bonus']
+    D_p_unablecrit = m.attr_adj_v(self['Attribute'][self['Main_att_attr_physic']])
+    B = foe['AC'] - self['Attack_Bonus']
+    if skill_active('xmds'):
+        if skill_active('buff'):D_p_ablecrit = D_p_xmds_buffed
+        else:                   D_p_ablecrit = D_p_xmds
+    else:
+        if skill_active('buff'):D_p_ablecrit = D_p_normal_buffed
+        else:                   D_p_ablecrit = D_p_normal
+    if skill_active('jwqds'): 
+        B += 5
+        D_p_unablecrit += 10
+
+    t = np.maximum(20-C-B, 0)
+    hit_chance_special = (2 * (C + 1) + t) / 20
+    hit_chance = ((C + 1) + t) / 20
+    return D_p_ablecrit * hit_chance_special + D_p_unablecrit * hit_chance
+
+def create_formula_function(cfg, func_Dp):
+    """
+    创建一个使用参数字典和坐标轴列表的公式函数
+    Returns:
+        一个函数 func(*l_axis)，该函数返回固定公式的结果
+    """
+    def func(*axis_values):
+        """
+        使用坐标轴参数计算固定公式
+        Args:*axis_values: 坐标轴参数的值，数量与 l_axis 相同
+        Returns:公式结果
+        """
+        # 检查参数数量是否匹配
+        axis = cfg['axis']
+        if len(axis_values) != len(axis):raise ValueError(f"期望 {len(axis)} 个坐标轴参数，但得到了 {len(axis_values)} 个")
+        
+        current_params = cfg.copy()
+        
+        for i, axis_key in enumerate(axis):
+            tl.update_nested_dict(current_params, axis_key.split('-'), axis_values[i])
+
+        tl.pd(current_params)
+        
+        # 使用全部参数计算固定公式
+        return func_Dp(current_params)
+    
+    return func
+
+
+def AttackFunc(cfg:dict):
     """
     攻击骰
     Ph = ∑(k=20-Crit_Bonus->20)Pk
     Pn = ∑(k=(foe.Ac-Attack_Bonus)->20-Crit_Bonus-1)Pk
     D_exp = D_p_ablecrit * (Ph * 2 + Pn) + D_p_unablecrit * (Ph + Pn)
     """
-    self, foe, cast_type, axis, metric = cfg['self_status'], cfg['enemy_status'], cfg['cast_type'], cfg['axis'], cfg['metric']
+    def gen_singlemetric():
+        print(f'single metric mode')
+        f = create_formula_function(cfg, D_exp)
+        print(f(16, 1))
+        return create_formula_function(cfg, D_exp)
+    
+    if cfg['metric']:
+        print(f'multi metric mode')
+        m_k, m_v = list(metric.items())[0]
+        assert len(metric) == 1 and len(m_v) > 1, f'metric size error({metric})'
+        gen_multimetric(cfg)
+    else:
+        gen_singlemetric()
+
+def _AttackFunc(cfg):
+    """
+    攻击骰
+    Ph = ∑(k=20-Crit_Bonus->20)Pk
+    Pn = ∑(k=(foe.Ac-Attack_Bonus)->20-Crit_Bonus-1)Pk
+    D_exp = D_p_ablecrit * (Ph * 2 + Pn) + D_p_unablecrit * (Ph + Pn)
+    """
+    self, foe, cast_type, rollstat, axis, metric = cfg['self_status'], cfg['enemy_status'], cfg['cast_type'], cfg['Roll_status'], cfg['axis'], cfg['metric']
     def gen_singlemetric():
         skill_active = lambda s:s in self['Passive_skill_group'][0]
 
@@ -154,45 +256,6 @@ def factory(cfg):
     else:
         SavingFunc(cfg)
     
-    skill_group = [[]] + [i for i in args.enable if i]
-    print(skill_group)
-    
-    def maker(skill_status):
-        print(skill_status)
-        def f(C, B):
-            if skill_status['xmds']:
-                if skill_status['buff']:D_p_ablecrit = D_p_xmds_buffed
-                else:                   D_p_ablecrit = D_p_xmds
-            else:
-                if skill_status['buff']:D_p_ablecrit = D_p_normal_buffed
-                else:                   D_p_ablecrit = D_p_normal
-            D_p_unablecrit = args.bonus
-            if skill_status['jwqds']: 
-                B += 5
-                D_p_unablecrit += 10
-
-            t = np.maximum(20-C-B, 0)
-            hit_chance_special = (2 * (C + 1) + t) / 20
-            hit_chance = ((C + 1) + t) / 20
-            return D_p_ablecrit * hit_chance_special + D_p_unablecrit * hit_chance
-
-        return f
-
-    def tt(skills):
-        return '+'.join([
-            ttmap.get(sk, '')
-            for sk in skills
-        ])
-    
-    func_dict = {
-        '+'.join(skills) if skills != [] else 'default': fp(maker({
-            skill: skill in skills
-            for skill in supported_skill_list
-        }), {'title':tt(skills)})
-        for skills in skill_group
-    }
-
-    return func_dict
 
 
 

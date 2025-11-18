@@ -1,8 +1,9 @@
 # Attack or Saving
 cast_type: Attack
-Roll_status: Neutral
+Roll_status: N
 self_status: 
   Attribute: ['16->20', '16', '15', '-', '-', '-']
+  Main_att_attr_physic: STR
   AC: 
   Saving_Bonus: 
   Spell_Save_DC_Bonus:

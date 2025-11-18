@@ -8,7 +8,7 @@ def parse_cfg(c):
     metric = {}
     def axis_metric_determine(k, s:str, s_default, mark='->', v_type=int):
         r = []
-        if v_type != int:
+        if v_type == list:
             @tl.execute(r)
             def determin_metric():
                 if not s:return s_default
@@ -32,7 +32,7 @@ def parse_cfg(c):
                             _s.remove(__s)
                     s[i] = _s
                 return update_metric()
-        else:
+        elif v_type == int:
             @tl.execute(r)
             def determine_axis():
                 def limited(i:str, low=1, up=30):
@@ -58,10 +58,14 @@ def parse_cfg(c):
                 else:
                     try: return int(s)
                     except: return s_default
+        else:
+            if not s:return s_default
+            else: return s
         return r[0]
 
 
     defaults = {
+        'Main_att_attr_physic': 'STR',
         'AC': 15, 
         'Saving_Bonus': 0, 
         'Spell_Save_DC_Bonus': 0, 
@@ -74,7 +78,9 @@ def parse_cfg(c):
     }
     for fig in ['self_status', 'enemy_status']:
         try:
-            for idx, attr in enumerate(c[fig]['Attribute']):c[fig]['Attribute'][idx] = axis_metric_determine(f'{fig}-{list(attributes.keys())[idx]}', str(attr), 10)
+            attrs = {}
+            for idx, attr in enumerate(c[fig]['Attribute']):attrs[list(attributes.keys())[idx]] = axis_metric_determine(f'{fig}-Attribute-{list(attributes.keys())[idx]}', str(attr), 10)
+            c[fig]['Attribute'] = attrs
             if (cfasize:=len(c[fig]['Attribute'])) < 6:c[fig]['Attribute'].extend([10]*(6-cfasize))
         except: c[fig]['Attribute'] = [10] * 6
         for k, v in defaults.items():c[fig][k] = axis_metric_determine(f'{fig}-{k}', str(c[fig].get(k, None)) if type(v)!=list else c[fig].get(k, None), v, v_type=type(v))
@@ -89,6 +95,9 @@ def main():
     c = parse_cfg(tl.read_yml('cfg.yaml'))
     tl.printdict(c)
     func_dict = factory(c)
+
+    a_vals = np.arange(0, 5 + 1)    # 重击减值
+    b_vals = np.arange(5, 15 + 1)   # 实际护甲Ac-Bonus
     exit()
     singlefuncpack = None
     for v in func_dict.values():
