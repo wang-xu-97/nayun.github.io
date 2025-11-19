@@ -2,25 +2,25 @@
 cast_type: Attack
 Roll_status: N
 self: 
-  Attribute: ['16->27', '16', '15', '-', '-', '-']
+  Attribute: ['16', '16', '15', '-', '-', '-']
   Main_att_attr_physic: STR
   AC: 10
   Saving_Bonus: 
   Spell_Save_DC_Bonus:
-  Attack_Bonus: 0->10
+  Attack_Bonus: 0
   # 属性调整值和特定技能之外的固定伤害加值，比如武器附魔加值
   Damage_Bonus: 
-  Crit_Bonus: 
-  weapon_dice: ['1d12']
-  # weapon_dice: ['1d8', '1d12']
+  Crit_Bonus: 0->5
+  # weapon_dice: ['1d12']
+  # weapon_dice: ['1d8', '1d12', '1d15']
   # Passive_skill_group: [['xmds'], ['xmds','jwqds','1'], ['buff1']]
-  Passive_skill_group: [['xmds',]]
+  # Passive_skill_group: [['xmds',]]
   # Active_skill_group: [['na'], ['zsz', 'fyzsz'], ['12']]
 
 enemy: 
   Attribute: ['-', '-', '-', '-', '-', '-']
-  AC: 
-  Saving_Bonus: 10->20
+  AC: 10->20
+  Saving_Bonus: 
   Spell_Save_DC_Bonus:
   Attack_Bonus: 
   weapon_dice: 

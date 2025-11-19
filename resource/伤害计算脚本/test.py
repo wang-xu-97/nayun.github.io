@@ -92,28 +92,22 @@ def parse_cfg(c):
     c['Roll_status'] = 'Neutral' if not (bm:=tl.best_match(c['Roll_status'], Roll_status.keys())) else bm
     return c
 
-
+# todo 显示敌我信息、攻击类型、优劣势骰
 def main():
     c = parse_cfg(tl.read_yml('cfg.yaml'))
-    # tl.pd(c)
-    singlefuncpack = factory(c)
-    single_function_analysis(singlefuncpack)
-    exit()
-    singlefuncpack = None
-    for v in func_dict.values():
-        print(v)
-        if not singlefuncpack and (tt:=v.info['title']) and  tt!= 'default':
-            singlefuncpack = v
-    
-    # 参数范围
-    a_vals = np.arange(0, 5 + 1)    # 重击减值
-    b_vals = np.arange(5, 15 + 1)   # 实际护甲Ac-Bonus
-    
-    # 根据模式选择分析方式
-    if args.mode == 'single':
-        single_function_analysis(singlefuncpack, a_vals, b_vals)
-    else:  # compare mode
-        multi_function_compare(func_dict, coord_info, a_vals, b_vals)
+    axis = c['axis']
+    tl.pl(axis)
+    tl.pd(c['metric'])
+    funcpack = factory(c)
+    A = np.arange(tl.gndv(c, axis[0])[0], tl.gndv(c, axis[0])[1])
+    B = None
+    if len(axis) == 2:
+        A, B = np.meshgrid(A, np.arange(tl.gndv(c, axis[1])[0], tl.gndv(c, axis[1])[1] + 1), indexing='ij')
+    if c['metric']:
+        multi_function_compare(funcpack, {'title':f"期望矩阵对比{c['metric']}", 'x':axis[0], 'y':axis[1]}, A, B)
+    else:
+        single_function_analysis(funcpack, A, B)
+
 
 if __name__ == "__main__":
     main()
