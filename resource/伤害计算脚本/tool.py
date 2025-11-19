@@ -202,6 +202,7 @@ def AttackFunc(cfg:dict):
     
     if cfg['metric']:
         print(f'multi metric mode')
+        info['title'] = '期望矩阵对比'
         m_k, m_v = list(metric.items())[0]
         assert len(metric) == 1 and len(m_v) > 1, f'metric size error({metric})'
         gen_multimetric(cfg)
