@@ -166,9 +166,7 @@ def D_exp(params):
 
 def create_formula_function(cfg, func_Dp):
     """
-    创建一个使用参数字典和坐标轴列表的公式函数
-    Returns:
-        一个函数 func，该函数返回固定公式的结果
+    创建公式函数
     """
     def func(*axis_values):
         """
