@@ -21,7 +21,7 @@ def parse_cfg(c):
                             metric.update({k:s})
                     return s
                 
-                if 'dice' not in k:return update_metric()
+                if 'dice' in k:return update_metric()
                 if 'Active_skill_group' in k:sl = active_skill_list
                 elif 'Passive_skill_group' in k:sl = passive_skill_list
                 else: sl = Vulnerability_list
@@ -35,7 +35,7 @@ def parse_cfg(c):
         elif v_type == int:
             @tl.execute(r)
             def determine_axis():
-                def limited(i:str, low=1, up=30):
+                def limited(i:str, low=0, up=30):
                     i = i.strip()
                     if int(i) <= low:
                         print(f'{k}属性值设置低于下限({i})，重置为默认下限({low})')
@@ -70,6 +70,7 @@ def parse_cfg(c):
         'Saving_Bonus': 0, 
         'Spell_Save_DC_Bonus': 0, 
         'Attack_Bonus': 0,
+        'Damage_Bonus': 0,
         'Crit_Bonus': 0,
         'weapon_dice': ['1d10'],
         'Passive_skill_group': [[]],
