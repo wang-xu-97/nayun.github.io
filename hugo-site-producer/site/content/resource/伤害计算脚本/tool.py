@@ -166,7 +166,7 @@ def create_formula_function(cfg, func_Dp):
     """
     创建一个使用参数字典和坐标轴列表的公式函数
     Returns:
-        一个函数 func(*l_axis)，该函数返回固定公式的结果
+        一个函数 func，该函数返回固定公式的结果
     """
     def func(*axis_values):
         """
@@ -178,7 +178,7 @@ def create_formula_function(cfg, func_Dp):
         axis = cfg['axis']
         if len(axis_values) != len(axis):raise ValueError(f"期望 {len(axis)} 个坐标轴参数，但得到了 {len(axis_values)} 个")
         
-        current_params = deepcopy(cfg)
+        current_params = cfg.copy()
         
         for i, axis_key in enumerate(axis):
             tl.update_nested_dict(current_params, axis_key.split('-'), axis_values[i])
@@ -196,9 +196,6 @@ def AttackFunc(cfg:dict):
     Pn = ∑(k=(foe.Ac-Attack_Bonus)->20-Crit_Bonus-1)Pk
     D_exp = D_p_ablecrit * (Ph * 2 + Pn) + D_p_unablecrit * (Ph + Pn)
     """
-    def gen_singlemetric():
-        print(f'single metric mode')
-        return create_formula_function(deepcopy(cfg), D_exp)
     
     if cfg['metric']:
         print(f'multi metric mode')
@@ -207,7 +204,8 @@ def AttackFunc(cfg:dict):
         assert len(metric) == 1 and len(m_v) > 1, f'metric size error({metric})'
         gen_multimetric(cfg)
     else:
-        return gen_singlemetric()
+        print(f'single metric mode')
+        return create_formula_function(deepcopy(cfg), D_exp)
 
 def SavingFunc(cfg):pass
 
@@ -229,8 +227,10 @@ def factory(cfg):
                 'vals':np.arange(axb[0], axb[1] + 1),
         })
         info['title'] = '3D 曲面图'
+
+
     if cfg['cast_type'] == "Attack":
-        return fp(AttackFunc(deepcopy(cfg)), info)
+        return fp(AttackFunc(cfg), info)
     else:
         SavingFunc(cfg)
     
