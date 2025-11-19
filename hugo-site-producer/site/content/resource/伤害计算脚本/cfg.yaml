@@ -7,10 +7,10 @@ self:
   AC: 10
   Saving_Bonus: 
   Spell_Save_DC_Bonus:
-  Attack_Bonus: 4
+  Attack_Bonus: 0->10
   # 属性调整值和特定技能之外的固定伤害加值，比如武器附魔加值
-  Damage_Bonus: 4
-  Crit_Bonus: 0->10
+  Damage_Bonus: 0->10
+  Crit_Bonus: 
   # weapon_dice: ['1d12']
   # weapon_dice: ['1d8', '1d12']
   # Passive_skill_group: [['xmds'], ['xmds','jwqds','1'], ['buff1']]
@@ -19,8 +19,8 @@ self:
 
 enemy: 
   Attribute: ['-', '-', '-', '-', '-', '-']
-  AC: 10->20
-  Saving_Bonus: 
+  AC: 
+  Saving_Bonus: 10->20
   Spell_Save_DC_Bonus:
   Attack_Bonus: 
   weapon_dice: 
