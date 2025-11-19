@@ -37,10 +37,10 @@ def parse_cfg(c):
             def determine_axis():
                 def limited(i:str, low=0, up=30):
                     i = i.strip()
-                    if int(i) <= low:
+                    if int(i) < low:
                         print(f'{k}属性值设置低于下限({i})，重置为默认下限({low})')
                         return low
-                    if int(i) >= up:
+                    if int(i) > up:
                         print(f'{k}属性值设置高于上限({i})，重置为默认上限({up})')
                         return up
                     return int(i)
@@ -95,10 +95,8 @@ def parse_cfg(c):
 
 def main():
     c = parse_cfg(tl.read_yml('cfg.yaml'))
-    tl.printdict(c)
-    print('1='*150)
+    # tl.pd(c)
     singlefuncpack = factory(c)
-    print('2='*150)
     single_function_analysis(singlefuncpack)
     exit()
     singlefuncpack = None
