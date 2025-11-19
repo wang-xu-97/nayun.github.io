@@ -52,10 +52,11 @@ class tools(metaclass=StaticMethodMeta):
         return matches[0] if matches else None
     best_match = find_most_similar_string
 
-    def get_nested_dict_v(d, keys):
+    def get_nested_dict_v(d, keys:list):
         """
         递归查找多层字典
         """
+        if isinstance(keys, str):keys = keys.split('-')
         if len(keys) == 1:return d[keys[0]]
         else:return tl.get_nested_dict_v(d[keys[0]], keys[1:])
     gndv = get_nested_dict_v
@@ -64,6 +65,7 @@ class tools(metaclass=StaticMethodMeta):
         """
         递归更新多层字典
         """
+        if isinstance(keys, str):keys = keys.split('-')
         if len(keys) == 1:
             d[keys[0]] = value
         else:
@@ -126,6 +128,9 @@ class dice:
         self.n = int(n)
         self.d = int(d)
 
+    def __str__(self):
+        return f'{self.n}d{self.d}'
+
 class function_pack:
     def __init__(self, func, info) -> None:
         self.func = func
@@ -136,8 +141,10 @@ fp = function_pack
 # 1. 必重击状态、2. 易伤状态、3. 优劣势公式、4. 更多技能
 def D_exp(params):
     self, foe, cast_type, rollstat, axis, metric = params['self'], params['enemy'], params['cast_type'], params['Roll_status'], params['axis'], params['metric']
+    print(self['Passive_skill_group'])
     skill_active = lambda s:s in self['Passive_skill_group'][0]
     d = dice(*self['weapon_dice'][0].split('d'))
+    print(d)
     print(d.n, d.d)
     D_p_normal = m.nncde(d.d)
     D_p_normal_buffed = m.nncde(d.d) + m.nncde(4) + m.nncde(4) + m.nncde(6)
@@ -179,7 +186,7 @@ def create_formula_function(cfg, func_Dp):
         current_params = cfg.copy()
         
         for i, axis_key in enumerate(axis):
-            tl.update_nested_dict(current_params, axis_key.split('-'), axis_values[i])
+            tl.update_nested_dict(current_params, axis_key, axis_values[i])
 
         return func_Dp(current_params)
     
@@ -193,52 +200,49 @@ def AttackFunc(cfg:dict):
     Pn = ∑(k=(foe.Ac-Attack_Bonus)->20-Crit_Bonus-1)Pk
     D_exp = D_p_ablecrit * (Ph * 2 + Pn) + D_p_unablecrit * (Ph + Pn)
     """
-    
+    def gen_multimetric(cfg):
+        m_k, m_v = list(cfg['metric'].items())[0]
+        fps = []
+        for met in m_v:
+            tl.update_nested_dict(cfg, m_k, [met])
+            print(info:={'title':f'{m_k}: {tl.gndv(cfg, m_k)}', })
+            fps.append(fp(create_formula_function(deepcopy(cfg), D_exp), info))
+        return fps
+
+
     if cfg['metric']:
         print(f'multi metric mode')
-        info['title'] = '期望矩阵对比'
-        m_k, m_v = list(metric.items())[0]
-        assert len(metric) == 1 and len(m_v) > 1, f'metric size error({metric})'
-        gen_multimetric(cfg)
+        return gen_multimetric(deepcopy(cfg))
+    
     else:
         print(f'single metric mode')
-        return create_formula_function(deepcopy(cfg), D_exp)
+        info = {
+            'title':'2D 曲线图', 
+            'axis':{
+                'axa':{
+                    'label':cfg['axis'][0], 
+                    'vals':tl.gndv(cfg, cfg['axis'][0]),
+                },
+            }
+        }
+        if len(cfg['axis']) == 2: 
+            tl.update_nested_dict(info, ['axis', 'axb'], {
+                    'label':cfg['axis'][1], 
+                    'vals':tl.gndv(cfg, cfg['axis'][1]),
+            })
+            info['title'] = '3D 曲面图'
+        return fp(create_formula_function(deepcopy(cfg), D_exp), info)
 
 def SavingFunc(cfg):pass
 
 def factory(cfg):
-    axa = tl.gndv(cfg, cfg['axis'][0].split('-'))
-    # axa = np.linspace(axa[0], axa[1], axa[1] - axa[0] + 1, dtype=int)
-    info = {
-        'title':'2D 曲线图', 
-        'axis':{
-            'axa':{
-                'label':cfg['axis'][0], 
-                'vals':np.arange(axa[0], axa[1] + 1),
-                # 'vals':axa,
-            },
-        }
-    }
-    if len(cfg['axis']) == 2: 
-        axb = tl.gndv(cfg, cfg['axis'][1].split('-'))
-        # axb = np.linspace(axb[0], axb[1], axb[1] - axb[0] + 1, dtype=int)
-        tl.update_nested_dict(info, ['axis', 'axb'], {
-                'label':cfg['axis'][1], 
-                'vals':np.arange(axb[0], axb[1] + 1),
-                # 'vals':axb,
-
-        })
-        info['title'] = '3D 曲面图'
-
-
     if cfg['cast_type'] == "Attack":
-        return fp(AttackFunc(cfg), info)
+        return AttackFunc(cfg)
     else:
-        SavingFunc(cfg)
+        return SavingFunc(cfg)
     
 
-
-def single_function_analysis(funcpack:fp):
+def single_function_analysis(funcpack:fp, A, B):
     """单函数分析模式"""
     if not funcpack.func:
         print("错误: 没有找到可分析的函数")
@@ -252,27 +256,21 @@ def single_function_analysis(funcpack:fp):
     # 创建网格
     axis = coord_info['axis']
     if len(axis) == 1:
-        F = func(axis['axa']['vals'])
         fig = plt.figure(figsize=(10, 8))
         ax = fig.add_subplot(111)  # 不需要 projection 参数
-        A = axis['axa']['vals']
-        F = func(A)
+        A = np.arange(axis['axa']['vals'][0], axis['axa']['vals'][1])
+        F = func(np.arange(axis['axa']['vals'][0], axis['axa']['vals'][1]))
 
-        # 绘制线图
-        line = ax.plot(A, F, linewidth=2, color='blue', alpha=0.8)
+        ax.plot(A, F, linewidth=2, color='blue', alpha=0.8)
         ax.set_xlabel(axis['axa']['label'])  # 使用你的 axis 字典
         ax.set_ylabel('伤害期望')
         ax.set_title(f'{coord_info.get("title", "技能")}')
 
-        # 如果需要颜色条，在 2D 图中通常不需要，但可以添加其他元素
-        # 例如添加网格
         ax.grid(True, alpha=0.3)
 
-        plt.tight_layout()
-        plt.show()
-
     if len(axis) == 2:
-        a_vals, b_vals = axis['axa']['vals'], axis['axb']['vals']
+        a_vals = np.arange(axis['axa']['vals'][0], axis['axa']['vals'][1] + 1)
+        b_vals = np.arange(axis['axb']['vals'][0], axis['axb']['vals'][1] + 1)
         A, B = np.meshgrid(a_vals, b_vals, indexing='ij')
         
         # 计算函数值
@@ -306,78 +304,64 @@ def single_function_analysis(funcpack:fp):
         ax.set_title(f'{coord_info.get("title", "技能")}')
         fig.colorbar(surf, ax=ax, shrink=0.5, label='函数值')
         
-        plt.tight_layout()
-        plt.show()
+    plt.tight_layout()
+    plt.show()
 
 
-def multi_function_compare(func_dict, a_vals, b_vals):
+def multi_function_compare(func_pack:list, coord_info:dict, A, B):
     """多函数对比模式"""
-    if len(func_dict) < 2:
-        print("错误: 对比模式需要至少2个函数")
-        return single_function_analysis(func_dict, coord_info, a_vals, b_vals)
+    assert len(func_pack) >= 2, "错误: 对比模式需要至少2个函数"
     
-    # 获取基础函数和其他函数
-    base_func_name = '基础'
-    if base_func_name not in func_dict:
-        base_func_name = list(func_dict.keys())[0]
-    
-    base_func = func_dict[base_func_name]
-    compare_funcs = {name: func for name, func in func_dict.items() if name != base_func_name}
-    
-    # 创建网格
-    A, B = np.meshgrid(a_vals, b_vals, indexing='ij')
-    
-    # 计算基础函数值
-    F_base = base_func(A, B)
-    
-    # 为每个对比函数生成分析
-    for func_name, func in compare_funcs.items():
+    for fp in func_pack:
+        func_name, func = fp.info['title'], fp.func
         print(f"\n{'='*80}")
-        print(f"{func_name} 相对于 {base_func_name} 的对比分析")
+        # print(f"{func_name} 相对于 {base_func_name} 的对比分析")
         print(f"{'='*80}")
         
         # 计算对比函数值
-        F_compare = func(A, B)
+        # F_compare = func(A, B)
         
-        # 计算增幅百分比矩阵
-        percentage_increase = np.zeros_like(F_base)
-        for i in range(len(a_vals)):
-            for j in range(len(b_vals)):
-                if F_base[i, j] != 0:  # 避免除以零
-                    percentage_increase[i, j] = ((F_compare[i, j] - F_base[i, j]) / F_base[i, j]) * 100
-                else:
-                    percentage_increase[i, j] = 0
+        # # 计算增幅百分比矩阵
+        # percentage_increase = np.zeros_like(F_base)
+        # for i in range(len(a_vals)):
+        #     for j in range(len(b_vals)):
+        #         if F_base[i, j] != 0:  # 避免除以零
+        #             percentage_increase[i, j] = ((F_compare[i, j] - F_base[i, j]) / F_base[i, j]) * 100
+        #         else:
+        #             percentage_increase[i, j] = 0
         
         # 打印增幅百分比矩阵
-        print("行: 重击减值 (0-5)")
-        print("列: 实际护甲Ac-Bonus (5-15)")
+        print(f"行: {coord_info['x']}")
+        print(f"列: {coord_info['y']}")
         print()
         
-        header = "重击减值\\护甲" + "".join([f"{b:>18}" for b in b_vals])
-        rows = f'{header}\n{"-" * len(header)}\n'
+        # header = "重击减值\\护甲" + "".join([f"{b:>18}" for b in b_vals])
+        # rows = f'{header}\n{"-" * len(header)}\n'
         
-        for i, a in enumerate(a_vals):
-            row = f"{a:>11}  "
-            for j, b in enumerate(b_vals):
-                increase = percentage_increase[i, j]
-                row += f"{increase:>7.1f}%({F_base[i, j]:.1f}->{F_compare[i, j]:.1f})"
-            rows += f'{row}\n'
+        # for i, a in enumerate(a_vals):
+        #     row = f"{a:>11}  "
+        #     for j, b in enumerate(b_vals):
+        #         increase = percentage_increase[i, j]
+        #         row += f"{increase:>7.1f}%({F_base[i, j]:.1f}->{F_compare[i, j]:.1f})"
+        #     rows += f'{row}\n'
         
-        print(text_to_markdown_table(rows))
-        print(f"\n说明：正值表示{func_name} > {base_func_name}（开启{coord_info.get('title', '技能')}更优）")
-        print(f"      负值表示{func_name} < {base_func_name}（关闭{coord_info.get('title', '技能')}更优）")
+        # print(text_to_markdown_table(rows))
+        # print(f"\n说明：正值表示{func_name} > {base_func_name}（开启{coord_info.get('title', '技能')}更优）")
+        # print(f"      负值表示{func_name} < {base_func_name}（关闭{coord_info.get('title', '技能')}更优）")
     
     # 创建对比图表
-    create_comparison_charts(func_dict, coord_info, A, B, a_vals, b_vals)
+    create_comparison_charts(func_pack, A, B, coord_info['x'], coord_info['y'])
 
-def create_comparison_charts(func_dict, coord_info, A, B, a_vals, b_vals):
+def create_comparison_charts(func_packs, A, B, x, y):
     """创建对比图表"""
-    n_funcs = len(func_dict)
+    n_funcs = len(func_packs)
     
     # 计算每个函数的值
     func_values = {}
-    for name, func in func_dict.items():
-        func_values[name] = func(A, B)
+    for fp in func_packs:
+        func_values[fp.info['title']] = fp.func(A, B)
+
+    print(list(func_values.keys()))
     
     # 创建子图布局
     if n_funcs <= 3:
@@ -392,8 +376,8 @@ def create_comparison_charts(func_dict, coord_info, A, B, a_vals, b_vals):
     for idx, (name, values) in enumerate(func_values.items()):
         ax = fig.add_subplot(2, (subplot_count + 1) // 2, idx + 1, projection='3d')
         surf = ax.plot_surface(A, B, values, cmap=colors[idx % len(colors)], alpha=0.8)
-        ax.set_xlabel('重击减值')
-        ax.set_ylabel('实际护甲Ac-Bonus')
+        ax.set_xlabel(x)
+        ax.set_ylabel(y)
         ax.set_zlabel('伤害期望')
         ax.set_title(f'{name}')
         fig.colorbar(surf, ax=ax, shrink=0.5, label='函数值')
@@ -404,11 +388,11 @@ def create_comparison_charts(func_dict, coord_info, A, B, a_vals, b_vals):
         surf = ax_combined.plot_surface(A, B, values, cmap=colors[idx % len(colors)], 
                                       alpha=0.6, label=name)
     
-    ax_combined.set_xlabel('重击减值')
-    ax_combined.set_ylabel('实际护甲Ac-Bonus')
+    ax_combined.set_xlabel(x)
+    ax_combined.set_ylabel(y)
     ax_combined.set_zlabel('伤害期望')
     ax_combined.set_title('所有函数对比')
-    ax_combined.legend()
+    # ax_combined.legend()
     
     plt.tight_layout()
     plt.show()
