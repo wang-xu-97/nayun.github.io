@@ -12,7 +12,7 @@ self:
   weapon_dice: 
   # weapon_dice: ['1d8', '1d12']
   # Passive_skill_group: [['xmds'], ['xmds','jwqds','1'], ['buff1']]
-  Passive_skill_group: [['xmds','jwqds','1']]
+  Passive_skill_group: [['xmds',]]
   # Active_skill_group: [['na'], ['zsz', 'fyzsz'], ['12']]
 
 enemy: 

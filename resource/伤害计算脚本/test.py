@@ -84,6 +84,7 @@ def parse_cfg(c):
             if (cfasize:=len(c[fig]['Attribute'])) < 6:c[fig]['Attribute'].extend([10]*(6-cfasize))
         except: c[fig]['Attribute'] = [10] * 6
         for k, v in defaults.items():c[fig][k] = axis_metric_determine(f'{fig}-{k}', str(c[fig].get(k, None)) if type(v)!=list else c[fig].get(k, None), v, v_type=type(v))
+    # todo 支持无axis，直接输出期望值
     c['axis'] = axis
     c['metric'] = metric
     c['cast_type'] = 'Attack' if not (bm:=tl.best_match(c['cast_type'], cast_types.keys())) else bm
