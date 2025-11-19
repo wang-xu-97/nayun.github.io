@@ -133,6 +133,8 @@ class function_pack:
 
 fp = function_pack
 
+# todo 
+# 1. 必重击状态、2. 易伤状态、3. 优劣势公式
 def D_exp(params):
     self, foe, cast_type, rollstat, axis, metric = params['self'], params['enemy'], params['cast_type'], params['Roll_status'], params['axis'], params['metric']
     skill_active = lambda s:s in self['Passive_skill_group'][0]
