@@ -130,7 +130,6 @@ class function_pack:
     def __init__(self, func, info) -> None:
         self.func = func
         self.info = info
-
 fp = function_pack
 
 # todo 
