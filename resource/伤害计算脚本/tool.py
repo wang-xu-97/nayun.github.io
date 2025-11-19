@@ -145,7 +145,7 @@ def D_exp(params):
     print(D_p_normal)
     print(D_p_xmds)
     C = self['Crit_Bonus']
-    D_p_unablecrit = m.attr_adj_v(self['Attribute'][self['Main_att_attr_physic']])
+    D_p_unablecrit = m.attr_adj_v(self['Attribute'][self['Main_att_attr_physic']]) + self['Damage_Bonus']
     B = foe['AC'] - self['Attack_Bonus']
     if skill_active('xmds'):
         if skill_active('buff'):D_p_ablecrit = D_p_xmds_buffed
@@ -211,20 +211,25 @@ def SavingFunc(cfg):pass
 
 def factory(cfg):
     axa = tl.gndv(cfg, cfg['axis'][0].split('-'))
+    # axa = np.linspace(axa[0], axa[1], axa[1] - axa[0] + 1, dtype=int)
     info = {
         'title':'2D 曲线图', 
         'axis':{
             'axa':{
                 'label':cfg['axis'][0], 
                 'vals':np.arange(axa[0], axa[1] + 1),
+                # 'vals':axa,
             },
         }
     }
     if len(cfg['axis']) == 2: 
         axb = tl.gndv(cfg, cfg['axis'][1].split('-'))
+        # axb = np.linspace(axb[0], axb[1], axb[1] - axb[0] + 1, dtype=int)
         tl.update_nested_dict(info, ['axis', 'axb'], {
                 'label':cfg['axis'][1], 
                 'vals':np.arange(axb[0], axb[1] + 1),
+                # 'vals':axb,
+
         })
         info['title'] = '3D 曲面图'
 
