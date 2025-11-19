@@ -171,10 +171,9 @@ def create_formula_function(cfg, func_Dp):
     def func(*axis_values):
         """
         使用坐标轴参数计算固定公式
-        Args:*axis_values: 坐标轴参数的值，数量与 l_axis 相同
+        Args:*axis_values: 坐标轴参数值
         Returns:公式结果
         """
-        # 检查参数数量是否匹配
         axis = cfg['axis']
         if len(axis_values) != len(axis):raise ValueError(f"期望 {len(axis)} 个坐标轴参数，但得到了 {len(axis_values)} 个")
         
@@ -183,7 +182,6 @@ def create_formula_function(cfg, func_Dp):
         for i, axis_key in enumerate(axis):
             tl.update_nested_dict(current_params, axis_key.split('-'), axis_values[i])
 
-        # 使用全部参数计算固定公式
         return func_Dp(current_params)
     
     return func
