@@ -95,6 +95,7 @@ def parse_cfg(c):
 # todo 显示敌我信息、攻击类型、优劣势骰
 def main():
     c = parse_cfg(tl.read_yml('cfg.yaml'))
+    tl.pd(c)
     axis = c['axis']
     tl.pl(axis)
     tl.pd(c['metric'])
