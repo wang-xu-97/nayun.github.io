@@ -4972,11 +4972,12 @@ data为字典字符串，需要使用&lt;code&gt;json.dumps(payload)&lt;/code&gt
 &lt;/h1&gt;
 &lt;p&gt;狂野术&lt;br&gt;
 蛮：狂野魔法、蛮荒之心（劳微塔的灾祸、心灵刀戒指+心灵石）、10级空降巨人伟力推动&lt;br&gt;
-游侠：驯兽师、11级空降旋风斩猎人（劳微塔的灾祸、心灵刀戒指+心灵石）&lt;br&gt;
+驯兽师、11级空降旋风斩猎人（劳微塔的灾祸、心灵刀戒指+心灵石）&lt;br&gt;
 德：月德、大地、孢子&lt;br&gt;
 四象僧&lt;br&gt;
 光明牧&lt;br&gt;
-防护、剑咏(狂野/龙脉术)、火龙术&lt;br&gt;
+剑咏(狂野/龙脉术)、火龙术&lt;br&gt;
+5集群2孢子-&amp;gt;3集群2孢子7魔射、风流剑客、防护法、地软/猎人&lt;br&gt;
 星辰帕done&lt;/p&gt;
 
 &lt;h1 class=&#34;relative group&#34;&gt;build 
@@ -5040,7 +5041,7 @@ data为字典字符串，需要使用&lt;code&gt;json.dumps(payload)&lt;/code&gt
 &lt;/h3&gt;
 &lt;p&gt;1级：咒、法、蛮/僧（无甲防御）、游荡、战争牧&lt;br&gt;
 2级：2帕（后期多法术位）、2战、2风暴牧、2星辰德&lt;br&gt;
-3级：3术、3贼、3刺、&lt;br&gt;
+3级：3术、3贼、3刺、3集群&lt;br&gt;
 4级：4风流剑客&lt;/p&gt;</description>
       
     </item>
