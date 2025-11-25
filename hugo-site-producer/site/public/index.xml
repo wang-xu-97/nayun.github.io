@@ -5029,7 +5029,8 @@ data为字典字符串，需要使用&lt;code&gt;json.dumps(payload)&lt;/code&gt
 &lt;p&gt;5猎人2德1咒4盗贼&lt;br&gt;
 发光残响套+自然陷阱/猎人匕首+灵活移动+蝌蚪：吸取属性+宿敌：赏金猎人+诱捕攻击+灭族者&lt;br&gt;
 灵活移动提供近战攻击隐藏debuff可触发残响&lt;br&gt;
-灭族者残响bug可对相邻敌人额外触发2残响&lt;/p&gt;</description>
+灭族者残响bug可对相邻敌人额外触发2残响&lt;br&gt;
+主要玩法：1. 诱捕攻击 2. 残响击倒&lt;/p&gt;</description>
       
     </item>
     
