@@ -154,13 +154,11 @@
 蛮：狂野魔法、蛮荒之心（劳微塔的灾祸、心灵刀戒指+心灵石）、10级空降巨人伟力推动&lt;br&gt;
 驯兽师、11级空降旋风斩猎人（劳微塔的灾祸、心灵刀戒指+心灵石）&lt;br&gt;
 德：月德、大地、孢子&lt;br&gt;
-四象僧&lt;br&gt;
-光明牧&lt;br&gt;
-剑咏(狂野/龙脉术)、火龙术&lt;br&gt;
-低耗队：2孢子5集群-&amp;gt;2孢子3集群7魔射、风流剑客、防护法、地软/猎人&lt;br&gt;
-高耗队：猛虎蛮、四象僧、巨人踢人/投掷蛮、暗影刺&lt;br&gt;
-宠物队：月德、驯兽、白帕、孢子&lt;br&gt;
-法牧队：剑咏、塑能、自然、战争&lt;br&gt;
+低耗队：2孢子5集群-&amp;gt;2孢子3集群7魔射（孢子集群魔射恐惧弓）、身心高歌风流剑客、防护法、地软/猎人&lt;br&gt;
+高耗队：狼獾猛虎蛮、四象僧、巨人踢人/投掷蛮、暗影刺&lt;br&gt;
+宠物队：月德、深渊召唤者驯兽师、白帕、生命牧(祝福术、轻声承诺丢血瓶奶宠物)&lt;br&gt;
+法牧队：剑咏、塑能、自然/光明、风暴德&lt;br&gt;
+高消耗火伤队：咒剑7级转重击火龙术（嗜血）、bug火焰刀巨人、散打/火拳卡菈克、火术牧（6术5诗1牧，枯水+全火系法术，战法头+头箍定身/催眠图纹），强需火油（幽暗地域）、燃烧油、抗性灵药、多靶箭、水瓶、短休药、嗜血药、长休物资包&lt;br&gt;
 星辰帕done&lt;/p&gt;
 
 &lt;h1 class=&#34;relative group&#34;&gt;build 
@@ -196,36 +194,22 @@
     
 &lt;/h2&gt;
 
-&lt;h3 class=&#34;relative group&#34;&gt;强纯职 
-    &lt;div id=&#34;强纯职&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+&lt;h3 class=&#34;relative group&#34;&gt;网传科研BD 
+    &lt;div id=&#34;网传科研bd&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
     &lt;span
         class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
-        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#%e5%bc%ba%e7%ba%af%e8%81%8c&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#%e7%bd%91%e4%bc%a0%e7%a7%91%e7%a0%94bd&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
     &lt;/span&gt;        
     
 &lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;月德（1~10级）&lt;/li&gt;
-&lt;li&gt;奥法（全等级）&lt;/li&gt;
-&lt;li&gt;自然牧、死亡牧（全等级）&lt;/li&gt;
-&lt;li&gt;武僧（1~9级）&lt;/li&gt;
-&lt;li&gt;诗人（3~10级）&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 class=&#34;relative group&#34;&gt;强兼职挂件 
-    &lt;div id=&#34;强兼职挂件&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
-        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#%e5%bc%ba%e5%85%bc%e8%81%8c%e6%8c%82%e4%bb%b6&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;        
-    
-&lt;/h3&gt;
-&lt;p&gt;1级：咒、法、蛮/僧（无甲防御）、游荡、战争牧&lt;br&gt;
-2级：2帕（后期多法术位）、2战、2风暴牧、2星辰德&lt;br&gt;
-3级：3术、3贼、3刺、3集群&lt;br&gt;
-4级：4风流剑客&lt;/p&gt;</description>
+&lt;li&gt;
+&lt;p&gt;5猎人2德1咒4盗贼&lt;br&gt;
+&lt;strong&gt;喧闹风暴之靴&lt;/strong&gt;+自然陷阱/猎人匕首+灵活移动+蝌蚪：吸取属性+宿敌：赏金猎人+诱捕攻击+灭族者&lt;br&gt;
+灵活移动提供近战攻击隐藏debuff可触发残响&lt;br&gt;
+灭族者残响bug可对相邻敌人额外触发2残响&lt;br&gt;
+主要玩法：1. 诱捕攻击 2. 残响击倒&lt;/p&gt;</description>
       
     </item>
     
