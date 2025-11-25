@@ -4119,11 +4119,8 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#todo" aria-label="锚点"&gt;#&lt;/a&gt;
 &lt;/span&gt;
 &lt;/h1&gt;
-&lt;p&gt;狂野术&lt;br&gt;
-蛮：狂野魔法、蛮荒之心（劳微塔的灾祸、心灵刀戒指+心灵石）、10级空降巨人伟力推动&lt;br&gt;
-驯兽师、11级空降旋风斩猎人（劳微塔的灾祸、心灵刀戒指+心灵石）&lt;br&gt;
-德：月德、大地、孢子&lt;br&gt;
-低耗队：2孢子5集群-&amp;gt;2孢子3集群7魔射（孢子集群魔射恐惧弓）、身心高歌风流剑客、防护法、地软/猎人&lt;br&gt;
+&lt;p&gt;狂野术狂野蛮&lt;br&gt;
+低耗队：2孢子5集群-&amp;gt;2孢子3集群7魔射（孢子集群魔射恐惧弓）、身心高歌风流剑客、防护法、地软/猎人（劳微塔的灾祸、心灵刀戒指+心灵石）&lt;br&gt;
 高耗队：狼獾猛虎蛮、四象僧、巨人踢人/投掷蛮、暗影刺&lt;br&gt;
 宠物队：月德、深渊召唤者驯兽师、白帕、生命牧(祝福术、轻声承诺丢血瓶奶宠物)&lt;br&gt;
 法牧队：剑咏、塑能、自然/光明、风暴德&lt;br&gt;
