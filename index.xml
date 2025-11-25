@@ -4163,7 +4163,7 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;5猎人2德1咒4盗贼&lt;br&gt;
-发光残响套+自然陷阱/猎人匕首+灵活移动+蝌蚪：吸取属性+宿敌：赏金猎人+诱捕攻击+灭族者&lt;br&gt;
+&lt;strong&gt;喧闹风暴之靴&lt;/strong&gt;+自然陷阱/猎人匕首+灵活移动+蝌蚪：吸取属性+宿敌：赏金猎人+诱捕攻击+灭族者&lt;br&gt;
 灵活移动提供近战攻击隐藏debuff可触发残响&lt;br&gt;
 灭族者残响bug可对相邻敌人额外触发2残响&lt;br&gt;
 主要玩法：1. 诱捕攻击 2. 残响击倒&lt;/p&gt;</description></item><item><title>Hugo学习250728</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250728/</link><pubDate>Mon, 28 Jul 2025 15:33:17 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250728/</guid><description>&lt;h4 class="relative group"&gt;1. 可折叠列表 HTML5 标签，折叠内容无法支持原生markdown语法
