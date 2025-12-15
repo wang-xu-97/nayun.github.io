@@ -4121,8 +4121,12 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;/h1&gt;
 &lt;p&gt;狼蛮重击队：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;狼蛮：7狼蛮3贼1王冠1咒：111（蛮贼帕） -&amp;gt; 311 -&amp;gt; 321 -&amp;gt; 3211 -&amp;gt; 3311 -&amp;gt; 7311&lt;/li&gt;
-&lt;li&gt;重击术士（火）：6术1咒4冠勇1法 法术狙击、属性提升/警觉：413 -&amp;gt; 613 -&amp;gt; 6141
+&lt;li&gt;狼蛮：7狼蛮3贼1王冠1咒：111（蛮贼帕） -&amp;gt; 311 -&amp;gt; 321 -&amp;gt; 3211 -&amp;gt; 3311 -&amp;gt; 7311
+&lt;ol&gt;
+&lt;li&gt;发光残响套&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;重击术士（火）：6术1咒4冠勇1法 法术狙击、属性提升：413 -&amp;gt; 613 -&amp;gt; 6141
 &lt;ol&gt;
 &lt;li&gt;光戒+灼热趋同戒指&lt;/li&gt;
 &lt;/ol&gt;
