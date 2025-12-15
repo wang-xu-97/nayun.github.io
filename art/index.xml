@@ -98,7 +98,13 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#todo" aria-label="锚点"&gt;#&lt;/a&gt;
 &lt;/span&gt;
 &lt;/h1&gt;
-&lt;p&gt;狼蛮重击队：&lt;/p&gt;
+&lt;h2 class="relative group"&gt;狼蛮重击队：
+&lt;div id="狼蛮重击队" class="anchor"&gt;&lt;/div&gt;
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%8b%bc%e8%9b%ae%e9%87%8d%e5%87%bb%e9%98%9f" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;狼蛮（威尔）：7狼蛮3贼1王冠1咒：3 -&amp;gt; 3111（蛮帕咒贼）-&amp;gt; 3311 -&amp;gt; 7311
 &lt;ol&gt;
@@ -154,21 +160,4 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;/span&gt;
 &lt;/h2&gt;
 &lt;p&gt;星辰帕&lt;br&gt;
-长休4蛮队：猛虎盖尔、狂野/鹿卡菈克、巨人影心（酒馆投掷-&amp;gt;伟力推动）、狂战士asdl-&amp;gt;哈尔辛-&amp;gt;明萨拉&lt;/p&gt;
-&lt;h1 class="relative group"&gt;build
-&lt;div id="build" class="anchor"&gt;&lt;/div&gt;
-&lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#build" aria-label="锚点"&gt;#&lt;/a&gt;
-&lt;/span&gt;
-&lt;/h1&gt;
-&lt;h2 class="relative group"&gt;职业能力
-&lt;div id="职业能力" class="anchor"&gt;&lt;/div&gt;
-&lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e8%81%8c%e4%b8%9a%e8%83%bd%e5%8a%9b" aria-label="锚点"&gt;#&lt;/a&gt;
-&lt;/span&gt;
-&lt;/h2&gt;
-&lt;p&gt;参考 &lt;a
-href="https://wang-xu-97.github.io/nayun.github.io/resource/bg3%e8%83%bd%e5%8a%9b%e4%b8%80%e5%9b%be%e6%b5%81"&gt;bg3能力一图流&lt;/a&gt;
-&lt;/p&gt;</description></item></channel></rss>
+长休4蛮队：猛虎盖尔、狂野/鹿卡菈克、巨人影心（酒馆投掷-&amp;gt;伟力推动）、狂战士asdl-&amp;gt;哈尔辛-&amp;gt;明萨拉&lt;/p&gt;</description></item></channel></rss>
