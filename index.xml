@@ -4119,16 +4119,34 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#todo" aria-label="锚点"&gt;#&lt;/a&gt;
 &lt;/span&gt;
 &lt;/h1&gt;
-&lt;p&gt;狂野术狂野蛮&lt;br&gt;
-长休4蛮队：猛虎盖尔、狂野/鹿卡菈克、巨人影心（酒馆投掷-&amp;gt;伟力推动）、狂战士asdl-&amp;gt;哈尔辛-&amp;gt;明萨拉&lt;br&gt;
-低耗队：2孢子5集群-&amp;gt;2孢子3集群7魔射（孢子集群魔射恐惧弓）、身心高歌风流剑客、防护法、地软/猎人（劳微塔的灾祸、心灵刀戒指+心灵石）&lt;br&gt;
-宠物队：月德、深渊召唤者驯兽师（熊/鸦+夸塞魔+我们+挠挠）、白帕、生命牧(祝福术、轻声承诺+血瓶/群回-&amp;gt;真群体祝福术)&lt;br&gt;
-法牧队：1641冰暴术+光明/风暴德+自然、剑咏、咒法（自带造水术）&lt;br&gt;
-高耗火伤队：（火焰刀星辰/孢子德）到月塔后刷短休包转重击火龙术（嗜血/邪恶）、bug火焰刀巨人/燃烧油诗弓、散打/火拳卡菈克、火术牧（6术5诗1咒法，火上伤+短休激励+休憩曲+枯水+抄全法表，战法头+头箍定身/催眠图纹），强需1. 造火易伤：火油（幽暗地域）、抗性灵药、多靶箭、水瓶，2. 火龙术物资：短休药、嗜血药，3. 火焰增伤：燃烧油&lt;br&gt;
-短休队：火拳卡菈克、战斗大师、剑刃诗、奥射、锁&lt;br&gt;
-独狼刺客：暗影刺、隐匿风流剑客、4刺2咒2战4术嗜血魔能爆&lt;br&gt;
-全能独狼：王冠风暴骑&lt;br&gt;
-星辰帕done&lt;/p&gt;
+&lt;p&gt;狼蛮重击队：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;狼蛮：7狼蛮3贼1王冠1咒：111（蛮贼帕） -&amp;gt; 311 -&amp;gt; 321 -&amp;gt; 3211 -&amp;gt; 3311 -&amp;gt; 7311&lt;/li&gt;
+&lt;li&gt;重击术士（火）：6术1咒4冠勇1法 法术狙击、属性提升/警觉：413 -&amp;gt; 613 -&amp;gt; 6141
+&lt;ol&gt;
+&lt;li&gt;光戒+灼热趋同戒指&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;重击弓：6剑刃1咒1游荡4冠勇 神射手、警觉： 6111 -&amp;gt; 6114
+&lt;ol&gt;
+&lt;li&gt;燃烧油诗人&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;巨武器剑咏：10剑咏2风暴牧 巨武器、警觉：6+2 -&amp;gt; 10+2
+&lt;ol&gt;
+&lt;li&gt;纵火油剑咏&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 class="relative group"&gt;已完成
+&lt;div id="已完成" class="anchor"&gt;&lt;/div&gt;
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%b7%b2%e5%ae%8c%e6%88%90" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;
+&lt;p&gt;星辰帕&lt;br&gt;
+长休4蛮队：猛虎盖尔、狂野/鹿卡菈克、巨人影心（酒馆投掷-&amp;gt;伟力推动）、狂战士asdl-&amp;gt;哈尔辛-&amp;gt;明萨拉&lt;/p&gt;
 &lt;h1 class="relative group"&gt;build
 &lt;div id="build" class="anchor"&gt;&lt;/div&gt;
 &lt;span
@@ -4145,28 +4163,7 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;/h2&gt;
 &lt;p&gt;参考 &lt;a
 href="https://wang-xu-97.github.io/nayun.github.io/resource/bg3%e8%83%bd%e5%8a%9b%e4%b8%80%e5%9b%be%e6%b5%81"&gt;bg3能力一图流&lt;/a&gt;
-&lt;/p&gt;
-&lt;h2 class="relative group"&gt;通用BD
-&lt;div id="通用bd" class="anchor"&gt;&lt;/div&gt;
-&lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e9%80%9a%e7%94%a8bd" aria-label="锚点"&gt;#&lt;/a&gt;
-&lt;/span&gt;
-&lt;/h2&gt;
-&lt;h3 class="relative group"&gt;网传科研BD
-&lt;div id="网传科研bd" class="anchor"&gt;&lt;/div&gt;
-&lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%bd%91%e4%bc%a0%e7%a7%91%e7%a0%94bd" aria-label="锚点"&gt;#&lt;/a&gt;
-&lt;/span&gt;
-&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;5猎人2德1咒4盗贼&lt;br&gt;
-&lt;strong&gt;喧闹风暴之靴&lt;/strong&gt;+自然陷阱/猎人匕首+灵活移动+蝌蚪：吸取属性+宿敌：赏金猎人+诱捕攻击+灭族者&lt;br&gt;
-灵活移动提供近战攻击隐藏debuff可触发残响&lt;br&gt;
-灭族者残响bug可对相邻敌人额外触发2残响&lt;br&gt;
-主要玩法：1. 诱捕攻击 2. 残响击倒&lt;/p&gt;</description></item><item><title>Hugo学习250728</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250728/</link><pubDate>Mon, 28 Jul 2025 15:33:17 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250728/</guid><description>&lt;h4 class="relative group"&gt;1. 可折叠列表 HTML5 标签，折叠内容无法支持原生markdown语法
+&lt;/p&gt;</description></item><item><title>Hugo学习250728</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250728/</link><pubDate>Mon, 28 Jul 2025 15:33:17 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250728/</guid><description>&lt;h4 class="relative group"&gt;1. 可折叠列表 HTML5 标签，折叠内容无法支持原生markdown语法
 &lt;div id="1-可折叠列表-html5-标签折叠内容无法支持原生markdown语法" class="anchor"&gt;&lt;/div&gt;
 &lt;span
 class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
