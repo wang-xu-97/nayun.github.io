@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>通用编程思想 on nayun blog</title>
+    <link>http://localhost:43997/nayun.github.io/tech/general/</link>
+    <description>Recent content in 通用编程思想 on nayun blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>© 2025 nayun</copyright>
+    <lastBuildDate>Wed, 06 Aug 2025 10:31:06 +0800</lastBuildDate><atom:link href="http://localhost:43997/nayun.github.io/tech/general/index.xml" rel="self" type="application/rss+xml" />
+    
+  </channel>
+</rss>
