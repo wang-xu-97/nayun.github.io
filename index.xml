@@ -4143,7 +4143,12 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;/li&gt;
 &lt;li&gt;特性：
 &lt;ol&gt;
-&lt;li&gt;无警觉：伏兵战斗直接丢火近战&lt;/li&gt;
+&lt;li&gt;无警觉：
+&lt;ol&gt;
+&lt;li&gt;伏兵战斗直接丢火近战&lt;/li&gt;
+&lt;li&gt;需要保证狼蛮先攻&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
 &lt;li&gt;火易伤：
 &lt;ol&gt;
 &lt;li&gt;火焰抗性灵药+纵火油+其他抗性灵药（多靶箭射击）&lt;/li&gt;
