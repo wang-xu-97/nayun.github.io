@@ -105,11 +105,23 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%88%ba%e5%ae%a2%e7%8b%ac%e7%8b%bc" aria-label="锚点"&gt;#&lt;/a&gt;
 &lt;/span&gt;
 &lt;/h2&gt;
-&lt;p&gt;第一滴血、座狼牙&lt;/p&gt;
-&lt;p&gt;暗夜法官半身甲&lt;br&gt;
-敏捷手套&lt;/p&gt;
+&lt;p&gt;第一章：&lt;br&gt;
+第一滴血、巨人短棒、座狼牙、泰坦弦弓、国王匕首、迷城匕首、警觉短弓、狩猎短弓(蜘蛛女王、枭熊、鲨蜥兽)&lt;br&gt;
+迅捷头、奥协头、智力头&lt;br&gt;
+养鸡半身甲、兽皮甲+2、精金重甲、精金盾牌、优雅布衣&lt;br&gt;
+敏捷手套、决斗者手套&lt;br&gt;
+元素亢奋之靴&lt;br&gt;
+轻声承诺、守护戒指、粉碎机、奥协戒指、腐蚀指环、走私犯戒指、照明灯（触发光戒）、心灵通道戒指、探索者之戒（巴伦上方岩石骷髅身上）&lt;br&gt;
+卡哈项链、白银吊坠、伤口闭合护符&lt;/p&gt;
+&lt;p&gt;第二章：&lt;br&gt;
+幽影刃、龙息长柄刀、阴影之握、荆棘之刃、身心高歌、暗夜法官匕首&lt;br&gt;
+智能盾牌、黑火短弓、从未射失-&amp;gt;眼球&lt;br&gt;
+守护披风&lt;br&gt;
+暗夜法官半身甲&lt;br&gt;
+光戒&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;7暗影5刺：11 -&amp;gt; 13 -&amp;gt; 63 -&amp;gt; 65 -&amp;gt; 75
+&lt;li&gt;
+&lt;p&gt;7暗影5刺：11 -&amp;gt; 13 -&amp;gt; 63 -&amp;gt; 65 -&amp;gt; 75&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;半兽人 凶蛮重击&lt;/li&gt;
 &lt;li&gt;1级疾风连击&lt;/li&gt;
@@ -124,14 +136,16 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;li&gt;12级反射闪避&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
-&lt;li&gt;11风流1咒
+&lt;li&gt;
+&lt;p&gt;11风流1咒&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;灰矮人 毒素豁免优势 毒素伤害抗性 24M黑暗视觉 幻术、魅惑、麻痹豁免优势 3级变巨 5级隐身&lt;/li&gt;
+&lt;li&gt;阿斯代伦 高兴&lt;/li&gt;
 &lt;li&gt;1级偷袭&lt;/li&gt;
 &lt;li&gt;2级附赠躲&lt;/li&gt;
-&lt;li&gt;3级先攻+变巨&lt;/li&gt;
+&lt;li&gt;3级先攻&lt;/li&gt;
 &lt;li&gt;4级转动手腕完整武器伤害+凶蛮打手&lt;/li&gt;
-&lt;li&gt;5级咒剑轰鸣剑魅调重甲小趴铲+隐身&lt;/li&gt;
+&lt;li&gt;5级咒剑轰鸣剑魅调重甲小趴铲&lt;/li&gt;
 &lt;li&gt;6级直觉闪避攻击骰伤害反应减半&lt;/li&gt;
 &lt;li&gt;7级隐匿专精&lt;/li&gt;
 &lt;li&gt;8级反应闪避豁免骰伤害通过免伤失败减半&lt;/li&gt;
