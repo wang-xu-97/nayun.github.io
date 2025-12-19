@@ -4126,25 +4126,40 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%88%ba%e5%ae%a2%e7%8b%ac%e7%8b%bc" aria-label="锚点"&gt;#&lt;/a&gt;
 &lt;/span&gt;
 &lt;/h2&gt;
+&lt;p&gt;第一滴血、座狼牙&lt;/p&gt;
+&lt;p&gt;暗夜法官半身甲&lt;br&gt;
+敏捷手套&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;6暗影5刺1咒：111 -&amp;gt; 131 -&amp;gt; 631
+&lt;li&gt;7暗影5刺：11 -&amp;gt; 13 -&amp;gt; 63 -&amp;gt; 65 -&amp;gt; 75
 &lt;ol&gt;
 &lt;li&gt;半兽人 凶蛮重击&lt;/li&gt;
 &lt;li&gt;1级疾风连击&lt;/li&gt;
-&lt;li&gt;2级咒剑诅咒+重甲熟练+魅调&lt;/li&gt;
-&lt;li&gt;3级疾风连击+偷袭&lt;/li&gt;
-&lt;li&gt;7级暗影斗篷&lt;/li&gt;
-&lt;li&gt;8级暗影步&lt;/li&gt;
-&lt;li&gt;12级直觉闪避&lt;/li&gt;
+&lt;li&gt;2级偷袭&lt;/li&gt;
+&lt;li&gt;3级附赠躲藏&lt;/li&gt;
+&lt;li&gt;4级暗杀&lt;/li&gt;
+&lt;li&gt;7级警觉&lt;/li&gt;
+&lt;li&gt;8级暗影斗篷&lt;/li&gt;
+&lt;li&gt;9级暗影步&lt;/li&gt;
+&lt;li&gt;10级凶蛮打手&lt;/li&gt;
+&lt;li&gt;11级直觉闪避&lt;/li&gt;
+&lt;li&gt;12级反射闪避&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;li&gt;11风流1咒
 &lt;ol&gt;
-&lt;li&gt;灰矮人 5级隐身&lt;/li&gt;
-&lt;li&gt;4级转动手腕完整武器伤害&lt;/li&gt;
-&lt;li&gt;5级直觉闪避攻击骰伤害反应减半&lt;/li&gt;
-&lt;li&gt;7级反应闪避豁免骰伤害通过免伤失败减半&lt;/li&gt;
-&lt;li&gt;11级可靠才能隐匿豁免
+&lt;li&gt;灰矮人 毒素豁免优势 毒素伤害抗性 24M黑暗视觉 幻术、魅惑、麻痹豁免优势 3级变巨 5级隐身&lt;/li&gt;
+&lt;li&gt;1级偷袭&lt;/li&gt;
+&lt;li&gt;2级附赠躲&lt;/li&gt;
+&lt;li&gt;3级先攻+变巨&lt;/li&gt;
+&lt;li&gt;4级转动手腕完整武器伤害+凶蛮打手&lt;/li&gt;
+&lt;li&gt;5级咒剑轰鸣剑魅调重甲小趴铲+隐身&lt;/li&gt;
+&lt;li&gt;6级直觉闪避攻击骰伤害反应减半&lt;/li&gt;
+&lt;li&gt;7级隐匿专精&lt;/li&gt;
+&lt;li&gt;8级反应闪避豁免骰伤害通过免伤失败减半&lt;/li&gt;
+&lt;li&gt;9级坚如磐石-体质/盾牌大师/属性提升&lt;/li&gt;
+&lt;li&gt;10级潇洒气质&lt;/li&gt;
+&lt;li&gt;11级坚如磐石-体质/盾牌大师/属性提升&lt;/li&gt;
+&lt;li&gt;12级可靠才能隐匿豁免
 &lt;ol&gt;
 &lt;li&gt;阴影之握&lt;/li&gt;
 &lt;li&gt;隐匿蹲/弓&lt;/li&gt;
