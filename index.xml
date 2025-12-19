@@ -4132,7 +4132,7 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 养鸡半身甲、兽皮甲+2、精金中甲、精金盾牌、优雅布衣&lt;br&gt;
 摘星手套、敏捷手套、决斗者手套、惊奇手套&lt;br&gt;
 闪电飞靴、破阵战靴、元素亢奋之靴&lt;br&gt;
-轻声承诺、守护戒指、粉碎机、奥协戒指、腐蚀指环、走私犯戒指、照明灯（触发光戒）、心灵通道戒指、探索者之戒（巴伦上方岩石骷髅身上）&lt;br&gt;
+轻声承诺、守护戒指、粉碎机、奥协戒指、腐蚀指环、走私犯戒指、照明灯（触发光戒）、心灵通道戒指、探索者之戒（巴伦上方岩石骷髅身上）、跳跃戒指&lt;br&gt;
 卡哈项链、白银吊坠、心灵火花、伤口闭合护符&lt;/p&gt;
 &lt;p&gt;启动：&lt;/p&gt;
 &lt;ol&gt;
@@ -4151,7 +4151,7 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;ol&gt;
 &lt;li&gt;轻声承诺、狩猎短弓、摘星手套、兽皮甲+2、变形者戒指、树篱漫游者皮甲&lt;/li&gt;
 &lt;li&gt;警觉短弓&lt;/li&gt;
-&lt;li&gt;心灵火花、灾祸短剑、腐蚀指环、喧嚣风暴之靴&lt;/li&gt;
+&lt;li&gt;心灵火花、灾祸短剑、腐蚀指环、跳跃戒指、喧嚣风暴之靴&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
@@ -4165,7 +4165,7 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;ol&gt;
 &lt;li&gt;第一章
 &lt;ol&gt;
-&lt;li&gt;树人、卡哈、鸟妖、提尔圣武士、豺狼人、地精营地（外+内）、地精3头目、枭熊、河边灰矮人、鬼婆、蜘蛛女王&lt;/li&gt;
+&lt;li&gt;树人、卡哈、鸟妖、提尔圣武士、豺狼人、救巴克斯、地精营地（外+内）、地精3头目、枭熊、河边灰矮人、鬼婆、蜘蛛女王&lt;/li&gt;
 &lt;li&gt;鲨蜥兽、牛头人、恐爪兽、眼魔、伯纳德、灰矮人（杀完灰矮人之后不急着交任务，堕影冥界前交）、尼讷&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
@@ -4177,6 +4177,7 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;li&gt;第二章
 &lt;ol&gt;
 &lt;li&gt;修道院进，卡尼斯小队、马库斯、凌弱怪、蔽影狗、魑魅、鱼人村、泥巴怪、停尸房&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
 &lt;li&gt;莎尔神殿、巴萨扎尔、图书馆&lt;/li&gt;
 &lt;li&gt;医生、酒馆、征收所、往日身影、工匠坊、尤格、暗夜法官、哈尔辛保卫战、深影之家、蔓生怪、监狱&lt;/li&gt;
 &lt;li&gt;黑夜女士(极乐孢子、洛山达祝福、棱镜祝福术)、堕影冥界、月塔、凯萨里克、夺心魔营地、米尔寇、养鸡人小队&lt;/li&gt;
@@ -4186,7 +4187,7 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;p&gt;BD：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;7暗影5刺：15 -&amp;gt; 7 -&amp;gt; 75&lt;/p&gt;</description></item><item><title>Hugo学习250728</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250728/</link><pubDate>Mon, 28 Jul 2025 15:33:17 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250728/</guid><description>&lt;h4 class="relative group"&gt;1. 可折叠列表 HTML5 标签，折叠内容无法支持原生markdown语法
+&lt;p&gt;7暗影5刺 12 17 15 8 10 12：15 -&amp;gt; 7 -&amp;gt; 75&lt;/p&gt;</description></item><item><title>Hugo学习250728</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250728/</link><pubDate>Mon, 28 Jul 2025 15:33:17 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250728/</guid><description>&lt;h4 class="relative group"&gt;1. 可折叠列表 HTML5 标签，折叠内容无法支持原生markdown语法
 &lt;div id="1-可折叠列表-html5-标签折叠内容无法支持原生markdown语法" class="anchor"&gt;&lt;/div&gt;
 &lt;span
 class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
