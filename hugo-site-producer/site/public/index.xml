@@ -4998,7 +4998,7 @@ data为字典字符串，需要使用&lt;code&gt;json.dumps(payload)&lt;/code&gt
 &lt;li&gt;
 &lt;p&gt;7暗影5刺：11 -&amp;gt; 13 -&amp;gt; 63 -&amp;gt; 65 -&amp;gt; 75&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;半兽人 凶蛮重击&lt;/li&gt;
+&lt;li&gt;邪念半兽人 凶蛮重击&lt;/li&gt;
 &lt;li&gt;1级疾风连击&lt;/li&gt;
 &lt;li&gt;2级偷袭&lt;/li&gt;
 &lt;li&gt;3级附赠躲藏&lt;/li&gt;
@@ -5012,109 +5012,7 @@ data为字典字符串，需要使用&lt;code&gt;json.dumps(payload)&lt;/code&gt
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;11风流1咒&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;灰矮人 毒素豁免优势 毒素伤害抗性 24M黑暗视觉 幻术、魅惑、麻痹豁免优势 3级变巨 5级隐身&lt;/li&gt;
-&lt;li&gt;阿斯代伦 高兴&lt;/li&gt;
-&lt;li&gt;1级偷袭&lt;/li&gt;
-&lt;li&gt;2级附赠躲&lt;/li&gt;
-&lt;li&gt;3级先攻&lt;/li&gt;
-&lt;li&gt;4级转动手腕完整武器伤害+凶蛮打手&lt;/li&gt;
-&lt;li&gt;5级咒剑轰鸣剑魅调重甲小趴铲&lt;/li&gt;
-&lt;li&gt;6级直觉闪避攻击骰伤害反应减半&lt;/li&gt;
-&lt;li&gt;7级隐匿专精&lt;/li&gt;
-&lt;li&gt;8级反应闪避豁免骰伤害通过免伤失败减半&lt;/li&gt;
-&lt;li&gt;9级坚如磐石-体质/盾牌大师/属性提升&lt;/li&gt;
-&lt;li&gt;10级潇洒气质&lt;/li&gt;
-&lt;li&gt;11级坚如磐石-体质/盾牌大师/属性提升&lt;/li&gt;
-&lt;li&gt;12级可靠才能隐匿豁免
-&lt;ol&gt;
-&lt;li&gt;阴影之握&lt;/li&gt;
-&lt;li&gt;隐匿蹲/弓&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 class=&#34;relative group&#34;&gt;狼蛮重击队 
-    &lt;div id=&#34;狼蛮重击队&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
-        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#%e7%8b%bc%e8%9b%ae%e9%87%8d%e5%87%bb%e9%98%9f&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;        
-    
-&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;狼蛮：7驼鹿狼蛮3贼1王冠1咒：3 -&amp;gt; 3111（蛮帕咒贼）-&amp;gt; 3311 -&amp;gt; 7311
-&lt;ol&gt;
-&lt;li&gt;初级幻影聚怪&lt;/li&gt;
-&lt;li&gt;发光残响套&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;重击术士（火）：8术1咒3冠勇 法术狙击、双持客/bug双持客+警觉：6 -&amp;gt; 613 -&amp;gt; 813
-&lt;ol&gt;
-&lt;li&gt;火焰敏锐之帽+奥术热能手套+光戒+灼热趋同戒指+颤脊护符&lt;/li&gt;
-&lt;li&gt;传奇法杖+重击匕首+致命一击&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;重击弓：6剑刃1咒1游荡4冠勇 神射手、警觉： 6111 -&amp;gt; 6114
-&lt;ol&gt;
-&lt;li&gt;燃烧油诗人、至上真神印记&lt;/li&gt;
-&lt;li&gt;7级洗点 17 8(敏捷手套)1 5 8 8 16&lt;/li&gt;
-&lt;li&gt;奥协王冠(第三章备用奥敏头+头箍)+敏捷手套+泰坦弦弓+重击匕首+至上真神盾牌(英雄气概)&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;剑咏：6剑咏2风暴牧4冠勇（7剑咏2风暴牧3冠勇9级ESL 1专长换1个5环法术位） 法术狙击、属性提升：62 -&amp;gt; 624
-&lt;ol&gt;
-&lt;li&gt;8 17 15 16 8 8 幽影刃双匕首剑咏&lt;/li&gt;
-&lt;li&gt;9级洗点战士开拿体质熟练项&lt;/li&gt;
-&lt;li&gt;豁免：守护披风、体调、剑歌&lt;/li&gt;
-&lt;li&gt;输出：纵火油、加速术、幽影刃+座狼牙/重击匕首+心灵通道戒指+奥协戒指+卡哈项链&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;特性：
-&lt;ol&gt;
-&lt;li&gt;无警觉：
-&lt;ol&gt;
-&lt;li&gt;伏兵战斗直接丢火近战&lt;/li&gt;
-&lt;li&gt;需要保证狼蛮先攻&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;火易伤：
-&lt;ol&gt;
-&lt;li&gt;火焰抗性灵药+纵火油+其他抗性灵药（多靶箭射击）&lt;/li&gt;
-&lt;li&gt;造水术+纵火油+枯水术&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;6级发力、重击弓7级洗魅力点吃咒剑魅调加值&lt;/li&gt;
-&lt;li&gt;3~5级狼蛮辅助造优&amp;amp;明晰正义（目标属性熟练项加入目标攻击骰，故不需要洗点）命中&lt;/li&gt;
-&lt;li&gt;3级洗点顺便刷水瓶&lt;/li&gt;
-&lt;li&gt;5级狼蛮洗点魅调咒剑开始刷商店
-&lt;ol&gt;
-&lt;li&gt;纵火油、抗性灵药-&amp;gt;火易伤&lt;/li&gt;
-&lt;li&gt;燃烧油、多靶箭-&amp;gt;诗弓增伤&lt;/li&gt;
-&lt;li&gt;长休物资包、小血瓶-&amp;gt;通用物资&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;诗人表演/初级幻影+4烟粉桶秒杀大地精&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 class=&#34;relative group&#34;&gt;已完成 
-    &lt;div id=&#34;已完成&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
-        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#%e5%b7%b2%e5%ae%8c%e6%88%90&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;        
-    
-&lt;/h2&gt;
-&lt;p&gt;星辰帕&lt;br&gt;
-长休4蛮队：猛虎盖尔、狂野/鹿卡菈克、巨人影心（酒馆投掷-&amp;gt;伟力推动）、狂战士asdl-&amp;gt;哈尔辛-&amp;gt;明萨拉&lt;br&gt;
-重击魔能爆：重击魔爆影心、星辰死亡牧阿斯代伦、恐惧倒伏弓莱妹、术帕明萨拉&lt;/p&gt;</description>
+&lt;p&gt;11风流1咒 12 17 14 8 10 14&lt;/p&gt;</description>
       
     </item>
     
