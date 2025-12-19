@@ -4119,11 +4119,11 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#todo" aria-label="锚点"&gt;#&lt;/a&gt;
 &lt;/span&gt;
 &lt;/h1&gt;
-&lt;h2 class="relative group"&gt;刺客独狼
-&lt;div id="刺客独狼" class="anchor"&gt;&lt;/div&gt;
+&lt;h2 class="relative group"&gt;自定义荣誉刺客独狼
+&lt;div id="自定义荣誉刺客独狼" class="anchor"&gt;&lt;/div&gt;
 &lt;span
 class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%88%ba%e5%ae%a2%e7%8b%ac%e7%8b%bc" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e8%87%aa%e5%ae%9a%e4%b9%89%e8%8d%a3%e8%aa%89%e5%88%ba%e5%ae%a2%e7%8b%ac%e7%8b%bc" aria-label="锚点"&gt;#&lt;/a&gt;
 &lt;/span&gt;
 &lt;/h2&gt;
 &lt;p&gt;第一章收集：&lt;br&gt;
