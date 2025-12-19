@@ -4984,26 +4984,28 @@ data为字典字符串，需要使用&lt;code&gt;json.dumps(payload)&lt;/code&gt
 第一滴血、巨人短棒、座狼牙、泰坦弦弓、国王匕首、迷城匕首、灾祸短剑、生死离别、警觉短弓、狩猎短弓(蜘蛛女王、枭熊、鲨蜥兽)&lt;br&gt;
 迅捷头、奥协头、智力头&lt;br&gt;
 养鸡半身甲、兽皮甲+2、精金中甲、精金盾牌、优雅布衣&lt;br&gt;
-摘星手套、敏捷手套、决斗者手套&lt;br&gt;
+摘星手套、敏捷手套、决斗者手套、惊奇手套&lt;br&gt;
 闪电飞靴、破阵战靴、元素亢奋之靴&lt;br&gt;
 轻声承诺、守护戒指、粉碎机、奥协戒指、腐蚀指环、走私犯戒指、照明灯（触发光戒）、心灵通道戒指、探索者之戒（巴伦上方岩石骷髅身上）&lt;br&gt;
-卡哈项链、白银吊坠、伤口闭合护符&lt;/p&gt;
+卡哈项链、白银吊坠、心灵火花、伤口闭合护符&lt;/p&gt;
 &lt;p&gt;启动：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;跑图：
 &lt;ol&gt;
 &lt;li&gt;2级金龙术大跳羽落伪装术跑图&lt;/li&gt;
 &lt;li&gt;营地大门战，法手卡回合，大跳羽落脱战、上坡吹号&lt;/li&gt;
-&lt;li&gt;白银吊坠、迅捷头盔、走私犯戒指、死灵书禁忌知识、高崖图纸&lt;/li&gt;
-&lt;li&gt;烙印、发光护甲、生死离别、第一滴血、巨人短棒、照明灯、探索者之戒&lt;/li&gt;
-&lt;li&gt;国王匕首、精金中甲、精金盾牌&lt;/li&gt;
+&lt;li&gt;杀萨扎、游说罗兰、招募威尔卡菈克、艾隆的书、动物交谈牛干草堆、对话塞夫洛、苏洛、喂熊、阿尔菲拉、幻影偷鸟钥匙、阿拉贝尔、荆棘仪式&lt;/li&gt;
+&lt;li&gt;枭熊小队、挠挠、白银吊坠、变卓尔正门进村、迅捷头盔、走私犯戒指、死灵书禁忌知识、夸塞魔、高崖图纸、救顾问（不需要探伤者）&lt;/li&gt;
+&lt;li&gt;先撬锁再烙印、睡眠术救瓦罗&lt;/li&gt;
+&lt;li&gt;发光护甲、生死离别、第一滴血、飒拉、探索者之戒、巨人短棒、照明灯、杀内蒂（远古之匙）、鬼婆传送门、(树篱漫游者皮甲、探索者之戒、远古之匙)鱼人村&lt;/li&gt;
+&lt;li&gt;国王匕首、守护火花壁垒、精金中甲、精金盾牌、洗点、宝箱怪惊奇手套&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;li&gt;买：
 &lt;ol&gt;
-&lt;li&gt;轻声承诺、狩猎短弓、摘星手套、兽皮甲+2&lt;/li&gt;
+&lt;li&gt;轻声承诺、狩猎短弓、摘星手套、兽皮甲+2、变形者戒指、树篱漫游者皮甲&lt;/li&gt;
 &lt;li&gt;警觉短弓&lt;/li&gt;
-&lt;li&gt;灾祸短剑、腐蚀指环&lt;/li&gt;
+&lt;li&gt;心灵火花、灾祸短剑、腐蚀指环、喧嚣风暴之靴&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
@@ -5013,22 +5015,32 @@ data为字典字符串，需要使用&lt;code&gt;json.dumps(payload)&lt;/code&gt
 守护披风&lt;br&gt;
 暗夜法官半身甲&lt;br&gt;
 光戒&lt;/p&gt;
+&lt;p&gt;战斗：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;7暗影5刺：11 -&amp;gt; 14 -&amp;gt; 64 -&amp;gt; 65 -&amp;gt; 75&lt;/p&gt;
+&lt;li&gt;第一章
 &lt;ol&gt;
-&lt;li&gt;邪念半兽人 凶蛮重击&lt;/li&gt;
-&lt;li&gt;5级1僧4刺 疾风连击暗杀偷袭凶蛮打手 第一滴血国王匕首、轻声承诺卡哈项链腐蚀戒指&lt;/li&gt;
-&lt;li&gt;7级警觉&lt;/li&gt;
-&lt;li&gt;8级暗影斗篷&lt;/li&gt;
-&lt;li&gt;9级暗影步&lt;/li&gt;
-&lt;li&gt;10级凶蛮打手&lt;/li&gt;
-&lt;li&gt;11级直觉闪避&lt;/li&gt;
-&lt;li&gt;12级反射闪避&lt;/li&gt;
+&lt;li&gt;树人、卡哈、鸟妖、提尔圣武士、豺狼人、地精营地（外+内）、地精3头目、枭熊、河边灰矮人、鬼婆、蜘蛛女王&lt;/li&gt;
+&lt;li&gt;鲨蜥兽、牛头人、恐爪兽、伯纳德、灰矮人（杀完灰矮人之后不急着交任务，堕影冥界前交）、尼讷&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
+&lt;li&gt;1.5章
+&lt;ol&gt;
+&lt;li&gt;修道院、养鸡场、审判官（审判官后先不进棱镜，堕影冥界前进）、死亡牧者&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;第二章
+&lt;ol&gt;
+&lt;li&gt;修道院进，卡尼斯小队、马库斯、凌弱怪、蔽影狗、魑魅、鱼人村、泥巴怪、停尸房&lt;/li&gt;
+&lt;li&gt;莎尔神殿、巴萨扎尔、图书馆&lt;/li&gt;
+&lt;li&gt;医生、酒馆、征收所、往日身影、工匠坊、尤格、暗夜法官、哈尔辛保卫战、深影之家、蔓生怪、监狱&lt;/li&gt;
+&lt;li&gt;堕影冥界、月塔、凯萨里克、夺心魔营地、米尔寇、养鸡人小队&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;BD：&lt;/p&gt;
+&lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;11风流1咒 12 17 14 8 10 14&lt;/p&gt;</description>
+&lt;p&gt;7暗影5刺：11 -&amp;gt; 14 -&amp;gt; 64 -&amp;gt; 65 -&amp;gt; 75&lt;/p&gt;</description>
       
     </item>
     
