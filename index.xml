@@ -5015,5 +5015,7 @@ target="_blank"
 &lt;li&gt;解压到siteproducer/assets/fonts目录&lt;/li&gt;
 &lt;li&gt;在assets/scss/中创建_fonts.scss，并在scss/custom.scss中引用&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;font.scss&lt;/p&gt;</description></item><item><title>关于我</title><link>https://wang-xu-97.github.io/nayun.github.io/about/</link><pubDate>Sun, 07 Jul 2024 00:00:00 +0000</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/about/</guid><description>&lt;p&gt;这是我的个人介绍页面&amp;hellip;&lt;/p&gt;
+&lt;p&gt;font.scss&lt;/p&gt;</description></item><item><title>关于我</title><link>https://wang-xu-97.github.io/nayun.github.io/about/</link><pubDate>Sun, 07 Jul 2024 00:00:00 +0000</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/about/</guid><description>&lt;p&gt;&lt;em&gt;Linux service&lt;/em&gt;&lt;br&gt;
+python、c++、golang&lt;br&gt;
+shell、markdown、x/y/toml、json、html/css/js&lt;/p&gt;
 &lt;!-- 在此添加你的个人介绍内容 --&gt;</description></item></channel></rss>
