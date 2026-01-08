@@ -7,7 +7,49 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>© 2026 nayun</copyright>
-    <lastBuildDate>Tue, 11 Nov 2025 10:50:08 +0800</lastBuildDate><atom:link href="http://localhost:43997/nayun.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 08 Jan 2026 15:04:14 +0800</lastBuildDate><atom:link href="http://localhost:43997/nayun.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>CICD</title>
+      <link>http://localhost:43997/nayun.github.io/tech/%E5%B7%A5%E5%85%B7/cicd/cicd/</link>
+      <pubDate>Thu, 08 Jan 2026 15:04:14 +0800</pubDate>
+      
+      <guid>http://localhost:43997/nayun.github.io/tech/%E5%B7%A5%E5%85%B7/cicd/cicd/</guid>
+      <description>&lt;h2 class=&#34;relative group&#34;&gt;Jenkins流水线部署 
+    &lt;div id=&#34;jenkins流水线部署&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#jenkins%e6%b5%81%e6%b0%b4%e7%ba%bf%e9%83%a8%e7%bd%b2&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;        
+    
+&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Jenkins Node&lt;br&gt;
+用agent.jar指定工作目录和节点名，部署jenkins节点&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;配置参数、code repo、shell脚本、归档，或直接使用jenkins groovy脚本构建任务工作流&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 class=&#34;relative group&#34;&gt;飞书自动化机器人 
+    &lt;div id=&#34;飞书自动化机器人&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#%e9%a3%9e%e4%b9%a6%e8%87%aa%e5%8a%a8%e5%8c%96%e6%9c%ba%e5%99%a8%e4%ba%ba&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;        
+    
+&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;飞书开源API
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+      
+    </item>
     
     <item>
       <title>bg3伤害计算</title>
@@ -6138,7 +6180,11 @@ data为字典字符串，需要使用&lt;code&gt;json.dumps(payload)&lt;/code&gt
       <pubDate>Sun, 07 Jul 2024 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:43997/nayun.github.io/about/</guid>
-      <description>&lt;p&gt;这是我的个人介绍页面&amp;hellip;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;strong&gt;Linux service / CICD&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;python、c++、golang&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;shell、markdown、x/y/toml、json、html/css/js、groovy&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;!-- 在此添加你的个人介绍内容 --&gt;</description>
       
     </item>
