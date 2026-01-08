@@ -13,12 +13,12 @@ main:
     params:
       icon: "categories"
 
-  - identifier: "life"
-    name: "生活"
-    url: "/life/"
-    weight: 4
-    params:
-      icon: "home"
+  # - identifier: "life"
+  #   name: "生活"
+  #   url: "/life/"
+  #   weight: 4
+  #   params:
+  #     icon: "home"
     
     
   - identifier: "about"
