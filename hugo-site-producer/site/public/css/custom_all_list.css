@@ -3,7 +3,7 @@
     list-style: none; /* 移除默认列表标记 */
     padding-left: 0;  /* 移除默认缩进 */
     max-width: 65ch; /* 可选：限制列表宽度 */
-    margin: 0 auto;   /* 可选：居中列表 */
+    margin-left: 2ch;   /* 可选：居中列表 */
   }
   
   .article-list li {
