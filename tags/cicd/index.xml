@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CICD on nayun blog</title><link>https://wang-xu-97.github.io/nayun.github.io/tags/cicd/</link><description>Recent content in CICD on nayun blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>© 2026 nayun</copyright><lastBuildDate>Thu, 08 Jan 2026 15:04:14 +0800</lastBuildDate><atom:link href="https://wang-xu-97.github.io/nayun.github.io/tags/cicd/index.xml" rel="self" type="application/rss+xml"/><item><title>CICD</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/%E5%B7%A5%E5%85%B7/cicd/</link><pubDate>Thu, 08 Jan 2026 15:04:14 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/%E5%B7%A5%E5%85%B7/cicd/</guid><description>&lt;h2 class="relative group"&gt;Jenkins流水线部署
+&lt;div id="jenkins流水线部署" class="anchor"&gt;&lt;/div&gt;
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#jenkins%e6%b5%81%e6%b0%b4%e7%ba%bf%e9%83%a8%e7%bd%b2" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Jenkins Node&lt;br&gt;
+用agent.jar指定工作目录和节点名，部署jenkins节点&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;配置参数、code repo、shell脚本、归档，或直接使用jenkins groovy脚本构建任务工作流&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description></item></channel></rss>
