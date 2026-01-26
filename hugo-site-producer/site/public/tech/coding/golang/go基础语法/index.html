@@ -125,7 +125,7 @@
     "keywords": ["golang","AIGC","learning"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1022"
+    "wordCount": "1094"
   }]
   </script>
 
@@ -605,7 +605,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-08-05T16:21:19&#43;08:00">August 5, 2025</time><span class="px-2 text-primary-500">&middot;</span><span>1022 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">5 分钟</span>
+      <time datetime="2025-08-05T16:21:19&#43;08:00">August 5, 2025</time><span class="px-2 text-primary-500">&middot;</span><span>1094 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">6 分钟</span>
     
 
     
@@ -744,6 +744,12 @@
             <li><a href="#8-实际应用场景">8. 实际应用场景</a></li>
           </ul>
         </li>
+        <li><a href="#特殊标识符">特殊标识符</a>
+          <ul>
+            <li><a href="#1-">1. &hellip;</a></li>
+            <li><a href="#2-iota">2. iota</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -844,6 +850,12 @@
               </ul>
             </li>
             <li><a href="#8-实际应用场景">8. 实际应用场景</a></li>
+          </ul>
+        </li>
+        <li><a href="#特殊标识符">特殊标识符</a>
+          <ul>
+            <li><a href="#1-">1. &hellip;</a></li>
+            <li><a href="#2-iota">2. iota</a></li>
           </ul>
         </li>
       </ul>
@@ -2398,6 +2410,95 @@
 <li>文件或网络数据的分块读取</li>
 <li>实现栈、队列等数据结构</li>
 </ol>
+
+<h2 class="relative group">特殊标识符 
+    <div id="特殊标识符" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%89%b9%e6%ae%8a%e6%a0%87%e8%af%86%e7%ac%a6" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+
+<h3 class="relative group">1. &hellip; 
+    <div id="1-" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<table>
+  <thead>
+      <tr>
+          <th>用法</th>
+          <th>示例</th>
+          <th>说明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>可变参数</td>
+          <td><code>func sum(nums ...int)</code></td>
+          <td>函数参数数量可变</td>
+      </tr>
+      <tr>
+          <td>解包切片</td>
+          <td><code>sum(slice...)</code></td>
+          <td>将切片展开为参数</td>
+      </tr>
+      <tr>
+          <td>数组长度推导</td>
+          <td><code>arr := [...]int{1,2,3}</code></td>
+          <td>编译器自动计算数组长度</td>
+      </tr>
+      <tr>
+          <td>隐式展开（概念）</td>
+          <td><code>for _, v := range slice</code></td>
+          <td>遍历时隐式展开每个元素</td>
+      </tr>
+  </tbody>
+</table>
+
+<h3 class="relative group">2. iota 
+    <div id="2-iota" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-iota" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>在 const 声明块中，iota 是一个从0开始逐行递增的计数器，生成枚举值或一系列相关常量。</p>
+
+<div class="code-block-wrapper">
+  <div class="code-header">
+    <span class="language-label">
+      <span class="language-brackets">&lt;/></span>  
+      <span class="language-name">go</span>  
+    </span>
+
+    <div class="code-buttons">
+      <button class="copy-button">
+        <i class="fas fa-copy"></i>
+        <span>复制</span>
+      </button>
+    </div>
+  </div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">1</span><span class="cl"><span class="kd">const</span> <span class="p">(</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="nx">Sunday</span> <span class="p">=</span> <span class="kc">iota</span> <span class="c1">// 0</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">    <span class="nx">Monday</span>        <span class="c1">// 1</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="nx">Tuesday</span>       <span class="c1">// 2</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">    <span class="nx">Wednesday</span>     <span class="c1">// 3</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="nx">Thursday</span>      <span class="c1">// 4</span>
+</span></span><span class="line"><span class="ln">7</span><span class="cl">    <span class="nx">Friday</span>        <span class="c1">// 5</span>
+</span></span><span class="line"><span class="ln">8</span><span class="cl">    <span class="nx">Saturday</span>      <span class="c1">// 6</span>
+</span></span><span class="line"><span class="ln">9</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
+</div>
+
+
 
           
           
