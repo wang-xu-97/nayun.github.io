@@ -1,4 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>技 on nayun blog</title><link>https://wang-xu-97.github.io/nayun.github.io/tags/%E6%8A%80/</link><description>Recent content in 技 on nayun blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>© 2026 nayun</copyright><lastBuildDate>Mon, 26 Jan 2026 10:04:30 +0800</lastBuildDate><atom:link href="https://wang-xu-97.github.io/nayun.github.io/tags/%E6%8A%80/index.xml" rel="self" type="application/rss+xml"/><item><title>append</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/coding/golang/%E5%86%85%E5%BB%BA%E5%87%BD%E6%95%B0/append/</link><pubDate>Mon, 26 Jan 2026 10:04:30 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/coding/golang/%E5%86%85%E5%BB%BA%E5%87%BD%E6%95%B0/append/</guid><description>&lt;p&gt;参考&lt;a
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>技 on nayun blog</title><link>https://wang-xu-97.github.io/nayun.github.io/tags/%E6%8A%80/</link><description>Recent content in 技 on nayun blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>© 2026 nayun</copyright><lastBuildDate>Mon, 26 Jan 2026 10:04:30 +0800</lastBuildDate><atom:link href="https://wang-xu-97.github.io/nayun.github.io/tags/%E6%8A%80/index.xml" rel="self" type="application/rss+xml"/><item><title>append</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/coding/golang/%E5%86%85%E5%BB%BA%E5%87%BD%E6%95%B0/</link><pubDate>Mon, 26 Jan 2026 10:04:30 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/coding/golang/%E5%86%85%E5%BB%BA%E5%87%BD%E6%95%B0/</guid><description>&lt;h2 class="relative group"&gt;append
+&lt;div id="append" class="anchor"&gt;&lt;/div&gt;
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#append" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;
+&lt;p&gt;参考&lt;a
 href="https://juejin.cn/post/6951672096699187207"
 target="_blank"
 &gt;一篇文章带你看懂Go append方法 ｜ Go主题月&lt;/a&gt;
