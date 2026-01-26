@@ -1,0 +1,10 @@
+---
+title: "append"
+date: 2026-01-26T10:04:30+08:00
+draft: false
+tags: ["技"]
+toc: true
+showTableOfContents: true
+---
+
+参考[一篇文章带你看懂Go append方法 ｜ Go主题月](https://juejin.cn/post/6951672096699187207)
