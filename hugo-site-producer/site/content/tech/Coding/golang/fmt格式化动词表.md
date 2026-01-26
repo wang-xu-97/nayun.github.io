@@ -2,7 +2,7 @@
 title: "fmt格式化动词表"
 date: 2026-01-26T09:56:42+08:00
 draft: false
-tags: ["技"]
+tags: ['code', 'golang', 'AIGC', 'learning']
 toc: true
 showTableOfContents: true
 ---

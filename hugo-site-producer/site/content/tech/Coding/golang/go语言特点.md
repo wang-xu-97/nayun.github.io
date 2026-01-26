@@ -2,7 +2,7 @@
 title: "Go语言特点"
 date: 2025-08-06T10:18:47+08:00
 draft: false
-tags: ['AIGC']
+tags: ['code', 'golang', 'AIGC', 'learning']
 toc: true
 showTableOfContents: true
 ---

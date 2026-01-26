@@ -2,7 +2,7 @@
 title: "类型与interface"
 date: 2026-01-26T11:05:26+08:00
 draft: false
-tags: ["技"]
+tags: ['code', 'golang', 'learning']
 toc: true
 showTableOfContents: true
 ---
