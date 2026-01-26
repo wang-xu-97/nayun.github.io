@@ -41,3 +41,20 @@ func main() {
 1. 空接口：同样输出动态值的 %v 格式化结果
 1. 如果类型实现了 String() 方法：%v 会调用该方法
 1. %#v 输出更详细信息：包括类型信息
+
+
+## 相关技巧
+1. 创建存储不同值类型的map
+```go
+// 1. 用空接口
+var data1 map[string]any
+var data2 map[string]interface{}
+
+// 2. 已知接口，使用结构体
+type Config struct {
+    Name string   `json:"name"`
+    Age  int      `json:"age"`
+    Tags []string `json:"tags"`
+}
+
+```
