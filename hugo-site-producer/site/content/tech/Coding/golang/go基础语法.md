@@ -451,3 +451,9 @@ const (
     Saturday      // 6
 )
 ```
+### 3. any
+   完全等价空接口`interface{}`
+```go
+var a any = 42
+var b interface{} = 42
+```

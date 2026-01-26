@@ -125,7 +125,7 @@
     "keywords": ["golang","AIGC","learning"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1094"
+    "wordCount": "1111"
   }]
   </script>
 
@@ -605,7 +605,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-08-05T16:21:19&#43;08:00">August 5, 2025</time><span class="px-2 text-primary-500">&middot;</span><span>1094 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">6 分钟</span>
+      <time datetime="2025-08-05T16:21:19&#43;08:00">August 5, 2025</time><span class="px-2 text-primary-500">&middot;</span><span>1111 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">6 分钟</span>
     
 
     
@@ -748,6 +748,7 @@
           <ul>
             <li><a href="#1-">1. &hellip;</a></li>
             <li><a href="#2-iota">2. iota</a></li>
+            <li><a href="#3-any">3. any</a></li>
           </ul>
         </li>
       </ul>
@@ -856,6 +857,7 @@
           <ul>
             <li><a href="#1-">1. &hellip;</a></li>
             <li><a href="#2-iota">2. iota</a></li>
+            <li><a href="#3-any">3. any</a></li>
           </ul>
         </li>
       </ul>
@@ -2496,6 +2498,37 @@
 </span></span><span class="line"><span class="ln">7</span><span class="cl">    <span class="nx">Friday</span>        <span class="c1">// 5</span>
 </span></span><span class="line"><span class="ln">8</span><span class="cl">    <span class="nx">Saturday</span>      <span class="c1">// 6</span>
 </span></span><span class="line"><span class="ln">9</span><span class="cl"><span class="p">)</span></span></span></code></pre></div>
+</div>
+
+
+
+<h3 class="relative group">3. any 
+    <div id="3-any" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#3-any" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>完全等价空接口<code>interface{}</code></p>
+
+<div class="code-block-wrapper">
+  <div class="code-header">
+    <span class="language-label">
+      <span class="language-brackets">&lt;/></span>  
+      <span class="language-name">go</span>  
+    </span>
+
+    <div class="code-buttons">
+      <button class="copy-button">
+        <i class="fas fa-copy"></i>
+        <span>复制</span>
+      </button>
+    </div>
+  </div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">1</span><span class="cl"><span class="kd">var</span> <span class="nx">a</span> <span class="kt">any</span> <span class="p">=</span> <span class="mi">42</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="kd">var</span> <span class="nx">b</span> <span class="kd">interface</span><span class="p">{}</span> <span class="p">=</span> <span class="mi">42</span></span></span></code></pre></div>
 </div>
 
 
