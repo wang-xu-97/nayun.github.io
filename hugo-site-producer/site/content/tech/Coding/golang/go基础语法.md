@@ -451,7 +451,7 @@ const (
     Saturday      // 6
 )
 ```
-### 3. any
+### 3. any（Go 1.18+）
    完全等价空接口`interface{}`
 ```go
 var a any = 42
