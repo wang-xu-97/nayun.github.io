@@ -1,0 +1,1112 @@
+<!doctype html>
+<html
+  lang="zh-cn"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="light"
+  data-auto-appearance="true"><head><script src="/nayun.github.io/livereload.js?mindelay=10&amp;v=2&amp;port=43997&amp;path=nayun.github.io/livereload" data-no-instant defer></script>
+    
+    <link type="text/css" rel="stylesheet" href="/nayun.github.io/css/TagCloudbtn.css">
+    
+    <link type="text/css" rel="stylesheet" href="/nayun.github.io/css/_custom-markdown.css">
+    
+    <link type="text/css" rel="stylesheet" href="/nayun.github.io/css/custom_all_list.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta charset="utf-8" />
+    
+    <meta http-equiv="content-language" content="zh-cn" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    
+    <title>飞书块类 &middot; nayun blog</title>
+    <meta name="title" content="飞书块类 &middot; nayun blog" />
+    
+    
+    <meta name="keywords" content="技, " />
+    
+    
+    <link rel="canonical" href="http://localhost:43997/nayun.github.io/tech/coding/python/%E8%87%AA%E5%AE%9A%E6%A8%A1%E5%9D%97/%E5%BC%80%E6%94%BE%E5%B9%B3%E5%8F%B0api/%E9%A3%9E%E4%B9%A6/%E9%A3%9E%E4%B9%A6%E5%9D%97%E7%B1%BB/" />
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <link type="text/css" rel="stylesheet" href="/nayun.github.io/css/main.bundle.min.d5a4ea2c0a3cbf732f5d6f318d3bdb41fcd70d1bb1d18108c9aac83e0aace72a357e93fce51f3c7743f2b4f6bbdd7c119e820c2acdb47aa6951f48f14cace2c8.css"
+      integrity="sha512-1aTqLAo8v3MvXW8xjTvbQfzXDRux0YEIyarIPgqs5yo1fpP85R88d0PytPa73XwRnoIMKs20eqaVH0jxTKziyA==" />
+    
+    
+    <script type="text/javascript" src="/nayun.github.io/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
+      integrity="sha512-UWoWdFvqWpvQERONJUzA/TlzzVXObhXz3sdj58fCx0SPj&#43;e1TMqBHLghsMfhLNFhyqzh3XlKw9NNQJN8vMnuEg=="></script>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script defer type="text/javascript" id="script-bundle" src="/nayun.github.io/js/main.bundle.min.54688f522dbd435cd17577667367d50a06517a06f4b40b8c2f04d9e61afcb5f1b807ce42dfbe1f0d7979b2430f4e253cf548907cf81ab2f7efb0d66e57933d16.js"
+      integrity="sha512-VGiPUi29Q1zRdXdmc2fVCgZRegb0tAuMLwTZ5hr8tfG4B85C374fDXl5skMPTiU89UiQfPgasvfvsNZuV5M9Fg==" data-copy="复制" data-copied="已复制"></script>
+    
+    
+    
+    <script src="/nayun.github.io/lib/zoom/zoom.min.f592a181a15d2a5b042daa7f746c3721acf9063f8b6acd175d989129865a37d400ae0e85b640f9ad42cd98d1f8ad30931718cf8811abdcc5fcb264400d1a2b0c.js" integrity="sha512-9ZKhgaFdKlsELap/dGw3Iaz5Bj&#43;Las0XXZiRKYZaN9QArg6FtkD5rULNmNH4rTCTFxjPiBGr3MX8smRADRorDA=="></script>
+    
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/nayun.github.io/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/nayun.github.io/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/nayun.github.io/favicon-16x16.png" />
+    <link rel="manifest" href="/nayun.github.io/site.webmanifest" />
+    
+    
+    
+    
+    
+    
+    
+    
+    <meta property="og:url" content="http://localhost:43997/nayun.github.io/tech/coding/python/%E8%87%AA%E5%AE%9A%E6%A8%A1%E5%9D%97/%E5%BC%80%E6%94%BE%E5%B9%B3%E5%8F%B0api/%E9%A3%9E%E4%B9%A6/%E9%A3%9E%E4%B9%A6%E5%9D%97%E7%B1%BB/">
+  <meta property="og:site_name" content="nayun blog">
+  <meta property="og:title" content="飞书块类">
+  <meta property="og:description" content="自定义飞书块类 # &lt;/&gt; python 复制 1class block: 2 &#39;&#39;&#39;一个block为一行 3 4 :param content: 5 str:{content:None} 6 dict:{content:style} 7 :param blocktype: 8 2：文本 Block 9 3：标题 1 Block 10 4：标题 2 Block 11 5：标题 3 Block 12 6：标题 4 Block 13 7：标题 5 Block 14 8：标题 6 Block 15 13：有序列表 Block 16 27：image Block 17 ... 18 参考:https://open.feishu.cn/document/server-docs/docs/docs/docx-v1/document-block/create#1b8abd5d 19 :param indent: 20 首行缩进级别。仅支持对 Text 块进行修改，其余类型不生效。 21 示例值：&#34;NoIndent&#34; 22 可选值有： 23 NoIndent：无缩进 24 OneLevelIndent：一级缩进 25 26 :param align: 27 对齐方式 28 1：居左排版 29 2：居中排版 30 3：居右排版 31 默认值：1 32 33 :param background_color 34 LightGrayBackground：浅灰色 35 LightRedBackground：浅红色 36 LightOrangeBackground：浅橙色 37 LightYellowBackground：浅黄色 38 LightGreenBackground：浅绿色 39 LightBlueBackground：浅蓝色 40 LightPurpleBackground：浅紫色 41 PaleGrayBackground：中灰色 42 DarkGrayBackground：灰色 43 DarkRedBackground：中红色 44 DarkOrangeBackground：中橙色 45 DarkYellowBackground：中黄色 46 DarkGreenBackground：中绿色 47 DarkBlueBackground：中蓝色 48 DarkPurpleBackground：中紫色 49 &#39;&#39;&#39; 50 class Content: 51 &#39;&#39;&#39; 52 Text Content自定义样式支持： 53 bold 54 示例值：true 55 默认值：false 56 57 italic 58 示例值：true 59 默认值：false 60 61 strikethrough 删除线 62 示例值：true 63 默认值：false 64 65 underline 下划线 66 示例值：true 67 默认值：false 68 69 inline_code inline代码 70 示例值：true 71 默认值：false 72 73 background_color 背景色 74 可选值有： 75 1：浅红色 76 2：浅橙色 77 3：浅黄色 78 4：浅绿色 79 5：浅蓝色 80 6：浅紫色 81 7：中灰色 82 8：红色 83 9：橙色 84 10：黄色 85 11：绿色 86 12：蓝色 87 13：紫色 88 14：灰色 89 15：浅灰色 90 91 text_color 字体颜色 92 可选值有： 93 1：红色 94 2：橙色 95 3：黄色 96 4：绿色 97 5：蓝色 98 99 link 链接 100 url 超链接指向的 url (需要 url_encode) 101 示例值：&#34;https%3A%2F%2Fopen.feishu.cn%2F&#34; 102 &#39;&#39;&#39; 103 def __init__(self, content) -&gt; None: 104 if isinstance(content, dict): 105 self.contents = { 106 c:style 107 for c, style in content.items() 108 } 109 else: 110 self.contents = {str(content):{}} 111 112 def __iter__(self): 113 return iter(self.contents.items()) 114 115 def __contains__(self, k): 116 return k in self.contents 117 118 def __init__(self, content, blocktype=2, indent=&#39;NoIndent&#39;, align=1, background_color=None) -&gt; None: 119 self.type = blocktype 120 self.indent = indent 121 self.align = align 122 self.background_color = background_color 123 self.content = None 124 if blocktype != 27 and content!= None: 125 self.content = self.Content(content) 126 127 __doc__ = __doc__ &#43; Content.__doc__">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="tech">
+    <meta property="article:published_time" content="2026-02-28T16:48:27+08:00">
+    <meta property="article:modified_time" content="2026-02-28T16:48:27+08:00">
+    <meta property="article:tag" content="技">
+
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="飞书块类">
+  <meta name="twitter:description" content="自定义飞书块类 # &lt;/&gt; python 复制 1class block: 2 &#39;&#39;&#39;一个block为一行 3 4 :param content: 5 str:{content:None} 6 dict:{content:style} 7 :param blocktype: 8 2：文本 Block 9 3：标题 1 Block 10 4：标题 2 Block 11 5：标题 3 Block 12 6：标题 4 Block 13 7：标题 5 Block 14 8：标题 6 Block 15 13：有序列表 Block 16 27：image Block 17 ... 18 参考:https://open.feishu.cn/document/server-docs/docs/docs/docx-v1/document-block/create#1b8abd5d 19 :param indent: 20 首行缩进级别。仅支持对 Text 块进行修改，其余类型不生效。 21 示例值：&#34;NoIndent&#34; 22 可选值有： 23 NoIndent：无缩进 24 OneLevelIndent：一级缩进 25 26 :param align: 27 对齐方式 28 1：居左排版 29 2：居中排版 30 3：居右排版 31 默认值：1 32 33 :param background_color 34 LightGrayBackground：浅灰色 35 LightRedBackground：浅红色 36 LightOrangeBackground：浅橙色 37 LightYellowBackground：浅黄色 38 LightGreenBackground：浅绿色 39 LightBlueBackground：浅蓝色 40 LightPurpleBackground：浅紫色 41 PaleGrayBackground：中灰色 42 DarkGrayBackground：灰色 43 DarkRedBackground：中红色 44 DarkOrangeBackground：中橙色 45 DarkYellowBackground：中黄色 46 DarkGreenBackground：中绿色 47 DarkBlueBackground：中蓝色 48 DarkPurpleBackground：中紫色 49 &#39;&#39;&#39; 50 class Content: 51 &#39;&#39;&#39; 52 Text Content自定义样式支持： 53 bold 54 示例值：true 55 默认值：false 56 57 italic 58 示例值：true 59 默认值：false 60 61 strikethrough 删除线 62 示例值：true 63 默认值：false 64 65 underline 下划线 66 示例值：true 67 默认值：false 68 69 inline_code inline代码 70 示例值：true 71 默认值：false 72 73 background_color 背景色 74 可选值有： 75 1：浅红色 76 2：浅橙色 77 3：浅黄色 78 4：浅绿色 79 5：浅蓝色 80 6：浅紫色 81 7：中灰色 82 8：红色 83 9：橙色 84 10：黄色 85 11：绿色 86 12：蓝色 87 13：紫色 88 14：灰色 89 15：浅灰色 90 91 text_color 字体颜色 92 可选值有： 93 1：红色 94 2：橙色 95 3：黄色 96 4：绿色 97 5：蓝色 98 99 link 链接 100 url 超链接指向的 url (需要 url_encode) 101 示例值：&#34;https%3A%2F%2Fopen.feishu.cn%2F&#34; 102 &#39;&#39;&#39; 103 def __init__(self, content) -&gt; None: 104 if isinstance(content, dict): 105 self.contents = { 106 c:style 107 for c, style in content.items() 108 } 109 else: 110 self.contents = {str(content):{}} 111 112 def __iter__(self): 113 return iter(self.contents.items()) 114 115 def __contains__(self, k): 116 return k in self.contents 117 118 def __init__(self, content, blocktype=2, indent=&#39;NoIndent&#39;, align=1, background_color=None) -&gt; None: 119 self.type = blocktype 120 self.indent = indent 121 self.align = align 122 self.background_color = background_color 123 self.content = None 124 if blocktype != 27 and content!= None: 125 self.content = self.Content(content) 126 127 __doc__ = __doc__ &#43; Content.__doc__">
+
+      
+    
+    
+    <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "Teches",
+    "name": "飞书块类",
+    "headline": "飞书块类",
+    
+    "abstract": "\u003ch2 class=\u0022relative group\u0022\u003e自定义飞书块类 \n    \u003cdiv id=\u0022自定义飞书块类\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e8%87%aa%e5%ae%9a%e4%b9%89%e9%a3%9e%e4%b9%a6%e5%9d%97%e7%b1%bb\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\n\u003cdiv class=\u0022code-block-wrapper\u0022\u003e\n  \u003cdiv class=\u0022code-header\u0022\u003e\n    \u003cspan class=\u0022language-label\u0022\u003e\n      \u003cspan class=\u0022language-brackets\u0022\u003e\u0026lt;\/\u003e\u003c\/span\u003e  \n      \u003cspan class=\u0022language-name\u0022\u003epython\u003c\/span\u003e  \n    \u003c\/span\u003e\n\n    \u003cdiv class=\u0022code-buttons\u0022\u003e\n      \u003cbutton class=\u0022copy-button\u0022\u003e\n        \u003ci class=\u0022fas fa-copy\u0022\u003e\u003c\/i\u003e\n        \u003cspan\u003e复制\u003c\/span\u003e\n      \u003c\/button\u003e\n    \u003c\/div\u003e\n  \u003c\/div\u003e\n  \u003cdiv class=\u0022highlight\u0022\u003e\u003cpre tabindex=\u00220\u0022 class=\u0022chroma\u0022\u003e\u003ccode class=\u0022language-python\u0022 data-lang=\u0022python\u0022\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e  1\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022k\u0022\u003eclass\u003c\/span\u003e \u003cspan class=\u0022nc\u0022\u003eblock\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e:\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e  2\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022s1\u0022\u003e\u0026#39;\u0026#39;\u0026#39;一个block为一行\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e  3\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e  4\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e        :param content:\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e  5\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e            str:{content:None}\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e  6\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e            dict:{content:style}\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e  7\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e        :param blocktype:\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e  8\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e            2：文本 Block\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e  9\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e            3：标题 1 Block\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 10\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e            4：标题 2 Block\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 11\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e            5：标题 3 Block\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 12\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e            6：标题 4 Block\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 13\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e            7：标题 5 Block\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 14\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e            8：标题 6 Block\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 15\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e            13：有序列表 Block\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 16\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e            27：image Block\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 17\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e            ...\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 18\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e            参考:https:\/\/open.feishu.cn\/document\/server-docs\/docs\/docs\/docx-v1\/document-block\/create#1b8abd5d\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 19\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e        :param indent:\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 20\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e            首行缩进级别。仅支持对 Text 块进行修改，其余类型不生效。\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 21\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e            示例值：\u0026#34;NoIndent\u0026#34;\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 22\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e            可选值有：\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 23\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e                NoIndent：无缩进\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 24\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e                OneLevelIndent：一级缩进\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 25\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 26\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e        :param align:\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 27\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e            对齐方式\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 28\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e            1：居左排版\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 29\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e            2：居中排版\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 30\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e            3：居右排版\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 31\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e            默认值：1\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 32\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 33\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e        :param background_color\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 34\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e            LightGrayBackground：浅灰色\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 35\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e            LightRedBackground：浅红色\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 36\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e            LightOrangeBackground：浅橙色\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 37\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e            LightYellowBackground：浅黄色\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 38\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e            LightGreenBackground：浅绿色\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 39\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e            LightBlueBackground：浅蓝色\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 40\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e            LightPurpleBackground：浅紫色\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 41\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e            PaleGrayBackground：中灰色\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 42\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e            DarkGrayBackground：灰色\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 43\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e            DarkRedBackground：中红色\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 44\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e            DarkOrangeBackground：中橙色\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 45\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e            DarkYellowBackground：中黄色\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 46\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e            DarkGreenBackground：中绿色\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 47\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e            DarkBlueBackground：中蓝色\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 48\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e            DarkPurpleBackground：中紫色\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 49\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e    \u0026#39;\u0026#39;\u0026#39;\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 50\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022k\u0022\u003eclass\u003c\/span\u003e \u003cspan class=\u0022nc\u0022\u003eContent\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e:\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 51\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e        \u003cspan class=\u0022s1\u0022\u003e\u0026#39;\u0026#39;\u0026#39;\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 52\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e        Text Content自定义样式支持：\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 53\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e            bold\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 54\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e                示例值：true\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 55\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e                默认值：false\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 56\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 57\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e            italic\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 58\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e                示例值：true\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 59\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e                默认值：false\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 60\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 61\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e            strikethrough 删除线\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 62\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e                示例值：true\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 63\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e                默认值：false\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 64\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 65\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e            underline 下划线\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 66\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e                示例值：true\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 67\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e                默认值：false\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 68\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 69\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e            inline_code inline代码\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 70\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e                示例值：true\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 71\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e                默认值：false\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 72\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 73\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e            background_color 背景色\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 74\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e                可选值有：\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 75\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e                1：浅红色\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 76\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e                2：浅橙色\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 77\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e                3：浅黄色\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 78\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e                4：浅绿色\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 79\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e                5：浅蓝色\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 80\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e                6：浅紫色\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 81\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e                7：中灰色\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 82\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e                8：红色\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 83\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e                9：橙色\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 84\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e                10：黄色\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 85\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e                11：绿色\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 86\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e                12：蓝色\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 87\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e                13：紫色\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 88\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e                14：灰色\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 89\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e                15：浅灰色\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 90\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 91\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e            text_color 字体颜色\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 92\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e                可选值有：\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 93\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e                1：红色\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 94\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e                2：橙色\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 95\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e                3：黄色\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 96\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e                4：绿色\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 97\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e                5：蓝色\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 98\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e 99\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e            link 链接\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e100\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e                url 超链接指向的 url (需要 url_encode)\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e101\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e                    示例值：\u0026#34;https%3A\u003c\/span\u003e\u003cspan class=\u0022si\u0022\u003e%2F%2F\u003c\/span\u003e\u003cspan class=\u0022s1\u0022\u003eopen.feishu.cn\u003c\/span\u003e\u003cspan class=\u0022si\u0022\u003e%2F\u003c\/span\u003e\u003cspan class=\u0022s1\u0022\u003e\u0026#34;\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e102\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s1\u0022\u003e        \u0026#39;\u0026#39;\u0026#39;\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e103\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e        \u003cspan class=\u0022k\u0022\u003edef\u003c\/span\u003e \u003cspan class=\u0022fm\u0022\u003e__init__\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e(\u003c\/span\u003e\u003cspan class=\u0022bp\u0022\u003eself\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e,\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003econtent\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e)\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e-\u0026gt;\u003c\/span\u003e \u003cspan class=\u0022kc\u0022\u003eNone\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e:\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e104\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e            \u003cspan class=\u0022k\u0022\u003eif\u003c\/span\u003e \u003cspan class=\u0022nb\u0022\u003eisinstance\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e(\u003c\/span\u003e\u003cspan class=\u0022n\u0022\u003econtent\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e,\u003c\/span\u003e \u003cspan class=\u0022nb\u0022\u003edict\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e):\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e105\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e                \u003cspan class=\u0022bp\u0022\u003eself\u003c\/span\u003e\u003cspan class=\u0022o\u0022\u003e.\u003c\/span\u003e\u003cspan class=\u0022n\u0022\u003econtents\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e=\u003c\/span\u003e \u003cspan class=\u0022p\u0022\u003e{\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e106\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e                    \u003cspan class=\u0022n\u0022\u003ec\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e:\u003c\/span\u003e\u003cspan class=\u0022n\u0022\u003estyle\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e107\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e                    \u003cspan class=\u0022k\u0022\u003efor\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003ec\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e,\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003estyle\u003c\/span\u003e \u003cspan class=\u0022ow\u0022\u003ein\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003econtent\u003c\/span\u003e\u003cspan class=\u0022o\u0022\u003e.\u003c\/span\u003e\u003cspan class=\u0022n\u0022\u003eitems\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e()\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e108\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e                \u003cspan class=\u0022p\u0022\u003e}\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e109\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e            \u003cspan class=\u0022k\u0022\u003eelse\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e:\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e110\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e                \u003cspan class=\u0022bp\u0022\u003eself\u003c\/span\u003e\u003cspan class=\u0022o\u0022\u003e.\u003c\/span\u003e\u003cspan class=\u0022n\u0022\u003econtents\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e=\u003c\/span\u003e \u003cspan class=\u0022p\u0022\u003e{\u003c\/span\u003e\u003cspan class=\u0022nb\u0022\u003estr\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e(\u003c\/span\u003e\u003cspan class=\u0022n\u0022\u003econtent\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e):{}}\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e111\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e        \n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e112\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e        \u003cspan class=\u0022k\u0022\u003edef\u003c\/span\u003e \u003cspan class=\u0022fm\u0022\u003e__iter__\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e(\u003c\/span\u003e\u003cspan class=\u0022bp\u0022\u003eself\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e):\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e113\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e            \u003cspan class=\u0022k\u0022\u003ereturn\u003c\/span\u003e \u003cspan class=\u0022nb\u0022\u003eiter\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e(\u003c\/span\u003e\u003cspan class=\u0022bp\u0022\u003eself\u003c\/span\u003e\u003cspan class=\u0022o\u0022\u003e.\u003c\/span\u003e\u003cspan class=\u0022n\u0022\u003econtents\u003c\/span\u003e\u003cspan class=\u0022o\u0022\u003e.\u003c\/span\u003e\u003cspan class=\u0022n\u0022\u003eitems\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e())\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e114\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e        \n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e115\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e        \u003cspan class=\u0022k\u0022\u003edef\u003c\/span\u003e \u003cspan class=\u0022fm\u0022\u003e__contains__\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e(\u003c\/span\u003e\u003cspan class=\u0022bp\u0022\u003eself\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e,\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003ek\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e):\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e116\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e            \u003cspan class=\u0022k\u0022\u003ereturn\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003ek\u003c\/span\u003e \u003cspan class=\u0022ow\u0022\u003ein\u003c\/span\u003e \u003cspan class=\u0022bp\u0022\u003eself\u003c\/span\u003e\u003cspan class=\u0022o\u0022\u003e.\u003c\/span\u003e\u003cspan class=\u0022n\u0022\u003econtents\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e117\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e118\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022k\u0022\u003edef\u003c\/span\u003e \u003cspan class=\u0022fm\u0022\u003e__init__\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e(\u003c\/span\u003e\u003cspan class=\u0022bp\u0022\u003eself\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e,\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003econtent\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e,\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003eblocktype\u003c\/span\u003e\u003cspan class=\u0022o\u0022\u003e=\u003c\/span\u003e\u003cspan class=\u0022mi\u0022\u003e2\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e,\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003eindent\u003c\/span\u003e\u003cspan class=\u0022o\u0022\u003e=\u003c\/span\u003e\u003cspan class=\u0022s1\u0022\u003e\u0026#39;NoIndent\u0026#39;\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e,\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003ealign\u003c\/span\u003e\u003cspan class=\u0022o\u0022\u003e=\u003c\/span\u003e\u003cspan class=\u0022mi\u0022\u003e1\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e,\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003ebackground_color\u003c\/span\u003e\u003cspan class=\u0022o\u0022\u003e=\u003c\/span\u003e\u003cspan class=\u0022kc\u0022\u003eNone\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e)\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e-\u0026gt;\u003c\/span\u003e \u003cspan class=\u0022kc\u0022\u003eNone\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e:\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e119\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e        \u003cspan class=\u0022bp\u0022\u003eself\u003c\/span\u003e\u003cspan class=\u0022o\u0022\u003e.\u003c\/span\u003e\u003cspan class=\u0022n\u0022\u003etype\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e=\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003eblocktype\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e120\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e        \u003cspan class=\u0022bp\u0022\u003eself\u003c\/span\u003e\u003cspan class=\u0022o\u0022\u003e.\u003c\/span\u003e\u003cspan class=\u0022n\u0022\u003eindent\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e=\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003eindent\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e121\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e        \u003cspan class=\u0022bp\u0022\u003eself\u003c\/span\u003e\u003cspan class=\u0022o\u0022\u003e.\u003c\/span\u003e\u003cspan class=\u0022n\u0022\u003ealign\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e=\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003ealign\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e122\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e        \u003cspan class=\u0022bp\u0022\u003eself\u003c\/span\u003e\u003cspan class=\u0022o\u0022\u003e.\u003c\/span\u003e\u003cspan class=\u0022n\u0022\u003ebackground_color\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e=\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003ebackground_color\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e123\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e        \u003cspan class=\u0022bp\u0022\u003eself\u003c\/span\u003e\u003cspan class=\u0022o\u0022\u003e.\u003c\/span\u003e\u003cspan class=\u0022n\u0022\u003econtent\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e=\u003c\/span\u003e \u003cspan class=\u0022kc\u0022\u003eNone\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e124\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e        \u003cspan class=\u0022k\u0022\u003eif\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003eblocktype\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e!=\u003c\/span\u003e \u003cspan class=\u0022mi\u0022\u003e27\u003c\/span\u003e \u003cspan class=\u0022ow\u0022\u003eand\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003econtent\u003c\/span\u003e\u003cspan class=\u0022o\u0022\u003e!=\u003c\/span\u003e \u003cspan class=\u0022kc\u0022\u003eNone\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e:\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e125\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e            \u003cspan class=\u0022bp\u0022\u003eself\u003c\/span\u003e\u003cspan class=\u0022o\u0022\u003e.\u003c\/span\u003e\u003cspan class=\u0022n\u0022\u003econtent\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e=\u003c\/span\u003e \u003cspan class=\u0022bp\u0022\u003eself\u003c\/span\u003e\u003cspan class=\u0022o\u0022\u003e.\u003c\/span\u003e\u003cspan class=\u0022n\u0022\u003eContent\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e(\u003c\/span\u003e\u003cspan class=\u0022n\u0022\u003econtent\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e)\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e126\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e    \n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022ln\u0022\u003e127\u003c\/span\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022vm\u0022\u003e__doc__\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e=\u003c\/span\u003e \u003cspan class=\u0022vm\u0022\u003e__doc__\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e\u002b\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003eContent\u003c\/span\u003e\u003cspan class=\u0022o\u0022\u003e.\u003c\/span\u003e\u003cspan class=\u0022vm\u0022\u003e__doc__\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003c\/code\u003e\u003c\/pre\u003e\u003c\/div\u003e\n\u003c\/div\u003e",
+    "inLanguage": "zh-cn",
+    "url" : "http:\/\/localhost:43997\/nayun.github.io\/tech\/coding\/python\/%E8%87%AA%E5%AE%9A%E6%A8%A1%E5%9D%97\/%E5%BC%80%E6%94%BE%E5%B9%B3%E5%8F%B0api\/%E9%A3%9E%E4%B9%A6\/%E9%A3%9E%E4%B9%A6%E5%9D%97%E7%B1%BB\/",
+    "author" : {
+      "@type": "Person",
+      "name": "nayun"
+    },
+    "copyrightYear": "2026",
+    "dateCreated": "2026-02-28T16:48:27\u002b08:00",
+    "datePublished": "2026-02-28T16:48:27\u002b08:00",
+    
+    "dateModified": "2026-02-28T16:48:27\u002b08:00",
+    
+    "keywords": ["技"],
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "330"
+  }]
+  </script>
+
+
+    
+    
+    <meta name="author" content="nayun" />
+    
+    
+    
+
+<script src="/nayun.github.io/lib/jquery/jquery.slim.min.b0dca576e87d7eaa5850ae4e61759c065786cdb6489d68fcc82240539eebd5da522bdb4fda085ffd245808c8fe2acb2516408eb774ef26b5f6015fc6737c0ea8.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj&#43;KsslFkCOt3TvJrX2AV/Gc3wOqA=="></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+    
+    
+    <meta name="theme-color"/>
+    
+    
+  
+    
+    
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        }
+      };
+      </script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  </head>
+  <body
+    class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32 scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content"
+        ><span class="font-bold text-primary-600 ltr:pr-2 rtl:pl-2 dark:text-primary-400">&darr;</span>跳过正文</a
+      >
+    </div>
+    
+    
+      <div class="main-menu flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start gap-x-3 padding-main-menu">
+    
+    <div class="flex flex-1 items-center justify-between">
+        <nav class="flex space-x-3">
+
+            
+            <a href="/nayun.github.io/" class="text-base font-medium text-gray-500 hover:text-gray-900">nayun blog</a>
+            
+
+        </nav>
+        <nav class="hidden md:flex items-center gap-x-5 md:ml-12 h-12">
+
+            
+            
+            
+  <a
+  href="/nayun.github.io/tech/"
+  
+  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  
+  <p class="text-base font-medium" title="">
+    技
+  </p>
+</a>
+
+
+
+            
+            
+  <a
+  href="/nayun.github.io/art/"
+  
+  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  
+  <p class="text-base font-medium" title="">
+    艺
+  </p>
+</a>
+
+
+
+            
+            
+  <a
+  href="/nayun.github.io/about/"
+  
+  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  
+  <p class="text-base font-medium" title="">
+    关于
+  </p>
+</a>
+
+
+
+            
+            
+
+            
+
+
+            
+            <button id="search-button" aria-label="Search" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+                title="">
+                
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+            </button>
+            
+
+
+            
+            
+            <div
+                class=" flex items-center">
+                <button id="appearance-switcher" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400">
+                    <div class="flex items-center justify-center dark:hidden">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
+                    </div>
+                    <div class="items-center justify-center hidden dark:flex">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+                    </div>
+                </button>
+            </div>
+            
+
+        </nav>
+        <div class="flex md:hidden items-center gap-x-5 md:ml-12 h-12">
+
+            <span></span>
+
+            
+
+
+            
+            <button id="search-button-mobile" aria-label="Search" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+                title="">
+                
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+            </button>
+            
+
+            
+            
+            <button id="appearance-switcher-mobile" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400 ltr:mr-1 rtl:ml-1">
+                <div class="flex items-center justify-center dark:hidden">
+                    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
+                </div>
+                <div class="items-center justify-center hidden dark:flex">
+                    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+                </div>
+            </button>
+            
+
+        </div>
+    </div>
+    <div class="-my-2 md:hidden">
+
+        <label id="menu-button" class="block">
+            
+            <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+                
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+
+  </span>
+
+
+            </div>
+            <div id="menu-wrapper" class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50 padding-top-[5px]">
+                <ul
+                    class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none ltr:text-right rtl:text-left max-w-7xl">
+
+                    <li id="menu-close-button">
+                        <span
+                            class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+
+  </span>
+
+</span>
+                    </li>
+
+                    
+
+                    
+  <li class="mt-1">
+  <a
+    href="/nayun.github.io/tech/"
+    
+    class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="">
+      技
+    </p>
+  </a>
+</li>
+
+
+
+
+                    
+
+                    
+  <li class="mt-1">
+  <a
+    href="/nayun.github.io/art/"
+    
+    class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="">
+      艺
+    </p>
+  </a>
+</li>
+
+
+
+
+                    
+
+                    
+  <li class="mt-1">
+  <a
+    href="/nayun.github.io/about/"
+    
+    class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="">
+      关于
+    </p>
+  </a>
+</li>
+
+
+
+
+                    
+
+                </ul>
+                
+                
+
+            </div>
+        </label>
+    </div>
+</div>
+
+
+
+
+
+    
+    <div class="relative flex flex-col grow">
+      <main id="main-content" class="grow">
+        
+  
+
+
+  <article>
+    
+      
+      
+      
+      
+        
+  
+
+      
+    
+
+
+    <header id="single_header" class="mt-5 max-w-prose">
+      
+        <ol class="text-sm text-neutral-500 dark:text-neutral-400 print:hidden">
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+  <li class="hidden">
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="/nayun.github.io/"
+      >nayun blog</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="inline">
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="/nayun.github.io/tech/"
+      >Teches</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="inline">
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="/nayun.github.io/tech/coding/"
+      >程序语言</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="inline">
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="/nayun.github.io/tech/coding/python/"
+      >python</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="inline">
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="/nayun.github.io/tech/coding/python/%E8%87%AA%E5%AE%9A%E6%A8%A1%E5%9D%97/"
+      >自定模块</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="inline">
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="/nayun.github.io/tech/coding/python/%E8%87%AA%E5%AE%9A%E6%A8%A1%E5%9D%97/%E5%BC%80%E6%94%BE%E5%B9%B3%E5%8F%B0api/"
+      >开放平台api</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="inline">
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="/nayun.github.io/tech/coding/python/%E8%87%AA%E5%AE%9A%E6%A8%A1%E5%9D%97/%E5%BC%80%E6%94%BE%E5%B9%B3%E5%8F%B0api/%E9%A3%9E%E4%B9%A6/"
+      >飞书</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="hidden">
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="/nayun.github.io/tech/coding/python/%E8%87%AA%E5%AE%9A%E6%A8%A1%E5%9D%97/%E5%BC%80%E6%94%BE%E5%B9%B3%E5%8F%B0api/%E9%A3%9E%E4%B9%A6/%E9%A3%9E%E4%B9%A6%E5%9D%97%E7%B1%BB/"
+      >飞书块类</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+</ol>
+
+
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        飞书块类
+      </h1>
+      
+      
+        <div class="mt-3 mb-4 flex flex-wrap">
+          
+          
+          
+            <a href="/nayun.github.io/tags/%E6%8A%80/" 
+              class="tag px-1 py-0.5 text-xs font-medium rounded-md border mr-1 last:mr-0 dark:border-blue-400 dark:bg-gray-800 dark:text-blue-300 dark:hover:bg-blue-900/30">
+              技
+            </a>
+            
+        </div>
+      
+      
+
+      <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+  
+
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2026-02-28T16:48:27&#43;08:00">February 28, 2026</time><span class="px-2 text-primary-500">&middot;</span><span>330 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">2 分钟</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+
+  
+  
+
+
+
+      </div>
+
+      
+      
+      
+      
+      
+
+      
+
+      
+
+    </header>
+
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      
+        <div class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
+          <div
+            class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky 
+              lg:top-10
+            
+            ">
+            
+              <details
+  open
+  id="TOCView"
+  class="toc-right mt-0 overflow-y-auto overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    目录
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#自定义飞书块类">自定义飞书块类</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    目录
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#自定义飞书块类">自定义飞书块类</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+
+<script>
+  (function () {
+    'use strict'
+
+    const SCROLL_OFFSET_RATIO = 0.33
+    const TOC_SELECTOR = '#TableOfContents'
+    const ANCHOR_SELECTOR = '.anchor'
+    const TOC_LINK_SELECTOR = 'a[href^="#"]'
+    const NESTED_LIST_SELECTOR = 'li ul'
+    const ACTIVE_CLASS = 'active'
+
+    function getActiveAnchorId(anchors, offsetRatio) {
+      const threshold = window.scrollY + window.innerHeight * offsetRatio
+      const tocLinks = [...document.querySelectorAll('#TableOfContents a[href^="#"]')]
+      const tocIds = new Set(tocLinks.map(link => link.getAttribute('href').substring(1)))
+
+      for (let i = anchors.length - 1; i >= 0; i--) {
+        const top = anchors[i].getBoundingClientRect().top + window.scrollY
+        if (top <= threshold && tocIds.has(anchors[i].id)) {
+          return anchors[i].id
+        }
+      }
+      return anchors.find(anchor => tocIds.has(anchor.id))?.id || ''
+    }
+
+    function updateTOC({ toc, anchors, links, scrollOffset, collapseInactive }) {
+      const activeId = getActiveAnchorId(anchors, scrollOffset)
+      if (!activeId) return
+
+      links.forEach(link => {
+        const isActive = link.getAttribute('href') === `#${activeId}`
+        link.classList.toggle(ACTIVE_CLASS, isActive)
+
+        if (collapseInactive) {
+          const ul = link.closest('li')?.querySelector('ul')
+          if (ul) ul.style.display = isActive ? '' : 'none'
+        }
+      })
+
+      if (collapseInactive) {
+        const activeLink = toc.querySelector(`a[href="#${CSS.escape(activeId)}"]`)
+        let el = activeLink
+        while (el && el !== toc) {
+          if (el.tagName === 'UL') el.style.display = ''
+          if (el.tagName === 'LI') el.querySelector('ul')?.style.setProperty('display', '')
+          el = el.parentElement
+        }
+      }
+    }
+
+    function initTOC() {
+      const toc = document.querySelector(TOC_SELECTOR)
+      if (!toc) return
+
+      const collapseInactive = true
+      const anchors = [...document.querySelectorAll(ANCHOR_SELECTOR)]
+      const links = [...toc.querySelectorAll(TOC_LINK_SELECTOR)]
+
+      if (collapseInactive) {
+        toc.querySelectorAll(NESTED_LIST_SELECTOR).forEach(ul => ul.style.display = 'none')
+      }
+
+      const config = {
+        toc,
+        anchors,
+        links,
+        scrollOffset: SCROLL_OFFSET_RATIO,
+        collapseInactive
+      }
+
+      window.addEventListener('scroll', () => updateTOC(config), { passive: true })
+      window.addEventListener('hashchange', () => updateTOC(config), { passive: true })
+
+      updateTOC(config)
+    }
+
+    document.readyState === 'loading'
+      ? document.addEventListener('DOMContentLoaded', initTOC)
+      : initTOC()
+  })()
+</script>
+
+
+            
+            
+          </div>
+        </div>
+      
+
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+
+
+
+        <div class="article-content max-w-prose mb-20">
+          
+<h2 class="relative group">自定义飞书块类 
+    <div id="自定义飞书块类" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e8%87%aa%e5%ae%9a%e4%b9%89%e9%a3%9e%e4%b9%a6%e5%9d%97%e7%b1%bb" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+
+<div class="code-block-wrapper">
+  <div class="code-header">
+    <span class="language-label">
+      <span class="language-brackets">&lt;/></span>  
+      <span class="language-name">python</span>  
+    </span>
+
+    <div class="code-buttons">
+      <button class="copy-button">
+        <i class="fas fa-copy"></i>
+        <span>复制</span>
+      </button>
+    </div>
+  </div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">  1</span><span class="cl"><span class="k">class</span> <span class="nc">block</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">  2</span><span class="cl">    <span class="s1">&#39;&#39;&#39;一个block为一行
+</span></span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="s1">
+</span></span></span><span class="line"><span class="ln">  4</span><span class="cl"><span class="s1">        :param content:
+</span></span></span><span class="line"><span class="ln">  5</span><span class="cl"><span class="s1">            str:{content:None}
+</span></span></span><span class="line"><span class="ln">  6</span><span class="cl"><span class="s1">            dict:{content:style}
+</span></span></span><span class="line"><span class="ln">  7</span><span class="cl"><span class="s1">        :param blocktype:
+</span></span></span><span class="line"><span class="ln">  8</span><span class="cl"><span class="s1">            2：文本 Block
+</span></span></span><span class="line"><span class="ln">  9</span><span class="cl"><span class="s1">            3：标题 1 Block
+</span></span></span><span class="line"><span class="ln"> 10</span><span class="cl"><span class="s1">            4：标题 2 Block
+</span></span></span><span class="line"><span class="ln"> 11</span><span class="cl"><span class="s1">            5：标题 3 Block
+</span></span></span><span class="line"><span class="ln"> 12</span><span class="cl"><span class="s1">            6：标题 4 Block
+</span></span></span><span class="line"><span class="ln"> 13</span><span class="cl"><span class="s1">            7：标题 5 Block
+</span></span></span><span class="line"><span class="ln"> 14</span><span class="cl"><span class="s1">            8：标题 6 Block
+</span></span></span><span class="line"><span class="ln"> 15</span><span class="cl"><span class="s1">            13：有序列表 Block
+</span></span></span><span class="line"><span class="ln"> 16</span><span class="cl"><span class="s1">            27：image Block
+</span></span></span><span class="line"><span class="ln"> 17</span><span class="cl"><span class="s1">            ...
+</span></span></span><span class="line"><span class="ln"> 18</span><span class="cl"><span class="s1">            参考:https://open.feishu.cn/document/server-docs/docs/docs/docx-v1/document-block/create#1b8abd5d
+</span></span></span><span class="line"><span class="ln"> 19</span><span class="cl"><span class="s1">        :param indent:
+</span></span></span><span class="line"><span class="ln"> 20</span><span class="cl"><span class="s1">            首行缩进级别。仅支持对 Text 块进行修改，其余类型不生效。
+</span></span></span><span class="line"><span class="ln"> 21</span><span class="cl"><span class="s1">            示例值：&#34;NoIndent&#34;
+</span></span></span><span class="line"><span class="ln"> 22</span><span class="cl"><span class="s1">            可选值有：
+</span></span></span><span class="line"><span class="ln"> 23</span><span class="cl"><span class="s1">                NoIndent：无缩进
+</span></span></span><span class="line"><span class="ln"> 24</span><span class="cl"><span class="s1">                OneLevelIndent：一级缩进
+</span></span></span><span class="line"><span class="ln"> 25</span><span class="cl"><span class="s1">
+</span></span></span><span class="line"><span class="ln"> 26</span><span class="cl"><span class="s1">        :param align:
+</span></span></span><span class="line"><span class="ln"> 27</span><span class="cl"><span class="s1">            对齐方式
+</span></span></span><span class="line"><span class="ln"> 28</span><span class="cl"><span class="s1">            1：居左排版
+</span></span></span><span class="line"><span class="ln"> 29</span><span class="cl"><span class="s1">            2：居中排版
+</span></span></span><span class="line"><span class="ln"> 30</span><span class="cl"><span class="s1">            3：居右排版
+</span></span></span><span class="line"><span class="ln"> 31</span><span class="cl"><span class="s1">            默认值：1
+</span></span></span><span class="line"><span class="ln"> 32</span><span class="cl"><span class="s1">
+</span></span></span><span class="line"><span class="ln"> 33</span><span class="cl"><span class="s1">        :param background_color
+</span></span></span><span class="line"><span class="ln"> 34</span><span class="cl"><span class="s1">            LightGrayBackground：浅灰色
+</span></span></span><span class="line"><span class="ln"> 35</span><span class="cl"><span class="s1">            LightRedBackground：浅红色
+</span></span></span><span class="line"><span class="ln"> 36</span><span class="cl"><span class="s1">            LightOrangeBackground：浅橙色
+</span></span></span><span class="line"><span class="ln"> 37</span><span class="cl"><span class="s1">            LightYellowBackground：浅黄色
+</span></span></span><span class="line"><span class="ln"> 38</span><span class="cl"><span class="s1">            LightGreenBackground：浅绿色
+</span></span></span><span class="line"><span class="ln"> 39</span><span class="cl"><span class="s1">            LightBlueBackground：浅蓝色
+</span></span></span><span class="line"><span class="ln"> 40</span><span class="cl"><span class="s1">            LightPurpleBackground：浅紫色
+</span></span></span><span class="line"><span class="ln"> 41</span><span class="cl"><span class="s1">            PaleGrayBackground：中灰色
+</span></span></span><span class="line"><span class="ln"> 42</span><span class="cl"><span class="s1">            DarkGrayBackground：灰色
+</span></span></span><span class="line"><span class="ln"> 43</span><span class="cl"><span class="s1">            DarkRedBackground：中红色
+</span></span></span><span class="line"><span class="ln"> 44</span><span class="cl"><span class="s1">            DarkOrangeBackground：中橙色
+</span></span></span><span class="line"><span class="ln"> 45</span><span class="cl"><span class="s1">            DarkYellowBackground：中黄色
+</span></span></span><span class="line"><span class="ln"> 46</span><span class="cl"><span class="s1">            DarkGreenBackground：中绿色
+</span></span></span><span class="line"><span class="ln"> 47</span><span class="cl"><span class="s1">            DarkBlueBackground：中蓝色
+</span></span></span><span class="line"><span class="ln"> 48</span><span class="cl"><span class="s1">            DarkPurpleBackground：中紫色
+</span></span></span><span class="line"><span class="ln"> 49</span><span class="cl"><span class="s1">    &#39;&#39;&#39;</span>
+</span></span><span class="line"><span class="ln"> 50</span><span class="cl">    <span class="k">class</span> <span class="nc">Content</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln"> 51</span><span class="cl">        <span class="s1">&#39;&#39;&#39;
+</span></span></span><span class="line"><span class="ln"> 52</span><span class="cl"><span class="s1">        Text Content自定义样式支持：
+</span></span></span><span class="line"><span class="ln"> 53</span><span class="cl"><span class="s1">            bold
+</span></span></span><span class="line"><span class="ln"> 54</span><span class="cl"><span class="s1">                示例值：true
+</span></span></span><span class="line"><span class="ln"> 55</span><span class="cl"><span class="s1">                默认值：false
+</span></span></span><span class="line"><span class="ln"> 56</span><span class="cl"><span class="s1">
+</span></span></span><span class="line"><span class="ln"> 57</span><span class="cl"><span class="s1">            italic
+</span></span></span><span class="line"><span class="ln"> 58</span><span class="cl"><span class="s1">                示例值：true
+</span></span></span><span class="line"><span class="ln"> 59</span><span class="cl"><span class="s1">                默认值：false
+</span></span></span><span class="line"><span class="ln"> 60</span><span class="cl"><span class="s1">
+</span></span></span><span class="line"><span class="ln"> 61</span><span class="cl"><span class="s1">            strikethrough 删除线
+</span></span></span><span class="line"><span class="ln"> 62</span><span class="cl"><span class="s1">                示例值：true
+</span></span></span><span class="line"><span class="ln"> 63</span><span class="cl"><span class="s1">                默认值：false
+</span></span></span><span class="line"><span class="ln"> 64</span><span class="cl"><span class="s1">
+</span></span></span><span class="line"><span class="ln"> 65</span><span class="cl"><span class="s1">            underline 下划线
+</span></span></span><span class="line"><span class="ln"> 66</span><span class="cl"><span class="s1">                示例值：true
+</span></span></span><span class="line"><span class="ln"> 67</span><span class="cl"><span class="s1">                默认值：false
+</span></span></span><span class="line"><span class="ln"> 68</span><span class="cl"><span class="s1">
+</span></span></span><span class="line"><span class="ln"> 69</span><span class="cl"><span class="s1">            inline_code inline代码
+</span></span></span><span class="line"><span class="ln"> 70</span><span class="cl"><span class="s1">                示例值：true
+</span></span></span><span class="line"><span class="ln"> 71</span><span class="cl"><span class="s1">                默认值：false
+</span></span></span><span class="line"><span class="ln"> 72</span><span class="cl"><span class="s1">
+</span></span></span><span class="line"><span class="ln"> 73</span><span class="cl"><span class="s1">            background_color 背景色
+</span></span></span><span class="line"><span class="ln"> 74</span><span class="cl"><span class="s1">                可选值有：
+</span></span></span><span class="line"><span class="ln"> 75</span><span class="cl"><span class="s1">                1：浅红色
+</span></span></span><span class="line"><span class="ln"> 76</span><span class="cl"><span class="s1">                2：浅橙色
+</span></span></span><span class="line"><span class="ln"> 77</span><span class="cl"><span class="s1">                3：浅黄色
+</span></span></span><span class="line"><span class="ln"> 78</span><span class="cl"><span class="s1">                4：浅绿色
+</span></span></span><span class="line"><span class="ln"> 79</span><span class="cl"><span class="s1">                5：浅蓝色
+</span></span></span><span class="line"><span class="ln"> 80</span><span class="cl"><span class="s1">                6：浅紫色
+</span></span></span><span class="line"><span class="ln"> 81</span><span class="cl"><span class="s1">                7：中灰色
+</span></span></span><span class="line"><span class="ln"> 82</span><span class="cl"><span class="s1">                8：红色
+</span></span></span><span class="line"><span class="ln"> 83</span><span class="cl"><span class="s1">                9：橙色
+</span></span></span><span class="line"><span class="ln"> 84</span><span class="cl"><span class="s1">                10：黄色
+</span></span></span><span class="line"><span class="ln"> 85</span><span class="cl"><span class="s1">                11：绿色
+</span></span></span><span class="line"><span class="ln"> 86</span><span class="cl"><span class="s1">                12：蓝色
+</span></span></span><span class="line"><span class="ln"> 87</span><span class="cl"><span class="s1">                13：紫色
+</span></span></span><span class="line"><span class="ln"> 88</span><span class="cl"><span class="s1">                14：灰色
+</span></span></span><span class="line"><span class="ln"> 89</span><span class="cl"><span class="s1">                15：浅灰色
+</span></span></span><span class="line"><span class="ln"> 90</span><span class="cl"><span class="s1">
+</span></span></span><span class="line"><span class="ln"> 91</span><span class="cl"><span class="s1">            text_color 字体颜色
+</span></span></span><span class="line"><span class="ln"> 92</span><span class="cl"><span class="s1">                可选值有：
+</span></span></span><span class="line"><span class="ln"> 93</span><span class="cl"><span class="s1">                1：红色
+</span></span></span><span class="line"><span class="ln"> 94</span><span class="cl"><span class="s1">                2：橙色
+</span></span></span><span class="line"><span class="ln"> 95</span><span class="cl"><span class="s1">                3：黄色
+</span></span></span><span class="line"><span class="ln"> 96</span><span class="cl"><span class="s1">                4：绿色
+</span></span></span><span class="line"><span class="ln"> 97</span><span class="cl"><span class="s1">                5：蓝色
+</span></span></span><span class="line"><span class="ln"> 98</span><span class="cl"><span class="s1">
+</span></span></span><span class="line"><span class="ln"> 99</span><span class="cl"><span class="s1">            link 链接
+</span></span></span><span class="line"><span class="ln">100</span><span class="cl"><span class="s1">                url 超链接指向的 url (需要 url_encode)
+</span></span></span><span class="line"><span class="ln">101</span><span class="cl"><span class="s1">                    示例值：&#34;https%3A</span><span class="si">%2F%2F</span><span class="s1">open.feishu.cn</span><span class="si">%2F</span><span class="s1">&#34;
+</span></span></span><span class="line"><span class="ln">102</span><span class="cl"><span class="s1">        &#39;&#39;&#39;</span>
+</span></span><span class="line"><span class="ln">103</span><span class="cl">        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">content</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">104</span><span class="cl">            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">105</span><span class="cl">                <span class="bp">self</span><span class="o">.</span><span class="n">contents</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">106</span><span class="cl">                    <span class="n">c</span><span class="p">:</span><span class="n">style</span>
+</span></span><span class="line"><span class="ln">107</span><span class="cl">                    <span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">style</span> <span class="ow">in</span> <span class="n">content</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">108</span><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="ln">109</span><span class="cl">            <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">110</span><span class="cl">                <span class="bp">self</span><span class="o">.</span><span class="n">contents</span> <span class="o">=</span> <span class="p">{</span><span class="nb">str</span><span class="p">(</span><span class="n">content</span><span class="p">):{}}</span>
+</span></span><span class="line"><span class="ln">111</span><span class="cl">        
+</span></span><span class="line"><span class="ln">112</span><span class="cl">        <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">113</span><span class="cl">            <span class="k">return</span> <span class="nb">iter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">contents</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+</span></span><span class="line"><span class="ln">114</span><span class="cl">        
+</span></span><span class="line"><span class="ln">115</span><span class="cl">        <span class="k">def</span> <span class="fm">__contains__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">116</span><span class="cl">            <span class="k">return</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">contents</span>
+</span></span><span class="line"><span class="ln">117</span><span class="cl">
+</span></span><span class="line"><span class="ln">118</span><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">content</span><span class="p">,</span> <span class="n">blocktype</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="s1">&#39;NoIndent&#39;</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">background_color</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">119</span><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">blocktype</span>
+</span></span><span class="line"><span class="ln">120</span><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">indent</span> <span class="o">=</span> <span class="n">indent</span>
+</span></span><span class="line"><span class="ln">121</span><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">align</span> <span class="o">=</span> <span class="n">align</span>
+</span></span><span class="line"><span class="ln">122</span><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">background_color</span> <span class="o">=</span> <span class="n">background_color</span>
+</span></span><span class="line"><span class="ln">123</span><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">content</span> <span class="o">=</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="ln">124</span><span class="cl">        <span class="k">if</span> <span class="n">blocktype</span> <span class="o">!=</span> <span class="mi">27</span> <span class="ow">and</span> <span class="n">content</span><span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">125</span><span class="cl">            <span class="bp">self</span><span class="o">.</span><span class="n">content</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Content</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">126</span><span class="cl">    
+</span></span><span class="line"><span class="ln">127</span><span class="cl">    <span class="vm">__doc__</span> <span class="o">=</span> <span class="vm">__doc__</span> <span class="o">+</span> <span class="n">Content</span><span class="o">.</span><span class="vm">__doc__</span></span></span></code></pre></div>
+</div>
+
+
+
+          
+          
+          
+        </div>
+
+        
+
+          
+
+          
+
+          
+
+        
+
+        
+
+        
+
+        
+
+      </div>
+
+      
+      
+        
+        
+          
+          
+        
+        
+        
+        <script
+          type="text/javascript"
+          src="/nayun.github.io/js/page.min.407e5b2727c1f241c95d53db24c776bea71bfc18e09511b815d669ad8caca6e9e18a53864ad364b1ccccfa2f2956768d33cfe193bfb64d3406f3b5ece354ba57.js"
+          integrity="sha512-QH5bJyfB8kHJXVPbJMd2vqcb/BjglRG4FdZprYyspunhilOGStNksczM&#43;i8pVnaNM8/hk7&#43;2TTQG87Xs41S6Vw=="
+          data-oid="views_tech/Coding/python/自定模块/开放平台API/飞书/飞书块类.md"
+          data-oid-likes="likes_tech/Coding/python/自定模块/开放平台API/飞书/飞书块类.md"></script>
+      
+
+    </section>
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+  
+
+
+      
+    </footer>
+  </article>
+
+        <div id="top-scroller" class="pointer-events-none absolute top-[110vh] bottom-0 w-12 ltr:right-0 rtl:left-0">
+  <a
+    href="#the-top"
+    class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 mb-16 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="返回顶部"
+    title="返回顶部">
+    &uarr;
+  </a>
+</div>
+
+      </main><footer id="site-footer" class="py-10 print:hidden">
+  <script src="https://unpkg.com/panzoom@9.4.0/dist/panzoom.min.js"></script> 
+  
+
+  
+  <script src="http://localhost:43997/nayun.github.io/js/custom_mermaid.min.1da0269623e4f164ced2e3b711f6e7a5753c14239113eb8f1d5ceace3238fdd8.js"></script>
+  
+  <script src="http://localhost:43997/nayun.github.io/js/custom_code-header.min.cef138d0888623df230f0f1706e2d0d92479fba3b322b2d9f5d45ded62edd5c9.js"></script>
+  
+  
+    
+  
+  <div class="flex items-center justify-between">
+    
+    
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+          &copy;
+          2026
+          nayun
+      </p>
+    
+
+    
+    
+      <p class="text-xs text-neutral-500 dark:text-neutral-400">
+        
+        
+        由 <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a> 强力驱动
+      </p>
+    
+
+  </div>
+  <script>
+    
+    mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+      margin: 24,
+      background: 'rgba(0,0,0,0.5)',
+      scrollOffset: 0,
+    })
+    
+  </script> 
+  
+  <script
+    type="text/javascript"
+    src="/nayun.github.io/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js"
+    integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-index-500"
+  data-url="http://localhost:43997/nayun.github.io/">
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="搜索"
+          tabindex="0">
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="关闭 (Esc)">
+        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+
+  </span>
+
+
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+    </div>
+  </body>
+  
+</html>
