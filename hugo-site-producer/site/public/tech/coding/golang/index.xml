@@ -7,7 +7,41 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>© 2026 nayun</copyright>
-    <lastBuildDate>Mon, 26 Jan 2026 15:44:49 +0800</lastBuildDate><atom:link href="http://localhost:43997/nayun.github.io/tech/coding/golang/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 02 Mar 2026 11:16:37 +0800</lastBuildDate><atom:link href="http://localhost:43997/nayun.github.io/tech/coding/golang/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>小知识</title>
+      <link>http://localhost:43997/nayun.github.io/tech/coding/golang/%E5%B0%8F%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Mon, 02 Mar 2026 11:16:37 +0800</pubDate>
+      
+      <guid>http://localhost:43997/nayun.github.io/tech/coding/golang/%E5%B0%8F%E7%9F%A5%E8%AF%86/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;string和[]byte&lt;br&gt;
+string是不可变类型，不能通过下标修改值，适合表示不可变的文本数据，安全、简洁，适合 map 键和比较操作。&lt;br&gt;
+[]byte可变类型，可以通过下标修改值，也可以动态扩容，适合处理可变的字节流，性能更高，适合 I/O 和缓冲区操作。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;具名函数定义必须位于包级别中，不能在函数体内嵌套定义具名函数&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;类型断言&lt;code&gt;value, ok := x.(T)&lt;/code&gt;/&lt;code&gt; value := x.(T)&lt;/code&gt;&lt;br&gt;
+询问接口值 x 中存储的动态类型是否是 T&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;导入的包必须在代码中被使用，除非使用空白标识符作为别名，仅为了执行包的初始化过程，而不直接使用包中的任何导出函数、类型或变量。，如&lt;code&gt;import _ &amp;quot;net/http/pprof&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;切片扩容&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;特殊直接分配：如果所需容量大于旧容量的两倍，新容量直接等于所需容量。&lt;/li&gt;
+&lt;li&gt;小容量翻倍：如果旧容量小于256，新容量一般直接翻倍（乘以2）。&lt;/li&gt;
+&lt;li&gt;大容量平滑过渡：如果旧容量大于等于256，则会进入一个循环，通过特定公式计算新容量。这个公式会让扩容倍数从2开始，随着容量增大，平滑地趋近于1.25倍，而不是一个固定的倍数。&lt;/li&gt;
+&lt;/ul&gt;</description>
+      
+    </item>
     
     <item>
       <title>性能优化</title>
@@ -2186,7 +2220,22 @@
   href=&#34;https://juejin.cn/post/6951672096699187207&#34;
     target=&#34;_blank&#34;
   &gt;一篇文章带你看懂Go append方法 ｜ Go主题月&lt;/a&gt;
-&lt;/p&gt;</description>
+&lt;/p&gt;
+
+&lt;h2 class=&#34;relative group&#34;&gt;recover 
+    &lt;div id=&#34;recover&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#recover&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;        
+    
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;recover 只能在延迟函数（defer）中直接调用才有用，如果在正常执行的函数中调用 recover，它会返回 nil，没有其他效果&lt;/li&gt;
+&lt;li&gt;当 panic 发生时，当前函数会立即停止执行，开始执行已注册的 defer 函数；在这些 defer 中调用 recover，可以捕获 panic 的值，并阻止 panic 继续向上传播。&lt;/li&gt;
+&lt;li&gt;recover 返回的值是传给 panic 的参数（任意类型）。如果没有发生 panic，则返回 nil。&lt;/li&gt;
+&lt;/ul&gt;</description>
       
     </item>
     
