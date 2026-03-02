@@ -1,4 +1,28 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>nayun blog</title><link>https://wang-xu-97.github.io/nayun.github.io/</link><description>Recent content on nayun blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>© 2026 nayun</copyright><lastBuildDate>Sat, 28 Feb 2026 16:48:27 +0800</lastBuildDate><atom:link href="https://wang-xu-97.github.io/nayun.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>自定义类</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E8%87%AA%E5%AE%9A%E6%A8%A1%E5%9D%97/%E5%BC%80%E6%94%BE%E5%B9%B3%E5%8F%B0api/%E9%A3%9E%E4%B9%A6/%E8%87%AA%E5%AE%9A%E4%B9%89%E7%B1%BB/</link><pubDate>Sat, 28 Feb 2026 16:48:27 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E8%87%AA%E5%AE%9A%E6%A8%A1%E5%9D%97/%E5%BC%80%E6%94%BE%E5%B9%B3%E5%8F%B0api/%E9%A3%9E%E4%B9%A6/%E8%87%AA%E5%AE%9A%E4%B9%89%E7%B1%BB/</guid><description>&lt;h2 class="relative group"&gt;自定义飞书块类
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>nayun blog</title><link>https://wang-xu-97.github.io/nayun.github.io/</link><description>Recent content on nayun blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>© 2026 nayun</copyright><lastBuildDate>Mon, 02 Mar 2026 11:16:37 +0800</lastBuildDate><atom:link href="https://wang-xu-97.github.io/nayun.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>小知识</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/coding/golang/%E5%B0%8F%E7%9F%A5%E8%AF%86/</link><pubDate>Mon, 02 Mar 2026 11:16:37 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/coding/golang/%E5%B0%8F%E7%9F%A5%E8%AF%86/</guid><description>&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;string和[]byte&lt;br&gt;
+string是不可变类型，不能通过下标修改值，适合表示不可变的文本数据，安全、简洁，适合 map 键和比较操作。&lt;br&gt;
+[]byte可变类型，可以通过下标修改值，也可以动态扩容，适合处理可变的字节流，性能更高，适合 I/O 和缓冲区操作。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;具名函数定义必须位于包级别中，不能在函数体内嵌套定义具名函数&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;类型断言&lt;code&gt;value, ok := x.(T)&lt;/code&gt;/&lt;code&gt; value := x.(T)&lt;/code&gt;&lt;br&gt;
+询问接口值 x 中存储的动态类型是否是 T&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;导入的包必须在代码中被使用，除非使用空白标识符作为别名，仅为了执行包的初始化过程，而不直接使用包中的任何导出函数、类型或变量。，如&lt;code&gt;import _ &amp;quot;net/http/pprof&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;切片扩容&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;特殊直接分配：如果所需容量大于旧容量的两倍，新容量直接等于所需容量。&lt;/li&gt;
+&lt;li&gt;小容量翻倍：如果旧容量小于256，新容量一般直接翻倍（乘以2）。&lt;/li&gt;
+&lt;li&gt;大容量平滑过渡：如果旧容量大于等于256，则会进入一个循环，通过特定公式计算新容量。这个公式会让扩容倍数从2开始，随着容量增大，平滑地趋近于1.25倍，而不是一个固定的倍数。&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>自定义类</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E8%87%AA%E5%AE%9A%E6%A8%A1%E5%9D%97/%E5%BC%80%E6%94%BE%E5%B9%B3%E5%8F%B0api/%E9%A3%9E%E4%B9%A6/%E8%87%AA%E5%AE%9A%E4%B9%89%E7%B1%BB/</link><pubDate>Sat, 28 Feb 2026 16:48:27 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/coding/python/%E8%87%AA%E5%AE%9A%E6%A8%A1%E5%9D%97/%E5%BC%80%E6%94%BE%E5%B9%B3%E5%8F%B0api/%E9%A3%9E%E4%B9%A6/%E8%87%AA%E5%AE%9A%E4%B9%89%E7%B1%BB/</guid><description>&lt;h2 class="relative group"&gt;自定义飞书块类
 &lt;div id="自定义飞书块类" class="anchor"&gt;&lt;/div&gt;
 &lt;span
 class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
