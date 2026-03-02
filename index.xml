@@ -2725,7 +2725,19 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 href="https://juejin.cn/post/6951672096699187207"
 target="_blank"
 &gt;一篇文章带你看懂Go append方法 ｜ Go主题月&lt;/a&gt;
-&lt;/p&gt;</description></item><item><title>fmt格式化动词表</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/coding/golang/fmt%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%8A%A8%E8%AF%8D%E8%A1%A8/</link><pubDate>Mon, 26 Jan 2026 09:56:42 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/coding/golang/fmt%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%8A%A8%E8%AF%8D%E8%A1%A8/</guid><description>&lt;h3 class="relative group"&gt;通用格式化：
+&lt;/p&gt;
+&lt;h2 class="relative group"&gt;recover
+&lt;div id="recover" class="anchor"&gt;&lt;/div&gt;
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#recover" aria-label="锚点"&gt;#&lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;recover 只能在延迟函数（defer）中直接调用才有用，如果在正常执行的函数中调用 recover，它会返回 nil，没有其他效果&lt;/li&gt;
+&lt;li&gt;当 panic 发生时，当前函数会立即停止执行，开始执行已注册的 defer 函数；在这些 defer 中调用 recover，可以捕获 panic 的值，并阻止 panic 继续向上传播。&lt;/li&gt;
+&lt;li&gt;recover 返回的值是传给 panic 的参数（任意类型）。如果没有发生 panic，则返回 nil。&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>fmt格式化动词表</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/coding/golang/fmt%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%8A%A8%E8%AF%8D%E8%A1%A8/</link><pubDate>Mon, 26 Jan 2026 09:56:42 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/coding/golang/fmt%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%8A%A8%E8%AF%8D%E8%A1%A8/</guid><description>&lt;h3 class="relative group"&gt;通用格式化：
 &lt;div id="通用格式化" class="anchor"&gt;&lt;/div&gt;
 &lt;span
 class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
