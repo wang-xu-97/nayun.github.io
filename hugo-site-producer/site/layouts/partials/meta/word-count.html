@@ -1,0 +1,5 @@
+{{ $content := .Content | plainify }}
+{{ $chineseChars := findRE "[\\p{Han}]" $content }}
+{{ $englishWords := findRE "[a-zA-Z0-9]+" $content }}
+{{ $wordCount := add (len $chineseChars) (len $englishWords) }}
+<span>{{ $wordCount }} 字</span>

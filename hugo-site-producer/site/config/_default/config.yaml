@@ -4,6 +4,8 @@ languageCode: "zh-cn"
 defaultContentLanguage: "zh-cn"
 theme: "blowfish"
 
+hasCJKLanguage: true
+
 markup:
   goldmark:
     renderer:
