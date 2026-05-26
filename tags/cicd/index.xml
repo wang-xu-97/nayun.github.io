@@ -8,9 +8,4 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Jenkins Node&lt;br&gt;
-用agent.jar指定工作目录和节点名，部署jenkins节点&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;配置参数、code repo、shell脚本、归档，或直接使用jenkins groovy脚本构建任务工作流&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;</description></item></channel></rss>
+用agent.jar指定工作目录和节点名，部署jenkins节点&lt;/p&gt;</description></item></channel></rss>

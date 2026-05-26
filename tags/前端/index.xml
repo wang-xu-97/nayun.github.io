@@ -241,40 +241,7 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;/div&gt;
 &lt;details&gt;
 &lt;summary&gt;效果：&lt;/summary&gt;
-&lt;p&gt;这里是隐藏的内容，支持 &lt;strong&gt;Markdown&lt;/strong&gt; 格式：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;列表项1&lt;/li&gt;
-&lt;li&gt;列表项2&lt;/li&gt;
-&lt;li&gt;&lt;a
-href="https://example.com"
-target="_blank"
-&gt;链接&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/details&gt;
-本质是隐藏细节
-&lt;ol start="3"&gt;
-&lt;li&gt;嵌套&lt;/li&gt;
-&lt;/ol&gt;
-&lt;details&gt;
-&lt;summary&gt;一级折叠标题&lt;/summary&gt;
-&lt;p&gt;这是一级内容&amp;hellip;&lt;/p&gt;
-&lt;details&gt;
-&lt;summary&gt;二级折叠标题&lt;/summary&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;details&amp;gt;
-&amp;lt;summary&amp;gt;三级折叠标题&amp;lt;/summary&amp;gt;
-- 这是三级列表
-- 支持 Markdown
-- 可以无限嵌套（但建议不超过3-4层）
-&amp;lt;/details&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/details&gt;
-&lt;ul&gt;
-&lt;li&gt;一级内容中的普通列表&lt;/li&gt;
-&lt;li&gt;也可以混合使用&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/details&gt;
-&lt;p&gt;似乎只能嵌套两层&lt;/p&gt;</description></item><item><title>词云实践流程</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/%E8%AF%8D%E4%BA%91%E5%AE%9E%E8%B7%B5%E6%B5%81%E7%A8%8B/</link><pubDate>Thu, 24 Jul 2025 17:15:11 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/%E8%AF%8D%E4%BA%91%E5%AE%9E%E8%B7%B5%E6%B5%81%E7%A8%8B/</guid><description>&lt;h4 class="relative group"&gt;1. 通过deepseek生成词云&lt;code&gt;html、js、css&lt;/code&gt;代码
+&lt;p&gt;这里是隐藏的内容，支持 &lt;strong&gt;Markdown&lt;/strong&gt; 格式：&lt;/p&gt;</description></item><item><title>词云实践流程</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/%E8%AF%8D%E4%BA%91%E5%AE%9E%E8%B7%B5%E6%B5%81%E7%A8%8B/</link><pubDate>Thu, 24 Jul 2025 17:15:11 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/%E8%AF%8D%E4%BA%91%E5%AE%9E%E8%B7%B5%E6%B5%81%E7%A8%8B/</guid><description>&lt;h4 class="relative group"&gt;1. 通过deepseek生成词云&lt;code&gt;html、js、css&lt;/code&gt;代码
 &lt;div id="1-通过deepseek生成词云htmljscss代码" class="anchor"&gt;&lt;/div&gt;
 &lt;span
 class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
@@ -321,63 +288,7 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-tag-cloud%e7%bb%91%e5%ae%9a%e5%9c%a8baseurltagsurl%e4%b8%8a" aria-label="锚点"&gt;#&lt;/a&gt;
 &lt;/span&gt;
 &lt;/h4&gt;
-&lt;p&gt;原理：&lt;/p&gt;
-&lt;div class="code-block-wrapper"&gt;
-&lt;div class="code-header"&gt;
-&lt;span class="language-label"&gt;
-&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
-&lt;span class="language-name"&gt;路由机制&lt;/span&gt;
-&lt;/span&gt;
-&lt;div class="code-buttons"&gt;
-&lt;button class="copy-button"&gt;
-&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
-&lt;span&gt;复制&lt;/span&gt;
-&lt;/button&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;Hugo 会自动将 layouts/taxonomy/tag.terms.html 映射到 /tags/ URL
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;这是 Hugo 分类系统（Taxonomy）的标准行为&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;流程：&lt;/p&gt;
-&lt;h5 class="relative group"&gt;- 1. 创建layouts/taxonomy/tag.terms.html
-&lt;div id="--1-创建layoutstaxonomytagtermshtml" class="anchor"&gt;&lt;/div&gt;
-&lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#--1-%e5%88%9b%e5%bb%balayoutstaxonomytagtermshtml" aria-label="锚点"&gt;#&lt;/a&gt;
-&lt;/span&gt;
-&lt;/h5&gt;
-&lt;h5 class="relative group"&gt;- 2. 在tag.terms.html中直接调用tag-cloud.html
-&lt;div id="--2-在tagtermshtml中直接调用tag-cloudhtml" class="anchor"&gt;&lt;/div&gt;
-&lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#--2-%e5%9c%a8tagtermshtml%e4%b8%ad%e7%9b%b4%e6%8e%a5%e8%b0%83%e7%94%a8tag-cloudhtml" aria-label="锚点"&gt;#&lt;/a&gt;
-&lt;/span&gt;
-&lt;/h5&gt;
-&lt;div class="code-block-wrapper"&gt;
-&lt;div class="code-header"&gt;
-&lt;span class="language-label"&gt;
-&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
-&lt;span class="language-name"&gt;tag.terms.html&lt;/span&gt;
-&lt;/span&gt;
-&lt;div class="code-buttons"&gt;
-&lt;button class="copy-button"&gt;
-&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
-&lt;span&gt;复制&lt;/span&gt;
-&lt;/button&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-tag.terms.html" data-lang="tag.terms.html"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;{{ define &amp;#34;main&amp;#34; }}
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;{{ partial &amp;#34;tag-cloud.html&amp;#34; . }}
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;{{ end }}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;h5 class="relative group"&gt;- 3. 导入css、js文件
-&lt;div id="--3-导入cssjs文件" class="anchor"&gt;&lt;/div&gt;
-&lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#--3-%e5%af%bc%e5%85%a5cssjs%e6%96%87%e4%bb%b6" aria-label="锚点"&gt;#&lt;/a&gt;
-&lt;/span&gt;
-&lt;/h5&gt;
-&lt;p&gt;为了方便，直接在tag-cloud.html中嵌入了css、js的导入（缺点，页面会动态加载js）&lt;/p&gt;</description></item><item><title>hugo学习250723</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250723/</link><pubDate>Wed, 23 Jul 2025 15:01:34 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250723/</guid><description>&lt;h2 class="relative group"&gt;hugo工作流程
+&lt;p&gt;原理：&lt;/p&gt;</description></item><item><title>hugo学习250723</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250723/</link><pubDate>Wed, 23 Jul 2025 15:01:34 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E5%AD%A6%E4%B9%A0250723/</guid><description>&lt;h2 class="relative group"&gt;hugo工作流程
 &lt;div id="hugo工作流程" class="anchor"&gt;&lt;/div&gt;
 &lt;span
 class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
@@ -401,34 +312,7 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e6%96%87%e4%bb%b6%e7%b3%bb%e7%bb%9f%e7%bb%93%e6%9e%84" aria-label="锚点"&gt;#&lt;/a&gt;
 &lt;/span&gt;
 &lt;/h4&gt;
-&lt;p&gt;Hugo 会扫描 content/ 目录下的内容文件（如 .md 或 .html），根据文件的位置和命名规则自动推断页面类型：&lt;/p&gt;
-&lt;div class="code-block-wrapper"&gt;
-&lt;div class="code-header"&gt;
-&lt;span class="language-label"&gt;
-&lt;span class="language-brackets"&gt;&amp;lt;/&gt;&lt;/span&gt;
-&lt;span class="language-name"&gt;text&lt;/span&gt;
-&lt;/span&gt;
-&lt;div class="code-buttons"&gt;
-&lt;button class="copy-button"&gt;
-&lt;i class="fas fa-copy"&gt;&lt;/i&gt;
-&lt;span&gt;复制&lt;/span&gt;
-&lt;/button&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;_index.md → 列表页（kind: &amp;#34;section&amp;#34; 或 kind: &amp;#34;home&amp;#34;）
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;普通内容文件（如 post.md） → 单页（kind: &amp;#34;page&amp;#34; 或 kind: &amp;#34;single&amp;#34;）
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;分类/标签页 → 分类列表（kind: &amp;#34;taxonomy&amp;#34; 或 kind: &amp;#34;term&amp;#34;）&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;h4 class="relative group"&gt;(2) 页面 Front Matter
-&lt;div id="2-页面-front-matter" class="anchor"&gt;&lt;/div&gt;
-&lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e9%a1%b5%e9%9d%a2-front-matter" aria-label="锚点"&gt;#&lt;/a&gt;
-&lt;/span&gt;
-&lt;/h4&gt;
-&lt;p&gt;通过 Front Matter 中的 type 或 layout 字段可手动指定类型（覆盖自动推断）：&lt;/p&gt;</description></item><item><title>Hugo理解</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E7%90%86%E8%A7%A3/</link><pubDate>Wed, 09 Jul 2025 14:07:34 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E7%90%86%E8%A7%A3/</guid><description>&lt;h2 class="relative group"&gt;hugo工作流程
+&lt;p&gt;Hugo 会扫描 content/ 目录下的内容文件（如 .md 或 .html），根据文件的位置和命名规则自动推断页面类型：&lt;/p&gt;</description></item><item><title>Hugo理解</title><link>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E7%90%86%E8%A7%A3/</link><pubDate>Wed, 09 Jul 2025 14:07:34 +0800</pubDate><guid>https://wang-xu-97.github.io/nayun.github.io/tech/frontend/hugo/hugo%E7%90%86%E8%A7%A3/</guid><description>&lt;h2 class="relative group"&gt;hugo工作流程
 &lt;div id="hugo工作流程" class="anchor"&gt;&lt;/div&gt;
 &lt;span
 class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"&gt;
