@@ -20,6 +20,7 @@ jobs:
       - name: Build
         run: |
           cd hugo-site-producer/site
+          chmod +x -R .
           hugo --gc
           rm -rf public resources
           hugo --minify
